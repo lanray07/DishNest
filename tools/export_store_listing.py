@@ -17,7 +17,8 @@ def render(listing):
         ('Support URL', listing.get('support_contact')),
         ('Privacy policy URL (draft policy)', listing.get('privacy_policy_url')),
     ]
-    text = 'DISHNEST - LOCAL STORE LISTING DRAFT\nNot entered in the console; not approved for submission.\nUpdated ' + listing['updated_at'] + '.\n\n'
+    console_status = 'Saved in Amazon console as a draft; not approved for submission.' if listing['draft_notes'].get('console_entered') else 'Not entered in the console; not approved for submission.'
+    text = 'DISHNEST - LOCAL STORE LISTING DRAFT\n' + console_status + '\nUpdated ' + listing['updated_at'] + '.\n\n'
     text += '\n\n'.join(label + '\n' + (value or 'Not configured') for label, value in sections)
     return text + '\n\nPublisher fields still required\n' + '\n'.join(listing['draft_notes']['required_publisher_inputs']) + '\n'
 

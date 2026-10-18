@@ -3,7 +3,7 @@ Not entered in the console; not approved for submission.
 Updated 2026-10-18.
 
 Display title
-DishNest – Recipe Keeper & Meal Planner
+DishNest - Recipe Keeper and Meal Planner
 
 Short description
 Keep recipes, plan your week and turn meals into shopping lists. Organise your pantry and follow cooking steps with timers, narration and touch controls.
@@ -51,7 +51,7 @@ https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt
 
 Publisher fields still required
 Legal publisher identity and rights approval
-Private privacy-request contact and final service operator disclosures
+Final legal publisher identity and service operator disclosures
 Approved app pricing, IAP catalog, terms and territories
 Content-rating and privacy-label declarations
 Native-approved store translations and final hardware screenshots

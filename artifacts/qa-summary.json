@@ -149,7 +149,7 @@
   "physical_fire_qa": "Partial smoke coverage only; full hardware matrix pending",
   "billing_qa": "Local SDK integration and signed-verification service prepared; 11 server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.",
   "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
-  "store_submission": "not performed; prohibited by user",
+  "store_submission": "not performed; conditional submission authorized only after all required readiness gates pass",
   "website_deployment": "not performed; local checks only",
   "android_lint": {
     "errors": 0,
@@ -171,10 +171,10 @@
   },
   "website-verification": {
     "passed": true,
-    "verifiedAt": "2026-10-18T17:41:57.475Z",
+    "verifiedAt": "2026-10-18T18:15:08.014Z",
     "inputs": {
-      "PRIVACY.txt": "94f32ecaa41bb029a0c0068da4f33a718b30b7ca627496b621edb7a0afcddede",
-      "tools/build_website.py": "aad93f80cd05e78e4e5f0574086180d0790f69b033a943f9186b257356e720fb",
+      "PRIVACY.txt": "0aca661a4800248ab09580c2ce6c34e930bf33ec79f7b09932dad34df22bb090",
+      "tools/build_website.py": "f3c2836b072a0df4646a8611e883690082c58d6342ee692bcab38921137f4ffc",
       "tools/verify_website.cjs": "03accf5e2eaab455c106748d36bf9a9fcb27bda863e80adede14114e50528097",
       "tools/website_evidence.py": "d1e78bd95b5ab48d219642de841ab888624f72ffeab2fb054d6c0011e473c9a1",
       "website/assets/icon.svg": "10113a7a23949c96b80fe6e8945af1bc8c9f0e12090eaa6875c58e02d995e5fd",
@@ -186,13 +186,13 @@
       "website/locale-manifest.json": "9071882e100de3d2c332d4575f85b5ee5747d8e58cc8db198917aa6c6db13e57",
       "website/pantry-management.html": "54a35082649af17168af4809e54c5ba7b5819d07cdec65305a0ee1c9eadc7d43",
       "website/pricing.html": "2ff42eebb84f21d59c3a231912c9241e76e5115f7a4fc2eb31761e287863a1b1",
-      "website/privacy.html": "44c39cd857a9a4956234c49432101e614802be3783d49665d1225811a26fc32d",
+      "website/privacy.html": "22df1a5891c6e3ac5751f03316e67acc68a2f5b0e15620fd4606f16b8c3b06ee",
       "website/recipe-organisation.html": "14af0d379cc9c66f5713d2c01a682ff43fbc765d91c12a55b3108d4ca5d3a73f",
       "website/robots.txt": "a8f31103361fca68bef71fc69cff844b7c23bd3d64d2b872d74690cbda656bfc",
       "website/shopping-lists.html": "96a68a0d7d6df17eb9d2f4cd2b31301f4bdcc7d28de94a24c7058928b3ea7be9",
       "website/site.css": "16a4ae1854ac314dba0183132c8ae39e84f5dbf8228e73e9ed2ddb782c23e89d",
       "website/sitemap.xml": "d29e37d2f1ae295426530213162478d52ba573d01b4584570cd7a4844f0e7c24",
-      "website/support.html": "ad45f1db1e487b8eaf873aad6ec4f4c43a5d70e23125c579d2f7183bd85b150a",
+      "website/support.html": "6a18725c8bb7b7e18ceb5e1cb6a2b5d354e49b42ec10f18560f607b084eb79f4",
       "website/voice-cooking.html": "f052fdac5815b01feec35c6835b451395c4cb606970a8847bd1d80a10cfe2d85",
       "website/weekly-meal-planning.html": "c45eec3294c255b5ddbf74b81d913b33c8c366b67c20832b467221dc7ddc1d08"
     },
@@ -211,100 +211,100 @@
             "title": "DishNest \u2014 Recipe Keeper & Weekly Meal Planner",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "features.html",
             "title": "A kitchen companion that keeps things together \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "recipe-organisation.html",
             "title": "Your recipes, beautifully organised \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "weekly-meal-planning.html",
             "title": "A thoughtful weekly meal planner \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "shopping-lists.html",
             "title": "From meal plan to shopping list \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "voice-cooking.html",
             "title": "A calmer cooking mode \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "pantry-management.html",
             "title": "Make more of what you already have \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "fire-tablets.html",
             "title": "Designed with Fire tablets in mind \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "pricing.html",
             "title": "Simple beginnings. Room to grow. \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "privacy.html",
             "title": "Your kitchen is personal \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "support.html",
             "title": "A little help in the kitchen \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "faq.html",
             "title": "Good questions, clear answers \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           }
         ],
-        "browserPath": "Playwright: Browser plugin not available",
-        "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
+        "browserPath": "CUA in-app browser; local HTTP status checked separately",
+        "evidenceDir": "C:/Users/User/AppData/Local/Temp"
       },
       {
         "device": "phone",
@@ -320,100 +320,100 @@
             "title": "DishNest \u2014 Recipe Keeper & Weekly Meal Planner",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "features.html",
             "title": "A kitchen companion that keeps things together \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "recipe-organisation.html",
             "title": "Your recipes, beautifully organised \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "weekly-meal-planning.html",
             "title": "A thoughtful weekly meal planner \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "shopping-lists.html",
             "title": "From meal plan to shopping list \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "voice-cooking.html",
             "title": "A calmer cooking mode \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "pantry-management.html",
             "title": "Make more of what you already have \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "fire-tablets.html",
             "title": "Designed with Fire tablets in mind \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "pricing.html",
             "title": "Simple beginnings. Room to grow. \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "privacy.html",
             "title": "Your kitchen is personal \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "support.html",
             "title": "A little help in the kitchen \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           },
           {
             "file": "faq.html",
             "title": "Good questions, clear answers \u2014 DishNest",
             "http": 200,
             "overflow": false,
-            "contentVerified": true,
-            "brokenImages": []
+            "brokenImages": [],
+            "contentVerified": true
           }
         ],
-        "browserPath": "Playwright: Browser plugin not available",
-        "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
+        "browserPath": "CUA in-app browser; local HTTP status checked separately",
+        "evidenceDir": "C:/Users/User/AppData/Local/Temp"
       }
     ]
   },
@@ -703,11 +703,11 @@
     "remoteDeployment": false
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-18T17:50:37.420014+00:00",
+    "generatedAt": "2026-10-18T18:18:05.580754+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
-    "publication": "App deployment and store submission prohibited; source commits and GitHub pushes authorized",
+    "publication": "Store submission conditionally authorized only after every readiness gate passes; app deployment not authorized; source commits and GitHub pushes authorized",
     "checks": [
       {
         "check": "Android lint",
@@ -869,7 +869,7 @@
         "check": "Final store and website metadata",
         "status": "pending",
         "evidence": "marketing/listing-en-GB.json",
-        "remaining": "GitHub project/support/draft privacy URLs configured; approved translations, private privacy contact, legal disclosures, final store URL and hardware screenshots pending"
+        "remaining": "English Amazon console draft, public support email and GitHub privacy/deletion links configured; legal approval, approved translations, final store URL and hardware screenshots pending"
       },
       {
         "check": "Remaining product scope",

@@ -34,7 +34,7 @@ server_xml=ET.parse(ROOT/'artifacts/billing-server-tests.xml').getroot()
 server_tests=len(server_xml.findall('.//testcase'))
 report=f'''# DishNest submission-readiness report
 
-Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 18 October 2026. **App deployment and store submission are prohibited.** Source commits and GitHub pushes are authorized. No app deployment or store submission was performed.
+Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 18 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. No app deployment or store submission was performed.
 
 ## Completed local continuation
 
@@ -87,7 +87,7 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 | Billing | Local SDK integration and signed RVS service with tested policies | Amazon console key/catalog, approved terms/prices/countries, trusted TLS service, production credentials, App Tester/LAT and full callback/fulfilment QA; further commercial gates/features |
 | Localisation | {strings} strings and plurals in 12 locales; technical checks pass | Native-speaker review, remaining inline interpolations and domain/status errors, complete voice/category/unit work, localised website/store/screenshot copy and hardware RTL checks |
 | Licensing/privacy | Original notices bundled; all resolved POM licences inventoried; backup exclusions and billing disclosures | Publisher legal/licence/privacy approval, operator identity, retention/contact details and final dependency review |
-| Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Approved final hardware captures, market approvals, Private privacy-request contact, legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; GitHub project/support/draft privacy URLs are configured without website deployment |
+| Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; English console draft, support email and GitHub privacy/deletion links are configured without website deployment |
 | Release | Debug APK and unsigned release build; optional publisher environment signing, input/output hash verification and local validation tooling | Publisher signing material, exact signed-APK install/smoke test and actual store compatibility checks |
 | Metrics | Optional aggregate counters stored only on device; disabled by default | No analytics provider or complete Premium/trial conversion reporting |
 
@@ -99,7 +99,7 @@ The translation provider throttled the initial draft generation. Requests were s
 
 The latest read-only ADB inventory found {device.get('connectedDeviceCount', 0)} connected device(s). {fire_description} This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, a publisher-signed APK or Appstore purchases. Those remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
 
-Required publisher inputs are an Amazon app draft and its authentication public key; approved catalog/prices/territories; service operating identity and protected production keys/secrets; a trusted verification endpoint; publisher signing configuration; representative hardware; native language approval; and approved privacy/operator details and a private privacy-request contact. Project, support and draft privacy links now use GitHub; no domain or GitHub Pages deployment was configured. The local sandbox keys are development-only. Do not copy them into production.
+An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.json`. Required publisher inputs remain its authentication public key; approved production catalog/prices/terms; service operating identity and protected production keys/secrets; a trusted verification endpoint; publisher signing configuration; representative hardware; native language approval; and approved privacy/operator details. Private support/deletion assistance uses the publisher-provided support email. Project, support and draft privacy/deletion links use GitHub; no domain or GitHub Pages deployment was configured. The local sandbox keys are development-only. Do not copy them into production.
 
 ## Checklist
 
@@ -113,7 +113,7 @@ Required publisher inputs are an Amazon app draft and its authentication public 
 - [ ] Execute the hardware/accessibility/offline/permissions/timer/OCR matrix.
 - [ ] Approve publisher identity, licensing, privacy disclosures, pricing and final store/site metadata.
 - [ ] Sign and install the exact release APK, capture final hardware screenshots and record device smoke tests.
-- [ ] Obtain a new explicit instruction before app deployment or store submission. Source commits and GitHub pushes are authorized.
+- [ ] Clear all required readiness gates before acting on the user's conditional permission to submit. App deployment beyond store submission is not authorized. Source commits and GitHub pushes are authorized.
 
 ## Primary references checked
 

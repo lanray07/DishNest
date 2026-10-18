@@ -1,7 +1,7 @@
 {
   "status": "DRAFT — not approved for submission",
   "locale": "en-GB",
-  "title": "DishNest – Recipe Keeper & Meal Planner",
+  "title": "DishNest - Recipe Keeper and Meal Planner",
   "title_options": [
     "DishNest – Recipe Keeper & Meal Planner",
     "DishNest – Recipe Book & Shopping List",
@@ -42,7 +42,7 @@
     "premium": "Billing is disabled in delivered builds. Demo feature exploration does not establish live purchase availability. Recheck all feature gates and offer wording before release.",
     "required_publisher_inputs": [
       "Legal publisher identity and rights approval",
-      "Private privacy-request contact and final service operator disclosures",
+      "Final legal publisher identity and service operator disclosures",
       "Approved app pricing, IAP catalog, terms and territories",
       "Content-rating and privacy-label declarations",
       "Native-approved store translations and final hardware screenshots"
@@ -56,7 +56,8 @@
     },
     "reference": "https://developer.amazon.com/docs/app-submission/appstore-details.html",
     "reference_checked_at": "2026-10-18",
-    "github_urls": "Project, support and draft privacy links use the public GitHub repository. No GitHub Pages deployment is configured. Privacy content still requires publisher legal approval; the Amazon listing URL remains unset until an actual store listing exists."
+    "github_urls": "Project, support and draft privacy links use the public GitHub repository. No GitHub Pages deployment is configured. Privacy content still requires publisher legal approval; the Amazon listing URL remains unset until an actual store listing exists. Public support email supplied by the publisher and a draft English (U.S.) listing are now saved in the Amazon console; see amazon-console-draft.json."
   },
-  "website_url": "https://github.com/lanray07/DishNest"
+  "website_url": "https://github.com/lanray07/DishNest",
+  "support_email": "banksmi@mail.com"
 }

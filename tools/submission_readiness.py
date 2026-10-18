@@ -60,10 +60,10 @@ inventory=read_json('docs/dependencies/runtime-inventory.json')
 check('Resolved dependency inventory',bool(inventory.get('components')) and all(c.get('licenses') for c in inventory['components']),'docs/dependencies/runtime-inventory.json','Generate from exact releaseRuntimeClasspath and resolve missing licence declarations')
 check('Licensing/privacy approval',False,'THIRD_PARTY_NOTICES.md','Publisher reviews all distribution obligations, support identity and privacy disclosures')
 check('Publisher-signed release device test',False,'artifacts/deliverables/manifest.json','Release signing key and exact signed APK hardware smoke test')
-check('Final store and website metadata',False,'marketing/listing-en-GB.json','GitHub project/support/draft privacy URLs configured; approved translations, private privacy contact, legal disclosures, final store URL and hardware screenshots pending')
+check('Final store and website metadata',False,'marketing/listing-en-GB.json','English Amazon console draft, public support email and GitHub privacy/deletion links configured; legal approval, approved translations, final store URL and hardware screenshots pending')
 check('Remaining product scope',False,'docs/RELEASE_READINESS.md','Complete the explicitly listed outstanding app features and integration checks')
 result={'generatedAt':datetime.now(timezone.utc).isoformat(),'submission_ready':all(c['status']=='passed' for c in checks),
- 'publishing_permitted':False,'git_push_permitted':True,'publication':'App deployment and store submission prohibited; source commits and GitHub pushes authorized','checks':checks}
+ 'publishing_permitted':False,'git_push_permitted':True,'publication':'Store submission conditionally authorized only after every readiness gate passes; app deployment not authorized; source commits and GitHub pushes authorized','checks':checks}
 (ROOT/'artifacts/submission-readiness.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
 print(json.dumps({'passed':sum(c['status']=='passed' for c in checks),'pending':sum(c['status']!='passed' for c in checks),'submission_ready':result['submission_ready'],'published':False}))
 parser=argparse.ArgumentParser();parser.add_argument('--strict',action='store_true');args=parser.parse_args()

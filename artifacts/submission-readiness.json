@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-18T17:50:37.420014+00:00",
+  "generatedAt": "2026-10-18T18:18:05.580754+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
-  "publication": "App deployment and store submission prohibited; source commits and GitHub pushes authorized",
+  "publication": "Store submission conditionally authorized only after every readiness gate passes; app deployment not authorized; source commits and GitHub pushes authorized",
   "checks": [
     {
       "check": "Android lint",
@@ -165,7 +165,7 @@
       "check": "Final store and website metadata",
       "status": "pending",
       "evidence": "marketing/listing-en-GB.json",
-      "remaining": "GitHub project/support/draft privacy URLs configured; approved translations, private privacy contact, legal disclosures, final store URL and hardware screenshots pending"
+      "remaining": "English Amazon console draft, public support email and GitHub privacy/deletion links configured; legal approval, approved translations, final store URL and hardware screenshots pending"
     },
     {
       "check": "Remaining product scope",

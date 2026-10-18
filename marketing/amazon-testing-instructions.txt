@@ -1,0 +1,13 @@
+No DishNest account, login, or access code is required.
+
+This is an incomplete development-preview draft. No publisher-signed release APK has been uploaded. Amazon purchases are disabled in current local builds; do not interpret this draft as successful IAP or production-release testing.
+
+Core review flow for the preview:
+1. Launch into an empty private kitchen. Add a recipe with a title, serving size, ingredient and cooking step. Save, reopen and edit it.
+2. Assign the recipe to a day and meal slot in Meal planner. Adjust servings and generate a shopping list. Compatible quantities consolidate and compatible pantry quantities are deducted.
+3. Add a pantry item and optional check date. Pantry reminders are off by default and require opt-in; device settings can delay notifications.
+4. Start cooking. Check touch navigation, spoken instructions where a supported TTS provider exists, and independent timers. Denying the microphone must leave touch controls usable. Speech recognition depends on the installed provider and may use its network service.
+5. Review recipe text, permitted HTTPS Recipe JSON-LD or cropped English photo OCR before saving. Check recognized text for errors. Imports and additional commercial features require Premium access. Explicit demo exploration is limited to billing-disabled development builds and is not evidence of a purchase entitlement.
+6. Export a JSON or photo-inclusive ZIP backup. Restore requires an empty kitchen. Settings can delete kitchen data locally; exported files remain under user control, and kitchen-data deletion preserves purchase records.
+
+Before release: complete live Amazon catalog/verifier testing, publisher signing and exact signed-APK device testing, privacy/legal approval, native-language review and the remaining hardware/accessibility matrix. Prepared store images are drafts pending final hardware and market approval.

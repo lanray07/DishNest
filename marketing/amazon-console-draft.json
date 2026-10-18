@@ -1,0 +1,40 @@
+{
+  "updated_at": "2026-10-18",
+  "app_id": "amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07",
+  "release_id": "amzn1.devportal.apprelease.22589c786046463387ac9edcee9d38e0",
+  "console_review_url": "https://developer.amazon.com/apps-and-games/console/app/amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07/release/amzn1.devportal.apprelease.22589c786046463387ac9edcee9d38e0/submission/review-and-submit",
+  "app_sku": "dishnest.app",
+  "category": "Food & Drink",
+  "subcategory": "Cooking & Recipes",
+  "pricing": "Free",
+  "regions": "All countries and regions where Amazon sells apps",
+  "target_audience": "18+",
+  "target_audience_basis": "Recommended adult household audience; user asked for a suggestion.",
+  "language_support": [
+    "English"
+  ],
+  "description_status": "Complete",
+  "image_status": "Complete",
+  "privacy_questionnaire_status": "Saved for review - technical draft; final publisher/provider review pending",
+  "content_rating_questionnaire_status": "Complete",
+  "account_creation": false,
+  "local_data_deletion_instructions_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
+  "asset_approval": false,
+  "tablet_screenshot_drafts_uploaded": 8,
+  "app_file_uploaded": false,
+  "export_compliance_certified": false,
+  "submitted": false,
+  "remaining": [
+    "Publisher-signed release APK",
+    "Device compatibility selection after APK upload",
+    "Publisher export-compliance certification",
+    "All outstanding product, billing, legal, localization and hardware readiness gates"
+  ],
+  "promotional_image_uploaded": true,
+  "privacy_draft_basis": "Conservative technical draft: on-device photos, notes, backup files and optional local counters are disclosed as collected; optional voice/provider processing and import network identifiers are disclosed for functionality. Provider-specific, production billing and legal review remain mandatory.",
+  "privacy_reference": "https://developer.amazon.com/docs/app-submission/appstore-privacy-labels.html",
+  "proof_screenshot": "artifacts/screens/amazon-console-draft.png",
+  "testing_instructions_local_copy": "marketing/amazon-testing-instructions.txt",
+  "testing_instructions_status": "Filled in current review form, but did not persist after reload in three UI attempts. Local copy retained; final console save/submission must verify this field.",
+  "submission_authorization": "User permits submission only if complete. Required readiness gates remain pending; no submission performed."
+}

@@ -1,0 +1,53 @@
+{
+  "status": "DRAFT - saved in Amazon console; not submitted or approved",
+  "locale": "en-US",
+  "title": "DishNest - Recipe Keeper and Meal Planner",
+  "short_description": "Recipe keeper, weekly meal planner and grocery list in one place. Save recipes, organize your pantry and cook step by step with timers and spoken instructions.",
+  "full_description": "Keep your favorite recipes. Plan your week. Make your grocery list.\n\nDishNest brings your recipe book, meal planner, shopping list and pantry together in one kitchen app for your tablet. Save family favorites, organize everyday meals and follow recipes one step at a time.\n\nYOUR PERSONAL RECIPE BOOK\nSave recipes with ingredients, cooking steps, photos, serving sizes and personal notes. Mark favorites, group recipes into collections, and search or filter your recipe collection when you need dinner inspiration.\n\nWEEKLY MEAL PLANNING\nPlan breakfast, lunch, dinner and snacks across seven days. Adjust servings, copy a previous week and get offline dinner suggestions from recipes you have saved. Named plans and reusable templates help organize different routines; additional plans and templates require Premium access.\n\nGROCERY LISTS FROM YOUR MEALS\nTurn a meal plan into a grouped shopping list. Compatible ingredient amounts are combined, quantities follow planned servings and compatible pantry quantities are deducted. Add your own items, check off your groceries and share the list as text. Combining several plans into one list requires Premium access.\n\nA MORE ORGANIZED PANTRY\nTrack ingredient quantities and optional check dates. See recipe suggestions based on ingredient names you already have, with missing items shown. Optional daily reminders prompt you to check pantry items. Always check quantities, packaging, freshness and dietary suitability yourself.\n\nSTEP-BY-STEP COOKING\nFollow large cooking steps with touch controls, spoken instructions and multiple timers. Push-to-talk commands need a compatible speech recognition service. Voice availability and internet requirements vary by device and provider. Device settings can delay timer and reminder notifications.\n\nREVIEW BEFORE YOU SAVE\nReview imported recipe text, supported recipe website data or printed English text recognized on your device. Crop a recipe photo before recognition and check the results. Website imports require internet access and respect robots policies. Import requires Premium access; save only content you have permission to use.\n\nLOCAL STORAGE, NO ACCOUNT REQUIRED\nKeep recipes, plans, pantry items and shopping lists locally without registration or advertising. Export a JSON backup or a ZIP backup with recipe photos. Restore backups into an empty kitchen; exported files remain under your control.\n\nThis development preview has Amazon purchases disabled. Premium access is required for more than 25 recipes, imports, reusable templates, additional meal plans and combined-plan shopping. Premium offers and prices are not yet available in this build.",
+  "feature_bullets": [
+    "Save recipes, photos, favorites and notes in a searchable personal recipe book",
+    "Plan weekly meals with serving adjustments and offline suggestions from saved recipes",
+    "Create grocery lists with compatible ingredient consolidation and pantry deductions",
+    "Track pantry quantities and optional check dates, with opt-in daily reminders",
+    "Cook step by step with touch controls, narration and multiple timers"
+  ],
+  "keywords": [
+    "recipe",
+    "keeper",
+    "meal",
+    "planner",
+    "cookbook",
+    "grocery",
+    "shopping",
+    "list",
+    "pantry",
+    "organizer",
+    "organiser",
+    "cooking",
+    "timer",
+    "offline",
+    "weekly",
+    "family",
+    "recipes",
+    "kitchen"
+  ],
+  "release_notes": "Development preview. See testing instructions and readiness checklist before release.",
+  "support_contact": "https://github.com/lanray07/DishNest/issues",
+  "support_email": "banksmi@mail.com",
+  "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
+  "website_url": "https://github.com/lanray07/DishNest",
+  "amazon_listing_url": null,
+  "updated_at": "2026-10-18",
+  "draft_notes": {
+    "publication_permitted": false,
+    "console_entered": true,
+    "copy_scope": "English (U.S.) console draft; final release approval pending.",
+    "required_publisher_inputs": [
+      "Publisher legal identity and final service operator disclosures",
+      "Approved production billing setup, prices and terms",
+      "Publisher-signed release APK and exact device verification",
+      "Export-compliance certification by the publisher",
+      "Native-approved translations and final hardware screenshots"
+    ]
+  }
+}
