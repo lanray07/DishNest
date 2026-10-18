@@ -1,0 +1,49 @@
+DISHNEST - LOCAL STORE LISTING DRAFT
+Not entered in the console; not approved for submission.
+Updated 18 October 2026.
+
+Display title
+DishNest – Recipe Keeper & Meal Planner
+
+Short description
+Keep recipes, plan your week and turn meals into shopping lists. Organise your pantry and follow cooking steps with timers, narration and touch controls.
+
+Long description
+Save recipes. Plan meals. Cook with confidence.
+
+Keep recipes, photos, personal notes and favourites in one recipe book. Search and filter your collection to find the next meal worth making again.
+
+Plan breakfast, lunch, dinner and snacks across seven days. Adjust servings, copy a previous week, save reusable templates and get offline dinner suggestions from your own recipes. Named meal plans help organise different routines; combining several plans into one shopping list requires Premium access.
+
+Turn planned meals into an organised shopping list. Compatible ingredient quantities are combined, servings are respected and compatible pantry quantities are deducted. Add your own items, tick off your shop and share the list as text.
+
+Track pantry quantities and optional check dates. Enable daily pantry reminders if you want a gentle prompt to check items. Find recipe suggestions based on ingredient names you already have, with missing ingredients shown. Always check quantities, packaging, freshness and dietary suitability yourself.
+
+Follow recipes one step at a time with large text, spoken instructions, independent timers and touch controls. Push-to-talk commands need a compatible recognition service; availability and connectivity depend on your device and provider. Timer and reminder notifications can be delayed by device settings.
+
+Review imported text or recipe website data before saving. Recognise printed English recipe text on device, with a crop preview to select the useful part of a photo. Recognition accuracy varies, so check the result carefully. Website imports require internet access.
+
+Recipes, plans, pantry and shopping items are stored locally. No registration or advertising is required. Export JSON backups or ZIP backups with recipe photos, and restore into an empty kitchen. Exported files remain under your control.
+
+This development preview has Amazon purchases disabled. Premium access is required for features including more than 25 recipes, recipe imports, reusable templates and additional meal plans. Store availability, prices and subscription terms have not been finalised. Native language approval and the full hardware test programme are still pending.
+
+Product feature bullets
+Keep recipes, photos, notes and favourites together in a searchable recipe book
+Plan a week of meals with serving adjustments, named plans and reusable templates
+Build grouped shopping lists with pantry deductions and optional pantry reminders
+Cook step by step with timers, narration, touch controls and supported push-to-talk commands
+Keep kitchen data locally and export JSON or photo-inclusive ZIP backups
+
+Keywords
+recipe keeper, meal planner, recipe organiser, weekly meal planner, recipe book, shopping list, cooking app, grocery list, pantry organiser, offline recipe book, kitchen organiser
+
+Release notes
+Development preview: adds named meal plans, combined-plan shopping with Premium access, opt-in pantry reminders, an English photo-recognition crop preview, compatible backup migration and audio-focus/timer fixes. Ten isolated Fire smoke tests and a background timer probe passed; full device QA and native language approval remain pending. Amazon purchases are disabled.
+
+Publisher fields still required
+Legal publisher identity and rights approval
+Support email or contact URL
+Public privacy policy URL and service operator disclosures
+Approved app pricing, IAP catalog, terms and territories
+Content-rating and privacy-label declarations
+Native-approved store translations and final hardware screenshots
