@@ -30,8 +30,8 @@
     "kitchen organiser"
   ],
   "release_notes": "Development preview: adds named meal plans, combined-plan shopping with Premium access, opt-in pantry reminders, an English photo-recognition crop preview, compatible backup migration and audio-focus/timer fixes. Ten isolated Fire smoke tests and a background timer probe passed; full device QA and native language approval remain pending. Amazon purchases are disabled.",
-  "support_contact": null,
-  "privacy_policy_url": null,
+  "support_contact": "https://github.com/lanray07/DishNest/issues",
+  "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
   "amazon_listing_url": null,
   "updated_at": "2026-10-18",
   "draft_notes": {
@@ -42,8 +42,7 @@
     "premium": "Billing is disabled in delivered builds. Demo feature exploration does not establish live purchase availability. Recheck all feature gates and offer wording before release.",
     "required_publisher_inputs": [
       "Legal publisher identity and rights approval",
-      "Support email or contact URL",
-      "Public privacy policy URL and service operator disclosures",
+      "Private privacy-request contact and final service operator disclosures",
       "Approved app pricing, IAP catalog, terms and territories",
       "Content-rating and privacy-label declarations",
       "Native-approved store translations and final hardware screenshots"
@@ -56,6 +55,8 @@
       "screenshots_approved": false
     },
     "reference": "https://developer.amazon.com/docs/app-submission/appstore-details.html",
-    "reference_checked_at": "2026-10-18"
-  }
+    "reference_checked_at": "2026-10-18",
+    "github_urls": "Project, support and draft privacy links use the public GitHub repository. No GitHub Pages deployment is configured. Privacy content still requires publisher legal approval; the Amazon listing URL remains unset until an actual store listing exists."
+  },
+  "website_url": "https://github.com/lanray07/DishNest"
 }

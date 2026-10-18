@@ -22,8 +22,8 @@
   },
   {
     "file": "DishNest-source.zip",
-    "bytes": 19850921,
-    "sha256": "671050b956716969865a1f699b451ad94bd31ffcd32a7196d6ae7000850194ae",
+    "bytes": 19852345,
+    "sha256": "6bbbb42612a55ce0f61ee969abea35945ee64f7e8f40a014d736db33a9f2ab54",
     "kind": "source archive with verification evidence",
     "production_ready": false
   }
