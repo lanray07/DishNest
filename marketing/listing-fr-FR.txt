@@ -1,0 +1,59 @@
+DISHNEST - LOCAL STORE LISTING DRAFT
+Saved in Amazon console as a draft; not approved for submission.
+Updated 2026-10-18.
+
+Display title
+DishNest - Recettes, menus et liste de courses
+
+Short description
+Enregistrez vos recettes, planifiez les repas de la semaine et préparez vos courses. Gérez vos provisions et cuisinez avec narration et minuteurs.
+
+Long description
+VOTRE CARNET DE RECETTES
+DishNest réunit recettes, menus, liste de courses et provisions sur votre tablette. Enregistrez ingrédients, étapes, photos, portions et notes. Ajoutez des favoris, créez des collections et retrouvez vos recettes avec la recherche et les filtres.
+
+PLANIFIEZ VOS REPAS
+Organisez petits-déjeuners, déjeuners, dîners et collations sur sept jours. Ajustez les portions, copiez une semaine précédente et obtenez des suggestions hors connexion à partir de vos recettes enregistrées. Les plans nommés supplémentaires et les modèles réutilisables nécessitent Premium.
+
+COURSES ET PROVISIONS
+Transformez un menu en liste de courses regroupée. Les quantités compatibles sont additionnées, ajustées aux portions et réduites des provisions compatibles. Ajoutez des articles, cochez vos achats et partagez la liste sous forme de texte. Combiner plusieurs plans nécessite Premium. Suivez les quantités et les dates de vérification facultatives, avec des rappels quotidiens sur demande. Vérifiez vous-même les quantités, les emballages, la fraîcheur et la compatibilité avec votre alimentation.
+
+CUISINEZ ÉTAPE PAR ÉTAPE
+Suivez de grandes instructions avec commandes tactiles, narration et plusieurs minuteurs. Les commandes par appui pour parler nécessitent un service de reconnaissance vocale compatible. La disponibilité et les besoins Internet dépendent de l’appareil et du fournisseur. Les réglages de l’appareil peuvent retarder les notifications.
+
+VÉRIFIEZ AVANT D’ENREGISTRER
+Relisez le texte importé, les données de sites de recettes compatibles ou le texte imprimé en anglais reconnu sur l’appareil. Recadrez une photo avant la reconnaissance et vérifiez le résultat. Les imports web nécessitent Internet et respectent les règles des robots. L’import nécessite Premium. Enregistrez uniquement le contenu que vous avez le droit d’utiliser.
+
+STOCKAGE LOCAL SANS COMPTE
+Conservez recettes, plans et listes localement, sans inscription ni publicité. Exportez une sauvegarde JSON ou ZIP avec les photos des recettes. Restaurez dans une cuisine vide ; vous gardez le contrôle des fichiers exportés.
+
+Les achats Amazon sont désactivés dans cet aperçu de développement. Plus de 25 recettes, les imports, modèles, plans supplémentaires et courses combinées nécessitent Premium. Les offres et tarifs Premium ne sont pas encore disponibles dans cette version.
+
+Product feature bullets
+Enregistrez recettes, photos, favoris et notes dans un carnet consultable
+Planifiez la semaine avec portions ajustables et suggestions hors connexion
+Créez des listes avec regroupement des quantités compatibles et déduction des provisions
+Suivez vos provisions et dates de vérification avec rappels facultatifs
+Cuisinez avec commandes tactiles, narration et plusieurs minuteurs
+
+Keywords
+recettes, carnet, cuisine, menus, repas, courses, liste, provisions, planning, minuteur, familial
+
+Release notes
+Development preview. See testing instructions and readiness checklist before release.
+
+Website URL
+https://github.com/lanray07/DishNest
+
+Support URL
+https://github.com/lanray07/DishNest/issues
+
+Privacy policy URL (draft policy)
+https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt
+
+Publisher fields still required
+Publisher legal identity and final service operator disclosures
+Approved production billing setup, prices and terms
+Publisher-signed release APK and exact device verification
+Export-compliance certification by the publisher
+Native-approved translations and final hardware screenshots

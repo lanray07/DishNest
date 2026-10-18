@@ -1,0 +1,59 @@
+DISHNEST - LOCAL STORE LISTING DRAFT
+Saved in Amazon console as a draft; not approved for submission.
+Updated 2026-10-18.
+
+Display title
+DishNest - Recepten, weekmenu en boodschappenlijst
+
+Short description
+Bewaar recepten, plan maaltijden en maak boodschappenlijsten. Beheer je voorraad en kook stap voor stap met gesproken instructies en timers.
+
+Long description
+JE PERSOONLIJKE RECEPTENBOEK
+DishNest brengt recepten, maaltijdplanning, boodschappen en voorraad samen op je tablet. Bewaar ingrediënten, bereidingsstappen, foto’s, porties en notities. Markeer favorieten, maak verzamelingen en zoek of filter je recepten.
+
+PLAN JE WEEKMENU
+Plan ontbijt, lunch, avondeten en tussendoortjes voor zeven dagen. Pas porties aan, kopieer een eerdere week en krijg offline suggesties uit je opgeslagen recepten. Extra benoemde plannen en herbruikbare sjablonen vereisen Premium.
+
+BOODSCHAPPEN EN VOORRAAD
+Maak van je plan een gegroepeerde boodschappenlijst. Hoeveelheden van passende ingrediënten worden opgeteld, afgestemd op porties en verminderd met passende voorraadhoeveelheden. Voeg artikelen toe, vink boodschappen af en deel de lijst als tekst. Meerdere plannen combineren vereist Premium. Houd hoeveelheden en optionele controledatums bij, met dagelijkse herinneringen als je daarvoor kiest. Controleer zelf altijd hoeveelheden, verpakkingen, versheid en geschiktheid voor je voeding.
+
+STAP VOOR STAP KOKEN
+Volg grote kookstappen met aanraakbediening, gesproken instructies en meerdere timers. Druk-en-spreekopdrachten vereisen een geschikte spraakherkenningsdienst. Beschikbaarheid en internetvereisten verschillen per apparaat en aanbieder. Apparaatinstellingen kunnen meldingen vertragen.
+
+CONTROLEER IMPORTS
+Controleer geïmporteerde recepttekst, gegevens van ondersteunde receptwebsites of gedrukte Engelse tekst die op je apparaat wordt herkend. Snijd een foto bij vóór tekstherkenning en controleer het resultaat. Website-imports vereisen internet en respecteren robotsregels. Importeren vereist Premium. Bewaar alleen inhoud die je mag gebruiken.
+
+LOKAAL ZONDER ACCOUNT
+Bewaar recepten, plannen en lijsten lokaal, zonder registratie of advertenties. Exporteer een JSON-back-up of ZIP-back-up met receptfoto’s. Herstel in een lege keuken; geëxporteerde bestanden beheer je zelf.
+
+Amazon-aankopen zijn uitgeschakeld in deze ontwikkelversie. Meer dan 25 recepten, imports, sjablonen, extra plannen en gecombineerde boodschappen vereisen Premium. Premium-aanbiedingen en prijzen zijn nog niet beschikbaar in deze versie.
+
+Product feature bullets
+Bewaar recepten, foto’s, favorieten en notities in een doorzoekbaar receptenboek
+Plan weekmenu’s met aanpasbare porties en offline suggesties
+Maak lijsten met samengevoegde passende hoeveelheden en voorraadaftrek
+Beheer voorraad en controledatums met optionele herinneringen
+Kook met aanraakbediening, gesproken instructies en meerdere timers
+
+Keywords
+recepten, receptenboek, weekmenu, maaltijden, boodschappen, lijst, voorraad, koken, keuken, timer, offline
+
+Release notes
+Development preview. See testing instructions and readiness checklist before release.
+
+Website URL
+https://github.com/lanray07/DishNest
+
+Support URL
+https://github.com/lanray07/DishNest/issues
+
+Privacy policy URL (draft policy)
+https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt
+
+Publisher fields still required
+Publisher legal identity and final service operator disclosures
+Approved production billing setup, prices and terms
+Publisher-signed release APK and exact device verification
+Export-compliance certification by the publisher
+Native-approved translations and final hardware screenshots

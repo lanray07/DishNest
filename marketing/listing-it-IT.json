@@ -1,0 +1,49 @@
+{
+  "status": "DRAFT - saved in Amazon console; native review pending",
+  "locale": "it-IT",
+  "title": "DishNest - Ricettario, menu e lista della spesa",
+  "short_description": "Salva ricette, pianifica i pasti settimanali e crea la lista della spesa. Organizza la dispensa e cucina passo dopo passo con istruzioni vocali e timer.",
+  "full_description": "IL TUO RICETTARIO PERSONALE\nDishNest riunisce ricette, pianificazione dei pasti, lista della spesa e dispensa sul tuo tablet. Salva ingredienti, passaggi, foto, porzioni e note. Aggiungi preferiti, crea raccolte e cerca o filtra le tue ricette.\n\nPIANIFICA LA SETTIMANA\nOrganizza colazione, pranzo, cena e spuntini per sette giorni. Regola le porzioni, copia una settimana precedente e ricevi suggerimenti offline dalle ricette salvate. I piani aggiuntivi con nome e i modelli riutilizzabili richiedono Premium.\n\nSPESA E DISPENSA\nTrasforma un piano in una lista della spesa raggruppata. Le quantità compatibili vengono sommate, adattate alle porzioni e ridotte delle scorte compatibili. Aggiungi articoli, spunta gli acquisti e condividi la lista come testo. Combinare più piani richiede Premium. Registra quantità e date di controllo facoltative; attiva promemoria giornalieri se lo desideri. Controlla sempre quantità, confezioni, freschezza e compatibilità con la tua alimentazione.\n\nCUCINA PASSO DOPO PASSO\nSegui istruzioni grandi con comandi touch, narrazione e più timer. I comandi premi e parla richiedono un servizio di riconoscimento vocale compatibile. Disponibilità e necessità di Internet variano secondo dispositivo e fornitore. Le impostazioni del dispositivo possono ritardare le notifiche.\n\nCONTROLLA LE IMPORTAZIONI\nRivedi il testo importato, i dati dei siti di ricette compatibili o il testo stampato in inglese riconosciuto sul dispositivo. Ritaglia una foto prima del riconoscimento e controlla il risultato. Le importazioni web richiedono Internet e rispettano le regole dei robot. Importare richiede Premium. Salva solo contenuti che hai il diritto di utilizzare.\n\nDATI LOCALI SENZA ACCOUNT\nConserva ricette, piani e liste localmente, senza registrazione né pubblicità. Esporta backup JSON o ZIP con le foto delle ricette. Ripristina in una cucina vuota; i file esportati restano sotto il tuo controllo.\n\nGli acquisti Amazon sono disattivati in questa anteprima di sviluppo. Più di 25 ricette, importazioni, modelli, piani aggiuntivi e spese combinate richiedono Premium. Offerte e prezzi Premium non sono ancora disponibili in questa versione.",
+  "feature_bullets": [
+    "Salva ricette, foto, preferiti e note in un ricettario con ricerca",
+    "Pianifica i pasti con porzioni regolabili e suggerimenti offline",
+    "Crea liste con quantità compatibili raggruppate e scorte detratte",
+    "Gestisci la dispensa e le date di controllo con promemoria facoltativi",
+    "Cucina con comandi touch, narrazione e più timer"
+  ],
+  "keywords": [
+    "ricette",
+    "ricettario",
+    "pasti",
+    "menu",
+    "settimanale",
+    "spesa",
+    "lista",
+    "dispensa",
+    "cucina",
+    "timer",
+    "offline"
+  ],
+  "release_notes": "Development preview. See testing instructions and readiness checklist before release.",
+  "support_contact": "https://github.com/lanray07/DishNest/issues",
+  "support_email": "banksmi@mail.com",
+  "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
+  "website_url": "https://github.com/lanray07/DishNest",
+  "amazon_listing_url": null,
+  "updated_at": "2026-10-18",
+  "draft_notes": {
+    "publication_permitted": false,
+    "console_entered": true,
+    "copy_scope": "Italian translated draft; default English artwork fallback; native approval pending.",
+    "required_publisher_inputs": [
+      "Publisher legal identity and final service operator disclosures",
+      "Approved production billing setup, prices and terms",
+      "Publisher-signed release APK and exact device verification",
+      "Export-compliance certification by the publisher",
+      "Native-approved translations and final hardware screenshots"
+    ],
+    "native_language_approved": false,
+    "localized_artwork_approved": false,
+    "console_verified_after_reload": true
+  }
+}

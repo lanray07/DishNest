@@ -1,63 +1,56 @@
 {
-  "status": "DRAFT — not approved for submission",
+  "status": "DRAFT - saved in Amazon console; native review pending",
   "locale": "en-GB",
   "title": "DishNest - Recipe Keeper and Meal Planner",
-  "title_options": [
-    "DishNest – Recipe Keeper & Meal Planner",
-    "DishNest – Recipe Book & Shopping List",
-    "DishNest – Weekly Meal Planner"
-  ],
-  "short_description": "Keep recipes, plan your week and turn meals into shopping lists. Organise your pantry and follow cooking steps with timers, narration and touch controls.",
-  "full_description": "Save recipes. Plan meals. Cook with confidence.\n\nKeep recipes, photos, personal notes and favourites in one recipe book. Search and filter your collection to find the next meal worth making again.\n\nPlan breakfast, lunch, dinner and snacks across seven days. Adjust servings, copy a previous week, save reusable templates and get offline dinner suggestions from your own recipes. Named meal plans help organise different routines; combining several plans into one shopping list requires Premium access.\n\nTurn planned meals into an organised shopping list. Compatible ingredient quantities are combined, servings are respected and compatible pantry quantities are deducted. Add your own items, tick off your shop and share the list as text.\n\nTrack pantry quantities and optional check dates. Enable daily pantry reminders if you want a gentle prompt to check items. Find recipe suggestions based on ingredient names you already have, with missing ingredients shown. Always check quantities, packaging, freshness and dietary suitability yourself.\n\nFollow recipes one step at a time with large text, spoken instructions, independent timers and touch controls. Push-to-talk commands need a compatible recognition service; availability and connectivity depend on your device and provider. Timer and reminder notifications can be delayed by device settings.\n\nReview imported text or recipe website data before saving. Recognise printed English recipe text on device, with a crop preview to select the useful part of a photo. Recognition accuracy varies, so check the result carefully. Website imports require internet access.\n\nRecipes, plans, pantry and shopping items are stored locally. No registration or advertising is required. Export JSON backups or ZIP backups with recipe photos, and restore into an empty kitchen. Exported files remain under your control.\n\nThis development preview has Amazon purchases disabled. Premium access is required for features including more than 25 recipes, recipe imports, reusable templates and additional meal plans. Store availability, prices and subscription terms have not been finalised. Native language approval and the full hardware test programme are still pending.",
+  "short_description": "Recipe keeper, weekly meal planner and grocery list in one place. Save recipes, organise your pantry and cook step by step with timers and spoken instructions.",
+  "full_description": "Keep your favourite recipes. Plan your week. Make your grocery list.\n\nDishNest brings your recipe book, meal planner, shopping list and pantry together in one kitchen app for your tablet. Save family favourites, organise everyday meals and follow recipes one step at a time.\n\nYOUR PERSONAL RECIPE BOOK\nSave recipes with ingredients, cooking steps, photos, serving sizes and personal notes. Mark favourites, group recipes into collections, and search or filter your recipe collection when you need dinner inspiration.\n\nWEEKLY MEAL PLANNING\nPlan breakfast, lunch, dinner and snacks across seven days. Adjust servings, copy a previous week and get offline dinner suggestions from recipes you have saved. Named plans and reusable templates help organise different routines; additional plans and templates require Premium access.\n\nGROCERY LISTS FROM YOUR MEALS\nTurn a meal plan into a grouped shopping list. Compatible ingredient amounts are combined, quantities follow planned servings and compatible pantry quantities are deducted. Add your own items, check off your groceries and share the list as text. Combining several plans into one list requires Premium access.\n\nA MORE ORGANISED PANTRY\nTrack ingredient quantities and optional check dates. See recipe suggestions based on ingredient names you already have, with missing items shown. Optional daily reminders prompt you to check pantry items. Always check quantities, packaging, freshness and dietary suitability yourself.\n\nSTEP-BY-STEP COOKING\nFollow large cooking steps with touch controls, spoken instructions and multiple timers. Push-to-talk commands need a compatible speech recognition service. Voice availability and internet requirements vary by device and provider. Device settings can delay timer and reminder notifications.\n\nREVIEW BEFORE YOU SAVE\nReview imported recipe text, supported recipe website data or printed English text recognized on your device. Crop a recipe photo before recognition and check the results. Website imports require internet access and respect robots policies. Import requires Premium access; save only content you have permission to use.\n\nLOCAL STORAGE, NO ACCOUNT REQUIRED\nKeep recipes, plans, pantry items and shopping lists locally without registration or advertising. Export a JSON backup or a ZIP backup with recipe photos. Restore backups into an empty kitchen; exported files remain under your control.\n\nThis development preview has Amazon purchases disabled. Premium access is required for more than 25 recipes, imports, reusable templates, additional meal plans and combined-plan shopping. Premium offers and prices are not yet available in this build.",
   "feature_bullets": [
-    "Keep recipes, photos, notes and favourites together in a searchable recipe book",
-    "Plan a week of meals with serving adjustments, named plans and reusable templates",
-    "Build grouped shopping lists with pantry deductions and optional pantry reminders",
-    "Cook step by step with timers, narration, touch controls and supported push-to-talk commands",
-    "Keep kitchen data locally and export JSON or photo-inclusive ZIP backups"
+    "Save recipes, photos, favourites and notes in a searchable personal recipe book",
+    "Plan weekly meals with serving adjustments and offline suggestions from saved recipes",
+    "Create grocery lists with compatible ingredient consolidation and pantry deductions",
+    "Track pantry quantities and optional check dates, with opt-in daily reminders",
+    "Cook step by step with touch controls, narration and multiple timers"
   ],
   "keywords": [
-    "recipe keeper",
-    "meal planner",
-    "recipe organiser",
-    "weekly meal planner",
-    "recipe book",
-    "shopping list",
-    "cooking app",
-    "grocery list",
-    "pantry organiser",
-    "offline recipe book",
-    "kitchen organiser"
+    "recipe",
+    "keeper",
+    "meal",
+    "planner",
+    "cookbook",
+    "grocery",
+    "shopping",
+    "list",
+    "pantry",
+    "organizer",
+    "organiser",
+    "cooking",
+    "timer",
+    "offline",
+    "weekly",
+    "family",
+    "recipes",
+    "kitchen"
   ],
-  "release_notes": "Development preview: adds named meal plans, combined-plan shopping with Premium access, opt-in pantry reminders, an English photo-recognition crop preview, compatible backup migration, audio-focus/timer fixes and robots policy checks for website imports. Ten isolated Fire smoke tests passed; full device QA and native language approval remain pending. Amazon purchases are disabled.",
+  "release_notes": "Development preview. See testing instructions and readiness checklist before release.",
   "support_contact": "https://github.com/lanray07/DishNest/issues",
+  "support_email": "banksmi@mail.com",
   "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
+  "website_url": "https://github.com/lanray07/DishNest",
   "amazon_listing_url": null,
   "updated_at": "2026-10-18",
   "draft_notes": {
     "publication_permitted": false,
-    "console_entered": false,
-    "copy_scope": "Local English listing draft only; not an approved commercial release listing.",
-    "verification": "73 host tests (including seven offline import-policy fixtures), 10 isolated Fire smoke tests and the separate Fire background timer probe. See docs/RELEASE_READINESS.md for current results and limits.",
-    "premium": "Billing is disabled in delivered builds. Demo feature exploration does not establish live purchase availability. Recheck all feature gates and offer wording before release.",
+    "console_entered": true,
+    "copy_scope": "English (U.K.) translated draft; default English artwork fallback; native approval pending.",
     "required_publisher_inputs": [
-      "Legal publisher identity and rights approval",
-      "Final legal publisher identity and service operator disclosures",
-      "Approved app pricing, IAP catalog, terms and territories",
-      "Content-rating and privacy-label declarations",
-      "Native-approved store translations and final hardware screenshots"
+      "Publisher legal identity and final service operator disclosures",
+      "Approved production billing setup, prices and terms",
+      "Publisher-signed release APK and exact device verification",
+      "Export-compliance certification by the publisher",
+      "Native-approved translations and final hardware screenshots"
     ],
-    "assets": {
-      "small_icon": "marketing/assets/icon-114.png",
-      "large_icon": "marketing/assets/icon-512.png",
-      "optional_promotional_image": "marketing/assets/promotional-1024x500.png",
-      "screenshot_manifest": "marketing/screenshots/manifest.json",
-      "screenshots_approved": false
-    },
-    "reference": "https://developer.amazon.com/docs/app-submission/appstore-details.html",
-    "reference_checked_at": "2026-10-18",
-    "github_urls": "Project, support and draft privacy links use the public GitHub repository. No GitHub Pages deployment is configured. Privacy content still requires publisher legal approval; the Amazon listing URL remains unset until an actual store listing exists. Public support email supplied by the publisher and a draft English (U.S.) listing are now saved in the Amazon console; see amazon-console-draft.json."
-  },
-  "website_url": "https://github.com/lanray07/DishNest",
-  "support_email": "banksmi@mail.com"
+    "native_language_approved": false,
+    "localized_artwork_approved": false,
+    "console_verified_after_reload": true
+  }
 }

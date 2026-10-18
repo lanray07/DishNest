@@ -1,0 +1,59 @@
+DISHNEST - LOCAL STORE LISTING DRAFT
+Saved in Amazon console as a draft; not approved for submission.
+Updated 2026-10-18.
+
+Display title
+DishNest - Receitas, ementas e lista de compras
+
+Short description
+Guarde receitas, planeie as refeições da semana e crie a lista de compras. Organize a despensa e cozinhe com instruções faladas e temporizadores.
+
+Long description
+O SEU LIVRO DE RECEITAS
+O DishNest reúne receitas, planeamento de refeições, lista de compras e despensa no seu tablet. Guarde ingredientes, passos, fotografias, porções e notas. Marque favoritos, crie coleções e encontre receitas com pesquisa e filtros.
+
+PLANEIE A SEMANA
+Organize pequenos-almoços, almoços, jantares e lanches para sete dias. Ajuste as porções, copie uma semana anterior e receba sugestões sem ligação à Internet a partir das receitas guardadas. Os planos adicionais com nome e os modelos reutilizáveis exigem Premium.
+
+COMPRAS E DESPENSA
+Transforme um plano numa lista de compras agrupada. As quantidades compatíveis são somadas, ajustadas às porções e reduzidas pelas existências compatíveis. Adicione produtos, assinale as compras e partilhe a lista como texto. Combinar vários planos exige Premium. Registe quantidades e datas de verificação opcionais, com lembretes diários se desejar. Verifique sempre quantidades, embalagens, frescura e adequação à sua alimentação.
+
+COZINHE PASSO A PASSO
+Siga instruções grandes com controlos táteis, narração e vários temporizadores. Os comandos de premir para falar exigem um serviço de reconhecimento de voz compatível. A disponibilidade e os requisitos de Internet variam consoante o dispositivo e o fornecedor. As definições do dispositivo podem atrasar notificações.
+
+REVEJA AS IMPORTAÇÕES
+Verifique o texto importado, dados de sites de receitas compatíveis ou texto impresso em inglês reconhecido no dispositivo. Recorte a fotografia antes do reconhecimento e confira o resultado. As importações da Web exigem Internet e respeitam as regras de robôs. Importar exige Premium. Guarde apenas conteúdo que tenha autorização para utilizar.
+
+ARMAZENAMENTO LOCAL SEM CONTA
+Mantenha receitas, planos e listas localmente, sem registo nem publicidade. Exporte cópias de segurança JSON ou ZIP com fotografias das receitas. Restaure numa cozinha vazia; os ficheiros exportados ficam sob o seu controlo.
+
+As compras da Amazon estão desativadas nesta versão de desenvolvimento. Mais de 25 receitas, importações, modelos, planos adicionais e compras combinadas exigem Premium. As ofertas e os preços Premium ainda não estão disponíveis nesta versão.
+
+Product feature bullets
+Guarde receitas, fotografias, favoritos e notas num livro pesquisável
+Planeie refeições com ajuste de porções e sugestões sem ligação
+Crie listas com quantidades compatíveis somadas e dedução de existências
+Controle a despensa e as datas de verificação com lembretes opcionais
+Cozinhe com controlos táteis, narração e vários temporizadores
+
+Keywords
+receitas, ementa, refeições, planeamento, compras, lista, despensa, cozinha, culinária, temporizador
+
+Release notes
+Development preview. See testing instructions and readiness checklist before release.
+
+Website URL
+https://github.com/lanray07/DishNest
+
+Support URL
+https://github.com/lanray07/DishNest/issues
+
+Privacy policy URL (draft policy)
+https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt
+
+Publisher fields still required
+Publisher legal identity and final service operator disclosures
+Approved production billing setup, prices and terms
+Publisher-signed release APK and exact device verification
+Export-compliance certification by the publisher
+Native-approved translations and final hardware screenshots

@@ -1,0 +1,49 @@
+{
+  "status": "DRAFT - saved in Amazon console; native review pending",
+  "locale": "fr-FR",
+  "title": "DishNest - Recettes, menus et liste de courses",
+  "short_description": "Enregistrez vos recettes, planifiez les repas de la semaine et préparez vos courses. Gérez vos provisions et cuisinez avec narration et minuteurs.",
+  "full_description": "VOTRE CARNET DE RECETTES\nDishNest réunit recettes, menus, liste de courses et provisions sur votre tablette. Enregistrez ingrédients, étapes, photos, portions et notes. Ajoutez des favoris, créez des collections et retrouvez vos recettes avec la recherche et les filtres.\n\nPLANIFIEZ VOS REPAS\nOrganisez petits-déjeuners, déjeuners, dîners et collations sur sept jours. Ajustez les portions, copiez une semaine précédente et obtenez des suggestions hors connexion à partir de vos recettes enregistrées. Les plans nommés supplémentaires et les modèles réutilisables nécessitent Premium.\n\nCOURSES ET PROVISIONS\nTransformez un menu en liste de courses regroupée. Les quantités compatibles sont additionnées, ajustées aux portions et réduites des provisions compatibles. Ajoutez des articles, cochez vos achats et partagez la liste sous forme de texte. Combiner plusieurs plans nécessite Premium. Suivez les quantités et les dates de vérification facultatives, avec des rappels quotidiens sur demande. Vérifiez vous-même les quantités, les emballages, la fraîcheur et la compatibilité avec votre alimentation.\n\nCUISINEZ ÉTAPE PAR ÉTAPE\nSuivez de grandes instructions avec commandes tactiles, narration et plusieurs minuteurs. Les commandes par appui pour parler nécessitent un service de reconnaissance vocale compatible. La disponibilité et les besoins Internet dépendent de l’appareil et du fournisseur. Les réglages de l’appareil peuvent retarder les notifications.\n\nVÉRIFIEZ AVANT D’ENREGISTRER\nRelisez le texte importé, les données de sites de recettes compatibles ou le texte imprimé en anglais reconnu sur l’appareil. Recadrez une photo avant la reconnaissance et vérifiez le résultat. Les imports web nécessitent Internet et respectent les règles des robots. L’import nécessite Premium. Enregistrez uniquement le contenu que vous avez le droit d’utiliser.\n\nSTOCKAGE LOCAL SANS COMPTE\nConservez recettes, plans et listes localement, sans inscription ni publicité. Exportez une sauvegarde JSON ou ZIP avec les photos des recettes. Restaurez dans une cuisine vide ; vous gardez le contrôle des fichiers exportés.\n\nLes achats Amazon sont désactivés dans cet aperçu de développement. Plus de 25 recettes, les imports, modèles, plans supplémentaires et courses combinées nécessitent Premium. Les offres et tarifs Premium ne sont pas encore disponibles dans cette version.",
+  "feature_bullets": [
+    "Enregistrez recettes, photos, favoris et notes dans un carnet consultable",
+    "Planifiez la semaine avec portions ajustables et suggestions hors connexion",
+    "Créez des listes avec regroupement des quantités compatibles et déduction des provisions",
+    "Suivez vos provisions et dates de vérification avec rappels facultatifs",
+    "Cuisinez avec commandes tactiles, narration et plusieurs minuteurs"
+  ],
+  "keywords": [
+    "recettes",
+    "carnet",
+    "cuisine",
+    "menus",
+    "repas",
+    "courses",
+    "liste",
+    "provisions",
+    "planning",
+    "minuteur",
+    "familial"
+  ],
+  "release_notes": "Development preview. See testing instructions and readiness checklist before release.",
+  "support_contact": "https://github.com/lanray07/DishNest/issues",
+  "support_email": "banksmi@mail.com",
+  "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
+  "website_url": "https://github.com/lanray07/DishNest",
+  "amazon_listing_url": null,
+  "updated_at": "2026-10-18",
+  "draft_notes": {
+    "publication_permitted": false,
+    "console_entered": true,
+    "copy_scope": "French translated draft; default English artwork fallback; native approval pending.",
+    "required_publisher_inputs": [
+      "Publisher legal identity and final service operator disclosures",
+      "Approved production billing setup, prices and terms",
+      "Publisher-signed release APK and exact device verification",
+      "Export-compliance certification by the publisher",
+      "Native-approved translations and final hardware screenshots"
+    ],
+    "native_language_approved": false,
+    "localized_artwork_approved": false,
+    "console_verified_after_reload": true
+  }
+}

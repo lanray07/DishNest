@@ -24,6 +24,8 @@ def render(listing):
 
 
 if __name__ == '__main__':
-    listing = json.loads((ROOT / 'marketing/listing-en-GB.json').read_text(encoding='utf-8'))
-    (ROOT / 'marketing/listing-en-GB.txt').write_text(render(listing), encoding='utf-8')
-    print('Local store-listing text refreshed; no store contacted.')
+    files = sorted((ROOT / 'marketing').glob('listing-*.json'))
+    for file in files:
+        listing = json.loads(file.read_text(encoding='utf-8'))
+        file.with_suffix('.txt').write_text(render(listing), encoding='utf-8')
+    print(f'{len(files)} local store-listing texts refreshed; no store contacted.')

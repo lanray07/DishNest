@@ -21,12 +21,18 @@ for page in (ROOT/'website').glob('*.html'):
         if url.scheme or not url.path:continue
         if not (page.parent/unquote(url.path)).exists():errors.append(f'{page.name}: missing {ref}')
 checks.append('12 HTML pages: one h1 each; all internal file links resolve')
-listing=json.loads((ROOT/'marketing/listing-en-GB.json').read_text(encoding='utf-8'))
-assert (ROOT/'marketing/listing-en-GB.txt').read_text(encoding='utf-8') == render_listing(listing), 'Run tools/export_store_listing.py to synchronise the paste-ready draft'
-assert len(listing['short_description'].encode())<=2000
-assert len(listing['full_description'])<=4000
-assert 3<=len(listing['feature_bullets'])<=5
-checks.append('English listing fits documented description and bullet limits')
+listing_files=sorted((ROOT/'marketing').glob('listing-*.json'))
+for file in listing_files:
+    listing=json.loads(file.read_text(encoding='utf-8'))
+    assert file.stem == 'listing-'+listing['locale'], f'{file.name}: locale mismatch'
+    assert file.with_suffix('.txt').read_text(encoding='utf-8') == render_listing(listing), f'{file.name}: run tools/export_store_listing.py'
+    assert 0<len(listing['title'])<=200, file.name
+    assert 0<len(listing['short_description'].encode('utf-8'))<=1200, file.name
+    assert 0<len(listing['full_description'].encode('utf-8'))<=4000, file.name
+    assert 3<=len(listing['feature_bullets'])<=5, file.name
+    assert all(bullet.strip() and '\n' not in bullet for bullet in listing['feature_bullets']), file.name
+    assert len(listing['keywords'])==len(set(word.casefold() for word in listing['keywords'])), file.name
+checks.append(f'{len(listing_files)} locale listings: title, UTF-8 description limits, feature bullets and matching text exports checked; native approval pending')
 for size in [114,512]:assert Image.open(ROOT/f'marketing/assets/icon-{size}.png').size==(size,size)
 assert Image.open(ROOT/'marketing/assets/promotional-1024x500.png').size==(1024,500)
 checks.append('Required icon and promotional pixel dimensions valid')

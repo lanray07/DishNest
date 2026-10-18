@@ -1,0 +1,59 @@
+DISHNEST - LOCAL STORE LISTING DRAFT
+Saved in Amazon console as a draft; not approved for submission.
+Updated 2026-10-18.
+
+Display title
+DishNest - Przepisy, jadłospis i lista zakupów
+
+Short description
+Zapisuj przepisy, planuj posiłki na tydzień i twórz listy zakupów. Zarządzaj zapasami i gotuj krok po kroku z instrukcjami głosowymi oraz minutnikami.
+
+Long description
+TWÓJ OSOBISTY PRZEPIŚNIK
+DishNest łączy przepisy, planowanie posiłków, listę zakupów i spiżarnię na tablecie. Zapisuj składniki, kroki, zdjęcia, porcje i notatki. Oznaczaj ulubione przepisy, twórz kolekcje oraz korzystaj z wyszukiwania i filtrów.
+
+ZAPLANUJ TYDZIEŃ
+Planuj śniadania, obiady, kolacje i przekąski na siedem dni. Zmieniaj liczbę porcji, kopiuj poprzedni tydzień i otrzymuj propozycje offline z zapisanych przepisów. Dodatkowe nazwane plany i szablony wielokrotnego użytku wymagają Premium.
+
+ZAKUPY I ZAPASY
+Zamień plan w pogrupowaną listę zakupów. Zgodne ilości składników są sumowane, dostosowywane do porcji i pomniejszane o zgodne zapasy. Dodawaj produkty, odhaczaj zakupy i udostępniaj listę jako tekst. Łączenie kilku planów wymaga Premium. Zapisuj ilości i opcjonalne terminy sprawdzenia; codzienne przypomnienia włączasz samodzielnie. Zawsze sprawdzaj ilości, opakowania, świeżość i zgodność ze swoją dietą.
+
+GOTUJ KROK PO KROKU
+Korzystaj z dużych instrukcji, obsługi dotykowej, odczytu głosowego i wielu minutników. Polecenia po naciśnięciu przycisku mowy wymagają zgodnej usługi rozpoznawania mowy. Dostępność i wymagania internetowe zależą od urządzenia i dostawcy. Ustawienia urządzenia mogą opóźniać powiadomienia.
+
+SPRAWDZAJ IMPORTOWANE TREŚCI
+Sprawdzaj tekst przepisów, dane z obsługiwanych stron lub drukowany tekst angielski rozpoznany na urządzeniu. Przytnij zdjęcie przed rozpoznawaniem i sprawdź wynik. Import ze stron wymaga Internetu i respektuje reguły robots. Import wymaga Premium. Zapisuj tylko treści, których wolno ci używać.
+
+DANE LOKALNE BEZ KONTA
+Przechowuj przepisy, plany i listy lokalnie, bez rejestracji i reklam. Eksportuj kopie JSON lub ZIP ze zdjęciami przepisów. Przywracaj dane do pustej kuchni; samodzielnie zarządzasz wyeksportowanymi plikami.
+
+W tej wersji rozwojowej zakupy Amazon są wyłączone. Więcej niż 25 przepisów, import, szablony, dodatkowe plany i wspólne zakupy z kilku planów wymagają Premium. Oferty i ceny Premium nie są jeszcze dostępne w tej wersji.
+
+Product feature bullets
+Zapisuj przepisy, zdjęcia, ulubione pozycje i notatki w przeszukiwanym przepiśniku
+Planuj posiłki z regulacją porcji i propozycjami offline
+Twórz listy ze zgodnymi ilościami składników i odliczaniem zapasów
+Zarządzaj zapasami i terminami sprawdzenia z opcjonalnymi przypomnieniami
+Gotuj z obsługą dotykową, odczytem głosowym i wieloma minutnikami
+
+Keywords
+przepisy, przepiśnik, jadłospis, posiłki, zakupy, lista, spiżarnia, zapasy, gotowanie, minutnik, offline
+
+Release notes
+Development preview. See testing instructions and readiness checklist before release.
+
+Website URL
+https://github.com/lanray07/DishNest
+
+Support URL
+https://github.com/lanray07/DishNest/issues
+
+Privacy policy URL (draft policy)
+https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt
+
+Publisher fields still required
+Publisher legal identity and final service operator disclosures
+Approved production billing setup, prices and terms
+Publisher-signed release APK and exact device verification
+Export-compliance certification by the publisher
+Native-approved translations and final hardware screenshots

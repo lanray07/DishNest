@@ -1,0 +1,49 @@
+{
+  "status": "DRAFT - saved in Amazon console; native review pending",
+  "locale": "es-ES",
+  "title": "DishNest - Recetario, menú semanal y lista de la compra",
+  "short_description": "Guarda recetas, planifica el menú semanal y crea tu lista de la compra. Organiza la despensa y cocina paso a paso con instrucciones habladas y temporizadores.",
+  "full_description": "TU RECETARIO PERSONAL\nDishNest reúne tus recetas, el planificador de comidas, la lista de la compra y la despensa en tu tableta. Guarda ingredientes, pasos, fotos, raciones y notas. Marca favoritos, crea colecciones y busca o filtra tus recetas.\n\nPLANIFICA LA SEMANA\nOrganiza desayunos, comidas, cenas y tentempiés durante siete días. Ajusta las raciones, copia una semana anterior y recibe sugerencias sin conexión a partir de tus recetas guardadas. Los planes adicionales con nombre y las plantillas reutilizables requieren Premium.\n\nCOMPRA Y DESPENSA\nConvierte un plan en una lista de la compra agrupada. Las cantidades de ingredientes compatibles se suman, se ajustan a las raciones y descuentan las existencias compatibles. Añade productos, márcalos al comprarlos y comparte la lista como texto. Combinar varios planes requiere Premium. Registra cantidades y fechas de revisión opcionales; activa recordatorios diarios si lo deseas. Comprueba siempre las cantidades, los envases, la frescura y la adecuación a tu dieta.\n\nCOCINA PASO A PASO\nSigue instrucciones grandes con controles táctiles, narración y varios temporizadores. Los comandos de pulsar para hablar necesitan un servicio de reconocimiento de voz compatible. La disponibilidad y la conexión necesaria dependen del dispositivo y del proveedor. La configuración del dispositivo puede retrasar las notificaciones.\n\nREVISA LAS IMPORTACIONES\nRevisa texto de recetas, datos de sitios compatibles o texto impreso en inglés reconocido en el dispositivo. Recorta la foto antes del reconocimiento y comprueba el resultado. Las importaciones web requieren conexión y respetan las reglas de robots. Importar requiere Premium. Guarda solo contenido que tengas permiso para utilizar.\n\nALMACENAMIENTO LOCAL SIN CUENTA\nConserva recetas, planes y listas localmente, sin registro ni anuncios. Exporta copias JSON o ZIP con fotos de recetas. Restaura en una cocina vacía; tú controlas los archivos exportados.\n\nEsta versión de desarrollo tiene desactivadas las compras de Amazon. Más de 25 recetas, importaciones, plantillas, planes adicionales y compras combinadas requieren Premium. Las ofertas y los precios Premium aún no están disponibles en esta versión.",
+  "feature_bullets": [
+    "Guarda recetas, fotos, favoritos y notas en un recetario con búsqueda",
+    "Planifica menús semanales con raciones ajustables y sugerencias sin conexión",
+    "Crea listas con cantidades compatibles y descuento de existencias",
+    "Gestiona la despensa y fechas de revisión con recordatorios opcionales",
+    "Cocina paso a paso con controles táctiles, narración y temporizadores"
+  ],
+  "keywords": [
+    "recetas",
+    "recetario",
+    "menú",
+    "semanal",
+    "comidas",
+    "compra",
+    "lista",
+    "despensa",
+    "cocina",
+    "temporizador",
+    "offline"
+  ],
+  "release_notes": "Development preview. See testing instructions and readiness checklist before release.",
+  "support_contact": "https://github.com/lanray07/DishNest/issues",
+  "support_email": "banksmi@mail.com",
+  "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
+  "website_url": "https://github.com/lanray07/DishNest",
+  "amazon_listing_url": null,
+  "updated_at": "2026-10-18",
+  "draft_notes": {
+    "publication_permitted": false,
+    "console_entered": true,
+    "copy_scope": "Spanish translated draft; default English artwork fallback; native approval pending.",
+    "required_publisher_inputs": [
+      "Publisher legal identity and final service operator disclosures",
+      "Approved production billing setup, prices and terms",
+      "Publisher-signed release APK and exact device verification",
+      "Export-compliance certification by the publisher",
+      "Native-approved translations and final hardware screenshots"
+    ],
+    "native_language_approved": false,
+    "localized_artwork_approved": false,
+    "console_verified_after_reload": true
+  }
+}

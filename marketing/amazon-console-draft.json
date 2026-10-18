@@ -35,6 +35,105 @@
   "privacy_reference": "https://developer.amazon.com/docs/app-submission/appstore-privacy-labels.html",
   "proof_screenshot": "artifacts/screens/amazon-console-draft.png",
   "testing_instructions_local_copy": "marketing/amazon-testing-instructions.txt",
-  "testing_instructions_status": "Filled in current review form, but did not persist after reload in three UI attempts. Local copy retained; final console save/submission must verify this field.",
-  "submission_authorization": "User permits submission only if complete. Required readiness gates remain pending; no submission performed."
+  "testing_instructions_status": "Entry did not persist after reload in three prior UI attempts. Local copy retained; final console save/submission must verify this field.",
+  "submission_authorization": "User permits submission only if complete. Required readiness gates remain pending; no submission performed.",
+  "description_locales": [
+    "en-US",
+    "de-DE",
+    "en-GB",
+    "es-ES",
+    "fr-FR",
+    "it-IT",
+    "nl-NL",
+    "pl-PL",
+    "pt-BR",
+    "pt-PT"
+  ],
+  "localization": {
+    "status": "10 description locales complete; verified after reload against local source",
+    "native_language_approved": false,
+    "localized_artwork_approved": false,
+    "default_artwork_locale": "en-US",
+    "unavailable_requested_listing_locales": [
+      "ar",
+      "hi"
+    ],
+    "unavailable_basis": "Amazon Add localization dialog offers neither Arabic nor Hindi; Android resources are separate.",
+    "language_support_note": "Targeting language-support declaration remains English; additional app locale certification requires native review.",
+    "verification": [
+      {
+        "locale": "de-DE",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "en-GB",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "es-ES",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "fr-FR",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "it-IT",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "nl-NL",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "pl-PL",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "pt-BR",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      },
+      {
+        "locale": "pt-PT",
+        "title": true,
+        "short": true,
+        "long": true,
+        "features": true,
+        "keywords": true
+      }
+    ],
+    "proof_screenshot": "artifacts/screens/amazon-localized-draft.png"
+  }
 }

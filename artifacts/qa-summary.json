@@ -160,7 +160,7 @@
   "asset-validation": {
     "checks": [
       "12 HTML pages: one h1 each; all internal file links resolve",
-      "English listing fits documented description and bullet limits",
+      "10 locale listings: title, UTF-8 description limits, feature bullets and matching text exports checked; native approval pending",
       "Required icon and promotional pixel dimensions valid",
       "16 screenshot drafts: dimensions and RGB output checked",
       "All Android string XML parses"

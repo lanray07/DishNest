@@ -1,0 +1,49 @@
+{
+  "status": "DRAFT - saved in Amazon console; native review pending",
+  "locale": "pt-BR",
+  "title": "DishNest - Receitas, cardápio e lista de compras",
+  "short_description": "Salve receitas, planeje as refeições da semana e monte sua lista de compras. Organize a despensa e cozinhe com instruções faladas e temporizadores.",
+  "full_description": "SEU LIVRO DE RECEITAS\nO DishNest reúne receitas, planejamento de refeições, lista de compras e despensa no seu tablet. Salve ingredientes, etapas, fotos, porções e anotações. Marque favoritos, crie coleções e encontre receitas com busca e filtros.\n\nPLANEJE A SEMANA\nOrganize café da manhã, almoço, jantar e lanches para sete dias. Ajuste porções, copie uma semana anterior e receba sugestões offline com base nas receitas salvas. Planos adicionais com nome e modelos reutilizáveis exigem Premium.\n\nCOMPRAS E DESPENSA\nTransforme um plano em uma lista de compras agrupada. As quantidades compatíveis são somadas, ajustadas às porções e reduzidas pelos estoques compatíveis. Adicione produtos, marque as compras e compartilhe a lista como texto. Combinar vários planos exige Premium. Registre quantidades e datas de verificação opcionais, com lembretes diários se desejar. Confira sempre quantidades, embalagens, frescor e adequação à sua alimentação.\n\nCOZINHE PASSO A PASSO\nSiga instruções grandes com controles por toque, narração e vários temporizadores. Comandos de pressionar para falar exigem um serviço de reconhecimento de fala compatível. A disponibilidade e a necessidade de internet variam conforme o dispositivo e o provedor. As configurações do dispositivo podem atrasar notificações.\n\nREVISE AS IMPORTAÇÕES\nConfira o texto importado, dados de sites de receitas compatíveis ou texto impresso em inglês reconhecido no dispositivo. Recorte a foto antes do reconhecimento e verifique o resultado. Importações da web exigem internet e respeitam as regras de robôs. Importar exige Premium. Salve apenas conteúdo que você tenha permissão para usar.\n\nARMAZENAMENTO LOCAL SEM CONTA\nMantenha receitas, planos e listas localmente, sem cadastro nem anúncios. Exporte backups JSON ou ZIP com fotos das receitas. Restaure em uma cozinha vazia; você controla os arquivos exportados.\n\nAs compras da Amazon estão desativadas nesta prévia de desenvolvimento. Mais de 25 receitas, importações, modelos, planos adicionais e compras combinadas exigem Premium. As ofertas e os preços Premium ainda não estão disponíveis nesta versão.",
+  "feature_bullets": [
+    "Salve receitas, fotos, favoritos e anotações em um livro com busca",
+    "Planeje refeições com ajuste de porções e sugestões offline",
+    "Crie listas com quantidades compatíveis somadas e desconto de estoques",
+    "Controle a despensa e as datas de verificação com lembretes opcionais",
+    "Cozinhe com toque, narração e vários temporizadores"
+  ],
+  "keywords": [
+    "receitas",
+    "cardápio",
+    "refeições",
+    "planejamento",
+    "compras",
+    "lista",
+    "despensa",
+    "cozinha",
+    "culinária",
+    "temporizador",
+    "offline"
+  ],
+  "release_notes": "Development preview. See testing instructions and readiness checklist before release.",
+  "support_contact": "https://github.com/lanray07/DishNest/issues",
+  "support_email": "banksmi@mail.com",
+  "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
+  "website_url": "https://github.com/lanray07/DishNest",
+  "amazon_listing_url": null,
+  "updated_at": "2026-10-18",
+  "draft_notes": {
+    "publication_permitted": false,
+    "console_entered": true,
+    "copy_scope": "Portuguese (Brazil) translated draft; default English artwork fallback; native approval pending.",
+    "required_publisher_inputs": [
+      "Publisher legal identity and final service operator disclosures",
+      "Approved production billing setup, prices and terms",
+      "Publisher-signed release APK and exact device verification",
+      "Export-compliance certification by the publisher",
+      "Native-approved translations and final hardware screenshots"
+    ],
+    "native_language_approved": false,
+    "localized_artwork_approved": false,
+    "console_verified_after_reload": true
+  }
+}
