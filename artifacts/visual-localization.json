@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "locales": [
+    "en-GB",
+    "en-US",
+    "de-DE",
+    "es-ES",
+    "fr-FR",
+    "it-IT",
+    "nl-NL",
+    "pl-PL",
+    "pt-BR",
+    "pt-PT",
+    "ar",
+    "hi"
+  ],
+  "screenshots": 96,
+  "promotional_images": 12,
+  "export_count": 108,
+  "copy_sha256": "13966af284f308358e2c6f4e55dcb6b5f219d3ecf582ac903f4a0a316658048e",
+  "capture_method": "Production Compose UI with isolated translated sample records; Robolectric native graphics",
+  "artwork_renderer": "CUA Chromium with native script shaping",
+  "native_language_approved": false,
+  "physical_device_verified": false,
+  "release_approved": false,
+  "amazon_artwork_locales_verified": [
+    "de-DE",
+    "en-GB",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "it-IT",
+    "pt-BR"
+  ]
+}

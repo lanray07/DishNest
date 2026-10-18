@@ -20,6 +20,7 @@ for source,name in [(ROOT/'app/build/outputs/apk/debug/app-debug.apk','DishNest-
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
 def archive_source():
     evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','fire-background-alarm.json','fire-background-seed.txt','fire-background-verify.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
+    evidence.add('visual-localization.json')
     source_zip=OUT/'DishNest-source.zip'
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
@@ -46,6 +47,13 @@ if server_xml.findall('.//failure') or server_xml.findall('.//error'):raise Syst
 (ROOT/'artifacts/qa-summary.json').write_text(json.dumps({'jvm_suites':suites,'device_instrumentation':fire,'physical_fire_qa':'Partial smoke coverage only; full hardware matrix pending','billing_qa':f'Local SDK integration and signed-verification service prepared; {server_tests} server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.','localisation_release_gate':'Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.','store_submission':'not performed; conditional submission authorized only after all required readiness gates pass','website_deployment':'not performed; local checks only'},indent=2),encoding='utf-8')
 summary_path=ROOT/'artifacts/qa-summary.json'
 summary=json.loads(summary_path.read_text(encoding='utf-8'))
+qa_source=ROOT/'app/build/outputs/apk/qa/app-qa.apk'
+test_source=ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
+summary['device_instrumentation_current']=all(path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest()==fire.get(key)
+    for path,key in [(qa_source,'apkSha256'),(test_source,'instrumentationApkSha256')])
+if not summary['device_instrumentation_current']:
+    summary['physical_fire_qa']='Pending current APK rerun; retained device results are historical. Full hardware matrix also pending.'
+summary['visual_localization']=json.loads((ROOT/'artifacts/visual-localization.json').read_text(encoding='utf-8'))
 lint_file=ROOT/'app/build/reports/lint-results-debug.xml'
 if lint_file.exists():
     issues=ET.parse(lint_file).getroot().findall('issue')

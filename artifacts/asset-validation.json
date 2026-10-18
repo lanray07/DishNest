@@ -4,6 +4,7 @@
     "10 locale listings: title, UTF-8 description limits, feature bullets and matching text exports checked; native approval pending",
     "Required icon and promotional pixel dimensions valid",
     "16 screenshot drafts: dimensions and RGB output checked",
+    "108 localized visual exports: dimensions, source/copy hashes and overflow checks pass; native and hardware approval pending",
     "All Android string XML parses"
   ],
   "errors": [],

@@ -2,6 +2,8 @@
 
 Automated host rendering is useful evidence but does not exercise Fire hardware, Appstore communication, installed speech providers, native OCR accuracy, AlarmManager delivery or TalkBack. Only the targeted Fire smoke results below are passed; the full hardware matrix remains incomplete.
 
+The visual-localization continuation rebuilt the app with locale-aware date and shopping-contribution formatting. The Fire tablet was disconnected at the final check, so the retained smoke and background-timer results refer to an earlier APK. They must be rerun against the current QA package before submission; the readiness report checks both APK hashes and does not treat historical results as current passes. The 12-locale screenshot suite is host evidence only.
+
 ## Devices and evidence
 
 Record model, Fire OS/Android version, API, locale, font scale, app version, APK checksum, test date and tester. Run the compiled instrumentation APK only on an explicitly selected connected device. A KFTRWI Fire tablet running Android 9/API 28 is now connected; the earlier emulator attempts did not provide a working accelerated emulator. Recheck with `tools/collect_device_evidence.ps1` before testing. That script is read-only and does not install, submit or publish anything.

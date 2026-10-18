@@ -1,0 +1,421 @@
+{
+  "status": "Draft uploads; native and hardware approval pending",
+  "locales": [
+    {
+      "locale": "de-DE",
+      "screenshots": [
+        "screenshot_amzn1.dex.asset.062b45c4501948b2be723f0ff2e2961b0",
+        "screenshot_amzn1.dex.asset.c8ef221dd7c84cdba2d0962f6319ae7b1",
+        "screenshot_amzn1.dex.asset.9b0a8f922c514fbaaf189a67a6835fb72",
+        "screenshot_amzn1.dex.asset.3e69d6051c9c49dcba9b781d8c82e6c03",
+        "screenshot_amzn1.dex.asset.a275781548cb498b829ed916c6debf954",
+        "screenshot_amzn1.dex.asset.fe6051cae6ea499d82097b466631928a5",
+        "screenshot_amzn1.dex.asset.c7e0171a8a2b45f089b26f43139e08ff6",
+        "screenshot_amzn1.dex.asset.e5fa35eb00b94e1ca9de723d605559ef7"
+      ],
+      "promo_sha256": "72202e6b72b9de24a05988d693cd1545a2e7e21830e1242d482737a75fa59130",
+      "local_files_sha256": [
+        {
+          "id": "01",
+          "sha256": "579c6fc524137ad3e26e5b647e9ac28eeb4e71fb986de87a478701d77cc5d42b"
+        },
+        {
+          "id": "02",
+          "sha256": "564943c3557a0fe00661ec93dc04a56bd0b7876e94d5f49c1abdf4d4862b2534"
+        },
+        {
+          "id": "03",
+          "sha256": "7acc3f400b3bd2a3780a323d0e975e50a4223bbe8ac7d8ab3e565ad8f79b314f"
+        },
+        {
+          "id": "04",
+          "sha256": "6bf04f4905c967615544c564e3a07cfd645699878152853985fc795c554f1be8"
+        },
+        {
+          "id": "05",
+          "sha256": "1dee2c83341d3c874aa75672f037a653b46d23fcbd2e0944ab65f1437cd1cbdf"
+        },
+        {
+          "id": "06",
+          "sha256": "67eaf5f0c5d785ed61cbf4002046bd0e6e3f516be415b32a23e0f8816ecb38f8"
+        },
+        {
+          "id": "07",
+          "sha256": "d086f60704033c6a82cae2b7daf8b6ece51bc7efe473b099f56027cbf5e9480a"
+        },
+        {
+          "id": "08",
+          "sha256": "3c6ab08e9c95d8ce7969096fe93701b4a8a0bf2eb07a67c211f184218e55e4ac"
+        },
+        {
+          "id": "promo",
+          "sha256": "794cdff382e926f1a0e7d63dbd45b317f12df63bfac2a56f60de77f3a302b27c"
+        }
+      ]
+    },
+    {
+      "locale": "en-GB",
+      "screenshots": [
+        "screenshot_amzn1.dex.asset.515857f417f941c180381065e366cea50",
+        "screenshot_amzn1.dex.asset.8a080b7d9a6e4abab8463c60887dd6561",
+        "screenshot_amzn1.dex.asset.cfdf45ae15dc4ae9bc57b27ce30be6d92",
+        "screenshot_amzn1.dex.asset.98f50213d07546d2a87687ed4dadb5323",
+        "screenshot_amzn1.dex.asset.3537d568150a42b8adbbfc2d1bd2620d4",
+        "screenshot_amzn1.dex.asset.f93f489123b44efcb7c1c8f59e16aad55",
+        "screenshot_amzn1.dex.asset.2aa2a3167b7543169403012573eada016",
+        "screenshot_amzn1.dex.asset.132ff15b147b48dca6ccdffc2c81ee317"
+      ],
+      "promo_sha256": "eb2058a64ee5dd72afabaa73a0dbecd400d3cdbc6fa612e55404575453d5aac3",
+      "local_files_sha256": [
+        {
+          "id": "01",
+          "sha256": "80fbfa6d0aee1fa9688111c3ec5b97bf1a27202ea07f24ded85031c99af39409"
+        },
+        {
+          "id": "02",
+          "sha256": "39251ca099a8def7af468a10e353449fb1d7aee73dcafe63853b65ad6df2dfdc"
+        },
+        {
+          "id": "03",
+          "sha256": "7c140ead859da4b336236059540a3576735e101fefddd92e5993a399ff67cd8c"
+        },
+        {
+          "id": "04",
+          "sha256": "efa813b0400fd28e6d1a838cb2af6f6dd118f99bdbf4f7b7a29a6fe57a4cb168"
+        },
+        {
+          "id": "05",
+          "sha256": "53d4e8bfb4cd82c73af49001f3e24df08efd2bd0b95c4c471797104f3fec5033"
+        },
+        {
+          "id": "06",
+          "sha256": "dff47cf2b10ea747e940cbe41e93992664c0b7d70a373c023de2dfb5b4da4ee9"
+        },
+        {
+          "id": "07",
+          "sha256": "5aa438db11f613d73536f987d6d2ffd21b1482ca029d2d6b85cf0452349e9c65"
+        },
+        {
+          "id": "08",
+          "sha256": "a725471dbbe6494199990c51a53347dbc6a759d415d4909741aa69264ef7d25e"
+        },
+        {
+          "id": "promo",
+          "sha256": "76f4a19b0f5c01acc89bcc4c50bed747ead94276f943aa4f47e39afad9a0712d"
+        }
+      ]
+    },
+    {
+      "locale": "it-IT",
+      "screenshots": [
+        "screenshot_amzn1.dex.asset.555fee93f20d4888b00dc3f2c1afc3000",
+        "screenshot_amzn1.dex.asset.bd6fa0ac43994997871f21569e18d6bd1",
+        "screenshot_amzn1.dex.asset.857a8edfc8b84887bea5a30fcea92af82",
+        "screenshot_amzn1.dex.asset.c75b70727c9f46d38b65e7621e880d573",
+        "screenshot_amzn1.dex.asset.16e34eefb3d8403eb647340c206ebf6c4",
+        "screenshot_amzn1.dex.asset.93c4129119d943679a678503e4b747515",
+        "screenshot_amzn1.dex.asset.3804aa390b264dfd9c5eb727ea405e3e6",
+        "screenshot_amzn1.dex.asset.9ac9a731f8334d40b3178a9b08b759267"
+      ],
+      "promo_sha256": "c5ca8ace274cac94ed27953514ffec38a47f22d76bc3d6387c36b15daeca3913",
+      "local_files_sha256": [
+        {
+          "id": "01",
+          "sha256": "70ad1ebe663446ec67dbdd825b7937643a8aaf969b92fb41c386ab7dd6e91693"
+        },
+        {
+          "id": "02",
+          "sha256": "e7a1240ab954ca8075743a5f68de03578475752e2485465c55e0b6a828b6c3e9"
+        },
+        {
+          "id": "03",
+          "sha256": "64cac4afcd4376f558af8fe6c39d447b123a198cdd767907cb77c2130397e3bb"
+        },
+        {
+          "id": "04",
+          "sha256": "8b87b4b93ac67a78d3a5457effc6365d5ed8459ee978d79b8ace27b40d11391d"
+        },
+        {
+          "id": "05",
+          "sha256": "ef6d30eb94151be6a0c7bfef3f3a6c97048c88043eb04ce925318cbc63704539"
+        },
+        {
+          "id": "06",
+          "sha256": "f6f097be48feb4081dd624765103ded5fd1b04a178a8dc138d624cd32c3312f2"
+        },
+        {
+          "id": "07",
+          "sha256": "14c32987812d193b5c59edbd22aa4aa606649228ada96a5b5febe1452b672b05"
+        },
+        {
+          "id": "08",
+          "sha256": "50e8fd7356a28ff3a21c3d6703c294024ca94e871ea6046ed7875a1f5b20c6bd"
+        },
+        {
+          "id": "promo",
+          "sha256": "423ba3ab5676aad31011a4f7f625cabb2158948a9853f5f099f3e7969c64a85d"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "screenshots": [
+        "screenshot_amzn1.dex.asset.050d9c2825a74af2be38323bd188bb770",
+        "screenshot_amzn1.dex.asset.bde340d86d364049989288a7a679a3121",
+        "screenshot_amzn1.dex.asset.cd5d5c281b9345ce826ad5db4982a8ae2",
+        "screenshot_amzn1.dex.asset.c3edbe8da43c46e290a42a878df1849e3",
+        "screenshot_amzn1.dex.asset.5d471128a4694c3e8698dc645ebce32f4",
+        "screenshot_amzn1.dex.asset.c9ff02e99d23404ea14f26a34071a9a85",
+        "screenshot_amzn1.dex.asset.d6cd018a30694cc3b9df0809da48147b6",
+        "screenshot_amzn1.dex.asset.fdb8cc631c004c03a4593e0c07938aaf7"
+      ],
+      "promo_sha256": "e327c0705b18665626c247f66b6e854ec93433f80215a08ba500467ffb5cb6c3",
+      "local_files_sha256": [
+        {
+          "id": "01",
+          "sha256": "48bf62d07b8f2d7b73e85c752fda8fe61122a69472ca483dc6a2d31acd524583"
+        },
+        {
+          "id": "02",
+          "sha256": "bcba5954e911d3b5b91f958494db131c43f9faca2dd83ff1198abd2f754c3e3f"
+        },
+        {
+          "id": "03",
+          "sha256": "0afdd195a70b5242b5862b77ff903e84c7e82e9507a4794b26c5263ca49d7d88"
+        },
+        {
+          "id": "04",
+          "sha256": "3a238d399a6b4dd647613ccee7d9a899dab305992435865c6bf7e965c2aa0fc7"
+        },
+        {
+          "id": "05",
+          "sha256": "237eed54e54893375a99463e9380a6bc6819a5d9e2ba6a5edaae21c6f84cbfc2"
+        },
+        {
+          "id": "06",
+          "sha256": "4ae72435480fad5203781ac3d1c3b7209cd64d6784f710e945f2d63c9876ef4c"
+        },
+        {
+          "id": "07",
+          "sha256": "0b41f8734da0d024c180c53386148991c474ce868e0364884fc2e7a4acec06c8"
+        },
+        {
+          "id": "08",
+          "sha256": "7b4f1b25f205b71a1cbdb253ab58b895e21447b1bcdf37f4cfeca353beb9c663"
+        },
+        {
+          "id": "promo",
+          "sha256": "b7d74736ab474589ff894e0f92e5b8d584ff619333811548a1403c41ce42faed"
+        }
+      ]
+    },
+    {
+      "locale": "en-US",
+      "screenshots": [
+        "screenshot_amzn1.dex.asset.5cf056d7a001443ab7ed11c5df90341d0",
+        "screenshot_amzn1.dex.asset.f18fc21fe3f24164be16bf2615dc0dd81",
+        "screenshot_amzn1.dex.asset.af4f39929ed841469d4b5ebd65971b842",
+        "screenshot_amzn1.dex.asset.0d9b50434ec84fc6bcf9802af22a3f7c3",
+        "screenshot_amzn1.dex.asset.19b29d5a66104036815dc42c6106ecc54",
+        "screenshot_amzn1.dex.asset.3259f39ab3f34ca7850bb3fed1adf9a45",
+        "screenshot_amzn1.dex.asset.59dc7553d4f04b7991d0c8795fe936296",
+        "screenshot_amzn1.dex.asset.fb30d9e3ee7d4ffe918457330c613c127"
+      ],
+      "promo_sha256": "2bc1963cd8b59cd14e3873c3ae429bb65e2ad9090ad94c7e68724957eb348317",
+      "local_files_sha256": [
+        {
+          "id": "01",
+          "sha256": "0a2ee535a43344fc0c7f0ecd485ccc6b0258df3f14b85acb8a78c1d48d05ece8"
+        },
+        {
+          "id": "02",
+          "sha256": "c3df8550a2ed45bc4bfdc07c81f3bcd4445483c82dd300fec4cab000abcf68ab"
+        },
+        {
+          "id": "03",
+          "sha256": "f08c9f1a404bfa32ff7e72e6c88dcdd9212df452aaf2f3c0022807473ce465ce"
+        },
+        {
+          "id": "04",
+          "sha256": "06d5d074f754276a5002ddb503fcd2222ac2da8eac8ea771da7fabe30fac321f"
+        },
+        {
+          "id": "05",
+          "sha256": "06042dedeeca43ceb3fae3e579a132e65d6b3dda3e4c0a56535eebf3e3e98348"
+        },
+        {
+          "id": "06",
+          "sha256": "ed94c873361f9711b04b102bc65423116723c2a0a1cce8191758c59adec065d5"
+        },
+        {
+          "id": "07",
+          "sha256": "8df8acbc45b36ec0cd10b993b72651b2b2c73fa21e042f7ed22b1ec46a4f5527"
+        },
+        {
+          "id": "08",
+          "sha256": "c890eb375600ce8c54df2f6196f17c45f5fec4086c64c559678bf2a3fc648534"
+        },
+        {
+          "id": "promo",
+          "sha256": "76f4a19b0f5c01acc89bcc4c50bed747ead94276f943aa4f47e39afad9a0712d"
+        }
+      ]
+    },
+    {
+      "locale": "fr-FR",
+      "screenshots": [
+        "screenshot_amzn1.dex.asset.8afada1a99614a26a272c8858b38d9dd0",
+        "screenshot_amzn1.dex.asset.06f6f0b4c96f45e4ba2fd2b78f44d9781",
+        "screenshot_amzn1.dex.asset.f667e53063b64830924919a4f48005f52",
+        "screenshot_amzn1.dex.asset.032ba04ed8384be88a532c550b74b0663",
+        "screenshot_amzn1.dex.asset.7dff6b24bfcb477a8f3eeffb46b69e504",
+        "screenshot_amzn1.dex.asset.f6fcb775438f45ba93a6f94121ba867f5",
+        "screenshot_amzn1.dex.asset.74a73ff3e13f4a30bd6775a51751986f6",
+        "screenshot_amzn1.dex.asset.172e5a585ad64e97ab9dfe088ddc35367"
+      ],
+      "promo_sha256": "0a704fae15fd511d3e5c22c74f3755f321bbaf5ef40aa5edd0630d6c8e86fc2e",
+      "local_files_sha256": [
+        {
+          "id": "01",
+          "sha256": "247d8266bcb06c831b8a458416d1601ec987a77c2ad1e3524dc7fb20b7669110"
+        },
+        {
+          "id": "02",
+          "sha256": "788b06859f23afd6d7634e2ee31814171a7eb0f50fea6645c3106763a3b69e5c"
+        },
+        {
+          "id": "03",
+          "sha256": "0fe9cc43751d2228130a314a4e9cd4a179694b9b335bd9082861203e9e2cdd15"
+        },
+        {
+          "id": "04",
+          "sha256": "8620c372a2f0ca8654f13cbf5f4cabd6775ea44d345a4f9e9e7fbb213b242a24"
+        },
+        {
+          "id": "05",
+          "sha256": "b5e7dbd3880d4271545b4ddac5ca1ec63219f3cec7a88980fc7d2019e925e7a0"
+        },
+        {
+          "id": "06",
+          "sha256": "0606babcd2c855828c00b490f504a8aba7895d923085398406619b76110c20e6"
+        },
+        {
+          "id": "07",
+          "sha256": "da3f53a96a6b9399b45981d256a439a9cf54a05344d2b46d42e52549301b4132"
+        },
+        {
+          "id": "08",
+          "sha256": "63db1bc40e5cb3e6a5a2bacd0febc55dd4c72b8517a0219acb7a700e8157dc66"
+        },
+        {
+          "id": "promo",
+          "sha256": "250ce20008a8b0ccbfb950cb30f54c9351c180d8230c86d3cda852434b3a9e3e"
+        }
+      ]
+    },
+    {
+      "locale": "es-ES",
+      "screenshots": [
+        "screenshot_amzn1.dex.asset.18c548fdd0c54d9db957eb11c9ff7ec60",
+        "screenshot_amzn1.dex.asset.916a9aad3ff645d8a6249eb99fbbc2721",
+        "screenshot_amzn1.dex.asset.b7784e9a9e5f4aafa85ef375f5d807f92",
+        "screenshot_amzn1.dex.asset.ac049cf452654b0dbcf6f7a0e5e16ade3",
+        "screenshot_amzn1.dex.asset.6fa89e38c9d646279ace88687aaf05564",
+        "screenshot_amzn1.dex.asset.b96c97ec40e7406fb4bdf07746a227885",
+        "screenshot_amzn1.dex.asset.b02bd387004d4a92b2dcd760e28d3b726",
+        "screenshot_amzn1.dex.asset.a5d3b7134c714c8b806fcca43f2fc3f67"
+      ],
+      "promo_sha256": "3b13442e63130d64e884e9fa314e6e9653b23761b5c13cf4792e2f2905aa050c",
+      "local_files_sha256": [
+        {
+          "id": "01",
+          "sha256": "cb305834e9a4c4d5777a6201fad809ac5dda52224b29d7d39dde2f8c6fc4fe85"
+        },
+        {
+          "id": "02",
+          "sha256": "aeae697ed820f540f3b6a2b1d3fae60bce31df5fedb1a9b0c16017f7b90d74ea"
+        },
+        {
+          "id": "03",
+          "sha256": "f2ecc85ccbca76913357b31727d65c7efb3ca0010c443139d641a1806fc3bec0"
+        },
+        {
+          "id": "04",
+          "sha256": "132c3e4be47dd0d1c79a336844439be803b8eac2037346e62b28f06ef6861344"
+        },
+        {
+          "id": "05",
+          "sha256": "8b259690fd8de52cf59bbcc29cc754e5e2503a3a0c4f05bca0499b269e779d70"
+        },
+        {
+          "id": "06",
+          "sha256": "4ca96de96d91d973bd235b30671fb5f95a9f38d44e14eaef0671bdd558d529b2"
+        },
+        {
+          "id": "07",
+          "sha256": "6e49dda8fabbe0781f7f9d7c5ebd433c35f2b6c5c84caa0508979a0c14e9608a"
+        },
+        {
+          "id": "08",
+          "sha256": "06184ddc0f9d34b3d0977ffb3841eceb9b16e96a5dd980029e7162dacdbd3978"
+        },
+        {
+          "id": "promo",
+          "sha256": "3c0cbe4759d9d06ecdb35cb86d5961ab5a0e2c913a566302457ed33da89e0865"
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "locale": "en-US",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true
+    },
+    {
+      "locale": "de-DE",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true
+    },
+    {
+      "locale": "en-GB",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true
+    },
+    {
+      "locale": "es-ES",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true
+    },
+    {
+      "locale": "fr-FR",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true
+    },
+    {
+      "locale": "it-IT",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true
+    },
+    {
+      "locale": "pt-BR",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true
+    }
+  ],
+  "verified_after_reload": true,
+  "unavailable_target_artwork_locales": [
+    "nl-NL",
+    "pl-PL",
+    "pt-PT",
+    "ar",
+    "hi"
+  ]
+}

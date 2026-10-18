@@ -134,6 +134,50 @@
         "keywords": true
       }
     ],
-    "proof_screenshot": "artifacts/screens/amazon-localized-draft.png"
-  }
+    "proof_screenshot": "artifacts/screens/amazon-localized-draft.png",
+    "localized_artwork_prepared_locales": [
+      "en-GB",
+      "en-US",
+      "de-DE",
+      "es-ES",
+      "fr-FR",
+      "it-IT",
+      "nl-NL",
+      "pl-PL",
+      "pt-BR",
+      "pt-PT",
+      "ar",
+      "hi"
+    ],
+    "localized_artwork_console_locales": [
+      "de-DE",
+      "en-GB",
+      "it-IT",
+      "pt-BR",
+      "en-US",
+      "fr-FR",
+      "es-ES"
+    ],
+    "unavailable_target_artwork_locales": [
+      "nl-NL",
+      "pl-PL",
+      "pt-PT",
+      "ar",
+      "hi"
+    ],
+    "artwork_status": "56 screenshots and 7 promotional images uploaded across all seven matching artwork locales offered; saved identities verified after reload",
+    "artwork_proof_screenshot": "artifacts/screens/amazon-visual-localization.png",
+    "artwork_upload_evidence": "marketing/amazon-artwork-uploads.json"
+  },
+  "image_locales": [
+    "de-DE",
+    "en-GB",
+    "it-IT",
+    "pt-BR",
+    "en-US",
+    "fr-FR",
+    "es-ES"
+  ],
+  "localized_tablet_screenshots_uploaded": 56,
+  "localized_promotional_images_uploaded": 7
 }

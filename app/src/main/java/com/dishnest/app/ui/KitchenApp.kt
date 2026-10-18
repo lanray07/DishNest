@@ -573,7 +573,7 @@ fun HomeScreen(
     ) {
         item {
             PageTitle(
-                today.format(DateTimeFormatter.ofPattern("EEEE, d MMMM")),
+                today.format(DateTimeFormatter.ofPattern("EEEE, d MMMM", uiResources.configuration.locales[0])),
                 uiResources.getString(com.dishnest.app.R.string.copy_8b566d5081),
                 stringResource(R.string.greeting),
                 action = {
@@ -771,6 +771,7 @@ private fun Stat(
 
 @Composable
 private fun WeekPreview(s: KitchenState, onNavigate: (String) -> Unit, modifier: Modifier) {
+    val uiResources = androidx.compose.ui.platform.LocalContext.current.resources
     SoftCard(modifier) {
         SectionTitle(
             stringResource(com.dishnest.app.R.string.ui_a_calmer_week_188aa5),
@@ -786,7 +787,7 @@ private fun WeekPreview(s: KitchenState, onNavigate: (String) -> Unit, modifier:
                 horizontalArrangement = Arrangement.spacedBy(18.dp),
             ) {
                 Text(
-                    date.format(DateTimeFormatter.ofPattern("EEE")),
+                    date.format(DateTimeFormatter.ofPattern("EEE", uiResources.configuration.locales[0])),
                     color = Sage,
                     modifier = Modifier.width(36.dp),
                 )

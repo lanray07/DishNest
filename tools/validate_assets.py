@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 import json,xml.etree.ElementTree as ET
 from export_store_listing import render as render_listing
+from verify_visual_localization import verify as verify_visual_localization
 ROOT=Path(__file__).resolve().parents[1]
 checks=[];errors=[]
 class Page(HTMLParser):
@@ -41,6 +42,8 @@ for item in manifest:
     if item['status']!='draft exported':errors.append(f'Missing screenshot: {item["device"]}-{item["id"]}');continue
     image=Image.open(ROOT/'marketing/screenshots'/item['output']);assert list(image.size)==item['size'];assert image.mode=='RGB'
 checks.append(f'{len(manifest)} screenshot drafts: dimensions and RGB output checked')
+verify_visual_localization()
+checks.append('108 localized visual exports: dimensions, source/copy hashes and overflow checks pass; native and hardware approval pending')
 for file in (ROOT/'app/src/main/res').glob('values*/strings.xml'):ET.parse(file)
 checks.append('All Android string XML parses')
 result={'checks':checks,'errors':errors,'passed':not errors,'release_approved':False}

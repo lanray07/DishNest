@@ -19,13 +19,13 @@ Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 18 Octob
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Android host tests | 73 tests; 0 failures/errors | `app/build/test-results/testDebugUnitTest/` |
+| Android host tests | 85 tests; 0 failures/errors | `app/build/test-results/testDebugUnitTest/` |
 | Android lint | 0 errors; 46 warnings | `app/build/reports/lint-results-debug.html` |
 | Original translation errors | 0 remain | Same lint report; no suppression/baseline |
 | Current build provenance | PASS: current input/output hashes verified | `artifacts/build-provenance.json` |
 | Locale resource gate | PASS across 12 locales | `localisation/validation.json` |
-| Physical Fire smoke tests | 10 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
-| Fire background timer probe | PASS: handled state and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
+| Physical Fire smoke tests | Pending: device evidence does not match current APK/test APK | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
+| Fire background timer probe | Pending; inspect phase results | `artifacts/fire-background-alarm.json` |
 | Receipt service | 11 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
 | Cross-runtime receipt contract | Actual Node signer and compiled Kotlin verifier pass; wrong-account response rejected | `artifacts/billing-contract.json` |
 | Configuration guard | Enabled billing rejects a missing Amazon console authentication key before packaging | `artifacts/billing-configuration-guard.json` |
@@ -51,7 +51,7 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 | Cooking/voice/timers | Touch fallback, narration with audio-focus handling, push-to-talk, persisted inexact timers with stale-callback protection, exact commands in all target language families and localised numeric timer grammar (English number words also supported) | Broader natural-language/quantity grammar; actual speech providers, audio focus, doze, reboot, permissions and clock-change device QA |
 | Import/data | Reviewed text/JSON-LD with per-destination robots policy checks, local English OCR with crop preview, EXIF handling, transactional JSON and bounded photo-inclusive ZIP backups and local export | Live-site permission/robots interoperability validation and real-photo OCR accuracy; cloud provider remains optional/unconnected |
 | Billing | Local SDK integration and signed RVS service with tested policies | Amazon console key/catalog, approved terms/prices/countries, trusted TLS service, production credentials, App Tester/LAT and full callback/fulfilment QA; further commercial gates/features |
-| Localisation | 330 strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales saved and verified after reload | Native-speaker review, remaining inline interpolations and domain/status errors, complete voice/category/unit work, translated website and screenshot artwork, final listing approval and hardware RTL checks; Arabic/Hindi listing locales are not offered by this console |
+| Localisation | 330 strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales; 96 localized tablet screenshot compositions and 12 promotional images with translated sample data and captions | Native-speaker review, remaining inline interpolations and domain/status errors, complete voice/category/unit work, translated website, final listing approval and hardware RTL checks; Amazon artwork slots cover fewer locales than descriptions; see marketing/amazon-artwork-uploads.json |
 | Licensing/privacy | Original notices bundled; all resolved POM licences inventoried; backup exclusions and billing disclosures | Publisher legal/licence/privacy approval, operator identity, retention/contact details and final dependency review |
 | Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; English console draft, support email and GitHub privacy/deletion links are configured without website deployment |
 | Release | Debug APK and unsigned release build; optional publisher environment signing, input/output hash verification and local validation tooling | Publisher signing material, exact signed-APK install/smoke test and actual store compatibility checks |
@@ -63,7 +63,7 @@ The translation provider throttled the initial draft generation. Requests were s
 
 ## External setup and hardware
 
-The latest read-only ADB inventory found 1 connected device(s). The isolated QA APK passed 10 instrumentation tests on KFTRWI (Android 9, API 28). Coverage includes recipe CRUD/editor recreation, selected named-plan recreation, SQLite reopen/migration, native photo ZIP codecs, a cropped synthetic OCR fixture, Arabic/Hindi resources, denied microphone fallback, opt-in pantry notifications and Arabic planner/native-dialog controls at QA font scale 1.5. See the separate background-alarm probe record for its exact result. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, a publisher-signed APK or Appstore purchases. Those remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
+The latest read-only ADB inventory found 0 connected device(s). Historical device results do not match the current APK/test APK. Rerun the isolated smoke suite before using them as current evidence. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, a publisher-signed APK or Appstore purchases. Those remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
 
 An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.json`. Required publisher inputs remain its authentication public key; approved production catalog/prices/terms; service operating identity and protected production keys/secrets; a trusted verification endpoint; publisher signing configuration; representative hardware; native language approval; and approved privacy/operator details. Private support/deletion assistance uses the publisher-provided support email. Project, support and draft privacy/deletion links use GitHub; no domain or GitHub Pages deployment was configured. The local sandbox keys are development-only. Do not copy them into production.
 

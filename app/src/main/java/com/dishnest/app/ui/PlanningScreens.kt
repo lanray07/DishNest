@@ -71,7 +71,7 @@ fun PlanScreen(
                     )
                 }
                 Text(
-                    "${start.format(DateTimeFormatter.ofPattern("d MMM"))} – ${start.plusDays(6).format(DateTimeFormatter.ofPattern("d MMM yyyy"))}",
+                    "${start.format(DateTimeFormatter.ofPattern("d MMM", uiResources.configuration.locales[0]))} – ${start.plusDays(6).format(DateTimeFormatter.ofPattern("d MMM yyyy", uiResources.configuration.locales[0]))}",
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.weight(1f),
                 )
@@ -144,7 +144,7 @@ fun PlanScreen(
                             horizontalAlignment = Alignment.CenterHorizontally,
                         ) {
                             Text(
-                                date.format(DateTimeFormatter.ofPattern("EEE")),
+                                date.format(DateTimeFormatter.ofPattern("EEE", uiResources.configuration.locales[0])),
                                 color = if (date == LocalDate.now()) Color.White else Sage,
                                 style = MaterialTheme.typography.labelSmall,
                             )
@@ -528,7 +528,7 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
                                     )
                                     if (item.contributions.isNotEmpty())
                                         Text(
-                                            item.contributions.distinct().joinToString(" · "),
+                                            item.contributions.distinct().joinToString(" · ") { uiResources.shoppingContribution(it) },
                                             style = MaterialTheme.typography.bodySmall,
                                             color = Muted,
                                         )

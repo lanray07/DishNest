@@ -1,12 +1,20 @@
 {
   "jvm_suites": [
     {
+      "name": "com.dishnest.app.RecipeQueryTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T18:38:48.470Z"
+    },
+    {
       "name": "com.dishnest.app.ReadinessDataTest",
       "tests": "8",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:43:06.609Z"
+      "timestamp": "2026-10-18T18:38:47.116Z"
     },
     {
       "name": "com.dishnest.app.RecipeWebAccessTest",
@@ -14,7 +22,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:43:29.358Z"
+      "timestamp": "2026-10-18T18:38:48.479Z"
     },
     {
       "name": "com.dishnest.app.RecipeImagesTest",
@@ -22,7 +30,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:43:27.902Z"
+      "timestamp": "2026-10-18T18:38:48.180Z"
     },
     {
       "name": "com.dishnest.app.RoomPersistenceTest",
@@ -30,7 +38,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:43:30.098Z"
+      "timestamp": "2026-10-18T18:38:48.546Z"
     },
     {
       "name": "com.dishnest.app.EntitlementsTest",
@@ -38,7 +46,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:42:39.688Z"
+      "timestamp": "2026-10-18T18:37:51.780Z"
     },
     {
       "name": "com.dishnest.app.EntitlementClockTest",
@@ -46,7 +54,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:42:39.672Z"
+      "timestamp": "2026-10-18T18:37:51.772Z"
     },
     {
       "name": "com.dishnest.app.RestoreGuardTest",
@@ -54,7 +62,15 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:43:29.587Z"
+      "timestamp": "2026-10-18T18:38:48.516Z"
+    },
+    {
+      "name": "com.dishnest.app.LocalizedScreenshotsTest",
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T18:38:02.850Z"
     },
     {
       "name": "com.dishnest.app.FeatureScopeTest",
@@ -62,7 +78,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:42:42.169Z"
+      "timestamp": "2026-10-18T18:37:52.811Z"
     },
     {
       "name": "com.dishnest.app.ScreenshotsTest",
@@ -70,7 +86,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:43:33.207Z"
+      "timestamp": "2026-10-18T18:38:49.256Z"
     },
     {
       "name": "com.dishnest.app.VoiceLocalesTest",
@@ -78,7 +94,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:44:25.368Z"
+      "timestamp": "2026-10-18T18:38:57.377Z"
     },
     {
       "name": "com.dishnest.app.DomainTest",
@@ -86,7 +102,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:42:39.075Z"
+      "timestamp": "2026-10-18T18:37:51.306Z"
     },
     {
       "name": "com.dishnest.app.VoiceFocusTest",
@@ -94,15 +110,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:44:24.309Z"
-    },
-    {
-      "name": "com.dishnest.app.RecipeQueryTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T17:43:29.218Z"
+      "timestamp": "2026-10-18T18:38:57.188Z"
     }
   ],
   "device_instrumentation": {
@@ -146,11 +154,47 @@
     "storeSubmission": false,
     "remoteDeployment": false
   },
-  "physical_fire_qa": "Partial smoke coverage only; full hardware matrix pending",
+  "physical_fire_qa": "Pending current APK rerun; retained device results are historical. Full hardware matrix also pending.",
   "billing_qa": "Local SDK integration and signed-verification service prepared; 11 server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.",
   "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
   "store_submission": "not performed; conditional submission authorized only after all required readiness gates pass",
   "website_deployment": "not performed; local checks only",
+  "device_instrumentation_current": false,
+  "visual_localization": {
+    "passed": true,
+    "locales": [
+      "en-GB",
+      "en-US",
+      "de-DE",
+      "es-ES",
+      "fr-FR",
+      "it-IT",
+      "nl-NL",
+      "pl-PL",
+      "pt-BR",
+      "pt-PT",
+      "ar",
+      "hi"
+    ],
+    "screenshots": 96,
+    "promotional_images": 12,
+    "export_count": 108,
+    "copy_sha256": "13966af284f308358e2c6f4e55dcb6b5f219d3ecf582ac903f4a0a316658048e",
+    "capture_method": "Production Compose UI with isolated translated sample records; Robolectric native graphics",
+    "artwork_renderer": "CUA Chromium with native script shaping",
+    "native_language_approved": false,
+    "physical_device_verified": false,
+    "release_approved": false,
+    "amazon_artwork_locales_verified": [
+      "de-DE",
+      "en-GB",
+      "en-US",
+      "es-ES",
+      "fr-FR",
+      "it-IT",
+      "pt-BR"
+    ]
+  },
   "android_lint": {
     "errors": 0,
     "error_categories": [],
@@ -163,6 +207,7 @@
       "10 locale listings: title, UTF-8 description limits, feature bullets and matching text exports checked; native approval pending",
       "Required icon and promotional pixel dimensions valid",
       "16 screenshot drafts: dimensions and RGB output checked",
+      "108 localized visual exports: dimensions, source/copy hashes and overflow checks pass; native and hardware approval pending",
       "All Android string XML parses"
     ],
     "errors": [],
@@ -419,7 +464,7 @@
   },
   "native-alignment": {
     "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "apk_sha256": "23d374d03e6eb11c85addc18407fcf98014e50aaade110137e1afe689f7da0b1",
+    "apk_sha256": "cdfac7c2bb8394b4623973d5fbe71f0178e383d16f1d41d34a32612aa1e457c9",
     "libraries": [
       {
         "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
@@ -655,8 +700,8 @@
     "device_tested": false
   },
   "device-evidence": {
-    "collectedAt": "2026-10-18T16:22:16.7646220Z",
-    "connectedDeviceCount": 1,
+    "collectedAt": "2026-10-18T18:55:42.0979443Z",
+    "connectedDeviceCount": 0,
     "deviceTests": "Not executed by this read-only inventory script",
     "physicalFireQa": "Pending explicit hardware testing and evidence",
     "published": false
@@ -703,7 +748,7 @@
     "remoteDeployment": false
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-18T18:18:05.580754+00:00",
+    "generatedAt": "2026-10-18T18:55:58.900817+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -819,21 +864,21 @@
       },
       {
         "check": "Physical Fire native components",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-device-qa.json",
-        "remaining": ""
+        "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
       },
       {
         "check": "Physical Fire instrumentation smoke",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-device-qa.json",
-        "remaining": ""
+        "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
       },
       {
         "check": "Background Fire timer after process termination",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-background-alarm.json",
-        "remaining": ""
+        "remaining": "Run the two-process timer probe on the exact QA APK"
       },
       {
         "check": "Physical device QA",

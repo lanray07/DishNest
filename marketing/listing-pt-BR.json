@@ -34,7 +34,7 @@
   "draft_notes": {
     "publication_permitted": false,
     "console_entered": true,
-    "copy_scope": "Portuguese (Brazil) translated draft; default English artwork fallback; native approval pending.",
+    "copy_scope": "pt-BR listing draft. Localized artwork prepared; saved in Amazon draft. Native and hardware approval pending.",
     "required_publisher_inputs": [
       "Publisher legal identity and final service operator disclosures",
       "Approved production billing setup, prices and terms",
@@ -44,6 +44,8 @@
     ],
     "native_language_approved": false,
     "localized_artwork_approved": false,
-    "console_verified_after_reload": true
+    "console_verified_after_reload": true,
+    "localized_artwork_prepared": true,
+    "localized_artwork_console_entered": true
   }
 }

@@ -41,13 +41,16 @@
   "draft_notes": {
     "publication_permitted": false,
     "console_entered": true,
-    "copy_scope": "English (U.S.) console draft; final release approval pending.",
+    "copy_scope": "en-US listing draft. Localized artwork prepared; saved in Amazon draft. Native and hardware approval pending.",
     "required_publisher_inputs": [
       "Publisher legal identity and final service operator disclosures",
       "Approved production billing setup, prices and terms",
       "Publisher-signed release APK and exact device verification",
       "Export-compliance certification by the publisher",
       "Native-approved translations and final hardware screenshots"
-    ]
+    ],
+    "localized_artwork_prepared": true,
+    "localized_artwork_console_entered": true,
+    "localized_artwork_approved": false
   }
 }
