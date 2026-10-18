@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="nav_home">Moja kuchnia</string>
     <string name="nav_recipes">Książka kucharska</string>
@@ -257,15 +258,59 @@
     <string name="copy_f46668cb02" formatted="false">Zmień zdjęcie przepisu</string>
     <string name="copy_f60047d5c0" formatted="false">Nie można odczytać obrazu</string>
     <string name="copy_ff59fa9de2" formatted="false">Logo DishNest</string>
-<plurals name="recipe_count">
+    <plurals name="recipe_count">
         <item quantity="one">%d przepis</item>
         <item quantity="few">%d przepisy</item>
         <item quantity="many">%d przepisów</item>
         <item quantity="other">%d przepisu</item>
     </plurals>
-
     <string name="third_party_notices">Informacje o oprogramowaniu zewnętrznym</string>
     <string name="billing_monthly">Subskrypcja miesięczna</string>
     <string name="billing_annual">Subskrypcja roczna</string>
     <string name="billing_one_time">Zakup jednorazowy</string>
+    <string name="meals_swapped">Zamieniono posiłki</string>
+    <string name="swap_meals">Zamień dwa posiłki</string>
+    <string name="swap_pick">Wybierz dwa zaplanowane posiłki</string>
+    <string name="source_https_required">Adres źródła musi zaczynać się od https://.</string>
+    <string name="backup_imported">Zaimportowano kopię</string>
+    <string name="export_photo_backup">Eksportuj kopię ze zdjęciami (ZIP)</string>
+    <string name="import_photo_backup">Importuj kopię ze zdjęciami (ZIP)</string>
+    <string name="photo_backup_limits">ZIP zawiera zdjęcia, do 64 MB. Import wymaga pustej kuchni. Minutniki i zakupy są pomijane.</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="servings_value">Porcje: %1$d</string>
+    <string name="prep_value">Przygotowanie: %1$s</string>
+    <string name="cook_value">Gotowanie: %1$s</string>
+    <string name="step_position">Krok %1$d z %2$d</string>
+    <string name="use_template">Użyj %1$s</string>
+    <string name="check_date_value">Data sprawdzenia: %1$s</string>
+    <string name="past_date_value">Data minęła: %1$s</string>
+    <string name="pantry_match">Składniki w spiżarni: %1$d / %2$d</string>
+    <string name="hero_planned">Dziś w menu</string>
+    <string name="hero_saved">Z twojej książki kucharskiej</string>
+    <string name="hero_inspiration">Dobry posiłek zaczyna się od odrobiny inspiracji.</string>
+    <string name="slot_breakfast">Śniadanie</string>
+    <string name="slot_lunch">Obiad</string>
+    <string name="slot_dinner">Kolacja</string>
+    <string name="slot_snacks">Przekąski</string>
+    <string name="decrease_value">Zmniejsz %1$s</string>
+    <string name="increase_value">Zwiększ %1$s</string>
+    <string name="people_label">Osoby</string>
+    <string name="paused_label">Wstrzymany</string>
+    <string name="timer_ready">Minutnik zakończył odliczanie.</string>
+    <string name="timer_channel">Minutniki kuchenne</string>
+    <string name="timer_set">Ustawiono minutnik: %1$s</string>
+    <string name="voice_listening">Słucham…</string>
+    <string name="voice_processing">Przetwarzanie…</string>
+    <string name="voice_output_unavailable">Odczyt głosowy jest niedostępny. Czytaj krok na ekranie.</string>
+    <string name="voice_unavailable">Rozpoznawanie mowy jest niedostępne. Użyj przycisków.</string>
+    <string name="voice_no_match">Nie usłyszano polecenia. Dotknij mikrofonu, aby spróbować ponownie.</string>
+    <string name="recipe_filters">Filtry przepisów</string>
+    <string name="any_filter">Dowolne</string>
+    <string name="clear_filters">Wyczyść filtry</string>
+    <string name="sort_title">Sortuj według tytułu</string>
+    <string name="sort_recent">Ostatnio zmienione</string>
+    <string name="plan_meals">Planuj posiłki</string>
+    <string name="open_pantry">Otwórz spiżarnię</string>
+    <string name="meal_inspiration">Coś pysznego?</string>
+    <string name="voice_examples">Przykłady: następny krok · poprzedni krok · powtórz · składniki · zakończ gotowanie · minutnik 5 minut</string>
 </resources>

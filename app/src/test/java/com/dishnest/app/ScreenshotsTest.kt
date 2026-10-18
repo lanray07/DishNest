@@ -87,6 +87,35 @@ class ScreenshotsTest {
         }
     }
 
+    @Test
+    fun filtersAndTwoMealSwapUseTheProductionUi() {
+        rule.onNodeWithText("Explore a demo kitchen").performClick()
+        rule.waitUntil(20000) { rule.onAllNodesWithText("Lemon & herb chicken").fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithText("Recipe book", useUnmergedTree = true).performClick()
+        rule.onNodeWithText("Recipe filters").performScrollTo().performClick()
+        rule.onNodeWithText("Vegan").performScrollTo().performClick()
+        rule.onNodeWithContentDescription("Close").performClick()
+        rule.onNodeWithText("Cosy red lentil soup").assertExists()
+        rule.onNodeWithText("Lemon & herb chicken").assertDoesNotExist()
+        rule.onNodeWithText("Meal planner", useUnmergedTree = true).performClick()
+        rule.onNodeWithText("Swap two meals").performScrollTo().performClick()
+        val viewModel = androidx.lifecycle.ViewModelProvider(rule.activity)[KitchenViewModel::class.java]
+        val before = viewModel.state.value.meals.sortedBy { it.date }
+        val first = before[0]; val second = before[1]
+        val firstTitle = viewModel.state.value.recipes.single { it.id == first.recipeId }.title
+        val secondTitle = viewModel.state.value.recipes.single { it.id == second.recipeId }.title
+        rule.onNode(hasText(first.date, substring = true) and hasText(firstTitle, substring = true)).performScrollTo().performClick()
+        rule.onNode(hasText(first.date, substring = true) and hasText(firstTitle, substring = true)).assertIsSelected()
+        rule.onNode(hasText(second.date, substring = true) and hasText(secondTitle, substring = true)).performScrollTo().performClick()
+        rule.onNodeWithText("Select two planned meals").assertDoesNotExist()
+        rule.waitForIdle()
+        rule.waitUntil(20000) {
+            viewModel.state.value.meals.find { it.id == first.id }?.date == second.date &&
+                viewModel.state.value.meals.find { it.id == second.id }?.date == first.date
+        }
+        shot("tablet-plan-swapped")
+    }
+
     private fun runFlow(device: String) {
         File("../artifacts/screens").mkdirs()
         rule.waitUntil(20000) {

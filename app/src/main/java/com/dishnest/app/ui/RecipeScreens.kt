@@ -121,10 +121,10 @@ fun RecipeDetail(
             ) {
                 AssistChip(
                     {},
-                    label = { Text("Prep ${r.prepMinutes} min") },
+                    label = { Text(stringResource(R.string.prep_value, uiResources.duration(r.prepMinutes))) },
                     leadingIcon = { Icon(Icons.Outlined.Schedule, null) },
                 )
-                AssistChip({}, label = { Text("Cook ${r.cookMinutes} min") })
+                AssistChip({}, label = { Text(stringResource(R.string.cook_value, uiResources.duration(r.cookMinutes))) })
                 AssistChip({}, label = { Text(r.difficulty) })
                 r.tags.forEach { AssistChip({}, label = { Text(it) }) }
             }
@@ -140,7 +140,7 @@ fun RecipeDetail(
                         stringResource(com.dishnest.app.R.string.ui_ingredients_87675d),
                         style = MaterialTheme.typography.titleLarge,
                     )
-                    Stepper(servings, { servings = it }, "servings")
+                    Stepper(servings, { servings = it }, stringResource(R.string.ui_servings_32939b))
                 }
                 r.ingredients.forEach { i ->
                     Row(
@@ -251,11 +251,11 @@ fun recipeText(r: Recipe) =
 fun Stepper(value: Int, onChange: (Int) -> Unit, label: String = "") {
     Row(verticalAlignment = Alignment.CenterVertically) {
         IconButton(onClick = { onChange((value - 1).coerceAtLeast(1)) }, enabled = value > 1) {
-            Icon(Icons.Outlined.Remove, "Decrease $label")
+            Icon(Icons.Outlined.Remove, stringResource(R.string.decrease_value, label))
         }
         Text("$value $label", style = MaterialTheme.typography.labelLarge)
         IconButton(onClick = { onChange((value + 1).coerceAtMost(100)) }, enabled = value < 100) {
-            Icon(Icons.Outlined.Add, "Increase $label")
+            Icon(Icons.Outlined.Add, stringResource(R.string.increase_value, label))
         }
     }
 }
@@ -318,25 +318,31 @@ fun RecipeEditor(initial: Recipe, onDismiss: () -> Unit, onSave: (Recipe) -> Uni
     var difficulty by rememberSaveable { mutableStateOf(initial.difficulty) }
     var error by remember { mutableStateOf("") }
     val context = LocalContext.current
+    val photoScope = rememberCoroutineScope()
+    var photoBusy by remember { mutableStateOf(false) }
     val photoPicker =
         rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-            if (uri != null)
-                runCatching {
-                        val bytes =
-                            context.contentResolver.openInputStream(uri)?.use {
-                                it.readBytesBounded(8_000_000)
-                            }
-                                ?: error(
-                                    uiResources.getString(com.dishnest.app.R.string.copy_f60047d5c0)
-                                )
-                        val directory = File(context.filesDir, "photos").apply { mkdirs() }
-                        val file = File(directory, "${newId()}.jpg")
-                        file.writeBytes(bytes)
-                        photo = file.absolutePath
+            if (uri != null) {
+                photoBusy = true
+                photoScope.launch {
+                    try {
+                        photo = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+                            val bytes = context.contentResolver.openInputStream(uri)?.use {
+                                it.readBytesBounded(12_000_000)
+                            } ?: error(uiResources.getString(R.string.copy_f60047d5c0))
+                            com.dishnest.app.platform.RecipePhotos(context.filesDir).import(bytes)
+                        }
+                    } catch (cancelled: kotlinx.coroutines.CancellationException) {
+                        throw cancelled
+                    } catch (failure: Exception) {
+                        error = failure.message.orEmpty()
+                    } finally {
+                        photoBusy = false
                     }
-                    .onFailure { error = it.message.orEmpty() }
+                }
+            }
         }
-    FullDialog(onDismiss, "${if(initial.title.isBlank()) "Add" else "Edit"} recipe") {
+    FullDialog(onDismiss, stringResource(if (initial.title.isBlank()) R.string.ui_add_recipe_8d014e else R.string.copy_481682c207)) {
         Text(
             stringResource(com.dishnest.app.R.string.ui_make_it_yours_34ca8a),
             style = MaterialTheme.typography.headlineMedium,
@@ -418,7 +424,7 @@ fun RecipeEditor(initial: Recipe, onDismiss: () -> Unit, onSave: (Recipe) -> Uni
             source,
             { source = it },
         )
-        OutlinedButton(onClick = { photoPicker.launch("image/*") }) {
+        OutlinedButton(onClick = { photoPicker.launch("image/*") }, enabled = !photoBusy) {
             Icon(Icons.Outlined.AddPhotoAlternate, null)
             Text(
                 if (photo.isBlank())
@@ -426,7 +432,9 @@ fun RecipeEditor(initial: Recipe, onDismiss: () -> Unit, onSave: (Recipe) -> Uni
                 else uiResources.getString(com.dishnest.app.R.string.copy_f46668cb02)
             )
         }
+        if (photoBusy) LinearProgressIndicator(Modifier.fillMaxWidth())
         Button(
+            enabled = !photoBusy,
             onClick = {
                 val p = prep.toIntOrNull()
                 val c = cook.toIntOrNull()
@@ -439,7 +447,7 @@ fun RecipeEditor(initial: Recipe, onDismiss: () -> Unit, onSave: (Recipe) -> Uni
                 else if (p == null || c == null || p !in 0..10080 || c !in 0..10080)
                     error = uiResources.getString(com.dishnest.app.R.string.copy_ca07f55dcb)
                 else if (source.isNotBlank() && !source.startsWith("https://"))
-                    error = "Source URL must start with https://."
+                    error = uiResources.getString(R.string.source_https_required)
                 else
                     onSave(
                         initial.copy(
@@ -629,7 +637,7 @@ fun CookingScreen(
         rememberUpdatedState<(String) -> Unit> { text ->
             commandRevision++
             vm.metrics.record("voice_used")
-            when (val command = VoiceParser.parse(text, Locale.getDefault().language)) {
+            when (val command = VoiceParser.parse(text, uiResources.configuration.locales[0].toLanguageTag())) {
                 VoiceCommand.Next -> {
                     step = (step + 1).coerceAtMost((r.steps.size - 1).coerceAtLeast(0))
                     status = uiResources.getString(com.dishnest.app.R.string.copy_298a9207a7)
@@ -651,7 +659,7 @@ fun CookingScreen(
                 VoiceCommand.Finish -> onFinish()
                 is VoiceCommand.Timer -> {
                     vm.timer("${r.title} · step ${step+1}", command.seconds)
-                    status = "Timer set for ${command.seconds/60} minutes"
+                    status = uiResources.getString(R.string.timer_set, formatTime(command.seconds * 1000))
                 }
                 VoiceCommand.TimeLeft ->
                     status =
@@ -726,8 +734,8 @@ fun CookingScreen(
                 status.isNotBlank() &&
                 status !in
                     listOf(
-                        "Listening…",
-                        "Processing…",
+                        uiResources.getString(R.string.voice_listening),
+                        uiResources.getString(R.string.voice_processing),
                         uiResources.getString(com.dishnest.app.R.string.copy_298a9207a7),
                         uiResources.getString(com.dishnest.app.R.string.copy_318c1da8d9),
                     )
@@ -772,11 +780,11 @@ fun CookingScreen(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                "STEP ${step+1} OF ${r.steps.size}",
+                stringResource(R.string.step_position, step + 1, r.steps.size),
                 color = Sage,
                 style = MaterialTheme.typography.labelLarge,
             )
-            Stepper(servings, { servings = it }, "servings")
+            Stepper(servings, { servings = it }, stringResource(R.string.ui_servings_32939b))
         }
         Column(
             Modifier.weight(1f).verticalScroll(rememberScrollState()),
@@ -792,7 +800,7 @@ fun CookingScreen(
             )
             if (ingredients)
                 SoftCard {
-                    Text("For $servings servings", style = MaterialTheme.typography.titleLarge)
+                    Text(stringResource(R.string.servings_value, servings), style = MaterialTheme.typography.titleLarge)
                     r.ingredients.forEach { i ->
                         Text(
                             "${Ingredients.display(i.quantity?.times(servings.toDouble()/r.servings),i.unit)}  ${i.name}",
@@ -813,7 +821,7 @@ fun CookingScreen(
                         Column(Modifier.weight(1f)) {
                             Text(t.label)
                             Text(
-                                formatTime(t.remaining(now)) + (if (t.paused) " · paused" else ""),
+                                formatTime(t.remaining(now)) + (if (t.paused) " · " + stringResource(R.string.paused_label) else ""),
                                 style = MaterialTheme.typography.headlineMedium,
                             )
                         }
@@ -835,6 +843,7 @@ fun CookingScreen(
         }
         if (status.isNotBlank())
             Text(status, color = Sage, style = MaterialTheme.typography.bodyMedium)
+        Text(stringResource(R.string.voice_examples), style = MaterialTheme.typography.bodySmall, color = Muted)
         FlowRow(
             Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(10.dp),

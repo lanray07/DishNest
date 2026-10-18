@@ -5,8 +5,12 @@ $artifactDirectory = Join-Path $projectRoot 'artifacts'
 if (-not (Test-Path -LiteralPath $AdbPath)) { throw 'Android platform-tools adb was not found.' }
 $inventory = & $AdbPath devices -l
 if ($LASTEXITCODE -ne 0) { throw 'adb device inventory failed.' }
-$inventory | Set-Content -LiteralPath (Join-Path $artifactDirectory 'device-inventory.txt') -Encoding utf8
 $devices = @($inventory | Where-Object { $_ -match '^\S+\s+device(?:\s|$)' })
+$redactedInventory = @('List of devices attached (serial identifiers omitted)')
+for ($index = 0; $index -lt $devices.Count; $index++) {
+    $redactedInventory += ($devices[$index] -replace '^\S+', "device-$($index + 1)")
+}
+$redactedInventory | Set-Content -LiteralPath (Join-Path $artifactDirectory 'device-inventory.txt') -Encoding utf8
 $record = [ordered]@{
     collectedAt = [DateTime]::UtcNow.ToString('o')
     connectedDeviceCount = $devices.Count

@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="nav_home">Mi cocina</string>
     <string name="nav_recipes">Recetario</string>
@@ -266,4 +267,49 @@
     <string name="billing_monthly">Suscripción mensual</string>
     <string name="billing_annual">Suscripción anual</string>
     <string name="billing_one_time">Compra única</string>
+    <string name="meals_swapped">Comidas intercambiadas</string>
+    <string name="swap_meals">Intercambiar dos comidas</string>
+    <string name="swap_pick">Selecciona dos comidas planificadas</string>
+    <string name="source_https_required">La URL debe empezar por https://.</string>
+    <string name="backup_imported">Copia importada</string>
+    <string name="export_photo_backup">Exportar copia con fotos (ZIP)</string>
+    <string name="import_photo_backup">Importar copia con fotos (ZIP)</string>
+    <string name="photo_backup_limits">El ZIP incluye fotos, hasta 64 MB. La cocina debe estar vacía para importar. No incluye temporizadores ni compras.</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="servings_value">Raciones: %1$d</string>
+    <string name="prep_value">Preparación: %1$s</string>
+    <string name="cook_value">Cocción: %1$s</string>
+    <string name="step_position">Paso %1$d de %2$d</string>
+    <string name="use_template">Usar %1$s</string>
+    <string name="check_date_value">Fecha de revisión: %1$s</string>
+    <string name="past_date_value">Fecha pasada: %1$s</string>
+    <string name="pantry_match">Ingredientes en despensa: %1$d / %2$d</string>
+    <string name="hero_planned">En el menú de hoy</string>
+    <string name="hero_saved">De tu recetario</string>
+    <string name="hero_inspiration">Una buena comida empieza con un poco de inspiración.</string>
+    <string name="slot_breakfast">Desayuno</string>
+    <string name="slot_lunch">Almuerzo</string>
+    <string name="slot_dinner">Cena</string>
+    <string name="slot_snacks">Tentempiés</string>
+    <string name="decrease_value">Reducir %1$s</string>
+    <string name="increase_value">Aumentar %1$s</string>
+    <string name="people_label">Personas</string>
+    <string name="paused_label">En pausa</string>
+    <string name="timer_ready">El temporizador ha terminado.</string>
+    <string name="timer_channel">Temporizadores de cocina</string>
+    <string name="timer_set">Temporizador iniciado: %1$s</string>
+    <string name="voice_listening">Escuchando…</string>
+    <string name="voice_processing">Procesando…</string>
+    <string name="voice_output_unavailable">La voz no está disponible. Sigue el paso en pantalla.</string>
+    <string name="voice_unavailable">El reconocimiento de voz no está disponible. Usa los controles táctiles.</string>
+    <string name="voice_no_match">No se ha oído un comando. Toca el micrófono para reintentar.</string>
+    <string name="recipe_filters">Filtros de recetas</string>
+    <string name="any_filter">Cualquiera</string>
+    <string name="clear_filters">Borrar filtros</string>
+    <string name="sort_title">Ordenar por título</string>
+    <string name="sort_recent">Actualizadas recientemente</string>
+    <string name="plan_meals">Planificar comidas</string>
+    <string name="open_pantry">Abrir despensa</string>
+    <string name="meal_inspiration">¿Algo delicioso?</string>
+    <string name="voice_examples">Prueba: siguiente paso · paso anterior · repetir · ingredientes · terminar de cocinar · temporizador 5 minutos</string>
 </resources>

@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="nav_home">Mijn keuken</string>
     <string name="nav_recipes">Receptenboek</string>
@@ -257,13 +258,57 @@
     <string name="copy_f46668cb02" formatted="false">Receptfoto wijzigen</string>
     <string name="copy_f60047d5c0" formatted="false">Afbeelding kan niet worden gelezen</string>
     <string name="copy_ff59fa9de2" formatted="false">DishNest-logo</string>
-<plurals name="recipe_count">
+    <plurals name="recipe_count">
         <item quantity="one">%d recept</item>
         <item quantity="other">%d recepten</item>
     </plurals>
-
     <string name="third_party_notices">Vermeldingen van derden</string>
     <string name="billing_monthly">Maandabonnement</string>
     <string name="billing_annual">Jaarabonnement</string>
     <string name="billing_one_time">Eenmalige aankoop</string>
+    <string name="meals_swapped">Maaltijden verwisseld</string>
+    <string name="swap_meals">Twee maaltijden verwisselen</string>
+    <string name="swap_pick">Selecteer twee geplande maaltijden</string>
+    <string name="source_https_required">De bron-URL moet beginnen met https://.</string>
+    <string name="backup_imported">Back-up geïmporteerd</string>
+    <string name="export_photo_backup">Back-up met foto’s exporteren (ZIP)</string>
+    <string name="import_photo_backup">Back-up met foto’s importeren (ZIP)</string>
+    <string name="photo_backup_limits">ZIP bevat receptfoto’s tot 64 MB. Importeren vereist een lege keuken. Timers en aankopen zijn uitgesloten.</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="servings_value">Porties: %1$d</string>
+    <string name="prep_value">Voorbereiding: %1$s</string>
+    <string name="cook_value">Bereiding: %1$s</string>
+    <string name="step_position">Stap %1$d van %2$d</string>
+    <string name="use_template">%1$s gebruiken</string>
+    <string name="check_date_value">Controledatum: %1$s</string>
+    <string name="past_date_value">Datum verstreken: %1$s</string>
+    <string name="pantry_match">Ingrediënten in voorraad: %1$d / %2$d</string>
+    <string name="hero_planned">Vandaag op het menu</string>
+    <string name="hero_saved">Uit je receptenboek</string>
+    <string name="hero_inspiration">Een goede maaltijd begint met wat inspiratie.</string>
+    <string name="slot_breakfast">Ontbijt</string>
+    <string name="slot_lunch">Lunch</string>
+    <string name="slot_dinner">Avondeten</string>
+    <string name="slot_snacks">Tussendoortjes</string>
+    <string name="decrease_value">%1$s verlagen</string>
+    <string name="increase_value">%1$s verhogen</string>
+    <string name="people_label">Personen</string>
+    <string name="paused_label">Gepauzeerd</string>
+    <string name="timer_ready">Je kooktimer is afgelopen.</string>
+    <string name="timer_channel">Kooktimers</string>
+    <string name="timer_set">Timer ingesteld: %1$s</string>
+    <string name="voice_listening">Luisteren…</string>
+    <string name="voice_processing">Verwerken…</string>
+    <string name="voice_output_unavailable">Spraakuitvoer is niet beschikbaar. Volg de stap op het scherm.</string>
+    <string name="voice_unavailable">Spraakherkenning is niet beschikbaar. Gebruik de aanraakbediening.</string>
+    <string name="voice_no_match">Geen opdracht gehoord. Tik op de microfoon om opnieuw te proberen.</string>
+    <string name="recipe_filters">Receptfilters</string>
+    <string name="any_filter">Alle</string>
+    <string name="clear_filters">Filters wissen</string>
+    <string name="sort_title">Sorteren op titel</string>
+    <string name="sort_recent">Recent bijgewerkt</string>
+    <string name="plan_meals">Maaltijden plannen</string>
+    <string name="open_pantry">Voorraad openen</string>
+    <string name="meal_inspiration">Iets lekkers?</string>
+    <string name="voice_examples">Probeer: volgende stap · vorige stap · herhaal · ingrediënten · stop met koken · timer 5 minuten</string>
 </resources>

@@ -16,6 +16,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.dishnest.app.*
+import com.dishnest.app.R
 import com.dishnest.app.domain.*
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -29,6 +30,8 @@ fun PlanScreen(
 ) {
     val uiResources = androidx.compose.ui.platform.LocalContext.current.resources
 
+    var swapOpen by rememberSaveable { mutableStateOf(false) }
+    var firstSwapId by rememberSaveable { mutableStateOf<String?>(null) }
     var offset by rememberSaveable { mutableLongStateOf(0) }
     val start = Planner.week(LocalDate.now()).plusWeeks(offset)
     var assign by remember { mutableStateOf<Pair<LocalDate, String>?>(null) }
@@ -86,6 +89,10 @@ fun PlanScreen(
                 OutlinedButton(onClick = { saveTemplate = true }) {
                     Text(stringResource(com.dishnest.app.R.string.ui_save_template_47f72a))
                 }
+                OutlinedButton(onClick = { swapOpen = true; firstSwapId = null },
+                    enabled = s.meals.count { it.date >= start.toString() && it.date <= start.plusDays(6).toString() } >= 2) {
+                    Text(stringResource(R.string.swap_meals))
+                }
                 OutlinedButton(onClick = { clear = true }) {
                     Text(stringResource(com.dishnest.app.R.string.ui_clear_week_32148a))
                 }
@@ -109,7 +116,7 @@ fun PlanScreen(
                     s.templates.forEach { t ->
                         AssistChip(
                             onClick = { vm.applyTemplate(t, start) },
-                            label = { Text("Use ${t.name}") },
+                            label = { Text(stringResource(R.string.use_template, t.name)) },
                             leadingIcon = { Icon(Icons.Outlined.BookmarkBorder, null) },
                         )
                     }
@@ -144,7 +151,7 @@ fun PlanScreen(
                         }
                     }
                     Text(
-                        date.dayOfWeek.name.lowercase().replaceFirstChar { it.titlecase() },
+                        date.format(DateTimeFormatter.ofPattern("EEEE", uiResources.configuration.locales[0])),
                         style = MaterialTheme.typography.titleLarge,
                     )
                     if (date == LocalDate.now())
@@ -163,8 +170,8 @@ fun PlanScreen(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
                         Text(
-                            slot,
-                            Modifier.width(80.dp),
+                            uiResources.mealSlot(slot),
+                            Modifier.widthIn(min = 80.dp, max = 115.dp),
                             style = MaterialTheme.typography.labelLarge,
                             color = Muted,
                         )
@@ -181,7 +188,7 @@ fun PlanScreen(
                                 Text(r.title, modifier = Modifier.fillMaxWidth())
                             }
                             Text(
-                                "${meal!!.servings} servings",
+                                uiResources.servings(meal!!.servings),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Muted,
                             )
@@ -203,6 +210,18 @@ fun PlanScreen(
             }
         }
     }
+    if (swapOpen) FullDialog({ swapOpen = false }, stringResource(R.string.swap_meals)) {
+        Text(stringResource(R.string.swap_pick))
+        s.meals.filter { it.date >= start.toString() && it.date <= start.plusDays(6).toString() }.forEach { meal ->
+            val recipe = s.recipes.find { it.id == meal.recipeId }
+            FilterChip(selected = firstSwapId == meal.id, onClick = {
+                val first = firstSwapId
+                if (first == meal.id) firstSwapId = null
+                else if (first == null) firstSwapId = meal.id
+                else { vm.swapMeals(first, meal.id); swapOpen = false; firstSwapId = null }
+            }, label = { Text("${meal.date} · ${uiResources.mealSlot(meal.slot)} · ${recipe?.title.orEmpty()} · ${uiResources.servings(meal.servings)}") })
+        }
+    }
     assign?.let { (date, slot) ->
         var servings by remember {
             mutableIntStateOf(
@@ -211,9 +230,9 @@ fun PlanScreen(
         }
         FullDialog(
             onDismiss = { assign = null },
-            title = "$slot · ${date.format(DateTimeFormatter.ofPattern("EEE d MMM"))}",
+            title = "${uiResources.mealSlot(slot)} · ${date.format(DateTimeFormatter.ofPattern("EEE d MMM", uiResources.configuration.locales[0]))}",
         ) {
-            Stepper(servings, { servings = it }, "servings")
+            Stepper(servings, { servings = it }, stringResource(R.string.ui_servings_32939b))
             s.recipes.forEach { r ->
                 OutlinedCard(
                     onClick = {
@@ -237,7 +256,7 @@ fun PlanScreen(
                         Icon(Icons.Outlined.Restaurant, null, tint = Sage)
                         Column {
                             Text(r.title, style = MaterialTheme.typography.titleMedium)
-                            Text("${r.prepMinutes+r.cookMinutes} minutes", color = Muted)
+                            Text(uiResources.duration(r.prepMinutes + r.cookMinutes), color = Muted)
                         }
                     }
                 }
@@ -259,7 +278,7 @@ fun PlanScreen(
                 ),
                 color = Muted,
             )
-            Stepper(household, { household = it }, "people")
+            Stepper(household, { household = it }, stringResource(R.string.people_label))
             Field(
                 stringResource(com.dishnest.app.R.string.ui_maximum_total_minutes_4e76ea),
                 maxTime,
@@ -587,8 +606,7 @@ fun PantryScreen(s: KitchenState, vm: KitchenViewModel, onRecipe: (Recipe) -> Un
                                 Text(Ingredients.display(p.quantity, p.unit), color = Muted)
                                 if (p.expiry.isNotBlank())
                                     Text(
-                                        if (p.expiry < today.toString()) "Date passed · ${p.expiry}"
-                                        else "Check date · ${p.expiry}",
+                                        uiResources.getString(if (p.expiry < today.toString()) R.string.past_date_value else R.string.check_date_value, p.expiry),
                                         color =
                                             if (p.expiry <= today.plusDays(3).toString()) Terra
                                             else Muted,
@@ -638,7 +656,7 @@ fun PantryScreen(s: KitchenState, vm: KitchenViewModel, onRecipe: (Recipe) -> Un
                         ) {
                             Text(match.recipe.title, style = MaterialTheme.typography.titleLarge)
                             Text(
-                                "${match.available} of ${match.recipe.ingredients.size} ingredient names in your pantry",
+                                stringResource(R.string.pantry_match, match.available, match.recipe.ingredients.size),
                                 color = Sage,
                             )
                             Text(

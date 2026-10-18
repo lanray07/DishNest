@@ -10,7 +10,7 @@ object BackupCodec {
 
     fun encode(backup: Backup) = gson.toJson(backup)
 
-    fun decode(raw: String): Backup {
+    fun decode(raw: String, archivePhotos: Set<String> = emptySet()): Backup {
         require(raw.length <= 10_000_000) { "Backup exceeds 10 MB." }
         val root = JsonParser.parseString(raw).asJsonObject
         require(root.get("version")?.asInt == 1) { "Unsupported backup version." }
@@ -52,37 +52,43 @@ object BackupCodec {
                 require(it.unit.length <= 100)
             }
             r.steps.forEach { require(it.isNotBlank() && it.length <= 20000) }
-            require(r.photo.length <= 500 && (r.photo.isEmpty() || r.photo in bundledPhotoIds)) {
+            require(r.photo.length <= 500 && (r.photo.isEmpty() || r.photo in bundledPhotoIds || r.photo in archivePhotos)) {
                 "External image paths cannot be restored. Reattach recipe photos."
             }
-            require(r.tags.size <= 100 && r.notes.length <= 100000)
+            require(r.tags.size <= 100 && r.tags.all { it.length <= 200 } && r.notes.length <= 100000)
+            require(r.cuisine.length <= 200 && r.collection.length <= 200 && r.difficulty.length <= 200)
+            require(r.sourceUrl.length <= 2000 && (r.sourceUrl.isBlank() || r.sourceUrl.startsWith("https://")))
         }
+        val recipeIds = b.recipes.map { it.id }.toSet()
         fun meal(m: Meal) {
             id(m.id)
             LocalDate.parse(m.date)
             require(
                 m.slot in Planner.slots &&
                     m.servings in 1..100 &&
-                    b.recipes.any { it.id == m.recipeId }
+                    m.recipeId in recipeIds
             )
         }
         b.meals.forEach(::meal)
         b.pantry.forEach {
             id(it.id)
-            require(it.name.isNotBlank())
+            require(it.name.isNotBlank() && it.name.length <= 1000 && it.unit.length <= 100)
             quantity(it.quantity)
             if (it.expiry.isNotEmpty()) LocalDate.parse(it.expiry)
         }
         b.shopping.forEach {
             id(it.id)
-            require(it.name.isNotBlank())
+            require(it.name.isNotBlank() && it.name.length <= 1000 && it.unit.length <= 100 && it.category.length <= 200)
             quantity(it.quantity)
             require(it.contributions.size <= 10000)
         }
         b.templates.forEach {
             id(it.id)
-            require(it.name.isNotBlank() && it.meals.size <= 28)
+            require(it.name.isNotBlank() && it.name.length <= 200 && it.meals.size in 1..28)
             it.meals.forEach(::meal)
+            require(it.meals.map { meal -> meal.id }.distinct().size == it.meals.size) { "Duplicate template meal IDs." }
+            require(it.meals.map { meal -> meal.date to meal.slot }.distinct().size == it.meals.size) { "Duplicate template slots." }
+            require(it.meals.map { meal -> Planner.week(LocalDate.parse(meal.date)) }.distinct().size == 1) { "Template must fit one week." }
         }
         for (ids in
             listOf(

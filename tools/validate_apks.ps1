@@ -32,7 +32,7 @@ $record = [ordered]@{
     verifiedAt = [DateTime]::UtcNow.ToString('o')
     debug = @{ signatureVerified = $debugSignatureExit -eq 0; zipAlignment16k = $debugAlignmentExit -eq 0; sha256 = (Get-FileHash -LiteralPath $debugApk -Algorithm SHA256).Hash.ToLowerInvariant() }
     release = @{ signed = $releaseSignatureExit -eq 0; zipAlignment16k = $releaseAlignmentExit -eq 0; metadataReadable = $metadataExit -eq 0; billingDisabled = $billingDisabled; sha256 = (Get-FileHash -LiteralPath $releaseApk -Algorithm SHA256).Hash.ToLowerInvariant(); productionReady = $false }
-    installedOnDevice = $false
+    deviceInstallation = 'Not checked by this static validator; see artifacts/fire-device-qa.json'
     published = $false
 }
 $record | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $artifactDirectory 'apk-validation.json') -Encoding utf8

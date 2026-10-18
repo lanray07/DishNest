@@ -33,7 +33,7 @@ fs.mkdirSync(evidenceDir, { recursive: true });
         const changedResponse = await page.goto(`http://127.0.0.1:8765/${slug}.html`, { waitUntil: 'networkidle' });
         const text = await page.locator('main').innerText();
         const pageOverflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
-        if (changedResponse.status() !== 200 || !text.includes(slug === 'privacy' ? 'receipt identifiers' : 'purchases remain disabled') || pageOverflow)
+        if (changedResponse.status() !== 200 || !text.includes(slug === 'privacy' ? 'receipt identifiers' : 'purchases remain disabled') || (slug === 'privacy' && !text.includes('ZIP includes recipe photos with a 64 MB total limit')) || pageOverflow)
           throw new Error(`Changed page failed: ${slug}/${device}`);
         await page.screenshot({ path: path.join(evidenceDir, `${slug}-${device}.png`), fullPage: false });
         changedPages.push({ slug, title: await page.title(), http: changedResponse.status(), overflow: pageOverflow, contentVerified: true });

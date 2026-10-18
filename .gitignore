@@ -5,6 +5,8 @@ local.properties
 *.jks
 *.keystore
 .env
+.env.*
+!.env.example
 .idea/
 *.log
 tools/__pycache__/
@@ -13,9 +15,13 @@ tools/__pycache__/
 !app/src/main/assets/AppstoreAuthenticationKey.pem
 *.p12
 *.pfx
+*.key
+*.pk8
+*.p8
 billing-server/node_modules/
 *.apk
 *.aab
 artifacts/deliverables/*.zip
+artifacts/build-start.json
 localisation/draft-cache/
 localisation/cache/

@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name" translatable="false">DishNest</string>
     <string name="nav_home">My kitchen</string>
@@ -266,4 +267,49 @@
     <string name="billing_monthly">Monthly subscription</string>
     <string name="billing_annual">Annual subscription</string>
     <string name="billing_one_time">One-time purchase</string>
+    <string name="meals_swapped">Meals swapped</string>
+    <string name="swap_meals">Swap two meals</string>
+    <string name="swap_pick">Select two planned meals</string>
+    <string name="source_https_required">Source URL must start with https://.</string>
+    <string name="backup_imported">Backup imported</string>
+    <string name="export_photo_backup">Export backup with photos (ZIP)</string>
+    <string name="import_photo_backup">Import backup with photos (ZIP)</string>
+    <string name="photo_backup_limits">ZIP includes recipe photos, up to 64 MB. Import requires an empty kitchen. Timers and purchase records are excluded.</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="servings_value">Servings: %1$d</string>
+    <string name="prep_value">Prep: %1$s</string>
+    <string name="cook_value">Cook: %1$s</string>
+    <string name="step_position">Step %1$d of %2$d</string>
+    <string name="use_template">Use %1$s</string>
+    <string name="check_date_value">Check date: %1$s</string>
+    <string name="past_date_value">Date passed: %1$s</string>
+    <string name="pantry_match">Ingredient names in pantry: %1$d / %2$d</string>
+    <string name="hero_planned">On the menu today</string>
+    <string name="hero_saved">From your recipe book</string>
+    <string name="hero_inspiration">A good meal starts with a little inspiration.</string>
+    <string name="slot_breakfast">Breakfast</string>
+    <string name="slot_lunch">Lunch</string>
+    <string name="slot_dinner">Dinner</string>
+    <string name="slot_snacks">Snacks</string>
+    <string name="decrease_value">Decrease %1$s</string>
+    <string name="increase_value">Increase %1$s</string>
+    <string name="people_label">People</string>
+    <string name="paused_label">Paused</string>
+    <string name="timer_ready">Your cooking timer is ready.</string>
+    <string name="timer_channel">Cooking timers</string>
+    <string name="timer_set">Timer set: %1$s</string>
+    <string name="voice_listening">Listening…</string>
+    <string name="voice_processing">Processing…</string>
+    <string name="voice_output_unavailable">Speech output is unavailable. Follow the step on screen.</string>
+    <string name="voice_unavailable">Speech recognition is unavailable. Use touch controls.</string>
+    <string name="voice_no_match">No command heard. Tap the microphone to try again.</string>
+    <string name="recipe_filters">Recipe filters</string>
+    <string name="any_filter">Any</string>
+    <string name="clear_filters">Clear filters</string>
+    <string name="sort_title">Sort by title</string>
+    <string name="sort_recent">Recently updated</string>
+    <string name="plan_meals">Plan meals</string>
+    <string name="open_pantry">Open pantry</string>
+    <string name="meal_inspiration">Something delicious?</string>
+    <string name="voice_examples">Try: next step · previous step · repeat · ingredients · finish cooking · timer 5 minutes</string>
 </resources>

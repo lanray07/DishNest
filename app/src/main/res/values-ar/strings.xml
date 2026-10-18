@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="nav_home">مطبخي</string>
     <string name="nav_recipes">كتاب الوصفات</string>
@@ -257,7 +258,7 @@
     <string name="copy_f46668cb02" formatted="false">تغيير صورة الوصفة</string>
     <string name="copy_f60047d5c0" formatted="false">تعذرت قراءة الصورة</string>
     <string name="copy_ff59fa9de2" formatted="false">شعار DishNest</string>
-<plurals name="recipe_count">
+    <plurals name="recipe_count">
         <item quantity="zero">%d وصفة</item>
         <item quantity="one">%d وصفة</item>
         <item quantity="two">%d وصفتان</item>
@@ -265,9 +266,53 @@
         <item quantity="many">%d وصفة</item>
         <item quantity="other">%d وصفة</item>
     </plurals>
-
     <string name="third_party_notices">إشعارات الجهات الخارجية</string>
     <string name="billing_monthly">اشتراك شهري</string>
     <string name="billing_annual">اشتراك سنوي</string>
     <string name="billing_one_time">شراء لمرة واحدة</string>
+    <string name="meals_swapped">تم تبديل الوجبتين</string>
+    <string name="swap_meals">تبديل وجبتين</string>
+    <string name="swap_pick">اختر وجبتين مخططتين</string>
+    <string name="source_https_required">يجب أن يبدأ رابط المصدر بـ https://.</string>
+    <string name="backup_imported">تم استيراد النسخة الاحتياطية</string>
+    <string name="export_photo_backup">تصدير نسخة مع الصور (ZIP)</string>
+    <string name="import_photo_backup">استيراد نسخة مع الصور (ZIP)</string>
+    <string name="photo_backup_limits">يتضمن ZIP صور الوصفات حتى 64 ميغابايت. يتطلب الاستيراد مطبخًا فارغًا. لا يشمل المؤقتات وسجلات الشراء.</string>
+    <string name="duration_minutes">%1$d د</string>
+    <string name="servings_value">الحصص: %1$d</string>
+    <string name="prep_value">التحضير: %1$s</string>
+    <string name="cook_value">الطهي: %1$s</string>
+    <string name="step_position">الخطوة %1$d من %2$d</string>
+    <string name="use_template">استخدام %1$s</string>
+    <string name="check_date_value">تاريخ الفحص: %1$s</string>
+    <string name="past_date_value">انقضى التاريخ: %1$s</string>
+    <string name="pantry_match">أسماء المكونات في المخزن: %1$d / %2$d</string>
+    <string name="hero_planned">على قائمة اليوم</string>
+    <string name="hero_saved">من كتاب وصفاتك</string>
+    <string name="hero_inspiration">تبدأ الوجبة الجيدة بقليل من الإلهام.</string>
+    <string name="slot_breakfast">الفطور</string>
+    <string name="slot_lunch">الغداء</string>
+    <string name="slot_dinner">العشاء</string>
+    <string name="slot_snacks">وجبات خفيفة</string>
+    <string name="decrease_value">تقليل %1$s</string>
+    <string name="increase_value">زيادة %1$s</string>
+    <string name="people_label">الأشخاص</string>
+    <string name="paused_label">متوقف مؤقتًا</string>
+    <string name="timer_ready">انتهى مؤقت الطهي.</string>
+    <string name="timer_channel">مؤقتات الطهي</string>
+    <string name="timer_set">تم ضبط المؤقت: %1$s</string>
+    <string name="voice_listening">جارٍ الاستماع…</string>
+    <string name="voice_processing">جارٍ المعالجة…</string>
+    <string name="voice_output_unavailable">الإخراج الصوتي غير متاح. اتبع الخطوة على الشاشة.</string>
+    <string name="voice_unavailable">التعرف على الكلام غير متاح. استخدم أدوات التحكم باللمس.</string>
+    <string name="voice_no_match">لم يُسمع أمر. اضغط الميكروفون للمحاولة مجددًا.</string>
+    <string name="recipe_filters">فلاتر الوصفات</string>
+    <string name="any_filter">الكل</string>
+    <string name="clear_filters">مسح الفلاتر</string>
+    <string name="sort_title">الترتيب حسب العنوان</string>
+    <string name="sort_recent">المحدثة مؤخرًا</string>
+    <string name="plan_meals">تخطيط الوجبات</string>
+    <string name="open_pantry">فتح المخزن</string>
+    <string name="meal_inspiration">شيء لذيذ؟</string>
+    <string name="voice_examples">جرّب: الخطوة التالية · الخطوة السابقة · كرر · المكونات · إنهاء الطهي · مؤقت ٥ دقائق</string>
 </resources>

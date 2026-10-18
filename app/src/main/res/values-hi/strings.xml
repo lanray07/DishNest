@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="nav_home">मेरी रसोई</string>
     <string name="nav_recipes">रेसिपी बुक</string>
@@ -257,9 +258,57 @@
     <string name="copy_f46668cb02" formatted="false">रेसिपी की फ़ोटो बदलें</string>
     <string name="copy_f60047d5c0" formatted="false">चित्र पढ़ा नहीं जा सका</string>
     <string name="copy_ff59fa9de2" formatted="false">DishNest लोगो</string>
-<plurals name="recipe_count"><item quantity="one">%d रेसिपी</item><item quantity="other">%d रेसिपी</item></plurals>
+    <plurals name="recipe_count">
+        <item quantity="one">%d रेसिपी</item>
+        <item quantity="other">%d रेसिपी</item>
+    </plurals>
     <string name="third_party_notices">तृतीय-पक्ष सॉफ़्टवेयर की सूचनाएँ</string>
     <string name="billing_monthly">मासिक सदस्यता</string>
     <string name="billing_annual">वार्षिक सदस्यता</string>
     <string name="billing_one_time">एक बार की खरीद</string>
+    <string name="meals_swapped">भोजन बदल दिए गए</string>
+    <string name="swap_meals">दो भोजन बदलें</string>
+    <string name="swap_pick">दो नियोजित भोजन चुनें</string>
+    <string name="source_https_required">स्रोत URL https:// से शुरू होना चाहिए।</string>
+    <string name="backup_imported">बैकअप आयात किया गया</string>
+    <string name="export_photo_backup">फ़ोटो सहित बैकअप निर्यात करें (ZIP)</string>
+    <string name="import_photo_backup">फ़ोटो सहित बैकअप आयात करें (ZIP)</string>
+    <string name="photo_backup_limits">ZIP में 64 MB तक रेसिपी फ़ोटो शामिल हैं। आयात के लिए खाली रसोई चाहिए। टाइमर और खरीद रिकॉर्ड शामिल नहीं हैं।</string>
+    <string name="duration_minutes">%1$d मिनट</string>
+    <string name="servings_value">परोसें: %1$d</string>
+    <string name="prep_value">तैयारी: %1$s</string>
+    <string name="cook_value">पकाना: %1$s</string>
+    <string name="step_position">चरण %1$d / %2$d</string>
+    <string name="use_template">%1$s इस्तेमाल करें</string>
+    <string name="check_date_value">जाँच की तारीख: %1$s</string>
+    <string name="past_date_value">तारीख बीत गई: %1$s</string>
+    <string name="pantry_match">भंडार में सामग्री के नाम: %1$d / %2$d</string>
+    <string name="hero_planned">आज के मेनू में</string>
+    <string name="hero_saved">आपकी रेसिपी बुक से</string>
+    <string name="hero_inspiration">अच्छा भोजन थोड़ी प्रेरणा से शुरू होता है।</string>
+    <string name="slot_breakfast">नाश्ता</string>
+    <string name="slot_lunch">दोपहर का भोजन</string>
+    <string name="slot_dinner">रात का भोजन</string>
+    <string name="slot_snacks">हल्का नाश्ता</string>
+    <string name="decrease_value">%1$s घटाएँ</string>
+    <string name="increase_value">%1$s बढ़ाएँ</string>
+    <string name="people_label">लोग</string>
+    <string name="paused_label">रुका हुआ</string>
+    <string name="timer_ready">आपका खाना पकाने का टाइमर पूरा हुआ।</string>
+    <string name="timer_channel">खाना पकाने के टाइमर</string>
+    <string name="timer_set">टाइमर सेट: %1$s</string>
+    <string name="voice_listening">सुन रहे हैं…</string>
+    <string name="voice_processing">प्रक्रिया जारी है…</string>
+    <string name="voice_output_unavailable">आवाज़ उपलब्ध नहीं है। स्क्रीन पर दिए चरण का पालन करें।</string>
+    <string name="voice_unavailable">बोली की पहचान उपलब्ध नहीं है। टच नियंत्रण इस्तेमाल करें।</string>
+    <string name="voice_no_match">कोई आदेश नहीं सुना गया। फिर कोशिश करने के लिए माइक्रोफ़ोन दबाएँ।</string>
+    <string name="recipe_filters">रेसिपी फ़िल्टर</string>
+    <string name="any_filter">कोई भी</string>
+    <string name="clear_filters">फ़िल्टर हटाएँ</string>
+    <string name="sort_title">नाम के अनुसार क्रम</string>
+    <string name="sort_recent">हाल में अपडेट की गई</string>
+    <string name="plan_meals">भोजन की योजना बनाएँ</string>
+    <string name="open_pantry">भंडार खोलें</string>
+    <string name="meal_inspiration">कुछ स्वादिष्ट?</string>
+    <string name="voice_examples">कहें: अगला चरण · पिछला चरण · दोहराएँ · सामग्री · खाना पकाना समाप्त करें · टाइमर ५ मिनट</string>
 </resources>

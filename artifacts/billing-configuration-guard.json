@@ -1,7 +1,6 @@
 {
-  "productionKeyCreated": false,
   "passed": true,
-  "actualExitCode": 1,
-  "expectedRejection": "Unconfigured billing-enabled build must fail before packaging",
+  "command": "Gradle configuration with billing enabled and no Amazon console public key",
+  "expectedFailure": true,
   "published": false
 }

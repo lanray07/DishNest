@@ -29,7 +29,9 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     private val app = application as DishNestApp
     private val db = app.database
     private val dao = db.kitchen()
-    private val recipeWriter = RecipeWriter(db)
+    private val recipeWriter = RecipeWriter(db, com.dishnest.app.platform.RecipePhotos(app.filesDir))
+    private val backups = KitchenBackups(db)
+    private val mealWriter = MealWriter(db)
     private val scheduler = TimerScheduler(app)
     val message = MutableStateFlow("")
     val billing = app.billing
@@ -56,6 +58,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
         viewModelScope.launch {
             runCatching { action() }
                 .onFailure {
+                    if (it is kotlinx.coroutines.CancellationException) throw it
                     message.value = it.message ?: "Something went wrong. Please try again."
                 }
         }
@@ -84,30 +87,20 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun delete(r: Recipe) = run {
-        db.withTransaction {
-            dao.deleteRecipeMeals(r.id)
-            dao.deleteRecipe(r.id)
-            dao.templates().first().forEach { t ->
-                val meals = t.meals.filter { it.recipeId != r.id }
-                if (meals.isEmpty()) dao.deleteTemplate(t.id)
-                else dao.template(t.copy(meals = meals))
-            }
-        }
+        recipeWriter.delete(r.id)
         message.value = "Recipe deleted"
     }
 
-    fun favourite(r: Recipe) = run { dao.recipe(r.copy(favourite = !r.favourite)) }
+    fun favourite(r: Recipe) = run { recipeWriter.toggleFavourite(r.id) }
 
     fun meal(value: Meal) = run {
-        require(value.servings in 1..100)
-        db.withTransaction {
-            dao.meals()
-                .first()
-                .filter { it.date == value.date && it.slot == value.slot }
-                .forEach { dao.deleteMeal(it.id) }
-            dao.meal(value)
-        }
+        mealWriter.assign(value)
         metrics.record("first_meal_plan_created")
+    }
+
+    fun swapMeals(firstId: String, secondId: String) = run {
+        mealWriter.swap(firstId, secondId)
+        message.value = app.getString(R.string.meals_swapped)
     }
 
     fun removeMeal(m: Meal) = run { dao.deleteMeal(m.id) }
@@ -117,9 +110,9 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun smartPlan(start: LocalDate, prefs: PlanPreferences) = run {
-        val generated = Planner.generate(start, state.value.recipes, state.value.pantry, prefs)
-        require(generated.isNotEmpty()) { "No saved recipes match these preferences." }
         db.withTransaction {
+            val generated = Planner.generate(start, dao.recipes().first(), dao.pantry().first(), prefs)
+            require(generated.isNotEmpty()) { "No saved recipes match these preferences." }
             for (m in generated) {
                 dao.meals()
                     .first()
@@ -133,12 +126,12 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun copyPrevious(start: LocalDate) = run {
-        val previous =
-            state.value.meals.filter {
-                it.date >= start.minusDays(7).toString() && it.date < start.toString()
-            }
-        require(previous.isNotEmpty()) { "There are no meals in the previous week." }
         db.withTransaction {
+            val previous =
+                dao.meals().first().filter {
+                    it.date >= start.minusDays(7).toString() && it.date < start.toString()
+                }
+            require(previous.isNotEmpty()) { "There are no meals in the previous week." }
             dao.clearWeek(start.toString(), start.plusDays(6).toString())
             previous.forEach {
                 dao.meal(
@@ -150,22 +143,27 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
 
     fun saveTemplate(name: String, start: LocalDate) = run {
         require(canUsePremium()) { app.getString(R.string.premium_required) }
-        val meals =
-            state.value.meals.filter {
-                it.date >= start.toString() && it.date <= start.plusDays(6).toString()
-            }
-        require(meals.isNotEmpty())
-        dao.template(PlanTemplate(name = name, meals = meals))
+        require(name.isNotBlank() && name.length <= 200)
+        db.withTransaction {
+            val meals =
+                dao.meals().first().filter {
+                    it.date >= start.toString() && it.date <= start.plusDays(6).toString()
+                }
+            require(meals.isNotEmpty())
+            dao.template(PlanTemplate(name = name, meals = meals))
+        }
         message.value = "Template saved"
     }
 
     fun applyTemplate(template: PlanTemplate, start: LocalDate) = run {
         require(canUsePremium()) { app.getString(R.string.premium_required) }
-        val oldStart = Planner.week(LocalDate.parse(template.meals.minOf { it.date }))
         db.withTransaction {
+            val saved = requireNotNull(dao.templates().first().find { it.id == template.id }) { "Template no longer exists." }
+            val oldStart = Planner.week(LocalDate.parse(saved.meals.minOf { it.date }))
+            val recipeIds = dao.recipes().first().map { it.id }.toSet()
             dao.clearWeek(start.toString(), start.plusDays(6).toString())
-            template.meals
-                .filter { m -> state.value.recipes.any { it.id == m.recipeId } }
+            saved.meals
+                .filter { m -> m.recipeId in recipeIds }
                 .forEach {
                     dao.meal(
                         it.copy(
@@ -186,14 +184,13 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun generateShopping(start: LocalDate) = run {
-        val s = state.value
-        val meals =
-            s.meals.filter {
-                it.date >= start.toString() && it.date <= start.plusDays(6).toString()
-            }
-        require(meals.isNotEmpty()) { "Plan a meal for this week first." }
-        val items = ShoppingEngine.generate(meals, s.recipes, s.pantry)
         db.withTransaction {
+            val meals =
+                dao.meals().first().filter {
+                    it.date >= start.toString() && it.date <= start.plusDays(6).toString()
+                }
+            require(meals.isNotEmpty()) { "Plan a meal for this week first." }
+            val items = ShoppingEngine.generate(meals, dao.recipes().first(), dao.pantry().first())
             dao.clearGeneratedShopping()
             items.forEach { dao.shopping(it) }
         }
@@ -250,14 +247,10 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun loadDemo() = run {
-        require(
-            state.value.recipes.isEmpty() &&
-                state.value.pantry.isEmpty() &&
-                state.value.meals.isEmpty()
-        ) {
-            "Demo can only be loaded into an empty kitchen."
-        }
         db.withTransaction {
+            require(dao.recipes().first().isEmpty() && dao.pantry().first().isEmpty() &&
+                dao.meals().first().isEmpty() && dao.shopping().first().isEmpty() &&
+                dao.templates().first().isEmpty()) { "Demo can only be loaded into an empty kitchen." }
             DemoData.recipes().forEach { dao.recipe(it) }
             DemoData.pantry().forEach { dao.pantry(it) }
             val start = Planner.week(LocalDate.now())
@@ -276,54 +269,41 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun deleteAll() = run {
-        state.value.timers.forEach { scheduler.cancel(it.id) }
         db.withTransaction {
+            dao.timers().first().forEach { scheduler.cancel(it.id) }
             dao.clearRecipes()
             dao.clearMeals()
             dao.clearPantry()
             dao.clearShopping()
             dao.clearTimers()
             dao.clearTemplates()
+            app.filesDir.resolve("photos").deleteRecursively()
         }
         app.settings.edit { it.clear() }
         metrics.clear()
-        app.filesDir.resolve("photos").deleteRecursively()
         message.value = "All kitchen data deleted"
     }
 
-    fun export(): String {
-        val s = state.value
-        return BackupCodec.encode(
-            Backup(
-                recipes =
-                    s.recipes.map {
-                        it.copy(photo = if (it.photo in bundledPhotoIds) it.photo else "")
-                    },
-                meals = s.meals,
-                pantry = s.pantry,
-                shopping = s.shopping,
-                templates = s.templates,
-            )
-        )
+    suspend fun export(): String = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+        backups.exportJson()
+    }
+
+    suspend fun recipesForExport(): List<Recipe> = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+        backups.snapshot().recipes
+    }
+
+    suspend fun exportPhotos(output: java.io.OutputStream) = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+        PhotoBackups(com.dishnest.app.platform.RecipePhotos(app.filesDir)).write(backups.snapshot(), output)
+    }
+
+    suspend fun restorePhotos(input: java.io.InputStream) = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+        PhotoBackups(com.dishnest.app.platform.RecipePhotos(app.filesDir)).restore(input, backups::restore)
+        message.value = app.getString(R.string.backup_imported)
     }
 
     fun restore(raw: String) = run {
-        val backup = BackupCodec.decode(raw)
-        require(
-            state.value.recipes.isEmpty() &&
-                state.value.pantry.isEmpty() &&
-                state.value.meals.isEmpty() &&
-                state.value.shopping.isEmpty() &&
-                state.value.templates.isEmpty()
-        ) {
-            "Import requires an empty kitchen. Export existing data before deleting it."
-        }
-        db.withTransaction {
-            backup.recipes.forEach { dao.recipe(it) }
-            backup.meals.forEach { dao.meal(it) }
-            backup.pantry.forEach { dao.pantry(it) }
-            backup.shopping.forEach { dao.shopping(it) }
-            backup.templates.forEach { dao.template(it) }
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+            backups.restore(BackupCodec.decode(raw))
         }
         message.value = "Backup imported"
     }

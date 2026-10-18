@@ -1,18 +1,18 @@
 {
-  "verifiedAt": "2026-10-18T15:50:52.1706647Z",
+  "verifiedAt": "2026-10-18T16:30:29.3221562Z",
   "debug": {
     "signatureVerified": true,
     "zipAlignment16k": true,
-    "sha256": "b618dc5c02092a353035782c8b7fbefafea25ea06dd27d9c3fe1b956b831080b"
+    "sha256": "17e8c39df050a4be7594d2e0e384b3dfcadabcfa5fea1a877052b0091275145b"
   },
   "release": {
-    "productionReady": false,
-    "sha256": "e0d6dc94c98df6c09e2aa245c39d8db7c77706f8898494ddef5ae03f9b615fb2",
     "metadataReadable": true,
-    "signed": false,
     "billingDisabled": true,
+    "sha256": "54dab395d663b8a589d7c045a4bd3d644c0ef93b21393e31e0cd17b901d79b84",
+    "productionReady": false,
+    "signed": false,
     "zipAlignment16k": true
   },
-  "installedOnDevice": false,
+  "deviceInstallation": "Not checked by this static validator; see artifacts/fire-device-qa.json",
   "published": false
 }

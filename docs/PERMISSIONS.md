@@ -12,7 +12,7 @@ The merged development manifest declares:
 
 Microphone and camera hardware are optional in the manifest. Photo selection uses a system content picker and copies the selected image into private app storage. Camera capture delegates to an available camera app. Broad storage permissions, location, contacts, accounts and exact-alarm permissions are not requested.
 
-Keeping the display awake uses the cooking window's screen flag rather than a wake-lock permission. Automatic backup is disabled, with explicit legacy backup configuration and modern cloud/device-transfer exclusions. JSON/text exports are written only to a destination chosen by the user.
+Keeping the display awake uses the cooking window's screen flag rather than a wake-lock permission. Automatic backup is disabled, with explicit legacy backup configuration and modern cloud/device-transfer exclusions. JSON, text and photo-inclusive ZIP exports are written only to a destination chosen by the user. ZIP restoration validates entry names, aggregate/per-entry sizes, images, record references and the empty-kitchen condition; failed imports remove their staged images. Recipe-photo imports re-encode bounded, oriented pixels without source EXIF metadata. Saved/shared photo references are preserved during cleanup; unreferenced drafts older than seven days can be removed.
 
 The release manifest declares Amazon's IAP and DRM response receivers, each protected by Amazon's corresponding sender permission. Billing-enabled debug builds retain them; the billing-disabled debug preview excludes both for host-JVM compatibility. Package visibility is limited to the Amazon Appstore/App Tester package names and the speech/TTS service intents.
 

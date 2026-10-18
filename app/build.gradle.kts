@@ -22,6 +22,14 @@ if (billingEnabled) {
     require(amazonKey.isFile && amazonKey.readText().contains("PUBLIC KEY")) { "Billing requires the app-specific AppstoreAuthenticationKey.pem downloaded from Amazon; it is distinct from the receipt-service key" }
 }
 fun quoted(value: String) = "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"") + "\""
+// Optional publisher signing: passwords stay in the process environment, never Gradle properties.
+val releaseSigning = listOf("DISHNEST_KEYSTORE", "DISHNEST_KEY_ALIAS", "DISHNEST_STORE_PASSWORD", "DISHNEST_KEY_PASSWORD")
+    .associateWith { providers.environmentVariable(it).orNull.orEmpty() }
+val signingConfigured = releaseSigning.values.any { it.isNotEmpty() }
+if (signingConfigured) {
+    require(releaseSigning.values.all { it.isNotEmpty() }) { "Provide all four DISHNEST signing environment variables, or none for an unsigned build" }
+    require(file(releaseSigning.getValue("DISHNEST_KEYSTORE")).isFile) { "Publisher keystore file does not exist" }
+}
 android {
     namespace = "com.dishnest.app"
     compileSdk = 35
@@ -41,7 +49,19 @@ android {
     sourceSets.getByName("debug").manifest.srcFile(if (billingEnabled) "src/billingDebug/AndroidManifest.xml" else "src/debug/AndroidManifest.xml")
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
-    buildTypes { release { isMinifyEnabled = false; proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro") } }
+    signingConfigs {
+        if (signingConfigured) create("publisher") {
+            storeFile = file(releaseSigning.getValue("DISHNEST_KEYSTORE"))
+            keyAlias = releaseSigning.getValue("DISHNEST_KEY_ALIAS")
+            storePassword = releaseSigning.getValue("DISHNEST_STORE_PASSWORD")
+            keyPassword = releaseSigning.getValue("DISHNEST_KEY_PASSWORD")
+        }
+    }
+    buildTypes { release {
+        isMinifyEnabled = false
+        proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        if (signingConfigured) signingConfig = signingConfigs.getByName("publisher")
+    } }
     testOptions { unitTests.isReturnDefaultValues = true; unitTests.isIncludeAndroidResources = true; unitTests.all { it.maxHeapSize = "2g"; it.systemProperty("roborazzi.test.record", "true") } }
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
 }

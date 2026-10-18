@@ -1,0 +1,32 @@
+{
+  "testedAt": "2026-10-18T16:31:14.0455222Z",
+  "model": "KFTRWI",
+  "androidVersion": "9",
+  "api": "28",
+  "locale": "en-GB",
+  "apkSha256": "17e8c39df050a4be7594d2e0e384b3dfcadabcfa5fea1a877052b0091275145b",
+  "tests": 5,
+  "passedTests": 5,
+  "failedTests": 0,
+  "passed": true,
+  "uiSmokePassed": true,
+  "coverage": [
+    "Empty kitchen and real recipe create/edit/delete UI",
+    "SQLite close/reopen persistence",
+    "Native bitmap photo ZIP round-trip",
+    "Bundled offline OCR synthetic printed fixture",
+    "Arabic/Hindi resource formatting"
+  ],
+  "notCovered": [
+    "App Tester/LAT purchases",
+    "Microphone or spoken commands",
+    "TTS/audio focus",
+    "Doze/reboot/alarm delivery",
+    "TalkBack and large fonts",
+    "Actual camera or real-photo OCR accuracy",
+    "Publisher-signed release"
+  ],
+  "serialIdentifierStored": false,
+  "storeSubmission": false,
+  "remoteDeployment": false
+}

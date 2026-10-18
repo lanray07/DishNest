@@ -56,7 +56,7 @@ class TimerReceiver : BroadcastReceiver() {
                 manager.createNotificationChannel(
                     NotificationChannel(
                         "cooking",
-                        "Cooking timers",
+                        context.getString(R.string.timer_channel),
                         NotificationManager.IMPORTANCE_HIGH,
                     )
                 )
@@ -77,7 +77,7 @@ class TimerReceiver : BroadcastReceiver() {
                         Notification.Builder(context, "cooking")
                             .setSmallIcon(R.drawable.ic_nest)
                             .setContentTitle(t.label)
-                            .setContentText("Your cooking timer is ready.")
+                            .setContentText(context.getString(R.string.timer_ready))
                             .setContentIntent(open)
                             .setAutoCancel(true)
                             .build(),

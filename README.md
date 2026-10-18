@@ -24,7 +24,7 @@ The first launch is an empty kitchen backed by Room. Save your own recipe, or ex
 4. Add pantry quantities and optional check dates. Suggestions show matching and missing ingredient names.
 5. Open cooking mode for large steps, TTS, push-to-talk and multiple persistent timers. Touch controls work when speech recognition is unavailable.
 6. Import pasted text, permitted public Recipe JSON-LD pages, or an English recipe photo. Every import opens an editable review screen.
-7. Export JSON or text in Settings. Backups omit photos and timers. JSON import validates all records before a transaction and requires an empty kitchen.
+7. Export JSON or text in Settings. JSON backups omit photos; the ZIP backup includes privately stored photos (64 MB total limit). Both exclude timers and purchase records. Import validates every record and restores only into an empty kitchen under a database transaction.
 
 ## Layout
 
@@ -39,11 +39,11 @@ The first launch is an empty kitchen backed by Room. Save your own recipe, or ex
 
 ## Verification and limitations
 
-See [docs/RELEASE_READINESS.md](docs/RELEASE_READINESS.md) for the current scope, evidence and outstanding work. `artifacts/` contains logs, APK copies and real Compose screen renders. JVM screen renders are useful layout and interaction evidence; they do not prove Fire hardware compatibility, real microphone service behaviour, background alarm delivery, OCR accuracy or actual Amazon purchases.
+See [docs/RELEASE_READINESS.md](docs/RELEASE_READINESS.md) for the current scope, evidence and outstanding work. `artifacts/` contains logs, APK copies and real Compose screen renders. JVM screen renders are useful layout and interaction evidence. Five physical Fire smoke tests now pass on KFTRWI/Android 9 (see `artifacts/fire-device-qa.json`), including actual recipe CRUD and native archive/OCR fixture tests. This partial coverage does not prove full Fire compatibility, microphone/TTS behaviour, background alarm delivery, real-photo OCR accuracy or actual Amazon purchases.
 
 Billing uses Amazon Appstore SDK 3.0.9 with purchase initiation, restoration, account checks, pending approval handling, signed receipt verification, expiry/cancellation handling, bounded offline caching and acknowledgement after durable verification. The local server and sandbox configuration are prepared, but the delivered APK keeps purchases disabled because no catalog or trusted TLS verifier exists yet. See [docs/AMAZON_BILLING.md](docs/AMAZON_BILLING.md). Real store integration and device tests remain mandatory; local fixture tests are not purchase evidence. Further commercial feature scope remains in the readiness report.
 
-Twelve locale directories cover 262 translatable string resources and recipe-count plurals. `python tools/localize.py --strict` checks resource coverage, placeholders and plural categories; release approval is a separate field. Remaining interpolated labels, complete voice dictionaries, marketing translations and native-speaker review are tracked in [localisation/REVIEW.md](localisation/REVIEW.md). Public app copy alone was used for draft translation, never private recipes. The bootstrap navigation generator now preserves existing resource files.
+Twelve locale directories cover 307 translatable string resources and recipe-count plurals. `python tools/localize.py --strict` checks resource coverage, placeholders and plural categories; release approval is a separate field. Remaining domain errors, broader natural-language voice grammar, marketing translations and native-speaker review are tracked in [localisation/REVIEW.md](localisation/REVIEW.md). Public app copy alone was used for draft translation, never private recipes. The bootstrap navigation generator now preserves existing resource files.
 
 No public deployment or store submission has been performed.
 
@@ -52,11 +52,14 @@ No public deployment or store submission has been performed.
 To reproduce the complete local verification and resolved dependency evidence:
 
 ```powershell
+python tools/compile_readiness_resources.py
+python tools/localize.py --strict
+python tools/build_evidence.py --begin
 .\gradlew.bat --no-daemon --init-script tools/dependency-inventory.init.gradle :app:testDebugUnitTest :app:lintDebug :app:assembleDebug :app:assembleRelease :app:assembleDebugAndroidTest :app:writeRuntimeInventory > artifacts/delivery-verification.log 2>&1
 node --test --test-reporter=junit billing-server/*.test.mjs > artifacts/billing-server-tests.xml
 node tools/verify_billing_contract.mjs
 python tools/dependency_inventory.py --fetch-metadata
-python tools/localize.py --strict
+python tools/build_evidence.py --record
 python tools/validate_native_alignment.py
 .\tools\validate_apks.ps1
 python tools/readiness_report.py
@@ -78,3 +81,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory website
 ```
 
 Open `http://127.0.0.1:8765` while the last command is running. Website browser checks live in `tools/verify_website.cjs`; configure `DISHNEST_NODE_MODULES` and optionally `DISHNEST_BROWSER_EXECUTABLE` for your own Playwright runtime. No website build step is required.
+
+Publisher signing is optional and reads `DISHNEST_KEYSTORE`, `DISHNEST_KEY_ALIAS`, `DISHNEST_STORE_PASSWORD`, and `DISHNEST_KEY_PASSWORD` from the process environment. Provide all four or none; keep the publisher keystore outside this repository. With none, release remains unsigned. Signing does not upload or submit anything. The local deliverable pipeline requires an unsigned verification build and current input/output hashes (`python tools/build_evidence.py --begin` immediately before the full Gradle build, then `--record` after success). Run `python tools/build_evidence.py` to reject stale evidence. Source pushes are authorized; app deployment and app-store submission remain prohibited.
+
+Local Fire/device smoke instructions and the exact tested APK checksum are in [docs/DEVICE_QA.md](docs/DEVICE_QA.md). Keep the device unlocked during UI tests; the tool never clears an existing kitchen. Generated APKs/source archives and private development configuration remain local and are not committed to Git.

@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="nav_home">Ma cuisine</string>
     <string name="nav_recipes">Livre de recettes</string>
@@ -266,4 +267,49 @@
     <string name="billing_monthly">Abonnement mensuel</string>
     <string name="billing_annual">Abonnement annuel</string>
     <string name="billing_one_time">Achat unique</string>
+    <string name="meals_swapped">Repas échangés</string>
+    <string name="swap_meals">Échanger deux repas</string>
+    <string name="swap_pick">Sélectionnez deux repas prévus</string>
+    <string name="source_https_required">L’URL doit commencer par https://.</string>
+    <string name="backup_imported">Sauvegarde importée</string>
+    <string name="export_photo_backup">Exporter avec les photos (ZIP)</string>
+    <string name="import_photo_backup">Importer avec les photos (ZIP)</string>
+    <string name="photo_backup_limits">Le ZIP inclut les photos, jusqu’à 64 Mo. L’import exige une cuisine vide. Minuteurs et achats exclus.</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="servings_value">Portions : %1$d</string>
+    <string name="prep_value">Préparation : %1$s</string>
+    <string name="cook_value">Cuisson : %1$s</string>
+    <string name="step_position">Étape %1$d sur %2$d</string>
+    <string name="use_template">Utiliser %1$s</string>
+    <string name="check_date_value">Date à vérifier : %1$s</string>
+    <string name="past_date_value">Date dépassée : %1$s</string>
+    <string name="pantry_match">Ingrédients dans le garde-manger : %1$d / %2$d</string>
+    <string name="hero_planned">Au menu aujourd’hui</string>
+    <string name="hero_saved">De votre carnet de recettes</string>
+    <string name="hero_inspiration">Un bon repas commence par un peu d’inspiration.</string>
+    <string name="slot_breakfast">Petit-déjeuner</string>
+    <string name="slot_lunch">Déjeuner</string>
+    <string name="slot_dinner">Dîner</string>
+    <string name="slot_snacks">Collations</string>
+    <string name="decrease_value">Diminuer %1$s</string>
+    <string name="increase_value">Augmenter %1$s</string>
+    <string name="people_label">Personnes</string>
+    <string name="paused_label">En pause</string>
+    <string name="timer_ready">Votre minuteur a terminé.</string>
+    <string name="timer_channel">Minuteurs de cuisine</string>
+    <string name="timer_set">Minuteur réglé : %1$s</string>
+    <string name="voice_listening">Écoute…</string>
+    <string name="voice_processing">Traitement…</string>
+    <string name="voice_output_unavailable">La lecture vocale est indisponible. Suivez l’étape à l’écran.</string>
+    <string name="voice_unavailable">Reconnaissance vocale indisponible. Utilisez les commandes tactiles.</string>
+    <string name="voice_no_match">Aucune commande entendue. Touchez le micro pour réessayer.</string>
+    <string name="recipe_filters">Filtres de recettes</string>
+    <string name="any_filter">Tous</string>
+    <string name="clear_filters">Effacer les filtres</string>
+    <string name="sort_title">Trier par titre</string>
+    <string name="sort_recent">Modifiées récemment</string>
+    <string name="plan_meals">Planifier les repas</string>
+    <string name="open_pantry">Ouvrir le garde-manger</string>
+    <string name="meal_inspiration">Quelque chose de bon ?</string>
+    <string name="voice_examples">Essayez : étape suivante · étape précédente · répéter · ingrédients · terminer la cuisson · minuteur 5 minutes</string>
 </resources>

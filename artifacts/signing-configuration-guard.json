@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "command": "Gradle configuration with only one publisher signing variable",
+  "expectedFailure": true,
+  "secretsProvided": false,
+  "published": false
+}

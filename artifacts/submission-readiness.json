@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-10-18T15:52:50.250921+00:00",
+  "generatedAt": "2026-10-18T16:31:37.580737+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
-  "publication": "Not performed; user explicitly prohibits publication",
+  "git_push_permitted": true,
+  "publication": "App deployment and store submission prohibited; source commits and GitHub pushes authorized",
   "checks": [
     {
       "check": "Android lint",
@@ -14,6 +15,30 @@
       "check": "Host Android tests",
       "status": "passed",
       "evidence": "app/build/test-results/testDebugUnitTest",
+      "remaining": ""
+    },
+    {
+      "check": "Restore, photo archive and planner data policies",
+      "status": "passed",
+      "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.ReadinessDataTest.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Target-locale voice command grammar",
+      "status": "passed",
+      "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.VoiceLocalesTest.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Combined recipe filters",
+      "status": "passed",
+      "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeQueryTest.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Evidence matches current build",
+      "status": "passed",
+      "evidence": "artifacts/build-provenance.json",
       "remaining": ""
     },
     {
@@ -53,10 +78,28 @@
       "remaining": ""
     },
     {
+      "check": "Incomplete publisher signing rejection",
+      "status": "passed",
+      "evidence": "artifacts/signing-configuration-guard.json",
+      "remaining": ""
+    },
+    {
       "check": "Amazon catalog and live verification",
       "status": "pending",
       "evidence": "docs/AMAZON_BILLING.md",
       "remaining": "Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only"
+    },
+    {
+      "check": "Physical Fire native components",
+      "status": "passed",
+      "evidence": "artifacts/fire-device-qa.json",
+      "remaining": ""
+    },
+    {
+      "check": "Physical Fire instrumentation smoke",
+      "status": "passed",
+      "evidence": "artifacts/fire-device-qa.json",
+      "remaining": ""
     },
     {
       "check": "Physical device QA",

@@ -18,6 +18,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.dishnest.app.*
 import com.dishnest.app.R
 import java.time.LocalDate
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @Composable
 fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit) {
@@ -35,23 +37,44 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
         ) { uri ->
             if (uri != null)
                 vm.run {
-                    context.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use {
-                        it.write(vm.export())
-                    } ?: error(uiResources.getString(com.dishnest.app.R.string.copy_672e21cbc1))
+                    val snapshot = vm.export()
+                    withContext(Dispatchers.IO) {
+                        context.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use {
+                            it.write(snapshot)
+                        } ?: error(uiResources.getString(com.dishnest.app.R.string.copy_672e21cbc1))
+                    }
                     vm.message.value =
                         uiResources.getString(com.dishnest.app.R.string.copy_a985a43f15)
                 }
         }
+    val photoExport = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri ->
+        if (uri != null) vm.run {
+            withContext(Dispatchers.IO) {
+                context.contentResolver.openOutputStream(uri)?.use { vm.exportPhotos(it) }
+                    ?: error(uiResources.getString(R.string.copy_672e21cbc1))
+            }
+            vm.message.value = uiResources.getString(R.string.copy_a985a43f15)
+        }
+    }
+    val photoRead = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        if (uri != null) vm.run {
+            withContext(Dispatchers.IO) {
+                context.contentResolver.openInputStream(uri)?.use { vm.restorePhotos(it) }
+                    ?: error(uiResources.getString(R.string.copy_cf31825cce))
+            }
+        }
+    }
     val textExport =
         rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("text/plain")) {
             uri ->
             if (uri != null)
                 vm.run {
-                    context.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use {
-                        it.write(
-                            s.recipes.joinToString("\n\n————————\n\n", transform = ::recipeText)
-                        )
-                    } ?: error(uiResources.getString(com.dishnest.app.R.string.copy_5ecc81d67a))
+                    val recipes = vm.recipesForExport()
+                    withContext(Dispatchers.IO) {
+                        context.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use {
+                            it.write(recipes.joinToString("\n\n————————\n\n", transform = ::recipeText))
+                        } ?: error(uiResources.getString(com.dishnest.app.R.string.copy_5ecc81d67a))
+                    }
                     vm.message.value =
                         uiResources.getString(com.dishnest.app.R.string.copy_89ea751a62)
                 }
@@ -60,10 +83,11 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
         rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
             if (uri != null)
                 vm.run {
-                    importText =
+                    importText = withContext(Dispatchers.IO) {
                         context.contentResolver.openInputStream(uri)?.use {
                             String(it.readBytesBounded(10_000_000), Charsets.UTF_8)
                         } ?: error(uiResources.getString(com.dishnest.app.R.string.copy_cf31825cce))
+                    }
                 }
         }
     LazyColumn(
@@ -126,6 +150,13 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
                         )
                     )
                 }
+                OutlinedButton(onClick = { photoExport.launch("dishnest-photos-${LocalDate.now()}.zip") }) {
+                    Text(stringResource(R.string.export_photo_backup))
+                }
+                OutlinedButton(onClick = { photoRead.launch(arrayOf("application/zip", "application/x-zip-compressed", "application/octet-stream")) }) {
+                    Text(stringResource(R.string.import_photo_backup))
+                }
+                Text(stringResource(R.string.photo_backup_limits), style = MaterialTheme.typography.bodySmall, color = Muted)
                 OutlinedButton(
                     onClick = {
                         read.launch(

@@ -24,7 +24,7 @@
       }
     ],
     "browserPath": "Playwright: Browser plugin not available",
-    "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+    "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
   },
   {
     "device": "phone",
@@ -51,6 +51,6 @@
       }
     ],
     "browserPath": "Playwright: Browser plugin not available",
-    "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+    "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
   }
 ]

@@ -540,7 +540,7 @@ fun RecipeCard(
                 ) {
                     Icon(Icons.Outlined.Schedule, null, Modifier.size(15.dp), tint = Muted)
                     Text(
-                        "${r.prepMinutes+r.cookMinutes} min  ·  ${r.difficulty}  ·  ${r.servings} servings",
+                        uiResources.recipeSummary(r) + " · " + r.difficulty,
                         style = MaterialTheme.typography.bodySmall,
                         color = Muted,
                     )
@@ -699,7 +699,7 @@ fun HomeScreen(
                         ListItem(
                             headlineContent = { Text(r.title) },
                             supportingContent = {
-                                Text("${r.prepMinutes+r.cookMinutes} min · ${r.collection}")
+                                Text(uiResources.duration(r.prepMinutes + r.cookMinutes) + " · " + r.collection)
                             },
                             leadingContent = {
                                 Icon(Icons.Outlined.FavoriteBorder, null, tint = Terra)
@@ -714,21 +714,22 @@ fun HomeScreen(
 
 @Composable
 private fun HeroCopy(r: Recipe, planned: Boolean, onCook: (Recipe) -> Unit, modifier: Modifier) {
+    val uiResources = LocalContext.current.resources
     Column(modifier.padding(28.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text(
-            if (planned) "ON THE MENU TODAY" else "FROM YOUR RECIPE BOOK",
+            stringResource(if (planned) R.string.hero_planned else R.string.hero_saved),
             style = MaterialTheme.typography.labelSmall,
             color = Sage,
         )
         Text(r.title, style = MaterialTheme.typography.headlineLarge)
         Text(
-            r.description.ifBlank { "A good meal starts with a little inspiration." },
+            r.description.ifBlank { uiResources.getString(R.string.hero_inspiration) },
             color = Muted,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
         )
         Text(
-            "${r.prepMinutes+r.cookMinutes} minutes  ·  ${r.servings} servings",
+            uiResources.recipeSummary(r),
             style = MaterialTheme.typography.bodySmall,
             color = Muted,
         )
@@ -773,7 +774,7 @@ private fun WeekPreview(s: KitchenState, onNavigate: (String) -> Unit, modifier:
     SoftCard(modifier) {
         SectionTitle(
             stringResource(com.dishnest.app.R.string.ui_a_calmer_week_188aa5),
-            "Plan meals",
+            stringResource(R.string.plan_meals),
             { onNavigate("plan") },
         )
         val start = Planner.week(LocalDate.now())
@@ -791,7 +792,7 @@ private fun WeekPreview(s: KitchenState, onNavigate: (String) -> Unit, modifier:
                 )
                 Text(
                     meals.firstOrNull()?.let { m -> s.recipes.find { it.id == m.recipeId }?.title }
-                        ?: "Something delicious?",
+                        ?: stringResource(R.string.meal_inspiration),
                     style = MaterialTheme.typography.bodyMedium,
                     color = if (meals.isEmpty()) Muted else Ink,
                     maxLines = 1,
@@ -805,10 +806,11 @@ private fun WeekPreview(s: KitchenState, onNavigate: (String) -> Unit, modifier:
 
 @Composable
 private fun PantryPreview(s: KitchenState, onNavigate: (String) -> Unit, modifier: Modifier) {
+    val uiResources = LocalContext.current.resources
     SoftCard(modifier) {
         SectionTitle(
             stringResource(com.dishnest.app.R.string.ui_good_food_less_waste_4eb429),
-            "Open pantry",
+            stringResource(R.string.open_pantry),
             { onNavigate("pantry") },
         )
         val soon =
@@ -839,7 +841,7 @@ private fun PantryPreview(s: KitchenState, onNavigate: (String) -> Unit, modifie
             ) {
                 Text(p.name.replaceFirstChar { it.titlecase() })
                 Text(
-                    "Check date · ${p.expiry}",
+                    uiResources.getString(R.string.check_date_value, p.expiry),
                     style = MaterialTheme.typography.bodySmall,
                     color = Terra,
                 )
@@ -860,50 +862,41 @@ fun RecipesScreen(
     val uiResources = androidx.compose.ui.platform.LocalContext.current.resources
 
     var query by rememberSaveable { mutableStateOf("") }
-    var filter by rememberSaveable {
-        mutableStateOf(uiResources.getString(com.dishnest.app.R.string.copy_c7bb32b3d5))
-    }
+    var collection by rememberSaveable { mutableStateOf<String?>(null) }
+    var favouritesOnly by rememberSaveable { mutableStateOf(false) }
     var quick by rememberSaveable { mutableStateOf(false) }
-    val collections =
+    var cuisine by rememberSaveable { mutableStateOf("") }
+    var tag by rememberSaveable { mutableStateOf("") }
+    var difficulty by rememberSaveable { mutableStateOf("") }
+    var sortByTitle by rememberSaveable { mutableStateOf(false) }
+    var filtersOpen by rememberSaveable { mutableStateOf(false) }
+    val collections = recipes.map { it.collection }.filter { it.isNotBlank() }.distinct().sorted()
+    val visible = RecipeQuery(query, collection, favouritesOnly, if (quick) 30 else null,
+        cuisine, tag, difficulty, sortByTitle).apply(recipes)
+    if (filtersOpen) FullDialog({ filtersOpen = false }, stringResource(R.string.recipe_filters)) {
         listOf(
-            uiResources.getString(com.dishnest.app.R.string.copy_c7bb32b3d5),
-            uiResources.getString(com.dishnest.app.R.string.copy_d97d51d370),
-            uiResources.getString(com.dishnest.app.R.string.copy_640c34133b),
-            uiResources.getString(com.dishnest.app.R.string.copy_5ce282fca6),
-            "Batch Cooking",
-            "Quick Meals",
-            "Try Soon",
-        ) +
-            (recipes
-                .map { it.collection }
-                .filter { it.isNotBlank() }
-                .distinct()
-                .filter {
-                    it !in
-                        listOf(
-                            uiResources.getString(com.dishnest.app.R.string.copy_640c34133b),
-                            uiResources.getString(com.dishnest.app.R.string.copy_5ce282fca6),
-                            "Batch Cooking",
-                            "Quick Meals",
-                            "Try Soon",
-                        )
-                })
-    val visible =
-        recipes.filter { r ->
-            (filter == uiResources.getString(com.dishnest.app.R.string.copy_c7bb32b3d5) ||
-                (filter == uiResources.getString(com.dishnest.app.R.string.copy_d97d51d370) &&
-                    r.favourite) ||
-                r.collection == filter) &&
-                (query.isBlank() ||
-                    listOf(
-                            r.title,
-                            r.cuisine,
-                            r.tags.joinToString(),
-                            r.ingredients.joinToString { it.name },
-                        )
-                        .any { it.contains(query, true) }) &&
-                (!quick || r.prepMinutes + r.cookMinutes <= 30)
+            Triple(uiResources.getString(R.string.ui_cuisine_6814ff), recipes.map { it.cuisine }, cuisine),
+            Triple(uiResources.getString(R.string.ui_dietary_tags_comma_separated_7222ad), recipes.flatMap { it.tags }, tag),
+            Triple(uiResources.getString(R.string.ui_difficulty_be4413), recipes.map { it.difficulty }, difficulty),
+        ).forEachIndexed { index, (label, values, selected) ->
+            Text(label, style = MaterialTheme.typography.titleMedium)
+            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                (listOf("") + values.filter { it.isNotBlank() }.distinct().sorted()).forEach { value ->
+                    FilterChip(selected == value, {
+                        when (index) { 0 -> cuisine = value; 1 -> tag = value; else -> difficulty = value }
+                    }, label = { Text(value.ifEmpty { uiResources.getString(R.string.any_filter) }) })
+                }
+            }
         }
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            FilterChip(!sortByTitle, { sortByTitle = false }, label = { Text(stringResource(R.string.sort_recent)) })
+            FilterChip(sortByTitle, { sortByTitle = true }, label = { Text(stringResource(R.string.sort_title)) })
+        }
+        OutlinedButton(onClick = {
+            collection = null; favouritesOnly = false; quick = false
+            cuisine = ""; tag = ""; difficulty = ""; sortByTitle = false; query = ""
+        }) { Text(stringResource(R.string.clear_filters)) }
+    }
     LazyColumn(
         Modifier.fillMaxSize(),
         contentPadding = PaddingValues(28.dp),
@@ -947,9 +940,14 @@ fun RecipesScreen(
                 Modifier.horizontalScroll(rememberScrollState()),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
+                FilterChip(collection == null && !favouritesOnly, { collection = null; favouritesOnly = false },
+                    label = { Text(stringResource(R.string.copy_c7bb32b3d5)) })
+                FilterChip(favouritesOnly, { favouritesOnly = !favouritesOnly },
+                    label = { Text(stringResource(R.string.copy_d97d51d370)) })
                 collections.forEach { c ->
-                    FilterChip(filter == c, { filter = c }, label = { Text(c) })
+                    FilterChip(collection == c, { collection = if (collection == c) null else c }, label = { Text(c) })
                 }
+                AssistChip(onClick = { filtersOpen = true }, label = { Text(stringResource(R.string.recipe_filters)) })
                 FilterChip(
                     quick,
                     { quick = !quick },

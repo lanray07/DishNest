@@ -1,52 +1,20 @@
 {
   "jvm_suites": [
     {
+      "name": "com.dishnest.app.RecipeQueryTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:24:15.625Z"
+    },
+    {
       "name": "com.dishnest.app.RecipeImagesTest",
       "tests": "2",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T15:45:53.533Z"
-    },
-    {
-      "name": "com.dishnest.app.ScreenshotsTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T15:46:23.190Z"
-    },
-    {
-      "name": "com.dishnest.app.EntitlementsTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T15:45:50.579Z"
-    },
-    {
-      "name": "com.dishnest.app.EntitlementClockTest",
-      "tests": "3",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T15:45:50.565Z"
-    },
-    {
-      "name": "com.dishnest.app.DomainTest",
-      "tests": "21",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T15:45:49.729Z"
-    },
-    {
-      "name": "com.dishnest.app.RestoreGuardTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T15:46:10.211Z"
+      "timestamp": "2026-10-18T16:24:15.058Z"
     },
     {
       "name": "com.dishnest.app.RoomPersistenceTest",
@@ -54,11 +22,98 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T15:46:10.508Z"
+      "timestamp": "2026-10-18T16:24:15.847Z"
+    },
+    {
+      "name": "com.dishnest.app.ScreenshotsTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:24:26.269Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementsTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:23:58.230Z"
+    },
+    {
+      "name": "com.dishnest.app.VoiceLocalesTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:24:53.815Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementClockTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:23:58.217Z"
+    },
+    {
+      "name": "com.dishnest.app.DomainTest",
+      "tests": "21",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:23:57.684Z"
+    },
+    {
+      "name": "com.dishnest.app.RestoreGuardTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:24:15.640Z"
+    },
+    {
+      "name": "com.dishnest.app.ReadinessDataTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T16:23:59.858Z"
     }
   ],
-  "device_instrumentation": "not executed: no connected device or working emulator",
-  "physical_fire_qa": "not executed",
+  "device_instrumentation": {
+    "testedAt": "2026-10-18T16:31:14.0455222Z",
+    "model": "KFTRWI",
+    "androidVersion": "9",
+    "api": "28",
+    "locale": "en-GB",
+    "apkSha256": "17e8c39df050a4be7594d2e0e384b3dfcadabcfa5fea1a877052b0091275145b",
+    "tests": 5,
+    "passedTests": 5,
+    "failedTests": 0,
+    "passed": true,
+    "uiSmokePassed": true,
+    "coverage": [
+      "Empty kitchen and real recipe create/edit/delete UI",
+      "SQLite close/reopen persistence",
+      "Native bitmap photo ZIP round-trip",
+      "Bundled offline OCR synthetic printed fixture",
+      "Arabic/Hindi resource formatting"
+    ],
+    "notCovered": [
+      "App Tester/LAT purchases",
+      "Microphone or spoken commands",
+      "TTS/audio focus",
+      "Doze/reboot/alarm delivery",
+      "TalkBack and large fonts",
+      "Actual camera or real-photo OCR accuracy",
+      "Publisher-signed release"
+    ],
+    "serialIdentifierStored": false,
+    "storeSubmission": false,
+    "remoteDeployment": false
+  },
+  "physical_fire_qa": "Partial smoke coverage only; full hardware matrix pending",
   "billing_qa": "Local SDK integration and signed-verification service prepared; 11 server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.",
   "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
   "store_submission": "not performed; prohibited by user",
@@ -107,7 +162,7 @@
         }
       ],
       "browserPath": "Playwright: Browser plugin not available",
-      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
     },
     {
       "device": "phone",
@@ -134,12 +189,12 @@
         }
       ],
       "browserPath": "Playwright: Browser plugin not available",
-      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
     }
   ],
   "native-alignment": {
     "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "apk_sha256": "e0d6dc94c98df6c09e2aa245c39d8db7c77706f8898494ddef5ae03f9b615fb2",
+    "apk_sha256": "54dab395d663b8a589d7c045a4bd3d644c0ef93b21393e31e0cd17b901d79b84",
     "libraries": [
       {
         "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
@@ -375,17 +430,50 @@
     "device_tested": false
   },
   "device-evidence": {
-    "collectedAt": "2026-10-18T15:24:12.7260583Z",
-    "connectedDeviceCount": 0,
+    "collectedAt": "2026-10-18T16:22:16.7646220Z",
+    "connectedDeviceCount": 1,
     "deviceTests": "Not executed by this read-only inventory script",
     "physicalFireQa": "Pending explicit hardware testing and evidence",
     "published": false
   },
+  "fire-device-qa": {
+    "testedAt": "2026-10-18T16:31:14.0455222Z",
+    "model": "KFTRWI",
+    "androidVersion": "9",
+    "api": "28",
+    "locale": "en-GB",
+    "apkSha256": "17e8c39df050a4be7594d2e0e384b3dfcadabcfa5fea1a877052b0091275145b",
+    "tests": 5,
+    "passedTests": 5,
+    "failedTests": 0,
+    "passed": true,
+    "uiSmokePassed": true,
+    "coverage": [
+      "Empty kitchen and real recipe create/edit/delete UI",
+      "SQLite close/reopen persistence",
+      "Native bitmap photo ZIP round-trip",
+      "Bundled offline OCR synthetic printed fixture",
+      "Arabic/Hindi resource formatting"
+    ],
+    "notCovered": [
+      "App Tester/LAT purchases",
+      "Microphone or spoken commands",
+      "TTS/audio focus",
+      "Doze/reboot/alarm delivery",
+      "TalkBack and large fonts",
+      "Actual camera or real-photo OCR accuracy",
+      "Publisher-signed release"
+    ],
+    "serialIdentifierStored": false,
+    "storeSubmission": false,
+    "remoteDeployment": false
+  },
   "submission-readiness": {
-    "generatedAt": "2026-10-18T15:52:50.250921+00:00",
+    "generatedAt": "2026-10-18T16:31:37.580737+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
-    "publication": "Not performed; user explicitly prohibits publication",
+    "git_push_permitted": true,
+    "publication": "App deployment and store submission prohibited; source commits and GitHub pushes authorized",
     "checks": [
       {
         "check": "Android lint",
@@ -397,6 +485,30 @@
         "check": "Host Android tests",
         "status": "passed",
         "evidence": "app/build/test-results/testDebugUnitTest",
+        "remaining": ""
+      },
+      {
+        "check": "Restore, photo archive and planner data policies",
+        "status": "passed",
+        "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.ReadinessDataTest.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Target-locale voice command grammar",
+        "status": "passed",
+        "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.VoiceLocalesTest.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Combined recipe filters",
+        "status": "passed",
+        "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeQueryTest.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Evidence matches current build",
+        "status": "passed",
+        "evidence": "artifacts/build-provenance.json",
         "remaining": ""
       },
       {
@@ -436,10 +548,28 @@
         "remaining": ""
       },
       {
+        "check": "Incomplete publisher signing rejection",
+        "status": "passed",
+        "evidence": "artifacts/signing-configuration-guard.json",
+        "remaining": ""
+      },
+      {
         "check": "Amazon catalog and live verification",
         "status": "pending",
         "evidence": "docs/AMAZON_BILLING.md",
         "remaining": "Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only"
+      },
+      {
+        "check": "Physical Fire native components",
+        "status": "passed",
+        "evidence": "artifacts/fire-device-qa.json",
+        "remaining": ""
+      },
+      {
+        "check": "Physical Fire instrumentation smoke",
+        "status": "passed",
+        "evidence": "artifacts/fire-device-qa.json",
+        "remaining": ""
       },
       {
         "check": "Physical device QA",
@@ -500,10 +630,9 @@
     "private_key_written": false
   },
   "billing-configuration-guard": {
-    "productionKeyCreated": false,
     "passed": true,
-    "actualExitCode": 1,
-    "expectedRejection": "Unconfigured billing-enabled build must fail before packaging",
+    "command": "Gradle configuration with billing enabled and no Amazon console public key",
+    "expectedFailure": true,
     "published": false
   }
 }
