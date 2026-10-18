@@ -9,28 +9,43 @@ Record model, Fire OS/Android version, API, locale, font scale, app version, APK
 | Scenario | Steps and expected outcome | Status |
 | --- | --- | --- |
 | Fresh install / offline | Start without internet; kitchen is empty, manual recipe CRUD, planner, pantry and shopping work | Empty launch and recipe CRUD passed on Fire; airplane-mode and full offline flow pending |
-| Persistence / process death | Save content and an active timer; force-stop and relaunch; saved content remains, unsaved editor behaviour is checked separately | SQLite close/reopen passed on Fire; process death and timer recovery pending |
-| Rotation / window resizing | Rotate every dialog and cooking screen; no clipped controls or unexpected data loss | Not run on hardware |
-| Large text / TalkBack | Test largest supported font and display scaling, focus order, labels, buttons, scrollable dialogs and live timer announcements | Not run on hardware |
-| Arabic / RTL | Test navigation, dialogs, mixed recipe text, numbers, units, currency and long labels | Not run on hardware |
-| Microphone denied / absent provider | Deny permission, revoke it in settings, test without recognition provider; touch controls always remain usable | Not run on hardware |
+| Persistence / process death | Save content and an active timer; terminate the background QA process and relaunch; saved content remains (force-stop alarm behaviour is separate) | SQLite close/reopen and v1-to-v2 migration passed; see the separate background timer probe for process termination. Full recipe/process recovery remains pending |
+| Rotation / window resizing | Rotate every dialog and cooking screen; no clipped controls or unexpected data loss | Recipe draft and selected plan survived activity recreation on Fire; full physical rotation/resizing matrix pending |
+| Large text / TalkBack | Test largest supported font and display scaling, focus order, labels, buttons, scrollable dialogs and live timer announcements | Arabic planner/dialog controls passed in a QA activity at 1.5 font scale; full system scaling and TalkBack pending |
+| Arabic / RTL | Test navigation, dialogs, mixed recipe text, numbers, units, currency and long labels | Arabic planner and native dialog labels passed with the QA activity configured RTL; full mixed-content/locale matrix pending |
+| Microphone denied / absent provider | Deny permission, revoke it in settings, test without recognition provider; touch controls always remain usable | Denied microphone returned the touch fallback on Fire without starting recognition; provider absence/granted permission pending |
 | Voice and narration | Test locale commands, repeated commands, interruption, screen lock, incoming audio and unavailable TTS language | Not run on hardware |
 | Notifications denied | Deny notification access; in-app timer state remains visible; no false promise of background alerts | Not run on hardware |
-| Timer background / doze / reboot | Pause/resume/cancel multiple timers; background, sleep, reboot, change wall clock; record actual inexact delivery behaviour | Not run on hardware |
+| Timer background / doze / reboot | Pause/resume/cancel multiple timers; background, sleep, reboot, change wall clock; record actual inexact delivery behaviour | Background timer delivery after QA process termination passed with own notification and persisted handled state; doze/reboot/clock changes remain pending |
 | Camera / image decoding | Test camera absent, permission flow through external camera app, rotated/mirrored JPEGs, huge images and cancellation | Not run on hardware |
 | OCR | Test actual printed recipes, low light, skew, handwriting and blank images; user can correct text and required recipe fields | Bundled native engine passed a synthetic printed fixture offline on Fire; real-photo accuracy pending |
 | Website import | Test permitted public JSON-LD, redirects, 403/429, malformed metadata and private-network URL rejection; never bypass restricted access | Not run on hardware |
 | Backups / deletion | Export JSON and photo-inclusive ZIP to a chosen provider; restore shared photos into an empty kitchen; reject corrupt/oversized/duplicate-entry archives; test cancellation and provider write failures; delete data/photos and confirm alarms are cancelled | Native photo ZIP round-trip passed on Fire; document-provider/cancellation matrix pending. Host tests cover corruption, bounds and rollback policies |
 | Billing | Follow every scenario in AMAZON_BILLING.md using App Tester and later LAT; verify both account and entitlement transitions | Not run; local setup only |
 | Release signing | Publisher signs with their protected release key, installs exact APK and records signature/checksum; repeat smoke test | Not run; publisher key absent |
-| Store images | Capture the final verified hardware screens and inspect each market's composition at actual store dimensions | Draft host renders only |
+| Store images | Capture the final verified hardware screens and inspect each market's composition at actual store dimensions | Host drafts plus two inspected Fire QA captures; final market/store compositions pending |
 
 Attach evidence paths and observed results to each row before changing status. A build, screenshot or fixture test does not count as a successful device scenario.
 
-## Executed Fire smoke
+## Isolated Fire QA
 
-On 18 October 2026, all five instrumentation tests passed on KFTRWI, Android 9/API 28, en-GB. The exact debug APK SHA-256 is recorded in `artifacts/fire-device-qa.json`; raw runner results are in `artifacts/device-instrumentation.txt`. The first UI attempt was blocked by an asleep, securely locked display. The user unlocked it, and the complete rerun passed. No authentication bypass or app-data clear was performed.
+The repeatable smoke suite installs `com.dishnest.app.qa` (**DishNest QA**) and its `.qa.test` runner. Purchases are always disabled in this variant. Its UI fixtures deliberately reset only the disposable QA kitchen; every destructive fixture checks the package ID first. The ordinary `com.dishnest.app` app and its saved data are left intact. APK package identity is checked before installation.
 
-Coverage: empty-kitchen launch and real create/edit/delete UI, a separate SQLite persistence database reopened on device, native bitmap photo-backup ZIP round-trip, the bundled offline OCR engine on a synthetic printed fixture, and Arabic/Hindi resource formatting. `artifacts/screens/fire-empty-home.png` is an actual foreground Fire capture, not an approved store screenshot. Microphone/TTS, alarm delivery, accessibility, actual photos, full locale layouts and store purchases remain unverified.
+Build `:app:assembleQa :app:assembleQaAndroidTest`, select a connected device explicitly, unlock it, then run:
 
-To repeat local QA, build the debug and instrumentation APKs, select a connected device explicitly, unlock its display, and run `tools/run_device_smoke.ps1 -Serial 'YOUR_DEVICE_ID'`. It installs only the local debug/test APKs. It never clears kitchen data. It refuses an existing installation unless `-ReplaceTestInstall` is supplied for a known QA installation; the UI test expects an empty kitchen and creates/deletes its own toast fixture. Device serial identifiers are omitted from saved evidence. No release upload or store submission is involved.
+```powershell
+.\tools\run_device_smoke.ps1 -Serial 'YOUR_DEVICE_ID'
+# For a subsequent run against the disposable QA installation:
+.\tools\run_device_smoke.ps1 -Serial 'YOUR_DEVICE_ID' -ReplaceTestInstall
+.\tools\run_fire_alarm_probe.ps1 -Serial 'YOUR_DEVICE_ID'
+```
+
+The smoke suite checks empty launch, recipe CRUD and editor recreation, selected named-plan recreation, an independent SQLite reopen fixture, migration of a real v1 SQLite fixture with notes/meals/templates, native photo ZIP codecs, cropped synthetic printed OCR, Arabic/Hindi formatting, denied-microphone fallback, optional pantry notification/duplicate suppression, and Arabic planner controls at an app-simulated 1.5 font scale/RTL. The RTL/font test uses the production UI in a QA-only activity whose base Android configuration also reaches native dialog windows; it does not change device settings or establish TalkBack/full locale approval. The microphone fixture records no audio.
+
+The scripts share a local mutex to prevent their database fixtures from overlapping. Run them sequentially. The separate two-process alarm probe schedules a 15-second timer, backgrounds and kills only the QA process using ordinary `am kill`, waits 35 seconds, then verifies persisted handled state and the app's own notification in a fresh instrumentation process. It records whether the QA process was absent after the kill. This does not test doze, reboot, force-stop or exact latency. Force-stop intentionally changes Android alarm behaviour and is not substituted for process termination.
+
+`artifacts/fire-device-qa.json` and raw `device-instrumentation.txt` contain the authoritative current smoke result and exact QA APK hash. `artifacts/fire-background-alarm.json` and the phase logs contain the separate probe result. A failed or stale report is not a pass. Device serial identifiers are excluded from evidence. All APKs remain local; no deployment or store submission is involved.
+
+Remaining hardware cases include real-photo/camera accuracy, granted microphone and installed speech providers, live TTS/audio interruption, notification denial, full font/rotation/TalkBack coverage, actual system RTL, doze/reboot/time changes, publisher-signed release and Appstore purchases. Host audio-focus tests exercise denial/interruption policies but do not prove the Fire speech service works.
+
+Actual Fire captures from the passing run: `artifacts/screens/fire-qa-named-plan.png` and `artifacts/screens/fire-qa-arabic-large-font.png`. Both were inspected for visible controls and clipping; they remain QA evidence rather than approved store imagery.

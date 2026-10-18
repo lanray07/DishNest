@@ -315,4 +315,27 @@
     <string name="open_pantry">فتح المخزن</string>
     <string name="meal_inspiration">شيء لذيذ؟</string>
     <string name="voice_examples">جرّب: الخطوة التالية · الخطوة السابقة · كرر · المكونات · إنهاء الطهي · مؤقت ٥ دقائق</string>
+    <string name="default_plan">خطة وجباتي</string>
+    <string name="manage_plans">إدارة الخطط</string>
+    <string name="plan_name">اسم الخطة</string>
+    <string name="rename_plan">إعادة تسمية الخطة</string>
+    <string name="delete_plan">حذف الخطة</string>
+    <string name="new_plan_name">اسم الخطة الجديدة</string>
+    <string name="create_plan">إنشاء خطة</string>
+    <string name="more_plans_premium">تتطلب الخطط الإضافية Premium. تبقى الخطط الحالية متاحة.</string>
+    <string name="delete_plan_warning">حذف %1$s ووجباتها؟ ستبقى الوصفات والخطط الأخرى.</string>
+    <string name="pantry_reminders">تذكيرات فحص المخزن</string>
+    <string name="pantry_reminder_hint">تذكير اختياري قرابة 09:00 لتواريخ الفحص خلال ثلاثة أيام. قد يؤخره الجهاز. افحص الطعام بنفسك.</string>
+    <string name="pantry_reminder_message">اقتربت بعض تواريخ الفحص. راجع المخزن.</string>
+    <string name="crop_photo">اقتصاص صورة الوصفة</string>
+    <string name="crop_left">الحافة اليسرى</string>
+    <string name="crop_top">الحافة العلوية</string>
+    <string name="crop_right">الحافة اليمنى</string>
+    <string name="crop_bottom">الحافة السفلية</string>
+    <string name="crop_reset">استخدام الصورة كاملة</string>
+    <string name="crop_read">قراءة المنطقة المحددة</string>
+    <string name="crop_hint">اضبط الحواف لتشمل الوصفة. تُستبعد المنطقة المظللة. يقرأ OCR الإنجليزية حاليًا.</string>
+    <string name="crop_preview">معاينة الاقتصاص</string>
+    <string name="voice_focus_unavailable">الصوت مشغول. اتبع الخطوة على الشاشة.</string>
+    <string name="combine_plan_shopping">التسوق من الخطط المختارة</string>
 </resources>

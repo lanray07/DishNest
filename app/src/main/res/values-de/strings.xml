@@ -311,4 +311,27 @@
     <string name="open_pantry">Vorrat öffnen</string>
     <string name="meal_inspiration">Etwas Leckeres?</string>
     <string name="voice_examples">Beispiele: nächster schritt · vorheriger schritt · wiederholen · zutaten · kochen beenden · timer 5 minuten</string>
+    <string name="default_plan">Mein Speiseplan</string>
+    <string name="manage_plans">Pläne verwalten</string>
+    <string name="plan_name">Planname</string>
+    <string name="rename_plan">Plan umbenennen</string>
+    <string name="delete_plan">Plan löschen</string>
+    <string name="new_plan_name">Name des neuen Plans</string>
+    <string name="create_plan">Plan erstellen</string>
+    <string name="more_plans_premium">Weitere Pläne erfordern Premium. Bestehende bleiben verfügbar.</string>
+    <string name="delete_plan_warning">%1$s und seine Mahlzeiten löschen? Rezepte und andere Pläne bleiben erhalten.</string>
+    <string name="pantry_reminders">Vorratserinnerungen</string>
+    <string name="pantry_reminder_hint">Optional gegen 09:00 Uhr für Prüfdaten innerhalb von drei Tagen. Das Gerät kann verzögern. Lebensmittel selbst prüfen.</string>
+    <string name="pantry_reminder_message">Einige Prüfdaten stehen an. Sieh deinen Vorrat durch.</string>
+    <string name="crop_photo">Rezeptfoto zuschneiden</string>
+    <string name="crop_left">Linker Rand</string>
+    <string name="crop_top">Oberer Rand</string>
+    <string name="crop_right">Rechter Rand</string>
+    <string name="crop_bottom">Unterer Rand</string>
+    <string name="crop_reset">Ganzes Foto verwenden</string>
+    <string name="crop_read">Auswahl lesen</string>
+    <string name="crop_hint">Ränder um das Rezept legen. Schattierte Bereiche werden ausgeschlossen. OCR liest derzeit Englisch.</string>
+    <string name="crop_preview">Zuschnittvorschau</string>
+    <string name="voice_focus_unavailable">Audio ist belegt. Lies den Schritt auf dem Bildschirm.</string>
+    <string name="combine_plan_shopping">Einkauf aus gewählten Plänen</string>
 </resources>

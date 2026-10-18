@@ -312,4 +312,27 @@
     <string name="open_pantry">Ouvrir le garde-manger</string>
     <string name="meal_inspiration">Quelque chose de bon ?</string>
     <string name="voice_examples">Essayez : étape suivante · étape précédente · répéter · ingrédients · terminer la cuisson · minuteur 5 minutes</string>
+    <string name="default_plan">Mon planning de repas</string>
+    <string name="manage_plans">Gérer les plannings</string>
+    <string name="plan_name">Nom du planning</string>
+    <string name="rename_plan">Renommer le planning</string>
+    <string name="delete_plan">Supprimer le planning</string>
+    <string name="new_plan_name">Nom du nouveau planning</string>
+    <string name="create_plan">Créer un planning</string>
+    <string name="more_plans_premium">Premium est requis pour créer plus de plannings. Les anciens restent disponibles.</string>
+    <string name="delete_plan_warning">Supprimer %1$s et ses repas ? Les recettes et autres plannings sont conservés.</string>
+    <string name="pantry_reminders">Rappels du garde-manger</string>
+    <string name="pantry_reminder_hint">Rappel facultatif vers 09 h pour les dates dans les trois jours. L’appareil peut le retarder. Vérifiez les aliments.</string>
+    <string name="pantry_reminder_message">Des dates de vérification approchent. Consultez votre garde-manger.</string>
+    <string name="crop_photo">Recadrer la photo</string>
+    <string name="crop_left">Bord gauche</string>
+    <string name="crop_top">Bord supérieur</string>
+    <string name="crop_right">Bord droit</string>
+    <string name="crop_bottom">Bord inférieur</string>
+    <string name="crop_reset">Utiliser toute la photo</string>
+    <string name="crop_read">Lire la zone choisie</string>
+    <string name="crop_hint">Ajustez les bords pour inclure la recette. La zone sombre est exclue. L’OCR lit actuellement l’anglais.</string>
+    <string name="crop_preview">Aperçu du recadrage</string>
+    <string name="voice_focus_unavailable">L’audio est occupé. Suivez l’étape à l’écran.</string>
+    <string name="combine_plan_shopping">Courses des plannings choisis</string>
 </resources>

@@ -2,6 +2,8 @@ package com.dishnest.app.domain
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.ColumnInfo
+import androidx.room.Index
 import java.time.LocalDate
 import java.util.UUID
 
@@ -37,13 +39,25 @@ data class Recipe(
     val updatedAt: Long = System.currentTimeMillis(),
 )
 
-@Entity(tableName = "meals")
+const val DEFAULT_PLAN_ID = "default"
+
+@Entity(tableName = "plans")
+data class MealPlan(
+    @PrimaryKey val id: String = newId(),
+    val name: String,
+    val active: Boolean = false,
+)
+
+fun defaultPlan() = MealPlan(DEFAULT_PLAN_ID, "My meal plan", true)
+
+@Entity(tableName = "meals", indices = [Index(value = ["planId", "date", "slot"], unique = true)])
 data class Meal(
     @PrimaryKey val id: String = newId(),
     val date: String,
     val slot: String,
     val recipeId: String,
     val servings: Int = 2,
+    @ColumnInfo(defaultValue = "'default'") val planId: String = DEFAULT_PLAN_ID,
 )
 
 @Entity(tableName = "pantry")
@@ -88,12 +102,13 @@ data class PlanTemplate(
 )
 
 data class Backup(
-    val version: Int = 1,
+    val version: Int = 2,
     val recipes: List<Recipe>,
     val meals: List<Meal>,
     val pantry: List<PantryItem>,
     val shopping: List<ShoppingItem>,
     val templates: List<PlanTemplate> = emptyList(),
+    val plans: List<MealPlan> = listOf(defaultPlan()),
 )
 
 data class PlanPreferences(

@@ -311,4 +311,27 @@
     <string name="open_pantry">Voorraad openen</string>
     <string name="meal_inspiration">Iets lekkers?</string>
     <string name="voice_examples">Probeer: volgende stap · vorige stap · herhaal · ingrediënten · stop met koken · timer 5 minuten</string>
+    <string name="default_plan">Mijn maaltijdplan</string>
+    <string name="manage_plans">Plannen beheren</string>
+    <string name="plan_name">Plannaam</string>
+    <string name="rename_plan">Plan hernoemen</string>
+    <string name="delete_plan">Plan verwijderen</string>
+    <string name="new_plan_name">Naam nieuw plan</string>
+    <string name="create_plan">Plan maken</string>
+    <string name="more_plans_premium">Meer plannen vereisen Premium. Bestaande blijven beschikbaar.</string>
+    <string name="delete_plan_warning">%1$s en de geplande maaltijden verwijderen? Recepten en andere plannen blijven bewaard.</string>
+    <string name="pantry_reminders">Voorraadherinneringen</string>
+    <string name="pantry_reminder_hint">Optionele herinnering rond 09:00 voor controledatums binnen drie dagen. Het apparaat kan vertragen. Controleer voedsel zelf.</string>
+    <string name="pantry_reminder_message">Enkele controledatums naderen. Bekijk je voorraad.</string>
+    <string name="crop_photo">Receptfoto bijsnijden</string>
+    <string name="crop_left">Linkerrand</string>
+    <string name="crop_top">Bovenrand</string>
+    <string name="crop_right">Rechterrand</string>
+    <string name="crop_bottom">Onderrand</string>
+    <string name="crop_reset">Hele foto gebruiken</string>
+    <string name="crop_read">Geselecteerd gebied lezen</string>
+    <string name="crop_hint">Pas de randen aan rond het recept. Het donkere gebied wordt uitgesloten. OCR leest Engels.</string>
+    <string name="crop_preview">Voorbeeld bijsnijden</string>
+    <string name="voice_focus_unavailable">Audio is bezet. Volg de stap op het scherm.</string>
+    <string name="combine_plan_shopping">Boodschappen uit gekozen plannen</string>
 </resources>

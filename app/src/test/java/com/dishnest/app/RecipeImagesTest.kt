@@ -3,6 +3,7 @@ package com.dishnest.app
 import android.graphics.Bitmap
 import androidx.exifinterface.media.ExifInterface
 import com.dishnest.app.platform.RecipeImages
+import com.dishnest.app.platform.CropRegion
 import java.io.ByteArrayOutputStream
 import java.io.File
 import org.junit.Assert.*
@@ -16,6 +17,27 @@ import org.robolectric.annotation.GraphicsMode
 @Config(sdk = [35])
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 class RecipeImagesTest {
+    @Test fun cropUsesPixelBoundsAndDoesNotRecycleThePreview() {
+        val bitmap = Bitmap.createBitmap(100, 50, Bitmap.Config.ARGB_8888)
+        for (x in 0 until 100) for (y in 0 until 50) bitmap.setPixel(x, y,
+            if (x < 50) android.graphics.Color.RED else android.graphics.Color.BLUE)
+        val crop = RecipeImages.crop(bitmap, CropRegion(left = 0.5f))
+        assertEquals(50, crop.width); assertEquals(50, crop.height)
+        assertEquals(android.graphics.Color.BLUE, crop.getPixel(0, 0))
+        crop.recycle()
+        val whole = RecipeImages.crop(bitmap, CropRegion())
+        assertNotSame(bitmap, whole); whole.recycle()
+        assertFalse(bitmap.isRecycled)
+        bitmap.recycle()
+    }
+
+    @Test fun emptyNonFiniteAndOutOfBoundsCropsAreRejected() {
+        assertThrows(IllegalArgumentException::class.java) { CropRegion(left = Float.NaN) }
+        assertThrows(IllegalArgumentException::class.java) { CropRegion(left = 0.8f, right = 0.2f) }
+        assertThrows(IllegalArgumentException::class.java) { CropRegion(bottom = 0f) }
+        assertThrows(IllegalArgumentException::class.java) { CropRegion(right = 1.1f) }
+    }
+
     @Test
     fun rotatedExifImageIsUprightBeforeOcr() {
         val bitmap = Bitmap.createBitmap(60, 30, Bitmap.Config.ARGB_8888)

@@ -23,6 +23,8 @@ data class KitchenState(
     val timers: List<KitchenTimer> = emptyList(),
     val templates: List<PlanTemplate> = emptyList(),
     val demo: Boolean = false,
+    val plans: List<MealPlan> = listOf(defaultPlan()),
+    val activePlanId: String = DEFAULT_PLAN_ID,
 )
 
 class KitchenViewModel(application: Application) : AndroidViewModel(application) {
@@ -32,7 +34,9 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     private val recipeWriter = RecipeWriter(db, com.dishnest.app.platform.RecipePhotos(app.filesDir))
     private val backups = KitchenBackups(db)
     private val mealWriter = MealWriter(db)
+    private val planStore = PlanStore(db)
     private val scheduler = TimerScheduler(app)
+    private val timerStore = TimerStore(db, scheduler)
     val message = MutableStateFlow("")
     val billing = app.billing
     val metrics = app.metrics
@@ -51,7 +55,12 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
             KitchenState(r, m, p, s, t)
         }
     val state =
-        combine(base, dao.templates(), demo) { b, t, d -> b.copy(templates = t, demo = d) }
+        combine(base, dao.templates(), demo, dao.plans()) { b, t, d, saved ->
+            val plans = saved.ifEmpty { listOf(defaultPlan()) }
+            val active = plans.single { it.active }.id
+            b.copy(templates = t, demo = d, plans = plans, activePlanId = active,
+                meals = b.meals.filter { it.planId == active })
+        }
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), KitchenState())
 
     fun run(action: suspend () -> Unit) =
@@ -105,18 +114,24 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
 
     fun removeMeal(m: Meal) = run { dao.deleteMeal(m.id) }
 
+    fun createPlan(name: String) = run { planStore.create(name, canUsePremium()) }
+    fun selectPlan(id: String) = run { planStore.select(id) }
+    fun renamePlan(id: String, name: String) = run { planStore.rename(id, name) }
+    fun deletePlan(id: String) = run { planStore.delete(id) }
+
     fun clearWeek(start: LocalDate) = run {
-        dao.clearWeek(start.toString(), start.plusDays(6).toString())
+        db.withTransaction { dao.clearWeek(start.toString(), start.plusDays(6).toString(), planStore.activeId()) }
     }
 
     fun smartPlan(start: LocalDate, prefs: PlanPreferences) = run {
         db.withTransaction {
-            val generated = Planner.generate(start, dao.recipes().first(), dao.pantry().first(), prefs)
+            val planId = planStore.activeId()
+            val generated = Planner.generate(start, dao.recipes().first(), dao.pantry().first(), prefs).map { it.copy(planId = planId) }
             require(generated.isNotEmpty()) { "No saved recipes match these preferences." }
             for (m in generated) {
                 dao.meals()
                     .first()
-                    .filter { it.date == m.date && it.slot == m.slot }
+                    .filter { it.planId == planId && it.date == m.date && it.slot == m.slot }
                     .forEach { dao.deleteMeal(it.id) }
                 dao.meal(m)
             }
@@ -127,12 +142,13 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
 
     fun copyPrevious(start: LocalDate) = run {
         db.withTransaction {
+            val planId = planStore.activeId()
             val previous =
                 dao.meals().first().filter {
-                    it.date >= start.minusDays(7).toString() && it.date < start.toString()
+                    it.planId == planId && it.date >= start.minusDays(7).toString() && it.date < start.toString()
                 }
             require(previous.isNotEmpty()) { "There are no meals in the previous week." }
-            dao.clearWeek(start.toString(), start.plusDays(6).toString())
+            dao.clearWeek(start.toString(), start.plusDays(6).toString(), planStore.activeId())
             previous.forEach {
                 dao.meal(
                     it.copy(id = newId(), date = LocalDate.parse(it.date).plusDays(7).toString())
@@ -145,9 +161,10 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
         require(canUsePremium()) { app.getString(R.string.premium_required) }
         require(name.isNotBlank() && name.length <= 200)
         db.withTransaction {
+            val planId = planStore.activeId()
             val meals =
                 dao.meals().first().filter {
-                    it.date >= start.toString() && it.date <= start.plusDays(6).toString()
+                    it.planId == planId && it.date >= start.toString() && it.date <= start.plusDays(6).toString()
                 }
             require(meals.isNotEmpty())
             dao.template(PlanTemplate(name = name, meals = meals))
@@ -161,13 +178,14 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
             val saved = requireNotNull(dao.templates().first().find { it.id == template.id }) { "Template no longer exists." }
             val oldStart = Planner.week(LocalDate.parse(saved.meals.minOf { it.date }))
             val recipeIds = dao.recipes().first().map { it.id }.toSet()
-            dao.clearWeek(start.toString(), start.plusDays(6).toString())
+            dao.clearWeek(start.toString(), start.plusDays(6).toString(), planStore.activeId())
             saved.meals
                 .filter { m -> m.recipeId in recipeIds }
                 .forEach {
                     dao.meal(
                         it.copy(
                             id = newId(),
+                            planId = planStore.activeId(),
                             date =
                                 start
                                     .plusDays(
@@ -183,11 +201,14 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
-    fun generateShopping(start: LocalDate) = run {
+    fun generateShopping(start: LocalDate, selectedPlanIds: Set<String>? = null) = run {
         db.withTransaction {
+            val selected = selectedPlanIds ?: setOf(planStore.activeId())
+            require(selected.isNotEmpty() && selected.all { id -> planStore.ensureDefault().any { it.id == id } }) { "Choose existing plans." }
+            require(selected.size == 1 || canUsePremium()) { app.getString(R.string.premium_required) }
             val meals =
                 dao.meals().first().filter {
-                    it.date >= start.toString() && it.date <= start.plusDays(6).toString()
+                    it.planId in selected && it.date >= start.toString() && it.date <= start.plusDays(6).toString()
                 }
             require(meals.isNotEmpty()) { "Plan a meal for this week first." }
             val items = ShoppingEngine.generate(meals, dao.recipes().first(), dao.pantry().first())
@@ -215,55 +236,14 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     fun deletePantry(item: PantryItem) = run { dao.deletePantry(item.id) }
 
     fun timer(label: String, seconds: Long) = run {
-        require(seconds in 1..86400)
-        val timer =
-            KitchenTimer(
-                label = label.ifBlank { "Cooking timer" },
-                deadline = System.currentTimeMillis() + seconds * 1000,
-                remainingMillis = seconds * 1000,
-            )
-        dao.timer(timer)
-        scheduler.schedule(timer)
+        timerStore.start(label.ifBlank { app.getString(R.string.timer_channel) }, seconds)
     }
 
-    fun pause(t: KitchenTimer) = run {
-        val remaining = t.remaining()
-        val updated =
-            if (t.paused)
-                t.copy(
-                    paused = false,
-                    deadline = System.currentTimeMillis() + remaining,
-                    notified = false,
-                )
-            else t.copy(paused = true, remainingMillis = remaining)
-        scheduler.cancel(t.id)
-        dao.timer(updated)
-        scheduler.schedule(updated)
-    }
-
-    fun cancel(t: KitchenTimer) = run {
-        scheduler.cancel(t.id)
-        dao.deleteTimer(t.id)
-    }
+    fun pause(t: KitchenTimer) = run { timerStore.toggle(t.id) }
+    fun cancel(t: KitchenTimer) = run { timerStore.cancel(t.id) }
 
     fun loadDemo() = run {
-        db.withTransaction {
-            require(dao.recipes().first().isEmpty() && dao.pantry().first().isEmpty() &&
-                dao.meals().first().isEmpty() && dao.shopping().first().isEmpty() &&
-                dao.templates().first().isEmpty()) { "Demo can only be loaded into an empty kitchen." }
-            DemoData.recipes().forEach { dao.recipe(it) }
-            DemoData.pantry().forEach { dao.pantry(it) }
-            val start = Planner.week(LocalDate.now())
-            (0..4).forEach { d ->
-                dao.meal(
-                    Meal(
-                        date = start.plusDays(d.toLong()).toString(),
-                        slot = "Dinner",
-                        recipeId = DemoData.recipes()[d % 4].id,
-                    )
-                )
-            }
-        }
+        DemoKitchen(db).load()
         app.settings.edit { it[booleanPreferencesKey("demo")] = true }
         message.value = "Demo kitchen loaded"
     }
@@ -277,10 +257,12 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
             dao.clearShopping()
             dao.clearTimers()
             dao.clearTemplates()
+            dao.clearPlans()
             app.filesDir.resolve("photos").deleteRecursively()
         }
         app.settings.edit { it.clear() }
         metrics.clear()
+        com.dishnest.app.platform.PantryReminders(app).clear()
         message.value = "All kitchen data deleted"
     }
 

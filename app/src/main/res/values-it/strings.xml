@@ -312,4 +312,27 @@
     <string name="open_pantry">Apri dispensa</string>
     <string name="meal_inspiration">Qualcosa di buono?</string>
     <string name="voice_examples">Prova: prossimo passaggio · passaggio precedente · ripeti · ingredienti · termina la cottura · timer 5 minuti</string>
+    <string name="default_plan">Il mio piano pasti</string>
+    <string name="manage_plans">Gestisci piani</string>
+    <string name="plan_name">Nome del piano</string>
+    <string name="rename_plan">Rinomina piano</string>
+    <string name="delete_plan">Elimina piano</string>
+    <string name="new_plan_name">Nome del nuovo piano</string>
+    <string name="create_plan">Crea piano</string>
+    <string name="more_plans_premium">Altri piani richiedono Premium. Quelli esistenti restano disponibili.</string>
+    <string name="delete_plan_warning">Eliminare %1$s e i suoi pasti? Ricette e altri piani vengono conservati.</string>
+    <string name="pantry_reminders">Promemoria dispensa</string>
+    <string name="pantry_reminder_hint">Promemoria facoltativo verso le 09:00 per date entro tre giorni. Il dispositivo può ritardarlo. Controlla gli alimenti.</string>
+    <string name="pantry_reminder_message">Alcune date di controllo sono vicine. Controlla la dispensa.</string>
+    <string name="crop_photo">Ritaglia foto</string>
+    <string name="crop_left">Bordo sinistro</string>
+    <string name="crop_top">Bordo superiore</string>
+    <string name="crop_right">Bordo destro</string>
+    <string name="crop_bottom">Bordo inferiore</string>
+    <string name="crop_reset">Usa foto intera</string>
+    <string name="crop_read">Leggi area selezionata</string>
+    <string name="crop_hint">Regola i bordi intorno alla ricetta. L’area scura è esclusa. L’OCR legge inglese.</string>
+    <string name="crop_preview">Anteprima ritaglio</string>
+    <string name="voice_focus_unavailable">Audio occupato. Segui il passaggio sullo schermo.</string>
+    <string name="combine_plan_shopping">Spesa da piani selezionati</string>
 </resources>

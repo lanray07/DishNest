@@ -26,5 +26,13 @@
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
     "text": "${meal.date} · ${uiResources.mealSlot(meal.slot)} · ${recipe?.title.orEmpty()} · ${uiResources.servings(meal.servings)}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
+    "text": "${start.format(format)} – ${start.plusDays(6).format(format)}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PhotoCrop.kt",
+    "text": "$label · $percent"
   }
 ]

@@ -313,4 +313,27 @@
     <string name="open_pantry">Otwórz spiżarnię</string>
     <string name="meal_inspiration">Coś pysznego?</string>
     <string name="voice_examples">Przykłady: następny krok · poprzedni krok · powtórz · składniki · zakończ gotowanie · minutnik 5 minut</string>
+    <string name="default_plan">Mój plan posiłków</string>
+    <string name="manage_plans">Zarządzaj planami</string>
+    <string name="plan_name">Nazwa planu</string>
+    <string name="rename_plan">Zmień nazwę planu</string>
+    <string name="delete_plan">Usuń plan</string>
+    <string name="new_plan_name">Nazwa nowego planu</string>
+    <string name="create_plan">Utwórz plan</string>
+    <string name="more_plans_premium">Więcej planów wymaga Premium. Istniejące pozostają dostępne.</string>
+    <string name="delete_plan_warning">Usunąć %1$s i jego posiłki? Przepisy i inne plany pozostaną.</string>
+    <string name="pantry_reminders">Przypomnienia o spiżarni</string>
+    <string name="pantry_reminder_hint">Opcjonalne przypomnienie około 09:00 o datach w ciągu trzech dni. Urządzenie może je opóźnić. Sprawdzaj żywność.</string>
+    <string name="pantry_reminder_message">Zbliżają się daty sprawdzenia. Przejrzyj spiżarnię.</string>
+    <string name="crop_photo">Przytnij zdjęcie</string>
+    <string name="crop_left">Lewa krawędź</string>
+    <string name="crop_top">Górna krawędź</string>
+    <string name="crop_right">Prawa krawędź</string>
+    <string name="crop_bottom">Dolna krawędź</string>
+    <string name="crop_reset">Użyj całego zdjęcia</string>
+    <string name="crop_read">Odczytaj wybrany obszar</string>
+    <string name="crop_hint">Dopasuj krawędzie do przepisu. Zacieniony obszar jest pomijany. OCR odczytuje angielski.</string>
+    <string name="crop_preview">Podgląd przycięcia</string>
+    <string name="voice_focus_unavailable">Dźwięk jest zajęty. Czytaj krok na ekranie.</string>
+    <string name="combine_plan_shopping">Zakupy z wybranych planów</string>
 </resources>

@@ -736,6 +736,8 @@ fun CookingScreen(
                     listOf(
                         uiResources.getString(R.string.voice_listening),
                         uiResources.getString(R.string.voice_processing),
+                        uiResources.getString(R.string.voice_focus_unavailable),
+                        uiResources.getString(R.string.voice_output_unavailable),
                         uiResources.getString(com.dishnest.app.R.string.copy_298a9207a7),
                         uiResources.getString(com.dishnest.app.R.string.copy_318c1da8d9),
                     )

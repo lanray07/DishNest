@@ -6,71 +6,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T16:24:15.625Z"
-    },
-    {
-      "name": "com.dishnest.app.RecipeImagesTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:24:15.058Z"
-    },
-    {
-      "name": "com.dishnest.app.RoomPersistenceTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:24:15.847Z"
-    },
-    {
-      "name": "com.dishnest.app.ScreenshotsTest",
-      "tests": "6",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:24:26.269Z"
-    },
-    {
-      "name": "com.dishnest.app.EntitlementsTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:23:58.230Z"
-    },
-    {
-      "name": "com.dishnest.app.VoiceLocalesTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:24:53.815Z"
-    },
-    {
-      "name": "com.dishnest.app.EntitlementClockTest",
-      "tests": "3",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:23:58.217Z"
-    },
-    {
-      "name": "com.dishnest.app.DomainTest",
-      "tests": "21",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:23:57.684Z"
-    },
-    {
-      "name": "com.dishnest.app.RestoreGuardTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T16:24:15.640Z"
+      "timestamp": "2026-10-18T17:21:19.538Z"
     },
     {
       "name": "com.dishnest.app.ReadinessDataTest",
@@ -78,18 +14,101 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T16:23:59.858Z"
+      "timestamp": "2026-10-18T17:20:56.660Z"
+    },
+    {
+      "name": "com.dishnest.app.RecipeImagesTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:21:18.243Z"
+    },
+    {
+      "name": "com.dishnest.app.RoomPersistenceTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:21:19.606Z"
+    },
+    {
+      "name": "com.dishnest.app.ScreenshotsTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:21:21.997Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementsTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:20:29.310Z"
+    },
+    {
+      "name": "com.dishnest.app.VoiceLocalesTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:22:02.663Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementClockTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:20:29.285Z"
+    },
+    {
+      "name": "com.dishnest.app.DomainTest",
+      "tests": "21",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:20:28.657Z"
+    },
+    {
+      "name": "com.dishnest.app.RestoreGuardTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:21:19.553Z"
+    },
+    {
+      "name": "com.dishnest.app.VoiceFocusTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:22:02.364Z"
+    },
+    {
+      "name": "com.dishnest.app.FeatureScopeTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:20:31.390Z"
     }
   ],
   "device_instrumentation": {
-    "testedAt": "2026-10-18T16:31:14.0455222Z",
+    "packageId": "com.dishnest.app.qa",
+    "ordinaryAppModified": false,
+    "testedAt": "2026-10-18T17:23:49.3122176Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "17e8c39df050a4be7594d2e0e384b3dfcadabcfa5fea1a877052b0091275145b",
-    "tests": 5,
-    "passedTests": 5,
+    "apkSha256": "bd1b74dead898142ab6d3c49938933c063d2d205341ff9344a5833d93024b58a",
+    "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
+    "tests": 10,
+    "passedTests": 10,
     "failedTests": 0,
     "passed": true,
     "uiSmokePassed": true,
@@ -98,17 +117,23 @@
       "SQLite close/reopen persistence",
       "Native bitmap photo ZIP round-trip",
       "Bundled offline OCR synthetic printed fixture",
-      "Arabic/Hindi resource formatting"
+      "Arabic/Hindi resource formatting",
+      "Real SQLite v1-to-v2 migration",
+      "Named plan creation/selection across activity recreation",
+      "Opt-in generic pantry reminder and duplicate suppression",
+      "Denied microphone touch fallback",
+      "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL"
     ],
     "notCovered": [
       "App Tester/LAT purchases",
-      "Microphone or spoken commands",
+      "Granted microphone or spoken commands",
       "TTS/audio focus",
-      "Doze/reboot/alarm delivery",
-      "TalkBack and large fonts",
+      "Doze/reboot; process-termination timer delivery is recorded separately",
+      "TalkBack and full system font matrix",
       "Actual camera or real-photo OCR accuracy",
       "Publisher-signed release"
     ],
+    "backgroundAlarmEvidence": "artifacts/fire-background-alarm.json",
     "serialIdentifierStored": false,
     "storeSubmission": false,
     "remoteDeployment": false
@@ -194,7 +219,7 @@
   ],
   "native-alignment": {
     "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "apk_sha256": "54dab395d663b8a589d7c045a4bd3d644c0ef93b21393e31e0cd17b901d79b84",
+    "apk_sha256": "e1bedafe58bffef8dcbb5e248f74f4538330c0939ca4ed31386b0458f93b8a81",
     "libraries": [
       {
         "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
@@ -437,14 +462,17 @@
     "published": false
   },
   "fire-device-qa": {
-    "testedAt": "2026-10-18T16:31:14.0455222Z",
+    "packageId": "com.dishnest.app.qa",
+    "ordinaryAppModified": false,
+    "testedAt": "2026-10-18T17:23:49.3122176Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "17e8c39df050a4be7594d2e0e384b3dfcadabcfa5fea1a877052b0091275145b",
-    "tests": 5,
-    "passedTests": 5,
+    "apkSha256": "bd1b74dead898142ab6d3c49938933c063d2d205341ff9344a5833d93024b58a",
+    "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
+    "tests": 10,
+    "passedTests": 10,
     "failedTests": 0,
     "passed": true,
     "uiSmokePassed": true,
@@ -453,23 +481,29 @@
       "SQLite close/reopen persistence",
       "Native bitmap photo ZIP round-trip",
       "Bundled offline OCR synthetic printed fixture",
-      "Arabic/Hindi resource formatting"
+      "Arabic/Hindi resource formatting",
+      "Real SQLite v1-to-v2 migration",
+      "Named plan creation/selection across activity recreation",
+      "Opt-in generic pantry reminder and duplicate suppression",
+      "Denied microphone touch fallback",
+      "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL"
     ],
     "notCovered": [
       "App Tester/LAT purchases",
-      "Microphone or spoken commands",
+      "Granted microphone or spoken commands",
       "TTS/audio focus",
-      "Doze/reboot/alarm delivery",
-      "TalkBack and large fonts",
+      "Doze/reboot; process-termination timer delivery is recorded separately",
+      "TalkBack and full system font matrix",
       "Actual camera or real-photo OCR accuracy",
       "Publisher-signed release"
     ],
+    "backgroundAlarmEvidence": "artifacts/fire-background-alarm.json",
     "serialIdentifierStored": false,
     "storeSubmission": false,
     "remoteDeployment": false
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-18T16:31:37.580737+00:00",
+    "generatedAt": "2026-10-18T17:27:53.524867+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -479,6 +513,12 @@
         "check": "Android lint",
         "status": "passed",
         "evidence": "app\\build\\reports\\lint-results-debug.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Isolated QA lint",
+        "status": "passed",
+        "evidence": "app\\build\\reports\\lint-results-qa.xml",
         "remaining": ""
       },
       {
@@ -503,6 +543,12 @@
         "check": "Combined recipe filters",
         "status": "passed",
         "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeQueryTest.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Named plans, schema migration and reminder/timer policies",
+        "status": "passed",
+        "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.FeatureScopeTest.xml",
         "remaining": ""
       },
       {
@@ -569,6 +615,12 @@
         "check": "Physical Fire instrumentation smoke",
         "status": "passed",
         "evidence": "artifacts/fire-device-qa.json",
+        "remaining": ""
+      },
+      {
+        "check": "Background Fire timer after process termination",
+        "status": "passed",
+        "evidence": "artifacts/fire-background-alarm.json",
         "remaining": ""
       },
       {

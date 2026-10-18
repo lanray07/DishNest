@@ -13,12 +13,22 @@ object BackupCodec {
     fun decode(raw: String, archivePhotos: Set<String> = emptySet()): Backup {
         require(raw.length <= 10_000_000) { "Backup exceeds 10 MB." }
         val root = JsonParser.parseString(raw).asJsonObject
-        require(root.get("version")?.asInt == 1) { "Unsupported backup version." }
+        val version = root.get("version")?.asInt
+        require(version in listOf(1, 2)) { "Unsupported backup version." }
         for (k in listOf("recipes", "meals", "pantry", "shopping", "templates")) require(
             root[k]?.isJsonArray == true
         ) {
             "Missing $k array."
         }
+        if (version == 1) {
+            root.addProperty("version", 2)
+            root.add("plans", gson.toJsonTree(listOf(defaultPlan())))
+            root["meals"].asJsonArray.forEach { it.asJsonObject.addProperty("planId", DEFAULT_PLAN_ID) }
+            root["templates"].asJsonArray.forEach { template ->
+                template.asJsonObject["meals"].asJsonArray.forEach { it.asJsonObject.addProperty("planId", DEFAULT_PLAN_ID) }
+            }
+        }
+        require(root["plans"]?.isJsonArray == true) { "Missing plans array." }
         val b = gson.fromJson(root, Backup::class.java)
         require(
             b.recipes.size <= 10000 &&
@@ -35,6 +45,10 @@ object BackupCodec {
         fun quantity(v: Double?) {
             require(v == null || (v.isFinite() && v >= 0 && v <= 1e9)) { "Invalid quantity" }
         }
+        require(b.plans.size in 1..100 && b.plans.count { it.active } == 1) { "A backup must have exactly one selected plan." }
+        b.plans.forEach { id(it.id); require(it.name.isNotBlank() && it.name.length <= 200) }
+        val planIds = b.plans.map { it.id }.toSet()
+        require(planIds.size == b.plans.size) { "Duplicate plan IDs." }
         b.recipes.forEach { r ->
             id(r.id)
             require(
@@ -70,6 +84,7 @@ object BackupCodec {
             )
         }
         b.meals.forEach(::meal)
+        require(b.meals.all { it.planId in planIds }) { "Meal refers to a missing plan." }
         b.pantry.forEach {
             id(it.id)
             require(it.name.isNotBlank() && it.name.length <= 1000 && it.unit.length <= 100)
@@ -98,7 +113,7 @@ object BackupCodec {
                 b.shopping.map { it.id },
                 b.templates.map { it.id },
             )) require(ids.distinct().size == ids.size) { "Duplicate record IDs." }
-        require(b.meals.map { it.date to it.slot }.distinct().size == b.meals.size) {
+        require(b.meals.map { Triple(it.planId, it.date, it.slot) }.distinct().size == b.meals.size) {
             "Duplicate meal slots."
         }
         return b

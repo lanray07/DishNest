@@ -13,6 +13,7 @@ class KitchenBackups(private val database: KitchenDatabase) {
             recipes = dao.recipes().first(), meals = dao.meals().first(),
             pantry = dao.pantry().first(), shopping = dao.shopping().first(),
             templates = dao.templates().first(),
+            plans = PlanStore(database).ensureDefault(),
         )
     }
 
@@ -26,9 +27,13 @@ class KitchenBackups(private val database: KitchenDatabase) {
         val dao = database.kitchen()
         require(dao.recipes().first().isEmpty() && dao.meals().first().isEmpty() &&
             dao.pantry().first().isEmpty() && dao.shopping().first().isEmpty() &&
-            dao.templates().first().isEmpty()) {
+            dao.templates().first().isEmpty() && dao.plans().first().let {
+                it.isEmpty() || it == listOf(com.dishnest.app.domain.defaultPlan())
+            }) {
             "Import requires an empty kitchen. Export existing data before deleting it."
         }
+        dao.clearPlans()
+        backup.plans.forEach { dao.plan(it) }
         backup.recipes.forEach { dao.recipe(it) }
         backup.meals.forEach { dao.meal(it) }
         backup.pantry.forEach { dao.pantry(it) }

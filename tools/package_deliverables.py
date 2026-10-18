@@ -12,12 +12,12 @@ for file in (ROOT/'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml')
     suite=ET.parse(file).getroot()
     if int(suite.attrib.get('failures',0))+int(suite.attrib.get('errors',0)):raise SystemExit('Android test failures remain.')
 manifest=[]
-for source,name in [(ROOT/'app/build/outputs/apk/debug/app-debug.apk','DishNest-0.1.0-debug.apk'),(ROOT/'app/build/outputs/apk/release/app-release-unsigned.apk','DishNest-0.1.0-release-unsigned.apk')]:
+for source,name in [(ROOT/'app/build/outputs/apk/debug/app-debug.apk','DishNest-0.1.0-debug.apk'),(ROOT/'app/build/outputs/apk/release/app-release-unsigned.apk','DishNest-0.1.0-release-unsigned.apk'),(ROOT/'app/build/outputs/apk/qa/app-qa.apk','DishNest-0.1.0-qa.apk')]:
     if source.exists():
-        target=OUT/name;shutil.copy2(source,target);manifest.append({'file':name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':name.endswith('-debug.apk'),'production_ready':False})
+        target=OUT/name;shutil.copy2(source,target);manifest.append({'file':name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':name.endswith(('-debug.apk','-qa.apk')),'production_ready':False})
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
 def archive_source():
-    evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
+    evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','fire-background-alarm.json','fire-background-seed.txt','fire-background-verify.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
     source_zip=OUT/'DishNest-source.zip'
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):

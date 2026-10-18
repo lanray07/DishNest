@@ -312,4 +312,27 @@
     <string name="open_pantry">Abrir despensa</string>
     <string name="meal_inspiration">¿Algo delicioso?</string>
     <string name="voice_examples">Prueba: siguiente paso · paso anterior · repetir · ingredientes · terminar de cocinar · temporizador 5 minutos</string>
+    <string name="default_plan">Mi plan de comidas</string>
+    <string name="manage_plans">Gestionar planes</string>
+    <string name="plan_name">Nombre del plan</string>
+    <string name="rename_plan">Renombrar plan</string>
+    <string name="delete_plan">Eliminar plan</string>
+    <string name="new_plan_name">Nombre del nuevo plan</string>
+    <string name="create_plan">Crear plan</string>
+    <string name="more_plans_premium">Más planes requieren Premium. Los existentes siguen disponibles.</string>
+    <string name="delete_plan_warning">¿Eliminar %1$s y sus comidas? Se conservan recetas y otros planes.</string>
+    <string name="pantry_reminders">Recordatorios de despensa</string>
+    <string name="pantry_reminder_hint">Aviso opcional sobre las 09:00 para fechas en los próximos tres días. El dispositivo puede retrasarlo. Revisa los alimentos.</string>
+    <string name="pantry_reminder_message">Hay fechas de revisión próximas. Revisa tu despensa.</string>
+    <string name="crop_photo">Recortar foto</string>
+    <string name="crop_left">Borde izquierdo</string>
+    <string name="crop_top">Borde superior</string>
+    <string name="crop_right">Borde derecho</string>
+    <string name="crop_bottom">Borde inferior</string>
+    <string name="crop_reset">Usar foto completa</string>
+    <string name="crop_read">Leer zona seleccionada</string>
+    <string name="crop_hint">Ajusta los bordes para incluir la receta. Se excluye la zona sombreada. OCR solo lee inglés.</string>
+    <string name="crop_preview">Vista previa del recorte</string>
+    <string name="voice_focus_unavailable">El audio está ocupado. Sigue el paso en pantalla.</string>
+    <string name="combine_plan_shopping">Compra de planes seleccionados</string>
 </resources>

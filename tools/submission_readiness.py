@@ -15,10 +15,13 @@ lint=ROOT/'app/build/reports/lint-results-debug.xml'
 issues=ET.parse(lint).getroot().findall('issue') if lint.exists() else []
 errors=[i for i in issues if i.get('severity') in ['Error','Fatal']]
 check('Android lint',lint.exists() and not errors,str(lint.relative_to(ROOT)),f'{len(errors)} errors; rerun lint on current sources')
+qa_lint=ROOT/'app/build/reports/lint-results-qa.xml'
+qa_errors=[i for i in ET.parse(qa_lint).getroot().findall('issue') if i.get('severity') in ['Error','Fatal']] if qa_lint.exists() else []
+check('Isolated QA lint',qa_lint.exists() and not qa_errors,str(qa_lint.relative_to(ROOT)),'Run QA lint for the exact instrumentation target')
 suites=[ET.parse(p).getroot() for p in (ROOT/'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml')]
 tests=sum(int(n.get('tests',0)) for n in suites);failures=sum(int(n.get('failures',0))+int(n.get('errors',0)) for n in suites)
 check('Host Android tests',bool(suites) and failures==0,'app/build/test-results/testDebugUnitTest',f'{tests} tests, {failures} failures/errors')
-for suffix, name in [('ReadinessDataTest', 'Restore, photo archive and planner data policies'), ('VoiceLocalesTest', 'Target-locale voice command grammar'), ('RecipeQueryTest', 'Combined recipe filters')]:
+for suffix, name in [('ReadinessDataTest', 'Restore, photo archive and planner data policies'), ('VoiceLocalesTest', 'Target-locale voice command grammar'), ('RecipeQueryTest', 'Combined recipe filters'), ('FeatureScopeTest', 'Named plans, schema migration and reminder/timer policies')]:
     selected = [suite for suite in suites if suite.get('name', '').endswith(suffix)]
     passed = bool(selected) and all(int(s.get('tests', 0)) > 0 and int(s.get('failures', 0)) + int(s.get('errors', 0)) == 0 for s in selected)
     check(name, passed, f'app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.{suffix}.xml', 'Run the current complete host test suite')
@@ -32,14 +35,17 @@ server_passed=server_xml is not None and bool(server_xml.findall('.//testcase'))
 check('Local receipt-service tests',server_passed,'artifacts/billing-server-tests.xml','Run node --test --test-reporter=junit billing-server/*.test.mjs')
 check('Node/Kotlin signed-receipt contract',read_json('artifacts/billing-contract.json').get('passed') is True,'artifacts/billing-contract.json','Verify the actual Node signer with the compiled Kotlin verifier')
 apk=read_json('artifacts/apk-validation.json');native=read_json('artifacts/native-alignment.json')
-check('APK signature and binary alignment',apk.get('debug',{}).get('signatureVerified') is True and apk.get('release',{}).get('zipAlignment16k') is True and native.get('passed') is True,'artifacts/apk-validation.json; artifacts/native-alignment.json','Validate exact output binaries; release signing remains a separate publisher gate')
+check('APK signature and binary alignment',apk.get('debug',{}).get('signatureVerified') is True and apk.get('release',{}).get('zipAlignment16k') is True and native.get('passed') is True and apk.get('qa',{}).get('signatureVerified') is True and apk.get('qa',{}).get('isolatedPackageVerified') is True and apk.get('qa',{}).get('billingDisabled') is True and apk.get('release',{}).get('qaFixtureAbsent') is True,'artifacts/apk-validation.json; artifacts/native-alignment.json','Validate exact output binaries; release signing remains a separate publisher gate')
 check('Unconfigured billing build rejection',read_json('artifacts/billing-configuration-guard.json').get('passed') is True,'artifacts/billing-configuration-guard.json','Verify enabled billing rejects missing console authentication key')
 check('Incomplete publisher signing rejection',read_json('artifacts/signing-configuration-guard.json').get('passed') is True,'artifacts/signing-configuration-guard.json','Verify partial environment signing configuration is rejected')
 check('Amazon catalog and live verification',False,'docs/AMAZON_BILLING.md','Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only')
 fire=read_json('artifacts/fire-device-qa.json')
-fire_current=fire.get('apkSha256') == digest(ROOT/'app/build/outputs/apk/debug/app-debug.apk') if (ROOT/'app/build/outputs/apk/debug/app-debug.apk').exists() else False
+fire_current=fire.get('apkSha256') == digest(ROOT/'app/build/outputs/apk/qa/app-qa.apk') if (ROOT/'app/build/outputs/apk/qa/app-qa.apk').exists() else False
+fire_test = ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
+fire_current = fire_current and fire.get('packageId') == 'com.dishnest.app.qa' and fire_test.exists() and fire.get('instrumentationApkSha256') == digest(fire_test)
 check('Physical Fire native components',fire_current and fire.get('passedTests', fire.get('tests', 0) if fire.get('passed') else 0) >= 4,'artifacts/fire-device-qa.json','Run native SQLite, image/archive, OCR fixture and resource tests on the current APK')
-check('Physical Fire instrumentation smoke',fire.get('passed') is True and fire_current,'artifacts/fire-device-qa.json','Native tests passed; unlock the secure Fire display to rerun the UI smoke suite' if fire.get('uiBlocker') else 'Run the native/UI smoke suite on the selected device with the current debug APK')
+check('Physical Fire instrumentation smoke',fire.get('passed') is True and fire_current,'artifacts/fire-device-qa.json','Native tests passed; unlock the secure Fire display to rerun the UI smoke suite' if fire.get('uiBlocker') else 'Run the native/UI smoke suite on the selected device with the current isolated QA APK')
+check('Background Fire timer after process termination', read_json('artifacts/fire-background-alarm.json').get('passed') is True and read_json('artifacts/fire-background-alarm.json').get('apkSha256') == fire.get('apkSha256'), 'artifacts/fire-background-alarm.json', 'Run the two-process timer probe on the exact QA APK')
 check('Physical device QA',False,'docs/DEVICE_QA.md','Fire/phone, TalkBack, doze/reboot, permissions, speech and actual OCR checks')
 notices=ROOT/'legal/third-party/manifest.json'
 check('Native notice source collection',notices.exists(),'legal/third-party/manifest.json','Collect pinned upstream licence files')

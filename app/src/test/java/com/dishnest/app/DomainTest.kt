@@ -239,7 +239,7 @@ class DomainTest {
     fun rejectsUnknownBackupVersion() {
         assertThrows(IllegalArgumentException::class.java) {
             BackupCodec.decode(
-                BackupCodec.encode(backup()).replace("\"version\":1", "\"version\":99")
+                BackupCodec.encode(backup()).replace("\"version\":2", "\"version\":99")
             )
         }
     }

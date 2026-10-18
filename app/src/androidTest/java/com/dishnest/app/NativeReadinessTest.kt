@@ -11,7 +11,12 @@ import com.dishnest.app.data.PhotoBackups
 import com.dishnest.app.domain.Backup
 import com.dishnest.app.domain.Recipe
 import com.dishnest.app.platform.RecipePhotos
-import com.googlecode.tesseract.android.TessBaseAPI
+import com.dishnest.app.platform.LocalOcr
+import com.dishnest.app.platform.RecipeImages
+import com.dishnest.app.platform.CropRegion
+import com.dishnest.app.data.KitchenDatabase
+import androidx.room.Room
+import kotlinx.coroutines.flow.first
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -49,23 +54,31 @@ class NativeReadinessTest {
     }
 
     @Test fun bundledOcrEngineRecognisesASyntheticPrintedFixtureOffline() {
-        val root = File(context.cacheDir, "ocr-device-test").apply { mkdirs() }
         val bitmap = Bitmap.createBitmap(1200, 300, Bitmap.Config.ARGB_8888)
-        val engine = TessBaseAPI()
         try {
-            val model = File(root, "tessdata/eng.traineddata")
-            model.parentFile!!.mkdirs()
-            context.assets.open("tessdata/eng.traineddata").use { input -> model.outputStream().use { input.copyTo(it) } }
             val canvas = Canvas(bitmap)
             canvas.drawColor(Color.WHITE)
             val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Color.BLACK; textSize = 80f }
             canvas.drawText("LENTIL SOUP", 60f, 110f, paint)
             canvas.drawText("200 g lentils", 60f, 220f, paint)
-            assertTrue(engine.init(root.absolutePath, "eng"))
-            engine.setImage(bitmap)
-            val text = engine.utF8Text.orEmpty()
+            val crop = RecipeImages.crop(bitmap, CropRegion(left = 0.02f, top = 0.05f, right = 0.9f, bottom = 0.95f))
+            val text = try { LocalOcr.read(context, crop) } finally { crop.recycle() }
             assertTrue("Synthetic printed fixture was not recognised", text.contains("SOUP", true) && text.contains("lentil", true))
-        } finally { engine.recycle(); bitmap.recycle(); root.deleteRecursively() }
+        } finally { bitmap.recycle() }
+    }
+
+    @Test fun realSqliteMigratesVersionOneWithoutDiscardingSavedData() = runBlocking {
+        val name = "migration-fixture-${com.dishnest.app.domain.newId()}.db"
+        val schema = InstrumentationRegistry.getInstrumentation().context.assets
+            .open("com.dishnest.app.data.KitchenDatabase/1.json").bufferedReader().use { it.readText() }
+        LegacyKitchenFixture.create(context, name, schema)
+        val db = Room.databaseBuilder(context, KitchenDatabase::class.java, name).addMigrations(KitchenDatabase.MIGRATION_1_2).build()
+        try {
+            assertEquals("Original notes", db.kitchen().recipes().first().single().notes)
+            assertEquals("default", db.kitchen().meals().first().single().planId)
+            assertEquals("default", db.kitchen().templates().first().single().meals.single().planId)
+        } finally { db.close(); context.deleteDatabase(name) }
+        Unit
     }
 
     @Test fun actualResourcesFormatArabicAndHindiWithoutEnglishFallback() {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T16:31:37.580737+00:00",
+  "generatedAt": "2026-10-18T17:27:53.524867+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -9,6 +9,12 @@
       "check": "Android lint",
       "status": "passed",
       "evidence": "app\\build\\reports\\lint-results-debug.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Isolated QA lint",
+      "status": "passed",
+      "evidence": "app\\build\\reports\\lint-results-qa.xml",
       "remaining": ""
     },
     {
@@ -33,6 +39,12 @@
       "check": "Combined recipe filters",
       "status": "passed",
       "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeQueryTest.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Named plans, schema migration and reminder/timer policies",
+      "status": "passed",
+      "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.FeatureScopeTest.xml",
       "remaining": ""
     },
     {
@@ -99,6 +111,12 @@
       "check": "Physical Fire instrumentation smoke",
       "status": "passed",
       "evidence": "artifacts/fire-device-qa.json",
+      "remaining": ""
+    },
+    {
+      "check": "Background Fire timer after process termination",
+      "status": "passed",
+      "evidence": "artifacts/fire-background-alarm.json",
       "remaining": ""
     },
     {

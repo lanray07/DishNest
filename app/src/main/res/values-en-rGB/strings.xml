@@ -311,4 +311,27 @@
     <string name="open_pantry">Open pantry</string>
     <string name="meal_inspiration">Something delicious?</string>
     <string name="voice_examples">Try: next step · previous step · repeat · ingredients · finish cooking · timer 5 minutes</string>
+    <string name="default_plan">My meal plan</string>
+    <string name="manage_plans">Manage plans</string>
+    <string name="plan_name">Plan name</string>
+    <string name="rename_plan">Rename plan</string>
+    <string name="delete_plan">Delete plan</string>
+    <string name="new_plan_name">New plan name</string>
+    <string name="create_plan">Create plan</string>
+    <string name="more_plans_premium">More plans require Premium. Existing plans remain available.</string>
+    <string name="delete_plan_warning">Delete %1$s and its planned meals? Recipes and other plans are kept.</string>
+    <string name="pantry_reminders">Pantry check reminders</string>
+    <string name="pantry_reminder_hint">Optional reminder around 09:00 for check dates within three days. Delivery may be delayed by the device. Check food yourself.</string>
+    <string name="pantry_reminder_message">Some pantry check dates are due soon. Review your pantry.</string>
+    <string name="crop_photo">Crop recipe photo</string>
+    <string name="crop_left">Left edge</string>
+    <string name="crop_top">Top edge</string>
+    <string name="crop_right">Right edge</string>
+    <string name="crop_bottom">Bottom edge</string>
+    <string name="crop_reset">Use whole photo</string>
+    <string name="crop_read">Read selected area</string>
+    <string name="crop_hint">Adjust the edges to include the recipe. The shaded area is excluded. OCR currently reads English text.</string>
+    <string name="crop_preview">Recipe crop preview</string>
+    <string name="voice_focus_unavailable">Audio is busy. Use the step on screen.</string>
+    <string name="combine_plan_shopping">Shopping from selected plans</string>
 </resources>

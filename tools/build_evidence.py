@@ -22,9 +22,9 @@ def input_hashes():
     return {p.relative_to(ROOT).as_posix(): digest(p) for p in sorted(inputs)}
 
 def current():
-    outputs = [ROOT / 'artifacts/delivery-verification.log', ROOT / 'app/build/reports/lint-results-debug.xml']
+    outputs = [ROOT / 'artifacts/delivery-verification.log', ROOT / 'app/build/reports/lint-results-debug.xml', ROOT / 'app/build/reports/lint-results-qa.xml']
     outputs += list((ROOT / 'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml'))
-    outputs += [ROOT / path for path in ('app/build/outputs/apk/debug/app-debug.apk', 'app/build/outputs/apk/release/app-release-unsigned.apk', 'app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')]
+    outputs += [ROOT / path for path in ('app/build/outputs/apk/debug/app-debug.apk', 'app/build/outputs/apk/release/app-release-unsigned.apk', 'app/build/outputs/apk/qa/app-qa.apk', 'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk')]
     if not outputs[0].is_file() or 'BUILD SUCCESSFUL' not in outputs[0].read_text(encoding='utf-8', errors='replace'):
         raise ValueError('Full Gradle verification must succeed before recording evidence.')
     if len(outputs) < 5 or any(not p.is_file() for p in outputs):

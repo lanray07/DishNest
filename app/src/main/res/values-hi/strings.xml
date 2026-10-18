@@ -311,4 +311,27 @@
     <string name="open_pantry">भंडार खोलें</string>
     <string name="meal_inspiration">कुछ स्वादिष्ट?</string>
     <string name="voice_examples">कहें: अगला चरण · पिछला चरण · दोहराएँ · सामग्री · खाना पकाना समाप्त करें · टाइमर ५ मिनट</string>
+    <string name="default_plan">मेरी भोजन योजना</string>
+    <string name="manage_plans">योजनाएँ प्रबंधित करें</string>
+    <string name="plan_name">योजना का नाम</string>
+    <string name="rename_plan">योजना का नाम बदलें</string>
+    <string name="delete_plan">योजना हटाएँ</string>
+    <string name="new_plan_name">नई योजना का नाम</string>
+    <string name="create_plan">योजना बनाएँ</string>
+    <string name="more_plans_premium">अधिक योजनाओं के लिए Premium चाहिए। मौजूदा योजनाएँ उपलब्ध रहेंगी।</string>
+    <string name="delete_plan_warning">%1$s और उसके नियोजित भोजन हटाएँ? रेसिपी और अन्य योजनाएँ रहेंगी।</string>
+    <string name="pantry_reminders">भंडार जाँच की याद दिलाएँ</string>
+    <string name="pantry_reminder_hint">अगले तीन दिनों की जाँच तारीखों के लिए लगभग 09:00 बजे वैकल्पिक याद। डिवाइस देर कर सकता है। भोजन स्वयं जाँचें।</string>
+    <string name="pantry_reminder_message">भंडार की कुछ जाँच तारीखें पास हैं। भंडार देखें।</string>
+    <string name="crop_photo">रेसिपी फ़ोटो काटें</string>
+    <string name="crop_left">बायाँ किनारा</string>
+    <string name="crop_top">ऊपरी किनारा</string>
+    <string name="crop_right">दायाँ किनारा</string>
+    <string name="crop_bottom">निचला किनारा</string>
+    <string name="crop_reset">पूरी फ़ोटो इस्तेमाल करें</string>
+    <string name="crop_read">चुना हुआ भाग पढ़ें</string>
+    <string name="crop_hint">रेसिपी के चारों ओर किनारे समायोजित करें। छाया वाला भाग हटेगा। OCR अभी अंग्रेज़ी पढ़ता है।</string>
+    <string name="crop_preview">कटी हुई रेसिपी का पूर्वावलोकन</string>
+    <string name="voice_focus_unavailable">ऑडियो व्यस्त है। स्क्रीन पर दिया चरण देखें।</string>
+    <string name="combine_plan_shopping">चुनी हुई योजनाओं की खरीदारी</string>
 </resources>

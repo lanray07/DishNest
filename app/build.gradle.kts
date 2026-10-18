@@ -37,7 +37,7 @@ android {
         applicationId = "com.dishnest.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
+        versionCode = 2
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("boolean", "BILLING_ENABLED", billingEnabled.toString())
@@ -46,6 +46,11 @@ android {
         buildConfigField("String", "BILLING_ENVIRONMENT", quoted(billingEnvironment))
     }
     buildFeatures { compose = true; buildConfig = true }
+    testBuildType = "qa"
+    sourceSets.maybeCreate("qa").manifest.srcFile("src/qa/AndroidManifest.xml")
+    sourceSets.getByName("test").java.srcDir("src/sharedTest/java")
+    sourceSets.getByName("androidTest").java.srcDir("src/sharedTest/java")
+    sourceSets.getByName("androidTest").assets.srcDir("schemas")
     sourceSets.getByName("debug").manifest.srcFile(if (billingEnabled) "src/billingDebug/AndroidManifest.xml" else "src/debug/AndroidManifest.xml")
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
@@ -57,7 +62,15 @@ android {
             keyPassword = releaseSigning.getValue("DISHNEST_KEY_PASSWORD")
         }
     }
-    buildTypes { release {
+    buildTypes {
+        create("qa") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".qa"
+            matchingFallbacks += listOf("debug")
+            resValue("string", "app_name", "DishNest QA")
+            buildConfigField("boolean", "BILLING_ENABLED", "false")
+        }
+        release {
         isMinifyEnabled = false
         proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         if (signingConfigured) signingConfig = signingConfigs.getByName("publisher")
@@ -66,6 +79,9 @@ android {
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
 }
 ksp { arg("room.schemaLocation", "$projectDir/schemas") }
+// All variants export the same database contract. Prevent concurrent truncation/read of a new schema.
+tasks.matching { it.name == "kspQaKotlin" }.configureEach { mustRunAfter("kspDebugKotlin") }
+tasks.matching { it.name == "kspReleaseKotlin" }.configureEach { mustRunAfter("kspDebugKotlin", "kspQaKotlin") }
 dependencies {
     implementation(platform("androidx.compose:compose-bom:2025.04.01"))
     implementation("androidx.activity:activity-compose:1.10.1")

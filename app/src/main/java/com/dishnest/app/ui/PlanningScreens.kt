@@ -10,8 +10,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.semantics.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -56,6 +58,9 @@ fun PlanScreen(
                     }
                 },
             )
+        }
+        item {
+            PlanControls(s, vm)
         }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
@@ -242,6 +247,7 @@ fun PlanScreen(
                                 slot = slot,
                                 recipeId = r.id,
                                 servings = servings,
+                                planId = s.activePlanId,
                             )
                         )
                         assign = null
@@ -395,11 +401,37 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
                         uiResources.getString(com.dishnest.app.R.string.copy_6a38c0b66f)
                 }
         }
+    var combinePlans by rememberSaveable { mutableStateOf(false) }
+    var selectedPlans by rememberSaveable { mutableStateOf(listOf(s.activePlanId)) }
+    if (combinePlans) FullDialog({ combinePlans = false }, stringResource(R.string.combine_plan_shopping)) {
+        val start = Planner.week(LocalDate.now())
+        val format = DateTimeFormatter.ofLocalizedDate(java.time.format.FormatStyle.MEDIUM)
+            .withLocale(LocalConfiguration.current.locales[0])
+        Text("${start.format(format)} – ${start.plusDays(6).format(format)}")
+        s.plans.forEach { plan ->
+            val planLabel = if (plan.id == DEFAULT_PLAN_ID && plan.name == "My meal plan") stringResource(R.string.default_plan) else plan.name
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Checkbox(checked = plan.id in selectedPlans, modifier = Modifier.semantics { contentDescription = planLabel }, onCheckedChange = { checked ->
+                    selectedPlans = if (checked) selectedPlans + plan.id else selectedPlans - plan.id
+                })
+                Text(planLabel)
+            }
+        }
+        Button(onClick = { vm.generateShopping(start, selectedPlans.toSet()); combinePlans = false }, enabled = selectedPlans.isNotEmpty()) {
+            Text(stringResource(R.string.ui_make_shopping_list_ad0a17))
+        }
+    }
     LazyColumn(
         Modifier.fillMaxSize(),
         contentPadding = PaddingValues(28.dp),
         verticalArrangement = Arrangement.spacedBy(18.dp),
     ) {
+        if (s.plans.size > 1 && vm.canUsePremium()) item {
+            OutlinedButton(onClick = { selectedPlans = listOf(s.activePlanId); combinePlans = true }) {
+                Text(stringResource(R.string.combine_plan_shopping))
+            }
+        }
+
         item {
             PageTitle(
                 stringResource(com.dishnest.app.R.string.ui_one_list_a_lighter_shop_ba8c84),
@@ -558,6 +590,7 @@ fun PantryScreen(s: KitchenState, vm: KitchenViewModel, onRecipe: (Recipe) -> Un
         contentPadding = PaddingValues(28.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp),
     ) {
+        item { PantryReminderControl() }
         item {
             PageTitle(
                 stringResource(com.dishnest.app.R.string.ui_a_little_less_waste_b8146c),

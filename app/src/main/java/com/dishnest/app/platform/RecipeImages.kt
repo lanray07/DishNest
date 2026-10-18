@@ -8,6 +8,16 @@ import java.io.ByteArrayInputStream
 
 /** Bounded local decoding applies all eight EXIF orientations before OCR. */
 object RecipeImages {
+    fun crop(bitmap: Bitmap, region: CropRegion): Bitmap {
+        val left = (region.left * bitmap.width).toInt().coerceIn(0, bitmap.width - 1)
+        val top = (region.top * bitmap.height).toInt().coerceIn(0, bitmap.height - 1)
+        val right = kotlin.math.ceil(region.right * bitmap.width).toInt().coerceIn(left + 1, bitmap.width)
+        val bottom = kotlin.math.ceil(region.bottom * bitmap.height).toInt().coerceIn(top + 1, bitmap.height)
+        val cropped = Bitmap.createBitmap(bitmap, left, top, right - left, bottom - top)
+        // OCR owns its input and recycles it; the preview must remain independent.
+        return if (cropped === bitmap) bitmap.copy(Bitmap.Config.ARGB_8888, false) else cropped
+    }
+
     fun decode(bytes: ByteArray): Bitmap {
         require(bytes.size <= 12_000_000) { "Image is too large" }
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }

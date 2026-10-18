@@ -5,6 +5,8 @@ import com.dishnest.app.domain.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 class Converters {
     private val gson = Gson()
@@ -30,6 +32,11 @@ class Converters {
 
 @Dao
 interface KitchenDao {
+    @Query("SELECT * FROM plans ORDER BY rowid") fun plans(): Flow<List<MealPlan>>
+    @Upsert suspend fun plan(value: MealPlan)
+    @Query("DELETE FROM plans WHERE id=:id") suspend fun deletePlan(id: String)
+    @Query("DELETE FROM meals WHERE planId=:id") suspend fun deletePlanMeals(id: String)
+    @Query("DELETE FROM plans") suspend fun clearPlans()
     @Query("SELECT * FROM recipes ORDER BY updatedAt DESC") fun recipes(): Flow<List<Recipe>>
 
     @Query("SELECT * FROM meals ORDER BY date, slot") fun meals(): Flow<List<Meal>>
@@ -72,8 +79,8 @@ interface KitchenDao {
 
     @Query("DELETE FROM shopping WHERE manual=0") suspend fun clearGeneratedShopping()
 
-    @Query("DELETE FROM meals WHERE date>=:start AND date<=:end")
-    suspend fun clearWeek(start: String, end: String)
+    @Query("DELETE FROM meals WHERE date>=:start AND date<=:end AND planId=:planId")
+    suspend fun clearWeek(start: String, end: String, planId: String = DEFAULT_PLAN_ID)
 
     @Query("DELETE FROM recipes") suspend fun clearRecipes()
 
@@ -97,11 +104,30 @@ interface KitchenDao {
             ShoppingItem::class,
             KitchenTimer::class,
             PlanTemplate::class,
+            MealPlan::class,
         ],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 @TypeConverters(Converters::class)
 abstract class KitchenDatabase : RoomDatabase() {
     abstract fun kitchen(): KitchenDao
+
+    companion object {
+        val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("CREATE TABLE IF NOT EXISTS plans (id TEXT NOT NULL PRIMARY KEY, name TEXT NOT NULL, active INTEGER NOT NULL)")
+                db.execSQL("INSERT INTO plans (id,name,active) VALUES ('default','My meal plan',1)")
+                db.execSQL("ALTER TABLE meals ADD COLUMN planId TEXT NOT NULL DEFAULT 'default'")
+                db.execSQL("CREATE UNIQUE INDEX index_meals_planId_date_slot ON meals(planId,date,slot)")
+                db.query("SELECT id, meals FROM templates").use { cursor ->
+                    while (cursor.moveToNext()) {
+                        val meals = com.google.gson.JsonParser.parseString(cursor.getString(1)).asJsonArray
+                        meals.forEach { it.asJsonObject.addProperty("planId", DEFAULT_PLAN_ID) }
+                        db.execSQL("UPDATE templates SET meals=? WHERE id=?", arrayOf(meals.toString(), cursor.getString(0)))
+                    }
+                }
+            }
+        }
+    }
 }

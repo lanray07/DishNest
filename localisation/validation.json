@@ -97,7 +97,7 @@
       "status": "resource-complete"
     }
   ],
-  "hardcoded_text_count": 7,
+  "hardcoded_text_count": 9,
   "plural_resources": 1,
   "plural_review": "recipe count localised; other inline counts need extraction",
   "rtl": "manifest supportsRtl=true; device visual review pending",
