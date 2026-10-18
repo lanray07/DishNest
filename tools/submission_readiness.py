@@ -3,6 +3,7 @@ import argparse,json,xml.etree.ElementTree as ET
 from datetime import datetime,timezone
 from pathlib import Path
 from build_evidence import verify as verify_build, digest
+from website_evidence import verify as verify_website
 ROOT=Path(__file__).resolve().parents[1]
 checks=[]
 def check(name,passed,evidence,remaining=''):
@@ -20,7 +21,7 @@ qa_errors=[i for i in ET.parse(qa_lint).getroot().findall('issue') if i.get('sev
 check('Isolated QA lint',qa_lint.exists() and not qa_errors,str(qa_lint.relative_to(ROOT)),'Run QA lint for the exact instrumentation target')
 suites=[ET.parse(p).getroot() for p in (ROOT/'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml')]
 tests=sum(int(n.get('tests',0)) for n in suites);failures=sum(int(n.get('failures',0))+int(n.get('errors',0)) for n in suites)
-check('Host Android tests',bool(suites) and failures==0,'app/build/test-results/testDebugUnitTest',f'{tests} tests, {failures} failures/errors')
+check('Host Android tests',bool(suites) and tests>0 and failures==0,'app/build/test-results/testDebugUnitTest',f'{tests} tests, {failures} failures/errors')
 for suffix, name in [('ReadinessDataTest', 'Restore, photo archive and planner data policies'), ('VoiceLocalesTest', 'Target-locale voice command grammar'), ('RecipeQueryTest', 'Combined recipe filters'), ('FeatureScopeTest', 'Named plans, schema migration and reminder/timer policies')]:
     selected = [suite for suite in suites if suite.get('name', '').endswith(suffix)]
     passed = bool(selected) and all(int(s.get('tests', 0)) > 0 and int(s.get('failures', 0)) + int(s.get('errors', 0)) == 0 for s in selected)
@@ -28,6 +29,9 @@ for suffix, name in [('ReadinessDataTest', 'Restore, photo archive and planner d
 locales=read_json('localisation/validation.json')
 check('Evidence matches current build',verify_build(),'artifacts/build-provenance.json','Run full Gradle verification and record the input/output hashes')
 check('Locale resource coverage',locales.get('resource_complete') is True,'localisation/validation.json','Missing resources, placeholders or plural categories')
+import_suites = [s for s in suites if s.get('name', '').endswith('RecipeWebAccessTest')]
+check('Recipe website policy tests',bool(import_suites) and all(int(s.get('tests',0)) >= 7 and int(s.get('skipped',0)) == 0 and int(s.get('failures',0)) + int(s.get('errors',0)) == 0 for s in import_suites),'app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeWebAccessTest.xml','Run the bounded import, robots policy and redirect fixture tests')
+check('Current desktop and phone website QA',verify_website(),'artifacts/website-verification.json','Run browser verification on all current local pages at both viewport sizes')
 check('Native language and full UI approval',locales.get('release_approved') is True,'localisation/REVIEW.md','Native review, remaining interpolations, voice and marketing copy')
 server=ROOT/'artifacts/billing-server-tests.xml'
 server_xml=ET.parse(server).getroot() if server.exists() else None
@@ -35,7 +39,10 @@ server_passed=server_xml is not None and bool(server_xml.findall('.//testcase'))
 check('Local receipt-service tests',server_passed,'artifacts/billing-server-tests.xml','Run node --test --test-reporter=junit billing-server/*.test.mjs')
 check('Node/Kotlin signed-receipt contract',read_json('artifacts/billing-contract.json').get('passed') is True,'artifacts/billing-contract.json','Verify the actual Node signer with the compiled Kotlin verifier')
 apk=read_json('artifacts/apk-validation.json');native=read_json('artifacts/native-alignment.json')
-check('APK signature and binary alignment',apk.get('debug',{}).get('signatureVerified') is True and apk.get('release',{}).get('zipAlignment16k') is True and native.get('passed') is True and apk.get('qa',{}).get('signatureVerified') is True and apk.get('qa',{}).get('isolatedPackageVerified') is True and apk.get('qa',{}).get('billingDisabled') is True and apk.get('release',{}).get('qaFixtureAbsent') is True,'artifacts/apk-validation.json; artifacts/native-alignment.json','Validate exact output binaries; release signing remains a separate publisher gate')
+apk_paths = {'debug': 'app/build/outputs/apk/debug/app-debug.apk', 'qa': 'app/build/outputs/apk/qa/app-qa.apk', 'release': 'app/build/outputs/apk/release/app-release-unsigned.apk'}
+apk_current = all((ROOT/path).is_file() and apk.get(variant,{}).get('sha256') == digest(ROOT/path) for variant,path in apk_paths.items())
+native_current = (ROOT/apk_paths['release']).is_file() and native.get('apk_sha256') == digest(ROOT/apk_paths['release'])
+check('APK signature and binary alignment',apk_current and native_current and apk.get('debug',{}).get('signatureVerified') is True and apk.get('release',{}).get('zipAlignment16k') is True and native.get('passed') is True and apk.get('qa',{}).get('signatureVerified') is True and apk.get('qa',{}).get('isolatedPackageVerified') is True and apk.get('qa',{}).get('billingDisabled') is True and apk.get('release',{}).get('qaFixtureAbsent') is True,'artifacts/apk-validation.json; artifacts/native-alignment.json','Validate exact output binaries; release signing remains a separate publisher gate')
 check('Unconfigured billing build rejection',read_json('artifacts/billing-configuration-guard.json').get('passed') is True,'artifacts/billing-configuration-guard.json','Verify enabled billing rejects missing console authentication key')
 check('Incomplete publisher signing rejection',read_json('artifacts/signing-configuration-guard.json').get('passed') is True,'artifacts/signing-configuration-guard.json','Verify partial environment signing configuration is rejected')
 check('Amazon catalog and live verification',False,'docs/AMAZON_BILLING.md','Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only')
@@ -45,15 +52,15 @@ fire_test = ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
 fire_current = fire_current and fire.get('packageId') == 'com.dishnest.app.qa' and fire_test.exists() and fire.get('instrumentationApkSha256') == digest(fire_test)
 check('Physical Fire native components',fire_current and fire.get('passedTests', fire.get('tests', 0) if fire.get('passed') else 0) >= 4,'artifacts/fire-device-qa.json','Run native SQLite, image/archive, OCR fixture and resource tests on the current APK')
 check('Physical Fire instrumentation smoke',fire.get('passed') is True and fire_current,'artifacts/fire-device-qa.json','Native tests passed; unlock the secure Fire display to rerun the UI smoke suite' if fire.get('uiBlocker') else 'Run the native/UI smoke suite on the selected device with the current isolated QA APK')
-check('Background Fire timer after process termination', read_json('artifacts/fire-background-alarm.json').get('passed') is True and read_json('artifacts/fire-background-alarm.json').get('apkSha256') == fire.get('apkSha256'), 'artifacts/fire-background-alarm.json', 'Run the two-process timer probe on the exact QA APK')
+check('Background Fire timer after process termination', fire_current and read_json('artifacts/fire-background-alarm.json').get('passed') is True and read_json('artifacts/fire-background-alarm.json').get('processAbsentAfterKill') is True and read_json('artifacts/fire-background-alarm.json').get('apkSha256') == fire.get('apkSha256'), 'artifacts/fire-background-alarm.json', 'Run the two-process timer probe on the exact QA APK')
 check('Physical device QA',False,'docs/DEVICE_QA.md','Fire/phone, TalkBack, doze/reboot, permissions, speech and actual OCR checks')
 notices=ROOT/'legal/third-party/manifest.json'
 check('Native notice source collection',notices.exists(),'legal/third-party/manifest.json','Collect pinned upstream licence files')
 inventory=read_json('docs/dependencies/runtime-inventory.json')
-check('Resolved dependency inventory',bool(inventory.get('components')),'docs/dependencies/runtime-inventory.json','Generate from exact releaseRuntimeClasspath')
+check('Resolved dependency inventory',bool(inventory.get('components')) and all(c.get('licenses') for c in inventory['components']),'docs/dependencies/runtime-inventory.json','Generate from exact releaseRuntimeClasspath and resolve missing licence declarations')
 check('Licensing/privacy approval',False,'THIRD_PARTY_NOTICES.md','Publisher reviews all distribution obligations, support identity and privacy disclosures')
 check('Publisher-signed release device test',False,'artifacts/deliverables/manifest.json','Release signing key and exact signed APK hardware smoke test')
-check('Final store and website metadata',False,'marketing/listing-en-GB.json','Approved translations, contact/privacy/domain/store URLs and hardware screenshots')
+check('Final store and website metadata',False,'marketing/listing-en-GB.json','GitHub project/support/draft privacy URLs configured; approved translations, private privacy contact, legal disclosures, final store URL and hardware screenshots pending')
 check('Remaining product scope',False,'docs/RELEASE_READINESS.md','Complete the explicitly listed outstanding app features and integration checks')
 result={'generatedAt':datetime.now(timezone.utc).isoformat(),'submission_ready':all(c['status']=='passed' for c in checks),
  'publishing_permitted':False,'git_push_permitted':True,'publication':'App deployment and store submission prohibited; source commits and GitHub pushes authorized','checks':checks}

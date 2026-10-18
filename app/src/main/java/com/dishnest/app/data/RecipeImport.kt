@@ -49,75 +49,9 @@ object RecipeImport {
 
     suspend fun url(raw: String): Recipe =
         withContext(Dispatchers.IO) {
-            var current = URI(raw.trim()).toURL()
-            var html: String? = null
-            repeat(6) {
-                if (html != null) return@repeat
-                require(
-                    current.protocol == "https" &&
-                        current.userInfo == null &&
-                        current.port in listOf(-1, 443)
-                ) {
-                    "Use a public HTTPS recipe URL."
-                }
-                val addresses = InetAddress.getAllByName(current.host)
-                require(
-                    addresses.isNotEmpty() &&
-                        addresses.all {
-                            !it.isAnyLocalAddress &&
-                                !it.isLoopbackAddress &&
-                                !it.isLinkLocalAddress &&
-                                !it.isSiteLocalAddress &&
-                                !it.isMulticastAddress &&
-                                !it.hostAddress.orEmpty().startsWith("100.64.")
-                        }
-                ) {
-                    "Private network URLs are not supported."
-                }
-                val connection = current.openConnection() as HttpURLConnection
-                connection.instanceFollowRedirects = false
-                connection.connectTimeout = 10000
-                connection.readTimeout = 10000
-                connection.setRequestProperty(
-                    "User-Agent",
-                    "DishNest/0.1 RecipeMetadata (user-requested import)",
-                )
-                try {
-                    if (connection.responseCode in 300..399) {
-                        current =
-                            URL(
-                                current,
-                                connection.getHeaderField("Location")
-                                    ?: error("Missing redirect target"),
-                            )
-                    } else {
-                        require(connection.responseCode == 200) {
-                            "The site declined access (${connection.responseCode}). Paste a recipe you have permission to save."
-                        }
-                        require(connection.contentType.orEmpty().contains("text/html")) {
-                            "This URL does not contain a web recipe."
-                        }
-                        val bytes =
-                            connection.inputStream.use { input ->
-                                val output = java.io.ByteArrayOutputStream()
-                                val buffer = ByteArray(8192)
-                                var total = 0
-                                while (true) {
-                                    val size = input.read(buffer)
-                                    if (size < 0) break
-                                    total += size
-                                    require(total <= 2_000_000) { "Recipe page is too large." }
-                                    output.write(buffer, 0, size)
-                                }
-                                output.toByteArray()
-                            }
-                        html = String(bytes, Charsets.UTF_8)
-                    }
-                } finally {
-                    connection.disconnect()
-                }
-            }
-            val page = html ?: error("Too many redirects")
+            val fetched = RecipeWebAccess.page(URI(raw.trim()).toURL())
+            val current = fetched.url
+            val page = fetched.html
             val document = Jsoup.parse(page)
             val recipe =
                 document

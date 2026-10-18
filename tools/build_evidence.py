@@ -23,7 +23,10 @@ def input_hashes():
 
 def current():
     outputs = [ROOT / 'artifacts/delivery-verification.log', ROOT / 'app/build/reports/lint-results-debug.xml', ROOT / 'app/build/reports/lint-results-qa.xml']
-    outputs += list((ROOT / 'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml'))
+    suites = list((ROOT / 'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml'))
+    if not suites:
+        raise ValueError('No host test reports found; complete the full host suite before recording evidence.')
+    outputs += suites
     outputs += [ROOT / path for path in ('app/build/outputs/apk/debug/app-debug.apk', 'app/build/outputs/apk/release/app-release-unsigned.apk', 'app/build/outputs/apk/qa/app-qa.apk', 'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk')]
     if not outputs[0].is_file() or 'BUILD SUCCESSFUL' not in outputs[0].read_text(encoding='utf-8', errors='replace'):
         raise ValueError('Full Gradle verification must succeed before recording evidence.')

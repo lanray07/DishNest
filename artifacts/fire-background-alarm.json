@@ -1,12 +1,12 @@
 {
-  "testedAt": "2026-10-18T17:25:05.6828458Z",
+  "testedAt": "2026-10-18T17:45:18.5361695Z",
   "packageId": "com.dishnest.app.qa",
-  "apkSha256": "bd1b74dead898142ab6d3c49938933c063d2d205341ff9344a5833d93024b58a",
+  "apkSha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
   "processAbsentAfterKill": true,
   "requestedTimerSeconds": 15,
   "verificationDelaySeconds": 35,
   "passed": true,
-  "observed": "Persisted handled timer and own notification checked in a new instrumentation process",
+  "observed": "Persisted handled timer and own notification verified in a new instrumentation process",
   "notCovered": [
     "Force-stop recovery",
     "Doze",

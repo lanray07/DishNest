@@ -43,13 +43,24 @@ See [docs/RELEASE_READINESS.md](docs/RELEASE_READINESS.md) for the current scope
 
 Billing uses Amazon Appstore SDK 3.0.9 with purchase initiation, restoration, account checks, pending approval handling, signed receipt verification, expiry/cancellation handling, bounded offline caching and acknowledgement after durable verification. The local server and sandbox configuration are prepared, but the delivered APK keeps purchases disabled because no catalog or trusted TLS verifier exists yet. See [docs/AMAZON_BILLING.md](docs/AMAZON_BILLING.md). Real store integration and device tests remain mandatory; local fixture tests are not purchase evidence. Further commercial feature scope remains in the readiness report.
 
-Twelve locale directories cover 307 translatable string resources and recipe-count plurals. `python tools/localize.py --strict` checks resource coverage, placeholders and plural categories; release approval is a separate field. Remaining domain errors, broader natural-language voice grammar, marketing translations and native-speaker review are tracked in [localisation/REVIEW.md](localisation/REVIEW.md). Public app copy alone was used for draft translation, never private recipes. The bootstrap navigation generator now preserves existing resource files.
+Twelve locale directories cover 330 translatable string resources and recipe-count plurals. `python tools/localize.py --strict` checks resource coverage, placeholders and plural categories; release approval is a separate field. Remaining domain errors, broader natural-language voice grammar, marketing translations and native-speaker review are tracked in [localisation/REVIEW.md](localisation/REVIEW.md). URL imports check robots policies on each destination with bounded responses and redirects; disallowed or unavailable policies stop automatic imports. Site access permission and copying rights still need individual review.
+
+Public app copy alone was used for draft translation, never private recipes. The bootstrap navigation generator now preserves existing resource files.
 
 No public deployment or store submission has been performed.
 
 ## Supporting tools
 
-To reproduce the complete local verification and resolved dependency evidence:
+Generate the local website and listing text, then keep the loopback server running in a separate terminal. This serves files locally; it does not deploy them:
+
+```powershell
+python -m pip install -r tools/requirements.txt
+python tools/build_website.py
+python tools/export_store_listing.py
+python -m http.server 8765 --bind 127.0.0.1 --directory website
+```
+
+To reproduce the complete local verification and resolved dependency evidence, use another terminal:
 
 ```powershell
 python tools/compile_readiness_resources.py
@@ -62,28 +73,21 @@ python tools/dependency_inventory.py --fetch-metadata
 python tools/build_evidence.py --record
 python tools/validate_native_alignment.py
 .\tools\validate_apks.ps1
-python tools/readiness_report.py
-python tools/submission_readiness.py
-python tools/package_deliverables.py
-```
-
-The cross-runtime check uses temporary fixture keys/receipts and the actual compiled Kotlin verifier; it does not call Amazon or grant an app entitlement. The source archive includes the completed local verification evidence and excludes development keys, environment secrets, caches and build directories. The preflight intentionally remains not submission-ready while publisher setup, hardware and scope approvals are missing.
-
-```powershell
-python -m pip install -r tools/requirements.txt
-python tools/localize.py
-node --test billing-server/*.test.mjs
-python tools/submission_readiness.py
-python tools/compose_screenshots.py
+node tools/verify_website.cjs
+python tools/website_evidence.py
+python -m unittest discover -s tools -p test_website_evidence.py
 python tools/validate_assets.py
+python tools/submission_readiness.py
+python tools/readiness_report.py
 python tools/package_deliverables.py
-python -m http.server 8765 --bind 127.0.0.1 --directory website
 ```
 
-Open `http://127.0.0.1:8765` while the last command is running. Website browser checks live in `tools/verify_website.cjs`; configure `DISHNEST_NODE_MODULES` and optionally `DISHNEST_BROWSER_EXECUTABLE` for your own Playwright runtime. No website build step is required.
+The cross-runtime check uses temporary fixture keys/receipts and the actual compiled Kotlin verifier; it does not call Amazon or grant an app entitlement. The source archive excludes development keys, environment secrets, caches and build directories. The preflight intentionally remains not submission-ready while publisher setup, hardware and scope approvals are missing. Packaging rejects stale Android or website evidence; website checks cover all 12 pages at desktop and phone sizes and bind their results to exact source hashes. The paste-ready listing must match its JSON source.
+
+Open `http://127.0.0.1:8765` during website verification. Configure `DISHNEST_NODE_MODULES` and optionally `DISHNEST_BROWSER_EXECUTABLE` for your installed Playwright runtime; use `DISHNEST_QA_DIR` for screenshots outside the repository. Stop the loopback server after verification.
 
 Publisher signing is optional and reads `DISHNEST_KEYSTORE`, `DISHNEST_KEY_ALIAS`, `DISHNEST_STORE_PASSWORD`, and `DISHNEST_KEY_PASSWORD` from the process environment. Provide all four or none; keep the publisher keystore outside this repository. With none, release remains unsigned. Signing does not upload or submit anything. The local deliverable pipeline requires an unsigned verification build and current input/output hashes (`python tools/build_evidence.py --begin` immediately before the full Gradle build, then `--record` after success). Run `python tools/build_evidence.py` to reject stale evidence. Source pushes are authorized; app deployment and app-store submission remain prohibited.
 
-Local Fire/device smoke instructions and the exact tested APK checksum are in [docs/DEVICE_QA.md](docs/DEVICE_QA.md). Keep the device unlocked during UI tests; the tool never clears an existing kitchen. Generated APKs/source archives and private development configuration remain local and are not committed to Git.
+Local Fire/device smoke instructions and the exact tested APK checksum are in [docs/DEVICE_QA.md](docs/DEVICE_QA.md). Keep the device unlocked during UI tests; the tool resets only disposable QA fixtures and leaves the ordinary app's kitchen intact. Generated APKs/source archives and private development configuration remain local and are not committed to Git.
 
 Additional scope: named active plans, Premium combined-plan shopping, optional daily pantry check-date reminders, an adjustable OCR crop preview, and audio-focus-aware narration. Reminder delivery is approximate and subject to device power/notification settings. The QA variant always disables purchases; its instrumentation resets only its disposable kitchen.

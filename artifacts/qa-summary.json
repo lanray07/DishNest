@@ -1,20 +1,20 @@
 {
   "jvm_suites": [
     {
-      "name": "com.dishnest.app.RecipeQueryTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T17:21:19.538Z"
-    },
-    {
       "name": "com.dishnest.app.ReadinessDataTest",
       "tests": "8",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:20:56.660Z"
+      "timestamp": "2026-10-18T17:43:06.609Z"
+    },
+    {
+      "name": "com.dishnest.app.RecipeWebAccessTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:43:29.358Z"
     },
     {
       "name": "com.dishnest.app.RecipeImagesTest",
@@ -22,7 +22,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:21:18.243Z"
+      "timestamp": "2026-10-18T17:43:27.902Z"
     },
     {
       "name": "com.dishnest.app.RoomPersistenceTest",
@@ -30,15 +30,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:21:19.606Z"
-    },
-    {
-      "name": "com.dishnest.app.ScreenshotsTest",
-      "tests": "6",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T17:21:21.997Z"
+      "timestamp": "2026-10-18T17:43:30.098Z"
     },
     {
       "name": "com.dishnest.app.EntitlementsTest",
@@ -46,15 +38,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:20:29.310Z"
-    },
-    {
-      "name": "com.dishnest.app.VoiceLocalesTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T17:22:02.663Z"
+      "timestamp": "2026-10-18T17:42:39.688Z"
     },
     {
       "name": "com.dishnest.app.EntitlementClockTest",
@@ -62,15 +46,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:20:29.285Z"
-    },
-    {
-      "name": "com.dishnest.app.DomainTest",
-      "tests": "21",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T17:20:28.657Z"
+      "timestamp": "2026-10-18T17:42:39.672Z"
     },
     {
       "name": "com.dishnest.app.RestoreGuardTest",
@@ -78,15 +54,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:21:19.553Z"
-    },
-    {
-      "name": "com.dishnest.app.VoiceFocusTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-18T17:22:02.364Z"
+      "timestamp": "2026-10-18T17:43:29.587Z"
     },
     {
       "name": "com.dishnest.app.FeatureScopeTest",
@@ -94,18 +62,58 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-18T17:20:31.390Z"
+      "timestamp": "2026-10-18T17:42:42.169Z"
+    },
+    {
+      "name": "com.dishnest.app.ScreenshotsTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:43:33.207Z"
+    },
+    {
+      "name": "com.dishnest.app.VoiceLocalesTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:44:25.368Z"
+    },
+    {
+      "name": "com.dishnest.app.DomainTest",
+      "tests": "21",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:42:39.075Z"
+    },
+    {
+      "name": "com.dishnest.app.VoiceFocusTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:44:24.309Z"
+    },
+    {
+      "name": "com.dishnest.app.RecipeQueryTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T17:43:29.218Z"
     }
   ],
   "device_instrumentation": {
     "packageId": "com.dishnest.app.qa",
     "ordinaryAppModified": false,
-    "testedAt": "2026-10-18T17:23:49.3122176Z",
+    "testedAt": "2026-10-18T17:43:47.3245435Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "bd1b74dead898142ab6d3c49938933c063d2d205341ff9344a5833d93024b58a",
+    "apkSha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
     "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
     "tests": 10,
     "passedTests": 10,
@@ -161,65 +169,257 @@
     "passed": true,
     "release_approved": false
   },
-  "website-verification": [
-    {
-      "device": "desktop",
-      "identity": true,
-      "http": 200,
-      "overflow": false,
-      "brokenImages": [],
-      "pageErrors": [],
-      "faqOpened": true,
-      "changedPages": [
-        {
-          "slug": "pricing",
-          "title": "Simple beginnings. Room to grow. \u2014 DishNest",
-          "http": 200,
-          "overflow": false,
-          "contentVerified": true
-        },
-        {
-          "slug": "privacy",
-          "title": "Your kitchen is personal \u2014 DishNest",
-          "http": 200,
-          "overflow": false,
-          "contentVerified": true
-        }
-      ],
-      "browserPath": "Playwright: Browser plugin not available",
-      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
+  "website-verification": {
+    "passed": true,
+    "verifiedAt": "2026-10-18T17:41:57.475Z",
+    "inputs": {
+      "PRIVACY.txt": "94f32ecaa41bb029a0c0068da4f33a718b30b7ca627496b621edb7a0afcddede",
+      "tools/build_website.py": "aad93f80cd05e78e4e5f0574086180d0790f69b033a943f9186b257356e720fb",
+      "tools/verify_website.cjs": "03accf5e2eaab455c106748d36bf9a9fcb27bda863e80adede14114e50528097",
+      "tools/website_evidence.py": "d1e78bd95b5ab48d219642de841ab888624f72ffeab2fb054d6c0011e473c9a1",
+      "website/assets/icon.svg": "10113a7a23949c96b80fe6e8945af1bc8c9f0e12090eaa6875c58e02d995e5fd",
+      "website/assets/lemon-chicken.jpg": "bdb48d40152eac005a3955c3d5871e3bc7138e9cf5abfe8696ea7ceb5fafd4f4",
+      "website/faq.html": "21e6b3d3d0371a44228f47393fbe6cc968e6add88988ae5e27c0ddbcc898db4f",
+      "website/features.html": "69764ebf610b38196531e760b6e095636bdffa90e52ea65760076406e5e4f756",
+      "website/fire-tablets.html": "618a1f06456d114d96e83c5238d566d2de32010a3c8c9e2be76e9e232865a149",
+      "website/index.html": "b3a33ad672df36eac85ac821271b01466a84ef7d8308ad4a9e6b7ca333e1a53d",
+      "website/locale-manifest.json": "9071882e100de3d2c332d4575f85b5ee5747d8e58cc8db198917aa6c6db13e57",
+      "website/pantry-management.html": "54a35082649af17168af4809e54c5ba7b5819d07cdec65305a0ee1c9eadc7d43",
+      "website/pricing.html": "2ff42eebb84f21d59c3a231912c9241e76e5115f7a4fc2eb31761e287863a1b1",
+      "website/privacy.html": "44c39cd857a9a4956234c49432101e614802be3783d49665d1225811a26fc32d",
+      "website/recipe-organisation.html": "14af0d379cc9c66f5713d2c01a682ff43fbc765d91c12a55b3108d4ca5d3a73f",
+      "website/robots.txt": "a8f31103361fca68bef71fc69cff844b7c23bd3d64d2b872d74690cbda656bfc",
+      "website/shopping-lists.html": "96a68a0d7d6df17eb9d2f4cd2b31301f4bdcc7d28de94a24c7058928b3ea7be9",
+      "website/site.css": "16a4ae1854ac314dba0183132c8ae39e84f5dbf8228e73e9ed2ddb782c23e89d",
+      "website/sitemap.xml": "d29e37d2f1ae295426530213162478d52ba573d01b4584570cd7a4844f0e7c24",
+      "website/support.html": "ad45f1db1e487b8eaf873aad6ec4f4c43a5d70e23125c579d2f7183bd85b150a",
+      "website/voice-cooking.html": "f052fdac5815b01feec35c6835b451395c4cb606970a8847bd1d80a10cfe2d85",
+      "website/weekly-meal-planning.html": "c45eec3294c255b5ddbf74b81d913b33c8c366b67c20832b467221dc7ddc1d08"
     },
-    {
-      "device": "phone",
-      "identity": true,
-      "http": 200,
-      "overflow": false,
-      "brokenImages": [],
-      "pageErrors": [],
-      "faqOpened": true,
-      "changedPages": [
-        {
-          "slug": "pricing",
-          "title": "Simple beginnings. Room to grow. \u2014 DishNest",
-          "http": 200,
-          "overflow": false,
-          "contentVerified": true
-        },
-        {
-          "slug": "privacy",
-          "title": "Your kitchen is personal \u2014 DishNest",
-          "http": 200,
-          "overflow": false,
-          "contentVerified": true
-        }
-      ],
-      "browserPath": "Playwright: Browser plugin not available",
-      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
-    }
-  ],
+    "results": [
+      {
+        "device": "desktop",
+        "identity": true,
+        "http": 200,
+        "overflow": false,
+        "brokenImages": [],
+        "pageErrors": [],
+        "faqOpened": true,
+        "checkedPages": [
+          {
+            "file": "index.html",
+            "title": "DishNest \u2014 Recipe Keeper & Weekly Meal Planner",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "features.html",
+            "title": "A kitchen companion that keeps things together \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "recipe-organisation.html",
+            "title": "Your recipes, beautifully organised \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "weekly-meal-planning.html",
+            "title": "A thoughtful weekly meal planner \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "shopping-lists.html",
+            "title": "From meal plan to shopping list \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "voice-cooking.html",
+            "title": "A calmer cooking mode \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "pantry-management.html",
+            "title": "Make more of what you already have \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "fire-tablets.html",
+            "title": "Designed with Fire tablets in mind \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "pricing.html",
+            "title": "Simple beginnings. Room to grow. \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "privacy.html",
+            "title": "Your kitchen is personal \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "support.html",
+            "title": "A little help in the kitchen \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "faq.html",
+            "title": "Good questions, clear answers \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          }
+        ],
+        "browserPath": "Playwright: Browser plugin not available",
+        "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
+      },
+      {
+        "device": "phone",
+        "identity": true,
+        "http": 200,
+        "overflow": false,
+        "brokenImages": [],
+        "pageErrors": [],
+        "faqOpened": true,
+        "checkedPages": [
+          {
+            "file": "index.html",
+            "title": "DishNest \u2014 Recipe Keeper & Weekly Meal Planner",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "features.html",
+            "title": "A kitchen companion that keeps things together \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "recipe-organisation.html",
+            "title": "Your recipes, beautifully organised \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "weekly-meal-planning.html",
+            "title": "A thoughtful weekly meal planner \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "shopping-lists.html",
+            "title": "From meal plan to shopping list \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "voice-cooking.html",
+            "title": "A calmer cooking mode \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "pantry-management.html",
+            "title": "Make more of what you already have \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "fire-tablets.html",
+            "title": "Designed with Fire tablets in mind \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "pricing.html",
+            "title": "Simple beginnings. Room to grow. \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "privacy.html",
+            "title": "Your kitchen is personal \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "support.html",
+            "title": "A little help in the kitchen \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          },
+          {
+            "file": "faq.html",
+            "title": "Good questions, clear answers \u2014 DishNest",
+            "http": 200,
+            "overflow": false,
+            "contentVerified": true,
+            "brokenImages": []
+          }
+        ],
+        "browserPath": "Playwright: Browser plugin not available",
+        "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-readiness-website-QA"
+      }
+    ]
+  },
   "native-alignment": {
     "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "apk_sha256": "e1bedafe58bffef8dcbb5e248f74f4538330c0939ca4ed31386b0458f93b8a81",
+    "apk_sha256": "23d374d03e6eb11c85addc18407fcf98014e50aaade110137e1afe689f7da0b1",
     "libraries": [
       {
         "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
@@ -464,12 +664,12 @@
   "fire-device-qa": {
     "packageId": "com.dishnest.app.qa",
     "ordinaryAppModified": false,
-    "testedAt": "2026-10-18T17:23:49.3122176Z",
+    "testedAt": "2026-10-18T17:43:47.3245435Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "bd1b74dead898142ab6d3c49938933c063d2d205341ff9344a5833d93024b58a",
+    "apkSha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
     "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
     "tests": 10,
     "passedTests": 10,
@@ -503,7 +703,7 @@
     "remoteDeployment": false
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-18T17:27:53.524867+00:00",
+    "generatedAt": "2026-10-18T17:50:37.420014+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -561,6 +761,18 @@
         "check": "Locale resource coverage",
         "status": "passed",
         "evidence": "localisation/validation.json",
+        "remaining": ""
+      },
+      {
+        "check": "Recipe website policy tests",
+        "status": "passed",
+        "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeWebAccessTest.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Current desktop and phone website QA",
+        "status": "passed",
+        "evidence": "artifacts/website-verification.json",
         "remaining": ""
       },
       {
@@ -657,7 +869,7 @@
         "check": "Final store and website metadata",
         "status": "pending",
         "evidence": "marketing/listing-en-GB.json",
-        "remaining": "Approved translations, contact/privacy/domain/store URLs and hardware screenshots"
+        "remaining": "GitHub project/support/draft privacy URLs configured; approved translations, private privacy contact, legal disclosures, final store URL and hardware screenshots pending"
       },
       {
         "check": "Remaining product scope",

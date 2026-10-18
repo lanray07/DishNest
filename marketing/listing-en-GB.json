@@ -29,7 +29,7 @@
     "offline recipe book",
     "kitchen organiser"
   ],
-  "release_notes": "Development preview: adds named meal plans, combined-plan shopping with Premium access, opt-in pantry reminders, an English photo-recognition crop preview, compatible backup migration and audio-focus/timer fixes. Ten isolated Fire smoke tests and a background timer probe passed; full device QA and native language approval remain pending. Amazon purchases are disabled.",
+  "release_notes": "Development preview: adds named meal plans, combined-plan shopping with Premium access, opt-in pantry reminders, an English photo-recognition crop preview, compatible backup migration, audio-focus/timer fixes and robots policy checks for website imports. Ten isolated Fire smoke tests passed; full device QA and native language approval remain pending. Amazon purchases are disabled.",
   "support_contact": "https://github.com/lanray07/DishNest/issues",
   "privacy_policy_url": "https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt",
   "amazon_listing_url": null,
@@ -38,7 +38,7 @@
     "publication_permitted": false,
     "console_entered": false,
     "copy_scope": "Local English listing draft only; not an approved commercial release listing.",
-    "verification": "66 host tests, 10 isolated Fire smoke tests and the separate Fire background timer probe passed. See docs/RELEASE_READINESS.md for limits.",
+    "verification": "73 host tests (including seven offline import-policy fixtures), 10 isolated Fire smoke tests and the separate Fire background timer probe. See docs/RELEASE_READINESS.md for current results and limits.",
     "premium": "Billing is disabled in delivered builds. Demo feature exploration does not establish live purchase availability. Recheck all feature gates and offer wording before release.",
     "required_publisher_inputs": [
       "Legal publisher identity and rights approval",

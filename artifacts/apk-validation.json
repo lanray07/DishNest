@@ -1,25 +1,25 @@
 {
-  "verifiedAt": "2026-10-18T17:27:50.5058982Z",
+  "verifiedAt": "2026-10-18T17:50:16.8584471Z",
   "debug": {
-    "sha256": "de1cad4343cb3a9c30dce27aa195efd52232564aa7bb252d1bebeb267f02c00a",
-    "signatureVerified": true,
-    "zipAlignment16k": true
+    "zipAlignment16k": true,
+    "sha256": "c6076e8c7dbd33d4b952f77e494cef7dcc1ecf4c046533d8ec01ccd97637aa7c",
+    "signatureVerified": true
   },
   "qa": {
-    "sha256": "bd1b74dead898142ab6d3c49938933c063d2d205341ff9344a5833d93024b58a",
-    "signatureVerified": true,
     "zipAlignment16k": true,
-    "isolatedPackageVerified": true,
-    "billingDisabled": true
+    "billingDisabled": true,
+    "signatureVerified": true,
+    "sha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
+    "isolatedPackageVerified": true
   },
   "release": {
-    "billingDisabled": true,
-    "qaFixtureAbsent": true,
-    "metadataReadable": true,
-    "zipAlignment16k": true,
     "signed": false,
+    "metadataReadable": true,
+    "billingDisabled": true,
+    "sha256": "23d374d03e6eb11c85addc18407fcf98014e50aaade110137e1afe689f7da0b1",
+    "zipAlignment16k": true,
     "productionReady": false,
-    "sha256": "e1bedafe58bffef8dcbb5e248f74f4538330c0939ca4ed31386b0458f93b8a81"
+    "qaFixtureAbsent": true
   },
   "deviceInstallation": "Not checked by this static validator; see artifacts/fire-device-qa.json",
   "published": false

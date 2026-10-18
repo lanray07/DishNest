@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T17:27:53.524867+00:00",
+  "generatedAt": "2026-10-18T17:50:37.420014+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -57,6 +57,18 @@
       "check": "Locale resource coverage",
       "status": "passed",
       "evidence": "localisation/validation.json",
+      "remaining": ""
+    },
+    {
+      "check": "Recipe website policy tests",
+      "status": "passed",
+      "evidence": "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeWebAccessTest.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Current desktop and phone website QA",
+      "status": "passed",
+      "evidence": "artifacts/website-verification.json",
       "remaining": ""
     },
     {
@@ -153,7 +165,7 @@
       "check": "Final store and website metadata",
       "status": "pending",
       "evidence": "marketing/listing-en-GB.json",
-      "remaining": "Approved translations, contact/privacy/domain/store URLs and hardware screenshots"
+      "remaining": "GitHub project/support/draft privacy URLs configured; approved translations, private privacy contact, legal disclosures, final store URL and hardware screenshots pending"
     },
     {
       "check": "Remaining product scope",

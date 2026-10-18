@@ -1,8 +1,10 @@
 from pathlib import Path
 import hashlib,json,shutil,zipfile,xml.etree.ElementTree as ET
 from build_evidence import verify as verify_build
+from website_evidence import verify as verify_website
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.mkdir(exist_ok=True)
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
+if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
 build_log=ROOT/'artifacts/delivery-verification.log'
 if not build_log.exists() or 'BUILD SUCCESSFUL' not in build_log.read_text(encoding='utf-8',errors='replace'):
     raise SystemExit('Complete the current full Gradle verification before packaging.')

@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const modules = process.env.DISHNEST_NODE_MODULES || 'C:/Users/User/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
 const { chromium } = require(path.join(modules, 'playwright'));
@@ -8,6 +9,9 @@ fs.mkdirSync(evidenceDir, { recursive: true });
 (async () => {
   const browser = await chromium.launch({ headless: true, ...(process.env.DISHNEST_BROWSER_EXECUTABLE ? {executablePath: process.env.DISHNEST_BROWSER_EXECUTABLE} : {}) });
   const results = [];
+  const snapshot = () => JSON.parse(execFileSync('python', ['tools/website_evidence.py', '--inputs'], { cwd: root, encoding: 'utf8' }));
+  const inputs = snapshot();
+  let passed = false;
   try {
     for (const [device, width, height] of [['desktop', 1440, 1000], ['phone', 390, 844]]) {
       const page = await browser.newPage({ viewport: { width, height } });
@@ -28,24 +32,35 @@ fs.mkdirSync(evidenceDir, { recursive: true });
         if ((await page.request.get(url)).status() !== 200) throw new Error(`Broken page link: ${url}`);
       }
       await page.screenshot({ path: path.join(evidenceDir, `website-${device}.png`), fullPage: true });
-      const changedPages = [];
-      for (const slug of ['pricing', 'privacy']) {
+      const checkedPages = [];
+      for (const file of fs.readdirSync(path.join(root, 'website')).filter(file => file.endsWith('.html'))) {
+        const slug = file.replace('.html', '');
         const changedResponse = await page.goto(`http://127.0.0.1:8765/${slug}.html`, { waitUntil: 'networkidle' });
         const text = await page.locator('main').innerText();
         const pageOverflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
-        if (changedResponse.status() !== 200 || !text.includes(slug === 'privacy' ? 'receipt identifiers' : 'purchases remain disabled') || (slug === 'privacy' && !text.includes('ZIP includes recipe photos with a 64 MB total limit')) || pageOverflow)
+        const images = await page.locator('img').evaluateAll(nodes => nodes.filter(i => !i.complete || !i.naturalWidth).map(i => i.src));
+        const meaningful = text.trim().length > 80 && await page.locator('h1').count() === 1 && (await page.title()).includes('DishNest');
+        const expected = slug === 'privacy' ? text.includes('receipt identifiers') && text.includes('ZIP includes recipe photos with a 64 MB total limit') : slug === 'pricing' ? text.includes('purchases remain disabled') : true;
+        if (['privacy', 'support'].includes(slug)) {
+          for (const [label, href] of [['GitHub support', 'https://github.com/lanray07/DishNest/issues'], ['Privacy information on GitHub', 'https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt']]) {
+            if (await page.getByRole('link', {name: label, exact: true}).getAttribute('href') !== href) throw new Error(`Wrong GitHub link: ${slug}/${label}`);
+          }
+        }
+        if (changedResponse.status() !== 200 || !meaningful || !expected || pageOverflow || images.length)
           throw new Error(`Changed page failed: ${slug}/${device}`);
-        await page.screenshot({ path: path.join(evidenceDir, `${slug}-${device}.png`), fullPage: false });
-        changedPages.push({ slug, title: await page.title(), http: changedResponse.status(), overflow: pageOverflow, contentVerified: true });
+        if (['privacy', 'support'].includes(slug)) await page.screenshot({ path: path.join(evidenceDir, `${slug}-${device}.png`), fullPage: false });
+        checkedPages.push({ file, title: await page.title(), http: changedResponse.status(), overflow: pageOverflow, contentVerified: true, brokenImages: images });
       }
-      const result = { device, identity, http: response.status(), overflow, brokenImages, pageErrors: errors, faqOpened: answerVisible > 0, changedPages, browserPath: 'Playwright: Browser plugin not available', evidenceDir };
+      const result = { device, identity, http: response.status(), overflow, brokenImages, pageErrors: errors, faqOpened: answerVisible > 0, checkedPages, browserPath: 'Playwright: Browser plugin not available', evidenceDir };
       results.push(result);
       if (overflow || brokenImages.length || errors.length || !answerVisible) throw new Error(`Website verification failed: ${JSON.stringify(result)}`);
       await page.close();
     }
+    if (JSON.stringify(inputs) !== JSON.stringify(snapshot())) throw new Error('Website inputs changed during verification');
+    passed = true;
   } finally {
     await browser.close();
-    fs.writeFileSync(path.join(root, 'artifacts/website-verification.json'), JSON.stringify(results, null, 2));
+    fs.writeFileSync(path.join(root, 'artifacts/website-verification.json'), JSON.stringify({passed, verifiedAt: new Date().toISOString(), inputs, results}, null, 2));
   }
   console.log(JSON.stringify(results));
 })().catch(error => { console.error(error); process.exitCode = 1; });

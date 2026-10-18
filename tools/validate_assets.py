@@ -3,6 +3,7 @@ from PIL import Image
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 import json,xml.etree.ElementTree as ET
+from export_store_listing import render as render_listing
 ROOT=Path(__file__).resolve().parents[1]
 checks=[];errors=[]
 class Page(HTMLParser):
@@ -21,6 +22,7 @@ for page in (ROOT/'website').glob('*.html'):
         if not (page.parent/unquote(url.path)).exists():errors.append(f'{page.name}: missing {ref}')
 checks.append('12 HTML pages: one h1 each; all internal file links resolve')
 listing=json.loads((ROOT/'marketing/listing-en-GB.json').read_text(encoding='utf-8'))
+assert (ROOT/'marketing/listing-en-GB.txt').read_text(encoding='utf-8') == render_listing(listing), 'Run tools/export_store_listing.py to synchronise the paste-ready draft'
 assert len(listing['short_description'].encode())<=2000
 assert len(listing['full_description'])<=4000
 assert 3<=len(listing['feature_bullets'])<=5

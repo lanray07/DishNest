@@ -48,4 +48,4 @@ The scripts share a local mutex to prevent their database fixtures from overlapp
 
 Remaining hardware cases include real-photo/camera accuracy, granted microphone and installed speech providers, live TTS/audio interruption, notification denial, full font/rotation/TalkBack coverage, actual system RTL, doze/reboot/time changes, publisher-signed release and Appstore purchases. Host audio-focus tests exercise denial/interruption policies but do not prove the Fire speech service works.
 
-Actual Fire captures from the passing run: `artifacts/screens/fire-qa-named-plan.png` and `artifacts/screens/fire-qa-arabic-large-font.png`. Both were inspected for visible controls and clipping; they remain QA evidence rather than approved store imagery.
+Earlier Fire captures from the previous verified APK (retained as historical UI evidence, not recaptured by every smoke run): `artifacts/screens/fire-qa-named-plan.png` and `artifacts/screens/fire-qa-arabic-large-font.png`. Both were inspected for visible controls and clipping; they remain QA evidence rather than approved store imagery.

@@ -1,6 +1,6 @@
 DISHNEST - LOCAL STORE LISTING DRAFT
 Not entered in the console; not approved for submission.
-Updated 18 October 2026.
+Updated 2026-10-18.
 
 Display title
 DishNest – Recipe Keeper & Meal Planner
@@ -38,7 +38,7 @@ Keywords
 recipe keeper, meal planner, recipe organiser, weekly meal planner, recipe book, shopping list, cooking app, grocery list, pantry organiser, offline recipe book, kitchen organiser
 
 Release notes
-Development preview: adds named meal plans, combined-plan shopping with Premium access, opt-in pantry reminders, an English photo-recognition crop preview, compatible backup migration and audio-focus/timer fixes. Ten isolated Fire smoke tests and a background timer probe passed; full device QA and native language approval remain pending. Amazon purchases are disabled.
+Development preview: adds named meal plans, combined-plan shopping with Premium access, opt-in pantry reminders, an English photo-recognition crop preview, compatible backup migration, audio-focus/timer fixes and robots policy checks for website imports. Ten isolated Fire smoke tests passed; full device QA and native language approval remain pending. Amazon purchases are disabled.
 
 Website URL
 https://github.com/lanray07/DishNest
