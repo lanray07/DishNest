@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T18:55:58.900817+00:00",
+  "generatedAt": "2026-10-18T20:12:13.760493+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -115,21 +115,21 @@
     },
     {
       "check": "Physical Fire native components",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
+      "remaining": ""
     },
     {
       "check": "Physical Fire instrumentation smoke",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
+      "remaining": ""
     },
     {
       "check": "Background Fire timer after process termination",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-background-alarm.json",
-      "remaining": "Run the two-process timer probe on the exact QA APK"
+      "remaining": ""
     },
     {
       "check": "Physical device QA",

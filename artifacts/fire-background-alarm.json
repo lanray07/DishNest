@@ -1,7 +1,7 @@
 {
-  "testedAt": "2026-10-18T17:45:18.5361695Z",
+  "testedAt": "2026-10-18T20:11:45.6878449Z",
   "packageId": "com.dishnest.app.qa",
-  "apkSha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
+  "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
   "processAbsentAfterKill": true,
   "requestedTimerSeconds": 15,
   "verificationDelaySeconds": 35,

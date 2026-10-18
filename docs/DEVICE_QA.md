@@ -2,7 +2,7 @@
 
 Automated host rendering is useful evidence but does not exercise Fire hardware, Appstore communication, installed speech providers, native OCR accuracy, AlarmManager delivery or TalkBack. Only the targeted Fire smoke results below are passed; the full hardware matrix remains incomplete.
 
-The visual-localization continuation rebuilt the app with locale-aware date and shopping-contribution formatting. The Fire tablet was disconnected at the final check, so the retained smoke and background-timer results refer to an earlier APK. They must be rerun against the current QA package before submission; the readiness report checks both APK hashes and does not treat historical results as current passes. The 12-locale screenshot suite is host evidence only.
+After reconnection, the KFTRWI tablet passed all 10 smoke tests and the separate background-timer probe against the current visual-localization QA APK. The reports bind those results to the exact app and instrumentation hashes. The current Arabic large-font dialog and named-plan captures were retrieved from the isolated QA app cache and visually inspected; their file hashes are recorded in `artifacts/fire-device-qa.json`. This remains targeted hardware coverage: the 12-locale store screenshot suite is host evidence, and the full physical locale, voice and accessibility matrix remains pending.
 
 ## Devices and evidence
 
@@ -50,4 +50,4 @@ The scripts share a local mutex to prevent their database fixtures from overlapp
 
 Remaining hardware cases include real-photo/camera accuracy, granted microphone and installed speech providers, live TTS/audio interruption, notification denial, full font/rotation/TalkBack coverage, actual system RTL, doze/reboot/time changes, publisher-signed release and Appstore purchases. Host audio-focus tests exercise denial/interruption policies but do not prove the Fire speech service works.
 
-Earlier Fire captures from the previous verified APK (retained as historical UI evidence, not recaptured by every smoke run): `artifacts/screens/fire-qa-named-plan.png` and `artifacts/screens/fire-qa-arabic-large-font.png`. Both were inspected for visible controls and clipping; they remain QA evidence rather than approved store imagery.
+Current Fire captures: `artifacts/screens/fire-qa-named-plan.png` and `artifacts/screens/fire-qa-arabic-large-font.png`. Both were retrieved from the latest smoke run and inspected for visible controls and clipping; they remain QA evidence rather than approved store imagery. Their exact app and file hashes are recorded in the smoke report.

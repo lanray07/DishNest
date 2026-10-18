@@ -1,6 +1,6 @@
 {
-  "collectedAt": "2026-10-18T18:55:42.0979443Z",
-  "connectedDeviceCount": 0,
+  "collectedAt": "2026-10-18T20:10:04.4890468Z",
+  "connectedDeviceCount": 1,
   "deviceTests": "Not executed by this read-only inventory script",
   "physicalFireQa": "Pending explicit hardware testing and evidence",
   "published": false

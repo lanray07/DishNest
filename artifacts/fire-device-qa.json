@@ -1,12 +1,12 @@
 {
   "packageId": "com.dishnest.app.qa",
   "ordinaryAppModified": false,
-  "testedAt": "2026-10-18T17:43:47.3245435Z",
+  "testedAt": "2026-10-18T20:10:47.9356761Z",
   "model": "KFTRWI",
   "androidVersion": "9",
   "api": "28",
   "locale": "en-GB",
-  "apkSha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
+  "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
   "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
   "tests": 10,
   "passedTests": 10,
@@ -37,5 +37,21 @@
   "backgroundAlarmEvidence": "artifacts/fire-background-alarm.json",
   "serialIdentifierStored": false,
   "storeSubmission": false,
-  "remoteDeployment": false
+  "remoteDeployment": false,
+  "screenshots": [
+    {
+      "file": "artifacts/screens/fire-qa-named-plan.png",
+      "sha256": "f723aac535e3aaae25cc136fa7dc7f734fe87f6d0d298bcc977b3082643b3efc",
+      "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
+      "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
+      "store_approved": false
+    },
+    {
+      "file": "artifacts/screens/fire-qa-arabic-large-font.png",
+      "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
+      "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
+      "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
+      "store_approved": false
+    }
+  ]
 }

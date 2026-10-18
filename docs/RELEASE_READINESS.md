@@ -24,8 +24,8 @@ Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 18 Octob
 | Original translation errors | 0 remain | Same lint report; no suppression/baseline |
 | Current build provenance | PASS: current input/output hashes verified | `artifacts/build-provenance.json` |
 | Locale resource gate | PASS across 12 locales | `localisation/validation.json` |
-| Physical Fire smoke tests | Pending: device evidence does not match current APK/test APK | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
-| Fire background timer probe | Pending; inspect phase results | `artifacts/fire-background-alarm.json` |
+| Physical Fire smoke tests | 10 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
+| Fire background timer probe | PASS: handled state and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
 | Receipt service | 11 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
 | Cross-runtime receipt contract | Actual Node signer and compiled Kotlin verifier pass; wrong-account response rejected | `artifacts/billing-contract.json` |
 | Configuration guard | Enabled billing rejects a missing Amazon console authentication key before packaging | `artifacts/billing-configuration-guard.json` |
@@ -63,7 +63,7 @@ The translation provider throttled the initial draft generation. Requests were s
 
 ## External setup and hardware
 
-The latest read-only ADB inventory found 0 connected device(s). Historical device results do not match the current APK/test APK. Rerun the isolated smoke suite before using them as current evidence. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, a publisher-signed APK or Appstore purchases. Those remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
+The latest read-only ADB inventory found 1 connected device(s). The isolated QA APK passed 10 instrumentation tests on KFTRWI (Android 9, API 28). Coverage includes recipe CRUD/editor recreation, selected named-plan recreation, SQLite reopen/migration, native photo ZIP codecs, a cropped synthetic OCR fixture, Arabic/Hindi resources, denied microphone fallback, opt-in pantry notifications and Arabic planner/native-dialog controls at QA font scale 1.5. See the separate background-alarm probe record for its exact result. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, a publisher-signed APK or Appstore purchases. Those remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
 
 An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.json`. Required publisher inputs remain its authentication public key; approved production catalog/prices/terms; service operating identity and protected production keys/secrets; a trusted verification endpoint; publisher signing configuration; representative hardware; native language approval; and approved privacy/operator details. Private support/deletion assistance uses the publisher-provided support email. Project, support and draft privacy/deletion links use GitHub; no domain or GitHub Pages deployment was configured. The local sandbox keys are development-only. Do not copy them into production.
 

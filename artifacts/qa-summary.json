@@ -116,12 +116,12 @@
   "device_instrumentation": {
     "packageId": "com.dishnest.app.qa",
     "ordinaryAppModified": false,
-    "testedAt": "2026-10-18T17:43:47.3245435Z",
+    "testedAt": "2026-10-18T20:10:47.9356761Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
+    "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
     "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
     "tests": 10,
     "passedTests": 10,
@@ -152,14 +152,30 @@
     "backgroundAlarmEvidence": "artifacts/fire-background-alarm.json",
     "serialIdentifierStored": false,
     "storeSubmission": false,
-    "remoteDeployment": false
+    "remoteDeployment": false,
+    "screenshots": [
+      {
+        "file": "artifacts/screens/fire-qa-named-plan.png",
+        "sha256": "f723aac535e3aaae25cc136fa7dc7f734fe87f6d0d298bcc977b3082643b3efc",
+        "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
+        "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
+        "store_approved": false
+      },
+      {
+        "file": "artifacts/screens/fire-qa-arabic-large-font.png",
+        "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
+        "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
+        "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
+        "store_approved": false
+      }
+    ]
   },
-  "physical_fire_qa": "Pending current APK rerun; retained device results are historical. Full hardware matrix also pending.",
+  "physical_fire_qa": "Partial smoke coverage only; full hardware matrix pending",
   "billing_qa": "Local SDK integration and signed-verification service prepared; 11 server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.",
   "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
   "store_submission": "not performed; conditional submission authorized only after all required readiness gates pass",
   "website_deployment": "not performed; local checks only",
-  "device_instrumentation_current": false,
+  "device_instrumentation_current": true,
   "visual_localization": {
     "passed": true,
     "locales": [
@@ -700,8 +716,8 @@
     "device_tested": false
   },
   "device-evidence": {
-    "collectedAt": "2026-10-18T18:55:42.0979443Z",
-    "connectedDeviceCount": 0,
+    "collectedAt": "2026-10-18T20:10:04.4890468Z",
+    "connectedDeviceCount": 1,
     "deviceTests": "Not executed by this read-only inventory script",
     "physicalFireQa": "Pending explicit hardware testing and evidence",
     "published": false
@@ -709,12 +725,12 @@
   "fire-device-qa": {
     "packageId": "com.dishnest.app.qa",
     "ordinaryAppModified": false,
-    "testedAt": "2026-10-18T17:43:47.3245435Z",
+    "testedAt": "2026-10-18T20:10:47.9356761Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "328e2b5da6809d13f5c4bce12324b08e5bb5f1ca096c89459c2957d08301260d",
+    "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
     "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
     "tests": 10,
     "passedTests": 10,
@@ -745,10 +761,26 @@
     "backgroundAlarmEvidence": "artifacts/fire-background-alarm.json",
     "serialIdentifierStored": false,
     "storeSubmission": false,
-    "remoteDeployment": false
+    "remoteDeployment": false,
+    "screenshots": [
+      {
+        "file": "artifacts/screens/fire-qa-named-plan.png",
+        "sha256": "f723aac535e3aaae25cc136fa7dc7f734fe87f6d0d298bcc977b3082643b3efc",
+        "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
+        "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
+        "store_approved": false
+      },
+      {
+        "file": "artifacts/screens/fire-qa-arabic-large-font.png",
+        "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
+        "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
+        "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
+        "store_approved": false
+      }
+    ]
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-18T18:55:58.900817+00:00",
+    "generatedAt": "2026-10-18T20:12:13.760493+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -864,21 +896,21 @@
       },
       {
         "check": "Physical Fire native components",
-        "status": "pending",
+        "status": "passed",
         "evidence": "artifacts/fire-device-qa.json",
-        "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
+        "remaining": ""
       },
       {
         "check": "Physical Fire instrumentation smoke",
-        "status": "pending",
+        "status": "passed",
         "evidence": "artifacts/fire-device-qa.json",
-        "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
+        "remaining": ""
       },
       {
         "check": "Background Fire timer after process termination",
-        "status": "pending",
+        "status": "passed",
         "evidence": "artifacts/fire-background-alarm.json",
-        "remaining": "Run the two-process timer probe on the exact QA APK"
+        "remaining": ""
       },
       {
         "check": "Physical device QA",
