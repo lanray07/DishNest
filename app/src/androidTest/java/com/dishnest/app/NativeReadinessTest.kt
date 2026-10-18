@@ -29,6 +29,16 @@ import org.junit.runner.RunWith
 class NativeReadinessTest {
     private val context get() = InstrumentationRegistry.getInstrumentation().targetContext
 
+    @Test fun localizedPastedRecipesKeepTheirContentOnFire() {
+        val fixtures = listOf("المكونات" to "طريقة التحضير", "सामग्री" to "विधि", "Składniki" to "Przygotowanie")
+        fixtures.forEach { (ingredients, method) ->
+            val recipe = com.dishnest.app.data.RecipeImport.text("شوربة · सूप\n$ingredients:\n• 200 g lentils\n$method:\n١. Rinse.\n२। Simmer.")
+            assertEquals("شوربة · सूप", recipe.title)
+            assertEquals("lentils", recipe.ingredients.single().name)
+            assertEquals(listOf("Rinse.", "Simmer."), recipe.steps)
+        }
+    }
+
     @Test fun photoArchiveUsesRealDeviceBitmapCodecs() = runBlocking {
         val root = File(context.cacheDir, "photo-device-test").apply { mkdirs() }
         try {

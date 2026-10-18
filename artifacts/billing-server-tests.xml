@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-	<testcase name="local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage" time="0.181918" classname="test" file="D:\App Projects\DishNest\billing-server\server.test.mjs"/>
-	<testcase name="LAT test receipts stay isolated from production grants" time="0.002445" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="active renewal and offline validity are bounded" time="0.002335" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="turning autorenew off preserves access until future cancel date" time="0.000286" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="expired, refunded and cancelled receipts revoke access" time="0.000365" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="Amazon grace period extends access only to the supplied deadline" time="0.000728" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="lifetime is reverified daily and is revocable" time="0.000463" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="unknown SKUs, consumables, wrong receipt and test purchases fail closed" time="0.000545" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="subscription parent SKU maps to allowed term SKU" time="0.000190" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="nonce, receipt and account are bound into an authentic signature" time="0.008006" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="outages never become a signed denial or a fabricated success" time="0.004112" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage" time="0.149958" classname="test" file="D:\App Projects\DishNest\billing-server\server.test.mjs"/>
+	<testcase name="LAT test receipts stay isolated from production grants" time="0.003518" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="active renewal and offline validity are bounded" time="0.003789" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="turning autorenew off preserves access until future cancel date" time="0.000509" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="expired, refunded and cancelled receipts revoke access" time="0.000551" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="Amazon grace period extends access only to the supplied deadline" time="0.000392" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="lifetime is reverified daily and is revocable" time="0.000418" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="unknown SKUs, consumables, wrong receipt and test purchases fail closed" time="0.000629" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="subscription parent SKU maps to allowed term SKU" time="0.000340" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="nonce, receipt and account are bound into an authentic signature" time="0.016173" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="outages never become a signed denial or a fabricated success" time="0.003243" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
 	<!-- tests 11 -->
 	<!-- suites 0 -->
 	<!-- pass 11 -->
@@ -18,5 +18,5 @@
 	<!-- cancelled 0 -->
 	<!-- skipped 0 -->
 	<!-- todo 0 -->
-	<!-- duration_ms 837.9168 -->
+	<!-- duration_ms 604.9836 -->
 </testsuites>

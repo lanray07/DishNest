@@ -1,12 +1,15 @@
 {
-  "testedAt": "2026-10-18T20:11:45.6878449Z",
+  "testedAt": "2026-10-18T20:37:04.6561982Z",
   "packageId": "com.dishnest.app.qa",
-  "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
+  "apkSha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b",
+  "instrumentationApkSha256": "ab048a6cfc0b4a969cecbcaeae3bb1ea3f75ad1a4a14edff078fb15b6d2777cf",
+  "installedApksVerified": true,
   "processAbsentAfterKill": true,
   "requestedTimerSeconds": 15,
   "verificationDelaySeconds": 35,
   "passed": true,
-  "observed": "Persisted handled timer and own notification verified in a new instrumentation process",
+  "observed": "Recipe with notes/Unicode/favourite, named plan, meal, pantry, checked shopping item, template, handled timer and own notification verified in a new instrumentation process",
+  "kitchenPersistencePassed": true,
   "notCovered": [
     "Force-stop recovery",
     "Doze",

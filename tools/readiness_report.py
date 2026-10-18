@@ -18,13 +18,13 @@ fire=data('artifacts/fire-device-qa.json') if (ROOT/'artifacts/fire-device-qa.js
 qa_apk=ROOT/'app/build/outputs/apk/qa/app-qa.apk'
 qa_test=ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
 fire_current=qa_apk.exists() and qa_test.exists() and fire.get('apkSha256')==digest(qa_apk) and fire.get('instrumentationApkSha256')==digest(qa_test)
-alarm_current=qa_apk.exists() and alarm.get('apkSha256')==digest(qa_apk)
+alarm_current=qa_apk.exists() and qa_test.exists() and alarm.get('apkSha256')==digest(qa_apk) and alarm.get('instrumentationApkSha256')==digest(qa_test) and alarm.get('installedApksVerified') is True
 if not fire_current:
     fire_result='Pending: device evidence does not match current APK/test APK'
     fire_description='Historical device results do not match the current APK/test APK. Rerun the isolated smoke suite before using them as current evidence.'
 elif fire.get('passed'):
     fire_result=str(fire.get('tests',0))+' tests passed on '+str(fire.get('model'))+' / API '+str(fire.get('api'))
-    fire_description='The isolated QA APK passed '+str(fire.get('tests'))+' instrumentation tests on '+str(fire.get('model'))+' (Android '+str(fire.get('androidVersion'))+', API '+str(fire.get('api'))+'). Coverage includes recipe CRUD/editor recreation, selected named-plan recreation, SQLite reopen/migration, native photo ZIP codecs, a cropped synthetic OCR fixture, Arabic/Hindi resources, denied microphone fallback, opt-in pantry notifications and Arabic planner/native-dialog controls at QA font scale 1.5. See the separate background-alarm probe record for its exact result.'
+    fire_description='The isolated QA APK passed '+str(fire.get('tests'))+' instrumentation tests on '+str(fire.get('model'))+' (Android '+str(fire.get('androidVersion'))+', API '+str(fire.get('api'))+'). Coverage includes recipe CRUD/editor recreation, selected named-plan recreation, SQLite reopen/migration, native photo ZIP codecs, a cropped synthetic OCR fixture, Arabic/Hindi resources, localized pasted-recipe headings/Unicode step numbering, denied microphone fallback, opt-in pantry notifications and Arabic planner/native-dialog controls at QA font scale 1.5. See the separate background-alarm probe record for its exact result.'
 else:
     fire_result=str(fire.get('passedTests',0))+'/'+str(fire.get('tests',0))+' passed; inspect raw runner output'
     fire_description='The current smoke suite has not fully passed. Inspect the raw runner output; partial results do not satisfy the smoke gate.'
@@ -35,6 +35,8 @@ server_tests=len(server_xml.findall('.//testcase'))
 report=f'''# DishNest submission-readiness report
 
 Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 18 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. No app deployment or store submission was performed.
+
+The seven pending categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
 
 ## Completed local continuation
 
@@ -59,7 +61,7 @@ Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 18 Octob
 | Current build provenance | {'PASS: current input/output hashes verified' if verify_build() else 'PENDING: rebuild current sources and record exact outputs'} | `artifacts/build-provenance.json` |
 | Locale resource gate | {'PASS' if locale.get('resource_complete') else 'FAIL'} across 12 locales | `localisation/validation.json` |
 | Physical Fire smoke tests | {fire_result} | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
-| Fire background timer probe | {'PASS: handled state and own notification after QA process termination' if alarm.get('passed') and alarm_current else 'Pending; inspect phase results'} | `artifacts/fire-background-alarm.json` |
+| Fire background timer probe | {'PASS: saved kitchen records, handled timer and own notification after QA process termination' if alarm.get('passed') and alarm_current else 'Pending; inspect phase results'} | `artifacts/fire-background-alarm.json` |
 | Receipt service | {server_tests} passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
 | Cross-runtime receipt contract | Actual Node signer and compiled Kotlin verifier pass; wrong-account response rejected | `artifacts/billing-contract.json` |
 | Configuration guard | Enabled billing rejects a missing Amazon console authentication key before packaging | `artifacts/billing-configuration-guard.json` |
@@ -83,11 +85,11 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 | Planner | Seven days/four slots, servings, tap assignment, previous-week copy, templates, direct two-meal swap, named selected plans and offline dinner suggestions | Optional drag interactions and broader planning QA |
 | Shopping/pantry | Compatible consolidation, serving scaling, pantry deduction, manual items, check dates, optional daily reminders, combined-plan shopping and name-based suggestions | Broader vocabulary and locale-specific units; remaining advanced Premium scope |
 | Cooking/voice/timers | Touch fallback, narration with audio-focus handling, push-to-talk, persisted inexact timers with stale-callback protection, exact commands in all target language families and localised numeric timer grammar (English number words also supported) | Broader natural-language/quantity grammar; actual speech providers, audio focus, doze, reboot, permissions and clock-change device QA |
-| Import/data | Reviewed text/JSON-LD with per-destination robots policy checks, local English OCR with crop preview, EXIF handling, transactional JSON and bounded photo-inclusive ZIP backups and local export | Live-site permission/robots interoperability validation and real-photo OCR accuracy; cloud provider remains optional/unconnected |
+| Import/data | Reviewed text/JSON-LD with per-destination robots policy checks, local English OCR with crop preview, EXIF handling, transactional JSON and bounded photo-inclusive ZIP backups and local export and multilingual pasted-text section headings | Live-site permission/robots interoperability validation and real-photo OCR accuracy; cloud provider remains optional/unconnected |
 | Billing | Local SDK integration and signed RVS service with tested policies | Amazon console key/catalog, approved terms/prices/countries, trusted TLS service, production credentials, App Tester/LAT and full callback/fulfilment QA; further commercial gates/features |
 | Localisation | {strings} strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales; 96 localized tablet screenshot compositions and 12 promotional images with translated sample data and captions | Native-speaker review, remaining inline interpolations and domain/status errors, complete voice/category/unit work, translated website, final listing approval and hardware RTL checks; Amazon artwork slots cover fewer locales than descriptions; see marketing/amazon-artwork-uploads.json |
 | Licensing/privacy | Original notices bundled; all resolved POM licences inventoried; backup exclusions and billing disclosures | Publisher legal/licence/privacy approval, operator identity, retention/contact details and final dependency review |
-| Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; English console draft, support email and GitHub privacy/deletion links are configured without website deployment |
+| Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; 10 localized console descriptions, 7 artwork sets, support email and GitHub privacy/deletion links are configured without website deployment |
 | Release | Debug APK and unsigned release build; optional publisher environment signing, input/output hash verification and local validation tooling | Publisher signing material, exact signed-APK install/smoke test and actual store compatibility checks |
 | Metrics | Optional aggregate counters stored only on device; disabled by default | No analytics provider or complete Premium/trial conversion reporting |
 

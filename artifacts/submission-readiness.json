@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T20:12:13.760493+00:00",
+  "generatedAt": "2026-10-18T20:37:18.869226+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -164,8 +164,8 @@
     {
       "check": "Final store and website metadata",
       "status": "pending",
-      "evidence": "marketing/listing-en-GB.json",
-      "remaining": "English Amazon console draft, public support email and GitHub privacy/deletion links configured; legal approval, approved translations, final store URL and hardware screenshots pending"
+      "evidence": "marketing/amazon-console-draft.json",
+      "remaining": "10 description locales and 7 artwork locales saved in the Amazon draft; native/legal approval, final store URL, approved hardware screenshots and publisher-signed app file pending"
     },
     {
       "check": "Remaining product scope",

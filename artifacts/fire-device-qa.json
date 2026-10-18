@@ -1,15 +1,15 @@
 {
   "packageId": "com.dishnest.app.qa",
   "ordinaryAppModified": false,
-  "testedAt": "2026-10-18T20:10:47.9356761Z",
+  "testedAt": "2026-10-18T20:36:04.6436519Z",
   "model": "KFTRWI",
   "androidVersion": "9",
   "api": "28",
   "locale": "en-GB",
-  "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
-  "instrumentationApkSha256": "01ee99fdfcbd0a6fc6a6c2a146f7a5c6eff212e0b3a00f3e13edd21fb1227c2e",
-  "tests": 10,
-  "passedTests": 10,
+  "apkSha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b",
+  "instrumentationApkSha256": "ab048a6cfc0b4a969cecbcaeae3bb1ea3f75ad1a4a14edff078fb15b6d2777cf",
+  "tests": 11,
+  "passedTests": 11,
   "failedTests": 0,
   "passed": true,
   "uiSmokePassed": true,
@@ -19,6 +19,7 @@
     "Native bitmap photo ZIP round-trip",
     "Bundled offline OCR synthetic printed fixture",
     "Arabic/Hindi resource formatting",
+    "Localized pasted recipe headings with Unicode step numbering",
     "Real SQLite v1-to-v2 migration",
     "Named plan creation/selection across activity recreation",
     "Opt-in generic pantry reminder and duplicate suppression",
@@ -42,16 +43,12 @@
     {
       "file": "artifacts/screens/fire-qa-named-plan.png",
       "sha256": "f723aac535e3aaae25cc136fa7dc7f734fe87f6d0d298bcc977b3082643b3efc",
-      "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
-      "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
-      "store_approved": false
+      "apkSha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b"
     },
     {
       "file": "artifacts/screens/fire-qa-arabic-large-font.png",
       "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
-      "apkSha256": "12d0c0c809743d112949488d9f280e074ecf5c796f9ed7f50a5b38306d87523c",
-      "capture_method": "Production Compose UI captured by isolated QA instrumentation on KFTRWI / API 28",
-      "store_approved": false
+      "apkSha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b"
     }
   ]
 }

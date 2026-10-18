@@ -8,6 +8,23 @@ import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
 
 object RecipeImport {
+    // Match complete heading lines only; never translate or rewrite recipe content.
+    private val ingredientHeadings = setOf(
+        "ingredients", "zutaten", "ingredientes", "ingrédients", "ingredienti",
+        "ingrediënten", "składniki", "المكونات", "المقادير", "सामग्री",
+    )
+    private val methodHeadings = setOf(
+        "instructions", "method", "directions", "steps", "zubereitung", "anleitung",
+        "preparación", "preparacion", "instrucciones", "préparation", "preparation",
+        "méthode", "procedimento", "preparazione", "modo de preparo", "modo de preparação",
+        "preparo", "preparação", "bereiding", "bereidingswijze", "przygotowanie",
+        "sposób przygotowania", "طريقة التحضير", "الطريقة", "विधि", "बनाने की विधि",
+    )
+
+    private fun heading(line: String): String = java.text.Normalizer
+        .normalize(line, java.text.Normalizer.Form.NFKC)
+        .trim().trimEnd(':', '：').trim().lowercase(java.util.Locale.ROOT)
+
     fun text(raw: String): Recipe {
         require(raw.length in 1..100000) { "Paste a recipe under 100,000 characters." }
         val lines = raw.lines().map { it.trim() }.filter { it.isNotEmpty() }
@@ -16,22 +33,19 @@ object RecipeImport {
         val steps = mutableListOf<String>()
         val description = mutableListOf<String>()
         for (line in lines.drop(1)) {
-            when (line.lowercase().trimEnd(':')) {
-                "ingredients" -> {
+            when (heading(line)) {
+                in ingredientHeadings -> {
                     section = "ingredients"
                     continue
                 }
-                "instructions",
-                "method",
-                "directions",
-                "steps" -> {
+                in methodHeadings -> {
                     section = "steps"
                     continue
                 }
             }
             when (section) {
-                "ingredients" -> ingredients.add(Ingredients.parse(line.removePrefix("- ")))
-                "steps" -> steps.add(line.replace(Regex("^\\d+[.)]\\s*"), ""))
+                "ingredients" -> ingredients.add(Ingredients.parse(line.replace(Regex("^[-•*]\\s+"), "")))
+                "steps" -> steps.add(line.replace(Regex("^\\p{Nd}+[.)।]\\s*"), ""))
                 else -> description.add(line)
             }
         }
