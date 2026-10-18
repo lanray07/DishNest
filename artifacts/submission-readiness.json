@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-10-18T15:52:50.250921+00:00",
+  "submission_ready": false,
+  "publishing_permitted": false,
+  "publication": "Not performed; user explicitly prohibits publication",
+  "checks": [
+    {
+      "check": "Android lint",
+      "status": "passed",
+      "evidence": "app\\build\\reports\\lint-results-debug.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Host Android tests",
+      "status": "passed",
+      "evidence": "app/build/test-results/testDebugUnitTest",
+      "remaining": ""
+    },
+    {
+      "check": "Locale resource coverage",
+      "status": "passed",
+      "evidence": "localisation/validation.json",
+      "remaining": ""
+    },
+    {
+      "check": "Native language and full UI approval",
+      "status": "pending",
+      "evidence": "localisation/REVIEW.md",
+      "remaining": "Native review, remaining interpolations, voice and marketing copy"
+    },
+    {
+      "check": "Local receipt-service tests",
+      "status": "passed",
+      "evidence": "artifacts/billing-server-tests.xml",
+      "remaining": ""
+    },
+    {
+      "check": "Node/Kotlin signed-receipt contract",
+      "status": "passed",
+      "evidence": "artifacts/billing-contract.json",
+      "remaining": ""
+    },
+    {
+      "check": "APK signature and binary alignment",
+      "status": "passed",
+      "evidence": "artifacts/apk-validation.json; artifacts/native-alignment.json",
+      "remaining": ""
+    },
+    {
+      "check": "Unconfigured billing build rejection",
+      "status": "passed",
+      "evidence": "artifacts/billing-configuration-guard.json",
+      "remaining": ""
+    },
+    {
+      "check": "Amazon catalog and live verification",
+      "status": "pending",
+      "evidence": "docs/AMAZON_BILLING.md",
+      "remaining": "Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only"
+    },
+    {
+      "check": "Physical device QA",
+      "status": "pending",
+      "evidence": "docs/DEVICE_QA.md",
+      "remaining": "Fire/phone, TalkBack, doze/reboot, permissions, speech and actual OCR checks"
+    },
+    {
+      "check": "Native notice source collection",
+      "status": "passed",
+      "evidence": "legal/third-party/manifest.json",
+      "remaining": ""
+    },
+    {
+      "check": "Resolved dependency inventory",
+      "status": "passed",
+      "evidence": "docs/dependencies/runtime-inventory.json",
+      "remaining": ""
+    },
+    {
+      "check": "Licensing/privacy approval",
+      "status": "pending",
+      "evidence": "THIRD_PARTY_NOTICES.md",
+      "remaining": "Publisher reviews all distribution obligations, support identity and privacy disclosures"
+    },
+    {
+      "check": "Publisher-signed release device test",
+      "status": "pending",
+      "evidence": "artifacts/deliverables/manifest.json",
+      "remaining": "Release signing key and exact signed APK hardware smoke test"
+    },
+    {
+      "check": "Final store and website metadata",
+      "status": "pending",
+      "evidence": "marketing/listing-en-GB.json",
+      "remaining": "Approved translations, contact/privacy/domain/store URLs and hardware screenshots"
+    },
+    {
+      "check": "Remaining product scope",
+      "status": "pending",
+      "evidence": "docs/RELEASE_READINESS.md",
+      "remaining": "Complete the explicitly listed outstanding app features and integration checks"
+    }
+  ]
+}

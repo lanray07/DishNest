@@ -1,0 +1,269 @@
+<resources>
+    <string name="nav_home">Minha cozinha</string>
+    <string name="nav_recipes">Livro de receitas</string>
+    <string name="nav_plan">Planejador de refeições</string>
+    <string name="nav_shop">Lista de compras</string>
+    <string name="nav_pantry">Despensa</string>
+    <string name="nav_settings">Configurações</string>
+    <string name="greeting">Um pouco de planejamento. Muito mais alegria.</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Excluir</string>
+    <string name="add_recipe">Adicionar receita</string>
+    <string name="search">Pesquise suas receitas</string>
+    <string name="cook">Começar a cozinhar</string>
+    <string name="next">Próximo passo</string>
+    <string name="previous">Passo anterior</string>
+    <string name="empty_recipes">Seu próximo favorito começa aqui.</string>
+    <string name="empty_hint">Salve uma receita e sinta-se em casa.</string>
+    <string name="premium">DishNest Premium</string>
+    <string name="ui_a_calmer_week_188aa5" formatted="false">Uma semana mais calma</string>
+    <string name="ui_a_clean_slate_cc5380" formatted="false">Uma lousa limpa</string>
+    <string name="ui_a_fresh_page_in_your_recipe_book_91f362" formatted="false">Uma nova página em seu livro de receitas</string>
+    <string name="ui_a_good_shop_starts_with_a_plan_dfb246" formatted="false">Uma boa loja começa com um plano</string>
+    <string name="ui_a_little_description_e30ea8" formatted="false">Uma pequena descrição</string>
+    <string name="ui_a_little_extra_for_your_kitchen_57e0a8" formatted="false">Um pouco mais para sua cozinha.</string>
+    <string name="ui_a_little_extra_room_for_the_way__59991a" formatted="false">Um pouco de espaço extra\npela maneira como você cozinha.</string>
+    <string name="ui_a_little_inspiration_4c35e1" formatted="false">Um pouco de inspiração</string>
+    <string name="ui_a_little_less_waste_b8146c" formatted="false">Um pouco menos de desperdício</string>
+    <string name="ui_a_little_pantry_check_goes_a_lon_d0a60c" formatted="false">Uma pequena verificação na despensa ajuda muito.</string>
+    <string name="ui_active_timers_will_continue_you__ab36a2" formatted="false">Os temporizadores ativos continuarão. Você pode retornar ao modo de cozimento para gerenciá-los.</string>
+    <string name="ui_add_a_meal_fe642f" formatted="false">Adicione uma refeição</string>
+    <string name="ui_add_item_d1a0b3" formatted="false">Adicionar item</string>
+    <string name="ui_add_recipe_8d014e" formatted="false">Adicionar receita</string>
+    <string name="ui_add_timer_5a6dfa" formatted="false">Adicionar cronômetro</string>
+    <string name="ui_all_done_in_the_kitchen_a5b557" formatted="false">Tudo feito na cozinha?</string>
+    <string name="ui_always_check_quantities_serving__0d0645" formatted="false">Sempre verifique as quantidades, o tamanho da porção, os horários e as instruções em relação ao original.</string>
+    <string name="ui_back_to_kitchen_901962" formatted="false">De volta à cozinha</string>
+    <string name="ui_background_alerts_may_be_delayed_84d690" formatted="false">Os alertas em segundo plano podem ser atrasados ​​pelas configurações de energia do dispositivo.</string>
+    <string name="ui_cancel_19766e" formatted="false">Cancelar</string>
+    <string name="ui_check_date_yyyy_mm_dd_optional_ebbc43" formatted="false">Data de verificação · AAAA-MM-DD (opcional)</string>
+    <string name="ui_check_recipe_suitability_and_all_e97821" formatted="false">Verifique você mesmo a adequação da receita e os alérgenos antes de cozinhar.</string>
+    <string name="ui_choose_photo_9c5bb7" formatted="false">Escolha a foto</string>
+    <string name="ui_clear_this_week_0389b3" formatted="false">Limpar esta semana?</string>
+    <string name="ui_clear_week_32148a" formatted="false">Semana clara</string>
+    <string name="ui_collected_with_love_4b0a34" formatted="false">Coletado com amor</string>
+    <string name="ui_collection_7b7907" formatted="false">Coleção</string>
+    <string name="ui_cook_minutes_8b80a8" formatted="false">Cozinhe minutos</string>
+    <string name="ui_copy_previous_week_d774bf" formatted="false">Copiar semana anterior</string>
+    <string name="ui_correct_recognised_text_add_ingr_2bc536" formatted="false">Corrija o texto reconhecido · adicione títulos de Ingredientes e Métodos</string>
+    <string name="ui_cuisine_6814ff" formatted="false">Cozinha</string>
+    <string name="ui_cuisine_leave_blank_for_any_1adbae" formatted="false">Culinária · deixar em branco para qualquer</string>
+    <string name="ui_dates_are_reminders_to_check_you_fdb98c" formatted="false">As datas são lembretes para verificar seus alimentos e suas embalagens; eles não são uma garantia de segurança.</string>
+    <string name="ui_delete_all_kitchen_data_013193" formatted="false">Exclua todos os dados da cozinha</string>
+    <string name="ui_delete_all_kitchen_data_3aa3db" formatted="false">Excluir todos os dados da cozinha?</string>
+    <string name="ui_delete_e2d0a5" formatted="false">Excluir</string>
+    <string name="ui_delete_this_recipe_4a5731" formatted="false">Excluir esta receita?</string>
+    <string name="ui_demo_kitchen_e41a43" formatted="false">Cozinha de demonstração</string>
+    <string name="ui_demo_recipes_are_original_exampl_069377" formatted="false">Receitas de demonstração são exemplos originais. Os dados de demonstração são adicionados somente quando você os escolhe em uma cozinha vazia.</string>
+    <string name="ui_dietary_tags_comma_separated_7222ad" formatted="false">Etiquetas dietéticas · separadas por vírgula</string>
+    <string name="ui_difficulty_be4413" formatted="false">Dificuldade</string>
+    <string name="ui_dishnest_0_1_0_development_previ_c14494" formatted="false">DishNest 0.1.0 · Visualização do desenvolvimento\nSalve receitas. Planeje refeições. Cozinhe com as mãos livres.</string>
+    <string name="ui_dishnest_80ec64" formatted="false">DishNest</string>
+    <string name="ui_explore_a_demo_kitchen_6bdc4e" formatted="false">Explore uma cozinha de demonstração</string>
+    <string name="ui_explore_dishnest_b5a56c" formatted="false">Explorar DishNest</string>
+    <string name="ui_explore_dishnest_premium_5a187f" formatted="false">Explorar DishNest Premium</string>
+    <string name="ui_explore_premium_7a1440" formatted="false">Explorar Premium →</string>
+    <string name="ui_export_json_backup_0db468" formatted="false">Exportar backup JSON</string>
+    <string name="ui_export_recipe_book_as_text_f6ad1f" formatted="false">Exportar livro de receitas como texto</string>
+    <string name="ui_export_text_e4c312" formatted="false">Exportar texto</string>
+    <string name="ui_finish_cooking_073c7a" formatted="false">Termine de cozinhar</string>
+    <string name="ui_from_this_week_s_plan_d1be4f" formatted="false">Do plano desta semana</string>
+    <string name="ui_generated_quantities_reflect_pla_61a80d" formatted="false">As quantidades geradas refletem as porções planejadas e deduzem as quantidades compatíveis da despensa. A reconstrução mantém os itens manuais.</string>
+    <string name="ui_give_it_a_little_time_adfe27" formatted="false">Dê um pouco de tempo</string>
+    <string name="ui_good_food_less_waste_4eb429" formatted="false">Boa comida, menos desperdício</string>
+    <string name="ui_good_recipes_deserve_a_place_to__f1bd5e" formatted="false">Boas receitas merecem um lugar para ficar.</string>
+    <string name="ui_import_2cff9b" formatted="false">Importar</string>
+    <string name="ui_import_json_backup_fe0cd1" formatted="false">Importar backup JSON</string>
+    <string name="ui_import_this_backup_ecd47c" formatted="false">Importar este backup?</string>
+    <string name="ui_import_validates_the_entire_back_86e01c" formatted="false">A importação valida todo o backup antes de gravar e requer uma cozinha vazia.</string>
+    <string name="ui_ingredients_87675d" formatted="false">Ingredientes</string>
+    <string name="ui_ingredients_one_per_line_e_g_200_d4d092" formatted="false">Ingredientes · um por linha (por exemplo, 200 g de farinha)</string>
+    <string name="ui_item_name_70d5f4" formatted="false">Nome do item</string>
+    <string name="ui_keep_a_copy_e53d3b" formatted="false">Mantenha uma cópia</string>
+    <string name="ui_keep_aggregate_usage_counts_on_t_a9093e" formatted="false">Manter contagens agregadas de uso neste dispositivo</string>
+    <string name="ui_keep_cooking_d9de3b" formatted="false">Continue cozinhando</string>
+    <string name="ui_keep_my_kitchen_79ce76" formatted="false">Mantenha minha cozinha</string>
+    <string name="ui_keep_track_of_what_you_already_h_9f24a1" formatted="false">Acompanhe o que você já tem.</string>
+    <string name="ui_language_accessibility_24f044" formatted="false">Idioma e acessibilidade</string>
+    <string name="ui_let_s_make_something_good_8f500e" formatted="false">Vamos fazer algo bom</string>
+    <string name="ui_load_demo_kitchen_df8474" formatted="false">Carregar cozinha de demonstração</string>
+    <string name="ui_made_again_loved_again_f1ebfd" formatted="false">Feito novamente. Amei novamente.</string>
+    <string name="ui_made_for_the_joy_of_cooking_c83bee" formatted="false">Feito para a alegria de cozinhar.</string>
+    <string name="ui_make_it_yours_34ca8a" formatted="false">Faça com que seja seu</string>
+    <string name="ui_make_room_for_good_food_e392e4" formatted="false">Abra espaço para boa comida</string>
+    <string name="ui_make_shopping_list_ad0a17" formatted="false">Faça lista de compras</string>
+    <string name="ui_make_yourself_at_home_a0548a" formatted="false">Fique à vontade</string>
+    <string name="ui_maximum_total_minutes_4e76ea" formatted="false">Total máximo de minutos</string>
+    <string name="ui_method_one_step_per_line_322349" formatted="false">Método · um passo por linha</string>
+    <string name="ui_minutes_1_1440_5357e2" formatted="false">Minutos (1–1440)</string>
+    <string name="ui_no_registration_advertising_or_a_00a2f4" formatted="false">Nenhum registro, publicidade ou transmissão de análises. As receitas e os dados da cozinha permanecem neste dispositivo. O reconhecimento de fotos em inglês é executado no dispositivo. A importação do site entra em contato com o site solicitado e redireciona. A voz é push-to-talk; seu provedor de voz pode processar áudio online. DishNest não armazena áudio bruto. Quando configurado, o faturamento envia identificadores de usuário e recibo da Amazon para o serviço de verificação e para a Amazon; recibos assinados são armazenados de forma privada para restauração e acesso offline. O backup na nuvem não está conectado.</string>
+    <string name="ui_no_store_prices_free_trials_or_p_dbbbec" formatted="false">As assinaturas são renovadas pela Amazon até serem canceladas nas configurações de assinatura da Amazon. A Amazon mostra o preço aplicável, o período de cobrança e qualquer oferta antes de você confirmar. Uma compra vitalícia é um pagamento único. Nenhum teste é prometido pelo DishNest.</string>
+    <string name="ui_notes_from_your_kitchen_043bc7" formatted="false">Notas da sua cozinha</string>
+    <string name="ui_off_by_default_counts_contain_no_6ec589" formatted="false">Desativado por padrão. As contagens não contêm conteúdo de receita, áudio, nomes ou identificadores. Nada é transmitido. Desligar exclui esses contadores. As contagens de compras e conversões de teste ficam inativas enquanto o faturamento está desativado.</string>
+    <string name="ui_one_list_a_lighter_shop_ba8c84" formatted="false">Uma lista, uma loja de isqueiros</string>
+    <string name="ui_optional_usage_counts_ea8511" formatted="false">Contagens de uso opcionais</string>
+    <string name="ui_permanently_delete_9003e1" formatted="false">Excluir permanentemente</string>
+    <string name="ui_permanently_remove_all_local_rec_62eb3a" formatted="false">Remova permanentemente todas as receitas locais, planos, itens de despensa, itens de compras, modelos, cronômetros e fotos anexadas. Exporte tudo o que você deseja manter primeiro.</string>
+    <string name="ui_personal_notes_210f34" formatted="false">Notas pessoais</string>
+    <string name="ui_plan_for_me_c13f33" formatted="false">Planeje para mim</string>
+    <string name="ui_plan_seven_dinners_a453e5" formatted="false">Planeje sete jantares</string>
+    <string name="ui_planned_premium_features_821e28" formatted="false">Recursos premium</string>
+    <string name="ui_premium_is_being_prepared_this_d_c133a3" formatted="false">Receitas ilimitadas, importação de receitas e modelos de planos de refeições reutilizáveis.</string>
+    <string name="ui_prep_minutes_87773e" formatted="false">Minutos de preparação</string>
+    <string name="ui_privacy_permissions_77c242" formatted="false">Privacidade e permissões</string>
+    <string name="ui_quantity_blank_if_unknown_1d8e1a" formatted="false">Quantidade · em branco se desconhecido</string>
+    <string name="ui_read_a_recipe_photo_on_your_devi_ea83af" formatted="false">Leia uma foto da receita no seu dispositivo. O modelo OCR em inglês incluído funciona offline; a precisão depende da foto. Sua imagem não foi carregada.</string>
+    <string name="ui_read_step_e03fc7" formatted="false">Leia a etapa</string>
+    <string name="ui_recipe_name_c343c4" formatted="false">Nome da receita</string>
+    <string name="ui_required_dietary_tag_exact_saved_84dad6" formatted="false">Etiqueta dietética obrigatória · etiqueta exata salva</string>
+    <string name="ui_restore_amazon_purchases_3b7842" formatted="false">Restaurar compras na Amazon</string>
+    <string name="ui_review_every_ingredient_and_step_5bcc99" formatted="false">Revise cada ingrediente e etapa antes de salvar. Os tamanhos e horários das porções ausentes devem ser inseridos; use 0 minutos somente quando apropriado.</string>
+    <string name="ui_review_structured_recipe_4cf14b" formatted="false">Revise a receita estruturada</string>
+    <string name="ui_room_for_more_627976" formatted="false">Espaço para mais</string>
+    <string name="ui_save_1509f5" formatted="false">Salvar</string>
+    <string name="ui_save_recipe_5622a7" formatted="false">Salvar receita</string>
+    <string name="ui_save_template_47f72a" formatted="false">Salvar modelo</string>
+    <string name="ui_save_this_week_s_rhythm_229a2e" formatted="false">Salve o ritmo desta semana</string>
+    <string name="ui_servings_32939b" formatted="false">Porções</string>
+    <string name="ui_seven_dinners_from_your_saved_re_db57ba" formatted="false">Sete jantares de suas receitas salvas, primeiro com combinações de despensa. Isso funciona inteiramente no seu dispositivo.</string>
+    <string name="ui_share_list_33f118" formatted="false">Lista de compartilhamento</string>
+    <string name="ui_source_url_1adf66" formatted="false">URL de origem</string>
+    <string name="ui_speech_recognition_and_language__01e307" formatted="false">O reconhecimento de fala e o suporte a idiomas variam de acordo com o dispositivo. Todas as etapas de cozimento e temporizadores funcionam por toque.</string>
+    <string name="ui_start_timer_4fcf31" formatted="false">Iniciar cronômetro</string>
+    <string name="ui_tap_to_speak_8e8fa9" formatted="false">Toque para falar</string>
+    <string name="ui_template_name_7b905e" formatted="false">Nome do modelo</string>
+    <string name="ui_the_app_follows_your_device_s_la_2ed1cc" formatted="false">O aplicativo segue o idioma do seu dispositivo, tamanho do texto e direção do layout. As traduções de interface são rascunhos que aguardam revisão por falantes nativos. O modo de cozimento usa texto grande e mantém a tela ativa.</string>
+    <string name="ui_the_backup_will_be_validated_and_1a7df3" formatted="false">O backup será validado e adicionado a uma cozinha vazia. Os dados existentes não serão substituídos.</string>
+    <string name="ui_this_also_removes_it_from_planne_c25d45" formatted="false">Isso também o remove das refeições planejadas. Exporte uma cópia primeiro se quiser mantê-la.</string>
+    <string name="ui_this_cannot_be_undone_export_a_b_dfe37b" formatted="false">Isto não pode ser desfeito. Exporte um backup antes de continuar.</string>
+    <string name="ui_timer_label_6a43fd" formatted="false">Etiqueta do temporizador</string>
+    <string name="ui_today_2b065c" formatted="false">Hoje</string>
+    <string name="ui_under_30_min_c9922c" formatted="false">Menos de 30 minutos</string>
+    <string name="ui_unit_g_kg_ml_l_tsp_tbsp_6e0535" formatted="false">Unidade · g, kg, ml, l, colher de chá, colher de sopa…</string>
+    <string name="ui_unlimited_recipes_meal_plan_temp_05c133" formatted="false">O acesso verificado é armazenado em cache por até 24 horas, limitado por qualquer vencimento de assinatura conhecido. Reconecte e restaure se a verificação expirar. As receitas salvas permanecem disponíveis.</string>
+    <string name="ui_use_camera_25987b" formatted="false">Usar câmera</string>
+    <string name="ui_use_what_you_have_37fd8b" formatted="false">Use o que você tem</string>
+    <string name="ui_validate_and_import_c02c3a" formatted="false">Validar e importar</string>
+    <string name="ui_view_original_source_4dd847" formatted="false">Ver fonte original</string>
+    <string name="ui_what_s_in_your_kitchen_577097" formatted="false">O que há na sua cozinha?</string>
+    <string name="ui_your_everyday_kitchen_f3db1b" formatted="false">SUA COZINHA DIÁRIA</string>
+    <string name="ui_your_kitchen_beautifully_togethe_45a076" formatted="false">Sua cozinha, lindamente junta.</string>
+    <string name="ui_your_recipe_book_e5e04f" formatted="false">Seu livro de receitas</string>
+    <string name="ui_your_recipes_and_saved_templates_56c9f9" formatted="false">Suas receitas e modelos salvos permanecerão disponíveis.</string>
+    <string name="ui_your_recipes_plans_pantry_and_sh_135c7c" formatted="false">Suas receitas, planos, despensa e lista de compras ficam neste dispositivo. Os backups JSON excluem fotos e temporizadores anexados. Armazene as exportações em algum lugar privado.</string>
+    <string name="billing_not_configured">As compras precisam que o catálogo e o serviço de verificação da Amazon estejam configurados. Nenhuma cobrança pode ser feita nesta construção.</string>
+    <string name="billing_ready">Conta Amazon pronta. Os preços são fornecidos pela Amazon.</string>
+    <string name="billing_retry">Não foi possível chegar à loja. Por favor, tente novamente.</string>
+    <string name="billing_account_unavailable">A compra da Amazon não está disponível. Faça login na Amazon em um dispositivo Fire compatível e tente novamente.</string>
+    <string name="billing_already_owned">Já comprei. Verificando suas compras.</string>
+    <string name="billing_pending">Aguardando aprovação de compra da Amazon. O Premium será desbloqueado após aprovação e verificação.</string>
+    <string name="billing_unavailable_product">Este produto não está disponível no seu mercado Amazon.</string>
+    <string name="billing_purchase_failed">A compra não foi concluída. Você pode tentar novamente ou restaurar as compras.</string>
+    <string name="billing_verification_retry">A verificação não pôde ser concluída. Qualquer acesso verificado existente permanece até que sua verificação expire. Restaure para tentar novamente.</string>
+    <string name="billing_active">DishNest Premium está ativo.</string>
+    <string name="billing_no_purchases">Nenhuma compra Premium ativa foi encontrada para esta conta Amazon.</string>
+    <string name="premium_required">Este recurso requer DishNest Premium. Abra Configurações para ver os planos disponíveis.</string>
+    <string name="premium_features">Receitas ilimitadas, importação de receitas e modelos de planos de refeições reutilizáveis.</string>
+    <string name="premium_terms">As assinaturas são renovadas pela Amazon até serem canceladas nas configurações de assinatura da Amazon. A Amazon mostra o preço aplicável, o período de cobrança e qualquer oferta antes de você confirmar. Uma compra vitalícia é um pagamento único. Nenhum teste é prometido pelo DishNest.</string>
+    <string name="premium_cache">O acesso verificado é armazenado em cache por até 24 horas, limitado por qualquer vencimento de assinatura conhecido. Reconecte e restaure se a verificação expirar. As receitas salvas permanecem disponíveis.</string>
+    <string name="edition_free">Edição gratuita · Limite de 25 receitas</string>
+    <string name="edition_premium">Prêmio</string>
+    <string name="copy_0070948938" formatted="false">Experimente «próximo passo», «repetir», «mostrar ingredientes» ou um temporizador de dez minutos.</string>
+    <string name="copy_024950cf2c" formatted="false">Importar receita</string>
+    <string name="copy_02a9db66ee" formatted="false">Duplicar receita</string>
+    <string name="copy_03ba74aae3" formatted="false">Revisar receita</string>
+    <string name="copy_04bf79e202" formatted="false">Excluir receita</string>
+    <string name="copy_073c7a8f10" formatted="false">Termine de cozinhar</string>
+    <string name="copy_206e1064b7" formatted="false">Adicione instruções a esta receita.</string>
+    <string name="copy_2198638b49" formatted="false">Planeje algumas refeições e reúna os ingredientes.</string>
+    <string name="copy_21fbde19cf" formatted="false">Próxima semana</string>
+    <string name="copy_241171761e" formatted="false">Comida boa merece ser guardada.</string>
+    <string name="copy_24486a0cb6" formatted="false">Sem instruções</string>
+    <string name="copy_27809578e7" formatted="false">Colar texto da receita</string>
+    <string name="copy_298a9207a7" formatted="false">Próximo passo</string>
+    <string name="copy_2db80e2a1d" formatted="false">Insira uma quantidade igual ou maior que zero.</string>
+    <string name="copy_2f4ddffe07" formatted="false">Temporizador pausado</string>
+    <string name="copy_318c1da8d9" formatted="false">Passo anterior</string>
+    <string name="copy_357d388fdf" formatted="false">Cancelar temporizador</string>
+    <string name="copy_3621a99bef" formatted="false">Adicionar ou remover dos favoritos</string>
+    <string name="copy_3927421bab" formatted="false">Alterar refeição ou porções</string>
+    <string name="copy_4304f7be23" formatted="false">Receitas salvas</string>
+    <string name="copy_477ef9ae15" formatted="false">Sua semana, bem planejada</string>
+    <string name="copy_47b0904ec9" formatted="false">Link do site</string>
+    <string name="copy_481682c207" formatted="false">Editar receita</string>
+    <string name="copy_48432b3843" formatted="false">Adicionar item à despensa</string>
+    <string name="copy_49b8bc2c67" formatted="false">Adicionar foto da receita</string>
+    <string name="copy_4d68fe9e8f" formatted="false">Não há aplicativo de câmera disponível. Escolha uma imagem.</string>
+    <string name="copy_553628331c" formatted="false">Sua cozinha, do seu jeito</string>
+    <string name="copy_55e1a0c898" formatted="false">Pausar ou retomar temporizador</string>
+    <string name="copy_579e329ab4" formatted="false">Confirme de 1 a 100 porções.</string>
+    <string name="copy_591303470a" formatted="false">Adicione o que já tem para planejar melhor a próxima compra.</string>
+    <string name="copy_5ce282fca6" formatted="false">Favoritos da família</string>
+    <string name="copy_5d4570598c" formatted="false">Compartilhar receita</string>
+    <string name="copy_5ecc81d67a" formatted="false">Não foi possível salvar a exportação</string>
+    <string name="copy_640c34133b" formatted="false">Jantares da semana</string>
+    <string name="copy_66bf733db7" formatted="false">Permissão do microfone negada. Os controles de toque continuam disponíveis.</string>
+    <string name="copy_672e21cbc1" formatted="false">Não foi possível salvar o backup</string>
+    <string name="copy_68669895ac" formatted="false">Insira o nome do item.</string>
+    <string name="copy_6a38c0b66f" formatted="false">Lista de compras exportada</string>
+    <string name="copy_6be2cd1944" formatted="false">Ingredientes exibidos</string>
+    <string name="copy_74a883a037" formatted="false">Configurações</string>
+    <string name="copy_76c65b7344" formatted="false">Não foi possível importar a receita</string>
+    <string name="copy_793b69cce2" formatted="false">Refeições desta semana</string>
+    <string name="copy_7d9eb7acb1" formatted="false">Fechar</string>
+    <string name="copy_7ec446a336" formatted="false">Saiba o que tem. Prepare algo gostoso.</string>
+    <string name="copy_86b1fdfa00" formatted="false">Remover item da despensa</string>
+    <string name="copy_89ca7aafe1" formatted="false">Todos os ingredientes encontrados. Confira as quantidades antes de cozinhar.</string>
+    <string name="copy_89ea751a62" formatted="false">Livro de receitas exportado</string>
+    <string name="copy_8b566d5081" formatted="false">Bem-vindo à sua cozinha</string>
+    <string name="copy_8d014e1c45" formatted="false">Adicionar receita</string>
+    <string name="copy_9328724b4c" formatted="false">Colar texto</string>
+    <string name="copy_93aa52c0ba" formatted="false">Remover refeição</string>
+    <string name="copy_97a804fd48" formatted="false">Item de compras</string>
+    <string name="copy_9be45213e6" formatted="false">Nenhum temporizador ativo</string>
+    <string name="copy_9d3b335d3c" formatted="false">Lendo receita…</string>
+    <string name="copy_9ee92f81e3" formatted="false">Para comprar</string>
+    <string name="copy_9f375d0d3d" formatted="false">Lista de compras DishNest</string>
+    <string name="copy_9f472a48e0" formatted="false">Inclua um título e os cabeçalhos Ingredients e Method ou Instructions. Dados ausentes não serão inventados.</string>
+    <string name="copy_9f6ac50566" formatted="false">Uma semana que funciona para você</string>
+    <string name="copy_a0910e26a9" formatted="false">Importe Recipe JSON-LD de uma página HTTPS pública que você tenha permissão para salvar. Restrições não são contornadas.</string>
+    <string name="copy_a25d1bda32" formatted="false">DishNest Premium</string>
+    <string name="copy_a6ebea75ab" formatted="false">Não foi possível iniciar o OCR.</string>
+    <string name="copy_a985a43f15" formatted="false">Backup exportado (sem fotos)</string>
+    <string name="copy_ab00db4db2" formatted="false">Adicione nome, ingredientes e modo de preparo.</string>
+    <string name="copy_ab524fd1c2" formatted="false">Traga uma receita para casa</string>
+    <string name="copy_adda900c1c" formatted="false">Salve sua primeira receita</string>
+    <string name="copy_b0059bc190" formatted="false">Adicione uma receita ou tente outra busca.</string>
+    <string name="copy_b5b34f89ff" formatted="false">Item da despensa</string>
+    <string name="copy_c0f8bbcd41" formatted="false">Semana anterior</string>
+    <string name="copy_c7bb32b3d5" formatted="false">Todas as receitas</string>
+    <string name="copy_ca07f55dcb" formatted="false">Insira tempos de preparo e cozimento entre 0 e 10080 minutos.</string>
+    <string name="copy_ca2fa599a0" formatted="false">Coisas boas na sua despensa</string>
+    <string name="copy_cdc99bac2c" formatted="false">Nenhum texto legível encontrado. Tente uma foto mais clara e nítida.</string>
+    <string name="copy_cf31825cce" formatted="false">Não foi possível abrir o backup</string>
+    <string name="copy_d11fcfd774" formatted="false">Ingrediente não encontrado. Toque em Ingredientes para revisar a lista.</string>
+    <string name="copy_d84eebada9" formatted="false">Foto</string>
+    <string name="copy_d944203610" formatted="false">Adicionar item</string>
+    <string name="copy_d97d51d370" formatted="false">Favoritos</string>
+    <string name="copy_e2a2406740" formatted="false">Tudo de que você precisa</string>
+    <string name="copy_e39b24993c" formatted="false">Favorito</string>
+    <string name="copy_e400521d2f" formatted="false">Ativar ou desativar orientação falada</string>
+    <string name="copy_e5e04f3aa7" formatted="false">Seu livro de receitas</string>
+    <string name="copy_e5fc1da796" formatted="false">Editar item da despensa</string>
+    <string name="copy_eacb35734f" formatted="false">Privacidade desde a criação. Sempre seu.</string>
+    <string name="copy_f03f0e4ef3" formatted="false">Menos «o que tem para o jantar?»</string>
+    <string name="copy_f15ef2ba77" formatted="false">As notificações estão desativadas. Mantenha o modo de preparo aberto para ver os temporizadores.</string>
+    <string name="copy_f46668cb02" formatted="false">Alterar foto da receita</string>
+    <string name="copy_f60047d5c0" formatted="false">Não foi possível ler a imagem</string>
+    <string name="copy_ff59fa9de2" formatted="false">Logotipo DishNest</string>
+    <plurals name="recipe_count">
+        <item quantity="one">%d receita</item>
+        <item quantity="other">%d receitas</item>
+        <item quantity="many">%d receitas</item>
+    </plurals>
+    <string name="third_party_notices">Avisos de terceiros</string>
+    <string name="billing_monthly">Assinatura mensal</string>
+    <string name="billing_annual">Assinatura anual</string>
+    <string name="billing_one_time">Compra única</string>
+</resources>

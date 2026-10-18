@@ -1,0 +1,11 @@
+keyword,intent,primary_surface,claim_limit
+recipe keeper,Save recipes,Recipe library,Local manual entry and reviewed imports
+meal planner,Plan household meals,Weekly planner,Saved recipes only; no nutrition optimisation
+recipe organiser,Find favourites,Recipe book,Collections and search
+weekly meal planner,Reuse weekly plans,Templates,Deterministic seven-dinner suggestions
+shopping list,Shop planned meals,Shopping screen,Compatible units only
+grocery list,Share list,Text sharing,No supermarket integration
+pantry organiser,Use existing ingredients,Pantry,Name matches; verify amounts
+offline recipe book,Read without internet,Recipe details,URL import requires internet
+hands-free cooking,Spoken guidance,Cooking mode,Recognition services vary by device
+Fire tablet recipe app,Tablet compatibility,Compatibility page,Physical-device testing pending

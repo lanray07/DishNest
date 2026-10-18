@@ -1,0 +1,3 @@
+-keepattributes Signature
+-keep class com.dishnest.app.domain.** { *; }
+-keep class com.amazon.** { *; }

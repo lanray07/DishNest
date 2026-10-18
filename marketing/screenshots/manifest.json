@@ -1,0 +1,290 @@
+[
+  {
+    "id": "01",
+    "screen": "recipes",
+    "headline": "Recipe Keeper & Organiser",
+    "subheadline": "Save your favourite recipes in one beautiful place.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-recipes.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-01-en-GB.png"
+  },
+  {
+    "id": "02",
+    "screen": "plan",
+    "headline": "Weekly Meal Planner",
+    "subheadline": "Plan breakfast, lunch and dinner with ease.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-plan.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-02-en-GB.png"
+  },
+  {
+    "id": "03",
+    "screen": "shopping",
+    "headline": "Automatic Shopping Lists",
+    "subheadline": "Turn meal plans into organised grocery lists.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-shopping.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-03-en-GB.png"
+  },
+  {
+    "id": "04",
+    "screen": "cooking",
+    "headline": "Hands-Free Cooking Mode",
+    "subheadline": "Follow recipes with large text and voice guidance.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-cooking.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-04-en-GB.png"
+  },
+  {
+    "id": "05",
+    "screen": "import",
+    "headline": "Smart Recipe Import",
+    "subheadline": "Save recipes from links, text and photos.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-import.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-05-en-GB.png"
+  },
+  {
+    "id": "06",
+    "screen": "pantry",
+    "headline": "Pantry & Food Organisation",
+    "subheadline": "Discover meals using ingredients you already have.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-pantry.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-06-en-GB.png"
+  },
+  {
+    "id": "07",
+    "screen": "recipe-detail",
+    "headline": "Offline Recipe Book",
+    "subheadline": "Access saved recipes without internet.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-recipe-detail.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-07-en-GB.png"
+  },
+  {
+    "id": "08",
+    "screen": "plan",
+    "headline": "Meal Planning Made Simple",
+    "subheadline": "Stay organised with reusable meal plans.",
+    "device": "tablet",
+    "locale": "en-GB",
+    "size": [
+      1920,
+      1200
+    ],
+    "source": "artifacts\\screens\\tablet-plan.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "tablet-08-en-GB.png"
+  },
+  {
+    "id": "01",
+    "screen": "recipes",
+    "headline": "Recipe Keeper & Organiser",
+    "subheadline": "Save your favourite recipes in one beautiful place.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-recipes.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-01-en-GB.png"
+  },
+  {
+    "id": "02",
+    "screen": "plan",
+    "headline": "Weekly Meal Planner",
+    "subheadline": "Plan breakfast, lunch and dinner with ease.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-plan.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-02-en-GB.png"
+  },
+  {
+    "id": "03",
+    "screen": "shopping",
+    "headline": "Automatic Shopping Lists",
+    "subheadline": "Turn meal plans into organised grocery lists.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-shopping.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-03-en-GB.png"
+  },
+  {
+    "id": "04",
+    "screen": "cooking",
+    "headline": "Hands-Free Cooking Mode",
+    "subheadline": "Follow recipes with large text and voice guidance.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-cooking.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-04-en-GB.png"
+  },
+  {
+    "id": "05",
+    "screen": "import",
+    "headline": "Smart Recipe Import",
+    "subheadline": "Save recipes from links, text and photos.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-import.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-05-en-GB.png"
+  },
+  {
+    "id": "06",
+    "screen": "pantry",
+    "headline": "Pantry & Food Organisation",
+    "subheadline": "Discover meals using ingredients you already have.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-pantry.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-06-en-GB.png"
+  },
+  {
+    "id": "07",
+    "screen": "recipe-detail",
+    "headline": "Offline Recipe Book",
+    "subheadline": "Access saved recipes without internet.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-recipe-detail.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-07-en-GB.png"
+  },
+  {
+    "id": "08",
+    "screen": "plan",
+    "headline": "Meal Planning Made Simple",
+    "subheadline": "Stay organised with reusable meal plans.",
+    "device": "phone",
+    "locale": "en-GB",
+    "size": [
+      1200,
+      1920
+    ],
+    "source": "artifacts\\screens\\phone-plan.png",
+    "capture_method": "Robolectric native graphics of production Compose screens",
+    "physical_device_verified": false,
+    "release_approved": false,
+    "status": "draft exported",
+    "output": "phone-08-en-GB.png"
+  }
+]

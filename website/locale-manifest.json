@@ -1,0 +1,21 @@
+{
+  "published_locales": [
+    "en-GB"
+  ],
+  "planned_locales": [
+    "en-US",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "pt-BR",
+    "pt-PT",
+    "nl",
+    "pl",
+    "ar",
+    "hi"
+  ],
+  "translation_status": "pending; English only is accurate",
+  "canonical_origin": null,
+  "deployed": false
+}

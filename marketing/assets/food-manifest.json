@@ -1,0 +1,20 @@
+[
+  {
+    "asset": "app\\src\\main\\res\\drawable\\food_pasta.jpg",
+    "provenance": "Original built-in imagegen output, 2026-10-18",
+    "use": "Explicit demo recipe only",
+    "source": "exec-35b10981-406d-4cc5-bd3f-320f631c60da.png"
+  },
+  {
+    "asset": "app\\src\\main\\res\\drawable\\food_soup.jpg",
+    "provenance": "Original built-in imagegen output, 2026-10-18",
+    "use": "Explicit demo recipe only",
+    "source": "exec-268c3884-1ca1-4409-aa63-3f5b3336537a.png"
+  },
+  {
+    "asset": "app\\src\\main\\res\\drawable\\food_oats.jpg",
+    "provenance": "Original built-in imagegen output, 2026-10-18",
+    "use": "Explicit demo recipe only",
+    "source": "exec-346ca753-2bb9-48a8-8760-339024730f30.png"
+  }
+]

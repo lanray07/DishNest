@@ -1,0 +1,78 @@
+[
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\data\\RecipeImport.kt",
+    "text": "Location"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\platform\\Timers.kt",
+    "text": "Your cooking timer is ready."
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\KitchenApp.kt",
+    "text": "${r.prepMinutes+r.cookMinutes} min  ·  ${r.difficulty}  ·  ${r.servings} servings"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\KitchenApp.kt",
+    "text": "${r.prepMinutes+r.cookMinutes} min · ${r.collection}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\KitchenApp.kt",
+    "text": "${r.prepMinutes+r.cookMinutes} minutes  ·  ${r.servings} servings"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\KitchenApp.kt",
+    "text": "Check date · ${p.expiry}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
+    "text": "Prep ${r.prepMinutes} min"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
+    "text": "Cook ${r.cookMinutes} min"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
+    "text": "${index+1}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
+    "text": "$value $label"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
+    "text": "STEP ${step+1} OF ${r.steps.size}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
+    "text": "For $servings servings"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
+    "text": "${Ingredients.display(i.quantity?.times(servings.toDouble()/r.servings),i.unit)}  ${i.name}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
+    "text": "${start.format(DateTimeFormatter.ofPattern("
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
+    "text": "Use ${t.name}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
+    "text": "${date.dayOfMonth}"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
+    "text": "${meal!!.servings} servings"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
+    "text": "${r.prepMinutes+r.cookMinutes} minutes"
+  },
+  {
+    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
+    "text": "${match.available} of ${match.recipe.ingredients.size} ingredient names in your pantry"
+  }
+]

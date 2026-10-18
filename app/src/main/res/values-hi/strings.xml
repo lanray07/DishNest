@@ -1,0 +1,265 @@
+<resources>
+    <string name="nav_home">मेरी रसोई</string>
+    <string name="nav_recipes">रेसिपी बुक</string>
+    <string name="nav_plan">भोजन योजनाकार</string>
+    <string name="nav_shop">खरीदारी सूची</string>
+    <string name="nav_pantry">भंडार</string>
+    <string name="nav_settings">सेटिंग</string>
+    <string name="greeting">थोड़ी योजना. बहुत अधिक आनंद.</string>
+    <string name="save">सहेजें</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="delete">हटाएँ</string>
+    <string name="add_recipe">रेसिपी जोड़ें</string>
+    <string name="search">अपनी रेसिपी खोजें</string>
+    <string name="cook">खाना बनाना शुरू करें</string>
+    <string name="next">अगला चरण</string>
+    <string name="previous">पिछला चरण</string>
+    <string name="empty_recipes">आपका अगला पसंदीदा यहां से शुरू होता है.</string>
+    <string name="empty_hint">एक रेसिपी सहेजें और स्वयं घर पर बनाएं।</string>
+    <string name="premium">DishNest Premium</string>
+    <string name="ui_a_calmer_week_188aa5" formatted="false">एक शांत सप्ताह</string>
+    <string name="ui_a_clean_slate_cc5380" formatted="false">एक साफ़ स्लेट</string>
+    <string name="ui_a_fresh_page_in_your_recipe_book_91f362" formatted="false">आपकी रेसिपी पुस्तक में एक ताज़ा पृष्ठ</string>
+    <string name="ui_a_good_shop_starts_with_a_plan_dfb246" formatted="false">एक अच्छी दुकान एक योजना से शुरू होती है</string>
+    <string name="ui_a_little_description_e30ea8" formatted="false">थोड़ा विवरण</string>
+    <string name="ui_a_little_extra_for_your_kitchen_57e0a8" formatted="false">आपकी रसोई के लिए थोड़ा अतिरिक्त।</string>
+    <string name="ui_a_little_extra_room_for_the_way__59991a" formatted="false">थोड़ा अतिरिक्त कमरा\nआपके खाना पकाने के तरीके के लिए.</string>
+    <string name="ui_a_little_inspiration_4c35e1" formatted="false">थोड़ी सी प्रेरणा</string>
+    <string name="ui_a_little_less_waste_b8146c" formatted="false">थोड़ा कम बर्बादी</string>
+    <string name="ui_a_little_pantry_check_goes_a_lon_d0a60c" formatted="false">थोड़ी सी पेंट्री जांच बहुत काम आती है।</string>
+    <string name="ui_active_timers_will_continue_you__ab36a2" formatted="false">सक्रिय टाइमर जारी रहेंगे. आप उन्हें प्रबंधित करने के लिए कुकिंग मोड पर लौट सकते हैं।</string>
+    <string name="ui_add_a_meal_fe642f" formatted="false">भोजन जोड़ें</string>
+    <string name="ui_add_item_d1a0b3" formatted="false">मद जोड़ें</string>
+    <string name="ui_add_recipe_8d014e" formatted="false">रेसिपी जोड़ें</string>
+    <string name="ui_add_timer_5a6dfa" formatted="false">टाइमर जोड़ें</string>
+    <string name="ui_all_done_in_the_kitchen_a5b557" formatted="false">रसोई में सब कुछ हो गया?</string>
+    <string name="ui_always_check_quantities_serving__0d0645" formatted="false">हमेशा मूल के मुकाबले मात्रा, परोसने का आकार, समय और निर्देशों की जांच करें।</string>
+    <string name="ui_back_to_kitchen_901962" formatted="false">रसोई में वापस</string>
+    <string name="ui_background_alerts_may_be_delayed_84d690" formatted="false">डिवाइस पावर सेटिंग्स के कारण पृष्ठभूमि अलर्ट में देरी हो सकती है।</string>
+    <string name="ui_cancel_19766e" formatted="false">रद्द करें</string>
+    <string name="ui_check_date_yyyy_mm_dd_optional_ebbc43" formatted="false">दिनांक जांचें · YYYY-MM-DD (वैकल्पिक)</string>
+    <string name="ui_check_recipe_suitability_and_all_e97821" formatted="false">खाना पकाने से पहले नुस्खा की उपयुक्तता और एलर्जी की जाँच स्वयं करें।</string>
+    <string name="ui_choose_photo_9c5bb7" formatted="false">तस्विर का चयन करो</string>
+    <string name="ui_clear_this_week_0389b3" formatted="false">इस सप्ताह साफ़ करें?</string>
+    <string name="ui_clear_week_32148a" formatted="false">साफ़ सप्ताह</string>
+    <string name="ui_collected_with_love_4b0a34" formatted="false">प्यार से इकट्ठा किया</string>
+    <string name="ui_collection_7b7907" formatted="false">संग्रह</string>
+    <string name="ui_cook_minutes_8b80a8" formatted="false">मिनट पकाएं</string>
+    <string name="ui_copy_previous_week_d774bf" formatted="false">पिछले सप्ताह की प्रतिलिपि बनाएँ</string>
+    <string name="ui_correct_recognised_text_add_ingr_2bc536" formatted="false">सही मान्यता प्राप्त पाठ · सामग्री और विधि शीर्षक जोड़ें</string>
+    <string name="ui_cuisine_6814ff" formatted="false">भोजन</string>
+    <string name="ui_cuisine_leave_blank_for_any_1adbae" formatted="false">व्यंजन · किसी के लिए खाली छोड़ें</string>
+    <string name="ui_dates_are_reminders_to_check_you_fdb98c" formatted="false">तारीखें आपके भोजन और उसकी पैकेजिंग की जांच करने के लिए अनुस्मारक हैं; वे सुरक्षा की गारंटी नहीं हैं.</string>
+    <string name="ui_delete_all_kitchen_data_013193" formatted="false">रसोई का सारा डेटा मिटा दें</string>
+    <string name="ui_delete_all_kitchen_data_3aa3db" formatted="false">क्या आप रसोई का सारा डेटा मिटाना चाहते हैं?</string>
+    <string name="ui_delete_e2d0a5" formatted="false">हटाएँ</string>
+    <string name="ui_delete_this_recipe_4a5731" formatted="false">यह नुस्खा हटाएं?</string>
+    <string name="ui_demo_kitchen_e41a43" formatted="false">डेमो रसोई</string>
+    <string name="ui_demo_recipes_are_original_exampl_069377" formatted="false">डेमो रेसिपी मूल उदाहरण हैं। डेमो डेटा तभी जोड़ा जाता है जब आप इसे खाली रसोई में चुनते हैं।</string>
+    <string name="ui_dietary_tags_comma_separated_7222ad" formatted="false">आहार टैग · अल्पविराम से अलग किया गया</string>
+    <string name="ui_difficulty_be4413" formatted="false">कठिनाई</string>
+    <string name="ui_dishnest_0_1_0_development_previ_c14494" formatted="false">डिशनेस्ट 0.1.0 · विकास पूर्वावलोकन\nरेसिपी सहेजें. भोजन की योजना बनाएं. हाथों से मुक्त होकर खाना पकाएं।</string>
+    <string name="ui_dishnest_80ec64" formatted="false">DishNest</string>
+    <string name="ui_explore_a_demo_kitchen_6bdc4e" formatted="false">एक डेमो किचन का अन्वेषण करें</string>
+    <string name="ui_explore_dishnest_b5a56c" formatted="false">डिशनेस्ट का अन्वेषण करें</string>
+    <string name="ui_explore_dishnest_premium_5a187f" formatted="false">डिशनेस्टप्रीमियम का अन्वेषण करें</string>
+    <string name="ui_explore_premium_7a1440" formatted="false">प्रीमियम एक्सप्लोर करें →</string>
+    <string name="ui_export_json_backup_0db468" formatted="false">JSON बैकअप निर्यात करें</string>
+    <string name="ui_export_recipe_book_as_text_f6ad1f" formatted="false">रेसिपी पुस्तक को पाठ के रूप में निर्यात करें</string>
+    <string name="ui_export_text_e4c312" formatted="false">पाठ निर्यात करें</string>
+    <string name="ui_finish_cooking_073c7a" formatted="false">खाना पकाना समाप्त करें</string>
+    <string name="ui_from_this_week_s_plan_d1be4f" formatted="false">इस सप्ताह की योजना से</string>
+    <string name="ui_generated_quantities_reflect_pla_61a80d" formatted="false">उत्पन्न मात्राएँ नियोजित सर्विंग्स को दर्शाती हैं और संगत पेंट्री मात्रा में कटौती करती हैं। पुनर्निर्माण में मैन्युअल आइटम रखे जाते हैं।</string>
+    <string name="ui_give_it_a_little_time_adfe27" formatted="false">इसे थोड़ा समय दीजिए</string>
+    <string name="ui_good_food_less_waste_4eb429" formatted="false">अच्छा खाना, कम बर्बादी</string>
+    <string name="ui_good_recipes_deserve_a_place_to__f1bd5e" formatted="false">अच्छे व्यंजनों के लिए रहने की जगह होनी चाहिए।</string>
+    <string name="ui_import_2cff9b" formatted="false">आयात</string>
+    <string name="ui_import_json_backup_fe0cd1" formatted="false">JSON बैकअप आयात करें</string>
+    <string name="ui_import_this_backup_ecd47c" formatted="false">यह बैकअप आयात करें?</string>
+    <string name="ui_import_validates_the_entire_back_86e01c" formatted="false">आयात लिखने से पहले संपूर्ण बैकअप को मान्य करता है और एक खाली रसोईघर की आवश्यकता होती है।</string>
+    <string name="ui_ingredients_87675d" formatted="false">सामग्री</string>
+    <string name="ui_ingredients_one_per_line_e_g_200_d4d092" formatted="false">सामग्री · प्रति पंक्ति एक (जैसे 200 ग्राम आटा)</string>
+    <string name="ui_item_name_70d5f4" formatted="false">आइटम नाम</string>
+    <string name="ui_keep_a_copy_e53d3b" formatted="false">एक प्रति रखें</string>
+    <string name="ui_keep_aggregate_usage_counts_on_t_a9093e" formatted="false">इस डिवाइस पर कुल उपयोग की गणना रखें</string>
+    <string name="ui_keep_cooking_d9de3b" formatted="false">खाना पकाते रहो</string>
+    <string name="ui_keep_my_kitchen_79ce76" formatted="false">मेरी रसोई रखो</string>
+    <string name="ui_keep_track_of_what_you_already_h_9f24a1" formatted="false">जो आपके पास पहले से है उसका ध्यान रखें।</string>
+    <string name="ui_language_accessibility_24f044" formatted="false">भाषा और पहुंच</string>
+    <string name="ui_let_s_make_something_good_8f500e" formatted="false">आइये कुछ अच्छा बनायें</string>
+    <string name="ui_load_demo_kitchen_df8474" formatted="false">डेमो किचन लोड करें</string>
+    <string name="ui_made_again_loved_again_f1ebfd" formatted="false">दोबारा बनाया. फिर से प्यार हो गया.</string>
+    <string name="ui_made_for_the_joy_of_cooking_c83bee" formatted="false">खाना पकाने के आनंद के लिए बनाया गया।</string>
+    <string name="ui_make_it_yours_34ca8a" formatted="false">इसे अपना बनाएं</string>
+    <string name="ui_make_room_for_good_food_e392e4" formatted="false">अच्छे भोजन के लिए जगह बनायें</string>
+    <string name="ui_make_shopping_list_ad0a17" formatted="false">खरीदारी की सूची बनाएं</string>
+    <string name="ui_make_yourself_at_home_a0548a" formatted="false">इसे अपना घर समझें</string>
+    <string name="ui_maximum_total_minutes_4e76ea" formatted="false">अधिकतम कुल मिनट</string>
+    <string name="ui_method_one_step_per_line_322349" formatted="false">विधि · प्रति पंक्ति एक कदम</string>
+    <string name="ui_minutes_1_1440_5357e2" formatted="false">मिनट (1-1440)</string>
+    <string name="ui_no_registration_advertising_or_a_00a2f4" formatted="false">कोई पंजीकरण, विज्ञापन या विश्लेषण डेटा भेजना नहीं। रेसिपी और रसोई का डेटा इसी डिवाइस पर रहता है। अंग्रेज़ी फ़ोटो पहचान डिवाइस पर होती है। वेबसाइट से आयात अनुरोधित साइट और उसके रीडायरेक्ट से संपर्क करता है। आवाज़ के लिए टैप करके बोलें; आपका वाणी प्रदाता ऑडियो ऑनलाइन संसाधित कर सकता है। DishNest कच्चा ऑडियो नहीं रखता। बिलिंग कॉन्फ़िगर होने पर Amazon उपयोगकर्ता और रसीद पहचानकर्ता सत्यापन सेवा और Amazon को भेजे जाते हैं; बहाली और ऑफ़लाइन पहुँच के लिए हस्ताक्षरित रसीदें निजी रूप से सहेजी जाती हैं। क्लाउड बैकअप जुड़ा नहीं है।</string>
+    <string name="ui_no_store_prices_free_trials_or_p_dbbbec" formatted="false">सदस्यता Amazon के ज़रिए तब तक नवीनीकृत होती है जब तक आप उसे Amazon की सदस्यता सेटिंग में रद्द न करें। पुष्टि करने से पहले Amazon लागू कीमत, बिलिंग अवधि और उपलब्ध ऑफ़र दिखाता है। आजीवन खरीद का भुगतान एक बार होता है। DishNest किसी परीक्षण अवधि का वादा नहीं करता।</string>
+    <string name="ui_notes_from_your_kitchen_043bc7" formatted="false">आपकी रसोई के नोट्स</string>
+    <string name="ui_off_by_default_counts_contain_no_6ec589" formatted="false">डिफ़ॉल्ट रूप से बंद। गिनती में रेसिपी की सामग्री, ऑडियो, नाम या पहचानकर्ता नहीं होते। कुछ भी भेजा नहीं जाता। बंद करने पर गिनती मिट जाती है। बिलिंग बंद होने पर खरीद और परीक्षण से सदस्यता में बदलाव की गिनती निष्क्रिय रहती है।</string>
+    <string name="ui_one_list_a_lighter_shop_ba8c84" formatted="false">एक सूची, आसान खरीदारी</string>
+    <string name="ui_optional_usage_counts_ea8511" formatted="false">उपयोग की वैकल्पिक गिनती</string>
+    <string name="ui_permanently_delete_9003e1" formatted="false">हमेशा के लिए मिटाएँ</string>
+    <string name="ui_permanently_remove_all_local_rec_62eb3a" formatted="false">सभी स्थानीय रेसिपी, योजनाएँ, भंडार, खरीदारी की वस्तुएँ, टेम्पलेट, टाइमर और संलग्न फ़ोटो हमेशा के लिए मिटाएँ। पहले वह सब निर्यात कर लें जिसे रखना चाहते हैं।</string>
+    <string name="ui_personal_notes_210f34" formatted="false">निजी नोट्स</string>
+    <string name="ui_plan_for_me_c13f33" formatted="false">मेरे लिए योजना बनाएँ</string>
+    <string name="ui_plan_seven_dinners_a453e5" formatted="false">सात रात के भोजन की योजना बनाएँ</string>
+    <string name="ui_planned_premium_features_821e28" formatted="false">Premium सुविधाएँ</string>
+    <string name="ui_premium_is_being_prepared_this_d_c133a3" formatted="false">असीमित रेसिपी, रेसिपी आयात और दोबारा उपयोग योग्य भोजन योजना टेम्पलेट।</string>
+    <string name="ui_prep_minutes_87773e" formatted="false">तैयारी के मिनट</string>
+    <string name="ui_privacy_permissions_77c242" formatted="false">गोपनीयता और अनुमतियाँ</string>
+    <string name="ui_quantity_blank_if_unknown_1d8e1a" formatted="false">मात्रा · अज्ञात हो तो खाली छोड़ें</string>
+    <string name="ui_read_a_recipe_photo_on_your_devi_ea83af" formatted="false">अपने डिवाइस पर रेसिपी की फ़ोटो पढ़ें। शामिल अंग्रेज़ी OCR मॉडल ऑफ़लाइन काम करता है; सटीकता फ़ोटो पर निर्भर है। चित्र अपलोड नहीं होता।</string>
+    <string name="ui_read_step_e03fc7" formatted="false">चरण पढ़ें</string>
+    <string name="ui_recipe_name_c343c4" formatted="false">रेसिपी का नाम</string>
+    <string name="ui_required_dietary_tag_exact_saved_84dad6" formatted="false">आवश्यक आहार टैग · सहेजे गए टैग से बिल्कुल मेल खाए</string>
+    <string name="ui_restore_amazon_purchases_3b7842" formatted="false">Amazon की खरीद बहाल करें</string>
+    <string name="ui_review_every_ingredient_and_step_5bcc99" formatted="false">सहेजने से पहले हर सामग्री और चरण की समीक्षा करें। परोसने की संख्या और समय न दिए हों तो दर्ज करें; केवल उचित होने पर 0 मिनट लिखें।</string>
+    <string name="ui_review_structured_recipe_4cf14b" formatted="false">संरचित रेसिपी की समीक्षा करें</string>
+    <string name="ui_room_for_more_627976" formatted="false">और चीज़ों के लिए जगह</string>
+    <string name="ui_save_1509f5" formatted="false">सहेजें</string>
+    <string name="ui_save_recipe_5622a7" formatted="false">रेसिपी सहेजें</string>
+    <string name="ui_save_template_47f72a" formatted="false">टेम्पलेट सहेजें</string>
+    <string name="ui_save_this_week_s_rhythm_229a2e" formatted="false">इस सप्ताह की दिनचर्या सहेजें</string>
+    <string name="ui_servings_32939b" formatted="false">परोसने की संख्या</string>
+    <string name="ui_seven_dinners_from_your_saved_re_db57ba" formatted="false">आपकी सहेजी गई रेसिपी से सात रात के भोजन, भंडार से मेल खाने वाली रेसिपी पहले। यह पूरी तरह आपके डिवाइस पर चलता है।</string>
+    <string name="ui_share_list_33f118" formatted="false">सूची साझा करें</string>
+    <string name="ui_source_url_1adf66" formatted="false">स्रोत URL</string>
+    <string name="ui_speech_recognition_and_language__01e307" formatted="false">वाणी पहचान और भाषा समर्थन डिवाइस के अनुसार बदलते हैं। सभी चरण और टाइमर स्पर्श से काम करते हैं।</string>
+    <string name="ui_start_timer_4fcf31" formatted="false">टाइमर चालू करें</string>
+    <string name="ui_tap_to_speak_8e8fa9" formatted="false">बोलने के लिए टैप करें</string>
+    <string name="ui_template_name_7b905e" formatted="false">टेम्पलेट का नाम</string>
+    <string name="ui_the_app_follows_your_device_s_la_2ed1cc" formatted="false">ऐप आपके डिवाइस की भाषा, पाठ के आकार और लिखने की दिशा का पालन करता है। इंटरफ़ेस अनुवाद मसौदे हैं और मातृभाषी की समीक्षा बाकी है। कुकिंग मोड में बड़े अक्षर होते हैं और स्क्रीन चालू रहती है।</string>
+    <string name="ui_the_backup_will_be_validated_and_1a7df3" formatted="false">बैकअप की जाँच करके उसे खाली रसोई में जोड़ा जाएगा। मौजूदा डेटा बदला नहीं जाएगा।</string>
+    <string name="ui_this_also_removes_it_from_planne_c25d45" formatted="false">यह इसे नियोजित भोजन से भी हटा देता है। रखना चाहें तो पहले एक प्रति निर्यात करें।</string>
+    <string name="ui_this_cannot_be_undone_export_a_b_dfe37b" formatted="false">इसे वापस नहीं किया जा सकता। आगे बढ़ने से पहले बैकअप निर्यात करें।</string>
+    <string name="ui_timer_label_6a43fd" formatted="false">टाइमर का नाम</string>
+    <string name="ui_today_2b065c" formatted="false">आज</string>
+    <string name="ui_under_30_min_c9922c" formatted="false">30 मिनट से कम</string>
+    <string name="ui_unit_g_kg_ml_l_tsp_tbsp_6e0535" formatted="false">इकाई · g, kg, ml, l, tsp, tbsp…</string>
+    <string name="ui_unlimited_recipes_meal_plan_temp_05c133" formatted="false">सत्यापित पहुँच अधिकतम 24 घंटे के लिए कैश होती है और ज्ञात सदस्यता समाप्ति से आगे नहीं चलती। सत्यापन समाप्त होने पर दोबारा कनेक्ट करें और खरीद बहाल करें। सहेजी गई रेसिपी उपलब्ध रहती हैं।</string>
+    <string name="ui_use_camera_25987b" formatted="false">कैमरा इस्तेमाल करें</string>
+    <string name="ui_use_what_you_have_37fd8b" formatted="false">जो आपके पास है उसका उपयोग करें</string>
+    <string name="ui_validate_and_import_c02c3a" formatted="false">जाँचें और आयात करें</string>
+    <string name="ui_view_original_source_4dd847" formatted="false">मूल स्रोत देखें</string>
+    <string name="ui_what_s_in_your_kitchen_577097" formatted="false">आपकी रसोई में क्या है?</string>
+    <string name="ui_your_everyday_kitchen_f3db1b" formatted="false">आपकी रोज़मर्रा की रसोई</string>
+    <string name="ui_your_kitchen_beautifully_togethe_45a076" formatted="false">आपकी रसोई, सुंदर ढंग से एक साथ।</string>
+    <string name="ui_your_recipe_book_e5e04f" formatted="false">आपकी रेसिपी पुस्तक</string>
+    <string name="ui_your_recipes_and_saved_templates_56c9f9" formatted="false">आपकी रेसिपी और सहेजे गए टेम्पलेट उपलब्ध रहेंगे।</string>
+    <string name="ui_your_recipes_plans_pantry_and_sh_135c7c" formatted="false">आपकी रेसिपी, योजनाएँ, भंडार और खरीदारी सूची इस डिवाइस पर रहती हैं। JSON बैकअप में संलग्न फ़ोटो और टाइमर नहीं आते। निर्यात की गई फ़ाइलें निजी स्थान पर रखें।</string>
+    <string name="billing_not_configured">खरीद के लिए Amazon कैटलॉग और सत्यापन सेवा कॉन्फ़िगर करनी होगी। इस बिल्ड में कोई भुगतान नहीं लिया जा सकता।</string>
+    <string name="billing_ready">Amazon खाता तैयार है। कीमतें Amazon से आती हैं।</string>
+    <string name="billing_retry">स्टोर से संपर्क नहीं हो सका। फिर कोशिश करें।</string>
+    <string name="billing_account_unavailable">Amazon खरीद उपलब्ध नहीं है। समर्थित Fire डिवाइस पर Amazon में साइन इन करके फिर कोशिश करें।</string>
+    <string name="billing_already_owned">पहले ही खरीदा गया है। आपकी खरीद जाँची जा रही है।</string>
+    <string name="billing_pending">Amazon खरीद की अनुमति की प्रतीक्षा है। अनुमति और सत्यापन के बाद Premium खुलेगा।</string>
+    <string name="billing_unavailable_product">यह उत्पाद आपके Amazon मार्केटप्लेस में उपलब्ध नहीं है।</string>
+    <string name="billing_purchase_failed">खरीद पूरी नहीं हुई। दोबारा कोशिश करें या खरीद बहाल करें।</string>
+    <string name="billing_verification_retry">सत्यापन पूरा नहीं हो सका। पहले से सत्यापित पहुँच उसके सत्यापन की समाप्ति तक बनी रहती है। दोबारा कोशिश के लिए खरीद बहाल करें।</string>
+    <string name="billing_active">DishNest Premium सक्रिय है।</string>
+    <string name="billing_no_purchases">इस Amazon खाते के लिए कोई सक्रिय Premium खरीद नहीं मिली।</string>
+    <string name="premium_required">इस सुविधा के लिए DishNest Premium चाहिए। उपलब्ध योजनाएँ देखने के लिए सेटिंग खोलें।</string>
+    <string name="premium_features">असीमित रेसिपी, रेसिपी आयात और दोबारा उपयोग योग्य भोजन योजना टेम्पलेट।</string>
+    <string name="premium_terms">सदस्यता Amazon के ज़रिए तब तक नवीनीकृत होती है जब तक आप उसे Amazon की सदस्यता सेटिंग में रद्द न करें। पुष्टि करने से पहले Amazon लागू कीमत, बिलिंग अवधि और उपलब्ध ऑफ़र दिखाता है। आजीवन खरीद का भुगतान एक बार होता है। DishNest किसी परीक्षण अवधि का वादा नहीं करता।</string>
+    <string name="premium_cache">सत्यापित पहुँच अधिकतम 24 घंटे के लिए कैश होती है और ज्ञात सदस्यता समाप्ति से आगे नहीं चलती। सत्यापन समाप्त होने पर दोबारा कनेक्ट करें और खरीद बहाल करें। सहेजी गई रेसिपी उपलब्ध रहती हैं।</string>
+    <string name="edition_free">मुफ़्त संस्करण · 25 रेसिपी की सीमा</string>
+    <string name="edition_premium">Premium</string>
+    <string name="copy_0070948938" formatted="false">अगला चरण, दोहराएँ, सामग्री दिखाएँ या दस मिनट का टाइमर लगाने का निर्देश दें।</string>
+    <string name="copy_024950cf2c" formatted="false">रेसिपी आयात करें</string>
+    <string name="copy_02a9db66ee" formatted="false">रेसिपी की प्रतिलिपि बनाएँ</string>
+    <string name="copy_03ba74aae3" formatted="false">रेसिपी की समीक्षा करें</string>
+    <string name="copy_04bf79e202" formatted="false">रेसिपी मिटाएँ</string>
+    <string name="copy_073c7a8f10" formatted="false">खाना पकाना समाप्त करें</string>
+    <string name="copy_206e1064b7" formatted="false">इस रेसिपी में निर्देश जोड़ें।</string>
+    <string name="copy_2198638b49" formatted="false">कुछ भोजन की योजना बनाएँ, फिर उनकी सामग्री एक साथ रखें।</string>
+    <string name="copy_21fbde19cf" formatted="false">अगला सप्ताह</string>
+    <string name="copy_241171761e" formatted="false">अच्छे खाने की रेसिपी सँभालकर रखें।</string>
+    <string name="copy_24486a0cb6" formatted="false">कोई निर्देश नहीं</string>
+    <string name="copy_27809578e7" formatted="false">रेसिपी का पाठ चिपकाएँ</string>
+    <string name="copy_298a9207a7" formatted="false">अगला चरण</string>
+    <string name="copy_2db80e2a1d" formatted="false">शून्य या उससे अधिक मात्रा दर्ज करें।</string>
+    <string name="copy_2f4ddffe07" formatted="false">टाइमर रुका हुआ है</string>
+    <string name="copy_318c1da8d9" formatted="false">पिछला चरण</string>
+    <string name="copy_357d388fdf" formatted="false">टाइमर रद्द करें</string>
+    <string name="copy_3621a99bef" formatted="false">पसंदीदा स्थिति बदलें</string>
+    <string name="copy_3927421bab" formatted="false">भोजन या परोसने की संख्या बदलें</string>
+    <string name="copy_4304f7be23" formatted="false">सहेजी गई रेसिपी</string>
+    <string name="copy_477ef9ae15" formatted="false">आपका सप्ताह, सोच-समझकर नियोजित</string>
+    <string name="copy_47b0904ec9" formatted="false">वेबसाइट का लिंक</string>
+    <string name="copy_481682c207" formatted="false">रेसिपी संपादित करें</string>
+    <string name="copy_48432b3843" formatted="false">भंडार में वस्तु जोड़ें</string>
+    <string name="copy_49b8bc2c67" formatted="false">रेसिपी की फ़ोटो जोड़ें</string>
+    <string name="copy_4d68fe9e8f" formatted="false">कैमरा ऐप उपलब्ध नहीं है। इसके बजाय कोई चित्र चुनें।</string>
+    <string name="copy_553628331c" formatted="false">आपकी रसोई, आपके तरीके से</string>
+    <string name="copy_55e1a0c898" formatted="false">टाइमर रोकें या फिर चालू करें</string>
+    <string name="copy_579e329ab4" formatted="false">परोसने की संख्या 1 से 100 के बीच रखें।</string>
+    <string name="copy_591303470a" formatted="false">जो आपके पास है उसे जोड़ें, ताकि अगली खरीदारी बेहतर हो।</string>
+    <string name="copy_5ce282fca6" formatted="false">परिवार की पसंदीदा रेसिपी</string>
+    <string name="copy_5d4570598c" formatted="false">रेसिपी साझा करें</string>
+    <string name="copy_5ecc81d67a" formatted="false">निर्यात सहेजा नहीं जा सका</string>
+    <string name="copy_640c34133b" formatted="false">कामकाजी दिनों का रात का खाना</string>
+    <string name="copy_66bf733db7" formatted="false">माइक्रोफ़ोन की अनुमति नहीं मिली। सभी स्पर्श नियंत्रण उपलब्ध हैं।</string>
+    <string name="copy_672e21cbc1" formatted="false">बैकअप सहेजा नहीं जा सका</string>
+    <string name="copy_68669895ac" formatted="false">वस्तु का नाम दर्ज करें।</string>
+    <string name="copy_6a38c0b66f" formatted="false">खरीदारी सूची निर्यात की गई</string>
+    <string name="copy_6be2cd1944" formatted="false">सामग्री दिखाई गई</string>
+    <string name="copy_74a883a037" formatted="false">सेटिंग</string>
+    <string name="copy_76c65b7344" formatted="false">रेसिपी आयात नहीं हो सकी</string>
+    <string name="copy_793b69cce2" formatted="false">इस सप्ताह के भोजन</string>
+    <string name="copy_7d9eb7acb1" formatted="false">बंद करें</string>
+    <string name="copy_7ec446a336" formatted="false">जानें आपके पास क्या है। कुछ स्वादिष्ट बनाएँ।</string>
+    <string name="copy_86b1fdfa00" formatted="false">भंडार की वस्तु हटाएँ</string>
+    <string name="copy_89ca7aafe1" formatted="false">सभी सामग्री के नाम मिले। पकाने से पहले मात्रा जाँचें।</string>
+    <string name="copy_89ea751a62" formatted="false">रेसिपी पुस्तक निर्यात की गई</string>
+    <string name="copy_8b566d5081" formatted="false">अपनी रसोई में आपका स्वागत है</string>
+    <string name="copy_8d014e1c45" formatted="false">रेसिपी जोड़ें</string>
+    <string name="copy_9328724b4c" formatted="false">पाठ चिपकाएँ</string>
+    <string name="copy_93aa52c0ba" formatted="false">भोजन हटाएँ</string>
+    <string name="copy_97a804fd48" formatted="false">खरीदारी की वस्तु</string>
+    <string name="copy_9be45213e6" formatted="false">कोई सक्रिय टाइमर नहीं</string>
+    <string name="copy_9d3b335d3c" formatted="false">रेसिपी पढ़ी जा रही है…</string>
+    <string name="copy_9ee92f81e3" formatted="false">खरीदना बाकी</string>
+    <string name="copy_9f375d0d3d" formatted="false">DishNest खरीदारी सूची</string>
+    <string name="copy_9f472a48e0" formatted="false">शीर्षक और Ingredients तथा Method या Instructions शीर्षक जोड़ें। अनुपलब्ध जानकारी गढ़ी नहीं जाएगी।</string>
+    <string name="copy_9f6ac50566" formatted="false">आपके अनुकूल सप्ताह</string>
+    <string name="copy_a0910e26a9" formatted="false">ऐसे सार्वजनिक HTTPS पृष्ठ से Recipe JSON-LD आयात करें जिसे सहेजने की अनुमति हो। प्रतिबंधों को पार नहीं किया जाता।</string>
+    <string name="copy_a25d1bda32" formatted="false">DishNest Premium</string>
+    <string name="copy_a6ebea75ab" formatted="false">OCR शुरू नहीं हो सका।</string>
+    <string name="copy_a985a43f15" formatted="false">बैकअप निर्यात किया गया (फ़ोटो शामिल नहीं)</string>
+    <string name="copy_ab00db4db2" formatted="false">रेसिपी का नाम, सामग्री और विधि जोड़ें।</string>
+    <string name="copy_ab524fd1c2" formatted="false">एक रेसिपी घर लाएँ</string>
+    <string name="copy_adda900c1c" formatted="false">अपनी पहली रेसिपी सहेजें</string>
+    <string name="copy_b0059bc190" formatted="false">रेसिपी जोड़ें या फिर से खोजें।</string>
+    <string name="copy_b5b34f89ff" formatted="false">भंडार की वस्तु</string>
+    <string name="copy_c0f8bbcd41" formatted="false">पिछला सप्ताह</string>
+    <string name="copy_c7bb32b3d5" formatted="false">सभी रेसिपी</string>
+    <string name="copy_ca07f55dcb" formatted="false">तैयारी और पकाने के मिनट 0 से 10080 के बीच दर्ज करें।</string>
+    <string name="copy_ca2fa599a0" formatted="false">आपके भंडार की अच्छी चीज़ें</string>
+    <string name="copy_cdc99bac2c" formatted="false">पढ़ने योग्य पाठ नहीं मिला। अधिक रोशनी वाली स्पष्ट फ़ोटो आज़माएँ।</string>
+    <string name="copy_cf31825cce" formatted="false">बैकअप खुल नहीं सका</string>
+    <string name="copy_d11fcfd774" formatted="false">सामग्री नहीं मिली। सूची देखने के लिए सामग्री पर टैप करें।</string>
+    <string name="copy_d84eebada9" formatted="false">फ़ोटो</string>
+    <string name="copy_d944203610" formatted="false">वस्तु जोड़ें</string>
+    <string name="copy_d97d51d370" formatted="false">पसंदीदा</string>
+    <string name="copy_e2a2406740" formatted="false">आपकी ज़रूरत की हर चीज़</string>
+    <string name="copy_e39b24993c" formatted="false">पसंदीदा</string>
+    <string name="copy_e400521d2f" formatted="false">बोले जाने वाले निर्देश चालू या बंद करें</string>
+    <string name="copy_e5e04f3aa7" formatted="false">आपकी रेसिपी पुस्तक</string>
+    <string name="copy_e5fc1da796" formatted="false">भंडार की वस्तु संपादित करें</string>
+    <string name="copy_eacb35734f" formatted="false">गोपनीयता के लिए बनाया गया। हमेशा आपके पास।</string>
+    <string name="copy_f03f0e4ef3" formatted="false">«रात को क्या बनेगा?» की चिंता कुछ कम</string>
+    <string name="copy_f15ef2ba77" formatted="false">सूचनाएँ बंद हैं। टाइमर देखने के लिए कुकिंग मोड खुला रखें।</string>
+    <string name="copy_f46668cb02" formatted="false">रेसिपी की फ़ोटो बदलें</string>
+    <string name="copy_f60047d5c0" formatted="false">चित्र पढ़ा नहीं जा सका</string>
+    <string name="copy_ff59fa9de2" formatted="false">DishNest लोगो</string>
+<plurals name="recipe_count"><item quantity="one">%d रेसिपी</item><item quantity="other">%d रेसिपी</item></plurals>
+    <string name="third_party_notices">तृतीय-पक्ष सॉफ़्टवेयर की सूचनाएँ</string>
+    <string name="billing_monthly">मासिक सदस्यता</string>
+    <string name="billing_annual">वार्षिक सदस्यता</string>
+    <string name="billing_one_time">एक बार की खरीद</string>
+</resources>

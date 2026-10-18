@@ -1,0 +1,237 @@
+{
+  "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
+  "apk_sha256": "e0d6dc94c98df6c09e2aa245c39d8db7c77706f8898494ddef5ae03f9b615fb2",
+  "libraries": [
+    {
+      "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/arm64-v8a/libdatastore_shared_counter.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/arm64-v8a/libjpeg.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/arm64-v8a/libleptonica.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/arm64-v8a/libpngx.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/arm64-v8a/libtesseract.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/armeabi-v7a/libandroidx.graphics.path.so",
+      "bits": 32,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/armeabi-v7a/libdatastore_shared_counter.so",
+      "bits": 32,
+      "load_alignments": [
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/armeabi-v7a/libjpeg.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/armeabi-v7a/libleptonica.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/armeabi-v7a/libpngx.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/armeabi-v7a/libtesseract.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86/libandroidx.graphics.path.so",
+      "bits": 32,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86/libdatastore_shared_counter.so",
+      "bits": 32,
+      "load_alignments": [
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86/libjpeg.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86/libleptonica.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86/libpngx.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86/libtesseract.so",
+      "bits": 32,
+      "load_alignments": [
+        4096,
+        4096,
+        4096
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86_64/libandroidx.graphics.path.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86_64/libdatastore_shared_counter.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86_64/libjpeg.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86_64/libleptonica.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86_64/libpngx.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    },
+    {
+      "path": "lib/x86_64/libtesseract.so",
+      "bits": 64,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "supports_16k_load_alignment": true
+    }
+  ],
+  "passed": true,
+  "device_tested": false
+}

@@ -1,0 +1,10 @@
+[
+  {"id":"01","screen":"recipes","headline":"Recipe Keeper & Organiser","subheadline":"Save your favourite recipes in one beautiful place."},
+  {"id":"02","screen":"plan","headline":"Weekly Meal Planner","subheadline":"Plan breakfast, lunch and dinner with ease."},
+  {"id":"03","screen":"shopping","headline":"Automatic Shopping Lists","subheadline":"Turn meal plans into organised grocery lists."},
+  {"id":"04","screen":"cooking","headline":"Hands-Free Cooking Mode","subheadline":"Follow recipes with large text and voice guidance."},
+  {"id":"05","screen":"import","headline":"Smart Recipe Import","subheadline":"Save recipes from links, text and photos."},
+  {"id":"06","screen":"pantry","headline":"Pantry & Food Organisation","subheadline":"Discover meals using ingredients you already have."},
+  {"id":"07","screen":"recipe-detail","headline":"Offline Recipe Book","subheadline":"Access saved recipes without internet."},
+  {"id":"08","screen":"plan","headline":"Meal Planning Made Simple","subheadline":"Stay organised with reusable meal plans."}
+]

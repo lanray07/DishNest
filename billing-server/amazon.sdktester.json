@@ -1,0 +1,22 @@
+{
+  "dishnest.premium.monthly": {
+    "itemType": "SUBSCRIPTION",
+    "price": 1.00,
+    "title": "TEST ONLY — DishNest Premium monthly",
+    "description": "Sandbox fixture; no approved production price or trial.",
+    "subscriptionParent": "dishnest.premium"
+  },
+  "dishnest.premium.annual": {
+    "itemType": "SUBSCRIPTION",
+    "price": 10.00,
+    "title": "TEST ONLY — DishNest Premium annual",
+    "description": "Sandbox fixture; no approved production price or trial.",
+    "subscriptionParent": "dishnest.premium"
+  },
+  "dishnest.premium.lifetime": {
+    "itemType": "ENTITLED",
+    "price": 20.00,
+    "title": "TEST ONLY — DishNest Premium lifetime",
+    "description": "Sandbox fixture; optional one-time unlock. Not a production offer."
+  }
+}

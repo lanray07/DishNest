@@ -1,0 +1,268 @@
+<resources>
+    <string name="nav_home">My kitchen</string>
+    <string name="nav_recipes">Recipe book</string>
+    <string name="nav_plan">Meal planner</string>
+    <string name="nav_shop">Shopping list</string>
+    <string name="nav_pantry">Pantry</string>
+    <string name="nav_settings">Settings</string>
+    <string name="greeting">A little planning. A lot more joy.</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="add_recipe">Add recipe</string>
+    <string name="search">Search your recipes</string>
+    <string name="cook">Start cooking</string>
+    <string name="next">Next step</string>
+    <string name="previous">Previous step</string>
+    <string name="empty_recipes">Your next favourite starts here.</string>
+    <string name="empty_hint">Save a recipe and make yourself at home.</string>
+    <string name="premium">DishNest Premium</string>
+    <string name="ui_a_calmer_week_188aa5" formatted="false">A calmer week</string>
+    <string name="ui_a_clean_slate_cc5380" formatted="false">A clean slate</string>
+    <string name="ui_a_fresh_page_in_your_recipe_book_91f362" formatted="false">A fresh page in your recipe book</string>
+    <string name="ui_a_good_shop_starts_with_a_plan_dfb246" formatted="false">A good shop starts with a plan</string>
+    <string name="ui_a_little_description_e30ea8" formatted="false">A little description</string>
+    <string name="ui_a_little_extra_for_your_kitchen_57e0a8" formatted="false">A little extra for your kitchen.</string>
+    <string name="ui_a_little_extra_room_for_the_way__59991a" formatted="false">A little extra room\nfor the way you cook.</string>
+    <string name="ui_a_little_inspiration_4c35e1" formatted="false">A little inspiration</string>
+    <string name="ui_a_little_less_waste_b8146c" formatted="false">A little less waste</string>
+    <string name="ui_a_little_pantry_check_goes_a_lon_d0a60c" formatted="false">A little pantry check goes a long way.</string>
+    <string name="ui_active_timers_will_continue_you__ab36a2" formatted="false">Active timers will continue. You can return to cooking mode to manage them.</string>
+    <string name="ui_add_a_meal_fe642f" formatted="false">Add a meal</string>
+    <string name="ui_add_item_d1a0b3" formatted="false">Add item</string>
+    <string name="ui_add_recipe_8d014e" formatted="false">Add recipe</string>
+    <string name="ui_add_timer_5a6dfa" formatted="false">Add timer</string>
+    <string name="ui_all_done_in_the_kitchen_a5b557" formatted="false">All done in the kitchen?</string>
+    <string name="ui_always_check_quantities_serving__0d0645" formatted="false">Always check quantities, serving size, timings and instructions against the original.</string>
+    <string name="ui_back_to_kitchen_901962" formatted="false">Back to kitchen</string>
+    <string name="ui_background_alerts_may_be_delayed_84d690" formatted="false">Background alerts may be delayed by device power settings.</string>
+    <string name="ui_cancel_19766e" formatted="false">Cancel</string>
+    <string name="ui_check_date_yyyy_mm_dd_optional_ebbc43" formatted="false">Check date · YYYY-MM-DD (optional)</string>
+    <string name="ui_check_recipe_suitability_and_all_e97821" formatted="false">Check recipe suitability and allergens yourself before cooking.</string>
+    <string name="ui_choose_photo_9c5bb7" formatted="false">Choose photo</string>
+    <string name="ui_clear_this_week_0389b3" formatted="false">Clear this week?</string>
+    <string name="ui_clear_week_32148a" formatted="false">Clear week</string>
+    <string name="ui_collected_with_love_4b0a34" formatted="false">Collected with love</string>
+    <string name="ui_collection_7b7907" formatted="false">Collection</string>
+    <string name="ui_cook_minutes_8b80a8" formatted="false">Cook minutes</string>
+    <string name="ui_copy_previous_week_d774bf" formatted="false">Copy previous week</string>
+    <string name="ui_correct_recognised_text_add_ingr_2bc536" formatted="false">Correct recognised text · add Ingredients and Method headings</string>
+    <string name="ui_cuisine_6814ff" formatted="false">Cuisine</string>
+    <string name="ui_cuisine_leave_blank_for_any_1adbae" formatted="false">Cuisine · leave blank for any</string>
+    <string name="ui_dates_are_reminders_to_check_you_fdb98c" formatted="false">Dates are reminders to check your food and its packaging; they are not a guarantee of safety.</string>
+    <string name="ui_delete_all_kitchen_data_013193" formatted="false">Delete all kitchen data</string>
+    <string name="ui_delete_all_kitchen_data_3aa3db" formatted="false">Delete all kitchen data?</string>
+    <string name="ui_delete_e2d0a5" formatted="false">Delete</string>
+    <string name="ui_delete_this_recipe_4a5731" formatted="false">Delete this recipe?</string>
+    <string name="ui_demo_kitchen_e41a43" formatted="false">Demo kitchen</string>
+    <string name="ui_demo_recipes_are_original_exampl_069377" formatted="false">Demo recipes are original examples. Demo data is added only when you choose it in an empty kitchen.</string>
+    <string name="ui_dietary_tags_comma_separated_7222ad" formatted="false">Dietary tags · comma separated</string>
+    <string name="ui_difficulty_be4413" formatted="false">Difficulty</string>
+    <string name="ui_dishnest_0_1_0_development_previ_c14494" formatted="false">DishNest 0.1.0 · Development preview\nSave recipes. Plan meals. Cook hands-free.</string>
+    <string name="ui_dishnest_80ec64" formatted="false">DishNest</string>
+    <string name="ui_explore_a_demo_kitchen_6bdc4e" formatted="false">Explore a demo kitchen</string>
+    <string name="ui_explore_dishnest_b5a56c" formatted="false">Explore DishNest</string>
+    <string name="ui_explore_dishnest_premium_5a187f" formatted="false">Explore DishNest Premium</string>
+    <string name="ui_explore_premium_7a1440" formatted="false">Explore Premium  →</string>
+    <string name="ui_export_json_backup_0db468" formatted="false">Export JSON backup</string>
+    <string name="ui_export_recipe_book_as_text_f6ad1f" formatted="false">Export recipe book as text</string>
+    <string name="ui_export_text_e4c312" formatted="false">Export text</string>
+    <string name="ui_finish_cooking_073c7a" formatted="false">Finish cooking</string>
+    <string name="ui_from_this_week_s_plan_d1be4f" formatted="false">From this week\'s plan</string>
+    <string name="ui_generated_quantities_reflect_pla_61a80d" formatted="false">Generated quantities reflect planned servings and deduct compatible pantry quantities. Rebuilding keeps manual items.</string>
+    <string name="ui_give_it_a_little_time_adfe27" formatted="false">Give it a little time</string>
+    <string name="ui_good_food_less_waste_4eb429" formatted="false">Good food, less waste</string>
+    <string name="ui_good_recipes_deserve_a_place_to__f1bd5e" formatted="false">Good recipes deserve a place to stay.</string>
+    <string name="ui_import_2cff9b" formatted="false">Import</string>
+    <string name="ui_import_json_backup_fe0cd1" formatted="false">Import JSON backup</string>
+    <string name="ui_import_this_backup_ecd47c" formatted="false">Import this backup?</string>
+    <string name="ui_import_validates_the_entire_back_86e01c" formatted="false">Import validates the entire backup before writing and requires an empty kitchen.</string>
+    <string name="ui_ingredients_87675d" formatted="false">Ingredients</string>
+    <string name="ui_ingredients_one_per_line_e_g_200_d4d092" formatted="false">Ingredients · one per line (e.g. 200 g flour)</string>
+    <string name="ui_item_name_70d5f4" formatted="false">Item name</string>
+    <string name="ui_keep_a_copy_e53d3b" formatted="false">Keep a copy</string>
+    <string name="ui_keep_aggregate_usage_counts_on_t_a9093e" formatted="false">Keep aggregate usage counts on this device</string>
+    <string name="ui_keep_cooking_d9de3b" formatted="false">Keep cooking</string>
+    <string name="ui_keep_my_kitchen_79ce76" formatted="false">Keep my kitchen</string>
+    <string name="ui_keep_track_of_what_you_already_h_9f24a1" formatted="false">Keep track of what you already have.</string>
+    <string name="ui_language_accessibility_24f044" formatted="false">Language &amp; accessibility</string>
+    <string name="ui_let_s_make_something_good_8f500e" formatted="false">Let\'s make something good</string>
+    <string name="ui_load_demo_kitchen_df8474" formatted="false">Load demo kitchen</string>
+    <string name="ui_made_again_loved_again_f1ebfd" formatted="false">Made again. Loved again.</string>
+    <string name="ui_made_for_the_joy_of_cooking_c83bee" formatted="false">Made for the joy of cooking.</string>
+    <string name="ui_make_it_yours_34ca8a" formatted="false">Make it yours</string>
+    <string name="ui_make_room_for_good_food_e392e4" formatted="false">Make room for good food</string>
+    <string name="ui_make_shopping_list_ad0a17" formatted="false">Make shopping list</string>
+    <string name="ui_make_yourself_at_home_a0548a" formatted="false">Make yourself at home</string>
+    <string name="ui_maximum_total_minutes_4e76ea" formatted="false">Maximum total minutes</string>
+    <string name="ui_method_one_step_per_line_322349" formatted="false">Method · one step per line</string>
+    <string name="ui_minutes_1_1440_5357e2" formatted="false">Minutes (1–1440)</string>
+    <string name="ui_no_registration_advertising_or_a_00a2f4" formatted="false">No registration, advertising or analytics transmission. Recipes and kitchen data stay on this device. English photo recognition runs on device. Website import contacts the requested site and redirects. Voice is push-to-talk; your speech provider may process audio online. DishNest stores no raw audio. When configured, billing sends Amazon user and receipt identifiers to the verification service and Amazon; signed receipts are stored privately for restore and offline access. Cloud backup is not connected.</string>
+    <string name="ui_no_store_prices_free_trials_or_p_dbbbec" formatted="false">Subscriptions renew through Amazon until cancelled in your Amazon subscription settings. Amazon shows the applicable price, billing period and any offer before you confirm. A lifetime purchase is a single payment. No trial is promised by DishNest.</string>
+    <string name="ui_notes_from_your_kitchen_043bc7" formatted="false">Notes from your kitchen</string>
+    <string name="ui_off_by_default_counts_contain_no_6ec589" formatted="false">Off by default. Counts contain no recipe content, audio, names or identifiers. Nothing is transmitted. Switching off deletes these counters. Purchase and trial conversion counts are inactive while billing is disabled.</string>
+    <string name="ui_one_list_a_lighter_shop_ba8c84" formatted="false">One list, a lighter shop</string>
+    <string name="ui_optional_usage_counts_ea8511" formatted="false">Optional usage counts</string>
+    <string name="ui_permanently_delete_9003e1" formatted="false">Permanently delete</string>
+    <string name="ui_permanently_remove_all_local_rec_62eb3a" formatted="false">Permanently remove all local recipes, plans, pantry items, shopping items, templates, timers and attached photos. Export anything you want to keep first.</string>
+    <string name="ui_personal_notes_210f34" formatted="false">Personal notes</string>
+    <string name="ui_plan_for_me_c13f33" formatted="false">Plan for me</string>
+    <string name="ui_plan_seven_dinners_a453e5" formatted="false">Plan seven dinners</string>
+    <string name="ui_planned_premium_features_821e28" formatted="false">Premium features</string>
+    <string name="ui_premium_is_being_prepared_this_d_c133a3" formatted="false">Unlimited recipes, recipe import and reusable meal-plan templates.</string>
+    <string name="ui_prep_minutes_87773e" formatted="false">Prep minutes</string>
+    <string name="ui_privacy_permissions_77c242" formatted="false">Privacy &amp; permissions</string>
+    <string name="ui_quantity_blank_if_unknown_1d8e1a" formatted="false">Quantity · blank if unknown</string>
+    <string name="ui_read_a_recipe_photo_on_your_devi_ea83af" formatted="false">Read a recipe photo on your device. The bundled English OCR model works offline; accuracy depends on the photo. Your image is not uploaded.</string>
+    <string name="ui_read_step_e03fc7" formatted="false">Read step</string>
+    <string name="ui_recipe_name_c343c4" formatted="false">Recipe name</string>
+    <string name="ui_required_dietary_tag_exact_saved_84dad6" formatted="false">Required dietary tag · exact saved tag</string>
+    <string name="ui_restore_amazon_purchases_3b7842" formatted="false">Restore Amazon purchases</string>
+    <string name="ui_review_every_ingredient_and_step_5bcc99" formatted="false">Review every ingredient and step before saving. Missing serving sizes and timings must be entered; use 0 minutes only when appropriate.</string>
+    <string name="ui_review_structured_recipe_4cf14b" formatted="false">Review structured recipe</string>
+    <string name="ui_room_for_more_627976" formatted="false">Room for more</string>
+    <string name="ui_save_1509f5" formatted="false">Save</string>
+    <string name="ui_save_recipe_5622a7" formatted="false">Save recipe</string>
+    <string name="ui_save_template_47f72a" formatted="false">Save template</string>
+    <string name="ui_save_this_week_s_rhythm_229a2e" formatted="false">Save this week\'s rhythm</string>
+    <string name="ui_servings_32939b" formatted="false">Servings</string>
+    <string name="ui_seven_dinners_from_your_saved_re_db57ba" formatted="false">Seven dinners from your saved recipes, with pantry matches first. This runs entirely on your device.</string>
+    <string name="ui_share_list_33f118" formatted="false">Share list</string>
+    <string name="ui_source_url_1adf66" formatted="false">Source URL</string>
+    <string name="ui_speech_recognition_and_language__01e307" formatted="false">Speech recognition and language support vary by device. All cooking steps and timers work by touch.</string>
+    <string name="ui_start_timer_4fcf31" formatted="false">Start timer</string>
+    <string name="ui_tap_to_speak_8e8fa9" formatted="false">Tap to speak</string>
+    <string name="ui_template_name_7b905e" formatted="false">Template name</string>
+    <string name="ui_the_app_follows_your_device_s_la_2ed1cc" formatted="false">The app follows your device language, text size and layout direction. Interface translations are drafts awaiting native-speaker review. Cooking mode uses large text and keeps the screen awake.</string>
+    <string name="ui_the_backup_will_be_validated_and_1a7df3" formatted="false">The backup will be validated and added to an empty kitchen. Existing data will not be overwritten.</string>
+    <string name="ui_this_also_removes_it_from_planne_c25d45" formatted="false">This also removes it from planned meals. Export a copy first if you want to keep it.</string>
+    <string name="ui_this_cannot_be_undone_export_a_b_dfe37b" formatted="false">This cannot be undone. Export a backup before continuing.</string>
+    <string name="ui_timer_label_6a43fd" formatted="false">Timer label</string>
+    <string name="ui_today_2b065c" formatted="false">Today</string>
+    <string name="ui_under_30_min_c9922c" formatted="false">Under 30 min</string>
+    <string name="ui_unit_g_kg_ml_l_tsp_tbsp_6e0535" formatted="false">Unit · g, kg, ml, l, tsp, tbsp…</string>
+    <string name="ui_unlimited_recipes_meal_plan_temp_05c133" formatted="false">Verified access is cached for up to 24 hours, bounded by any known subscription expiry. Reconnect and restore if verification expires. Saved recipes remain available.</string>
+    <string name="ui_use_camera_25987b" formatted="false">Use camera</string>
+    <string name="ui_use_what_you_have_37fd8b" formatted="false">Use what you have</string>
+    <string name="ui_validate_and_import_c02c3a" formatted="false">Validate and import</string>
+    <string name="ui_view_original_source_4dd847" formatted="false">View original source</string>
+    <string name="ui_what_s_in_your_kitchen_577097" formatted="false">What\'s in your kitchen?</string>
+    <string name="ui_your_everyday_kitchen_f3db1b" formatted="false">YOUR EVERYDAY KITCHEN</string>
+    <string name="ui_your_kitchen_beautifully_togethe_45a076" formatted="false">Your kitchen, beautifully together.</string>
+    <string name="ui_your_recipe_book_e5e04f" formatted="false">Your recipe book</string>
+    <string name="ui_your_recipes_and_saved_templates_56c9f9" formatted="false">Your recipes and saved templates will remain available.</string>
+    <string name="ui_your_recipes_plans_pantry_and_sh_135c7c" formatted="false">Your recipes, plans, pantry and shopping list live on this device. JSON backups exclude attached photos and timers. Store exports somewhere private.</string>
+    <string name="billing_not_configured">Purchases need the Amazon catalog and verification service to be configured. No charge can be made in this build.</string>
+    <string name="billing_ready">Amazon account ready. Prices are supplied by Amazon.</string>
+    <string name="billing_retry">Could not reach the store. Please try again.</string>
+    <string name="billing_account_unavailable">Amazon purchasing is unavailable. Sign in to Amazon on a supported Fire device and try again.</string>
+    <string name="billing_already_owned">Already purchased. Checking your purchases.</string>
+    <string name="billing_pending">Waiting for Amazon purchase approval. Premium will unlock after approval and verification.</string>
+    <string name="billing_unavailable_product">This product is unavailable in your Amazon marketplace.</string>
+    <string name="billing_purchase_failed">Purchase did not complete. You can try again or restore purchases.</string>
+    <string name="billing_verification_retry">Verification could not finish. Any existing verified access remains until its verification expires. Restore to retry.</string>
+    <string name="billing_active">DishNest Premium is active.</string>
+    <string name="billing_no_purchases">No active Premium purchase was found for this Amazon account.</string>
+    <string name="premium_required">This feature requires DishNest Premium. Open Settings to view available plans.</string>
+    <string name="premium_features">Unlimited recipes, recipe import and reusable meal-plan templates.</string>
+    <string name="premium_terms">Subscriptions renew through Amazon until cancelled in your Amazon subscription settings. Amazon shows the applicable price, billing period and any offer before you confirm. A lifetime purchase is a single payment. No trial is promised by DishNest.</string>
+    <string name="premium_cache">Verified access is cached for up to 24 hours, bounded by any known subscription expiry. Reconnect and restore if verification expires. Saved recipes remain available.</string>
+    <string name="edition_free">Free edition · 25 recipe limit</string>
+    <string name="edition_premium">Premium</string>
+    <string name="copy_0070948938" formatted="false">Try next step, repeat that, show ingredients, or set a timer for ten minutes.</string>
+    <string name="copy_024950cf2c" formatted="false">Import recipe</string>
+    <string name="copy_02a9db66ee" formatted="false">Duplicate recipe</string>
+    <string name="copy_03ba74aae3" formatted="false">Review recipe</string>
+    <string name="copy_04bf79e202" formatted="false">Delete recipe</string>
+    <string name="copy_073c7a8f10" formatted="false">Finish cooking</string>
+    <string name="copy_206e1064b7" formatted="false">Add instructions to this recipe.</string>
+    <string name="copy_2198638b49" formatted="false">Plan a few meals, then bring their ingredients together.</string>
+    <string name="copy_21fbde19cf" formatted="false">Next week</string>
+    <string name="copy_241171761e" formatted="false">Good food is worth keeping.</string>
+    <string name="copy_24486a0cb6" formatted="false">No instructions</string>
+    <string name="copy_27809578e7" formatted="false">Paste recipe text</string>
+    <string name="copy_298a9207a7" formatted="false">Next step</string>
+    <string name="copy_2db80e2a1d" formatted="false">Enter a nonnegative quantity.</string>
+    <string name="copy_2f4ddffe07" formatted="false">Timer paused</string>
+    <string name="copy_318c1da8d9" formatted="false">Previous step</string>
+    <string name="copy_357d388fdf" formatted="false">Cancel timer</string>
+    <string name="copy_3621a99bef" formatted="false">Toggle favourite</string>
+    <string name="copy_3927421bab" formatted="false">Change meal or servings</string>
+    <string name="copy_4304f7be23" formatted="false">Saved recipes</string>
+    <string name="copy_477ef9ae15" formatted="false">Your week, thoughtfully planned</string>
+    <string name="copy_47b0904ec9" formatted="false">Website link</string>
+    <string name="copy_481682c207" formatted="false">Edit recipe</string>
+    <string name="copy_48432b3843" formatted="false">Add pantry item</string>
+    <string name="copy_49b8bc2c67" formatted="false">Add recipe photo</string>
+    <string name="copy_4d68fe9e8f" formatted="false">No camera app is available. Choose an image instead.</string>
+    <string name="copy_553628331c" formatted="false">Your kitchen, your way</string>
+    <string name="copy_55e1a0c898" formatted="false">Pause or resume timer</string>
+    <string name="copy_579e329ab4" formatted="false">Confirm a serving size from 1 to 100.</string>
+    <string name="copy_591303470a" formatted="false">Add what you have to make your next shop a little smarter.</string>
+    <string name="copy_5ce282fca6" formatted="false">Family Favourites</string>
+    <string name="copy_5d4570598c" formatted="false">Share recipe</string>
+    <string name="copy_5ecc81d67a" formatted="false">Cannot write export</string>
+    <string name="copy_640c34133b" formatted="false">Weeknight Dinners</string>
+    <string name="copy_66bf733db7" formatted="false">Microphone permission declined. All touch controls remain available.</string>
+    <string name="copy_672e21cbc1" formatted="false">Cannot write backup</string>
+    <string name="copy_68669895ac" formatted="false">Enter an item name.</string>
+    <string name="copy_6a38c0b66f" formatted="false">Shopping list exported</string>
+    <string name="copy_6be2cd1944" formatted="false">Ingredients shown</string>
+    <string name="copy_74a883a037" formatted="false">Settings</string>
+    <string name="copy_76c65b7344" formatted="false">Unable to import recipe</string>
+    <string name="copy_793b69cce2" formatted="false">Meals this week</string>
+    <string name="copy_7d9eb7acb1" formatted="false">Close</string>
+    <string name="copy_7ec446a336" formatted="false">Know what you have. Make something lovely.</string>
+    <string name="copy_86b1fdfa00" formatted="false">Remove pantry item</string>
+    <string name="copy_89ca7aafe1" formatted="false">All ingredient names found. Check quantities before cooking.</string>
+    <string name="copy_89ea751a62" formatted="false">Recipe book exported</string>
+    <string name="copy_8b566d5081" formatted="false">Welcome to your kitchen</string>
+    <string name="copy_8d014e1c45" formatted="false">Add recipe</string>
+    <string name="copy_9328724b4c" formatted="false">Paste text</string>
+    <string name="copy_93aa52c0ba" formatted="false">Remove meal</string>
+    <string name="copy_97a804fd48" formatted="false">Shopping item</string>
+    <string name="copy_9be45213e6" formatted="false">No active timers</string>
+    <string name="copy_9d3b335d3c" formatted="false">Reading recipe…</string>
+    <string name="copy_9ee92f81e3" formatted="false">To pick up</string>
+    <string name="copy_9f375d0d3d" formatted="false">DishNest shopping list</string>
+    <string name="copy_9f472a48e0" formatted="false">Include a title, an Ingredients heading and a Method or Instructions heading. Nothing missing will be invented.</string>
+    <string name="copy_9f6ac50566" formatted="false">A week that works for you</string>
+    <string name="copy_a0910e26a9" formatted="false">Import Recipe JSON-LD from a public HTTPS page you have permission to save. Restricted pages are not bypassed.</string>
+    <string name="copy_a25d1bda32" formatted="false">DishNest Premium</string>
+    <string name="copy_a6ebea75ab" formatted="false">OCR could not initialise.</string>
+    <string name="copy_a985a43f15" formatted="false">Backup exported (photos are excluded)</string>
+    <string name="copy_ab00db4db2" formatted="false">Add a recipe name, ingredients and method.</string>
+    <string name="copy_ab524fd1c2" formatted="false">Bring a recipe home</string>
+    <string name="copy_adda900c1c" formatted="false">Save your first recipe</string>
+    <string name="copy_b0059bc190" formatted="false">Add a recipe or try another search.</string>
+    <string name="copy_b5b34f89ff" formatted="false">Pantry item</string>
+    <string name="copy_c0f8bbcd41" formatted="false">Previous week</string>
+    <string name="copy_c7bb32b3d5" formatted="false">All recipes</string>
+    <string name="copy_ca07f55dcb" formatted="false">Enter preparation and cooking minutes between 0 and 10080.</string>
+    <string name="copy_ca2fa599a0" formatted="false">Good things in your pantry</string>
+    <string name="copy_cdc99bac2c" formatted="false">No readable text was found. Try a brighter, sharper photo.</string>
+    <string name="copy_cf31825cce" formatted="false">Unable to open backup</string>
+    <string name="copy_d11fcfd774" formatted="false">Ingredient not found. Tap Ingredients to review the list.</string>
+    <string name="copy_d84eebada9" formatted="false">Photo</string>
+    <string name="copy_d944203610" formatted="false">Add an item</string>
+    <string name="copy_d97d51d370" formatted="false">Favourites</string>
+    <string name="copy_e2a2406740" formatted="false">Everything you need</string>
+    <string name="copy_e39b24993c" formatted="false">Favourite</string>
+    <string name="copy_e400521d2f" formatted="false">Toggle spoken guidance</string>
+    <string name="copy_e5e04f3aa7" formatted="false">Your recipe book</string>
+    <string name="copy_e5fc1da796" formatted="false">Edit pantry item</string>
+    <string name="copy_eacb35734f" formatted="false">Private by design. Yours to keep.</string>
+    <string name="copy_f03f0e4ef3" formatted="false">A little less “what\'s for dinner?”</string>
+    <string name="copy_f15ef2ba77" formatted="false">Notifications are off. Keep cooking mode open to see timers.</string>
+    <string name="copy_f46668cb02" formatted="false">Change recipe photo</string>
+    <string name="copy_f60047d5c0" formatted="false">Unable to read image</string>
+    <string name="copy_ff59fa9de2" formatted="false">DishNest logo</string>
+    <plurals name="recipe_count">
+        <item quantity="one">%d recipe</item>
+        <item quantity="other">%d recipes</item>
+    </plurals>
+    <string name="third_party_notices">Third-party notices</string>
+    <string name="billing_monthly">Monthly subscription</string>
+    <string name="billing_annual">Annual subscription</string>
+    <string name="billing_one_time">One-time purchase</string>
+</resources>

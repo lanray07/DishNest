@@ -1,0 +1,80 @@
+# DishNest
+
+Native Kotlin / Jetpack Compose kitchen companion for Android and intended Fire tablet targets. This repository contains a functional **development preview**, not a submission-ready commercial release.
+
+## Run
+
+Open this folder in Android Studio, select Java 17, install Android SDK 35, and set `sdk.dir` in an untracked `local.properties`. On Windows:
+
+```powershell
+.\gradlew.bat :app:assembleDebug
+.\gradlew.bat :app:testDebugUnitTest
+.\gradlew.bat :app:assembleRelease :app:lintDebug
+```
+
+The debug APK is installable. Release output is unsigned until the publisher configures their own signing credentials. No signing secrets or developer keys are committed. Core features require Android API 26 or later, no mandatory Google Play Services, and no account.
+
+## Try the app
+
+The first launch is an empty kitchen backed by Room. Save your own recipe, or explicitly choose **Explore a demo kitchen**. Demo content is never silently inserted.
+
+1. Add or edit a recipe with ingredients and one method step per line. Add photos, collections, favourites and personal notes.
+2. Assign recipes and servings in the weekly planner. Copy a week, use a template or generate seven dinners from saved recipes.
+3. Generate a shopping list. Compatible quantities are combined and compatible pantry quantities deducted. Manual shopping items are preserved when rebuilding.
+4. Add pantry quantities and optional check dates. Suggestions show matching and missing ingredient names.
+5. Open cooking mode for large steps, TTS, push-to-talk and multiple persistent timers. Touch controls work when speech recognition is unavailable.
+6. Import pasted text, permitted public Recipe JSON-LD pages, or an English recipe photo. Every import opens an editable review screen.
+7. Export JSON or text in Settings. Backups omit photos and timers. JSON import validates all records before a transaction and requires an empty kitchen.
+
+## Layout
+
+- `domain/`: typed models, ingredient parser, conversions, shopping engine, deterministic planner, voice parser.
+- `data/`: Room entities/DAO/converters, validated backup format, recipe metadata extraction, explicit demo fixtures.
+- `platform/`: Android timers and notifications, speech/TTS, Amazon purchasing and signed entitlement verification, bounded image decoding, optional local aggregate usage counters.
+- `billing-server/`: local Node receipt-verification service, signed responses, policy/HTTP tests and explicitly labelled App Tester fixtures.
+- `ui/`: adaptive navigation, dashboard, recipe CRUD, planner, shopping, pantry, cooking, import and settings.
+- `tools/`: localisation extraction/validation and optional translation-service client, asset rendering, screenshot composition, static website generation.
+- `marketing/`: original assets, source screenshot captions, listing draft and screenshot manifests.
+- `website/`: 12 crawlable static English pages; local-only, noindex until a real domain and approved release are configured.
+
+## Verification and limitations
+
+See [docs/RELEASE_READINESS.md](docs/RELEASE_READINESS.md) for the current scope, evidence and outstanding work. `artifacts/` contains logs, APK copies and real Compose screen renders. JVM screen renders are useful layout and interaction evidence; they do not prove Fire hardware compatibility, real microphone service behaviour, background alarm delivery, OCR accuracy or actual Amazon purchases.
+
+Billing uses Amazon Appstore SDK 3.0.9 with purchase initiation, restoration, account checks, pending approval handling, signed receipt verification, expiry/cancellation handling, bounded offline caching and acknowledgement after durable verification. The local server and sandbox configuration are prepared, but the delivered APK keeps purchases disabled because no catalog or trusted TLS verifier exists yet. See [docs/AMAZON_BILLING.md](docs/AMAZON_BILLING.md). Real store integration and device tests remain mandatory; local fixture tests are not purchase evidence. Further commercial feature scope remains in the readiness report.
+
+Twelve locale directories cover 262 translatable string resources and recipe-count plurals. `python tools/localize.py --strict` checks resource coverage, placeholders and plural categories; release approval is a separate field. Remaining interpolated labels, complete voice dictionaries, marketing translations and native-speaker review are tracked in [localisation/REVIEW.md](localisation/REVIEW.md). Public app copy alone was used for draft translation, never private recipes. The bootstrap navigation generator now preserves existing resource files.
+
+No public deployment or store submission has been performed.
+
+## Supporting tools
+
+To reproduce the complete local verification and resolved dependency evidence:
+
+```powershell
+.\gradlew.bat --no-daemon --init-script tools/dependency-inventory.init.gradle :app:testDebugUnitTest :app:lintDebug :app:assembleDebug :app:assembleRelease :app:assembleDebugAndroidTest :app:writeRuntimeInventory > artifacts/delivery-verification.log 2>&1
+node --test --test-reporter=junit billing-server/*.test.mjs > artifacts/billing-server-tests.xml
+node tools/verify_billing_contract.mjs
+python tools/dependency_inventory.py --fetch-metadata
+python tools/localize.py --strict
+python tools/validate_native_alignment.py
+.\tools\validate_apks.ps1
+python tools/readiness_report.py
+python tools/submission_readiness.py
+python tools/package_deliverables.py
+```
+
+The cross-runtime check uses temporary fixture keys/receipts and the actual compiled Kotlin verifier; it does not call Amazon or grant an app entitlement. The source archive includes the completed local verification evidence and excludes development keys, environment secrets, caches and build directories. The preflight intentionally remains not submission-ready while publisher setup, hardware and scope approvals are missing.
+
+```powershell
+python -m pip install -r tools/requirements.txt
+python tools/localize.py
+node --test billing-server/*.test.mjs
+python tools/submission_readiness.py
+python tools/compose_screenshots.py
+python tools/validate_assets.py
+python tools/package_deliverables.py
+python -m http.server 8765 --bind 127.0.0.1 --directory website
+```
+
+Open `http://127.0.0.1:8765` while the last command is running. Website browser checks live in `tools/verify_website.cjs`; configure `DISHNEST_NODE_MODULES` and optionally `DISHNEST_BROWSER_EXECUTABLE` for your own Playwright runtime. No website build step is required.

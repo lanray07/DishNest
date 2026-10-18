@@ -1,0 +1,56 @@
+[
+  {
+    "device": "desktop",
+    "identity": true,
+    "http": 200,
+    "overflow": false,
+    "brokenImages": [],
+    "pageErrors": [],
+    "faqOpened": true,
+    "changedPages": [
+      {
+        "slug": "pricing",
+        "title": "Simple beginnings. Room to grow. — DishNest",
+        "http": 200,
+        "overflow": false,
+        "contentVerified": true
+      },
+      {
+        "slug": "privacy",
+        "title": "Your kitchen is personal — DishNest",
+        "http": 200,
+        "overflow": false,
+        "contentVerified": true
+      }
+    ],
+    "browserPath": "Playwright: Browser plugin not available",
+    "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+  },
+  {
+    "device": "phone",
+    "identity": true,
+    "http": 200,
+    "overflow": false,
+    "brokenImages": [],
+    "pageErrors": [],
+    "faqOpened": true,
+    "changedPages": [
+      {
+        "slug": "pricing",
+        "title": "Simple beginnings. Room to grow. — DishNest",
+        "http": 200,
+        "overflow": false,
+        "contentVerified": true
+      },
+      {
+        "slug": "privacy",
+        "title": "Your kitchen is personal — DishNest",
+        "http": 200,
+        "overflow": false,
+        "contentVerified": true
+      }
+    ],
+    "browserPath": "Playwright: Browser plugin not available",
+    "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+  }
+]

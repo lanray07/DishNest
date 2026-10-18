@@ -1,0 +1,16 @@
+{
+  "brand": "DishNest",
+  "palette": {
+    "sage": "#456B59",
+    "ivory": "#FAF7F0",
+    "terracotta": "#C97859",
+    "accessible_terracotta": "#9E5034",
+    "charcoal": "#29312D",
+    "cream": "#F1E8D8"
+  },
+  "icon": "Original plate, nest and leaf mark; editable SVG plus Android VectorDrawable",
+  "food_photo": "Original AI-generated image via built-in imagegen, 2026-10-18; illustrative demo recipe only",
+  "navigation": "Material Symbols via androidx.compose.material:material-icons-extended, Apache 2.0",
+  "ocr": "Tesseract4Android 4.9.0 and tessdata_fast English; see THIRD_PARTY_NOTICES.md",
+  "review": "Human visual and trademark review required before release"
+}

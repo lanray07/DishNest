@@ -1,0 +1,509 @@
+{
+  "jvm_suites": [
+    {
+      "name": "com.dishnest.app.RecipeImagesTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T15:45:53.533Z"
+    },
+    {
+      "name": "com.dishnest.app.ScreenshotsTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T15:46:23.190Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementsTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T15:45:50.579Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementClockTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T15:45:50.565Z"
+    },
+    {
+      "name": "com.dishnest.app.DomainTest",
+      "tests": "21",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T15:45:49.729Z"
+    },
+    {
+      "name": "com.dishnest.app.RestoreGuardTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T15:46:10.211Z"
+    },
+    {
+      "name": "com.dishnest.app.RoomPersistenceTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-18T15:46:10.508Z"
+    }
+  ],
+  "device_instrumentation": "not executed: no connected device or working emulator",
+  "physical_fire_qa": "not executed",
+  "billing_qa": "Local SDK integration and signed-verification service prepared; 11 server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.",
+  "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
+  "store_submission": "not performed; prohibited by user",
+  "website_deployment": "not performed; local checks only",
+  "android_lint": {
+    "errors": 0,
+    "error_categories": [],
+    "passed": true,
+    "report": "app/build/reports/lint-results-debug.html"
+  },
+  "asset-validation": {
+    "checks": [
+      "12 HTML pages: one h1 each; all internal file links resolve",
+      "English listing fits documented description and bullet limits",
+      "Required icon and promotional pixel dimensions valid",
+      "16 screenshot drafts: dimensions and RGB output checked",
+      "All Android string XML parses"
+    ],
+    "errors": [],
+    "passed": true,
+    "release_approved": false
+  },
+  "website-verification": [
+    {
+      "device": "desktop",
+      "identity": true,
+      "http": 200,
+      "overflow": false,
+      "brokenImages": [],
+      "pageErrors": [],
+      "faqOpened": true,
+      "changedPages": [
+        {
+          "slug": "pricing",
+          "title": "Simple beginnings. Room to grow. \u2014 DishNest",
+          "http": 200,
+          "overflow": false,
+          "contentVerified": true
+        },
+        {
+          "slug": "privacy",
+          "title": "Your kitchen is personal \u2014 DishNest",
+          "http": 200,
+          "overflow": false,
+          "contentVerified": true
+        }
+      ],
+      "browserPath": "Playwright: Browser plugin not available",
+      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+    },
+    {
+      "device": "phone",
+      "identity": true,
+      "http": 200,
+      "overflow": false,
+      "brokenImages": [],
+      "pageErrors": [],
+      "faqOpened": true,
+      "changedPages": [
+        {
+          "slug": "pricing",
+          "title": "Simple beginnings. Room to grow. \u2014 DishNest",
+          "http": 200,
+          "overflow": false,
+          "contentVerified": true
+        },
+        {
+          "slug": "privacy",
+          "title": "Your kitchen is personal \u2014 DishNest",
+          "http": 200,
+          "overflow": false,
+          "contentVerified": true
+        }
+      ],
+      "browserPath": "Playwright: Browser plugin not available",
+      "evidenceDir": "C:\\Users\\User\\AppData\\Local\\Temp\\DishNest-website-QA"
+    }
+  ],
+  "native-alignment": {
+    "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
+    "apk_sha256": "e0d6dc94c98df6c09e2aa245c39d8db7c77706f8898494ddef5ae03f9b615fb2",
+    "libraries": [
+      {
+        "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/arm64-v8a/libdatastore_shared_counter.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/arm64-v8a/libjpeg.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/arm64-v8a/libleptonica.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/arm64-v8a/libpngx.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/arm64-v8a/libtesseract.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/armeabi-v7a/libandroidx.graphics.path.so",
+        "bits": 32,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/armeabi-v7a/libdatastore_shared_counter.so",
+        "bits": 32,
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/armeabi-v7a/libjpeg.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/armeabi-v7a/libleptonica.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/armeabi-v7a/libpngx.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/armeabi-v7a/libtesseract.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86/libandroidx.graphics.path.so",
+        "bits": 32,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86/libdatastore_shared_counter.so",
+        "bits": 32,
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86/libjpeg.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86/libleptonica.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86/libpngx.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86/libtesseract.so",
+        "bits": 32,
+        "load_alignments": [
+          4096,
+          4096,
+          4096
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86_64/libandroidx.graphics.path.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86_64/libdatastore_shared_counter.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86_64/libjpeg.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86_64/libleptonica.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86_64/libpngx.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      },
+      {
+        "path": "lib/x86_64/libtesseract.so",
+        "bits": 64,
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "supports_16k_load_alignment": true
+      }
+    ],
+    "passed": true,
+    "device_tested": false
+  },
+  "device-evidence": {
+    "collectedAt": "2026-10-18T15:24:12.7260583Z",
+    "connectedDeviceCount": 0,
+    "deviceTests": "Not executed by this read-only inventory script",
+    "physicalFireQa": "Pending explicit hardware testing and evidence",
+    "published": false
+  },
+  "submission-readiness": {
+    "generatedAt": "2026-10-18T15:52:50.250921+00:00",
+    "submission_ready": false,
+    "publishing_permitted": false,
+    "publication": "Not performed; user explicitly prohibits publication",
+    "checks": [
+      {
+        "check": "Android lint",
+        "status": "passed",
+        "evidence": "app\\build\\reports\\lint-results-debug.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Host Android tests",
+        "status": "passed",
+        "evidence": "app/build/test-results/testDebugUnitTest",
+        "remaining": ""
+      },
+      {
+        "check": "Locale resource coverage",
+        "status": "passed",
+        "evidence": "localisation/validation.json",
+        "remaining": ""
+      },
+      {
+        "check": "Native language and full UI approval",
+        "status": "pending",
+        "evidence": "localisation/REVIEW.md",
+        "remaining": "Native review, remaining interpolations, voice and marketing copy"
+      },
+      {
+        "check": "Local receipt-service tests",
+        "status": "passed",
+        "evidence": "artifacts/billing-server-tests.xml",
+        "remaining": ""
+      },
+      {
+        "check": "Node/Kotlin signed-receipt contract",
+        "status": "passed",
+        "evidence": "artifacts/billing-contract.json",
+        "remaining": ""
+      },
+      {
+        "check": "APK signature and binary alignment",
+        "status": "passed",
+        "evidence": "artifacts/apk-validation.json; artifacts/native-alignment.json",
+        "remaining": ""
+      },
+      {
+        "check": "Unconfigured billing build rejection",
+        "status": "passed",
+        "evidence": "artifacts/billing-configuration-guard.json",
+        "remaining": ""
+      },
+      {
+        "check": "Amazon catalog and live verification",
+        "status": "pending",
+        "evidence": "docs/AMAZON_BILLING.md",
+        "remaining": "Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only"
+      },
+      {
+        "check": "Physical device QA",
+        "status": "pending",
+        "evidence": "docs/DEVICE_QA.md",
+        "remaining": "Fire/phone, TalkBack, doze/reboot, permissions, speech and actual OCR checks"
+      },
+      {
+        "check": "Native notice source collection",
+        "status": "passed",
+        "evidence": "legal/third-party/manifest.json",
+        "remaining": ""
+      },
+      {
+        "check": "Resolved dependency inventory",
+        "status": "passed",
+        "evidence": "docs/dependencies/runtime-inventory.json",
+        "remaining": ""
+      },
+      {
+        "check": "Licensing/privacy approval",
+        "status": "pending",
+        "evidence": "THIRD_PARTY_NOTICES.md",
+        "remaining": "Publisher reviews all distribution obligations, support identity and privacy disclosures"
+      },
+      {
+        "check": "Publisher-signed release device test",
+        "status": "pending",
+        "evidence": "artifacts/deliverables/manifest.json",
+        "remaining": "Release signing key and exact signed APK hardware smoke test"
+      },
+      {
+        "check": "Final store and website metadata",
+        "status": "pending",
+        "evidence": "marketing/listing-en-GB.json",
+        "remaining": "Approved translations, contact/privacy/domain/store URLs and hardware screenshots"
+      },
+      {
+        "check": "Remaining product scope",
+        "status": "pending",
+        "evidence": "docs/RELEASE_READINESS.md",
+        "remaining": "Complete the explicitly listed outstanding app features and integration checks"
+      }
+    ]
+  },
+  "billing-contract": {
+    "passed": true,
+    "signer": "Actual Node receipt-service signing function",
+    "verifier": "Compiled Kotlin EntitlementVerifier",
+    "checks": [
+      "ECDSA DER signature",
+      "SPKI public key",
+      "Base64 UTF-8 payload",
+      "account/receipt/nonce binding",
+      "wrong-account rejection"
+    ],
+    "amazon_purchase_tested": false,
+    "private_key_written": false
+  },
+  "billing-configuration-guard": {
+    "productionKeyCreated": false,
+    "passed": true,
+    "actualExitCode": 1,
+    "expectedRejection": "Unconfigured billing-enabled build must fail before packaging",
+    "published": false
+  }
+}

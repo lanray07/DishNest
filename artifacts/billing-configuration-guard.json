@@ -1,0 +1,7 @@
+{
+  "productionKeyCreated": false,
+  "passed": true,
+  "actualExitCode": 1,
+  "expectedRejection": "Unconfigured billing-enabled build must fail before packaging",
+  "published": false
+}

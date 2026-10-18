@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "signer": "Actual Node receipt-service signing function",
+  "verifier": "Compiled Kotlin EntitlementVerifier",
+  "checks": [
+    "ECDSA DER signature",
+    "SPKI public key",
+    "Base64 UTF-8 payload",
+    "account/receipt/nonce binding",
+    "wrong-account rejection"
+  ],
+  "amazon_purchase_tested": false,
+  "private_key_written": false
+}

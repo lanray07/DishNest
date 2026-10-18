@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <!-- Billing is disabled in the development preview. Exclude the store receiver
+         from debug so host-JVM UI tests do not load Amazon's D8-only bytecode. -->
+    <application><receiver android:name="com.amazon.device.iap.ResponseReceiver" tools:node="remove" /><receiver android:name="com.amazon.device.drm.ResponseReceiver" tools:node="remove" /></application>
+</manifest>

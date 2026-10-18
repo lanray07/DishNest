@@ -1,0 +1,36 @@
+{
+  "status": "DRAFT — not approved for submission",
+  "locale": "en-GB",
+  "title": "DishNest – Recipe Keeper & Meal Planner",
+  "title_options": [
+    "DishNest – Recipe Keeper & Meal Planner",
+    "DishNest – Recipe Book & Shopping List",
+    "DishNest – Weekly Meal Planner"
+  ],
+  "short_description": "Save your recipes, plan a calmer week and turn meal plans into shopping lists. DishNest brings your recipe book, pantry and step-by-step cooking together on your tablet.",
+  "full_description": "Save recipes. Plan meals. Cook hands-free.\n\nDishNest brings a little order and a lot more joy to your everyday kitchen. Keep recipes in a personal recipe book, add your own photos and notes, and find favourites worth making again.\n\nPlan breakfast, lunch, dinner and snacks across seven days. Adjust servings, reuse a good week, and suggest dinners from saved recipes with a deterministic offline planner.\n\nTurn planned meals into an organised shopping list. Compatible ingredient quantities are combined, planned servings are respected, and compatible pantry quantities are deducted. Add your own items, tick off your shop, and share the list as text.\n\nKeep track of pantry quantities and optional check dates. See recipe suggestions based on ingredient names you already have, with missing ingredients clearly shown. Always check quantities, packaging and dietary suitability yourself.\n\nCook one step at a time with large text, spoken instructions, independent timers and touch controls. Push-to-talk commands are available when a compatible recognition service is installed. Voice availability and connectivity vary by device; background timer delivery may be delayed by device settings.\n\nYour recipes, plans, pantry and shopping list are stored locally. No registration or advertising is required. Website imports need internet access; English photo recognition works on device. Imports always open for review before saving.\n\nDevelopment preview: Amazon purchases are disabled, native language approval and Fire hardware testing are pending. Billing code and its receipt service are prepared locally, but catalog setup and real store testing are still required. Do not submit this draft as a public release listing until those items are resolved.",
+  "feature_bullets": [
+    "Keep recipes, photos, notes and favourites in a personal recipe book",
+    "Plan a week of meals and reuse saved templates",
+    "Generate grouped shopping lists with serving adjustments and pantry deductions",
+    "Follow large cooking steps with timers, narration and supported push-to-talk commands",
+    "Keep core kitchen data on your device without registration"
+  ],
+  "keywords": [
+    "recipe keeper",
+    "meal planner",
+    "recipe organiser",
+    "weekly meal planner",
+    "recipe book",
+    "shopping list",
+    "cooking app",
+    "grocery list",
+    "pantry organiser",
+    "offline recipe book",
+    "kitchen organiser"
+  ],
+  "release_notes": "Development preview: expanded resources in 12 locales, local Amazon billing and signed receipt-verification implementation, EXIF-aware OCR image decoding and offline third-party notices. Purchases remain disabled; publisher configuration, native language review and hardware QA are pending.",
+  "support_contact": null,
+  "privacy_policy_url": null,
+  "amazon_listing_url": null
+}

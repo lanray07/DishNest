@@ -1,0 +1,273 @@
+<resources>
+    <string name="nav_home">مطبخي</string>
+    <string name="nav_recipes">كتاب الوصفات</string>
+    <string name="nav_plan">مخطط الوجبات</string>
+    <string name="nav_shop">قائمة التسوق</string>
+    <string name="nav_pantry">المؤن</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="greeting">القليل من التخطيط. المزيد من الفرح.</string>
+    <string name="save">يحفظ</string>
+    <string name="cancel">يلغي</string>
+    <string name="delete">يمسح</string>
+    <string name="add_recipe">أضف وصفة</string>
+    <string name="search">ابحث في وصفاتك</string>
+    <string name="cook">ابدأ الطهي</string>
+    <string name="next">الخطوة التالية</string>
+    <string name="previous">الخطوة السابقة</string>
+    <string name="empty_recipes">المفضل لديك المقبل يبدأ هنا.</string>
+    <string name="empty_hint">احفظ الوصفة واجعل نفسك في المنزل.</string>
+    <string name="premium">DishNest Premium</string>
+    <string name="ui_a_calmer_week_188aa5" formatted="false">أسبوع أكثر هدوءًا</string>
+    <string name="ui_a_clean_slate_cc5380" formatted="false">لائحة نظيفة</string>
+    <string name="ui_a_fresh_page_in_your_recipe_book_91f362" formatted="false">صفحة جديدة في كتاب الوصفات الخاص بك</string>
+    <string name="ui_a_good_shop_starts_with_a_plan_dfb246" formatted="false">المتجر الجيد يبدأ بخطة</string>
+    <string name="ui_a_little_description_e30ea8" formatted="false">وصف قليل</string>
+    <string name="ui_a_little_extra_for_your_kitchen_57e0a8" formatted="false">القليل الإضافي لمطبخك.</string>
+    <string name="ui_a_little_extra_room_for_the_way__59991a" formatted="false">غرفة إضافية صغيرة\nللطريقة التي تطبخ بها.</string>
+    <string name="ui_a_little_inspiration_4c35e1" formatted="false">القليل من الإلهام</string>
+    <string name="ui_a_little_less_waste_b8146c" formatted="false">أقل قليلا من النفايات</string>
+    <string name="ui_a_little_pantry_check_goes_a_lon_d0a60c" formatted="false">القليل من فحص المخزن يقطع شوطا طويلا.</string>
+    <string name="ui_active_timers_will_continue_you__ab36a2" formatted="false">سوف تستمر الموقتات النشطة. يمكنك العودة إلى وضع الطهي لإدارتها.</string>
+    <string name="ui_add_a_meal_fe642f" formatted="false">أضف وجبة</string>
+    <string name="ui_add_item_d1a0b3" formatted="false">إضافة عنصر</string>
+    <string name="ui_add_recipe_8d014e" formatted="false">أضف وصفة</string>
+    <string name="ui_add_timer_5a6dfa" formatted="false">أضف مؤقتًا</string>
+    <string name="ui_all_done_in_the_kitchen_a5b557" formatted="false">كل ذلك في المطبخ؟</string>
+    <string name="ui_always_check_quantities_serving__0d0645" formatted="false">تحقق دائمًا من الكميات وحجم التقديم والتوقيت والتعليمات ومقارنتها بالأصل.</string>
+    <string name="ui_back_to_kitchen_901962" formatted="false">العودة إلى المطبخ</string>
+    <string name="ui_background_alerts_may_be_delayed_84d690" formatted="false">قد تتأخر تنبيهات الخلفية بسبب إعدادات طاقة الجهاز.</string>
+    <string name="ui_cancel_19766e" formatted="false">يلغي</string>
+    <string name="ui_check_date_yyyy_mm_dd_optional_ebbc43" formatted="false">تاريخ التحقق · YYYY-MM-DD (اختياري)</string>
+    <string name="ui_check_recipe_suitability_and_all_e97821" formatted="false">تحقق من مدى ملاءمة الوصفة ومسببات الحساسية بنفسك قبل الطهي.</string>
+    <string name="ui_choose_photo_9c5bb7" formatted="false">اختر الصورة</string>
+    <string name="ui_clear_this_week_0389b3" formatted="false">مسح هذا الأسبوع؟</string>
+    <string name="ui_clear_week_32148a" formatted="false">أسبوع واضح</string>
+    <string name="ui_collected_with_love_4b0a34" formatted="false">جمعت مع الحب</string>
+    <string name="ui_collection_7b7907" formatted="false">مجموعة</string>
+    <string name="ui_cook_minutes_8b80a8" formatted="false">دقائق الطبخ</string>
+    <string name="ui_copy_previous_week_d774bf" formatted="false">نسخ الأسبوع الماضي</string>
+    <string name="ui_correct_recognised_text_add_ingr_2bc536" formatted="false">تصحيح النص الذي تم التعرف عليه · إضافة عناوين المكونات والطريقة</string>
+    <string name="ui_cuisine_6814ff" formatted="false">مطبخ</string>
+    <string name="ui_cuisine_leave_blank_for_any_1adbae" formatted="false">المطبخ · اتركه فارغا لأي</string>
+    <string name="ui_dates_are_reminders_to_check_you_fdb98c" formatted="false">التمر هو بمثابة تذكير للتحقق من طعامك وعبوته؛ فهي ليست ضمانة للسلامة.</string>
+    <string name="ui_delete_all_kitchen_data_013193" formatted="false">حذف كافة بيانات المطبخ</string>
+    <string name="ui_delete_all_kitchen_data_3aa3db" formatted="false">هل تريد حذف جميع بيانات المطبخ؟</string>
+    <string name="ui_delete_e2d0a5" formatted="false">يمسح</string>
+    <string name="ui_delete_this_recipe_4a5731" formatted="false">هل تريد حذف هذه الوصفة؟</string>
+    <string name="ui_demo_kitchen_e41a43" formatted="false">المطبخ التجريبي</string>
+    <string name="ui_demo_recipes_are_original_exampl_069377" formatted="false">الوصفات التجريبية هي أمثلة أصلية. تتم إضافة البيانات التجريبية فقط عند اختيارها في مطبخ فارغ.</string>
+    <string name="ui_dietary_tags_comma_separated_7222ad" formatted="false">العلامات الغذائية · مفصولة بفاصلة</string>
+    <string name="ui_difficulty_be4413" formatted="false">صعوبة</string>
+    <string name="ui_dishnest_0_1_0_development_previ_c14494" formatted="false">DishNest 0.1.0 · معاينة التطوير\nحفظ الوصفات. خطط للوجبات. طهي بدون استخدام اليدين.</string>
+    <string name="ui_dishnest_80ec64" formatted="false">DishNest</string>
+    <string name="ui_explore_a_demo_kitchen_6bdc4e" formatted="false">اكتشف المطبخ التجريبي</string>
+    <string name="ui_explore_dishnest_b5a56c" formatted="false">اكتشف ديشنيست</string>
+    <string name="ui_explore_dishnest_premium_5a187f" formatted="false">اكتشف ديشنست بريميوم</string>
+    <string name="ui_explore_premium_7a1440" formatted="false">اكتشف بريميوم →</string>
+    <string name="ui_export_json_backup_0db468" formatted="false">تصدير نسخة احتياطية JSON</string>
+    <string name="ui_export_recipe_book_as_text_f6ad1f" formatted="false">تصدير كتاب الوصفات كنص</string>
+    <string name="ui_export_text_e4c312" formatted="false">تصدير النص</string>
+    <string name="ui_finish_cooking_073c7a" formatted="false">أكمل الطبخ</string>
+    <string name="ui_from_this_week_s_plan_d1be4f" formatted="false">من خطة هذا الأسبوع</string>
+    <string name="ui_generated_quantities_reflect_pla_61a80d" formatted="false">تعكس الكميات التي تم إنشاؤها الحصص المخططة وتخصم كميات المخزن المتوافقة. إعادة البناء تحافظ على العناصر اليدوية.</string>
+    <string name="ui_give_it_a_little_time_adfe27" formatted="false">امنحها القليل من الوقت</string>
+    <string name="ui_good_food_less_waste_4eb429" formatted="false">طعام جيد، نفايات أقل</string>
+    <string name="ui_good_recipes_deserve_a_place_to__f1bd5e" formatted="false">الوصفات الجيدة تستحق مكانًا للإقامة.</string>
+    <string name="ui_import_2cff9b" formatted="false">يستورد</string>
+    <string name="ui_import_json_backup_fe0cd1" formatted="false">استيراد نسخة احتياطية JSON</string>
+    <string name="ui_import_this_backup_ecd47c" formatted="false">هل تريد استيراد هذه النسخة الاحتياطية؟</string>
+    <string name="ui_import_validates_the_entire_back_86e01c" formatted="false">يقوم الاستيراد بالتحقق من صحة النسخة الاحتياطية بالكامل قبل الكتابة ويتطلب مطبخًا فارغًا.</string>
+    <string name="ui_ingredients_87675d" formatted="false">مكونات</string>
+    <string name="ui_ingredients_one_per_line_e_g_200_d4d092" formatted="false">المكونات · واحد لكل سطر (مثلاً 200 جرام دقيق)</string>
+    <string name="ui_item_name_70d5f4" formatted="false">اسم العنصر</string>
+    <string name="ui_keep_a_copy_e53d3b" formatted="false">احتفظ بنسخة</string>
+    <string name="ui_keep_aggregate_usage_counts_on_t_a9093e" formatted="false">احتفظ بأعداد الاستخدام الإجمالية على هذا الجهاز</string>
+    <string name="ui_keep_cooking_d9de3b" formatted="false">استمر في الطهي</string>
+    <string name="ui_keep_my_kitchen_79ce76" formatted="false">احتفظ بمطبخي</string>
+    <string name="ui_keep_track_of_what_you_already_h_9f24a1" formatted="false">تتبع ما لديك بالفعل.</string>
+    <string name="ui_language_accessibility_24f044" formatted="false">اللغة وإمكانية الوصول</string>
+    <string name="ui_let_s_make_something_good_8f500e" formatted="false">دعونا نجعل شيئا جيدا</string>
+    <string name="ui_load_demo_kitchen_df8474" formatted="false">تحميل المطبخ التجريبي</string>
+    <string name="ui_made_again_loved_again_f1ebfd" formatted="false">صنع مرة أخرى. أحببت مرة أخرى.</string>
+    <string name="ui_made_for_the_joy_of_cooking_c83bee" formatted="false">صنعت من أجل متعة الطبخ.</string>
+    <string name="ui_make_it_yours_34ca8a" formatted="false">اجعلها لك</string>
+    <string name="ui_make_room_for_good_food_e392e4" formatted="false">إفساح المجال للطعام الجيد</string>
+    <string name="ui_make_shopping_list_ad0a17" formatted="false">جعل قائمة التسوق</string>
+    <string name="ui_make_yourself_at_home_a0548a" formatted="false">البيت بيتك</string>
+    <string name="ui_maximum_total_minutes_4e76ea" formatted="false">الحد الأقصى لإجمالي الدقائق</string>
+    <string name="ui_method_one_step_per_line_322349" formatted="false">الطريقة · خطوة واحدة في كل سطر</string>
+    <string name="ui_minutes_1_1440_5357e2" formatted="false">المحضر (1–1440)</string>
+    <string name="ui_no_registration_advertising_or_a_00a2f4" formatted="false">لا يوجد تسجيل أو إعلان أو نقل تحليلات. تبقى الوصفات وبيانات المطبخ على هذا الجهاز. يعمل التعرف على الصور باللغة الإنجليزية على الجهاز. يقوم استيراد موقع الويب بالاتصال بالموقع المطلوب وإعادة التوجيه. الصوت هو الضغط والتحدث؛ قد يقوم مزود الكلام الخاص بك بمعالجة الصوت عبر الإنترنت. لا يقوم DishNest بتخزين الصوت الخام. عند التهيئة، ترسل الفواتير معرفات مستخدم أمازون والإيصالات إلى خدمة التحقق وأمازون؛ يتم تخزين الإيصالات الموقعة بشكل خاص لاستعادتها والوصول إليها دون اتصال بالإنترنت. النسخ الاحتياطي السحابي غير متصل.</string>
+    <string name="ui_no_store_prices_free_trials_or_p_dbbbec" formatted="false">يتم تجديد الاشتراكات من خلال أمازون حتى يتم إلغاؤها في إعدادات اشتراك أمازون الخاصة بك. تعرض أمازون السعر المطبق وفترة الفاتورة وأي عرض قبل التأكيد. الشراء مدى الحياة هو دفعة واحدة. لا وعدت DishNest بأي تجربة.</string>
+    <string name="ui_notes_from_your_kitchen_043bc7" formatted="false">ملاحظات من مطبخك</string>
+    <string name="ui_off_by_default_counts_contain_no_6ec589" formatted="false">إيقاف بشكل افتراضي. لا تحتوي الأعداد على محتوى وصفة أو صوت أو أسماء أو معرفات. لا شيء ينتقل. يؤدي إيقاف التشغيل إلى حذف هذه العدادات. تكون أعداد تحويلات الشراء والتجربة غير نشطة أثناء تعطيل الفوترة.</string>
+    <string name="ui_one_list_a_lighter_shop_ba8c84" formatted="false">قائمة واحدة، متجر ولاعة</string>
+    <string name="ui_optional_usage_counts_ea8511" formatted="false">عدد الاستخدام الاختياري</string>
+    <string name="ui_permanently_delete_9003e1" formatted="false">حذف نهائيا</string>
+    <string name="ui_permanently_remove_all_local_rec_62eb3a" formatted="false">قم بإزالة جميع الوصفات والخطط وعناصر المخزن وعناصر التسوق والقوالب والمؤقتات والصور المرفقة بشكل دائم. قم بتصدير أي شيء تريد الاحتفاظ به أولاً.</string>
+    <string name="ui_personal_notes_210f34" formatted="false">ملاحظات شخصية</string>
+    <string name="ui_plan_for_me_c13f33" formatted="false">خطة بالنسبة لي</string>
+    <string name="ui_plan_seven_dinners_a453e5" formatted="false">خطة سبع وجبات العشاء</string>
+    <string name="ui_planned_premium_features_821e28" formatted="false">ميزات متميزة</string>
+    <string name="ui_premium_is_being_prepared_this_d_c133a3" formatted="false">وصفات غير محدودة، واستيراد الوصفات، وقوالب خطط الوجبات القابلة لإعادة الاستخدام.</string>
+    <string name="ui_prep_minutes_87773e" formatted="false">دقائق الإعدادية</string>
+    <string name="ui_privacy_permissions_77c242" formatted="false">الخصوصية والأذونات</string>
+    <string name="ui_quantity_blank_if_unknown_1d8e1a" formatted="false">الكمية · فارغة إذا كانت غير معروفة</string>
+    <string name="ui_read_a_recipe_photo_on_your_devi_ea83af" formatted="false">قراءة صورة وصفة على جهازك. يعمل نموذج التعرف الضوئي على الحروف (OCR) الإنجليزي المجمع دون اتصال بالإنترنت؛ الدقة تعتمد على الصورة. لم يتم تحميل صورتك.</string>
+    <string name="ui_read_step_e03fc7" formatted="false">قراءة الخطوة</string>
+    <string name="ui_recipe_name_c343c4" formatted="false">اسم الوصفة</string>
+    <string name="ui_required_dietary_tag_exact_saved_84dad6" formatted="false">العلامة الغذائية المطلوبة · العلامة المحفوظة بالضبط</string>
+    <string name="ui_restore_amazon_purchases_3b7842" formatted="false">استعادة مشتريات أمازون</string>
+    <string name="ui_review_every_ingredient_and_step_5bcc99" formatted="false">قم بمراجعة كل مكون وخطوة قبل الحفظ. يجب إدخال أحجام وأوقات التقديم المفقودة؛ استخدم 0 دقيقة فقط عندما يكون ذلك مناسبًا.</string>
+    <string name="ui_review_structured_recipe_4cf14b" formatted="false">مراجعة الوصفة المنظمة</string>
+    <string name="ui_room_for_more_627976" formatted="false">مساحة للمزيد</string>
+    <string name="ui_save_1509f5" formatted="false">يحفظ</string>
+    <string name="ui_save_recipe_5622a7" formatted="false">حفظ الوصفة</string>
+    <string name="ui_save_template_47f72a" formatted="false">حفظ القالب</string>
+    <string name="ui_save_this_week_s_rhythm_229a2e" formatted="false">حفظ إيقاع هذا الأسبوع</string>
+    <string name="ui_servings_32939b" formatted="false">حصص</string>
+    <string name="ui_seven_dinners_from_your_saved_re_db57ba" formatted="false">سبع وجبات عشاء من وصفاتك المحفوظة، مع تطابقات المخزن أولاً. يعمل هذا بالكامل على جهازك.</string>
+    <string name="ui_share_list_33f118" formatted="false">قائمة المشاركة</string>
+    <string name="ui_source_url_1adf66" formatted="false">عنوان URL المصدر</string>
+    <string name="ui_speech_recognition_and_language__01e307" formatted="false">يختلف التعرف على الكلام ودعم اللغة حسب الجهاز. جميع خطوات الطبخ والمؤقتات تعمل باللمس.</string>
+    <string name="ui_start_timer_4fcf31" formatted="false">بدء الموقت</string>
+    <string name="ui_tap_to_speak_8e8fa9" formatted="false">انقر للتحدث</string>
+    <string name="ui_template_name_7b905e" formatted="false">اسم القالب</string>
+    <string name="ui_the_app_follows_your_device_s_la_2ed1cc" formatted="false">يتبع التطبيق لغة جهازك وحجم النص واتجاه التخطيط. ترجمات الواجهة هي مسودات تنتظر مراجعة المتحدث الأصلي لها. يستخدم وضع الطهي نصًا كبيرًا ويبقي الشاشة نشطة.</string>
+    <string name="ui_the_backup_will_be_validated_and_1a7df3" formatted="false">سيتم التحقق من صحة النسخة الاحتياطية وإضافتها إلى المطبخ الفارغ. لن يتم الكتابة فوق البيانات الموجودة.</string>
+    <string name="ui_this_also_removes_it_from_planne_c25d45" formatted="false">وهذا أيضًا يزيله من الوجبات المخططة. قم بتصدير نسخة أولاً إذا كنت تريد الاحتفاظ بها.</string>
+    <string name="ui_this_cannot_be_undone_export_a_b_dfe37b" formatted="false">لا يمكن التراجع عن هذا. قم بتصدير نسخة احتياطية قبل المتابعة.</string>
+    <string name="ui_timer_label_6a43fd" formatted="false">تسمية الموقت</string>
+    <string name="ui_today_2b065c" formatted="false">اليوم</string>
+    <string name="ui_under_30_min_c9922c" formatted="false">أقل من 30 دقيقة</string>
+    <string name="ui_unit_g_kg_ml_l_tsp_tbsp_6e0535" formatted="false">الوحدة · جرام، كجم، مل، لتر، ملعقة صغيرة، ملعقة كبيرة...</string>
+    <string name="ui_unlimited_recipes_meal_plan_temp_05c133" formatted="false">يتم تخزين الوصول الذي تم التحقق منه مؤقتًا لمدة تصل إلى 24 ساعة، ويقتصر على أي انتهاء صلاحية اشتراك معروف. أعد الاتصال واستعادته في حالة انتهاء صلاحية التحقق. تظل الوصفات المحفوظة متاحة.</string>
+    <string name="ui_use_camera_25987b" formatted="false">استخدم الكاميرا</string>
+    <string name="ui_use_what_you_have_37fd8b" formatted="false">استخدم ما لديك</string>
+    <string name="ui_validate_and_import_c02c3a" formatted="false">التحقق من صحة واستيراد</string>
+    <string name="ui_view_original_source_4dd847" formatted="false">عرض المصدر الأصلي</string>
+    <string name="ui_what_s_in_your_kitchen_577097" formatted="false">ماذا يوجد في مطبخك؟</string>
+    <string name="ui_your_everyday_kitchen_f3db1b" formatted="false">مطبخك اليومي</string>
+    <string name="ui_your_kitchen_beautifully_togethe_45a076" formatted="false">مطبخك، جميل معًا.</string>
+    <string name="ui_your_recipe_book_e5e04f" formatted="false">كتاب الوصفات الخاصة بك</string>
+    <string name="ui_your_recipes_and_saved_templates_56c9f9" formatted="false">ستظل وصفاتك وقوالبك المحفوظة متاحة.</string>
+    <string name="ui_your_recipes_plans_pantry_and_sh_135c7c" formatted="false">وصفاتك وخططك ومخزنك وقائمة التسوق الخاصة بك مباشرة على هذا الجهاز. تستبعد النسخ الاحتياطية لـ JSON الصور والمؤقتات المرفقة. مخزن الصادرات في مكان خاص.</string>
+    <string name="billing_not_configured">تحتاج عمليات الشراء إلى تهيئة كتالوج أمازون وخدمة التحقق. لا يمكن فرض أي رسوم في هذا البناء.</string>
+    <string name="billing_ready">حساب امازون جاهز الأسعار مقدمة من أمازون.</string>
+    <string name="billing_retry">لا يمكن الوصول إلى المتجر. يرجى المحاولة مرة أخرى.</string>
+    <string name="billing_account_unavailable">الشراء من أمازون غير متاح. قم بتسجيل الدخول إلى Amazon على جهاز Fire مدعوم وحاول مرة أخرى.</string>
+    <string name="billing_already_owned">تم شراؤها بالفعل. التحقق من مشترياتك.</string>
+    <string name="billing_pending">في انتظار موافقة الشراء من أمازون. سيتم فتح الإصدار المميز بعد الموافقة والتحقق.</string>
+    <string name="billing_unavailable_product">هذا المنتج غير متوفر في سوق أمازون الخاص بك.</string>
+    <string name="billing_purchase_failed">لم يكتمل الشراء. يمكنك المحاولة مرة أخرى أو استعادة المشتريات.</string>
+    <string name="billing_verification_retry">تعذر إنهاء عملية التحقق. ويظل أي وصول تم التحقق منه موجودًا حتى تنتهي صلاحية التحقق منه. استعادة لإعادة المحاولة.</string>
+    <string name="billing_active">DishNest Premium نشط.</string>
+    <string name="billing_no_purchases">لم يتم العثور على عملية شراء Premium نشطة لحساب Amazon هذا.</string>
+    <string name="premium_required">تتطلب هذه الميزة DishNest Premium. افتح الإعدادات لعرض الخطط المتاحة.</string>
+    <string name="premium_features">وصفات غير محدودة، واستيراد الوصفات، وقوالب خطط الوجبات القابلة لإعادة الاستخدام.</string>
+    <string name="premium_terms">يتم تجديد الاشتراكات من خلال أمازون حتى يتم إلغاؤها في إعدادات اشتراك أمازون الخاصة بك. تعرض أمازون السعر المطبق وفترة الفاتورة وأي عرض قبل التأكيد. الشراء مدى الحياة هو دفعة واحدة. لا وعدت DishNest بأي تجربة.</string>
+    <string name="premium_cache">يتم تخزين الوصول الذي تم التحقق منه مؤقتًا لمدة تصل إلى 24 ساعة، ويقتصر على أي انتهاء صلاحية اشتراك معروف. أعد الاتصال واستعادته في حالة انتهاء صلاحية التحقق. تظل الوصفات المحفوظة متاحة.</string>
+    <string name="edition_free">طبعة مجانية · 25 وصفة الحد</string>
+    <string name="edition_premium">غالي</string>
+    <string name="copy_0070948938" formatted="false">جرّب الخطوة التالية أو التكرار أو عرض المكونات أو ضبط مؤقت لعشر دقائق.</string>
+    <string name="copy_024950cf2c" formatted="false">استيراد وصفة</string>
+    <string name="copy_02a9db66ee" formatted="false">نسخ الوصفة</string>
+    <string name="copy_03ba74aae3" formatted="false">مراجعة الوصفة</string>
+    <string name="copy_04bf79e202" formatted="false">حذف الوصفة</string>
+    <string name="copy_073c7a8f10" formatted="false">أكمل الطبخ</string>
+    <string name="copy_206e1064b7" formatted="false">أضف خطوات التحضير إلى هذه الوصفة.</string>
+    <string name="copy_2198638b49" formatted="false">خطط لبعض الوجبات ثم اجمع مكوناتها.</string>
+    <string name="copy_21fbde19cf" formatted="false">الأسبوع التالي</string>
+    <string name="copy_241171761e" formatted="false">الطعام الجيد يستحق الاحتفاظ بوصفاته.</string>
+    <string name="copy_24486a0cb6" formatted="false">لا توجد خطوات تحضير</string>
+    <string name="copy_27809578e7" formatted="false">لصق نص الوصفة</string>
+    <string name="copy_298a9207a7" formatted="false">الخطوة التالية</string>
+    <string name="copy_2db80e2a1d" formatted="false">أدخل كمية تساوي صفراً أو أكثر.</string>
+    <string name="copy_2f4ddffe07" formatted="false">المؤقت متوقف مؤقتاً</string>
+    <string name="copy_318c1da8d9" formatted="false">الخطوة السابقة</string>
+    <string name="copy_357d388fdf" formatted="false">إلغاء المؤقت</string>
+    <string name="copy_3621a99bef" formatted="false">تبديل حالة المفضلة</string>
+    <string name="copy_3927421bab" formatted="false">تغيير الوجبة أو الحصص</string>
+    <string name="copy_4304f7be23" formatted="false">الوصفات المحفوظة</string>
+    <string name="copy_477ef9ae15" formatted="false">أسبوعك بتخطيط مدروس</string>
+    <string name="copy_47b0904ec9" formatted="false">رابط الموقع</string>
+    <string name="copy_481682c207" formatted="false">تعديل الوصفة</string>
+    <string name="copy_48432b3843" formatted="false">إضافة منتج إلى المخزن</string>
+    <string name="copy_49b8bc2c67" formatted="false">إضافة صورة للوصفة</string>
+    <string name="copy_4d68fe9e8f" formatted="false">لا يتوفر تطبيق كاميرا. اختر صورة بدلاً من ذلك.</string>
+    <string name="copy_553628331c" formatted="false">مطبخك على طريقتك</string>
+    <string name="copy_55e1a0c898" formatted="false">إيقاف المؤقت مؤقتاً أو استئنافه</string>
+    <string name="copy_579e329ab4" formatted="false">حدد عدد الحصص من 1 إلى 100.</string>
+    <string name="copy_591303470a" formatted="false">أضف ما لديك لتخطيط مشترياتك القادمة بشكل أفضل.</string>
+    <string name="copy_5ce282fca6" formatted="false">مفضلات العائلة</string>
+    <string name="copy_5d4570598c" formatted="false">مشاركة الوصفة</string>
+    <string name="copy_5ecc81d67a" formatted="false">تعذر حفظ التصدير</string>
+    <string name="copy_640c34133b" formatted="false">عشاء أيام الأسبوع</string>
+    <string name="copy_66bf733db7" formatted="false">تم رفض إذن الميكروفون. تظل أدوات التحكم باللمس متاحة.</string>
+    <string name="copy_672e21cbc1" formatted="false">تعذر حفظ النسخة الاحتياطية</string>
+    <string name="copy_68669895ac" formatted="false">أدخل اسم المنتج.</string>
+    <string name="copy_6a38c0b66f" formatted="false">تم تصدير قائمة التسوق</string>
+    <string name="copy_6be2cd1944" formatted="false">تم عرض المكونات</string>
+    <string name="copy_74a883a037" formatted="false">الإعدادات</string>
+    <string name="copy_76c65b7344" formatted="false">تعذر استيراد الوصفة</string>
+    <string name="copy_793b69cce2" formatted="false">وجبات هذا الأسبوع</string>
+    <string name="copy_7d9eb7acb1" formatted="false">إغلاق</string>
+    <string name="copy_7ec446a336" formatted="false">اعرف ما لديك وحضّر شيئاً لذيذاً.</string>
+    <string name="copy_86b1fdfa00" formatted="false">إزالة منتج من المخزن</string>
+    <string name="copy_89ca7aafe1" formatted="false">تم العثور على جميع أسماء المكونات. تحقق من الكميات قبل الطهي.</string>
+    <string name="copy_89ea751a62" formatted="false">تم تصدير كتاب الوصفات</string>
+    <string name="copy_8b566d5081" formatted="false">مرحباً بك في مطبخك</string>
+    <string name="copy_8d014e1c45" formatted="false">أضف وصفة</string>
+    <string name="copy_9328724b4c" formatted="false">لصق نص</string>
+    <string name="copy_93aa52c0ba" formatted="false">إزالة الوجبة</string>
+    <string name="copy_97a804fd48" formatted="false">منتج للتسوق</string>
+    <string name="copy_9be45213e6" formatted="false">لا توجد مؤقتات نشطة</string>
+    <string name="copy_9d3b335d3c" formatted="false">جارٍ قراءة الوصفة…</string>
+    <string name="copy_9ee92f81e3" formatted="false">لشراء</string>
+    <string name="copy_9f375d0d3d" formatted="false">قائمة تسوق DishNest</string>
+    <string name="copy_9f472a48e0" formatted="false">أضف عنواناً وعناوين الأقسام Ingredients وMethod أو Instructions. لن يتم اختلاق المعلومات الناقصة.</string>
+    <string name="copy_9f6ac50566" formatted="false">أسبوع يناسبك</string>
+    <string name="copy_a0910e26a9" formatted="false">استورد Recipe JSON-LD من صفحة HTTPS عامة لديك إذن بحفظها. لا يتم تجاوز قيود الوصول.</string>
+    <string name="copy_a25d1bda32" formatted="false">DishNest Premium</string>
+    <string name="copy_a6ebea75ab" formatted="false">تعذر بدء التعرف الضوئي على النص.</string>
+    <string name="copy_a985a43f15" formatted="false">تم تصدير النسخة الاحتياطية دون الصور</string>
+    <string name="copy_ab00db4db2" formatted="false">أضف اسم الوصفة والمكونات وخطوات التحضير.</string>
+    <string name="copy_ab524fd1c2" formatted="false">أضف وصفة إلى مطبخك</string>
+    <string name="copy_adda900c1c" formatted="false">احفظ وصفتك الأولى</string>
+    <string name="copy_b0059bc190" formatted="false">أضف وصفة أو جرّب بحثاً آخر.</string>
+    <string name="copy_b5b34f89ff" formatted="false">منتج في المخزن</string>
+    <string name="copy_c0f8bbcd41" formatted="false">الأسبوع السابق</string>
+    <string name="copy_c7bb32b3d5" formatted="false">جميع الوصفات</string>
+    <string name="copy_ca07f55dcb" formatted="false">أدخل وقتي التحضير والطهي من 0 إلى 10080 دقيقة.</string>
+    <string name="copy_ca2fa599a0" formatted="false">خيرات مخزنك</string>
+    <string name="copy_cdc99bac2c" formatted="false">لم يتم العثور على نص مقروء. جرّب صورة أوضح وأفضل إضاءة.</string>
+    <string name="copy_cf31825cce" formatted="false">تعذر فتح النسخة الاحتياطية</string>
+    <string name="copy_d11fcfd774" formatted="false">لم يتم العثور على المكون. اضغط المكونات لمراجعة القائمة.</string>
+    <string name="copy_d84eebada9" formatted="false">صورة</string>
+    <string name="copy_d944203610" formatted="false">إضافة منتج</string>
+    <string name="copy_d97d51d370" formatted="false">المفضلة</string>
+    <string name="copy_e2a2406740" formatted="false">كل ما تحتاجه</string>
+    <string name="copy_e39b24993c" formatted="false">مفضلة</string>
+    <string name="copy_e400521d2f" formatted="false">تشغيل الإرشاد الصوتي أو إيقافه</string>
+    <string name="copy_e5e04f3aa7" formatted="false">كتاب الوصفات الخاصة بك</string>
+    <string name="copy_e5fc1da796" formatted="false">تعديل منتج في المخزن</string>
+    <string name="copy_eacb35734f" formatted="false">مصمم للخصوصية. ملك لك دائماً.</string>
+    <string name="copy_f03f0e4ef3" formatted="false">حيرة أقل بشأن العشاء</string>
+    <string name="copy_f15ef2ba77" formatted="false">الإشعارات متوقفة. أبقِ وضع الطهي مفتوحاً لرؤية المؤقتات.</string>
+    <string name="copy_f46668cb02" formatted="false">تغيير صورة الوصفة</string>
+    <string name="copy_f60047d5c0" formatted="false">تعذرت قراءة الصورة</string>
+    <string name="copy_ff59fa9de2" formatted="false">شعار DishNest</string>
+<plurals name="recipe_count">
+        <item quantity="zero">%d وصفة</item>
+        <item quantity="one">%d وصفة</item>
+        <item quantity="two">%d وصفتان</item>
+        <item quantity="few">%d وصفات</item>
+        <item quantity="many">%d وصفة</item>
+        <item quantity="other">%d وصفة</item>
+    </plurals>
+
+    <string name="third_party_notices">إشعارات الجهات الخارجية</string>
+    <string name="billing_monthly">اشتراك شهري</string>
+    <string name="billing_annual">اشتراك سنوي</string>
+    <string name="billing_one_time">شراء لمرة واحدة</string>
+</resources>

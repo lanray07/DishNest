@@ -1,0 +1,107 @@
+{
+  "locales": [
+    {
+      "locale": "en-GB",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "en-US",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "es",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "fr",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "de",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "it",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "pt-BR",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "pt-PT",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "nl",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "pl",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "ar",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    },
+    {
+      "locale": "hi",
+      "missing": [],
+      "invalid_placeholders": [],
+      "plural_errors": [],
+      "human_review": "pending",
+      "status": "resource-complete"
+    }
+  ],
+  "hardcoded_text_count": 19,
+  "plural_resources": 1,
+  "plural_review": "recipe count localised; other inline counts need extraction",
+  "rtl": "manifest supportsRtl=true; device visual review pending",
+  "resource_complete": true,
+  "release_approved": false,
+  "complete": false
+}

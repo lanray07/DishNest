@@ -1,0 +1,269 @@
+<resources>
+    <string name="nav_home">Mijn keuken</string>
+    <string name="nav_recipes">Receptenboek</string>
+    <string name="nav_plan">Maaltijdplanner</string>
+    <string name="nav_shop">Boodschappenlijst</string>
+    <string name="nav_pantry">Voorraadkast</string>
+    <string name="nav_settings">Instellingen</string>
+    <string name="greeting">Een beetje plannen. Veel meer vreugde.</string>
+    <string name="save">Redden</string>
+    <string name="cancel">Annuleren</string>
+    <string name="delete">Verwijderen</string>
+    <string name="add_recipe">Recept toevoegen</string>
+    <string name="search">Zoek in uw recepten</string>
+    <string name="cook">Begin met koken</string>
+    <string name="next">Volgende stap</string>
+    <string name="previous">Vorige stap</string>
+    <string name="empty_recipes">Je volgende favoriet begint hier.</string>
+    <string name="empty_hint">Bewaar een recept en doe alsof u thuis bent.</string>
+    <string name="premium">DishNest Premium</string>
+    <string name="ui_a_calmer_week_188aa5" formatted="false">Een rustiger weekje</string>
+    <string name="ui_a_clean_slate_cc5380" formatted="false">Een schone lei</string>
+    <string name="ui_a_fresh_page_in_your_recipe_book_91f362" formatted="false">Een nieuwe pagina in uw receptenboek</string>
+    <string name="ui_a_good_shop_starts_with_a_plan_dfb246" formatted="false">Een goede winkel begint met een plan</string>
+    <string name="ui_a_little_description_e30ea8" formatted="false">Een kleine beschrijving</string>
+    <string name="ui_a_little_extra_for_your_kitchen_57e0a8" formatted="false">Een extraatje voor uw keuken.</string>
+    <string name="ui_a_little_extra_room_for_the_way__59991a" formatted="false">Een beetje extra ruimte\nvoor de manier waarop je kookt.</string>
+    <string name="ui_a_little_inspiration_4c35e1" formatted="false">Een beetje inspiratie</string>
+    <string name="ui_a_little_less_waste_b8146c" formatted="false">Iets minder afval</string>
+    <string name="ui_a_little_pantry_check_goes_a_lon_d0a60c" formatted="false">Met een kleine voorraadcontrole kom je al een heel eind.</string>
+    <string name="ui_active_timers_will_continue_you__ab36a2" formatted="false">Actieve timers gaan door. U kunt terugkeren naar de kookmodus om ze te beheren.</string>
+    <string name="ui_add_a_meal_fe642f" formatted="false">Voeg een maaltijd toe</string>
+    <string name="ui_add_item_d1a0b3" formatted="false">Artikel toevoegen</string>
+    <string name="ui_add_recipe_8d014e" formatted="false">Recept toevoegen</string>
+    <string name="ui_add_timer_5a6dfa" formatted="false">Timer toevoegen</string>
+    <string name="ui_all_done_in_the_kitchen_a5b557" formatted="false">Alles klaar in de keuken?</string>
+    <string name="ui_always_check_quantities_serving__0d0645" formatted="false">Controleer altijd de hoeveelheden, portiegrootte, tijdstippen en instructies ten opzichte van het origineel.</string>
+    <string name="ui_back_to_kitchen_901962" formatted="false">Terug naar de keuken</string>
+    <string name="ui_background_alerts_may_be_delayed_84d690" formatted="false">Achtergrondwaarschuwingen kunnen worden vertraagd door de energie-instellingen van het apparaat.</string>
+    <string name="ui_cancel_19766e" formatted="false">Annuleren</string>
+    <string name="ui_check_date_yyyy_mm_dd_optional_ebbc43" formatted="false">Datum controleren · JJJJ-MM-DD (optioneel)</string>
+    <string name="ui_check_recipe_suitability_and_all_e97821" formatted="false">Controleer zelf de geschiktheid van het recept en allergenen voordat u gaat koken.</string>
+    <string name="ui_choose_photo_9c5bb7" formatted="false">Kies foto</string>
+    <string name="ui_clear_this_week_0389b3" formatted="false">Deze week helder?</string>
+    <string name="ui_clear_week_32148a" formatted="false">Helder weekje</string>
+    <string name="ui_collected_with_love_4b0a34" formatted="false">Met liefde verzameld</string>
+    <string name="ui_collection_7b7907" formatted="false">Verzameling</string>
+    <string name="ui_cook_minutes_8b80a8" formatted="false">Kook minuten</string>
+    <string name="ui_copy_previous_week_d774bf" formatted="false">Kopieer vorige week</string>
+    <string name="ui_correct_recognised_text_add_ingr_2bc536" formatted="false">Corrigeer de herkende tekst · voeg de kopjes Ingrediënten en Methode toe</string>
+    <string name="ui_cuisine_6814ff" formatted="false">Keuken</string>
+    <string name="ui_cuisine_leave_blank_for_any_1adbae" formatted="false">Keuken · laat niets open voor wat dan ook</string>
+    <string name="ui_dates_are_reminders_to_check_you_fdb98c" formatted="false">Datums zijn herinneringen om uw voedsel en de verpakking ervan te controleren; ze zijn geen garantie voor de veiligheid.</string>
+    <string name="ui_delete_all_kitchen_data_013193" formatted="false">Verwijder alle keukengegevens</string>
+    <string name="ui_delete_all_kitchen_data_3aa3db" formatted="false">Alle keukengegevens verwijderen?</string>
+    <string name="ui_delete_e2d0a5" formatted="false">Verwijderen</string>
+    <string name="ui_delete_this_recipe_4a5731" formatted="false">Dit recept verwijderen?</string>
+    <string name="ui_demo_kitchen_e41a43" formatted="false">Demokeuken</string>
+    <string name="ui_demo_recipes_are_original_exampl_069377" formatted="false">Demorecepten zijn originele voorbeelden. Demogegevens worden alleen toegevoegd als u deze in een lege keuken kiest.</string>
+    <string name="ui_dietary_tags_comma_separated_7222ad" formatted="false">Dieetlabels · door komma\'s gescheiden</string>
+    <string name="ui_difficulty_be4413" formatted="false">Moeilijkheidsgraad</string>
+    <string name="ui_dishnest_0_1_0_development_previ_c14494" formatted="false">DishNest 0.1.0 · Ontwikkelingsvoorbeeld\nBewaar recepten. Plan maaltijden. Handsfree koken.</string>
+    <string name="ui_dishnest_80ec64" formatted="false">DishNest</string>
+    <string name="ui_explore_a_demo_kitchen_6bdc4e" formatted="false">Ontdek een demokeuken</string>
+    <string name="ui_explore_dishnest_b5a56c" formatted="false">Ontdek DishNest</string>
+    <string name="ui_explore_dishnest_premium_5a187f" formatted="false">Ontdek DishNest Premium</string>
+    <string name="ui_explore_premium_7a1440" formatted="false">Ontdek Premium →</string>
+    <string name="ui_export_json_backup_0db468" formatted="false">JSON-back-up exporteren</string>
+    <string name="ui_export_recipe_book_as_text_f6ad1f" formatted="false">Exporteer het receptenboek als tekst</string>
+    <string name="ui_export_text_e4c312" formatted="false">Tekst exporteren</string>
+    <string name="ui_finish_cooking_073c7a" formatted="false">Maak het koken af</string>
+    <string name="ui_from_this_week_s_plan_d1be4f" formatted="false">Uit het plan van deze week</string>
+    <string name="ui_generated_quantities_reflect_pla_61a80d" formatted="false">De gegenereerde hoeveelheden weerspiegelen de geplande porties en trekken compatibele voorraadhoeveelheden af. Bij het opnieuw opbouwen blijven handmatige items behouden.</string>
+    <string name="ui_give_it_a_little_time_adfe27" formatted="false">Geef het een beetje tijd</string>
+    <string name="ui_good_food_less_waste_4eb429" formatted="false">Goed eten, minder afval</string>
+    <string name="ui_good_recipes_deserve_a_place_to__f1bd5e" formatted="false">Goede recepten verdienen een plek om te verblijven.</string>
+    <string name="ui_import_2cff9b" formatted="false">Importeren</string>
+    <string name="ui_import_json_backup_fe0cd1" formatted="false">JSON-back-up importeren</string>
+    <string name="ui_import_this_backup_ecd47c" formatted="false">Deze back-up importeren?</string>
+    <string name="ui_import_validates_the_entire_back_86e01c" formatted="false">Import valideert de volledige back-up voordat deze wordt geschreven en vereist een lege keuken.</string>
+    <string name="ui_ingredients_87675d" formatted="false">Ingrediënten</string>
+    <string name="ui_ingredients_one_per_line_e_g_200_d4d092" formatted="false">Ingrediënten · één per lijn (bijvoorbeeld 200 g bloem)</string>
+    <string name="ui_item_name_70d5f4" formatted="false">Artikelnaam</string>
+    <string name="ui_keep_a_copy_e53d3b" formatted="false">Bewaar een kopie</string>
+    <string name="ui_keep_aggregate_usage_counts_on_t_a9093e" formatted="false">Houd de totale gebruiksaantallen op dit apparaat bij</string>
+    <string name="ui_keep_cooking_d9de3b" formatted="false">Blijf koken</string>
+    <string name="ui_keep_my_kitchen_79ce76" formatted="false">Behoud mijn keuken</string>
+    <string name="ui_keep_track_of_what_you_already_h_9f24a1" formatted="false">Houd bij wat je al hebt.</string>
+    <string name="ui_language_accessibility_24f044" formatted="false">Taal &amp; toegankelijkheid</string>
+    <string name="ui_let_s_make_something_good_8f500e" formatted="false">Laten we er iets goeds van maken</string>
+    <string name="ui_load_demo_kitchen_df8474" formatted="false">Demokeuken laden</string>
+    <string name="ui_made_again_loved_again_f1ebfd" formatted="false">Opnieuw gemaakt. Opnieuw geliefd.</string>
+    <string name="ui_made_for_the_joy_of_cooking_c83bee" formatted="false">Gemaakt voor het plezier van koken.</string>
+    <string name="ui_make_it_yours_34ca8a" formatted="false">Maak het de jouwe</string>
+    <string name="ui_make_room_for_good_food_e392e4" formatted="false">Maak ruimte voor lekker eten</string>
+    <string name="ui_make_shopping_list_ad0a17" formatted="false">Boodschappenlijstje maken</string>
+    <string name="ui_make_yourself_at_home_a0548a" formatted="false">Doe alsof u thuis bent</string>
+    <string name="ui_maximum_total_minutes_4e76ea" formatted="false">Maximaal totaal aantal minuten</string>
+    <string name="ui_method_one_step_per_line_322349" formatted="false">Werkwijze · één stap per regel</string>
+    <string name="ui_minutes_1_1440_5357e2" formatted="false">Minuten (1-1440)</string>
+    <string name="ui_no_registration_advertising_or_a_00a2f4" formatted="false">Geen registratie, reclame of analyse-overdracht. Recepten en keukengegevens blijven op dit apparaat staan. Engelse fotoherkenning werkt op het apparaat. Website-import neemt contact op met de gevraagde site en leidt door. Stem is push-to-talk; uw spraakprovider kan audio online verwerken. DishNest slaat geen onbewerkte audio op. Indien geconfigureerd, stuurt de facturering Amazon-gebruikers- en ontvangst-ID\'s naar de verificatieservice en Amazon; ondertekende ontvangstbewijzen worden privé opgeslagen voor herstel en offline toegang. Cloudback-up is niet verbonden.</string>
+    <string name="ui_no_store_prices_free_trials_or_p_dbbbec" formatted="false">Abonnementen worden via Amazon verlengd totdat ze worden opgezegd in je Amazon-abonnementsinstellingen. Amazon toont de toepasselijke prijs, factureringsperiode en eventuele aanbiedingen voordat je bevestigt. Een levenslange aankoop is een eenmalige betaling. Er wordt geen proces beloofd door DishNest.</string>
+    <string name="ui_notes_from_your_kitchen_043bc7" formatted="false">Aantekeningen uit uw keuken</string>
+    <string name="ui_off_by_default_counts_contain_no_6ec589" formatted="false">Standaard uitgeschakeld. Tellingen bevatten geen receptinhoud, audio, namen of identificatiegegevens. Er wordt niets verzonden. Bij het uitschakelen worden deze tellers verwijderd. Aankoop- en proefconversietellingen zijn inactief terwijl facturering is uitgeschakeld.</string>
+    <string name="ui_one_list_a_lighter_shop_ba8c84" formatted="false">Eén lijst, een lichtere winkel</string>
+    <string name="ui_optional_usage_counts_ea8511" formatted="false">Optioneel gebruik telt</string>
+    <string name="ui_permanently_delete_9003e1" formatted="false">Permanent verwijderen</string>
+    <string name="ui_permanently_remove_all_local_rec_62eb3a" formatted="false">Verwijder definitief alle lokale recepten, plannen, voorraadartikelen, winkelartikelen, sjablonen, timers en bijgevoegde foto\'s. Exporteer eerst alles wat u wilt behouden.</string>
+    <string name="ui_personal_notes_210f34" formatted="false">Persoonlijke notities</string>
+    <string name="ui_plan_for_me_c13f33" formatted="false">Plan voor mij</string>
+    <string name="ui_plan_seven_dinners_a453e5" formatted="false">Plan zeven diners</string>
+    <string name="ui_planned_premium_features_821e28" formatted="false">Premium-functies</string>
+    <string name="ui_premium_is_being_prepared_this_d_c133a3" formatted="false">Onbeperkte recepten, import van recepten en herbruikbare maaltijdplansjablonen.</string>
+    <string name="ui_prep_minutes_87773e" formatted="false">Minuten voorbereiden</string>
+    <string name="ui_privacy_permissions_77c242" formatted="false">Privacy en machtigingen</string>
+    <string name="ui_quantity_blank_if_unknown_1d8e1a" formatted="false">Aantal · blanco indien onbekend</string>
+    <string name="ui_read_a_recipe_photo_on_your_devi_ea83af" formatted="false">Lees een receptfoto op uw apparaat. Het gebundelde Engelstalige OCR-model werkt offline; nauwkeurigheid is afhankelijk van de foto. Je afbeelding is niet geüpload.</string>
+    <string name="ui_read_step_e03fc7" formatted="false">Lees stap</string>
+    <string name="ui_recipe_name_c343c4" formatted="false">Receptnaam</string>
+    <string name="ui_required_dietary_tag_exact_saved_84dad6" formatted="false">Vereist dieettag · exact opgeslagen tag</string>
+    <string name="ui_restore_amazon_purchases_3b7842" formatted="false">Herstel Amazon-aankopen</string>
+    <string name="ui_review_every_ingredient_and_step_5bcc99" formatted="false">Controleer elk ingrediënt en elke stap voordat u het opslaat. Ontbrekende portiegroottes en tijdstippen moeten worden ingevoerd; gebruik 0 minuten alleen als dat nodig is.</string>
+    <string name="ui_review_structured_recipe_4cf14b" formatted="false">Gestructureerd recept bekijken</string>
+    <string name="ui_room_for_more_627976" formatted="false">Ruimte voor meer</string>
+    <string name="ui_save_1509f5" formatted="false">Redden</string>
+    <string name="ui_save_recipe_5622a7" formatted="false">Recept opslaan</string>
+    <string name="ui_save_template_47f72a" formatted="false">Sjabloon opslaan</string>
+    <string name="ui_save_this_week_s_rhythm_229a2e" formatted="false">Bewaar het ritme van deze week</string>
+    <string name="ui_servings_32939b" formatted="false">Porties</string>
+    <string name="ui_seven_dinners_from_your_saved_re_db57ba" formatted="false">Zeven diners uit uw opgeslagen recepten, met eerst de voorraadmatches. Dit draait volledig op uw apparaat.</string>
+    <string name="ui_share_list_33f118" formatted="false">Lijst delen</string>
+    <string name="ui_source_url_1adf66" formatted="false">Bron-URL</string>
+    <string name="ui_speech_recognition_and_language__01e307" formatted="false">Spraakherkenning en taalondersteuning variëren per apparaat. Alle kookstappen en timers werken op aanraking.</string>
+    <string name="ui_start_timer_4fcf31" formatted="false">Timer starten</string>
+    <string name="ui_tap_to_speak_8e8fa9" formatted="false">Tik om te spreken</string>
+    <string name="ui_template_name_7b905e" formatted="false">Sjabloonnaam</string>
+    <string name="ui_the_app_follows_your_device_s_la_2ed1cc" formatted="false">De app volgt de taal van uw apparaat, de tekstgrootte en de lay-outrichting. Interfacevertalingen zijn concepten die wachten op beoordeling door de moedertaalspreker. De kookmodus gebruikt grote tekst en houdt het scherm wakker.</string>
+    <string name="ui_the_backup_will_be_validated_and_1a7df3" formatted="false">De back-up wordt gevalideerd en toegevoegd aan een lege keuken. Bestaande gegevens worden niet overschreven.</string>
+    <string name="ui_this_also_removes_it_from_planne_c25d45" formatted="false">Hierdoor wordt het ook verwijderd uit geplande maaltijden. Exporteer eerst een kopie als u deze wilt behouden.</string>
+    <string name="ui_this_cannot_be_undone_export_a_b_dfe37b" formatted="false">Dit kan niet ongedaan worden gemaakt. Exporteer een back-up voordat u doorgaat.</string>
+    <string name="ui_timer_label_6a43fd" formatted="false">Timer-label</string>
+    <string name="ui_today_2b065c" formatted="false">Vandaag</string>
+    <string name="ui_under_30_min_c9922c" formatted="false">Minder dan 30 minuten</string>
+    <string name="ui_unit_g_kg_ml_l_tsp_tbsp_6e0535" formatted="false">Eenheid · g, kg, ml, l, theelepel, eetlepel…</string>
+    <string name="ui_unlimited_recipes_meal_plan_temp_05c133" formatted="false">Geverifieerde toegang wordt maximaal 24 uur in de cache bewaard, begrensd door de bekende vervaldatum van het abonnement. Maak opnieuw verbinding en herstel als de verificatie verloopt. Opgeslagen recepten blijven beschikbaar.</string>
+    <string name="ui_use_camera_25987b" formatted="false">Gebruik camera</string>
+    <string name="ui_use_what_you_have_37fd8b" formatted="false">Gebruik wat je hebt</string>
+    <string name="ui_validate_and_import_c02c3a" formatted="false">Valideren en importeren</string>
+    <string name="ui_view_original_source_4dd847" formatted="false">Bekijk originele bron</string>
+    <string name="ui_what_s_in_your_kitchen_577097" formatted="false">Wat staat er in jouw keuken?</string>
+    <string name="ui_your_everyday_kitchen_f3db1b" formatted="false">UW DAGELIJKSE KEUKEN</string>
+    <string name="ui_your_kitchen_beautifully_togethe_45a076" formatted="false">Jouw keuken, mooi samen.</string>
+    <string name="ui_your_recipe_book_e5e04f" formatted="false">Jouw receptenboek</string>
+    <string name="ui_your_recipes_and_saved_templates_56c9f9" formatted="false">Uw recepten en opgeslagen sjablonen blijven beschikbaar.</string>
+    <string name="ui_your_recipes_plans_pantry_and_sh_135c7c" formatted="false">Je recepten, plannen, voorraadkast en boodschappenlijstje staan ​​live op dit apparaat. JSON-back-ups sluiten bijgevoegde foto\'s en timers uit. Bewaar exporten ergens privé.</string>
+    <string name="billing_not_configured">Voor aankopen moeten de Amazon-catalogus en verificatieservice worden geconfigureerd. Er kunnen geen kosten in rekening worden gebracht in deze build.</string>
+    <string name="billing_ready">Amazon-account klaar. Prijzen worden geleverd door Amazon.</string>
+    <string name="billing_retry">Kon de winkel niet bereiken. Probeer het opnieuw.</string>
+    <string name="billing_account_unavailable">Amazon-aankopen zijn niet beschikbaar. Meld je aan bij Amazon op een ondersteund Fire-apparaat en probeer het opnieuw.</string>
+    <string name="billing_already_owned">Al gekocht. Controle van uw aankopen.</string>
+    <string name="billing_pending">Wachten op goedkeuring van de aankoop door Amazon. Premium wordt ontgrendeld na goedkeuring en verificatie.</string>
+    <string name="billing_unavailable_product">Dit product is niet beschikbaar op uw Amazon-marktplaats.</string>
+    <string name="billing_purchase_failed">Aankoop is niet voltooid. U kunt het opnieuw proberen of aankopen herstellen.</string>
+    <string name="billing_verification_retry">De verificatie kon niet worden voltooid. Eventuele bestaande geverifieerde toegang blijft bestaan ​​totdat de verificatie verloopt. Herstellen om opnieuw te proberen.</string>
+    <string name="billing_active">DishNest Premium is actief.</string>
+    <string name="billing_no_purchases">Er is geen actieve Premium-aankoop gevonden voor dit Amazon-account.</string>
+    <string name="premium_required">Voor deze functie is DishNest Premium vereist. Open Instellingen om beschikbare abonnementen te bekijken.</string>
+    <string name="premium_features">Onbeperkte recepten, import van recepten en herbruikbare maaltijdplansjablonen.</string>
+    <string name="premium_terms">Abonnementen worden via Amazon verlengd totdat ze worden opgezegd in je Amazon-abonnementsinstellingen. Amazon toont de toepasselijke prijs, factureringsperiode en eventuele aanbiedingen voordat je bevestigt. Een levenslange aankoop is een eenmalige betaling. Er wordt geen proces beloofd door DishNest.</string>
+    <string name="premium_cache">Geverifieerde toegang wordt maximaal 24 uur in de cache bewaard, begrensd door de bekende vervaldatum van het abonnement. Maak opnieuw verbinding en herstel als de verificatie verloopt. Opgeslagen recepten blijven beschikbaar.</string>
+    <string name="edition_free">Gratis editie · Maximaal 25 recepten</string>
+    <string name="edition_premium">Premie</string>
+    <string name="copy_0070948938" formatted="false">Probeer ‘volgende stap’, ‘herhalen’, ‘ingrediënten tonen’ of een timer van tien minuten.</string>
+    <string name="copy_024950cf2c" formatted="false">Recept importeren</string>
+    <string name="copy_02a9db66ee" formatted="false">Recept dupliceren</string>
+    <string name="copy_03ba74aae3" formatted="false">Recept controleren</string>
+    <string name="copy_04bf79e202" formatted="false">Recept verwijderen</string>
+    <string name="copy_073c7a8f10" formatted="false">Maak het koken af</string>
+    <string name="copy_206e1064b7" formatted="false">Voeg bereidingsstappen aan dit recept toe.</string>
+    <string name="copy_2198638b49" formatted="false">Plan een paar maaltijden en voeg de ingrediënten samen.</string>
+    <string name="copy_21fbde19cf" formatted="false">Volgende week</string>
+    <string name="copy_241171761e" formatted="false">Goed eten is het bewaren waard.</string>
+    <string name="copy_24486a0cb6" formatted="false">Geen bereidingsstappen</string>
+    <string name="copy_27809578e7" formatted="false">Recepttekst plakken</string>
+    <string name="copy_298a9207a7" formatted="false">Volgende stap</string>
+    <string name="copy_2db80e2a1d" formatted="false">Voer een hoeveelheid van nul of meer in.</string>
+    <string name="copy_2f4ddffe07" formatted="false">Timer gepauzeerd</string>
+    <string name="copy_318c1da8d9" formatted="false">Vorige stap</string>
+    <string name="copy_357d388fdf" formatted="false">Timer annuleren</string>
+    <string name="copy_3621a99bef" formatted="false">Favoriet in- of uitschakelen</string>
+    <string name="copy_3927421bab" formatted="false">Maaltijd of porties wijzigen</string>
+    <string name="copy_4304f7be23" formatted="false">Opgeslagen recepten</string>
+    <string name="copy_477ef9ae15" formatted="false">Je week, met zorg gepland</string>
+    <string name="copy_47b0904ec9" formatted="false">Websitelink</string>
+    <string name="copy_481682c207" formatted="false">Recept bewerken</string>
+    <string name="copy_48432b3843" formatted="false">Voorraadproduct toevoegen</string>
+    <string name="copy_49b8bc2c67" formatted="false">Receptfoto toevoegen</string>
+    <string name="copy_4d68fe9e8f" formatted="false">Er is geen camera-app beschikbaar. Kies een afbeelding.</string>
+    <string name="copy_553628331c" formatted="false">Jouw keuken, jouw manier</string>
+    <string name="copy_55e1a0c898" formatted="false">Timer pauzeren of hervatten</string>
+    <string name="copy_579e329ab4" formatted="false">Bevestig een aantal porties van 1 tot 100.</string>
+    <string name="copy_591303470a" formatted="false">Voeg toe wat je hebt en plan je volgende boodschappen slimmer.</string>
+    <string name="copy_5ce282fca6" formatted="false">Familiefavorieten</string>
+    <string name="copy_5d4570598c" formatted="false">Recept delen</string>
+    <string name="copy_5ecc81d67a" formatted="false">Export kan niet worden opgeslagen</string>
+    <string name="copy_640c34133b" formatted="false">Doordeweekse diners</string>
+    <string name="copy_66bf733db7" formatted="false">Microfoontoegang geweigerd. Alle aanraakbediening blijft beschikbaar.</string>
+    <string name="copy_672e21cbc1" formatted="false">Back-up kan niet worden opgeslagen</string>
+    <string name="copy_68669895ac" formatted="false">Voer een productnaam in.</string>
+    <string name="copy_6a38c0b66f" formatted="false">Boodschappenlijst geëxporteerd</string>
+    <string name="copy_6be2cd1944" formatted="false">Ingrediënten getoond</string>
+    <string name="copy_74a883a037" formatted="false">Instellingen</string>
+    <string name="copy_76c65b7344" formatted="false">Recept kan niet worden geïmporteerd</string>
+    <string name="copy_793b69cce2" formatted="false">Maaltijden deze week</string>
+    <string name="copy_7d9eb7acb1" formatted="false">Sluiten</string>
+    <string name="copy_7ec446a336" formatted="false">Weet wat je hebt. Maak iets lekkers.</string>
+    <string name="copy_86b1fdfa00" formatted="false">Voorraadproduct verwijderen</string>
+    <string name="copy_89ca7aafe1" formatted="false">Alle ingrediënten gevonden. Controleer de hoeveelheden voor het koken.</string>
+    <string name="copy_89ea751a62" formatted="false">Receptenboek geëxporteerd</string>
+    <string name="copy_8b566d5081" formatted="false">Welkom in je keuken</string>
+    <string name="copy_8d014e1c45" formatted="false">Recept toevoegen</string>
+    <string name="copy_9328724b4c" formatted="false">Tekst plakken</string>
+    <string name="copy_93aa52c0ba" formatted="false">Maaltijd verwijderen</string>
+    <string name="copy_97a804fd48" formatted="false">Boodschappenartikel</string>
+    <string name="copy_9be45213e6" formatted="false">Geen actieve timers</string>
+    <string name="copy_9d3b335d3c" formatted="false">Recept lezen…</string>
+    <string name="copy_9ee92f81e3" formatted="false">Nog te halen</string>
+    <string name="copy_9f375d0d3d" formatted="false">DishNest-boodschappenlijst</string>
+    <string name="copy_9f472a48e0" formatted="false">Voeg een titel en de koppen Ingredients en Method of Instructions toe. Ontbrekende gegevens worden niet verzonnen.</string>
+    <string name="copy_9f6ac50566" formatted="false">Een week die bij je past</string>
+    <string name="copy_a0910e26a9" formatted="false">Importeer Recipe JSON-LD van een openbare HTTPS-pagina die je mag opslaan. Beperkingen worden niet omzeild.</string>
+    <string name="copy_a25d1bda32" formatted="false">DishNest Premium</string>
+    <string name="copy_a6ebea75ab" formatted="false">OCR kon niet worden gestart.</string>
+    <string name="copy_a985a43f15" formatted="false">Back-up geëxporteerd (zonder foto\'s)</string>
+    <string name="copy_ab00db4db2" formatted="false">Voeg een naam, ingrediënten en bereidingswijze toe.</string>
+    <string name="copy_ab524fd1c2" formatted="false">Haal een recept in huis</string>
+    <string name="copy_adda900c1c" formatted="false">Sla je eerste recept op</string>
+    <string name="copy_b0059bc190" formatted="false">Voeg een recept toe of probeer een andere zoekopdracht.</string>
+    <string name="copy_b5b34f89ff" formatted="false">Voorraadproduct</string>
+    <string name="copy_c0f8bbcd41" formatted="false">Vorige week</string>
+    <string name="copy_c7bb32b3d5" formatted="false">Alle recepten</string>
+    <string name="copy_ca07f55dcb" formatted="false">Voer bereidings- en kooktijden tussen 0 en 10080 minuten in.</string>
+    <string name="copy_ca2fa599a0" formatted="false">Lekkere dingen in je voorraadkast</string>
+    <string name="copy_cdc99bac2c" formatted="false">Geen leesbare tekst gevonden. Probeer een helderdere, scherpere foto.</string>
+    <string name="copy_cf31825cce" formatted="false">Back-up kan niet worden geopend</string>
+    <string name="copy_d11fcfd774" formatted="false">Ingrediënt niet gevonden. Tik op Ingrediënten om de lijst te bekijken.</string>
+    <string name="copy_d84eebada9" formatted="false">Foto</string>
+    <string name="copy_d944203610" formatted="false">Product toevoegen</string>
+    <string name="copy_d97d51d370" formatted="false">Favorieten</string>
+    <string name="copy_e2a2406740" formatted="false">Alles wat je nodig hebt</string>
+    <string name="copy_e39b24993c" formatted="false">Favoriet</string>
+    <string name="copy_e400521d2f" formatted="false">Gesproken begeleiding in- of uitschakelen</string>
+    <string name="copy_e5e04f3aa7" formatted="false">Jouw receptenboek</string>
+    <string name="copy_e5fc1da796" formatted="false">Voorraadproduct bewerken</string>
+    <string name="copy_eacb35734f" formatted="false">Ontworpen voor privacy. Helemaal van jou.</string>
+    <string name="copy_f03f0e4ef3" formatted="false">Minder ‘wat eten we vanavond?’</string>
+    <string name="copy_f15ef2ba77" formatted="false">Meldingen staan uit. Houd de kookmodus open om timers te zien.</string>
+    <string name="copy_f46668cb02" formatted="false">Receptfoto wijzigen</string>
+    <string name="copy_f60047d5c0" formatted="false">Afbeelding kan niet worden gelezen</string>
+    <string name="copy_ff59fa9de2" formatted="false">DishNest-logo</string>
+<plurals name="recipe_count">
+        <item quantity="one">%d recept</item>
+        <item quantity="other">%d recepten</item>
+    </plurals>
+
+    <string name="third_party_notices">Vermeldingen van derden</string>
+    <string name="billing_monthly">Maandabonnement</string>
+    <string name="billing_annual">Jaarabonnement</string>
+    <string name="billing_one_time">Eenmalige aankoop</string>
+</resources>
