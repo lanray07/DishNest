@@ -14,10 +14,10 @@ class PlanStore(private val database: KitchenDatabase) {
     suspend fun activeId(): String = ensureDefault().single { it.active }.id
 
     suspend fun create(name: String, unlimited: Boolean): MealPlan = database.withTransaction {
-        require(name.isNotBlank() && name.length <= 200) { "Enter a plan name (up to 200 characters)." }
+        requireKitchen(name.isNotBlank() && name.length <= 200, KitchenProblem.PLAN_NAME)
         val saved = ensureDefault()
-        require(unlimited) { "Multiple meal plans require Premium." }
-        require(saved.size < 100) { "The plan limit is 100." }
+        requireKitchen(unlimited, KitchenProblem.PREMIUM)
+        requireKitchen(saved.size < 100, KitchenProblem.PLAN_LIMIT)
         val dao = database.kitchen()
         saved.forEach { dao.plan(it.copy(active = false)) }
         MealPlan(name = name.trim(), active = true).also { dao.plan(it) }
@@ -25,21 +25,21 @@ class PlanStore(private val database: KitchenDatabase) {
 
     suspend fun select(id: String) = database.withTransaction {
         val plans = ensureDefault()
-        require(plans.any { it.id == id }) { "Plan no longer exists." }
+        requireKitchen(plans.any { it.id == id }, KitchenProblem.MISSING_RECORD)
         plans.forEach { database.kitchen().plan(it.copy(active = it.id == id)) }
     }
 
     suspend fun rename(id: String, name: String) = database.withTransaction {
-        require(name.isNotBlank() && name.length <= 200) { "Enter a plan name (up to 200 characters)." }
-        val plan = requireNotNull(ensureDefault().find { it.id == id }) { "Plan no longer exists." }
+        requireKitchen(name.isNotBlank() && name.length <= 200, KitchenProblem.PLAN_NAME)
+        val plan = (ensureDefault().find { it.id == id } ?: throw KitchenFailure(KitchenProblem.MISSING_RECORD))
         database.kitchen().plan(plan.copy(name = name.trim()))
     }
 
     suspend fun delete(id: String) = database.withTransaction {
         val dao = database.kitchen()
         val saved = ensureDefault()
-        require(saved.size > 1) { "Keep at least one meal plan." }
-        val plan = requireNotNull(saved.find { it.id == id }) { "Plan no longer exists." }
+        requireKitchen(saved.size > 1, KitchenProblem.KEEP_PLAN)
+        val plan = (saved.find { it.id == id } ?: throw KitchenFailure(KitchenProblem.MISSING_RECORD))
         dao.deletePlanMeals(id)
         dao.deletePlan(id)
         if (plan.active) dao.plan(saved.first { it.id != id }.copy(active = true))

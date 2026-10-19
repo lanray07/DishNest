@@ -57,7 +57,7 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
         }
     }
     val photoRead = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-        if (uri != null) vm.run {
+        if (uri != null) vm.run(R.string.error_invalid_backup) {
             withContext(Dispatchers.IO) {
                 context.contentResolver.openInputStream(uri)?.use { vm.restorePhotos(it) }
                     ?: error(uiResources.getString(R.string.copy_cf31825cce))
@@ -72,7 +72,7 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
                     val recipes = vm.recipesForExport()
                     withContext(Dispatchers.IO) {
                         context.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use {
-                            it.write(recipes.joinToString("\n\n————————\n\n", transform = ::recipeText))
+                            it.write(recipes.joinToString("\n\n————————\n\n", transform = { recipeText(it, uiResources) }))
                         } ?: error(uiResources.getString(com.dishnest.app.R.string.copy_5ecc81d67a))
                     }
                     vm.message.value =
@@ -383,11 +383,11 @@ fun PremiumDialog(vm: KitchenViewModel, onDismiss: () -> Unit) {
             style = MaterialTheme.typography.headlineLarge,
         )
         Text(
-            stringResource(com.dishnest.app.R.string.ui_premium_is_being_prepared_this_d_c133a3),
+            stringResource(if (BuildConfig.BILLING_ENABLED) R.string.premium_available else R.string.ui_premium_is_being_prepared_this_d_c133a3),
             color = Muted,
         )
         Text(
-            stringResource(com.dishnest.app.R.string.ui_planned_premium_features_821e28),
+            stringResource(if (BuildConfig.BILLING_ENABLED) R.string.premium_features_heading else R.string.ui_planned_premium_features_821e28),
             style = MaterialTheme.typography.titleLarge,
         )
         Text(stringResource(com.dishnest.app.R.string.ui_unlimited_recipes_meal_plan_temp_05c133))
@@ -423,7 +423,7 @@ fun PremiumDialog(vm: KitchenViewModel, onDismiss: () -> Unit) {
             Text(stringResource(com.dishnest.app.R.string.ui_restore_amazon_purchases_3b7842))
         }
         Text(
-            stringResource(com.dishnest.app.R.string.ui_no_store_prices_free_trials_or_p_dbbbec),
+            stringResource(if (BuildConfig.BILLING_ENABLED) R.string.premium_purchase_terms else R.string.ui_no_store_prices_free_trials_or_p_dbbbec),
             style = MaterialTheme.typography.bodySmall,
             color = Muted,
         )

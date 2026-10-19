@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T07:05:44.161623+00:00",
+  "generatedAt": "2026-10-19T09:26:50.423162+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -116,7 +116,7 @@
     {
       "check": "Physical Fire native components",
       "status": "passed",
-      "evidence": "artifacts/fire-device-qa.json",
+      "evidence": "artifacts/fire-native-qa.json; artifacts/fire-device-qa.json",
       "remaining": ""
     },
     {

@@ -24,7 +24,8 @@ $ErrorActionPreference = 'Continue'
 $releaseSignature = & $signer verify --verbose $releaseApk 2>&1
 $releaseSignatureExit = $LASTEXITCODE
 $ErrorActionPreference = 'Stop'
-@('QA APK:', $qaSignature, 'Debug APK:', $debugSignature, 'Release APK:', $releaseSignature) | Out-String | Set-Content -LiteralPath (Join-Path $artifactDirectory 'apk-signature.txt') -Encoding utf8
+$signatureReport = @('QA APK:', $qaSignature, 'Debug APK:', $debugSignature, 'Release APK:', $releaseSignature) | Out-String
+($signatureReport -split "\r?\n" | ForEach-Object { $_.TrimEnd() }) | Set-Content -LiteralPath (Join-Path $artifactDirectory 'apk-signature.txt') -Encoding utf8
 $debugAlignment = & $aligner -c -P 16 -v 4 $debugApk 2>&1
 $debugAlignmentExit = $LASTEXITCODE
 $releaseAlignment = & $aligner -c -P 16 -v 4 $releaseApk 2>&1

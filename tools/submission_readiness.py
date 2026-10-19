@@ -56,7 +56,13 @@ fire=read_json('artifacts/fire-device-qa.json')
 fire_current=fire.get('apkSha256') == digest(ROOT/'app/build/outputs/apk/qa/app-qa.apk') if (ROOT/'app/build/outputs/apk/qa/app-qa.apk').exists() else False
 fire_test = ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
 fire_current = fire_current and fire.get('packageId') == 'com.dishnest.app.qa' and fire_test.exists() and fire.get('instrumentationApkSha256') == digest(fire_test)
-check('Physical Fire native components',fire_current and fire.get('passedTests', fire.get('tests', 0) if fire.get('passed') else 0) >= 4,'artifacts/fire-device-qa.json','Run native SQLite, image/archive, OCR fixture and resource tests on the current APK')
+native_fire=read_json('artifacts/fire-native-qa.json')
+native_fire_current=all((ROOT/path).is_file() and native_fire.get(key)==digest(ROOT/path) for path,key in [
+    ('app/build/outputs/apk/qa/app-qa.apk','apkSha256'),
+    ('app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk','instrumentationApkSha256'),
+    ('tools/run_fire_native_checks.py','controllerSha256')])
+native_fire_passed=native_fire_current and native_fire.get('passed') is True and native_fire.get('passedTests',0)>=6 and native_fire.get('installedApksVerified') is True and native_fire.get('ordinaryDataHashesUnchanged') is True
+check('Physical Fire native components',native_fire_passed or (fire_current and fire.get('passedTests', fire.get('tests', 0) if fire.get('passed') else 0) >= 4),'artifacts/fire-native-qa.json; artifacts/fire-device-qa.json','Run native SQLite, image/archive, OCR fixture and resource tests on the current APK')
 check('Physical Fire instrumentation smoke',fire.get('passed') is True and fire_current,'artifacts/fire-device-qa.json','Native tests passed; unlock the secure Fire display to rerun the UI smoke suite' if fire.get('uiBlocker') else 'Run the native/UI smoke suite on the selected device with the current isolated QA APK')
 alarm = read_json('artifacts/fire-background-alarm.json')
 check('Background Fire timer after process termination', fire_current and alarm.get('passed') is True and alarm.get('processAbsentAfterKill') is True and alarm.get('installedApksVerified') is True and alarm.get('controllerSha256') == digest(ROOT/'tools/run_fire_alarm_probe.ps1') and alarm.get('notificationHelperSha256') == digest(ROOT/'tools/fire_notification_setting.py') and alarm.get('kitchenPersistencePassed') is True and alarm.get('apkSha256') == fire.get('apkSha256') and alarm.get('instrumentationApkSha256') == fire.get('instrumentationApkSha256'), 'artifacts/fire-background-alarm.json', 'Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs')

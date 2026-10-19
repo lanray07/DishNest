@@ -23,6 +23,18 @@ sealed interface VoiceCommand {
 }
 
 object VoiceParser {
+    private val quantityQuestions = mapOf(
+        "en" to "how much (.+?)(?: do i need)?",
+        "de" to "wie viel (.+?) brauche ich",
+        "es" to "cuánt[oa] (.+?) necesito",
+        "fr" to "(?:combien de|quelle quantité de) (.+?)(?: me faut-il)?",
+        "it" to "quant[oa] (.+?) mi serve",
+        "pt" to "(?:de )?quant[oa] (?:de )?(.+?) preciso",
+        "nl" to "hoeveel (.+?) heb ik nodig",
+        "pl" to "ile (.+?) potrzebuję",
+        "ar" to "كم أحتاج من (.+?)",
+        "hi" to "मुझे (.+?) कितन[ाीे] चाहिए",
+    ).mapValues { (_, pattern) -> Regex("^$pattern$") }
     private data class Phrases(
         val next: List<String>, val previous: List<String>, val repeat: List<String>,
         val ingredients: List<String>, val finish: List<String>, val timeLeft: List<String>,
@@ -69,6 +81,9 @@ object VoiceParser {
             in dictionary.finish -> return VoiceCommand.Finish
             in dictionary.timeLeft -> return VoiceCommand.TimeLeft
             in dictionary.pause -> return VoiceCommand.Pause
+        }
+        quantityQuestions[family]?.matchEntire(t)?.let {
+            return VoiceCommand.Quantity(it.groupValues[1].trim())
         }
         if (family != "en" && family in dictionaries) {
             val localized = t.map { character ->
@@ -128,8 +143,6 @@ object VoiceParser {
             if (n != null && n in 1..(86400 / multiplier)) return VoiceCommand.Timer(n * multiplier)
             return VoiceCommand.Unknown
         }
-        val quantity = Regex("^how much (.+?)(?: do i need)?$").matchEntire(t)
-        if (quantity != null) return VoiceCommand.Quantity(quantity.groupValues[1].trim())
         return VoiceCommand.Unknown
     }
 }

@@ -29,6 +29,11 @@ import org.junit.runner.RunWith
 class NativeReadinessTest {
     private val context get() = InstrumentationRegistry.getInstrumentation().targetContext
 
+    @Test fun allLocaleMessagesExportsAndQuantityFormatsOnFire() {
+        RuntimeLocalizationChecks.allLocales(context)
+        RuntimeLocalizationChecks.resourceLocaleWinsOverProcessLocale(context)
+    }
+
     @Test fun localizedPastedRecipesKeepTheirContentOnFire() {
         val fixtures = listOf("المكونات" to "طريقة التحضير", "सामग्री" to "विधि", "Składniki" to "Przygotowanie")
         fixtures.forEach { (ingredients, method) ->

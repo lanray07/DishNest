@@ -6,7 +6,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:51.157Z"
+      "timestamp": "2026-10-19T08:37:16.029Z"
     },
     {
       "name": "com.dishnest.app.ReadinessDataTest",
@@ -14,7 +14,15 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:49.465Z"
+      "timestamp": "2026-10-19T08:37:14.671Z"
+    },
+    {
+      "name": "com.dishnest.app.RuntimeLocalizationTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-19T08:37:16.582Z"
     },
     {
       "name": "com.dishnest.app.LocalizedRecipeImportTest",
@@ -22,7 +30,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:03.135Z"
+      "timestamp": "2026-10-19T08:36:27.609Z"
     },
     {
       "name": "com.dishnest.app.RecipeWebAccessTest",
@@ -30,7 +38,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:51.166Z"
+      "timestamp": "2026-10-19T08:37:16.040Z"
     },
     {
       "name": "com.dishnest.app.RecipeImagesTest",
@@ -38,7 +46,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:50.894Z"
+      "timestamp": "2026-10-19T08:37:15.731Z"
     },
     {
       "name": "com.dishnest.app.RoomPersistenceTest",
@@ -46,7 +54,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:51.215Z"
+      "timestamp": "2026-10-19T08:37:16.088Z"
     },
     {
       "name": "com.dishnest.app.EntitlementsTest",
@@ -54,7 +62,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:53:47.786Z"
+      "timestamp": "2026-10-19T08:36:12.523Z"
     },
     {
       "name": "com.dishnest.app.EntitlementClockTest",
@@ -62,7 +70,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:53:47.773Z"
+      "timestamp": "2026-10-19T08:36:12.514Z"
     },
     {
       "name": "com.dishnest.app.QuantityNumbersTest",
@@ -70,7 +78,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:49.425Z"
+      "timestamp": "2026-10-19T08:37:14.614Z"
     },
     {
       "name": "com.dishnest.app.RestoreGuardTest",
@@ -78,7 +86,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:51.192Z"
+      "timestamp": "2026-10-19T08:37:16.060Z"
     },
     {
       "name": "com.dishnest.app.LocalizedScreenshotsTest",
@@ -86,7 +94,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:03.329Z"
+      "timestamp": "2026-10-19T08:36:27.871Z"
     },
     {
       "name": "com.dishnest.app.FeatureScopeTest",
@@ -94,7 +102,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:53:49.240Z"
+      "timestamp": "2026-10-19T08:36:14.028Z"
     },
     {
       "name": "com.dishnest.app.ScreenshotsTest",
@@ -102,15 +110,15 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:51.826Z"
+      "timestamp": "2026-10-19T08:37:16.833Z"
     },
     {
       "name": "com.dishnest.app.VoiceLocalesTest",
-      "tests": "2",
+      "tests": "3",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:59.287Z"
+      "timestamp": "2026-10-19T08:37:24.581Z"
     },
     {
       "name": "com.dishnest.app.DomainTest",
@@ -118,7 +126,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:53:47.202Z"
+      "timestamp": "2026-10-19T08:36:12.036Z"
     },
     {
       "name": "com.dishnest.app.VoiceFocusTest",
@@ -126,21 +134,21 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T06:54:59.053Z"
+      "timestamp": "2026-10-19T08:37:24.415Z"
     }
   ],
   "device_instrumentation": {
     "packageId": "com.dishnest.app.qa",
     "ordinaryAppModified": false,
-    "testedAt": "2026-10-19T07:00:08.5042157Z",
+    "testedAt": "2026-10-19T08:46:19.3378368Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
-    "instrumentationApkSha256": "fb79a5d7d010a36c0f316fd70f355d4a397f99746922e8047a0ce7bdfc73698c",
-    "tests": 12,
-    "passedTests": 12,
+    "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
+    "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
+    "tests": 13,
+    "passedTests": 13,
     "failedTests": 0,
     "passed": true,
     "uiSmokePassed": true,
@@ -156,7 +164,8 @@
       "Named plan creation/selection across activity recreation",
       "Opt-in generic pantry reminder and duplicate suppression",
       "Denied microphone touch fallback",
-      "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL"
+      "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL",
+      "Runtime messages, exports and quantities across all 12 resource locales"
     ],
     "notCovered": [
       "App Tester/LAT purchases",
@@ -174,12 +183,12 @@
     "screenshots": {
       "fire-qa-named-plan.png": {
         "sha256": "ced740c5dc570b6964a2cf40f8a09cbe1719d20b4d3b860b3dfc40b99b6a575a",
-        "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
+        "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
         "kind": "QA capture; not approved store artwork"
       },
       "fire-qa-arabic-large-font.png": {
         "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
-        "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
+        "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
         "kind": "QA capture; not approved store artwork"
       }
     }
@@ -193,8 +202,30 @@
     "current": true,
     "production_purchases_approved": false,
     "evidence": "artifacts/amazon-purchase-device.json",
-    "remaining": "Subscription synthetic-expiry limitation, full lifecycle and LAT; all release approvals remain required"
+    "remaining": "Subscription synthetic-expiry limitation, full lifecycle and LAT; all release approvals remain required",
+    "current_evidence_blocker": null
   },
+  "fire_native_qa": {
+    "testedAt": "2026-10-19T08:40:55.859462+00:00",
+    "model": "KFTRWI",
+    "api": "28",
+    "packageId": "com.dishnest.app.qa",
+    "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
+    "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
+    "controllerSha256": "084d156f1e9fe0ea0b9f8770202de137e925fa64d460b9c4b5354ff3a4066922",
+    "passed": true,
+    "uiTested": false,
+    "lockBypassed": false,
+    "deviceSettingsChanged": false,
+    "serialIdentifierStored": false,
+    "individualOrdinaryDataHashesStored": false,
+    "ordinaryAppModified": false,
+    "storeSubmission": false,
+    "installedApksVerified": true,
+    "passedTests": 6,
+    "ordinaryDataHashesUnchanged": true
+  },
+  "fire_native_qa_current": true,
   "device_instrumentation_current": true,
   "visual_localization": {
     "passed": true,
@@ -548,7 +579,7 @@
   },
   "native-alignment": {
     "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "apk_sha256": "7337d0e202fec29c588899ca7f08951b11b354308c3cf0c5ae586396e3c8bfe3",
+    "apk_sha256": "739a2aa7e6496bd4ba7c55e6e12acc73f74a39f9084355daae2031c5de321a49",
     "libraries": [
       {
         "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
@@ -784,7 +815,7 @@
     "device_tested": false
   },
   "device-evidence": {
-    "collectedAt": "2026-10-19T06:18:54.3257151Z",
+    "collectedAt": "2026-10-19T08:26:04.5296628Z",
     "connectedDeviceCount": 1,
     "deviceTests": "Not executed by this read-only inventory script",
     "physicalFireQa": "Pending explicit hardware testing and evidence",
@@ -793,15 +824,15 @@
   "fire-device-qa": {
     "packageId": "com.dishnest.app.qa",
     "ordinaryAppModified": false,
-    "testedAt": "2026-10-19T07:00:08.5042157Z",
+    "testedAt": "2026-10-19T08:46:19.3378368Z",
     "model": "KFTRWI",
     "androidVersion": "9",
     "api": "28",
     "locale": "en-GB",
-    "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
-    "instrumentationApkSha256": "fb79a5d7d010a36c0f316fd70f355d4a397f99746922e8047a0ce7bdfc73698c",
-    "tests": 12,
-    "passedTests": 12,
+    "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
+    "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
+    "tests": 13,
+    "passedTests": 13,
     "failedTests": 0,
     "passed": true,
     "uiSmokePassed": true,
@@ -817,7 +848,8 @@
       "Named plan creation/selection across activity recreation",
       "Opt-in generic pantry reminder and duplicate suppression",
       "Denied microphone touch fallback",
-      "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL"
+      "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL",
+      "Runtime messages, exports and quantities across all 12 resource locales"
     ],
     "notCovered": [
       "App Tester/LAT purchases",
@@ -835,24 +867,24 @@
     "screenshots": {
       "fire-qa-named-plan.png": {
         "sha256": "ced740c5dc570b6964a2cf40f8a09cbe1719d20b4d3b860b3dfc40b99b6a575a",
-        "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
+        "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
         "kind": "QA capture; not approved store artwork"
       },
       "fire-qa-arabic-large-font.png": {
         "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
-        "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
+        "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
         "kind": "QA capture; not approved store artwork"
       }
     }
   },
   "fire-blocked-notifications": {
-    "testedAt": "2026-10-19T07:02:27.8982670Z",
+    "testedAt": "2026-10-19T08:56:56.3842444Z",
     "packageId": "com.dishnest.app.qa",
-    "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
-    "instrumentationApkSha256": "fb79a5d7d010a36c0f316fd70f355d4a397f99746922e8047a0ce7bdfc73698c",
+    "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
+    "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
     "installedApksVerified": true,
     "controllerSha256": "836ae6cf91a2f3b35a0e03e02f6a64181bec7f6696b90d8e691330b573dc6dac",
-    "notificationHelperSha256": "1d7045b673860e649db32b2645816a1fa543a6dbef1a674208d1e477f7458fd7",
+    "notificationHelperSha256": "81026d22ba78dcd2ea2e0ea73ca2652df27613726f59bab39eb7d74e8bd9a8ca",
     "processAbsentAfterKill": true,
     "requestedTimerSeconds": 15,
     "verificationDelaySeconds": 35,
@@ -876,7 +908,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-19T07:05:44.161623+00:00",
+    "generatedAt": "2026-10-19T09:26:50.423162+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -993,7 +1025,7 @@
       {
         "check": "Physical Fire native components",
         "status": "passed",
-        "evidence": "artifacts/fire-device-qa.json",
+        "evidence": "artifacts/fire-native-qa.json; artifacts/fire-device-qa.json",
         "remaining": ""
       },
       {
@@ -1181,7 +1213,7 @@
     "published": false
   },
   "publisher-signing": {
-    "generatedAt": "2026-10-19T07:00:54.8235325Z",
+    "generatedAt": "2026-10-19T08:41:38.4164921Z",
     "publisher": "O. Bankole",
     "alias": "dishnest-release",
     "keyAlgorithm": "RSA",
@@ -1191,9 +1223,9 @@
     "certificateNotBefore": "2026-10-19T06:16:55.0000000Z",
     "certificateNotAfter": "2054-03-06T06:16:55.0000000Z",
     "unsignedApk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "unsignedSha256": "7337d0e202fec29c588899ca7f08951b11b354308c3cf0c5ae586396e3c8bfe3",
+    "unsignedSha256": "739a2aa7e6496bd4ba7c55e6e12acc73f74a39f9084355daae2031c5de321a49",
     "signedApk": "app/build/outputs/apk/release/app-release-publisher.apk",
-    "signedSha256": "b9281ead40b1e4eb1779de94025c3dd60d951e483e18bde65707d091d3e16033",
+    "signedSha256": "8d6bf63c4359bbf38a84a0b6ee1f27892e7ca0bf0ee7958af0f5d237f5d3a6ac",
     "scriptSha256": "8aeed99fb045d337b2c1193fd51e5b0a184fb4dcd480e73dea85082b0e0acdb8",
     "signatureVerified": true,
     "certificateMatched": true,
@@ -1212,14 +1244,14 @@
     "installedCertificateSha256": "244bac5b8be909f92d6254219f1cb4c0a9ddc79151f313f784e6e3712063de5e",
     "installedCertificateSubject": "C=US, O=Android, CN=Android Debug",
     "publisherCertificateSha256": "c2c7dcb307420a1605c48a06a50d0893af1f606c2db45a95669735f2834e1012",
-    "publisherApkSha256": "b9281ead40b1e4eb1779de94025c3dd60d951e483e18bde65707d091d3e16033",
+    "publisherApkSha256": "8d6bf63c4359bbf38a84a0b6ee1f27892e7ca0bf0ee7958af0f5d237f5d3a6ac",
     "signaturesCompatible": false,
     "installAttempted": false,
     "ordinaryAppModified": false,
     "serialIdentifierStored": false,
     "remaining": "Exact publisher-signed APK hardware test requires a clean compatible device or an approved data-preserving migration; no app data was cleared.",
-    "ordinaryDataPreservationEvidence": "artifacts/purchase-test-restoration.json",
-    "recheckedAt": "2026-10-19T07:04:48.920919+00:00"
+    "ordinaryDataPreservationEvidence": "artifacts/fire-native-qa.json",
+    "recheckedAt": "2026-10-19T08:42:38.609684+00:00"
   },
   "blocked_notifications_current": true
 }

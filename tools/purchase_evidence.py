@@ -14,9 +14,11 @@ def verify():
     for flag in ['catalogRestored','sandboxPropertyRestored','testerUserRestored','testerSubscriptionSettingsRestored','temporaryAllowanceRemoved','ordinaryDataHashesUnchanged']:
         if restored.get(flag) is not True:raise ValueError('Incomplete purchase-test restoration: '+flag)
     cases={case['case']:case for case in report['cases']}
-    for name,active in [('fresh-account-no-access',False),('canceled-checkout-no-grant',False),('expired-subscription-fails-closed',False),('lifetime-account-restoration',True),('lifetime-after-process-restart',True)]:
+    # An existing account with no active entitlement is not a fresh customer.
+    # New-customer and real renewal coverage still require LAT.
+    for name,active in [('account-without-active-purchase',False),('canceled-checkout-no-grant',False),('expired-subscription-fails-closed',False),('lifetime-account-restoration',True),('lifetime-after-process-restart',True)]:
         case=cases[name];status=case['status']
-        if not case['passed'] or status['premium']!=active or status['sdkMode']!='SANDBOX' or status['environment']!='sandbox' or not all(status[key] for key in ['sandboxEndpoint','debug','billingEnabled','keyValid']):raise ValueError('Incomplete App Tester case: '+name)
+        if status.get('fixtureCleanupOnly') or not status.get('ready') or not case['passed'] or status['premium']!=active or status['sdkMode']!='SANDBOX' or status['environment']!='sandbox' or not all(status[key] for key in ['sandboxEndpoint','debug','billingEnabled','keyValid']):raise ValueError('Incomplete App Tester case: '+name)
     tools=Path(os.environ['LOCALAPPDATA'])/'Android/Sdk/build-tools/35.0.0'
     subprocess.run([str(tools/'apksigner.bat'),'verify',str(apk)],capture_output=True,check=True)
     metadata=subprocess.run([str(tools/'aapt.exe'),'dump','badging',str(apk)],capture_output=True,text=True,check=True).stdout

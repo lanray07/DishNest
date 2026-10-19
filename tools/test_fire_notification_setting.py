@@ -4,12 +4,16 @@ from fire_notification_setting import run
 
 
 class NotificationUiFixture:
-    def __init__(self, title='DishNest QA', locked=False, always_null=False):
+    def __init__(self, title='DishNest QA', locked=False, always_null=False, stuck_until_restart=False, own_settings=False, stuck_after_tap=False):
         self.title, self.locked, self.always_null = title, locked, always_null
         self.enabled = True
         self.taps = 0
         self.dumps = 0
         self.settled = False
+        self.stuck_until_restart = stuck_until_restart
+        self.own_settings = own_settings
+        self.restarts = 0
+        self.stuck_after_tap = stuck_after_tap
 
     def command(self, args, **kwargs):
         command = args[3:]
@@ -17,9 +21,15 @@ class NotificationUiFixture:
             return b'mIsShowing=true' if self.locked else b'mIsShowing=false'
         if command[:3] == ['shell', 'am', 'start']:
             assert command[-1] == 'com.dishnest.app.qa'
+        if command[:3] == ['shell', 'dumpsys', 'activity']:
+            return b'mResumedActivity: ActivityRecord{fixture u0 com.android.settings/.Settings$AppNotificationSettingsActivity t1}' if self.own_settings else b''
+        if command[:3] == ['shell', 'am', 'force-stop']:
+            assert command[-1] == 'com.android.settings'
+            self.restarts += 1
+            self.stuck_until_restart = False
         if command[:3] == ['shell', 'uiautomator', 'dump']:
             self.dumps += 1
-            if self.always_null or not self.settled:
+            if self.always_null or self.stuck_until_restart or not self.settled:
                 self.settled = True
                 return b'ERROR: null root node returned by UiTestAutomationBridge.'
             return b'UI hierarchy dumped to: /data/local/tmp/dishnest-qa-window.xml'
@@ -36,6 +46,8 @@ class NotificationUiFixture:
             self.enabled = not self.enabled
             self.settled = False
             self.taps += 1
+            if self.stuck_after_tap:
+                self.stuck_until_restart = True
         return b''
 
 
@@ -72,6 +84,36 @@ class FireNotificationSettingTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'valid UI hierarchy'):
             self.execute(fixture, 'disabled')
         self.assertEqual(4, fixture.dumps)
+        self.assertEqual(0, fixture.taps)
+
+    def test_stuck_own_settings_is_recreated_once_before_the_verified_tap(self):
+        fixture = NotificationUiFixture(stuck_until_restart=True, own_settings=True)
+        result = self.execute(fixture, 'disabled')
+        self.assertFalse(result['enabled'])
+        self.assertTrue(result['settingsWindowRecovered'])
+        self.assertEqual(1, fixture.restarts)
+        self.assertEqual(1, fixture.taps)
+
+    def test_even_own_settings_recovery_is_bounded_when_the_root_stays_null(self):
+        fixture = NotificationUiFixture(always_null=True, own_settings=True)
+        with self.assertRaisesRegex(ValueError, 'valid UI hierarchy'):
+            self.execute(fixture, 'disabled')
+        self.assertEqual(1, fixture.restarts)
+        self.assertEqual(8, fixture.dumps)
+        self.assertEqual(0, fixture.taps)
+
+    def test_post_tap_window_recovery_checks_state_without_toggling_it_again(self):
+        fixture = NotificationUiFixture(own_settings=True, stuck_after_tap=True)
+        result = self.execute(fixture, 'disabled')
+        self.assertFalse(result['enabled'])
+        self.assertEqual(1, fixture.restarts)
+        self.assertEqual(1, fixture.taps)
+
+    def test_unrelated_foreground_is_never_restarted(self):
+        fixture = NotificationUiFixture(stuck_until_restart=True)
+        with self.assertRaisesRegex(ValueError, 'valid UI hierarchy'):
+            self.execute(fixture, 'disabled')
+        self.assertEqual(0, fixture.restarts)
         self.assertEqual(0, fixture.taps)
 
 

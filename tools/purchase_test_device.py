@@ -20,7 +20,7 @@ def device():
     if len(devices)!=1:raise ValueError('Exactly one authorized Fire required')
     return devices[0]
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('action',choices=['setup','restore','snapshot','tap','start','tester','record','catalog','scroll','confirm-settings']);parser.add_argument('--text');parser.add_argument('--row');parser.add_argument('--case');parser.add_argument('--premium',choices=['active','inactive']);parser.add_argument('--screenshot',action='store_true');parser.add_argument('--direction',choices=['down','up'],default='down');parser.add_argument('--original-user',choices=['1','2','3']);parser.add_argument('--original-autorenew',choices=['Off','On']);parser.add_argument('--original-login',choices=['Logged In','Logged Out']);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('action',choices=['setup','restore','snapshot','tap','start','tester','record','catalog','scroll','confirm-settings','screen','tap-screen']);parser.add_argument('--text');parser.add_argument('--row');parser.add_argument('--case');parser.add_argument('--premium',choices=['active','inactive']);parser.add_argument('--screenshot',action='store_true');parser.add_argument('--direction',choices=['down','up'],default='down');parser.add_argument('--original-user',choices=['1','2','3']);parser.add_argument('--original-autorenew',choices=['Off','On']);parser.add_argument('--original-login',choices=['Logged In','Logged Out']);parser.add_argument('--x',type=int);parser.add_argument('--y',type=int);parser.add_argument('--package',choices=[PACKAGE,'com.amazon.sdktestclient']);args=parser.parse_args()
     serial=device()
     def adb(*parts,check=True):return subprocess.run([str(ADB),'-s',serial,*parts],capture_output=True,check=check,timeout=30).stdout
     def ordinary_hashes():
@@ -31,14 +31,39 @@ def main():
         if re.search(r'isStatusBarKeyguard=true|mIsShowing=true',policy):raise ValueError('Unlock Fire; secure lock cannot be bypassed')
     def snapshot():
         unlocked();path='/data/local/tmp/dishnest-purchase-window.xml'
-        for _ in range(4):
+        for attempt in range(4):
             result=adb('shell','uiautomator','dump',path)
             if b'dumped to:' in result:
                 try:return ET.fromstring(adb('exec-out','cat',path))
                 except ET.ParseError:pass
-            time.sleep(.3)
+            # Give Fire's accessibility bridge time to detach between failed dumps.
+            if attempt < 3:time.sleep(2 ** attempt)
         raise ValueError('No valid Fire UI hierarchy')
-    if args.action=='setup':
+    if args.action in ('screen','tap-screen'):
+        # Manual visual fallback when Fire's accessibility root is unavailable.
+        # The operator must inspect each captured image before choosing coordinates.
+        # It never records a passing test; normal signed-status assertions still do.
+        unlocked()
+        windows=adb('shell','dumpsys','window','windows').decode(errors='replace')
+        focused=re.search(r'mCurrentFocus=[^\n]* u\d+ ([a-zA-Z0-9_.]+)/',windows)
+        allowed=(PACKAGE,'com.amazon.sdktestclient')
+        if not focused or focused[1] not in allowed:raise ValueError('Only isolated test windows may be captured or tapped')
+        pixels=adb('exec-out','screencap','-p')
+        if args.action=='tap-screen':
+            import struct
+            if args.package!=focused[1] or args.x is None or args.y is None:raise ValueError('Explicit observed test-window package and coordinates required')
+            if adb('shell','getprop','debug.amazon.sandboxmode').decode().strip()!='debug':raise ValueError('Sandbox routing required for manual test taps')
+            if not pixels.startswith(b'\x89PNG\r\n\x1a\n'):raise ValueError('No valid current test screenshot')
+            width,height=struct.unpack('>II',pixels[16:24])
+            if not (0<=args.x<width and 0<=args.y<height):raise ValueError('Coordinates outside the observed test screen')
+            adb('shell','input','tap',str(args.x),str(args.y))
+            windows=adb('shell','dumpsys','window','windows').decode(errors='replace')
+            after=re.search(r'mCurrentFocus=[^\n]* u\d+ ([a-zA-Z0-9_.]+)/',windows)
+            if not after or after[1] not in allowed:raise ValueError('Refusing a screenshot outside isolated test windows')
+            pixels=adb('exec-out','screencap','-p')
+        target=ROOT/'build/fire-test-screen.png';target.parent.mkdir(exist_ok=True);target.write_bytes(pixels)
+        print(json.dumps({'focusPackage':focused[1],'screenPath':str(target),'testPassed':False}))
+    elif args.action=='setup':
         unlocked()
         if not all([args.original_user,args.original_autorenew,args.original_login]):raise ValueError('Read App Tester settings first; supply all three original-setting arguments for exact restoration')
         if STATE.exists() and not json.loads(STATE.read_text(encoding='utf-8')).get('restored'):raise ValueError('Restore the existing purchase test session first')
@@ -94,14 +119,14 @@ def main():
             if not any(n.get('package')==PACKAGE for n in visible.iter('node')):raise ValueError('Only isolated purchase app screenshots permitted')
             (ROOT/'artifacts/screens'/('purchase-test-'+args.case+'.png')).write_bytes(adb('exec-out','screencap','-p'))
         adb('shell','run-as',PACKAGE,'rm','-f','files/purchase-test-status.json')
-        adb('shell','am','start','-n',PACKAGE+'/com.dishnest.app.PurchaseStatusActivity')
+        adb('shell','am','start','-W','-n',PACKAGE+'/com.dishnest.app.PurchaseStatusActivity')
         status=None
         for _ in range(20):
             output=adb('exec-out','run-as',PACKAGE,'cat','files/purchase-test-status.json',check=False)
             try:status=json.loads(output);break
             except (ValueError,UnicodeDecodeError):time.sleep(.3)
         if not status:raise ValueError('No current purchase status report')
-        adb('shell','am','start','--activity-clear-top','--activity-single-top','-n',PACKAGE+'/com.dishnest.app.MainActivity')
+        adb('shell','am','start','-W','--activity-clear-top','--activity-single-top','-n',PACKAGE+'/com.dishnest.app.MainActivity')
         assert status['debug'] and status['billingEnabled'] and status['environment']=='sandbox' and status['keyValid'] and status['sandboxEndpoint'] and status['sdkMode']=='SANDBOX'
         assert status['premium']==(args.premium=='active'), 'Premium state differs from expected result'
         from build_evidence import input_hashes
@@ -119,8 +144,8 @@ def main():
         unlocked()
         if args.action=='start':
             if adb('shell','getprop','debug.amazon.sandboxmode').decode().strip()!='debug':raise ValueError('Sandbox routing required')
-            adb('shell','am','start','--activity-clear-top','--activity-single-top','-n',PACKAGE+'/com.dishnest.app.MainActivity')
-        else:adb('shell','am','start','-n','com.amazon.sdktestclient/.MainActivity')
+            adb('shell','am','start','-W','--activity-clear-top','--activity-single-top','-n',PACKAGE+'/com.dishnest.app.MainActivity')
+        else:adb('shell','am','start','-W','-n','com.amazon.sdktestclient/.MainActivity')
         print('Opened '+('App Tester' if args.action=='tester' else PACKAGE))
     else:
         root=snapshot();nodes=list(root.iter('node'))

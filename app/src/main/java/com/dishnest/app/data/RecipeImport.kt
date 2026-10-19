@@ -11,7 +11,7 @@ object RecipeImport {
     // Match complete heading lines only; never translate or rewrite recipe content.
     private val ingredientHeadings = setOf(
         "ingredients", "zutaten", "ingredientes", "ingrédients", "ingredienti",
-        "ingrediënten", "składniki", "المكونات", "المقادير", "सामग्री",
+        "ingrediënten", "składniki", "المكونات", "مكونات", "المقادير", "सामग्री",
     )
     private val methodHeadings = setOf(
         "instructions", "method", "directions", "steps", "zubereitung", "anleitung",

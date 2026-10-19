@@ -26,10 +26,13 @@ def run(serial, state, adb=None):
     policy = command('shell', 'dumpsys', 'window', 'policy').decode(errors='replace')
     if re.search(r'isStatusBarKeyguard=true|mIsShowing=true', policy):
         raise ValueError('Unlock the Fire before changing the QA notification switch.')
-    command('shell', 'am', 'start', '-a', 'android.settings.APP_NOTIFICATION_SETTINGS',
+    command('shell', 'am', 'start', '-W', '-a', 'android.settings.APP_NOTIFICATION_SETTINGS',
             '--es', 'android.provider.extra.APP_PACKAGE', 'com.dishnest.app.qa')
 
+    recovered_settings = False
+
     def snapshot():
+        nonlocal recovered_settings
         path = '/data/local/tmp/dishnest-qa-window.xml'
         root = None
         for attempt in range(4):
@@ -48,6 +51,18 @@ def run(serial, state, adb=None):
             if attempt < 3:
                 time.sleep(0.3)
         if root is None:
+            # Fire can keep an existing Settings window with a permanently null
+            # accessibility root. Recreate only the exact notification activity
+            # we opened, once, without clearing Settings data or changing a switch.
+            policy = command('shell', 'dumpsys', 'window', 'policy').decode(errors='replace')
+            focused = command('shell', 'dumpsys', 'activity', 'activities').decode(errors='replace')
+            own_settings = re.search(r'mResumedActivity:[^\n]* com\.android\.settings/\.Settings\$AppNotificationSettingsActivity(?:\s|\})', focused)
+            if not recovered_settings and own_settings and not re.search(r'isStatusBarKeyguard=true|mIsShowing=true', policy):
+                recovered_settings = True
+                command('shell', 'am', 'force-stop', 'com.android.settings')
+                command('shell', 'am', 'start', '-W', '-a', 'android.settings.APP_NOTIFICATION_SETTINGS',
+                        '--es', 'android.provider.extra.APP_PACKAGE', 'com.dishnest.app.qa')
+                return snapshot()
             raise ValueError('QA notification settings did not expose a valid UI hierarchy; no further tap attempted.')
         nodes = list(root.iter('node'))
         titles = [n for n in nodes if n.get('resource-id') == 'com.android.settings:id/entity_header_title']
@@ -76,7 +91,8 @@ def run(serial, state, adb=None):
         _, after = snapshot()
         if after != desired:
             raise ValueError('QA notification switch change did not persist.')
-    return {'packageId': 'com.dishnest.app.qa', 'before': before, 'enabled': after, 'verified': True}
+    return {'packageId': 'com.dishnest.app.qa', 'before': before, 'enabled': after, 'verified': True,
+            'settingsWindowRecovered': recovered_settings}
 
 
 if __name__ == '__main__':

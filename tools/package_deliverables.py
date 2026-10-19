@@ -24,11 +24,25 @@ if publisher:
     target=OUT/'DishNest-0.1.0-release-publisher.apk'
     shutil.copy2(ROOT/publisher['signedApk'],target)
     manifest.append({'file':target.name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':True,'certificateSha256':publisher['certificateSha256'],'production_ready':False})
-purchase=verify_purchase()
+purchase_blocker = None
+try:
+    purchase=verify_purchase()
+except (ValueError, KeyError, FileNotFoundError):
+    # Optional debug purchase evidence must never block delivery of unrelated local
+    # fixes or be silently promoted to current evidence after a source change.
+    purchase=None
+    purchase_blocker='Retained purchase evidence is incomplete or does not match current sources/APKs; rerun required.'
 if purchase:
     target=OUT/'DishNest-0.1.0-purchase-test.apk'
     shutil.copy2(ROOT/'app/build/outputs/apk/purchaseTest/app-purchaseTest.apk',target)
     manifest.append({'file':target.name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':True,'environment':'sandbox','kind':'isolated debug App Tester only','production_ready':False})
+else:
+    previous=OUT/'DishNest-0.1.0-purchase-test.apk'
+    if previous.is_file():
+        previous_hash=hashlib.sha256(previous.read_bytes()).hexdigest()
+        history=OUT/'history'/previous_hash
+        history.mkdir(parents=True,exist_ok=True)
+        shutil.move(str(previous),str(history/previous.name))
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
 def archive_source():
     evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','fire-background-alarm.json','fire-background-seed.txt','fire-background-verify.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
@@ -38,6 +52,7 @@ def archive_source():
     evidence.update({'publisher-signing.json','publisher-signature.txt','publisher-device-compatibility.json','private-storage-audit.json'})
     evidence.update({'amazon-purchase-device.json','amazon-sandbox-receipt-review.json','purchase-test-restoration.json','purchase-test-configuration-guard.json','purchase-test-configuration-guard.log','purchase-test-controller-guard.json','purchase-test-build.log'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
+    evidence.update({'fire-native-qa.json','fire-native-instrumentation.txt'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
@@ -66,6 +81,16 @@ summary_path=ROOT/'artifacts/qa-summary.json'
 summary=json.loads(summary_path.read_text(encoding='utf-8'))
 summary['billing_qa']=f'{server_tests} service tests pass; '+('current isolated App Tester lifetime/restore and denial cases pass; subscription synthetic-expiry and LAT lifecycle remain pending.' if purchase else 'current App Tester evidence pending.')+' Default release purchases remain disabled.'
 summary['isolated_app_tester']={'current':purchase is not None,'production_purchases_approved':False,'evidence':'artifacts/amazon-purchase-device.json','remaining':'Subscription synthetic-expiry limitation, full lifecycle and LAT; all release approvals remain required'}
+summary['isolated_app_tester']['current_evidence_blocker']=purchase_blocker
+native_path=ROOT/'artifacts/fire-native-qa.json'
+if native_path.is_file():
+    native=json.loads(native_path.read_text(encoding='utf-8'))
+    summary['fire_native_qa']=native
+    summary['fire_native_qa_current']=native.get('passed') is True and all(
+        (ROOT/path).is_file() and hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==native.get(key)
+        for path,key in [('app/build/outputs/apk/qa/app-qa.apk','apkSha256'),
+                         ('app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk','instrumentationApkSha256'),
+                         ('tools/run_fire_native_checks.py','controllerSha256')])
 qa_source=ROOT/'app/build/outputs/apk/qa/app-qa.apk'
 test_source=ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
 summary['device_instrumentation_current']=all(path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest()==fire.get(key)

@@ -1,37 +1,37 @@
 [
   {
     "file": "DishNest-0.1.0-debug.apk",
-    "bytes": 56003028,
-    "sha256": "84c3e6513045ba65ef3d5ad679d8e6a8d19cbfdeb124ce415976d61e2353d37c",
+    "bytes": 56365173,
+    "sha256": "095beac54c832e737593583c3b337748039f7eb6e86e9042ca76bf04b58760a2",
     "signed": true,
     "production_ready": false
   },
   {
     "file": "DishNest-0.1.0-release-unsigned.apk",
-    "bytes": 48589441,
-    "sha256": "7337d0e202fec29c588899ca7f08951b11b354308c3cf0c5ae586396e3c8bfe3",
+    "bytes": 48639657,
+    "sha256": "739a2aa7e6496bd4ba7c55e6e12acc73f74a39f9084355daae2031c5de321a49",
     "signed": false,
     "production_ready": false
   },
   {
     "file": "DishNest-0.1.0-qa.apk",
-    "bytes": 55246793,
-    "sha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
+    "bytes": 55607210,
+    "sha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
     "signed": true,
     "production_ready": false
   },
   {
     "file": "DishNest-0.1.0-release-publisher.apk",
-    "bytes": 48614244,
-    "sha256": "b9281ead40b1e4eb1779de94025c3dd60d951e483e18bde65707d091d3e16033",
+    "bytes": 48663396,
+    "sha256": "8d6bf63c4359bbf38a84a0b6ee1f27892e7ca0bf0ee7958af0f5d237f5d3a6ac",
     "signed": true,
     "certificateSha256": "c2c7dcb307420a1605c48a06a50d0893af1f606c2db45a95669735f2834e1012",
     "production_ready": false
   },
   {
     "file": "DishNest-0.1.0-purchase-test.apk",
-    "bytes": 55220850,
-    "sha256": "6f37f6551294c322a14d91f369550feaddc6df54aeaf5eab82a68fda330815bb",
+    "bytes": 55624222,
+    "sha256": "5283fcc5e2a9f2cb4a5f92a1bf164bab8d91c9865917eb55a357f510fe98926e",
     "signed": true,
     "environment": "sandbox",
     "kind": "isolated debug App Tester only",
@@ -39,8 +39,8 @@
   },
   {
     "file": "DishNest-source.zip",
-    "bytes": 82819388,
-    "sha256": "fb6418a89c28ec477d0f8d1b935287ef8ad51e2d3e7fcb1b1d301076ec985702",
+    "bytes": 82869243,
+    "sha256": "ae66b3195591248ade1c0c9a47e828379c5b85ff68fd2684d315d64b3997e29b",
     "kind": "source archive with verification evidence",
     "production_ready": false
   }

@@ -38,7 +38,7 @@ fun PhotoImport(onReview: (Recipe) -> Unit, onError: (String) -> Unit) {
                 text = withContext(Dispatchers.IO) { LocalOcr.read(context, bitmap) }
                 if (text.isBlank()) onError(context.getString(R.string.copy_cdc99bac2c)) else discard()
             } catch (cancelled: CancellationException) { throw cancelled }
-            catch (failure: Exception) { onError(failure.message ?: context.getString(R.string.copy_f60047d5c0)) }
+            catch (failure: Exception) { onError(context.getString(R.string.copy_f60047d5c0)) }
             finally { busy = false }
         }.invokeOnCompletion { bitmap.recycle() }
     }
@@ -114,7 +114,7 @@ fun PhotoImport(onReview: (Recipe) -> Unit, onError: (String) -> Unit) {
     if (text.isNotBlank()) {
         Field(stringResource(R.string.ui_correct_recognised_text_add_ingr_2bc536), text, { text = it.take(100000) }, lines = 12)
         Button(onClick = {
-            runCatching { RecipeImport.text(text) }.onSuccess(onReview).onFailure { onError(it.message.orEmpty()) }
+            runCatching { RecipeImport.text(text) }.onSuccess(onReview).onFailure { onError(context.getString(R.string.error_import_text)) }
         }) { Text(stringResource(R.string.ui_review_structured_recipe_4cf14b)) }
     }
 }

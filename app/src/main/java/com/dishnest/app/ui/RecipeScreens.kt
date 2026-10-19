@@ -83,7 +83,7 @@ fun RecipeDetail(
                             uiResources.getString(com.dishnest.app.R.string.copy_02a9db66ee),
                         )
                     }
-                    IconButton(onClick = { shareText(context, r.title, recipeText(r)) }) {
+                    IconButton(onClick = { shareText(context, r.title, recipeText(r, uiResources)) }) {
                         Icon(
                             Icons.Outlined.Share,
                             uiResources.getString(com.dishnest.app.R.string.copy_5d4570598c),
@@ -125,7 +125,7 @@ fun RecipeDetail(
                     leadingIcon = { Icon(Icons.Outlined.Schedule, null) },
                 )
                 AssistChip({}, label = { Text(stringResource(R.string.cook_value, uiResources.duration(r.cookMinutes))) })
-                AssistChip({}, label = { Text(r.difficulty) })
+                AssistChip({}, label = { Text(uiResources.difficulty(r.difficulty)) })
                 r.tags.forEach { AssistChip({}, label = { Text(it) }) }
             }
         }
@@ -149,7 +149,7 @@ fun RecipeDetail(
                     ) {
                         Text(i.name, Modifier.weight(1f))
                         Text(
-                            Ingredients.display(
+                            uiResources.amount(
                                 i.quantity?.times(servings.toDouble() / r.servings),
                                 i.unit,
                             ),
@@ -244,8 +244,8 @@ fun RecipeDetail(
         )
 }
 
-fun recipeText(r: Recipe) =
-    "${r.title}\nServes ${r.servings}\n\nIngredients\n${r.ingredients.joinToString("\n") { "${Ingredients.display(it.quantity,it.unit)} ${it.name}" }}\n\nMethod\n${r.steps.mapIndexed {i,v -> "${i+1}. $v"}.joinToString("\n")}\n\n${r.notes}\n${r.sourceUrl}"
+fun recipeText(r: Recipe, resources: android.content.res.Resources): String =
+    "${r.title}\n${resources.servings(r.servings)}\n\n${resources.getString(R.string.ui_ingredients_87675d)}\n${r.ingredients.joinToString("\n") { "${resources.amount(it.quantity,it.unit, canonicalUnit = true)} ${it.name}" }}\n\n${resources.getString(R.string.method_heading)}\n${r.steps.mapIndexed {i,v -> "${i+1}. $v"}.joinToString("\n")}\n\n${r.notes}\n${r.sourceUrl}"
 
 @Composable
 fun Stepper(value: Int, onChange: (Int) -> Unit, label: String = "") {
@@ -335,7 +335,7 @@ fun RecipeEditor(initial: Recipe, onDismiss: () -> Unit, onSave: (Recipe) -> Uni
                     } catch (cancelled: kotlinx.coroutines.CancellationException) {
                         throw cancelled
                     } catch (failure: Exception) {
-                        error = failure.message.orEmpty()
+                        error = uiResources.getString(R.string.copy_f60047d5c0)
                     } finally {
                         photoBusy = false
                     }
@@ -583,11 +583,9 @@ fun ImportDialog(onDismiss: () -> Unit, onReview: (Recipe) -> Unit) {
                             }
                             .onSuccess(onReview)
                             .onFailure {
+                                if (it is kotlinx.coroutines.CancellationException) throw it
                                 error =
-                                    it.message
-                                        ?: uiResources.getString(
-                                            com.dishnest.app.R.string.copy_76c65b7344
-                                        )
+                                    uiResources.getString(if (tab == 0) R.string.error_import_text else R.string.error_import_website)
                             }
                         busy = false
                     }
@@ -658,7 +656,7 @@ fun CookingScreen(
                 }
                 VoiceCommand.Finish -> onFinish()
                 is VoiceCommand.Timer -> {
-                    vm.timer("${r.title} · step ${step+1}", command.seconds)
+                    vm.timer("${r.title} · ${uiResources.getString(R.string.step_position, step + 1, r.steps.size)}", command.seconds)
                     status = uiResources.getString(R.string.timer_set, formatTime(command.seconds * 1000))
                 }
                 VoiceCommand.TimeLeft ->
@@ -675,9 +673,13 @@ fun CookingScreen(
                 is VoiceCommand.Quantity ->
                     status =
                         r.ingredients
-                            .firstOrNull { it.name.contains(command.ingredient, true) }
+                            .let { items ->
+                                // Do not announce one arbitrary amount when several ingredients match.
+                                items.singleOrNull { it.name.trim().equals(command.ingredient, true) }
+                                    ?: items.filter { it.name.contains(command.ingredient, true) }.singleOrNull()
+                            }
                             ?.let {
-                                "${Ingredients.display(it.quantity?.times(servings.toDouble()/r.servings),it.unit)} ${it.name}"
+                                "${uiResources.amount(it.quantity?.times(servings.toDouble()/r.servings),it.unit)} ${it.name}"
                             } ?: uiResources.getString(com.dishnest.app.R.string.copy_d11fcfd774)
                 VoiceCommand.Unknown ->
                     status = uiResources.getString(com.dishnest.app.R.string.copy_0070948938)
@@ -805,7 +807,7 @@ fun CookingScreen(
                     Text(stringResource(R.string.servings_value, servings), style = MaterialTheme.typography.titleLarge)
                     r.ingredients.forEach { i ->
                         Text(
-                            "${Ingredients.display(i.quantity?.times(servings.toDouble()/r.servings),i.unit)}  ${i.name}",
+                            "${uiResources.amount(i.quantity?.times(servings.toDouble()/r.servings),i.unit)}  ${i.name}",
                             Modifier.padding(vertical = 5.dp),
                         )
                     }
@@ -843,8 +845,9 @@ fun CookingScreen(
                 }
             }
         }
-        if (status.isNotBlank())
+        if (status.isNotBlank()) {
             Text(status, color = Sage, style = MaterialTheme.typography.bodyMedium)
+        }
         Text(stringResource(R.string.voice_examples), style = MaterialTheme.typography.bodySmall, color = Muted)
         FlowRow(
             Modifier.fillMaxWidth(),

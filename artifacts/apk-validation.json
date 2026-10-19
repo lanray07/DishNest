@@ -1,26 +1,26 @@
-{
-  "verifiedAt": "2026-10-19T07:00:48.0925266Z",
-  "debug": {
-    "sha256": "84c3e6513045ba65ef3d5ad679d8e6a8d19cbfdeb124ce415976d61e2353d37c",
-    "zipAlignment16k": true,
-    "signatureVerified": true
-  },
-  "qa": {
-    "sha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
-    "billingDisabled": true,
-    "zipAlignment16k": true,
-    "isolatedPackageVerified": true,
-    "signatureVerified": true
-  },
-  "release": {
-    "zipAlignment16k": true,
-    "productionReady": false,
-    "metadataReadable": true,
-    "qaFixtureAbsent": true,
-    "signed": false,
-    "billingDisabled": true,
-    "sha256": "7337d0e202fec29c588899ca7f08951b11b354308c3cf0c5ae586396e3c8bfe3"
-  },
-  "deviceInstallation": "Not checked by this static validator; see artifacts/fire-device-qa.json",
-  "published": false
+﻿{
+    "verifiedAt":  "2026-10-19T08:41:19.6127463Z",
+    "debug":  {
+                  "sha256":  "095beac54c832e737593583c3b337748039f7eb6e86e9042ca76bf04b58760a2",
+                  "zipAlignment16k":  true,
+                  "signatureVerified":  true
+              },
+    "qa":  {
+               "isolatedPackageVerified":  true,
+               "billingDisabled":  true,
+               "sha256":  "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
+               "zipAlignment16k":  true,
+               "signatureVerified":  true
+           },
+    "release":  {
+                    "zipAlignment16k":  true,
+                    "metadataReadable":  true,
+                    "signed":  false,
+                    "sha256":  "739a2aa7e6496bd4ba7c55e6e12acc73f74a39f9084355daae2031c5de321a49",
+                    "qaFixtureAbsent":  true,
+                    "billingDisabled":  true,
+                    "productionReady":  false
+                },
+    "deviceInstallation":  "Not checked by this static validator; see artifacts/fire-device-qa.json",
+    "published":  false
 }

@@ -395,7 +395,7 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
             if (uri != null)
                 vm.run {
                     context.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use {
-                        it.write(shoppingText(s.shopping))
+                        it.write(shoppingText(s.shopping, uiResources))
                     }
                     vm.message.value =
                         uiResources.getString(com.dishnest.app.R.string.copy_6a38c0b66f)
@@ -459,7 +459,7 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
                         shareText(
                             context,
                             uiResources.getString(com.dishnest.app.R.string.copy_9f375d0d3d),
-                            shoppingText(s.shopping),
+                            shoppingText(s.shopping, uiResources),
                         )
                     }
                 ) {
@@ -501,7 +501,7 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
             .forEach { (category, items) ->
                 item {
                     SoftCard {
-                        Text(category, style = MaterialTheme.typography.titleLarge)
+                        Text(uiResources.shoppingCategory(category), style = MaterialTheme.typography.titleLarge)
                         Spacer(Modifier.height(10.dp))
                         items.forEach { item ->
                             Row(
@@ -523,7 +523,7 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
                                             else null,
                                     )
                                     Text(
-                                        Ingredients.display(item.quantity, item.unit),
+                                        uiResources.amount(item.quantity, item.unit),
                                         color = Sage,
                                     )
                                     if (item.contributions.isNotEmpty())
@@ -566,16 +566,16 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
     }
 }
 
-fun shoppingText(items: List<ShoppingItem>) =
-    "DishNest shopping list\n\n" +
+fun shoppingText(items: List<ShoppingItem>, uiResources: android.content.res.Resources) =
+    "DishNest · ${uiResources.getString(R.string.nav_shop)}\n\n" +
         items
             .groupBy { it.category }
             .entries
             .joinToString("\n\n") { (category, rows) ->
-                category +
+                uiResources.shoppingCategory(category) +
                     "\n" +
                     rows.joinToString("\n") {
-                        "${if(it.checked) "[x]" else "[ ]"} ${it.name} · ${Ingredients.display(it.quantity,it.unit)}"
+                        "${if(it.checked) "[x]" else "[ ]"} ${it.name} · ${uiResources.amount(it.quantity,it.unit, canonicalUnit = true)}"
                     }
             }
 
@@ -636,7 +636,7 @@ fun PantryScreen(s: KitchenState, vm: KitchenViewModel, onRecipe: (Recipe) -> Un
                                     .padding(horizontal = 14.dp)
                             ) {
                                 Text(p.name, style = MaterialTheme.typography.titleMedium)
-                                Text(Ingredients.display(p.quantity, p.unit), color = Muted)
+                                Text(uiResources.amount(p.quantity, p.unit), color = Muted)
                                 if (p.expiry.isNotBlank())
                                     Text(
                                         uiResources.getString(if (p.expiry < today.toString()) R.string.past_date_value else R.string.check_date_value, p.expiry),

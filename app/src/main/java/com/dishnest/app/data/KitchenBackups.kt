@@ -2,6 +2,8 @@ package com.dishnest.app.data
 
 import androidx.room.withTransaction
 import com.dishnest.app.domain.Backup
+import com.dishnest.app.domain.KitchenProblem
+import com.dishnest.app.domain.requireKitchen
 import com.dishnest.app.domain.bundledPhotoIds
 import kotlinx.coroutines.flow.first
 
@@ -25,13 +27,11 @@ class KitchenBackups(private val database: KitchenDatabase) {
 
     suspend fun restore(backup: Backup) = database.withTransaction {
         val dao = database.kitchen()
-        require(dao.recipes().first().isEmpty() && dao.meals().first().isEmpty() &&
+        requireKitchen(dao.recipes().first().isEmpty() && dao.meals().first().isEmpty() &&
             dao.pantry().first().isEmpty() && dao.shopping().first().isEmpty() &&
             dao.templates().first().isEmpty() && dao.plans().first().let {
                 it.isEmpty() || it == listOf(com.dishnest.app.domain.defaultPlan())
-            }) {
-            "Import requires an empty kitchen. Export existing data before deleting it."
-        }
+            }, KitchenProblem.EMPTY_KITCHEN)
         dao.clearPlans()
         backup.plans.forEach { dao.plan(it) }
         backup.recipes.forEach { dao.recipe(it) }

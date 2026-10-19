@@ -18,6 +18,11 @@ alarm=data('artifacts/fire-background-alarm.json') if (ROOT/'artifacts/fire-back
 fire=data('artifacts/fire-device-qa.json') if (ROOT/'artifacts/fire-device-qa.json').exists() else {}
 qa_apk=ROOT/'app/build/outputs/apk/qa/app-qa.apk'
 qa_test=ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
+native_fire=data('artifacts/fire-native-qa.json') if (ROOT/'artifacts/fire-native-qa.json').exists() else {}
+native_current=native_fire.get('passed') is True and native_fire.get('installedApksVerified') is True and native_fire.get('ordinaryDataHashesUnchanged') is True and all(
+    path.exists() and native_fire.get(key)==digest(path) for path,key in [
+        (qa_apk,'apkSha256'), (qa_test,'instrumentationApkSha256'),
+        (ROOT/'tools/run_fire_native_checks.py','controllerSha256')])
 fire_current=qa_apk.exists() and qa_test.exists() and fire.get('apkSha256')==digest(qa_apk) and fire.get('instrumentationApkSha256')==digest(qa_test)
 alarm_current=qa_apk.exists() and qa_test.exists() and alarm.get('apkSha256')==digest(qa_apk) and alarm.get('instrumentationApkSha256')==digest(qa_test) and alarm.get('installedApksVerified') is True and alarm.get('controllerSha256')==digest(ROOT/'tools/run_fire_alarm_probe.ps1') and alarm.get('notificationHelperSha256')==digest(ROOT/'tools/fire_notification_setting.py')
 blocked_current=qa_apk.exists() and qa_test.exists() and blocked.get('apkSha256')==digest(qa_apk) and blocked.get('instrumentationApkSha256')==digest(qa_test) and blocked.get('notificationSettingRestored') is True and blocked.get('controllerSha256')==digest(ROOT/'tools/run_fire_alarm_probe.ps1') and blocked.get('notificationHelperSha256')==digest(ROOT/'tools/fire_notification_setting.py')
@@ -38,7 +43,7 @@ report=f'''# DishNest submission-readiness report
 
 Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 19 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No app/website deployment or store submission was performed.
 
-The seven pending categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
+The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
 
 ## Completed local continuation
 
@@ -58,6 +63,7 @@ The seven pending categories, their local work and the evidence needed to close 
 - Added EXIF-aware, bounded photo decoding; explicit backup exclusions for legacy and modern Android; density-independent food images; an offline third-party notices viewer; resolved dependency inventory and a repeatable preflight.
 
 - Added shared Unicode quantity parsing for ingredients and pantry/shopping forms. Ambiguous grouped amounts and invalid fractions remain reviewable instead of changing quantities; common translated metric units consolidate correctly without converting cups or changing ingredient names.
+- Added 46 authored runtime messages and labels in every app locale. Stable domain failure codes now resolve to localized messages; unexpected provider exception text is not shown. Shopping categories, default difficulty labels, quantities and exported headings use the active resource locale while preserving user text and parseable export unit codes. Ingredient-quantity voice questions cover all supported language families; ambiguous ingredient matches no longer announce an arbitrary amount. Enabled purchase builds use actual purchase guidance instead of development-preview wording.
 
 ## Executed verification
 
@@ -69,6 +75,7 @@ The seven pending categories, their local work and the evidence needed to close 
 | Current build provenance | {'PASS: current input/output hashes verified' if verify_build() else 'PENDING: rebuild current sources and record exact outputs'} | `artifacts/build-provenance.json` |
 | Locale resource gate | {'PASS' if locale.get('resource_complete') else 'FAIL'} across 12 locales | `localisation/validation.json` |
 | Physical Fire smoke tests | {fire_result} | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
+| Physical Fire native checks | {str(native_fire.get('passedTests',0)) + ' passed on current APK; ordinary data hashes unchanged; UI not exercised' if native_current else 'Pending on current APK'} | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
 | Fire background timer probe | {'PASS: saved kitchen records, handled timer and own notification after QA process termination' if alarm.get('passed') and alarm_current else 'Pending; inspect phase results'} | `artifacts/fire-background-alarm.json` |
 | Fire blocked-notification timer probe | {'PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored' if blocked.get('passed') and blocked_current and blocked.get('notificationsBlocked') is True else 'Pending on the current APK; no hardware pass inferred'} | `artifacts/fire-blocked-notifications.json` |
 | Receipt service | {server_tests} passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
@@ -94,11 +101,11 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 | Foundation | Compose, Room, DataStore, Flow, adaptive navigation | Hardware performance, full process/rotation matrix, TalkBack and system font scaling |
 | Recipes | CRUD, favourites, collections, photos, notes, combined search/collection/favourite/time/cuisine/tag/difficulty filters, sorting and shared photo cleanup | Full hardware accessibility review and additional vocabulary |
 | Planner | Seven days/four slots, servings, tap assignment, previous-week copy, templates, direct two-meal swap, named selected plans and offline dinner suggestions | Optional drag interactions and broader planning QA |
-| Shopping/pantry | Compatible consolidation, serving scaling, pantry deduction, manual items, check dates, optional daily reminders, combined-plan shopping, localized numeric quantity entry and common metric aliases, and name-based suggestions | Broader vocabulary, remaining unit/category labels and native review; remaining advanced Premium scope |
+| Shopping/pantry | Compatible consolidation, serving scaling, pantry deduction, manual items, check dates, optional daily reminders, combined-plan shopping, localized numeric quantity entry and common metric aliases, and name-based suggestions | Expanded vocabulary/unit parsing and native review; remaining advanced Premium scope |
 | Cooking/voice/timers | Touch fallback, narration with audio-focus handling, push-to-talk, persisted inexact timers with stale-callback protection, exact commands in all target language families and localised numeric timer grammar (English number words also supported) | Broader natural-language/quantity grammar; actual speech providers, audio focus, doze, reboot, permissions and clock-change device QA |
 | Import/data | Reviewed text/JSON-LD with per-destination robots policy checks, local English OCR with crop preview, EXIF handling, transactional JSON and bounded photo-inclusive ZIP backups and local export, multilingual pasted-text section headings and Unicode numeric quantities | Live-site permission/robots interoperability validation and real-photo OCR accuracy; cloud provider remains optional/unconnected |
 | Billing | SDK integration, approved localized catalog drafts, lifetime-first UI, Free-plan verifiers, real App Tester lifetime purchase/restore, account isolation and signed inactive expiry decisions | Resolve subscription status conflict and synthetic-expiry limitation, final market/terms review, full subscription/callback/fulfilment and LAT QA, load/quota recovery and further commercial scope |
-| Localisation | {strings} strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales; 96 localized tablet screenshot compositions and 12 promotional images with translated sample data and captions | Native-speaker review, remaining inline interpolations and domain/status errors, complete voice/category/unit work, translated website, final listing approval and hardware RTL checks; Amazon artwork slots cover fewer locales than descriptions; see marketing/amazon-artwork-uploads.json |
+| Localisation | {strings} strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales; 96 localized tablet screenshot compositions and 12 promotional images with translated sample data and captions | Native-speaker review, remaining inline interpolations, expanded voice/unit vocabulary and runtime-copy review, translated website, final listing approval and hardware RTL checks; Amazon artwork slots cover fewer locales than descriptions; see marketing/amazon-artwork-uploads.json |
 | Licensing/privacy | Original notices bundled; all resolved POM licences inventoried; backup exclusions and billing disclosures | Publisher O. Bankole confirmed; legal/licence/privacy approval, production service-operation and retention details and final dependency review |
 | Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; 10 localized console descriptions, 7 artwork sets, support email and GitHub privacy/deletion links are configured without website deployment |
 | Release | Permanent publisher key created with approval; verified publisher-signed APK, input/output hashes and binary validation | Secure portable backup; exact signed-APK install/smoke and store compatibility. The ordinary Fire app has a conflicting debug certificate; its data was preserved. |

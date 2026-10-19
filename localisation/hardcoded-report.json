@@ -13,7 +13,7 @@
   },
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
-    "text": "${Ingredients.display(i.quantity?.times(servings.toDouble()/r.servings),i.unit)}  ${i.name}"
+    "text": "${uiResources.amount(i.quantity?.times(servings.toDouble()/r.servings),i.unit)}  ${i.name}"
   },
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",

@@ -5,6 +5,23 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class VoiceLocalesTest {
+    @Test fun ingredientQuantityQuestionsWorkInAllTargetLocales() {
+        val questions = mapOf(
+            "en-US" to "How much flour do I need?", "en-GB" to "How much flour?",
+            "de" to "Wie viel flour brauche ich?", "es" to "Cuánta flour necesito?",
+            "fr" to "Combien de flour me faut-il?", "it" to "Quanta flour mi serve?",
+            "pt-BR" to "Quanto de flour preciso?", "pt-PT" to "De quanta flour preciso?",
+            "nl" to "Hoeveel flour heb ik nodig?", "pl" to "Ile flour potrzebuję?",
+            "ar" to "كم أحتاج من flour؟", "hi" to "मुझे flour कितना चाहिए?",
+        )
+        questions.forEach { (locale, question) ->
+            assertEquals(locale, VoiceCommand.Quantity("flour"), VoiceParser.parse(question, locale))
+        }
+        assertEquals(VoiceCommand.Quantity("farine de blé"), VoiceParser.parse("Quelle quantité de farine de blé?", "fr"))
+        assertEquals(VoiceCommand.Quantity("دقيق القمح"), VoiceParser.parse("كم أحتاج من دقيق القمح؟", "ar"))
+        assertEquals(VoiceCommand.Unknown, VoiceParser.parse("do not ask how much flour", "en"))
+    }
+
     @Test fun allTargetLanguageFamiliesSupportCompleteCookingCommands() {
         val phrases = mapOf(
             "en-GB" to listOf("next step", "previous step", "start cooking", "ingredients", "finish cooking", "how much time is left", "pause timer", "timer 5 minutes"),
