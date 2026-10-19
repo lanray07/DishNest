@@ -1,0 +1,16 @@
+{
+  "checkedOn": "2026-10-19",
+  "destination": "Amazon Appstore public release",
+  "submissionAuthorized": true,
+  "submitted": false,
+  "consoleStatus": "Incomplete",
+  "submitButtonEnabled": false,
+  "consoleBlocker": "Please upload at least one App file",
+  "privateLatStatus": "Test in-progress",
+  "evidence": "artifacts/screens/amazon-public-submission-blocked.png",
+  "remaining": [
+    "Verify actual annual and lifetime LAT purchases and subscription expiry, renewal, refund and fulfillment behavior",
+    "Prepare and verify the exact publisher-signed production billing build with the new icon",
+    "Complete the remaining required checks in submission-readiness.json before public submission"
+  ]
+}

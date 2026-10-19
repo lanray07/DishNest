@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T16:09:49.120482+00:00",
+  "generatedAt": "2026-10-19T16:29:18.538154+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -49,9 +49,9 @@
     },
     {
       "check": "Evidence matches current build",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/build-provenance.json",
-      "remaining": "Run full Gradle verification and record the input/output hashes"
+      "remaining": ""
     },
     {
       "check": "Locale resource coverage",
@@ -91,9 +91,9 @@
     },
     {
       "check": "APK signature and binary alignment",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/apk-validation.json; artifacts/native-alignment.json",
-      "remaining": "Validate exact output binaries; release signing remains a separate publisher gate"
+      "remaining": ""
     },
     {
       "check": "Unconfigured billing build rejection",
@@ -115,21 +115,21 @@
     },
     {
       "check": "Physical Fire native components",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-native-qa.json; artifacts/fire-device-qa.json",
-      "remaining": ""
+      "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
     },
     {
       "check": "Physical Fire instrumentation smoke",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": ""
+      "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
     },
     {
       "check": "Background Fire timer after process termination",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-background-alarm.json",
-      "remaining": ""
+      "remaining": "Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs"
     },
     {
       "check": "Physical device QA",
