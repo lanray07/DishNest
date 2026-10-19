@@ -61,7 +61,8 @@ export async function amazonReceipt(userId, receiptId, secret, environment) {
   const sandbox = environment === 'sandbox' ? '/sandbox' : '';
   const url = `https://appstore-sdk.amazon.com${sandbox}/version/1.0/verifyReceiptId/developer/${segment(secret)}/user/${segment(userId)}/receiptId/${segment(receiptId)}`;
   // No request URLs, credentials or receipt IDs are logged. Redirects cannot leak secrets.
-  const response = await fetch(url, { signal: AbortSignal.timeout(12_000), redirect: 'error' });
+  // Workers supports manual redirects; all 3xx responses fail below without following them.
+  const response = await fetch(url, { signal: AbortSignal.timeout(12_000), redirect: 'manual' });
   if ([400, 410].includes(response.status)) return null;
   if (!response.ok) throw new Error('Verification temporarily unavailable');
   const text = await response.text();

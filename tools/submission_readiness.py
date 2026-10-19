@@ -36,7 +36,10 @@ check('Native language and full UI approval',locales.get('release_approved') is 
 server=ROOT/'artifacts/billing-server-tests.xml'
 server_xml=ET.parse(server).getroot() if server.exists() else None
 server_passed=server_xml is not None and bool(server_xml.findall('.//testcase')) and not server_xml.findall('.//failure') and not server_xml.findall('.//error')
-check('Local receipt-service tests',server_passed,'artifacts/billing-server-tests.xml','Run node --test --test-reporter=junit billing-server/*.test.mjs')
+worker=read_json('artifacts/billing-worker.json')
+worker_sources=['worker.mjs','verification.mjs','worker.test.mjs','wrangler.json','package-lock.json']
+worker_current=worker.get('passed') is True and all((ROOT/'billing-server'/name).is_file() and worker.get('sourceSha256',{}).get(name)==digest(ROOT/'billing-server'/name) for name in worker_sources)
+check('Local receipt-service tests',server_passed and worker_current,'artifacts/billing-server-tests.xml; artifacts/billing-worker.json','Run npm ci in billing-server, then node --test --test-reporter=junit billing-server/*.test.mjs; Worker proof must match sources')
 check('Node/Kotlin signed-receipt contract',read_json('artifacts/billing-contract.json').get('passed') is True,'artifacts/billing-contract.json','Verify the actual Node signer with the compiled Kotlin verifier')
 apk=read_json('artifacts/apk-validation.json');native=read_json('artifacts/native-alignment.json')
 apk_paths = {'debug': 'app/build/outputs/apk/debug/app-debug.apk', 'qa': 'app/build/outputs/apk/qa/app-qa.apk', 'release': 'app/build/outputs/apk/release/app-release-unsigned.apk'}

@@ -2,6 +2,8 @@
 
 Nothing in this workflow deploys the service, creates store products or publishes an APK. The default APK has purchases disabled. The publisher confirmed there is no existing catalog or verification service; this repository prepares those integrations locally.
 
+The publisher wants customer-paid Premium without ongoing paid processing/hosting. A disabled Cloudflare Workers Free adapter is now prepared and tested in the local Workers runtime; see [free verifier setup and limits](AMAZON_FREE_VERIFIER.md). No Free-plan account, public endpoint or production CPU budget is verified. Do not activate paid infrastructure or treat local fixtures as live Amazon purchase evidence.
+
 ## Catalog contract
 
 | SKU | Type | Role |
@@ -15,10 +17,11 @@ Prices, territories and subscription terms require publisher approval in Amazon'
 
 ## Local service
 
-Requires Node 22 or newer; no npm dependencies. Run from the project root:
+Requires Node 22 or newer; the loopback server has no runtime npm dependencies. The Workers test harness needs the pinned development dependencies. Run from the project root:
 
 ```powershell
-node --test billing-server/verification.test.mjs
+npm --prefix billing-server ci --ignore-scripts --no-audit --no-fund
+node --test billing-server/*.test.mjs
 node billing-server/prepare-local.mjs
 node --env-file=.local-billing/.env billing-server/server.mjs
 ```

@@ -1,19 +1,20 @@
-✔ local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage (107.7259ms)
-✔ LAT test receipts stay isolated from production grants (2.2079ms)
-✔ active renewal and offline validity are bounded (2.0084ms)
-✔ turning autorenew off preserves access until future cancel date (0.2353ms)
-✔ expired, refunded and cancelled receipts revoke access (0.2765ms)
-✔ Amazon grace period extends access only to the supplied deadline (0.6081ms)
-✔ lifetime is reverified daily and is revocable (0.2214ms)
-✔ unknown SKUs, consumables, wrong receipt and test purchases fail closed (0.3867ms)
-✔ subscription parent SKU maps to allowed term SKU (0.1973ms)
-✔ nonce, receipt and account are bound into an authentic signature (5.5358ms)
-✔ outages never become a signed denial or a fabricated success (0.8537ms)
-ℹ tests 11
+✔ local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage (84.0456ms)
+✔ LAT test receipts stay isolated from production grants (2.8454ms)
+✔ active renewal and offline validity are bounded (2.1962ms)
+✔ turning autorenew off preserves access until future cancel date (0.6234ms)
+✔ expired, refunded and cancelled receipts revoke access (0.5397ms)
+✔ Amazon grace period extends access only to the supplied deadline (0.416ms)
+✔ lifetime is reverified daily and is revocable (0.5134ms)
+✔ unknown SKUs, consumables, wrong receipt and test purchases fail closed (0.7015ms)
+✔ subscription parent SKU maps to allowed term SKU (0.2044ms)
+✔ nonce, receipt and account are bound into an authentic signature (7.2143ms)
+✔ outages never become a signed denial or a fabricated success (2.4046ms)
+✔ Workers runtime: signed Amazon decisions, bounded inputs, outage and activation controls (1857.8416ms)
+ℹ tests 12
 ℹ suites 0
-ℹ pass 11
+ℹ pass 12
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 425.362
+ℹ duration_ms 2511.5635

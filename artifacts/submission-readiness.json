@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T05:33:06.134210+00:00",
+  "generatedAt": "2026-10-19T05:42:15.972112+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -80,7 +80,7 @@
     {
       "check": "Local receipt-service tests",
       "status": "passed",
-      "evidence": "artifacts/billing-server-tests.xml",
+      "evidence": "artifacts/billing-server-tests.xml; artifacts/billing-worker.json",
       "remaining": ""
     },
     {

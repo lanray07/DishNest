@@ -1,1 +1,1 @@
-{"name":"dishnest-receipt-service","private":true,"type":"module","engines":{"node":">=22"},"scripts":{"test":"node --test","start":"node server.mjs"}}
+{"name":"dishnest-receipt-service","private":true,"type":"module","engines":{"node":">=22"},"scripts":{"test":"node --test","start":"node server.mjs"},"devDependencies":{"miniflare":"4.20260730.0"}}

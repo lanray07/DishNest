@@ -19,6 +19,9 @@ tools/__pycache__/
 *.pk8
 *.p8
 billing-server/node_modules/
+billing-server/.wrangler/
+billing-server/.dev.vars
+billing-server/.dev.vars.*
 *.apk
 *.aab
 artifacts/deliverables/*.zip
