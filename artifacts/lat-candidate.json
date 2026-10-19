@@ -1,6 +1,6 @@
 {
   "apk": "build/lat-candidate/DishNest-0.1.0-LAT.apk",
-  "apkSha256": "ad8b317d8088ee16a2999751d2a300775d5663621fbaf327d2dbf4abd19155bc",
+  "apkSha256": "fd049df4ba76e07cd04d015aa9f41e8ef0329c1e55fe990ee463c079a3ee835a",
   "certificateSha256": "c2c7dcb307420a1605c48a06a50d0893af1f606c2db45a95669735f2834e1012",
   "sourceSha256": {
     "app/build.gradle.kts": "ac22cafb97223be30fb1bb79122dc60498f2d00257792dac95eee49f05612e98",
@@ -51,7 +51,7 @@
     "app/src/main/java/com/dishnest/app/platform/RestoreGuard.kt": "f58540ffb1201a68ccae74c045973cb68432aebb171dd51ea5092404dbde3559",
     "app/src/main/java/com/dishnest/app/platform/Timers.kt": "dca72e3317d5c3a4f674e4d0cd10a2a4814f9f07809b0aa3953415e456414cce",
     "app/src/main/java/com/dishnest/app/platform/VoiceController.kt": "b72f988ee9b7049a9bb03bf8d60f3ecfd0a70a2392d7fbae291d7c65a2d84072",
-    "app/src/main/java/com/dishnest/app/ui/KitchenApp.kt": "e2c3f04ba5ad71457bf78bfcb3ba11f303d2bd214fc4a563951b9533c04a5a0e",
+    "app/src/main/java/com/dishnest/app/ui/KitchenApp.kt": "c3168e4e2995db3bc55c3ca298ce23ec3558d6733bc1be1a63dcbd5049d5d59c",
     "app/src/main/java/com/dishnest/app/ui/KitchenMessages.kt": "71470a2d9ce3a0b6293dc1b8528abc2eb60e8625e308edcd162a686c4f05e2e4",
     "app/src/main/java/com/dishnest/app/ui/LocaleLabels.kt": "b04941a58fefc729df67ba48364ce270d52f8073e7a296c72a7b3b77e6422bd1",
     "app/src/main/java/com/dishnest/app/ui/PantryReminderControl.kt": "ebd1574bc683e0c1077d92152d3d328ee3ecb3a473eb95fa0732e36c9d4448df",
@@ -62,13 +62,15 @@
     "app/src/main/java/com/dishnest/app/ui/RecipeScreens.kt": "8748014e324028114d6cf21207a226a09ed29686992abfd09288715f605968c0",
     "app/src/main/java/com/dishnest/app/ui/SettingsScreen.kt": "81e76f2881b9bbef35955597d72976cc690c7b9bd3e71dde4f716d28fab9b03b",
     "app/src/main/java/com/dishnest/app/ui/Theme.kt": "524a1ade773f59c2d2ae1f04189b3e568d0f34244d48a87308d18f2a2a2f728f",
+    "app/src/main/res/drawable/ic_launcher_color.xml": "240cee97aac785fd4a2ef42f35ac9f52670fe24016123e96ae5acce9732bb1ed",
     "app/src/main/res/drawable/ic_nest.xml": "f1d934ec924250a1c381db6661db75e513a8feff09ef233830d7010cabe8fd6d",
     "app/src/main/res/drawable-nodpi/food_oats.jpg": "cf3b53facee5ed44f8d21c24e776597a0fd4363f66ae2f6d96b9888feeff77b8",
     "app/src/main/res/drawable-nodpi/food_pasta.jpg": "7c398ad015af305f5afdbd573a40dd3b2a6ee6b829867a001b9357970b19d9d1",
     "app/src/main/res/drawable-nodpi/food_soup.jpg": "302726a1811f4efb3172c6a2632ca2eabbea331a597757600bf32ba43f187079",
+    "app/src/main/res/drawable-nodpi/ic_nest_color.png": "c76af931070d7aa27c1a95eef96ea768315cea34b8a5930e7d60245777f97277",
     "app/src/main/res/drawable-nodpi/lemon_chicken.png": "63054ec8377d5533cac44860b922dc518ee99086d195891e99b812cf732ccd51",
-    "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "7b3284fe294573393ae66e1910493a5b5cbf240092d572fb014b152239a31e15",
-    "app/src/main/res/values/colors.xml": "67ba5db0c9d9d4f79bab1399827586a7729a0f66e87bf2465b8946039d0d3470",
+    "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "6fc698bbd316ed68e3357623f942e02ee23cb44c2965f58c21e6143d7fdd0f22",
+    "app/src/main/res/values/colors.xml": "b4709a14559179876dc1c81acfaf73190ac53c786e6e7ec18afffa724cede576",
     "app/src/main/res/values/strings.xml": "94aa6c0855985ba8647ac01efd17d09c3a0cbc04a26eca62f6711af92bc0dc25",
     "app/src/main/res/values/styles.xml": "ca377f8c0a91a895b0299cfdbe6b81a8e8c6465c6efbd558a7966702ad222a94",
     "app/src/main/res/values-ar/strings.xml": "74e39a14e49e5c1adf3babb661db573b0ae72230d4acd803dcd4e8658206885d",
@@ -129,6 +131,7 @@
   "serviceDeployed": true,
   "productionReady": false,
   "remaining": [
-    "Amazon LAT availability and separate-device purchase lifecycle"
-  ]
+    "Amazon fresh LAT availability and actual purchase lifecycle checks"
+  ],
+  "uploadedReleaseId": "amzn1.devportal.apprelease.b78f2f368b6a4daa9aeccedf66b4e963"
 }

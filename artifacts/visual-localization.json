@@ -17,7 +17,7 @@
   "screenshots": 96,
   "promotional_images": 12,
   "export_count": 108,
-  "copy_sha256": "13966af284f308358e2c6f4e55dcb6b5f219d3ecf582ac903f4a0a316658048e",
+  "copy_sha256": "170681c64795c83d4ef35e161ed8abaefc616240b662ad53adfc7ee1058d2ce1",
   "capture_method": "Production Compose UI with isolated translated sample records; Robolectric native graphics",
   "artwork_renderer": "CUA Chromium with native script shaping",
   "native_language_approved": false,

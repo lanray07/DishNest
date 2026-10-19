@@ -16,6 +16,9 @@ def verify():
     assert len(manifest) == len(expected), 'Duplicate exports'
     for item in manifest:
         output = ROOT/item['output']
+        assert item['icon_sha256'] == sha(ROOT/'marketing/assets/icon-512.png'), output
+        assert item['renderer_sha256'] == sha(ROOT/'tools/prepare_visual_renderer.py'), output
+        assert item['copy_sha256'] == sha(ROOT/'marketing/visual-localization.json'), output
         image = Image.open(output)
         assert image.size == ((1024, 500) if item['id'] == 'promo' else (1920, 1200)), output
         assert image.mode in {'RGB', 'RGBA'}, output
@@ -39,11 +42,23 @@ def verify():
     assert {row['locale'] for row in uploads['locales']} == offered
     assert uploads.get('verified_after_reload') is True
     assert {row['locale'] for row in uploads['verification'] if row.get('persisted_after_reload')} == offered
+    for row in uploads['verification']:
+        assert row.get('saved_files_match') is True, row['locale']
+        assert row.get('screenshot_order') == [f'{i:02}' for i in range(1, 9)], row['locale']
+        assert not row.get('problems'), row['locale']
     for upload in uploads['locales']:
         assert len(upload['screenshots']) == len(set(upload['screenshots'])) == 8
         local = {row['id']: row['sha256'] for row in upload['local_files_sha256']}
         expected = {row['id']: row['sha256'] for row in manifest if row['locale'] == upload['locale']}
         assert local == expected, f"{upload['locale']}: upload source changed after receipt"
+        saved = {row['id']: row['sha256'] for row in upload['saved_asset_sha256']}
+        saved_expected = {key: value for key, value in expected.items() if key != 'promo'}
+        saved_expected.update({
+            'tablet_large_icon': sha(ROOT/'marketing/assets/icon-512.png'),
+            'tablet_small_icon': sha(ROOT/'marketing/assets/icon-114.png'),
+            'tablet_promotional_image': expected['promo'],
+        })
+        assert saved == saved_expected, f"{upload['locale']}: saved Amazon asset bytes differ"
     result['amazon_artwork_locales_verified'] = sorted(offered)
     (ROOT/'artifacts/visual-localization.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(result))

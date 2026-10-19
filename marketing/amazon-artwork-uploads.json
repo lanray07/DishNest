@@ -1,413 +1,826 @@
 {
-  "status": "Draft uploads; native and hardware approval pending",
+  "status": "Saved bytes and screenshot order verified for all seven offered artwork locales; native and hardware approval pending",
   "locales": [
     {
       "locale": "de-DE",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.062b45c4501948b2be723f0ff2e2961b0",
-        "screenshot_amzn1.dex.asset.c8ef221dd7c84cdba2d0962f6319ae7b1",
-        "screenshot_amzn1.dex.asset.9b0a8f922c514fbaaf189a67a6835fb72",
-        "screenshot_amzn1.dex.asset.3e69d6051c9c49dcba9b781d8c82e6c03",
-        "screenshot_amzn1.dex.asset.a275781548cb498b829ed916c6debf954",
-        "screenshot_amzn1.dex.asset.fe6051cae6ea499d82097b466631928a5",
-        "screenshot_amzn1.dex.asset.c7e0171a8a2b45f089b26f43139e08ff6",
-        "screenshot_amzn1.dex.asset.e5fa35eb00b94e1ca9de723d605559ef7"
+        "screenshot_amzn1.dex.asset.bf8d76aff1cf43d497d50ec34da6cc3f",
+        "screenshot_amzn1.dex.asset.b5e758b72da64c6888e654fa13d8c29e",
+        "screenshot_amzn1.dex.asset.cfb088b1554044469fcefee9179cc236",
+        "screenshot_amzn1.dex.asset.ec6e3966a69544239d9d25e7b0407abb",
+        "screenshot_amzn1.dex.asset.4542dfe3a5274541874420bfa1afc512",
+        "screenshot_amzn1.dex.asset.4a0aba23a7444812befe3b094f98d7cc",
+        "screenshot_amzn1.dex.asset.30b07a932d2540e29eb251cfcd9ca551",
+        "screenshot_amzn1.dex.asset.545504ee9aff447eac0253f58e883267"
       ],
-      "promo_sha256": "72202e6b72b9de24a05988d693cd1545a2e7e21830e1242d482737a75fa59130",
+      "promo_sha256": "6837c87eaf332130d06276b7c3dd700dcb3f8104fcc3ed84aa331ac8c4af0669",
       "local_files_sha256": [
         {
           "id": "01",
-          "sha256": "579c6fc524137ad3e26e5b647e9ac28eeb4e71fb986de87a478701d77cc5d42b"
+          "sha256": "07862c72887a0ee785962f35e6b05b3d01c60cdd9e66b783f321045bd633fbce"
         },
         {
           "id": "02",
-          "sha256": "564943c3557a0fe00661ec93dc04a56bd0b7876e94d5f49c1abdf4d4862b2534"
+          "sha256": "065e3bf4c505600c89ab8a2fc30eafbc52f9008aa4dab4cc4f98c05a3a74be8d"
         },
         {
           "id": "03",
-          "sha256": "7acc3f400b3bd2a3780a323d0e975e50a4223bbe8ac7d8ab3e565ad8f79b314f"
+          "sha256": "c2dc15eb75dda2761c0f2ebecb1ecf97c3d0337f76e58ee84f29cf4e6d99670c"
         },
         {
           "id": "04",
-          "sha256": "6bf04f4905c967615544c564e3a07cfd645699878152853985fc795c554f1be8"
+          "sha256": "580eba60d161c3a52e054b8170c348bfcabfa1742dc6f6ee9ee91763aba294a4"
         },
         {
           "id": "05",
-          "sha256": "1dee2c83341d3c874aa75672f037a653b46d23fcbd2e0944ab65f1437cd1cbdf"
+          "sha256": "23b22993cdacdb082f1fdfbea3992d192e713082c227bf1a3d2f9cefc6b1f7fb"
         },
         {
           "id": "06",
-          "sha256": "67eaf5f0c5d785ed61cbf4002046bd0e6e3f516be415b32a23e0f8816ecb38f8"
+          "sha256": "cf80f359a8dfdabed2bdc6649c83dc4dffed21cf284d5ad0b6aec4ea95c6c931"
         },
         {
           "id": "07",
-          "sha256": "d086f60704033c6a82cae2b7daf8b6ece51bc7efe473b099f56027cbf5e9480a"
+          "sha256": "b99fa953366c55f1001112321c86e6dd80bf122cf1c80cf8167bd14d36abe815"
         },
         {
           "id": "08",
-          "sha256": "3c6ab08e9c95d8ce7969096fe93701b4a8a0bf2eb07a67c211f184218e55e4ac"
+          "sha256": "42681eecf7ea2c5d8f93c996a1be2410a83d3b3b835b29f8e9bb6ea39ba0a355"
         },
         {
           "id": "promo",
-          "sha256": "794cdff382e926f1a0e7d63dbd45b317f12df63bfac2a56f60de77f3a302b27c"
+          "sha256": "6837c87eaf332130d06276b7c3dd700dcb3f8104fcc3ed84aa331ac8c4af0669"
+        }
+      ],
+      "refreshedOn": "2026-10-19",
+      "saved_asset_sha256": [
+        {
+          "id": "01",
+          "sha256": "07862c72887a0ee785962f35e6b05b3d01c60cdd9e66b783f321045bd633fbce"
+        },
+        {
+          "id": "02",
+          "sha256": "065e3bf4c505600c89ab8a2fc30eafbc52f9008aa4dab4cc4f98c05a3a74be8d"
+        },
+        {
+          "id": "03",
+          "sha256": "c2dc15eb75dda2761c0f2ebecb1ecf97c3d0337f76e58ee84f29cf4e6d99670c"
+        },
+        {
+          "id": "04",
+          "sha256": "580eba60d161c3a52e054b8170c348bfcabfa1742dc6f6ee9ee91763aba294a4"
+        },
+        {
+          "id": "05",
+          "sha256": "23b22993cdacdb082f1fdfbea3992d192e713082c227bf1a3d2f9cefc6b1f7fb"
+        },
+        {
+          "id": "06",
+          "sha256": "cf80f359a8dfdabed2bdc6649c83dc4dffed21cf284d5ad0b6aec4ea95c6c931"
+        },
+        {
+          "id": "07",
+          "sha256": "b99fa953366c55f1001112321c86e6dd80bf122cf1c80cf8167bd14d36abe815"
+        },
+        {
+          "id": "08",
+          "sha256": "42681eecf7ea2c5d8f93c996a1be2410a83d3b3b835b29f8e9bb6ea39ba0a355"
+        },
+        {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
+          "id": "tablet_promotional_image",
+          "sha256": "6837c87eaf332130d06276b7c3dd700dcb3f8104fcc3ed84aa331ac8c4af0669"
         }
       ]
     },
     {
       "locale": "en-GB",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.515857f417f941c180381065e366cea50",
-        "screenshot_amzn1.dex.asset.8a080b7d9a6e4abab8463c60887dd6561",
-        "screenshot_amzn1.dex.asset.cfdf45ae15dc4ae9bc57b27ce30be6d92",
-        "screenshot_amzn1.dex.asset.98f50213d07546d2a87687ed4dadb5323",
-        "screenshot_amzn1.dex.asset.3537d568150a42b8adbbfc2d1bd2620d4",
-        "screenshot_amzn1.dex.asset.f93f489123b44efcb7c1c8f59e16aad55",
-        "screenshot_amzn1.dex.asset.2aa2a3167b7543169403012573eada016",
-        "screenshot_amzn1.dex.asset.132ff15b147b48dca6ccdffc2c81ee317"
+        "screenshot_amzn1.dex.asset.f3a34c75b0584918897c405218b06e2a",
+        "screenshot_amzn1.dex.asset.fe919d4d6b584dd9acd62db4d35cefdf",
+        "screenshot_amzn1.dex.asset.c7831de9d77447408af76a8c8d2dab40",
+        "screenshot_amzn1.dex.asset.2c137f7cf3904bd8beedcbd178d0c849",
+        "screenshot_amzn1.dex.asset.a005dc6b59034270b451607bc17f98cc",
+        "screenshot_amzn1.dex.asset.8432c3f48568459aab563e3bc9678616",
+        "screenshot_amzn1.dex.asset.bc855cbe6e5e40ecb58a84dea697f850",
+        "screenshot_amzn1.dex.asset.d90b95977e1b4005ae67351297703f16"
       ],
-      "promo_sha256": "eb2058a64ee5dd72afabaa73a0dbecd400d3cdbc6fa612e55404575453d5aac3",
+      "promo_sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae",
       "local_files_sha256": [
         {
           "id": "01",
-          "sha256": "80fbfa6d0aee1fa9688111c3ec5b97bf1a27202ea07f24ded85031c99af39409"
+          "sha256": "4fafe8d10ffac8c797f2e10f6209b19b9894a50afe8cc0a7373fefafefd0767c"
         },
         {
           "id": "02",
-          "sha256": "39251ca099a8def7af468a10e353449fb1d7aee73dcafe63853b65ad6df2dfdc"
+          "sha256": "d988639c28ca47c1054ae0c6fb65526758955df41d991a3df8a81227fa1d5b43"
         },
         {
           "id": "03",
-          "sha256": "7c140ead859da4b336236059540a3576735e101fefddd92e5993a399ff67cd8c"
+          "sha256": "a4de8126c3a335b59e80758d16611587500ef3660899c7a059aded29670f930f"
         },
         {
           "id": "04",
-          "sha256": "efa813b0400fd28e6d1a838cb2af6f6dd118f99bdbf4f7b7a29a6fe57a4cb168"
+          "sha256": "ba75ced87c8e71e042063dfa017d4a34c84c69dd218c206dfa4a13ab87ae1659"
         },
         {
           "id": "05",
-          "sha256": "53d4e8bfb4cd82c73af49001f3e24df08efd2bd0b95c4c471797104f3fec5033"
+          "sha256": "d661d34df35d7b5316833f9a9477b93f703724e82ba126b7b49a6f5f72edb565"
         },
         {
           "id": "06",
-          "sha256": "dff47cf2b10ea747e940cbe41e93992664c0b7d70a373c023de2dfb5b4da4ee9"
+          "sha256": "72cda79d9f6798b5cee76a2fae5329756f95b56c919492a4377a4eb0461c52c5"
         },
         {
           "id": "07",
-          "sha256": "5aa438db11f613d73536f987d6d2ffd21b1482ca029d2d6b85cf0452349e9c65"
+          "sha256": "4ea1387b03134051571f1fdc4a8c650c4475d22ca7c34ac3d2a51f34a6ba78a7"
         },
         {
           "id": "08",
-          "sha256": "a725471dbbe6494199990c51a53347dbc6a759d415d4909741aa69264ef7d25e"
+          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
         },
         {
           "id": "promo",
-          "sha256": "76f4a19b0f5c01acc89bcc4c50bed747ead94276f943aa4f47e39afad9a0712d"
+          "sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae"
+        }
+      ],
+      "refreshedOn": "2026-10-19",
+      "saved_asset_sha256": [
+        {
+          "id": "01",
+          "sha256": "4fafe8d10ffac8c797f2e10f6209b19b9894a50afe8cc0a7373fefafefd0767c"
+        },
+        {
+          "id": "02",
+          "sha256": "d988639c28ca47c1054ae0c6fb65526758955df41d991a3df8a81227fa1d5b43"
+        },
+        {
+          "id": "03",
+          "sha256": "a4de8126c3a335b59e80758d16611587500ef3660899c7a059aded29670f930f"
+        },
+        {
+          "id": "04",
+          "sha256": "ba75ced87c8e71e042063dfa017d4a34c84c69dd218c206dfa4a13ab87ae1659"
+        },
+        {
+          "id": "05",
+          "sha256": "d661d34df35d7b5316833f9a9477b93f703724e82ba126b7b49a6f5f72edb565"
+        },
+        {
+          "id": "06",
+          "sha256": "72cda79d9f6798b5cee76a2fae5329756f95b56c919492a4377a4eb0461c52c5"
+        },
+        {
+          "id": "07",
+          "sha256": "4ea1387b03134051571f1fdc4a8c650c4475d22ca7c34ac3d2a51f34a6ba78a7"
+        },
+        {
+          "id": "08",
+          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
+        },
+        {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
+          "id": "tablet_promotional_image",
+          "sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae"
         }
       ]
     },
     {
       "locale": "it-IT",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.555fee93f20d4888b00dc3f2c1afc3000",
-        "screenshot_amzn1.dex.asset.bd6fa0ac43994997871f21569e18d6bd1",
-        "screenshot_amzn1.dex.asset.857a8edfc8b84887bea5a30fcea92af82",
-        "screenshot_amzn1.dex.asset.c75b70727c9f46d38b65e7621e880d573",
-        "screenshot_amzn1.dex.asset.16e34eefb3d8403eb647340c206ebf6c4",
-        "screenshot_amzn1.dex.asset.93c4129119d943679a678503e4b747515",
-        "screenshot_amzn1.dex.asset.3804aa390b264dfd9c5eb727ea405e3e6",
-        "screenshot_amzn1.dex.asset.9ac9a731f8334d40b3178a9b08b759267"
+        "screenshot_amzn1.dex.asset.ef510227a9a54da3b2e3da700e47ebfd",
+        "screenshot_amzn1.dex.asset.2d2b663c6e414c13b1e5a4068b3c3ede",
+        "screenshot_amzn1.dex.asset.248a0c41a6ad4164842eb2584b1db960",
+        "screenshot_amzn1.dex.asset.f6de17923be4490c82636cb00979d671",
+        "screenshot_amzn1.dex.asset.7543a6031b184bd59e8f49c18ce55db9",
+        "screenshot_amzn1.dex.asset.f553895e6fe945f196b417625935ce1c",
+        "screenshot_amzn1.dex.asset.6acdfcf2f3b54218a309d84547b2623e",
+        "screenshot_amzn1.dex.asset.38d0df7ee8d244ee9bdf56f062c95f23"
       ],
-      "promo_sha256": "c5ca8ace274cac94ed27953514ffec38a47f22d76bc3d6387c36b15daeca3913",
+      "promo_sha256": "4920b2035cec799d14085cf43ed5c28cf5f042ed40f280e8053ed5b12f657caf",
       "local_files_sha256": [
         {
           "id": "01",
-          "sha256": "70ad1ebe663446ec67dbdd825b7937643a8aaf969b92fb41c386ab7dd6e91693"
+          "sha256": "5c9c134cea63d54b77a738f91e0a93a4511ebdd0142b247ee5b0eb1217bea213"
         },
         {
           "id": "02",
-          "sha256": "e7a1240ab954ca8075743a5f68de03578475752e2485465c55e0b6a828b6c3e9"
+          "sha256": "1c7ee9b22d3340d5bc721e7117f7774622e8f28911401f6faa8dec7efae678c0"
         },
         {
           "id": "03",
-          "sha256": "64cac4afcd4376f558af8fe6c39d447b123a198cdd767907cb77c2130397e3bb"
+          "sha256": "05d01ac941611ca39e574bf49db116e0d2623715319c4b8ed78cee145ace081a"
         },
         {
           "id": "04",
-          "sha256": "8b87b4b93ac67a78d3a5457effc6365d5ed8459ee978d79b8ace27b40d11391d"
+          "sha256": "6dcbd068a8544ee281102bb8e6f1a68a98fb5e8e915ef6badd951cc3f01520cf"
         },
         {
           "id": "05",
-          "sha256": "ef6d30eb94151be6a0c7bfef3f3a6c97048c88043eb04ce925318cbc63704539"
+          "sha256": "08e853591f907c7e402b68ecba49c60e0bd06cb339f075219efba940afee231a"
         },
         {
           "id": "06",
-          "sha256": "f6f097be48feb4081dd624765103ded5fd1b04a178a8dc138d624cd32c3312f2"
+          "sha256": "096d49b2d800961efeeb73a717fab92cfdddb49f8c8a235b4e5dc334df34b090"
         },
         {
           "id": "07",
-          "sha256": "14c32987812d193b5c59edbd22aa4aa606649228ada96a5b5febe1452b672b05"
+          "sha256": "b4ee3eacf38cb7561812c016485864c54011b3376b3f75d9289348cd1f9c0f88"
         },
         {
           "id": "08",
-          "sha256": "50e8fd7356a28ff3a21c3d6703c294024ca94e871ea6046ed7875a1f5b20c6bd"
+          "sha256": "936c39f599161f5b21d192cd40685622ad47926ca2bd3d9aeb746d357dd0c7c9"
         },
         {
           "id": "promo",
-          "sha256": "423ba3ab5676aad31011a4f7f625cabb2158948a9853f5f099f3e7969c64a85d"
+          "sha256": "4920b2035cec799d14085cf43ed5c28cf5f042ed40f280e8053ed5b12f657caf"
+        }
+      ],
+      "refreshedOn": "2026-10-19",
+      "saved_asset_sha256": [
+        {
+          "id": "01",
+          "sha256": "5c9c134cea63d54b77a738f91e0a93a4511ebdd0142b247ee5b0eb1217bea213"
+        },
+        {
+          "id": "02",
+          "sha256": "1c7ee9b22d3340d5bc721e7117f7774622e8f28911401f6faa8dec7efae678c0"
+        },
+        {
+          "id": "03",
+          "sha256": "05d01ac941611ca39e574bf49db116e0d2623715319c4b8ed78cee145ace081a"
+        },
+        {
+          "id": "04",
+          "sha256": "6dcbd068a8544ee281102bb8e6f1a68a98fb5e8e915ef6badd951cc3f01520cf"
+        },
+        {
+          "id": "05",
+          "sha256": "08e853591f907c7e402b68ecba49c60e0bd06cb339f075219efba940afee231a"
+        },
+        {
+          "id": "06",
+          "sha256": "096d49b2d800961efeeb73a717fab92cfdddb49f8c8a235b4e5dc334df34b090"
+        },
+        {
+          "id": "07",
+          "sha256": "b4ee3eacf38cb7561812c016485864c54011b3376b3f75d9289348cd1f9c0f88"
+        },
+        {
+          "id": "08",
+          "sha256": "936c39f599161f5b21d192cd40685622ad47926ca2bd3d9aeb746d357dd0c7c9"
+        },
+        {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
+          "id": "tablet_promotional_image",
+          "sha256": "4920b2035cec799d14085cf43ed5c28cf5f042ed40f280e8053ed5b12f657caf"
         }
       ]
     },
     {
       "locale": "pt-BR",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.050d9c2825a74af2be38323bd188bb770",
-        "screenshot_amzn1.dex.asset.bde340d86d364049989288a7a679a3121",
-        "screenshot_amzn1.dex.asset.cd5d5c281b9345ce826ad5db4982a8ae2",
-        "screenshot_amzn1.dex.asset.c3edbe8da43c46e290a42a878df1849e3",
-        "screenshot_amzn1.dex.asset.5d471128a4694c3e8698dc645ebce32f4",
-        "screenshot_amzn1.dex.asset.c9ff02e99d23404ea14f26a34071a9a85",
-        "screenshot_amzn1.dex.asset.d6cd018a30694cc3b9df0809da48147b6",
-        "screenshot_amzn1.dex.asset.fdb8cc631c004c03a4593e0c07938aaf7"
+        "screenshot_amzn1.dex.asset.e113a53355224b019c5230fb0ab98d43",
+        "screenshot_amzn1.dex.asset.8205c492dd0040cab22e375a4afc9d4f",
+        "screenshot_amzn1.dex.asset.54c9dd32bc1d4469bb80abcbb2beb1f5",
+        "screenshot_amzn1.dex.asset.fe31a1b9befc42548c5395879b59e378",
+        "screenshot_amzn1.dex.asset.7dffe008538142048910bf154d3191a7",
+        "screenshot_amzn1.dex.asset.7932929d09234b3e981c0f71195e43ff",
+        "screenshot_amzn1.dex.asset.9e6a5e05c6c542f7b20d4d3fc72a5c50",
+        "screenshot_amzn1.dex.asset.d31586535e764812a861364e17b481b9"
       ],
-      "promo_sha256": "e327c0705b18665626c247f66b6e854ec93433f80215a08ba500467ffb5cb6c3",
+      "promo_sha256": "c615257bc3f2debf775838f84ca524d0c8cc2efab86a23345a9ca27a3eef450c",
       "local_files_sha256": [
         {
           "id": "01",
-          "sha256": "48bf62d07b8f2d7b73e85c752fda8fe61122a69472ca483dc6a2d31acd524583"
+          "sha256": "3ecd65fcb50db5e572314336b14c54a249f3051949ccbf912ec7f2f82b4a565d"
         },
         {
           "id": "02",
-          "sha256": "bcba5954e911d3b5b91f958494db131c43f9faca2dd83ff1198abd2f754c3e3f"
+          "sha256": "c7df7ab339e2f1258ca5fa0926b674f3063b61e52bd429b781310651704cf829"
         },
         {
           "id": "03",
-          "sha256": "0afdd195a70b5242b5862b77ff903e84c7e82e9507a4794b26c5263ca49d7d88"
+          "sha256": "d4f0ac14b19ea9c2834dcb4cddee8f9f13c72518fd5b776e0bf1d58df4e62a94"
         },
         {
           "id": "04",
-          "sha256": "3a238d399a6b4dd647613ccee7d9a899dab305992435865c6bf7e965c2aa0fc7"
+          "sha256": "3ec723a7c7d121a50c4d16355a61ee0617bc8788418ceeed01b672588cb1ba0d"
         },
         {
           "id": "05",
-          "sha256": "237eed54e54893375a99463e9380a6bc6819a5d9e2ba6a5edaae21c6f84cbfc2"
+          "sha256": "e19b0216eae7ed34b7467d6f5ccec785c68902197d0c67fb43939b7eacad99d4"
         },
         {
           "id": "06",
-          "sha256": "4ae72435480fad5203781ac3d1c3b7209cd64d6784f710e945f2d63c9876ef4c"
+          "sha256": "f282505e02648fe5244b0944faae5878f4897a2a91f43627a2cef5ebc2589d1d"
         },
         {
           "id": "07",
-          "sha256": "0b41f8734da0d024c180c53386148991c474ce868e0364884fc2e7a4acec06c8"
+          "sha256": "a52d155f411c0a7b8b46d92beb8a667c4719868a194c2b81fa887fabaf5631f4"
         },
         {
           "id": "08",
-          "sha256": "7b4f1b25f205b71a1cbdb253ab58b895e21447b1bcdf37f4cfeca353beb9c663"
+          "sha256": "54a78aa0821ee2cdb4e7362e8e7511621e816c577e81f8ce01319ab217800c6a"
         },
         {
           "id": "promo",
-          "sha256": "b7d74736ab474589ff894e0f92e5b8d584ff619333811548a1403c41ce42faed"
+          "sha256": "c615257bc3f2debf775838f84ca524d0c8cc2efab86a23345a9ca27a3eef450c"
+        }
+      ],
+      "refreshedOn": "2026-10-19",
+      "saved_asset_sha256": [
+        {
+          "id": "01",
+          "sha256": "3ecd65fcb50db5e572314336b14c54a249f3051949ccbf912ec7f2f82b4a565d"
+        },
+        {
+          "id": "02",
+          "sha256": "c7df7ab339e2f1258ca5fa0926b674f3063b61e52bd429b781310651704cf829"
+        },
+        {
+          "id": "03",
+          "sha256": "d4f0ac14b19ea9c2834dcb4cddee8f9f13c72518fd5b776e0bf1d58df4e62a94"
+        },
+        {
+          "id": "04",
+          "sha256": "3ec723a7c7d121a50c4d16355a61ee0617bc8788418ceeed01b672588cb1ba0d"
+        },
+        {
+          "id": "05",
+          "sha256": "e19b0216eae7ed34b7467d6f5ccec785c68902197d0c67fb43939b7eacad99d4"
+        },
+        {
+          "id": "06",
+          "sha256": "f282505e02648fe5244b0944faae5878f4897a2a91f43627a2cef5ebc2589d1d"
+        },
+        {
+          "id": "07",
+          "sha256": "a52d155f411c0a7b8b46d92beb8a667c4719868a194c2b81fa887fabaf5631f4"
+        },
+        {
+          "id": "08",
+          "sha256": "54a78aa0821ee2cdb4e7362e8e7511621e816c577e81f8ce01319ab217800c6a"
+        },
+        {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
+          "id": "tablet_promotional_image",
+          "sha256": "c615257bc3f2debf775838f84ca524d0c8cc2efab86a23345a9ca27a3eef450c"
         }
       ]
     },
     {
       "locale": "en-US",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.5cf056d7a001443ab7ed11c5df90341d0",
-        "screenshot_amzn1.dex.asset.f18fc21fe3f24164be16bf2615dc0dd81",
-        "screenshot_amzn1.dex.asset.af4f39929ed841469d4b5ebd65971b842",
-        "screenshot_amzn1.dex.asset.0d9b50434ec84fc6bcf9802af22a3f7c3",
-        "screenshot_amzn1.dex.asset.19b29d5a66104036815dc42c6106ecc54",
-        "screenshot_amzn1.dex.asset.3259f39ab3f34ca7850bb3fed1adf9a45",
-        "screenshot_amzn1.dex.asset.59dc7553d4f04b7991d0c8795fe936296",
-        "screenshot_amzn1.dex.asset.fb30d9e3ee7d4ffe918457330c613c127"
+        "screenshot_amzn1.dex.asset.01f7984687ac4fc395b980cc985efe13",
+        "screenshot_amzn1.dex.asset.c43eef5d8c8b4413afb72e42321fd339",
+        "screenshot_amzn1.dex.asset.1d90d000b9684b26959eeafa2b94884b",
+        "screenshot_amzn1.dex.asset.7c3db8dd6ea340909e27070f876458de",
+        "screenshot_amzn1.dex.asset.508f5a39c9b94817a451a198af965c38",
+        "screenshot_amzn1.dex.asset.dca077c41db8416fb856e269c7569475",
+        "screenshot_amzn1.dex.asset.48f3a159b87046fd958d0577cf1c310c",
+        "screenshot_amzn1.dex.asset.9a880031c1b443719b66e663ff23fb6d"
       ],
-      "promo_sha256": "2bc1963cd8b59cd14e3873c3ae429bb65e2ad9090ad94c7e68724957eb348317",
+      "promo_sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae",
       "local_files_sha256": [
         {
           "id": "01",
-          "sha256": "0a2ee535a43344fc0c7f0ecd485ccc6b0258df3f14b85acb8a78c1d48d05ece8"
+          "sha256": "db254b943500344a1c997e2a496bc37081d82045c30d9bde3137821512215d54"
         },
         {
           "id": "02",
-          "sha256": "c3df8550a2ed45bc4bfdc07c81f3bcd4445483c82dd300fec4cab000abcf68ab"
+          "sha256": "3e2abf640b663029ceee8444e45f23f1adc49895e9c3063158d52c60bc51ee2f"
         },
         {
           "id": "03",
-          "sha256": "f08c9f1a404bfa32ff7e72e6c88dcdd9212df452aaf2f3c0022807473ce465ce"
+          "sha256": "404403c6f3c2ac6519f8c5d234a9c2972bca03b0bb88ad0d22999fa0cdf64ff9"
         },
         {
           "id": "04",
-          "sha256": "06d5d074f754276a5002ddb503fcd2222ac2da8eac8ea771da7fabe30fac321f"
+          "sha256": "da2c61a5e2d7e2ee6fec67175a04d869b14c53fb4d13266b74a58a12326c7f1a"
         },
         {
           "id": "05",
-          "sha256": "06042dedeeca43ceb3fae3e579a132e65d6b3dda3e4c0a56535eebf3e3e98348"
+          "sha256": "d661d34df35d7b5316833f9a9477b93f703724e82ba126b7b49a6f5f72edb565"
         },
         {
           "id": "06",
-          "sha256": "ed94c873361f9711b04b102bc65423116723c2a0a1cce8191758c59adec065d5"
+          "sha256": "e731a8a8ba259acfa673f887f33b1a44b8e7728df244fa20a983577e9805bf95"
         },
         {
           "id": "07",
-          "sha256": "8df8acbc45b36ec0cd10b993b72651b2b2c73fa21e042f7ed22b1ec46a4f5527"
+          "sha256": "b1d98973a222834fb042d86b8abeecb4b43355aa3f4f24e2cf864c4d8cf66646"
         },
         {
           "id": "08",
-          "sha256": "c890eb375600ce8c54df2f6196f17c45f5fec4086c64c559678bf2a3fc648534"
+          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
         },
         {
           "id": "promo",
-          "sha256": "76f4a19b0f5c01acc89bcc4c50bed747ead94276f943aa4f47e39afad9a0712d"
+          "sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae"
+        }
+      ],
+      "refreshedOn": "2026-10-19",
+      "saved_asset_sha256": [
+        {
+          "id": "01",
+          "sha256": "db254b943500344a1c997e2a496bc37081d82045c30d9bde3137821512215d54"
+        },
+        {
+          "id": "02",
+          "sha256": "3e2abf640b663029ceee8444e45f23f1adc49895e9c3063158d52c60bc51ee2f"
+        },
+        {
+          "id": "03",
+          "sha256": "404403c6f3c2ac6519f8c5d234a9c2972bca03b0bb88ad0d22999fa0cdf64ff9"
+        },
+        {
+          "id": "04",
+          "sha256": "da2c61a5e2d7e2ee6fec67175a04d869b14c53fb4d13266b74a58a12326c7f1a"
+        },
+        {
+          "id": "05",
+          "sha256": "d661d34df35d7b5316833f9a9477b93f703724e82ba126b7b49a6f5f72edb565"
+        },
+        {
+          "id": "06",
+          "sha256": "e731a8a8ba259acfa673f887f33b1a44b8e7728df244fa20a983577e9805bf95"
+        },
+        {
+          "id": "07",
+          "sha256": "b1d98973a222834fb042d86b8abeecb4b43355aa3f4f24e2cf864c4d8cf66646"
+        },
+        {
+          "id": "08",
+          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
+        },
+        {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
+          "id": "tablet_promotional_image",
+          "sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae"
         }
       ]
     },
     {
       "locale": "fr-FR",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.8afada1a99614a26a272c8858b38d9dd0",
-        "screenshot_amzn1.dex.asset.06f6f0b4c96f45e4ba2fd2b78f44d9781",
-        "screenshot_amzn1.dex.asset.f667e53063b64830924919a4f48005f52",
-        "screenshot_amzn1.dex.asset.032ba04ed8384be88a532c550b74b0663",
-        "screenshot_amzn1.dex.asset.7dff6b24bfcb477a8f3eeffb46b69e504",
-        "screenshot_amzn1.dex.asset.f6fcb775438f45ba93a6f94121ba867f5",
-        "screenshot_amzn1.dex.asset.74a73ff3e13f4a30bd6775a51751986f6",
-        "screenshot_amzn1.dex.asset.172e5a585ad64e97ab9dfe088ddc35367"
+        "screenshot_amzn1.dex.asset.3e70dd8af8d64acc89452848f4a138ec",
+        "screenshot_amzn1.dex.asset.2df46527f4b24c108002e57c01653ddb",
+        "screenshot_amzn1.dex.asset.d715e240afee46e988b2427e76c319fb",
+        "screenshot_amzn1.dex.asset.35baaa75e98c496d9079c92103e0447d",
+        "screenshot_amzn1.dex.asset.37d09f01279747da8c74e09b655c3a6a",
+        "screenshot_amzn1.dex.asset.d7e947e6911c403eb6d8cd5bc4b9bdc2",
+        "screenshot_amzn1.dex.asset.6b0b5bffdbe048bab8ebfaa409d933ae",
+        "screenshot_amzn1.dex.asset.51153c15fa544e6ca75f53f1c66a1741"
       ],
-      "promo_sha256": "0a704fae15fd511d3e5c22c74f3755f321bbaf5ef40aa5edd0630d6c8e86fc2e",
+      "promo_sha256": "e57cb0fd76c71db8034102328c7d58ee0a71b653fdaa76a22c2f70d496aa2a8e",
       "local_files_sha256": [
         {
           "id": "01",
-          "sha256": "247d8266bcb06c831b8a458416d1601ec987a77c2ad1e3524dc7fb20b7669110"
+          "sha256": "1bec4c5b438e7d9aad0b44ecfcc002f502b7dbf53f093e4180975211f6d382be"
         },
         {
           "id": "02",
-          "sha256": "788b06859f23afd6d7634e2ee31814171a7eb0f50fea6645c3106763a3b69e5c"
+          "sha256": "0d434c878868ba3ca3ea1c0b35b94840d554449552717bed7620083ef69fc115"
         },
         {
           "id": "03",
-          "sha256": "0fe9cc43751d2228130a314a4e9cd4a179694b9b335bd9082861203e9e2cdd15"
+          "sha256": "6fa3c228025d7150ec2735c994d78fbd9dcd5c82e075ea2d36539466f75c93e1"
         },
         {
           "id": "04",
-          "sha256": "8620c372a2f0ca8654f13cbf5f4cabd6775ea44d345a4f9e9e7fbb213b242a24"
+          "sha256": "2cef12bdde0a44bb2b2b1e616f97c63c50c1a67a82fc63f162723c22e27a0e79"
         },
         {
           "id": "05",
-          "sha256": "b5e7dbd3880d4271545b4ddac5ca1ec63219f3cec7a88980fc7d2019e925e7a0"
+          "sha256": "fab0371f633877c9a9419de306255dc8ad966b9b3ea7c32a7e8ec83cfa7a7466"
         },
         {
           "id": "06",
-          "sha256": "0606babcd2c855828c00b490f504a8aba7895d923085398406619b76110c20e6"
+          "sha256": "958802eb49cbf15bb7566b526272c56d31307e413f41c1c73f6482b6efb38795"
         },
         {
           "id": "07",
-          "sha256": "da3f53a96a6b9399b45981d256a439a9cf54a05344d2b46d42e52549301b4132"
+          "sha256": "cf3c2472c4c2bc60f321e4506e5d2618e52c38b204575319f6b0fc276c9a9126"
         },
         {
           "id": "08",
-          "sha256": "63db1bc40e5cb3e6a5a2bacd0febc55dd4c72b8517a0219acb7a700e8157dc66"
+          "sha256": "e0bcd62ef0817a12888d43378e8470ab91bd9a33ad98953444d98c11ab2e2776"
         },
         {
           "id": "promo",
-          "sha256": "250ce20008a8b0ccbfb950cb30f54c9351c180d8230c86d3cda852434b3a9e3e"
+          "sha256": "e57cb0fd76c71db8034102328c7d58ee0a71b653fdaa76a22c2f70d496aa2a8e"
+        }
+      ],
+      "refreshedOn": "2026-10-19",
+      "saved_asset_sha256": [
+        {
+          "id": "01",
+          "sha256": "1bec4c5b438e7d9aad0b44ecfcc002f502b7dbf53f093e4180975211f6d382be"
+        },
+        {
+          "id": "02",
+          "sha256": "0d434c878868ba3ca3ea1c0b35b94840d554449552717bed7620083ef69fc115"
+        },
+        {
+          "id": "03",
+          "sha256": "6fa3c228025d7150ec2735c994d78fbd9dcd5c82e075ea2d36539466f75c93e1"
+        },
+        {
+          "id": "04",
+          "sha256": "2cef12bdde0a44bb2b2b1e616f97c63c50c1a67a82fc63f162723c22e27a0e79"
+        },
+        {
+          "id": "05",
+          "sha256": "fab0371f633877c9a9419de306255dc8ad966b9b3ea7c32a7e8ec83cfa7a7466"
+        },
+        {
+          "id": "06",
+          "sha256": "958802eb49cbf15bb7566b526272c56d31307e413f41c1c73f6482b6efb38795"
+        },
+        {
+          "id": "07",
+          "sha256": "cf3c2472c4c2bc60f321e4506e5d2618e52c38b204575319f6b0fc276c9a9126"
+        },
+        {
+          "id": "08",
+          "sha256": "e0bcd62ef0817a12888d43378e8470ab91bd9a33ad98953444d98c11ab2e2776"
+        },
+        {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
+          "id": "tablet_promotional_image",
+          "sha256": "e57cb0fd76c71db8034102328c7d58ee0a71b653fdaa76a22c2f70d496aa2a8e"
         }
       ]
     },
     {
       "locale": "es-ES",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.18c548fdd0c54d9db957eb11c9ff7ec60",
-        "screenshot_amzn1.dex.asset.916a9aad3ff645d8a6249eb99fbbc2721",
-        "screenshot_amzn1.dex.asset.b7784e9a9e5f4aafa85ef375f5d807f92",
-        "screenshot_amzn1.dex.asset.ac049cf452654b0dbcf6f7a0e5e16ade3",
-        "screenshot_amzn1.dex.asset.6fa89e38c9d646279ace88687aaf05564",
-        "screenshot_amzn1.dex.asset.b96c97ec40e7406fb4bdf07746a227885",
-        "screenshot_amzn1.dex.asset.b02bd387004d4a92b2dcd760e28d3b726",
-        "screenshot_amzn1.dex.asset.a5d3b7134c714c8b806fcca43f2fc3f67"
+        "screenshot_amzn1.dex.asset.7b7867fb20a3429f9ead10cd601b7f97",
+        "screenshot_amzn1.dex.asset.1ea5cf6d89dd41c3a95e041f68647991",
+        "screenshot_amzn1.dex.asset.f516206cfe964bf58d93410f80395cfb",
+        "screenshot_amzn1.dex.asset.5815750a46de4288b0a349b6dc118de7",
+        "screenshot_amzn1.dex.asset.c6f7eb5713d142b682897331f0b6d224",
+        "screenshot_amzn1.dex.asset.dc9e5f104baf42039c25c44a5d79a2df",
+        "screenshot_amzn1.dex.asset.e963df78f8f2491ca9560fdb6c1b9970",
+        "screenshot_amzn1.dex.asset.c0ae6fe675af4f67b803e809da9bda3a"
       ],
-      "promo_sha256": "3b13442e63130d64e884e9fa314e6e9653b23761b5c13cf4792e2f2905aa050c",
+      "promo_sha256": "86cadc661346352f5fb7785e61fd9a4f013621a8d1703af089ad7c9dd708f58d",
       "local_files_sha256": [
         {
           "id": "01",
-          "sha256": "cb305834e9a4c4d5777a6201fad809ac5dda52224b29d7d39dde2f8c6fc4fe85"
+          "sha256": "01104709c87fc97e26c224180d12adde9dc5039fa8c8b6c7bd87ebbf1d414249"
         },
         {
           "id": "02",
-          "sha256": "aeae697ed820f540f3b6a2b1d3fae60bce31df5fedb1a9b0c16017f7b90d74ea"
+          "sha256": "9576f2dbff4109a00876799bfba9594c9e4089d8c2b27bd36e33cf40eb7908ce"
         },
         {
           "id": "03",
-          "sha256": "f2ecc85ccbca76913357b31727d65c7efb3ca0010c443139d641a1806fc3bec0"
+          "sha256": "7bcf47af6e109d8826c7c6329bc8ea4ac04f7d7fbe0ba9b0ffb72fef678eaa7c"
         },
         {
           "id": "04",
-          "sha256": "132c3e4be47dd0d1c79a336844439be803b8eac2037346e62b28f06ef6861344"
+          "sha256": "a45a2b26acb229a62ece3712c6194285ec703141d99223d58b5d911a506521c0"
         },
         {
           "id": "05",
-          "sha256": "8b259690fd8de52cf59bbcc29cc754e5e2503a3a0c4f05bca0499b269e779d70"
+          "sha256": "1989691fc8a0e4c0693d3e67cee366e9249a0eac29ab4f3f716bb8c696726728"
         },
         {
           "id": "06",
-          "sha256": "4ca96de96d91d973bd235b30671fb5f95a9f38d44e14eaef0671bdd558d529b2"
+          "sha256": "ac87a9026d24a487e97a775d11c8d4d485d399de1ed47b9091bdf950b7748f93"
         },
         {
           "id": "07",
-          "sha256": "6e49dda8fabbe0781f7f9d7c5ebd433c35f2b6c5c84caa0508979a0c14e9608a"
+          "sha256": "ed6f79023bf1bb44678a76821db2d244c7eddb914dbc08f712a5eccb5a709e1b"
         },
         {
           "id": "08",
-          "sha256": "06184ddc0f9d34b3d0977ffb3841eceb9b16e96a5dd980029e7162dacdbd3978"
+          "sha256": "9e66f31e3b618082b5d5494a07df14ce9f90c6e4d5a3a7ab4a49c824f509a246"
         },
         {
           "id": "promo",
-          "sha256": "3c0cbe4759d9d06ecdb35cb86d5961ab5a0e2c913a566302457ed33da89e0865"
+          "sha256": "86cadc661346352f5fb7785e61fd9a4f013621a8d1703af089ad7c9dd708f58d"
+        }
+      ],
+      "refreshedOn": "2026-10-19",
+      "saved_asset_sha256": [
+        {
+          "id": "01",
+          "sha256": "01104709c87fc97e26c224180d12adde9dc5039fa8c8b6c7bd87ebbf1d414249"
+        },
+        {
+          "id": "02",
+          "sha256": "9576f2dbff4109a00876799bfba9594c9e4089d8c2b27bd36e33cf40eb7908ce"
+        },
+        {
+          "id": "03",
+          "sha256": "7bcf47af6e109d8826c7c6329bc8ea4ac04f7d7fbe0ba9b0ffb72fef678eaa7c"
+        },
+        {
+          "id": "04",
+          "sha256": "a45a2b26acb229a62ece3712c6194285ec703141d99223d58b5d911a506521c0"
+        },
+        {
+          "id": "05",
+          "sha256": "1989691fc8a0e4c0693d3e67cee366e9249a0eac29ab4f3f716bb8c696726728"
+        },
+        {
+          "id": "06",
+          "sha256": "ac87a9026d24a487e97a775d11c8d4d485d399de1ed47b9091bdf950b7748f93"
+        },
+        {
+          "id": "07",
+          "sha256": "ed6f79023bf1bb44678a76821db2d244c7eddb914dbc08f712a5eccb5a709e1b"
+        },
+        {
+          "id": "08",
+          "sha256": "9e66f31e3b618082b5d5494a07df14ce9f90c6e4d5a3a7ab4a49c824f509a246"
+        },
+        {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
+          "id": "tablet_promotional_image",
+          "sha256": "86cadc661346352f5fb7785e61fd9a4f013621a8d1703af089ad7c9dd708f58d"
         }
       ]
     }
   ],
   "verification": [
     {
-      "locale": "en-US",
-      "screenshots": 8,
-      "promo": true,
-      "persisted_after_reload": true
-    },
-    {
       "locale": "de-DE",
       "screenshots": 8,
       "promo": true,
-      "persisted_after_reload": true
-    },
-    {
-      "locale": "en-GB",
-      "screenshots": 8,
-      "promo": true,
-      "persisted_after_reload": true
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
     },
     {
       "locale": "es-ES",
       "screenshots": 8,
       "promo": true,
-      "persisted_after_reload": true
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
     },
     {
       "locale": "fr-FR",
       "screenshots": 8,
       "promo": true,
-      "persisted_after_reload": true
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
     },
     {
       "locale": "it-IT",
       "screenshots": 8,
       "promo": true,
-      "persisted_after_reload": true
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
     },
     {
       "locale": "pt-BR",
       "screenshots": 8,
       "promo": true,
-      "persisted_after_reload": true
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
+    },
+    {
+      "locale": "en-US",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
+    },
+    {
+      "locale": "en-GB",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
     }
   ],
   "verified_after_reload": true,

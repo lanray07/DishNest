@@ -1,0 +1,24 @@
+{
+  "releaseName": "DishNest Premium annual and lifetime QA",
+  "releaseId": "amzn1.devportal.apprelease.b78f2f368b6a4daa9aeccedf66b4e963",
+  "track": "Test 2",
+  "status": "Test submitted",
+  "appUploaded": true,
+  "apkSha256": "fd049df4ba76e07cd04d015aa9f41e8ef0329c1e55fe990ee463c079a3ee835a",
+  "drmApplied": true,
+  "testerGroup": "DishNest Premium LAT",
+  "testerIdentifiersStored": false,
+  "exportCertificationConfirmedByPublisher": true,
+  "acceleratedSubscriptions": true,
+  "monthlyMinutes": 10,
+  "annualMinutes": 30,
+  "selectedTabletModels": 12,
+  "selectedTvModels": 0,
+  "selectedAutomotiveModels": 0,
+  "iap": {
+    "subscription": "TEST Live",
+    "lifetime": "TEST Live"
+  },
+  "publicReleaseSubmitted": false,
+  "screenshot": "artifacts/screens/amazon-fresh-lat-submitted.png"
+}

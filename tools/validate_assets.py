@@ -44,7 +44,7 @@ for item in manifest:
 checks.append(f'{len(manifest)} screenshot drafts: dimensions and RGB output checked')
 try:
     verify_visual_localization()
-except (AssertionError, OSError, ValueError) as error:
+except (AssertionError, KeyError, OSError, ValueError) as error:
     errors.append(f'Localized visual exports are missing or stale: {error}')
 else:
     checks.append('108 localized visual exports: dimensions, source/copy hashes and overflow checks pass; native and hardware approval pending')

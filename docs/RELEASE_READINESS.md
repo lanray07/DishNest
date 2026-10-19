@@ -92,6 +92,7 @@ An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.
 - [x] Save approved UK/US prices and seven localized IAP drafts, install the real Amazon public key, and deploy the explicitly approved Free-plan test/production verifiers.
 - [x] Resolve the catalog/detail status conflict, start private LAT, and observe actual monthly grant/restart/restore and autorenew-off behavior.
 - [ ] Complete the remaining actual LAT renewal/expiry/annual/lifetime/refund/fulfilment matrix.
+- [x] Submit the separately certified new-icon private Test 2 with accelerated subscriptions; Amazon processing remains pending. See `artifacts/amazon-fresh-lat-console.json`.
 - [ ] Execute the hardware/accessibility/offline/permissions/timer/OCR matrix.
 - [ ] Approve licensing, privacy disclosures, production service-operation details, remaining marketplace prices/terms and final store/site metadata.
 - [x] Create the authorized permanent publisher key and verify the signed APK signature, unchanged payload and alignment.

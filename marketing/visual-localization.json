@@ -21,7 +21,7 @@
       "Read saved recipes without an internet connection.",
       "Reusable templates and extra plans require Premium."
     ],
-    "footer": "Development preview · Sample recipes · Purchases disabled · Voice availability varies",
+    "footer": "Sample recipes · Voice availability varies",
     "sample": {
       "title": "Lemon and herb chicken",
       "description": "Golden chicken with vegetables and a squeeze of lemon.",
@@ -76,7 +76,7 @@
       "Read saved recipes without an internet connection.",
       "Reusable templates and extra plans require Premium."
     ],
-    "footer": "Development preview · Sample recipes · Purchases disabled · Voice availability varies",
+    "footer": "Sample recipes · Voice availability varies",
     "sample": {
       "title": "Lemon and herb chicken",
       "description": "Golden chicken with vegetables and a squeeze of lemon.",
@@ -131,7 +131,7 @@
       "Gespeicherte Rezepte ohne Internet lesen.",
       "Vorlagen und zusätzliche Pläne benötigen Premium."
     ],
-    "footer": "Entwicklungsvorschau · Beispielrezepte · Käufe deaktiviert · Sprachverfügbarkeit variiert",
+    "footer": "Beispielrezepte · Sprachverfügbarkeit variiert",
     "sample": {
       "title": "Zitronen-Kräuter-Hähnchen",
       "description": "Goldbraunes Hähnchen mit Gemüse und einem Spritzer Zitrone.",
@@ -186,7 +186,7 @@
       "Lee las recetas guardadas sin conexión.",
       "Las plantillas y los planes extra requieren Premium."
     ],
-    "footer": "Versión de desarrollo · Recetas de ejemplo · Compras desactivadas · La voz puede variar",
+    "footer": "Recetas de ejemplo · La voz puede variar",
     "sample": {
       "title": "Pollo al limón con hierbas",
       "description": "Pollo dorado con verduras y un toque de limón.",
@@ -241,7 +241,7 @@
       "Lisez vos recettes enregistrées hors connexion.",
       "Les modèles et plans supplémentaires nécessitent Premium."
     ],
-    "footer": "Aperçu de développement · Recettes exemples · Achats désactivés · Voix selon disponibilité",
+    "footer": "Recettes exemples · Voix selon disponibilité",
     "sample": {
       "title": "Poulet au citron et aux herbes",
       "description": "Du poulet doré, des légumes et une touche de citron.",
@@ -296,7 +296,7 @@
       "Leggi le ricette salvate senza connessione.",
       "Modelli e piani aggiuntivi richiedono Premium."
     ],
-    "footer": "Anteprima di sviluppo · Ricette di esempio · Acquisti disattivati · Voce secondo disponibilità",
+    "footer": "Ricette di esempio · Voce secondo disponibilità",
     "sample": {
       "title": "Pollo al limone e alle erbe",
       "description": "Pollo dorato con verdure e un tocco di limone.",
@@ -351,7 +351,7 @@
       "Lees opgeslagen recepten zonder internet.",
       "Sjablonen en extra plannen vereisen Premium."
     ],
-    "footer": "Ontwikkelversie · Voorbeeldrecepten · Aankopen uitgeschakeld · Spraakbeschikbaarheid varieert",
+    "footer": "Voorbeeldrecepten · Spraakbeschikbaarheid varieert",
     "sample": {
       "title": "Citroenkip met kruiden",
       "description": "Goudbruine kip met groenten en een vleugje citroen.",
@@ -406,7 +406,7 @@
       "Czytaj zapisane przepisy bez Internetu.",
       "Szablony i dodatkowe plany wymagają Premium."
     ],
-    "footer": "Wersja rozwojowa · Przykładowe przepisy · Zakupy wyłączone · Dostępność głosu jest zmienna",
+    "footer": "Przykładowe przepisy · Dostępność głosu jest zmienna",
     "sample": {
       "title": "Kurczak z cytryną i ziołami",
       "description": "Złocisty kurczak z warzywami i nutą cytryny.",
@@ -461,7 +461,7 @@
       "Leia receitas salvas sem conexão com a internet.",
       "Modelos e planos extras exigem Premium."
     ],
-    "footer": "Prévia de desenvolvimento · Receitas de exemplo · Compras desativadas · A voz pode variar",
+    "footer": "Receitas de exemplo · A voz pode variar",
     "sample": {
       "title": "Frango com limão e ervas",
       "description": "Frango dourado com legumes e um toque de limão.",
@@ -516,7 +516,7 @@
       "Leia receitas guardadas sem ligação à Internet.",
       "Modelos e planos extra exigem Premium."
     ],
-    "footer": "Versão de desenvolvimento · Receitas de exemplo · Compras desativadas · A voz pode variar",
+    "footer": "Receitas de exemplo · A voz pode variar",
     "sample": {
       "title": "Frango com limão e ervas",
       "description": "Frango dourado com legumes e um toque de limão.",
@@ -571,7 +571,7 @@
       "اقرأ الوصفات المحفوظة دون اتصال.",
       "القوالب والخطط الإضافية تتطلب Premium."
     ],
-    "footer": "نسخة تطويرية · وصفات نموذجية · الشراء معطل · توفر الصوت يختلف",
+    "footer": "وصفات نموذجية · توفر الصوت يختلف",
     "sample": {
       "title": "دجاج بالليمون والأعشاب",
       "description": "دجاج ذهبي مع الخضروات ولمسة من الليمون.",
@@ -626,7 +626,7 @@
       "बिना इंटरनेट सहेजी गई रेसिपी पढ़ें।",
       "टेम्पलेट और अतिरिक्त योजनाओं के लिए Premium चाहिए।"
     ],
-    "footer": "विकास संस्करण · नमूना रेसिपी · खरीदारी बंद · आवाज़ की उपलब्धता अलग हो सकती है",
+    "footer": "नमूना रेसिपी · आवाज़ की उपलब्धता अलग हो सकती है",
     "sample": {
       "title": "नींबू और जड़ी-बूटी वाला चिकन",
       "description": "सब्ज़ियों और नींबू के साथ सुनहरा चिकन।",
