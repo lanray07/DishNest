@@ -23,12 +23,15 @@ def verify(report=None, root=ROOT):
             return False
         pages = {p.name for p in (root / 'website').glob('*.html')}
         for result in results:
+            expected_size = (1440, 1000) if result.get('device') == 'desktop' else (390, 844)
             if result.get('identity') is not True or result.get('faqOpened') is not True or result.get('http') != 200 or result.get('overflow') is not False or result.get('brokenImages') != [] or result.get('pageErrors') != []:
                 return False
             checked = result.get('checkedPages', [])
             if len(checked) != len(pages) or {p['file'] for p in checked} != pages:
                 return False
             if any(p.get('http') != 200 or p.get('overflow') is not False or p.get('contentVerified') is not True or p.get('brokenImages') != [] for p in checked):
+                return False
+            if any((p.get('viewportWidth'), p.get('viewportHeight')) != expected_size for p in checked):
                 return False
         return True
     except (OSError, ValueError, KeyError, TypeError):

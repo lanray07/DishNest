@@ -398,14 +398,24 @@ fun PremiumDialog(vm: KitchenViewModel, onDismiss: () -> Unit) {
                     "dishnest.premium.annual" -> R.string.billing_annual
                     else -> R.string.billing_one_time
                 }
-            OutlinedButton(
-                onClick = { vm.billing.purchase(offer.sku) },
-                enabled = state.ready && !state.busy && !state.premium,
-            ) {
+            val offerContent: @Composable RowScope.() -> Unit = {
                 Column(Modifier.fillMaxWidth()) {
                     Text(offer.title)
                     Text(offer.price + " · " + stringResource(cadence))
                 }
+            }
+            if (offer.sku == "dishnest.premium.lifetime") {
+                Button(
+                    onClick = { vm.billing.purchase(offer.sku) },
+                    enabled = state.ready && !state.busy && !state.premium,
+                    content = offerContent,
+                )
+            } else {
+                OutlinedButton(
+                    onClick = { vm.billing.purchase(offer.sku) },
+                    enabled = state.ready && !state.busy && !state.premium,
+                    content = offerContent,
+                )
             }
         }
         Surface(color = Cream) { Text(stringResource(state.message), Modifier.padding(16.dp)) }

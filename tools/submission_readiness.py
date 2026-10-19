@@ -40,7 +40,10 @@ worker=read_json('artifacts/billing-worker.json')
 worker_sources=['worker.mjs','verification.mjs','worker.test.mjs','wrangler.json','package-lock.json']
 worker_current=worker.get('passed') is True and all((ROOT/'billing-server'/name).is_file() and worker.get('sourceSha256',{}).get(name)==digest(ROOT/'billing-server'/name) for name in worker_sources)
 check('Local receipt-service tests',server_passed and worker_current,'artifacts/billing-server-tests.xml; artifacts/billing-worker.json','Run npm ci in billing-server, then node --test --test-reporter=junit billing-server/*.test.mjs; Worker proof must match sources')
-check('Node/Kotlin signed-receipt contract',read_json('artifacts/billing-contract.json').get('passed') is True,'artifacts/billing-contract.json','Verify the actual Node signer with the compiled Kotlin verifier')
+live_contract=read_json('artifacts/billing-live-contract.json')
+live_paths=['tools/verify_billing_contract.mjs','billing-server/worker.mjs','billing-server/verification.mjs','app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class']
+live_current=live_contract.get('passed') is True and all((ROOT/p).is_file() and live_contract.get('sourceSha256',{}).get(p)==digest(ROOT/p) for p in live_paths)
+check('Node/Worker/Kotlin signed-receipt contracts',read_json('artifacts/billing-contract.json').get('passed') is True and live_current,'artifacts/billing-contract.json; artifacts/billing-live-contract.json','Verify local signing and live signed inactive responses with compiled Kotlin using node tools/verify_billing_contract.mjs --live')
 apk=read_json('artifacts/apk-validation.json');native=read_json('artifacts/native-alignment.json')
 apk_paths = {'debug': 'app/build/outputs/apk/debug/app-debug.apk', 'qa': 'app/build/outputs/apk/qa/app-qa.apk', 'release': 'app/build/outputs/apk/release/app-release-unsigned.apk'}
 apk_current = all((ROOT/path).is_file() and apk.get(variant,{}).get('sha256') == digest(ROOT/path) for variant,path in apk_paths.items())
@@ -48,7 +51,7 @@ native_current = (ROOT/apk_paths['release']).is_file() and native.get('apk_sha25
 check('APK signature and binary alignment',apk_current and native_current and apk.get('debug',{}).get('signatureVerified') is True and apk.get('release',{}).get('zipAlignment16k') is True and native.get('passed') is True and apk.get('qa',{}).get('signatureVerified') is True and apk.get('qa',{}).get('isolatedPackageVerified') is True and apk.get('qa',{}).get('billingDisabled') is True and apk.get('release',{}).get('qaFixtureAbsent') is True,'artifacts/apk-validation.json; artifacts/native-alignment.json','Validate exact output binaries; release signing remains a separate publisher gate')
 check('Unconfigured billing build rejection',read_json('artifacts/billing-configuration-guard.json').get('passed') is True,'artifacts/billing-configuration-guard.json','Verify enabled billing rejects missing console authentication key')
 check('Incomplete publisher signing rejection',read_json('artifacts/signing-configuration-guard.json').get('passed') is True,'artifacts/signing-configuration-guard.json','Verify partial environment signing configuration is rejected')
-check('Amazon catalog and live verification',False,'docs/AMAZON_BILLING.md','Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only')
+check('Amazon catalog and live verification',False,'docs/AMAZON_BILLING.md; marketing/amazon-premium-console.json; artifacts/billing-deployment.json','Approved prices and localized catalog drafts saved; real public authentication key installed and Free-plan verifier deployed with protected keys. App Tester/LAT real purchase, restoration and subscription lifecycle QA remain required; APK purchases disabled')
 fire=read_json('artifacts/fire-device-qa.json')
 fire_current=fire.get('apkSha256') == digest(ROOT/'app/build/outputs/apk/qa/app-qa.apk') if (ROOT/'app/build/outputs/apk/qa/app-qa.apk').exists() else False
 fire_test = ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'

@@ -1,0 +1,39 @@
+{
+  "checked_on": "2026-10-19",
+  "deployment_authorized": true,
+  "plan": "Workers Free",
+  "free_plan_ui_verified": true,
+  "paid_upgrade": false,
+  "application_logs_enabled": false,
+  "production_receipts_approved": false,
+  "sourceSha256": {
+    "worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
+    "verification.mjs": "631f2c43b6956510204e741bcd9c386f9a3bcc7743f0708e1bb4552915e98282"
+  },
+  "checks": [
+    {
+      "profile": "sandbox",
+      "endpoint": "https://dishnest-receipt-verifier-sandbox.lanraybanks.workers.dev/v1/verify",
+      "get_status": 404,
+      "invalid_body_status": 400,
+      "rvs_probe_status": 200,
+      "signed_inactive": true,
+      "no_grant": true,
+      "no_store": true,
+      "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXB5Rp1p4yKLAZGrPMcRHYDp9G93d5brEJOnU7Dtwwvjy4o1U+84LuaoDT5X+AB8SND4bcSrnLgmHFrgh4eHz3Q==",
+      "amazon_real_purchase_tested": false
+    },
+    {
+      "profile": "production",
+      "endpoint": "https://dishnest-receipt-verifier.lanraybanks.workers.dev/v1/verify",
+      "get_status": 404,
+      "invalid_body_status": 400,
+      "rvs_probe_status": 200,
+      "signed_inactive": true,
+      "no_grant": true,
+      "no_store": true,
+      "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaTD1UCCcRc72iTYjTOS6ucGM1BGo3v3no7WAaCIfutWfdHP0gG8nXDdfFRX7oOPAjukj2GCaljX/PFTmglNCpw==",
+      "amazon_real_purchase_tested": false
+    }
+  ]
+}

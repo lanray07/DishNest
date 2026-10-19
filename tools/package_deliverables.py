@@ -23,6 +23,7 @@ def archive_source():
     evidence.update({'visual-localization.json','fire-blocked-notifications.json','fire-blocked-notifications-seed.txt','fire-blocked-notifications-verify.txt','fire-notification-appops-failure.txt','fire-notification-appops-diagnostic.json','fire-notification-helper-tests.json','fire-notification-helper-tests.txt'})
     source_zip=OUT/'DishNest-source.zip'
     evidence.add('billing-worker.json')
+    evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
@@ -61,7 +62,7 @@ if lint_file.exists():
     issues=ET.parse(lint_file).getroot().findall('issue')
     errors=[i for i in issues if i.attrib.get('severity') in ['Error','Fatal']]
     summary['android_lint']={'errors':len(errors),'error_categories':sorted({i.attrib.get('id') for i in errors}),'passed':not errors,'report':'app/build/reports/lint-results-debug.html'}
-for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-configuration-guard']:
+for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-deployment','billing-live-contract','amazon-authentication-key','billing-configuration-guard']:
     report=ROOT/f'artifacts/{name}.json'
     if report.exists():summary[name]=json.loads(report.read_text(encoding='utf-8-sig'))
 blocked=summary.get('fire-blocked-notifications', {})

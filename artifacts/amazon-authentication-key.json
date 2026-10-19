@@ -1,0 +1,9 @@
+{
+  "app_id": "amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07",
+  "source": "Downloaded from this app in the authenticated Amazon console",
+  "asset": "app/src/main/assets/AppstoreAuthenticationKey.pem",
+  "key_type": "RSA",
+  "bits": 2048,
+  "sha256": "d1c3dec017c5b8294f55cbfc8b2ef8e17c5f212883b8811580f87dd3c4f4d689",
+  "public_material_only": true
+}

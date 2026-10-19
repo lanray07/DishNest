@@ -217,7 +217,13 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
                             it.sku in EntitlementVerifier.premiumSkus &&
                                 it.productType != ProductType.CONSUMABLE
                         }
-                        .sortedBy { it.sku }
+                        .sortedBy {
+                            when (it.sku) {
+                                "dishnest.premium.lifetime" -> 0
+                                "dishnest.premium.annual" -> 1
+                                else -> 2
+                            }
+                        }
                         .map { StoreOffer(it.sku, it.title, it.price) }
             )
     }

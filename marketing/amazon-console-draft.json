@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-19",
   "app_id": "amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07",
   "release_id": "amzn1.devportal.apprelease.22589c786046463387ac9edcee9d38e0",
   "console_review_url": "https://developer.amazon.com/apps-and-games/console/app/amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07/release/amzn1.devportal.apprelease.22589c786046463387ac9edcee9d38e0/submission/review-and-submit",
@@ -185,5 +185,14 @@
     "source": "Publisher supplied this name directly",
     "legal_privacy_approval": false,
     "developer_account_profile_changed": false
-  }
+  },
+  "iap_catalog_evidence": "marketing/amazon-premium-console.json",
+  "premium_prices_evidence": "marketing/amazon-premium-pricing.json",
+  "iap_submitted": false,
+  "receipt_verifier_deployed": true,
+  "receipt_verifier_deployment_authorized": true,
+  "receipt_verifier_plan": "Workers Free",
+  "app_purchases_enabled": false,
+  "real_purchase_lifecycle_tested": false,
+  "amazon_public_authentication_key_installed": true
 }

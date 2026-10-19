@@ -1,6 +1,1 @@
-{
-  "passed": true,
-  "command": "Gradle configuration with billing enabled and no Amazon console public key",
-  "expectedFailure": true,
-  "published": false
-}
+{"passed":true,"command":"Gradle billing enabled with missing HTTPS verifier configuration; real Amazon public key present","expectedFailure":true,"published":false}

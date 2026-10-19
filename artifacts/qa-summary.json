@@ -6,7 +6,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:14.595Z"
+      "timestamp": "2026-10-19T06:00:11.012Z"
     },
     {
       "name": "com.dishnest.app.ReadinessDataTest",
@@ -14,7 +14,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:13.178Z"
+      "timestamp": "2026-10-19T06:00:08.963Z"
     },
     {
       "name": "com.dishnest.app.LocalizedRecipeImportTest",
@@ -22,7 +22,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:22:16.742Z"
+      "timestamp": "2026-10-19T05:59:23.035Z"
     },
     {
       "name": "com.dishnest.app.RecipeWebAccessTest",
@@ -30,7 +30,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:14.605Z"
+      "timestamp": "2026-10-19T06:00:11.021Z"
     },
     {
       "name": "com.dishnest.app.RecipeImagesTest",
@@ -38,7 +38,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:14.312Z"
+      "timestamp": "2026-10-19T06:00:10.605Z"
     },
     {
       "name": "com.dishnest.app.RoomPersistenceTest",
@@ -46,7 +46,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:14.668Z"
+      "timestamp": "2026-10-19T06:00:11.111Z"
     },
     {
       "name": "com.dishnest.app.EntitlementsTest",
@@ -54,7 +54,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:21:58.748Z"
+      "timestamp": "2026-10-19T05:59:06.762Z"
     },
     {
       "name": "com.dishnest.app.EntitlementClockTest",
@@ -62,7 +62,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:21:58.728Z"
+      "timestamp": "2026-10-19T05:59:06.751Z"
     },
     {
       "name": "com.dishnest.app.QuantityNumbersTest",
@@ -70,7 +70,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:13.131Z"
+      "timestamp": "2026-10-19T06:00:08.919Z"
     },
     {
       "name": "com.dishnest.app.RestoreGuardTest",
@@ -78,7 +78,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:14.637Z"
+      "timestamp": "2026-10-19T06:00:11.076Z"
     },
     {
       "name": "com.dishnest.app.LocalizedScreenshotsTest",
@@ -86,7 +86,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:22:16.968Z"
+      "timestamp": "2026-10-19T05:59:23.242Z"
     },
     {
       "name": "com.dishnest.app.FeatureScopeTest",
@@ -94,7 +94,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:22:00.960Z"
+      "timestamp": "2026-10-19T05:59:07.982Z"
     },
     {
       "name": "com.dishnest.app.ScreenshotsTest",
@@ -102,7 +102,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:15.348Z"
+      "timestamp": "2026-10-19T06:00:11.710Z"
     },
     {
       "name": "com.dishnest.app.VoiceLocalesTest",
@@ -110,7 +110,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:24.338Z"
+      "timestamp": "2026-10-19T06:00:20.874Z"
     },
     {
       "name": "com.dishnest.app.DomainTest",
@@ -118,7 +118,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:21:58.015Z"
+      "timestamp": "2026-10-19T05:59:06.328Z"
     },
     {
       "name": "com.dishnest.app.VoiceFocusTest",
@@ -126,7 +126,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-19T05:23:24.141Z"
+      "timestamp": "2026-10-19T06:00:20.684Z"
     }
   ],
   "device_instrumentation": {
@@ -184,12 +184,12 @@
       }
     ]
   },
-  "physical_fire_qa": "Partial smoke coverage only; full hardware matrix pending",
+  "physical_fire_qa": "Pending current APK rerun; retained device results are historical. Full hardware matrix also pending.",
   "billing_qa": "Local SDK integration and signed-verification service prepared; 12 server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.",
   "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
   "store_submission": "not performed; conditional submission authorized only after all required readiness gates pass",
   "website_deployment": "not performed; local checks only",
-  "device_instrumentation_current": true,
+  "device_instrumentation_current": false,
   "visual_localization": {
     "passed": true,
     "locales": [
@@ -246,35 +246,22 @@
   },
   "website-verification": {
     "passed": true,
-    "verifiedAt": "2026-10-19T05:32:49.871Z",
-    "browserPath": "CUA",
-    "viewports": [
-      {
-        "device": "desktop",
-        "width": 1440,
-        "height": 1000
-      },
-      {
-        "device": "phone",
-        "width": 390,
-        "height": 844
-      }
-    ],
+    "method": "CUA rendered DOM with asserted actual viewport dimensions; local HTTP server access log",
     "inputs": {
-      "PRIVACY.txt": "b9c429b8e6e120384a2bb5e70e2741dbc2d8976953746385d80ab72991b6f99a",
-      "tools/build_website.py": "3ff1933734a8030a6e0a37f74654a357e9db7e0218dba09d7a0f79a1fd4b4140",
-      "tools/verify_website.cjs": "03accf5e2eaab455c106748d36bf9a9fcb27bda863e80adede14114e50528097",
-      "tools/website_evidence.py": "d1e78bd95b5ab48d219642de841ab888624f72ffeab2fb054d6c0011e473c9a1",
+      "PRIVACY.txt": "a842aaf42ce20c58d2270f2c2427373b7bbc0db4b53492ac9ce08ac18546ae86",
+      "tools/build_website.py": "f2f9817e565d29e599d2d94e4273496dd0ea649d84b0390b3965407ed095baf1",
+      "tools/verify_website.cjs": "ee761bf2fc62df0e9391a027c571e6d4f1c658aff96221a0f01e4b57922811fc",
+      "tools/website_evidence.py": "6c36a736e5d69f80cf27474420cc259168e2f69103d916411605a5295c91b726",
       "website/assets/icon.svg": "10113a7a23949c96b80fe6e8945af1bc8c9f0e12090eaa6875c58e02d995e5fd",
       "website/assets/lemon-chicken.jpg": "bdb48d40152eac005a3955c3d5871e3bc7138e9cf5abfe8696ea7ceb5fafd4f4",
       "website/faq.html": "21e6b3d3d0371a44228f47393fbe6cc968e6add88988ae5e27c0ddbcc898db4f",
       "website/features.html": "69764ebf610b38196531e760b6e095636bdffa90e52ea65760076406e5e4f756",
-      "website/fire-tablets.html": "84924160f163a95e1f6ea706e8d000de5ebe5ba3473736d4643c2b0a92bb4bbd",
+      "website/fire-tablets.html": "360639f98ef7db5821f6383838d4a196618ff7234035eb81e2113a66a0d3b280",
       "website/index.html": "b3a33ad672df36eac85ac821271b01466a84ef7d8308ad4a9e6b7ca333e1a53d",
       "website/locale-manifest.json": "9071882e100de3d2c332d4575f85b5ee5747d8e58cc8db198917aa6c6db13e57",
       "website/pantry-management.html": "54a35082649af17168af4809e54c5ba7b5819d07cdec65305a0ee1c9eadc7d43",
-      "website/pricing.html": "2ff42eebb84f21d59c3a231912c9241e76e5115f7a4fc2eb31761e287863a1b1",
-      "website/privacy.html": "494154adfba1d7c51cb5527acd65e750c1ae10c3fac5c1df08ea58e74365d429",
+      "website/pricing.html": "b6c7bde549f5925ff20985d679deb2e869dbab79d2b5981d048ca670a8663e3d",
+      "website/privacy.html": "11b8d093518a191911adda9fa0d5b42b7a2b4ac97c44d029eb3ee91965fd3da2",
       "website/recipe-organisation.html": "14af0d379cc9c66f5713d2c01a682ff43fbc765d91c12a55b3108d4ca5d3a73f",
       "website/robots.txt": "a8f31103361fca68bef71fc69cff844b7c23bd3d64d2b872d74690cbda656bfc",
       "website/shopping-lists.html": "96a68a0d7d6df17eb9d2f4cd2b31301f4bdcc7d28de94a24c7058928b3ea7be9",
@@ -287,239 +274,267 @@
     "results": [
       {
         "device": "desktop",
-        "identity": true,
+        "width": 1440,
+        "height": 1000,
         "http": 200,
+        "identity": true,
+        "faqOpened": true,
         "overflow": false,
         "brokenImages": [],
         "pageErrors": [],
-        "faqOpened": true,
         "checkedPages": [
           {
-            "file": "faq.html",
+            "file": "index.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "Good questions, clear answers \u2014 DishNest"
+            "brokenImages": []
           },
           {
             "file": "features.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "A kitchen companion that keeps things together \u2014 DishNest"
-          },
-          {
-            "file": "fire-tablets.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "Designed with Fire tablets in mind \u2014 DishNest"
-          },
-          {
-            "file": "index.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "DishNest \u2014 Recipe Keeper & Weekly Meal Planner"
-          },
-          {
-            "file": "pantry-management.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "Make more of what you already have \u2014 DishNest"
-          },
-          {
-            "file": "pricing.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "Simple beginnings. Room to grow. \u2014 DishNest"
-          },
-          {
-            "file": "privacy.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": true,
-            "title": "Your kitchen is personal \u2014 DishNest"
+            "brokenImages": []
           },
           {
             "file": "recipe-organisation.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "Your recipes, beautifully organised \u2014 DishNest"
-          },
-          {
-            "file": "shopping-lists.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "From meal plan to shopping list \u2014 DishNest"
-          },
-          {
-            "file": "support.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": true,
-            "title": "A little help in the kitchen \u2014 DishNest"
-          },
-          {
-            "file": "voice-cooking.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "A calmer cooking mode \u2014 DishNest"
+            "brokenImages": []
           },
           {
             "file": "weekly-meal-planning.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "A thoughtful weekly meal planner \u2014 DishNest"
+            "brokenImages": []
+          },
+          {
+            "file": "shopping-lists.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "voice-cooking.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "pantry-management.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "fire-tablets.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "pricing.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "privacy.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "support.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "faq.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 1440,
+            "viewportHeight": 1000,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
           }
         ]
       },
       {
         "device": "phone",
-        "identity": true,
+        "width": 390,
+        "height": 844,
         "http": 200,
+        "identity": true,
+        "faqOpened": true,
         "overflow": false,
         "brokenImages": [],
         "pageErrors": [],
-        "faqOpened": true,
         "checkedPages": [
           {
-            "file": "faq.html",
+            "file": "index.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "Good questions, clear answers \u2014 DishNest"
+            "brokenImages": []
           },
           {
             "file": "features.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "A kitchen companion that keeps things together \u2014 DishNest"
-          },
-          {
-            "file": "fire-tablets.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "Designed with Fire tablets in mind \u2014 DishNest"
-          },
-          {
-            "file": "index.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "DishNest \u2014 Recipe Keeper & Weekly Meal Planner"
-          },
-          {
-            "file": "pantry-management.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "Make more of what you already have \u2014 DishNest"
-          },
-          {
-            "file": "pricing.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "Simple beginnings. Room to grow. \u2014 DishNest"
-          },
-          {
-            "file": "privacy.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": true,
-            "title": "Your kitchen is personal \u2014 DishNest"
+            "brokenImages": []
           },
           {
             "file": "recipe-organisation.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "Your recipes, beautifully organised \u2014 DishNest"
-          },
-          {
-            "file": "shopping-lists.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "From meal plan to shopping list \u2014 DishNest"
-          },
-          {
-            "file": "support.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": true,
-            "title": "A little help in the kitchen \u2014 DishNest"
-          },
-          {
-            "file": "voice-cooking.html",
-            "http": 200,
-            "brokenImages": [],
-            "contentVerified": true,
-            "overflow": false,
-            "publisher": false,
-            "title": "A calmer cooking mode \u2014 DishNest"
+            "brokenImages": []
           },
           {
             "file": "weekly-meal-planning.html",
             "http": 200,
-            "brokenImages": [],
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
             "contentVerified": true,
             "overflow": false,
-            "publisher": false,
-            "title": "A thoughtful weekly meal planner \u2014 DishNest"
+            "brokenImages": []
+          },
+          {
+            "file": "shopping-lists.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "voice-cooking.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "pantry-management.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "fire-tablets.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "pricing.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "privacy.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "support.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
+          },
+          {
+            "file": "faq.html",
+            "http": 200,
+            "httpSource": "Local HTTP server access log",
+            "viewportWidth": 390,
+            "viewportHeight": 844,
+            "contentVerified": true,
+            "overflow": false,
+            "brokenImages": []
           }
         ]
       }
@@ -527,7 +542,7 @@
   },
   "native-alignment": {
     "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "apk_sha256": "e88f6e18673e8f95281bbf3d429109777108f1bd602521c20fbca726b920658a",
+    "apk_sha256": "bac7a2c2ee76b9da7ace56b1bd73447aa40d2a23c81c06438198c7ac8e7acda8",
     "libraries": [
       {
         "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
@@ -855,7 +870,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-19T05:42:15.972112+00:00",
+    "generatedAt": "2026-10-19T06:05:08.578331+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -940,9 +955,9 @@
         "remaining": ""
       },
       {
-        "check": "Node/Kotlin signed-receipt contract",
+        "check": "Node/Worker/Kotlin signed-receipt contracts",
         "status": "passed",
-        "evidence": "artifacts/billing-contract.json",
+        "evidence": "artifacts/billing-contract.json; artifacts/billing-live-contract.json",
         "remaining": ""
       },
       {
@@ -966,26 +981,26 @@
       {
         "check": "Amazon catalog and live verification",
         "status": "pending",
-        "evidence": "docs/AMAZON_BILLING.md",
-        "remaining": "Catalog, trusted TLS verifier, production secrets/key, App Tester and LAT evidence; publisher requested local preparation only"
+        "evidence": "docs/AMAZON_BILLING.md; marketing/amazon-premium-console.json; artifacts/billing-deployment.json",
+        "remaining": "Approved prices and localized catalog drafts saved; real public authentication key installed and Free-plan verifier deployed with protected keys. App Tester/LAT real purchase, restoration and subscription lifecycle QA remain required; APK purchases disabled"
       },
       {
         "check": "Physical Fire native components",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-device-qa.json",
-        "remaining": ""
+        "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
       },
       {
         "check": "Physical Fire instrumentation smoke",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-device-qa.json",
-        "remaining": ""
+        "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
       },
       {
         "check": "Background Fire timer after process termination",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-background-alarm.json",
-        "remaining": ""
+        "remaining": "Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs"
       },
       {
         "check": "Physical device QA",
@@ -1071,11 +1086,87 @@
     "production_cpu_budget_verified": false,
     "private_key_written": false
   },
+  "billing-deployment": {
+    "checked_on": "2026-10-19",
+    "deployment_authorized": true,
+    "plan": "Workers Free",
+    "free_plan_ui_verified": true,
+    "paid_upgrade": false,
+    "application_logs_enabled": false,
+    "production_receipts_approved": false,
+    "sourceSha256": {
+      "worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
+      "verification.mjs": "631f2c43b6956510204e741bcd9c386f9a3bcc7743f0708e1bb4552915e98282"
+    },
+    "checks": [
+      {
+        "profile": "sandbox",
+        "endpoint": "https://dishnest-receipt-verifier-sandbox.lanraybanks.workers.dev/v1/verify",
+        "get_status": 404,
+        "invalid_body_status": 400,
+        "rvs_probe_status": 200,
+        "signed_inactive": true,
+        "no_grant": true,
+        "no_store": true,
+        "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXB5Rp1p4yKLAZGrPMcRHYDp9G93d5brEJOnU7Dtwwvjy4o1U+84LuaoDT5X+AB8SND4bcSrnLgmHFrgh4eHz3Q==",
+        "amazon_real_purchase_tested": false
+      },
+      {
+        "profile": "production",
+        "endpoint": "https://dishnest-receipt-verifier.lanraybanks.workers.dev/v1/verify",
+        "get_status": 404,
+        "invalid_body_status": 400,
+        "rvs_probe_status": 200,
+        "signed_inactive": true,
+        "no_grant": true,
+        "no_store": true,
+        "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaTD1UCCcRc72iTYjTOS6ucGM1BGo3v3no7WAaCIfutWfdHP0gG8nXDdfFRX7oOPAjukj2GCaljX/PFTmglNCpw==",
+        "amazon_real_purchase_tested": false
+      }
+    ]
+  },
+  "billing-live-contract": {
+    "passed": true,
+    "checked_on": "2026-10-19",
+    "signer": "Deployed Cloudflare Worker with live Amazon RVS",
+    "verifier": "Compiled Kotlin EntitlementVerifier",
+    "checks": [
+      {
+        "profile": "sandbox",
+        "endpoint": "https://dishnest-receipt-verifier-sandbox.lanraybanks.workers.dev/v1/verify",
+        "signed_inactive": true,
+        "wrong_account_rejected": true
+      },
+      {
+        "profile": "production",
+        "endpoint": "https://dishnest-receipt-verifier.lanraybanks.workers.dev/v1/verify",
+        "signed_inactive": true,
+        "wrong_account_rejected": true
+      }
+    ],
+    "amazon_real_purchase_tested": false,
+    "private_key_written": false,
+    "sourceSha256": {
+      "tools/verify_billing_contract.mjs": "6611e3433729ac31863c904f06b9eb3ebbec57f49bb0f9f7cfedc2a3a63c68d1",
+      "billing-server/worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
+      "billing-server/verification.mjs": "631f2c43b6956510204e741bcd9c386f9a3bcc7743f0708e1bb4552915e98282",
+      "app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class": "8bdc0399158c6e4a4302b0b68d7e1562d4c1b6642582e2af90c2ba29911ce292"
+    }
+  },
+  "amazon-authentication-key": {
+    "app_id": "amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07",
+    "source": "Downloaded from this app in the authenticated Amazon console",
+    "asset": "app/src/main/assets/AppstoreAuthenticationKey.pem",
+    "key_type": "RSA",
+    "bits": 2048,
+    "sha256": "d1c3dec017c5b8294f55cbfc8b2ef8e17c5f212883b8811580f87dd3c4f4d689",
+    "public_material_only": true
+  },
   "billing-configuration-guard": {
     "passed": true,
-    "command": "Gradle configuration with billing enabled and no Amazon console public key",
+    "command": "Gradle billing enabled with missing HTTPS verifier configuration; real Amazon public key present",
     "expectedFailure": true,
     "published": false
   },
-  "blocked_notifications_current": true
+  "blocked_notifications_current": false
 }

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checked_on": "2026-10-19",
+  "signer": "Deployed Cloudflare Worker with live Amazon RVS",
+  "verifier": "Compiled Kotlin EntitlementVerifier",
+  "checks": [
+    {
+      "profile": "sandbox",
+      "endpoint": "https://dishnest-receipt-verifier-sandbox.lanraybanks.workers.dev/v1/verify",
+      "signed_inactive": true,
+      "wrong_account_rejected": true
+    },
+    {
+      "profile": "production",
+      "endpoint": "https://dishnest-receipt-verifier.lanraybanks.workers.dev/v1/verify",
+      "signed_inactive": true,
+      "wrong_account_rejected": true
+    }
+  ],
+  "amazon_real_purchase_tested": false,
+  "private_key_written": false,
+  "sourceSha256": {
+    "tools/verify_billing_contract.mjs": "6611e3433729ac31863c904f06b9eb3ebbec57f49bb0f9f7cfedc2a3a63c68d1",
+    "billing-server/worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
+    "billing-server/verification.mjs": "631f2c43b6956510204e741bcd9c386f9a3bcc7743f0708e1bb4552915e98282",
+    "app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class": "8bdc0399158c6e4a4302b0b68d7e1562d4c1b6642582e2af90c2ba29911ce292"
+  }
+}

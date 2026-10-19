@@ -49,7 +49,9 @@ fs.mkdirSync(evidenceDir, { recursive: true });
         if (changedResponse.status() !== 200 || !meaningful || !expected || pageOverflow || images.length)
           throw new Error(`Changed page failed: ${slug}/${device}`);
         if (['privacy', 'support'].includes(slug)) await page.screenshot({ path: path.join(evidenceDir, `${slug}-${device}.png`), fullPage: false });
-        checkedPages.push({ file, title: await page.title(), http: changedResponse.status(), overflow: pageOverflow, contentVerified: true, brokenImages: images });
+        const renderedViewport = await page.evaluate(() => ({ width: innerWidth, height: innerHeight }));
+        if (renderedViewport.width !== width || renderedViewport.height !== height) throw new Error(`Wrong viewport: ${file}/${device}`);
+        checkedPages.push({ file, title: await page.title(), http: changedResponse.status(), viewportWidth: renderedViewport.width, viewportHeight: renderedViewport.height, overflow: pageOverflow, contentVerified: true, brokenImages: images });
       }
       const result = { device, identity, http: response.status(), overflow, brokenImages, pageErrors: errors, faqOpened: answerVisible > 0, checkedPages, browserPath: 'Playwright: Browser plugin not available', evidenceDir };
       results.push(result);

@@ -1,8 +1,8 @@
 # Amazon billing: local implementation and activation
 
-Nothing in this workflow deploys the service, creates store products or publishes an APK. The default APK has purchases disabled. The publisher confirmed there is no existing catalog or verification service; this repository prepares those integrations locally.
+The default APK has purchases disabled. Approved UK/US prices and seven localized IAP descriptions have been saved in Amazon catalog drafts. With explicit publisher approval, separate sandbox and production receipt verifiers have been deployed to the existing Cloudflare Workers Free account. No app or website was deployed and no app or IAP was submitted.
 
-The publisher wants customer-paid Premium without ongoing paid processing/hosting. A disabled Cloudflare Workers Free adapter is now prepared and tested in the local Workers runtime; see [free verifier setup and limits](AMAZON_FREE_VERIFIER.md). No Free-plan account, public endpoint or production CPU budget is verified. Do not activate paid infrastructure or treat local fixtures as live Amazon purchase evidence.
+The publisher wants customer-paid Premium without ongoing paid processing/hosting. Separate Cloudflare Workers Free verifiers are deployed and tested with signed inactive live-RVS decisions and the compiled Kotlin verifier; see [free verifier setup and limits](AMAZON_FREE_VERIFIER.md). The Free plan and public endpoints are verified; representative production CPU/load and real purchase lifecycle QA remain pending. Do not activate paid infrastructure or treat local fixtures as live Amazon purchase evidence.
 
 ## Catalog contract
 
@@ -11,9 +11,9 @@ The publisher wants customer-paid Premium without ongoing paid processing/hostin
 | `dishnest.premium` | Subscription | Parent; receipts may report this SKU |
 | `dishnest.premium.monthly` | Subscription term | Purchasable monthly term |
 | `dishnest.premium.annual` | Subscription term | Purchasable annual term |
-| `dishnest.premium.lifetime` | Entitlement | Optional one-time unlock |
+| `dishnest.premium.lifetime` | Entitlement | Main one-time Premium offer |
 
-Prices, territories and subscription terms require publisher approval in Amazon's console. `billing-server/amazon.sdktester.json` contains visibly labelled test prices only. They are never bundled as app prices. The app displays title and price from `getProductData`; Amazon's confirmation screen supplies the final terms. No free trial or recipe-template pack is advertised or implemented. The RVS sandbox may return a synthesized parent `_term` SKU, so verified subscription-family receipts are supported without guessing their duration from the SKU.
+The publisher approved UK monthly £1.49, annual £9.99 and lifetime £19.99; US monthly $1.99, annual $12.99 and lifetime $24.99 on 19 October 2026. Lifetime is the first and primary offer; annual and monthly remain alternatives. See `marketing/amazon-premium-pricing.json`. Other marketplaces use Amazon-calculated prices pending final market review. `billing-server/amazon.sdktester.json` uses the approved US amounts as visibly labelled isolated test fixtures only. They are never bundled as app prices. The app displays title and price from `getProductData`; Amazon's confirmation screen supplies the final terms. No free trial or recipe-template pack is advertised or implemented. The RVS sandbox may return a synthesized parent `_term` SKU, so verified subscription-family receipts are supported without guessing their duration from the SKU.
 
 ## Local service
 
@@ -26,7 +26,7 @@ node billing-server/prepare-local.mjs
 node --env-file=.local-billing/.env billing-server/server.mjs
 ```
 
-Preparation generates an isolated P-256 development signing key and refuses to overwrite it. `.local-billing/`, private keys and environment files are excluded from Git and delivery archives. The service listens only on `127.0.0.1:8787`; stop it with Ctrl+C. It does not expose a public endpoint. The sandbox shared-secret value is a non-production placeholder; Amazon permits any non-empty value in its RVS cloud sandbox. No production secret has been provisioned.
+Preparation generates an isolated P-256 development signing key and refuses to overwrite it. `.local-billing/`, private keys and environment files are excluded from Git and delivery archives. The service listens only on `127.0.0.1:8787`; stop it with Ctrl+C. It does not expose a public endpoint. The sandbox shared-secret value is a non-production placeholder; Amazon permits any non-empty value in its RVS cloud sandbox. The separate deployed production verifier now has protected service keys and the real RVS secret; these are never used by the loopback development server.
 
 `POST /v1/verify` accepts `{userId, receiptId, nonce}`. Those identifiers are bearer purchase evidence: do not log them or put them in URLs to this service. It makes a server-to-server HTTPS request to Amazon with redirects disabled, validates the receipt identity, product family, type, dates and environment, then returns `{payload, signature}`. The payload is base64 UTF-8 JSON and the signature is DER ECDSA/SHA-256 over the decoded payload. There is no verification-success simulation route.
 
@@ -34,7 +34,7 @@ HTTP 400/410 from Amazon creates a signed inactive decision; throttling, invalid
 
 ## Android configuration
 
-Amazon also requires its app-specific **Appstore authentication public key**, downloaded from the app's Developer Console as `AppstoreAuthenticationKey.pem`, in `app/src/main/assets/`. This is distinct from the receipt-service EC public key below. It is public material, not the Amazon RVS shared secret or either party's private signing key. An enabled billing build must contain the real console-issued file; no substitute key is generated for Amazon. Creating an app draft/key in the console is still a publisher setup step, not evidence of approval or publication. See [Amazon SDK integration](https://developer.amazon.com/docs/appstore-sdk/integrate-appstore-sdk.html).
+Amazon requires its app-specific **Appstore authentication public key**. The real file has now been downloaded from the DishNest Developer Console and installed as `app/src/main/assets/AppstoreAuthenticationKey.pem`; its public-material fingerprint is recorded in `artifacts/amazon-authentication-key.json`. This is distinct from the receipt-service EC public key below. It is public material, not the Amazon RVS shared secret or either party's private signing key. An enabled billing build must contain the real console-issued file; no substitute key is generated for Amazon. Creating an app draft/key in the console is still a publisher setup step, not evidence of approval or publication. See [Amazon SDK integration](https://developer.amazon.com/docs/appstore-sdk/integrate-appstore-sdk.html).
 
 The following are **non-secret** Gradle properties, supplied in a local Gradle properties file or `-P` arguments:
 
@@ -45,7 +45,7 @@ dishnest.billing.url=https://YOUR-APPROVED-VERIFIER/v1/verify
 dishnest.billing.publicKey=BASE64_X509_EC_PUBLIC_KEY
 ```
 
-Use the public key from `.local-billing/public-key.txt` for development only. Android deliberately requires HTTPS; it does not trust arbitrary development certificates or silently use a public tunnel. A Fire device needs an explicitly configured, trusted TLS connection to the locally hosted verifier before end-to-end App Tester QA. No such endpoint is configured in the delivered APK. Production requires a separately protected signing key and a new production public key, a production RVS shared secret stored only on the service, HTTPS termination, per-client rate limits, request timeouts, monitoring and publisher-operated infrastructure. The included loopback service limits request size and rate; its proxy-facing limit is not a substitute for edge controls.
+Use the public key from `.local-billing/public-key.txt` for development only. Android deliberately requires HTTPS; it does not trust arbitrary development certificates or silently use a public tunnel. A Fire device needs an explicitly configured, trusted TLS connection to the locally hosted verifier before end-to-end App Tester QA. The delivered APK remains billing-disabled and is not wired to either live endpoint. The separate production signing key, public verification key, RVS secret and TLS service are provisioned on Workers Free; real purchase/lifecycle QA and operational review remain required before enabling the app. The included loopback service limits request size and rate; its proxy-facing limit is not a substitute for edge controls.
 
 When billing is enabled, debug builds retain the Amazon receiver. The normal billing-disabled debug build excludes it to avoid loading Amazon's Android-specific bytecode in Robolectric. Release builds retain the receiver. Do not use the ordinary host UI suite as evidence that App Tester purchases work.
 

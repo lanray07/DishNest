@@ -1,0 +1,30 @@
+{
+  "approved_on": "2026-10-19",
+  "approval": "Publisher explicitly approved the suggested UK and US prices and lifetime as the main offer.",
+  "primary_sku": "dishnest.premium.lifetime",
+  "display_order": [
+    "dishnest.premium.lifetime",
+    "dishnest.premium.annual",
+    "dishnest.premium.monthly"
+  ],
+  "markets": {
+    "GB": {
+      "currency": "GBP",
+      "monthly": "1.49",
+      "annual": "9.99",
+      "lifetime": "19.99"
+    },
+    "US": {
+      "currency": "USD",
+      "monthly": "1.99",
+      "annual": "12.99",
+      "lifetime": "24.99"
+    }
+  },
+  "other_markets": "Use and review Amazon-generated local prices where supported; no manually invented exchange rates.",
+  "trial": false,
+  "app_price": "Free download with optional customer-paid Premium purchases",
+  "lifetime_scope": "One-time Premium entitlement for DishNest through Amazon; no promise of cloud sync, other platforms or paid AI services.",
+  "console_status": "Lifetime entitlement and monthly/annual subscription terms saved and prices reloaded in Amazon; subscription dashboard still marks Incomplete, so final console validation remains pending.",
+  "production_purchases_enabled": false
+}
