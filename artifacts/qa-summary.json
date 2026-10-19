@@ -212,6 +212,77 @@
     "actual_lat_purchase_pass_inferred": false,
     "production_ready": false
   },
+  "amazon_delivered_fire_session": {
+    "testedAt": "2026-10-19T15:53:49.414811+00:00",
+    "packageId": "com.dishnest.app",
+    "model": "KFTRWI",
+    "api": 28,
+    "versionCode": 2,
+    "environment": "lat",
+    "temporaryInstallAuthorized": true,
+    "deliveredApkSha256": "dc996b346b454c3b37f2c56a5b168421f21d38e8fd1875776558dcbcb8890bf4",
+    "deliveredCertificateSha256": "8e35b165d5a1dc14c10820cee25ed2c24e9c543ceb2f059b9f5bc93baa672297",
+    "certificateMatchesAmazonConsole": true,
+    "certificateEvidence": "artifacts/screens/amazon-appstore-certificate.png",
+    "installer": "com.amazon.venezia",
+    "debuggable": false,
+    "latVerifierAndPinnedKeyPresent": true,
+    "verifiedObservations": [
+      "Amazon-delivered release launch",
+      "Lifetime-first UK offers: 19.99 lifetime, 9.99 annual, 1.49 monthly",
+      "No entitlement before purchase",
+      "Monthly checkout cancellation grants no Premium",
+      "Monthly LAT order completion and verified Premium active",
+      "Premium active after process restart and explicit Restore purchases",
+      "Amazon monthly autorenew disabled; access retained on revalidation",
+      "Demo kitchen saved and retained through process restart",
+      "Recipe details and serving scaling",
+      "Cooking steps and confirmed exit",
+      "Planner, shopping and pantry navigation"
+    ],
+    "monthlyPurchaseVerified": true,
+    "monthlyAutorenewDisabled": true,
+    "monthlyExpiryVerified": false,
+    "monthlyRenewalVerified": false,
+    "annualPurchaseVerified": false,
+    "lifetimePurchaseVerified": false,
+    "originalAppRestored": true,
+    "overallSessionComplete": true,
+    "allLatLifecycleChecksPassed": false,
+    "productionReady": false,
+    "publicSubmission": false,
+    "paidPlanEnabled": false,
+    "remaining": [
+      "Actual renewal/expiry: Premium remained active after the configured accelerated period and fresh restore; no expiry pass claimed",
+      "Annual/lifetime purchase lifecycle, grace/refund/pending/failure/account-isolation and independent fulfilment observations",
+      "All other required public release gates remain pending"
+    ],
+    "originalPrivateFilesExact": true,
+    "originalRuntimePermissionsRestored": true,
+    "originalAppopsRestored": true,
+    "originalPersistentFiles": 5,
+    "originalAppTemporarilyReplaced": true,
+    "originalAppLaunchedAfterRestore": false,
+    "postRestoreNativeSqliteIntegrity": true,
+    "encryptedBackupRetained": true,
+    "endedAt": "2026-10-19T16:00:05.468738+00:00",
+    "monthlyStillActiveAtLastRevalidation": true,
+    "otherOffersDisabledWhilePremiumActive": true,
+    "lastExpiryObservationAt": "2026-10-19T15:58:44+00:00",
+    "secondsAfterMonthlyCheckoutConfirmation": 760,
+    "controllerSha256": {
+      "tools/check_fire_recovery.py": "c8a769e28a6b0e85e5dbe177ba839991b350b2b9600d69c325a72ecfb311abb5",
+      "tools/fire_temporary_lat.py": "d05a6ef0c24516084337225db8355970baad062dd634520f382724e5a6b42ec4",
+      "tools/recovery/RecoveryProbe.java": "c8ee681caf190b08566543ecc054c284c854f165946291989be3527926c5f7d9"
+    },
+    "recoveryParserTests": {
+      "passed": 4,
+      "command": "python -m unittest discover -s tools -p test_fire_recovery_archive.py"
+    },
+    "sourceUserDataStoredInRepository": false,
+    "rawReceiptIdentifiersStoredInRepository": false,
+    "uploadedCandidateSha256": "ad8b317d8088ee16a2999751d2a300775d5663621fbaf327d2dbf4abd19155bc"
+  },
   "fire_native_qa": {
     "testedAt": "2026-10-19T08:40:55.859462+00:00",
     "model": "KFTRWI",
@@ -915,7 +986,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-19T10:03:25.464003+00:00",
+    "generatedAt": "2026-10-19T16:01:25.685125+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -1027,7 +1098,7 @@
         "check": "Amazon catalog and live verification",
         "status": "pending",
         "evidence": "docs/AMAZON_LAT.md; docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-lat-console.json",
-        "remaining": "Both IAPs are TEST Approved and private LAT Test 1 is submitted. The separate Free LAT verifier and signed candidate pass local contracts. Amazon processing and actual tester-device subscription/fulfilment lifecycle observations remain required."
+        "remaining": "Both IAPs are TEST Approved and private LAT Test 1 is in progress. Amazon-delivered monthly purchase, verified Premium, restart/restore and autorenew-off access were observed on Fire; see artifacts/fire-amazon-lat-qa.json. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required."
       },
       {
         "check": "Physical Fire native components",
@@ -1074,8 +1145,8 @@
       {
         "check": "Publisher-signed release device test",
         "status": "pending",
-        "evidence": "artifacts/publisher-signing.json; artifacts/publisher-device-compatibility.json",
-        "remaining": "Permanent key created with explicit approval; signature/payload/alignment verified. Secure backup and exact signed APK hardware smoke remain pending; installed ordinary Fire app has a conflicting debug certificate and was preserved."
+        "evidence": "artifacts/publisher-signing.json; artifacts/publisher-device-compatibility.json; artifacts/fire-amazon-lat-qa.json",
+        "remaining": "Publisher signature/payload/alignment verified. The genuine Amazon-delivered version 2 passed targeted Fire smoke and monthly purchase checks, followed by exact original-app/data restoration. Secure portable signing-key recovery and broader release hardware coverage remain pending."
       },
       {
         "check": "Final store and website metadata",
@@ -1264,7 +1335,9 @@
     "serialIdentifierStored": false,
     "remaining": "Exact publisher-signed APK hardware test requires a clean compatible device or an approved data-preserving migration; no app data was cleared.",
     "ordinaryDataPreservationEvidence": "artifacts/fire-native-qa.json",
-    "recheckedAt": "2026-10-19T08:42:38.609684+00:00"
+    "recheckedAt": "2026-10-19T08:42:38.609684+00:00",
+    "temporaryAmazonQaEvidence": "artifacts/fire-amazon-lat-qa.json",
+    "originalApkAndPrivateDataRestoredExact": true
   },
   "blocked_notifications_current": true
 }

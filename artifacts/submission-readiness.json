@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T10:03:25.464003+00:00",
+  "generatedAt": "2026-10-19T16:01:25.685125+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -111,7 +111,7 @@
       "check": "Amazon catalog and live verification",
       "status": "pending",
       "evidence": "docs/AMAZON_LAT.md; docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-lat-console.json",
-      "remaining": "Both IAPs are TEST Approved and private LAT Test 1 is submitted. The separate Free LAT verifier and signed candidate pass local contracts. Amazon processing and actual tester-device subscription/fulfilment lifecycle observations remain required."
+      "remaining": "Both IAPs are TEST Approved and private LAT Test 1 is in progress. Amazon-delivered monthly purchase, verified Premium, restart/restore and autorenew-off access were observed on Fire; see artifacts/fire-amazon-lat-qa.json. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required."
     },
     {
       "check": "Physical Fire native components",
@@ -158,8 +158,8 @@
     {
       "check": "Publisher-signed release device test",
       "status": "pending",
-      "evidence": "artifacts/publisher-signing.json; artifacts/publisher-device-compatibility.json",
-      "remaining": "Permanent key created with explicit approval; signature/payload/alignment verified. Secure backup and exact signed APK hardware smoke remain pending; installed ordinary Fire app has a conflicting debug certificate and was preserved."
+      "evidence": "artifacts/publisher-signing.json; artifacts/publisher-device-compatibility.json; artifacts/fire-amazon-lat-qa.json",
+      "remaining": "Publisher signature/payload/alignment verified. The genuine Amazon-delivered version 2 passed targeted Fire smoke and monthly purchase checks, followed by exact original-app/data restoration. Secure portable signing-key recovery and broader release hardware coverage remain pending."
     },
     {
       "check": "Final store and website metadata",

@@ -12,5 +12,7 @@
   "serialIdentifierStored": false,
   "remaining": "Exact publisher-signed APK hardware test requires a clean compatible device or an approved data-preserving migration; no app data was cleared.",
   "ordinaryDataPreservationEvidence": "artifacts/fire-native-qa.json",
-  "recheckedAt": "2026-10-19T08:42:38.609684+00:00"
+  "recheckedAt": "2026-10-19T08:42:38.609684+00:00",
+  "temporaryAmazonQaEvidence": "artifacts/fire-amazon-lat-qa.json",
+  "originalApkAndPrivateDataRestoredExact": true
 }

@@ -2,7 +2,7 @@
   "releaseName": "DishNest Premium LAT 2026-10-19",
   "releaseId": "amzn1.devportal.apprelease.04e516fb48904950bbbfd326a7346ecf",
   "track": "Test 1",
-  "status": "Test submitted",
+  "status": "Test in-progress",
   "appUploaded": true,
   "apkSha256": "ad8b317d8088ee16a2999751d2a300775d5663621fbaf327d2dbf4abd19155bc",
   "drmApplied": true,
@@ -34,7 +34,14 @@
     "lifetime": "TEST Approved"
   },
   "publicReleaseSubmitted": false,
-  "realLatPurchasesTested": false,
-  "ordinaryAppModified": false,
-  "unusedDraft": "An extra empty draft was created while the create request was processing; renamed Unused draft - do not submit and left unsubmitted"
+  "realLatPurchasesTested": true,
+  "ordinaryAppModified": true,
+  "unusedDraft": "An extra empty draft was created while the create request was processing; renamed Unused draft - do not submit and left unsubmitted",
+  "availabilityRecheckedAt": "2026-10-19T15:36:56.949638+00:00",
+  "statusEvidence": "artifacts/screens/amazon-lat-in-progress.png",
+  "existingFireStillOriginalDebugApk": true,
+  "realLatLifecycleComplete": false,
+  "temporaryAmazonDeviceQa": "artifacts/fire-amazon-lat-qa.json",
+  "ordinaryAppTemporarilyReplacedWithExplicitApproval": true,
+  "originalAppAndPrivateDataRestoredExact": true
 }

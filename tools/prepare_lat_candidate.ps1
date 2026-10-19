@@ -86,7 +86,7 @@ service=deployment.get('deployed') is True and deployment.get('public_key')==pub
 consolePath=root/'artifacts/amazon-lat-console.json'
 console=json.loads(consolePath.read_text(encoding='utf-8')) if consolePath.exists() else {}
 uploaded=console.get('appUploaded') is True and console.get('apkSha256')==digest(apk)
-submitted=uploaded and console.get('status') in ['Test submitted','In progress','Live']
+submitted=uploaded and console.get('status') in ['Test submitted','Test in-progress','In progress','Live']
 report=dict(apk='build/lat-candidate/DishNest-0.1.0-LAT.apk',apkSha256=digest(apk),
  certificateSha256=cert,sourceSha256=input_hashes(),environment='lat',billingEnabled=True,
  publicKey=public,endpoint='https://dishnest-receipt-verifier-lat.lanraybanks.workers.dev/v1/verify',

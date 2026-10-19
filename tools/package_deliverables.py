@@ -68,6 +68,7 @@ def archive_source():
     evidence.update({'visual-localization.json','fire-blocked-notifications.json','fire-blocked-notifications-seed.txt','fire-blocked-notifications-verify.txt','fire-notification-appops-failure.txt','fire-notification-appops-diagnostic.json','fire-notification-helper-tests.json','fire-notification-helper-tests.txt'})
     source_zip=OUT/'DishNest-source.zip'
     evidence.add('billing-worker.json')
+    evidence.add('fire-amazon-lat-qa.json')
     evidence.update({'publisher-signing.json','publisher-signature.txt','publisher-device-compatibility.json','private-storage-audit.json'})
     evidence.update({'amazon-purchase-device.json','amazon-sandbox-receipt-review.json','purchase-test-restoration.json','purchase-test-configuration-guard.json','purchase-test-configuration-guard.log','purchase-test-controller-guard.json','purchase-test-build.log'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
@@ -104,6 +105,10 @@ summary['isolated_app_tester']={'current':purchase is not None,'production_purch
 summary['isolated_app_tester']['current_evidence_blocker']=purchase_blocker
 summary['lat_candidate']={'current':lat is not None,'evidence':'artifacts/lat-candidate.json','blocker':lat_blocker,
                           'actual_lat_purchase_pass_inferred':False,'production_ready':False}
+lat_device_path=ROOT/'artifacts/fire-amazon-lat-qa.json'
+if lat_device_path.is_file():
+    # Explicit observations stay separate from full lifecycle/release approval.
+    summary['amazon_delivered_fire_session']=json.loads(lat_device_path.read_text(encoding='utf-8'))
 native_path=ROOT/'artifacts/fire-native-qa.json'
 if native_path.is_file():
     native=json.loads(native_path.read_text(encoding='utf-8'))
