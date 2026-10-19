@@ -4,7 +4,7 @@
   "sourceSha256": {
     "worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
     "verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
-    "worker.test.mjs": "8fa61e2cc1395db9f351662d6ab344de9f3dd7176d9ced31eff7a6880ec3e572",
+    "worker.test.mjs": "e5e0610bf8577b55c6a87faf545ad83c9204bd7efae86216923636c54e0f9d58",
     "wrangler.json": "705d5d6056a6edb39260e6bfdbc15b4b25e5cb1c93779f9459b8cd21420c95fd",
     "package-lock.json": "d462b4111f706b9dc530e9b082ba9f3ebb311e1999df893f50bf34d32b66accc"
   },

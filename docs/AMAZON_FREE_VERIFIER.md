@@ -1,6 +1,6 @@
 # Premium verification with no paid hosting
 
-Updated 19 October 2026. The publisher approved deployment of the reviewed verifier and protected signing/RVS credentials to the existing Workers Free account. Separate sandbox and production services are deployed. No paid plan, paid binding or domain purchase was enabled. Premium remains customer-paid in scope and disabled in the APK until real purchase lifecycle QA and release checks pass.
+Updated 19 October 2026. The publisher approved deployment of the reviewed verifier and protected signing/RVS credentials to the existing Workers Free account. Separate sandbox, production and LAT services are deployed. The LAT profile uses its own key and production Amazon RVS; see [AMAZON_LAT.md](AMAZON_LAT.md). No paid plan, paid binding or domain purchase was enabled. Premium remains customer-paid in scope and disabled in the APK until real purchase lifecycle QA and release checks pass.
 
 Production: https://dishnest-receipt-verifier.lanraybanks.workers.dev/v1/verify
 
@@ -35,9 +35,9 @@ The committed `wrangler.json` template leaves verification disabled, public work
 
 1. UK/US prices are approved and saved in the localized Amazon catalog drafts, with lifetime first in the app. Final catalog validation, other marketplace prices and renewal/territory terms still need review. No trial or introductory pricing is configured.
 2. The authenticated existing account is Workers Free. Live negative-receipt checks pass. Representative load/CPU measurements, daily-quota exhaustion/recovery and ongoing plan checks remain required; no paid fallback is permitted.
-3. Separate protected test/production keys and the real production RVS secret are provisioned. LAT must use a separately reviewed `lat` profile and signing key; do not point beta receipts at the production profile. Actual App Tester/LAT purchase lifecycle testing is pending.
+3. Separate protected test/production keys and the real production RVS secret are provisioned. A separately reviewed `lat` profile and signing key are deployed and verified; do not point beta receipts at the production profile. Actual App Tester/LAT purchase lifecycle testing is pending.
 4. The real app-specific Amazon public key is installed in `app/src/main/assets/AppstoreAuthenticationKey.pem`. Public verifier keys are recorded in `artifacts/billing-deployment.json`. Keep the default APK billing-disabled until a matching enabled profile and actual store lifecycle QA pass.
-5. Cloudflare provider handling is described in the draft privacy policy. Publisher legal/privacy approval, native-language review, remaining feature/hardware checks and exact publisher-signed release testing are still required. No app or website deployment or Amazon submission has occurred.
+5. Cloudflare provider handling is described in the draft privacy policy. Publisher legal/privacy approval, native-language review, remaining feature/hardware checks and exact publisher-signed release testing are still required. Only the explicitly authorized private LAT app/test catalog has been submitted; no public release or website deployment occurred.
 
 ## Primary sources
 

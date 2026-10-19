@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "dishnest-receipt-verifier-lat",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-06-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": { "enabled": false },
+  "vars": {
+    "VERIFICATION_ENABLED": "false",
+    "COST_POLICY": "free-only",
+    "RVS_ENVIRONMENT": "lat"
+  }
+}

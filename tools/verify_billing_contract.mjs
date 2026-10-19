@@ -54,6 +54,51 @@ for(const [command,args] of [[binary('javac'),['-cp',classpath,join(directory,'V
   const result=spawnSync(command,args,{encoding:'utf8',windowsHide:true});
   if(result.status!==0)throw new Error(result.stderr || result.error?.message || 'Contract check failed');
 }
+// Exercise subscription decisions across the real signer and compiled Android
+// verifier, including LAT isolation. These are explicit local fixtures, not store QA.
+const lifecycle=[];
+const subscription={receiptId:body.receiptId,productId:'dishnest.premium',termSku:'dishnest.premium.annual',
+  productType:'SUBSCRIPTION',purchaseDate:now-3_600_000,renewalDate:now+3_600_000,cancelDate:null};
+for(const scenario of [
+  {name:'annual-active',changes:{},active:true,expiresAt:now+3_600_000},
+  {name:'monthly-active',changes:{termSku:'dishnest.premium.monthly'},active:true,expiresAt:now+3_600_000},
+  {name:'renewal-rechecked',changes:{renewalDate:now+7_200_000},active:true,expiresAt:now+7_200_000},
+  {name:'autorenew-off-paid-period',changes:{autoRenewing:false,renewalDate:null,cancelDate:now+600_000},active:true,expiresAt:now+600_000},
+  {name:'grace-period',changes:{renewalDate:now-1,gracePeriodEndDate:now+600_000},active:true,expiresAt:now+600_000},
+  {name:'grace-ended',changes:{renewalDate:now-1,gracePeriodEndDate:now-1},active:false},
+  {name:'expired',changes:{renewalDate:now-1},active:false},
+  {name:'refund-overrides-future-renewal',changes:{cancelDate:now-1},active:false},
+  {name:'lat-beta-active',environment:'lat',changes:{betaProduct:true},active:true,expiresAt:now+3_600_000},
+  {name:'lat-publishing-test-active',environment:'lat',changes:{testTransaction:true},active:true,expiresAt:now+3_600_000},
+  {name:'production-rejects-beta',environment:'production',changes:{betaProduct:true},rejected:true},
+  {name:'production-rejects-test',environment:'production',changes:{testTransaction:true},rejected:true},
+  {name:'lat-rejects-customer-charge',environment:'lat',changes:{testTransaction:false,betaProduct:false},rejected:true},
+]) {
+  const environment=scenario.environment??'production';
+  let decision;
+  try {
+    decision=await verifyPurchase(body,{privateKey,environment,secret:'local-fixture-only',now,
+      fetchReceipt:async()=>({...subscription,...scenario.changes})});
+  } catch(error) {
+    if(!scenario.rejected)throw error;
+    lifecycle.push({case:scenario.name,environment,rejected:true,passed:true});continue;
+  }
+  if(scenario.rejected)throw new Error('Forbidden profile accepted: '+scenario.name);
+  const claim=JSON.parse(Buffer.from(decision.payload,'base64'));
+  if(claim.active!==scenario.active || scenario.expiresAt!==undefined && claim.expiresAt!==scenario.expiresAt)
+    throw new Error('Lifecycle decision mismatch: '+scenario.name);
+  writeFileSync(join(directory,'fixture.json'),JSON.stringify({...body,...decision,environment,now,
+    active:scenario.active,sku:scenario.changes.termSku??subscription.termSku,
+    publicKey:publicKey.export({type:'spki',format:'der'}).toString('base64')}));
+  const checked=spawnSync(binary('java'),['-cp',[directory,classpath].join(delimiter),'VerifyContract',join(directory,'fixture.json')],{encoding:'utf8',windowsHide:true});
+  if(checked.status!==0)throw new Error(checked.stderr||'Lifecycle Kotlin rejection: '+scenario.name);
+  lifecycle.push({case:scenario.name,environment,active:scenario.active,passed:true});
+}
+writeFileSync(join(root,'artifacts/billing-lifecycle-contract.json'),JSON.stringify({passed:true,
+  checks:lifecycle,fixtureOnly:true,amazonPurchaseTested:false,latTestExecuted:false,privateKeyWritten:false,
+  sourceSha256:Object.fromEntries(['tools/verify_billing_contract.mjs','billing-server/verification.mjs',
+    'app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class'].map(p=>[p,createHash('sha256').update(readFileSync(join(root,p))).digest('hex')]))},null,2));
+console.log(JSON.stringify({lifecycleContractCases:lifecycle.length,passed:true,fixtureOnly:true,latTestExecuted:false}));
 const report={passed:true,signer:'Actual Node receipt-service signing function',verifier:'Compiled Kotlin EntitlementVerifier',
   checks:['ECDSA DER signature','SPKI public key','Base64 UTF-8 payload','account/receipt/nonce binding','wrong-account rejection'],
   amazon_purchase_tested:false,private_key_written:false};
@@ -64,9 +109,18 @@ if(process.argv.includes('--live')) {
   const deployment=JSON.parse(readFileSync(join(root,'artifacts/billing-deployment.json'),'utf8'));
   if(!deployment.deployment_authorized || !deployment.free_plan_ui_verified)throw new Error('Approved Free deployment evidence required');
   const results=[];
-  for(const service of deployment.checks) {
-    const expected='https://dishnest-receipt-verifier'+(service.profile==='sandbox'?'-sandbox':'')+'.lanraybanks.workers.dev/v1/verify';
-    if(!['sandbox','production'].includes(service.profile)||service.endpoint!==expected)throw new Error('Unexpected verifier destination');
+  const profiles=[...deployment.checks];
+  const latPath=join(root,'artifacts/billing-lat-deployment.json');
+  if(existsSync(latPath)) {
+    const lat=JSON.parse(readFileSync(latPath,'utf8'));
+    if(lat.deployed===true) {
+      if(!lat.deploymentAuthorized||!lat.freePlanVerified||lat.profile!=='lat')throw new Error('Approved Free LAT deployment required');
+      profiles.push(lat);
+    }
+  }
+  for(const service of profiles) {
+    const expected='https://dishnest-receipt-verifier'+(service.profile==='sandbox'?'-sandbox':service.profile==='lat'?'-lat':'')+'.lanraybanks.workers.dev/v1/verify';
+    if(!['sandbox','production','lat'].includes(service.profile)||service.endpoint!==expected)throw new Error('Unexpected verifier destination');
     const request={userId:'dishnest-disposable-invalid-account',receiptId:'dishnest-disposable-invalid-receipt',nonce:randomUUID()};
     const response=await fetch(service.endpoint,{method:'POST',headers:{'content-type':'application/json'},
       body:JSON.stringify(request),redirect:'error',signal:AbortSignal.timeout(20000)});

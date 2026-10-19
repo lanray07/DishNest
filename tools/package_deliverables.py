@@ -4,6 +4,7 @@ from build_evidence import verify as verify_build
 from website_evidence import verify as verify_website
 from publisher_evidence import verify as verify_publisher
 from purchase_evidence import verify as verify_purchase
+from lat_evidence import verify as verify_lat
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.mkdir(exist_ok=True)
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
 if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
@@ -44,6 +45,24 @@ else:
         history.mkdir(parents=True,exist_ok=True)
         shutil.move(str(previous),str(history/previous.name))
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
+
+lat_blocker=None
+try:
+    lat=verify_lat()
+except (ValueError, KeyError, FileNotFoundError):
+    lat=None
+    lat_blocker='LAT candidate/profile evidence is stale; rebuild and verify before distribution.'
+if lat:
+    target=OUT/'DishNest-0.1.0-LAT.apk'
+    shutil.copy2(ROOT/lat['apk'],target)
+    manifest.append({'file':target.name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),
+                     'signed':True,'environment':'lat','kind':'Private LAT only; not a public release','production_ready':False})
+else:
+    previous=OUT/'DishNest-0.1.0-LAT.apk'
+    if previous.is_file():
+        history=OUT/'history'/hashlib.sha256(previous.read_bytes()).hexdigest()
+        history.mkdir(parents=True,exist_ok=True)
+        shutil.move(str(previous),str(history/previous.name))
 def archive_source():
     evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','fire-background-alarm.json','fire-background-seed.txt','fire-background-verify.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
     evidence.update({'visual-localization.json','fire-blocked-notifications.json','fire-blocked-notifications-seed.txt','fire-blocked-notifications-verify.txt','fire-notification-appops-failure.txt','fire-notification-appops-diagnostic.json','fire-notification-helper-tests.json','fire-notification-helper-tests.txt'})
@@ -53,6 +72,7 @@ def archive_source():
     evidence.update({'amazon-purchase-device.json','amazon-sandbox-receipt-review.json','purchase-test-restoration.json','purchase-test-configuration-guard.json','purchase-test-configuration-guard.log','purchase-test-controller-guard.json','purchase-test-build.log'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
     evidence.update({'fire-native-qa.json','fire-native-instrumentation.txt'})
+    evidence.update({'billing-lifecycle-contract.json','billing-lat-worker.json','billing-lat-deployment.json','lat-candidate.json','amazon-lat-console.json'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
@@ -76,12 +96,14 @@ for file in (ROOT/'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml')
 server_xml=ET.parse(ROOT/'artifacts/billing-server-tests.xml').getroot()
 server_tests=len(server_xml.findall('.//testcase'))
 if server_xml.findall('.//failure') or server_xml.findall('.//error'):raise SystemExit('Receipt-service test failures remain.')
-(ROOT/'artifacts/qa-summary.json').write_text(json.dumps({'jvm_suites':suites,'device_instrumentation':fire,'physical_fire_qa':'Partial smoke coverage only; full hardware matrix pending','billing_qa':f'Local SDK integration and signed-verification service prepared; {server_tests} server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.','localisation_release_gate':'Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.','store_submission':'not performed; conditional submission authorized only after all required readiness gates pass','website_deployment':'not performed; local checks only'},indent=2),encoding='utf-8')
+(ROOT/'artifacts/qa-summary.json').write_text(json.dumps({'jvm_suites':suites,'device_instrumentation':fire,'physical_fire_qa':'Partial smoke coverage only; full hardware matrix pending','billing_qa':f'Local SDK integration and signed-verification service prepared; {server_tests} server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.','localisation_release_gate':'Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.','store_submission':'Public release not performed; private LAT Test 1 submitted with publisher certification; actual LAT lifecycle QA pending','website_deployment':'not performed; local checks only'},indent=2),encoding='utf-8')
 summary_path=ROOT/'artifacts/qa-summary.json'
 summary=json.loads(summary_path.read_text(encoding='utf-8'))
 summary['billing_qa']=f'{server_tests} service tests pass; '+('current isolated App Tester lifetime/restore and denial cases pass; subscription synthetic-expiry and LAT lifecycle remain pending.' if purchase else 'current App Tester evidence pending.')+' Default release purchases remain disabled.'
 summary['isolated_app_tester']={'current':purchase is not None,'production_purchases_approved':False,'evidence':'artifacts/amazon-purchase-device.json','remaining':'Subscription synthetic-expiry limitation, full lifecycle and LAT; all release approvals remain required'}
 summary['isolated_app_tester']['current_evidence_blocker']=purchase_blocker
+summary['lat_candidate']={'current':lat is not None,'evidence':'artifacts/lat-candidate.json','blocker':lat_blocker,
+                          'actual_lat_purchase_pass_inferred':False,'production_ready':False}
 native_path=ROOT/'artifacts/fire-native-qa.json'
 if native_path.is_file():
     native=json.loads(native_path.read_text(encoding='utf-8'))

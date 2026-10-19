@@ -1,0 +1,40 @@
+{
+  "releaseName": "DishNest Premium LAT 2026-10-19",
+  "releaseId": "amzn1.devportal.apprelease.04e516fb48904950bbbfd326a7346ecf",
+  "track": "Test 1",
+  "status": "Test submitted",
+  "appUploaded": true,
+  "apkSha256": "ad8b317d8088ee16a2999751d2a300775d5663621fbaf327d2dbf4abd19155bc",
+  "drmApplied": true,
+  "testerGroup": "DishNest Premium LAT",
+  "testerCount": 1,
+  "testerIdentifiersStored": false,
+  "testerConsentConfirmedByPublisher": true,
+  "exportCertificationConfirmedByPublisher": true,
+  "acceleratedSubscriptions": true,
+  "monthlyMinutes": 10,
+  "annualMinutes": 30,
+  "selectedTabletModels": 12,
+  "selectedTvModels": 0,
+  "selectedAutomotiveModels": 0,
+  "languages": [
+    "Arabic",
+    "Dutch",
+    "English",
+    "French",
+    "German",
+    "Hindi",
+    "Italian",
+    "Polish",
+    "Portuguese",
+    "Spanish"
+  ],
+  "iap": {
+    "subscription": "TEST Approved",
+    "lifetime": "TEST Approved"
+  },
+  "publicReleaseSubmitted": false,
+  "realLatPurchasesTested": false,
+  "ordinaryAppModified": false,
+  "unusedDraft": "An extra empty draft was created while the create request was processing; renamed Unused draft - do not submit and left unsubmitted"
+}

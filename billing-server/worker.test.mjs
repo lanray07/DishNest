@@ -83,3 +83,65 @@ test('Workers runtime: signed Amazon decisions, bounded inputs, outage and activ
     production_cpu_budget_verified: false, private_key_written: false,
   }, null, 2));
 });
+
+test('LAT Worker uses production RVS and isolates subscription lifecycle decisions', async t => {
+  const config=JSON.parse(readFileSync(new URL('./wrangler.lat.json',import.meta.url)));
+  assert.equal(config.vars.RVS_ENVIRONMENT,'lat');
+  assert.equal(config.vars.COST_POLICY,'free-only');
+  assert.equal(config.vars.VERIFICATION_ENABLED,'false');
+  assert.equal(config.workers_dev,false);assert.equal(config.preview_urls,false);
+  assert.equal(config.observability.enabled,false);
+  for(const forbidden of ['kv_namespaces','r2_buckets','d1_databases','durable_objects','queues','ai','routes'])
+    assert.equal(config[forbidden],undefined);
+  const {privateKey,publicKey}=generateKeyPairSync('ec',{namedCurve:'prime256v1'});
+  let receipt={},status=200,calls=0;
+  const mf=new Miniflare({modules:true,scriptPath:fileURLToPath(new URL('./worker.mjs',import.meta.url)),
+    compatibilityDate:config.compatibility_date,compatibilityFlags:config.compatibility_flags,
+    bindings:{...config.vars,VERIFICATION_ENABLED:'true',RVS_ENVIRONMENT:'lat',
+      AMAZON_RVS_SECRET:'lat-local-fixture',SIGNING_PRIVATE_KEY:privateKey.export({type:'pkcs8',format:'pem'})},
+    cf:false,log:new Log(LogLevel.NONE),outboundService:async request=>{
+      calls++;
+      const url=new URL(request.url);
+      assert.equal(url.origin,'https://appstore-sdk.amazon.com');
+      assert.equal(url.pathname,'/version/1.0/verifyReceiptId/developer/lat-local-fixture/user/test-user/receiptId/test-receipt');
+      return new Response(JSON.stringify(receipt),{status});
+    }});
+  t.after(()=>mf.dispose());
+  const cases=[];
+  for(const scenario of [
+    {name:'annual-active',extra:{},active:true},
+    {name:'monthly-active',extra:{termSku:'dishnest.premium.monthly'},active:true},
+    {name:'renewed',extra:{renewalDate:Date.now()+7_200_000},active:true},
+    {name:'autorenew-off-paid-period',extra:{autoRenewing:false,renewalDate:null,cancelDate:Date.now()+600_000},active:true},
+    {name:'grace',extra:{renewalDate:Date.now()-1000,gracePeriodEndDate:Date.now()+600_000},active:true},
+    {name:'expired',extra:{renewalDate:Date.now()-1000},active:false},
+    {name:'refunded',extra:{cancelDate:Date.now()-1000},active:false},
+    {name:'reject-real-customer',extra:{betaProduct:false,testTransaction:false},http:503},
+    {name:'rvs-throttled',extra:{},upstream:429,http:503},
+    {name:'rvs-invalidated',extra:{},upstream:410,active:false},
+    {name:'rvs-recovered',extra:{},active:true},
+  ]) {
+    status=scenario.upstream??200;
+    receipt={receiptId:'test-receipt',productId:'dishnest.premium',termSku:'dishnest.premium.annual',
+      productType:'SUBSCRIPTION',purchaseDate:Date.now()-3_600_000,renewalDate:Date.now()+3_600_000,
+      cancelDate:null,betaProduct:true,...scenario.extra};
+    const response=await mf.dispatchFetch('https://lat-verifier.test/v1/verify',{method:'POST',
+      headers:{'content-type':'application/json','cf-connecting-ip':'192.0.2.10'},
+      body:JSON.stringify({userId:'test-user',receiptId:'test-receipt',nonce:'12345678-1234-1234-1234-123456789abc'})});
+    assert.equal(response.status,scenario.http??200,scenario.name);
+    const result=await response.json();
+    if(!scenario.http) {
+      assert(verify('sha256',Buffer.from(result.payload,'base64'),publicKey,Buffer.from(result.signature,'base64')));
+      const claim=JSON.parse(Buffer.from(result.payload,'base64'));
+      assert.equal(claim.environment,'lat');assert.equal(claim.active,scenario.active,scenario.name);
+      assert(claim.expiresAt>claim.verifiedAt && claim.expiresAt<=claim.verifiedAt+86_400_000);
+    } else assert.deepEqual(result,{error:'Verification unavailable'});
+    cases.push({case:scenario.name,passed:true});
+  }
+  assert.equal(calls,cases.length);
+  writeFileSync(new URL('../artifacts/billing-lat-worker.json',import.meta.url),JSON.stringify({passed:true,
+    runtime:'Local workerd through Miniflare',checks:cases,productionRvsPathVerified:true,
+    fixtureOnly:true,latTestExecuted:false,deployed:false,privateKeyWritten:false,
+    sourceSha256:Object.fromEntries(['worker.mjs','verification.mjs','worker.test.mjs','wrangler.lat.json','package-lock.json'].map(name=>
+      [name,createHash('sha256').update(readFileSync(new URL(name,import.meta.url))).digest('hex')]))},null,2));
+});

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-19T09:26:50.423162+00:00",
+  "generatedAt": "2026-10-19T10:03:25.464003+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
-  "publication": "Store submission conditionally authorized only after every readiness gate passes; app deployment not authorized; source commits and GitHub pushes authorized",
+  "publication": "Private LAT explicitly authorized and submitted; public store release remains conditional on every readiness gate; website deployment not authorized; source commits and GitHub pushes authorized",
   "checks": [
     {
       "check": "Android lint",
@@ -110,8 +110,8 @@
     {
       "check": "Amazon catalog and live verification",
       "status": "pending",
-      "evidence": "docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-purchase-device.json",
-      "remaining": "App Tester lifetime purchase/restore and isolated denial cases passed on Workers Free. Subscription checkout completed but synthetic near-response expiry blocks verification; subscription lifecycle, LAT, catalog status conflict and market/terms approval remain pending. Release purchases disabled."
+      "evidence": "docs/AMAZON_LAT.md; docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-lat-console.json",
+      "remaining": "Both IAPs are TEST Approved and private LAT Test 1 is submitted. The separate Free LAT verifier and signed candidate pass local contracts. Amazon processing and actual tester-device subscription/fulfilment lifecycle observations remain required."
     },
     {
       "check": "Physical Fire native components",

@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "runtime": "Local workerd through Miniflare",
+  "checks": [
+    {
+      "case": "annual-active",
+      "passed": true
+    },
+    {
+      "case": "monthly-active",
+      "passed": true
+    },
+    {
+      "case": "renewed",
+      "passed": true
+    },
+    {
+      "case": "autorenew-off-paid-period",
+      "passed": true
+    },
+    {
+      "case": "grace",
+      "passed": true
+    },
+    {
+      "case": "expired",
+      "passed": true
+    },
+    {
+      "case": "refunded",
+      "passed": true
+    },
+    {
+      "case": "reject-real-customer",
+      "passed": true
+    },
+    {
+      "case": "rvs-throttled",
+      "passed": true
+    },
+    {
+      "case": "rvs-invalidated",
+      "passed": true
+    },
+    {
+      "case": "rvs-recovered",
+      "passed": true
+    }
+  ],
+  "productionRvsPathVerified": true,
+  "fixtureOnly": true,
+  "latTestExecuted": false,
+  "deployed": false,
+  "privateKeyWritten": false,
+  "sourceSha256": {
+    "worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
+    "verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
+    "worker.test.mjs": "e5e0610bf8577b55c6a87faf545ad83c9204bd7efae86216923636c54e0f9d58",
+    "wrangler.lat.json": "aabf792a856aabf6a5ae0617b5c22f5778fa8bfd1d2f04b6f976554cf88d327b",
+    "package-lock.json": "d462b4111f706b9dc530e9b082ba9f3ebb311e1999df893f50bf34d32b66accc"
+  }
+}

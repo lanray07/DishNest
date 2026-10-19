@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "annual-active",
+      "environment": "production",
+      "active": true,
+      "passed": true
+    },
+    {
+      "case": "monthly-active",
+      "environment": "production",
+      "active": true,
+      "passed": true
+    },
+    {
+      "case": "renewal-rechecked",
+      "environment": "production",
+      "active": true,
+      "passed": true
+    },
+    {
+      "case": "autorenew-off-paid-period",
+      "environment": "production",
+      "active": true,
+      "passed": true
+    },
+    {
+      "case": "grace-period",
+      "environment": "production",
+      "active": true,
+      "passed": true
+    },
+    {
+      "case": "grace-ended",
+      "environment": "production",
+      "active": false,
+      "passed": true
+    },
+    {
+      "case": "expired",
+      "environment": "production",
+      "active": false,
+      "passed": true
+    },
+    {
+      "case": "refund-overrides-future-renewal",
+      "environment": "production",
+      "active": false,
+      "passed": true
+    },
+    {
+      "case": "lat-beta-active",
+      "environment": "lat",
+      "active": true,
+      "passed": true
+    },
+    {
+      "case": "lat-publishing-test-active",
+      "environment": "lat",
+      "active": true,
+      "passed": true
+    },
+    {
+      "case": "production-rejects-beta",
+      "environment": "production",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "production-rejects-test",
+      "environment": "production",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "lat-rejects-customer-charge",
+      "environment": "lat",
+      "rejected": true,
+      "passed": true
+    }
+  ],
+  "fixtureOnly": true,
+  "amazonPurchaseTested": false,
+  "latTestExecuted": false,
+  "privateKeyWritten": false,
+  "sourceSha256": {
+    "tools/verify_billing_contract.mjs": "66d3c386a487472577f311ece401688f76c28b849fb2520e8752ead4e0f830e6",
+    "billing-server/verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
+    "app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class": "8bdc0399158c6e4a4302b0b68d7e1562d4c1b6642582e2af90c2ba29911ce292"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "profile": "lat",
+  "endpoint": "https://dishnest-receipt-verifier-lat.lanraybanks.workers.dev/v1/verify",
+  "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYMo4R/kg27NyZqFvFxcN7PiDxS43YfN/JTsdec1MjTi9R8lz0jU3sVF67hQHzH4azkmCRyhtvYZOpK2Ft3YGNQ==",
+  "deployed": true,
+  "deploymentAuthorized": true,
+  "freePlanVerified": true,
+  "freePlanBasis": "Existing authenticated Workers Free confirmation; current dashboard retains 100000/day quota and no plan change was made",
+  "sharedAccountDailyRequestLimit": 100000,
+  "paidPlanEnabled": false,
+  "paidBindings": [],
+  "logsEnabled": false,
+  "tracesEnabled": false,
+  "issuesEnabled": false,
+  "previewUrlsEnabled": false,
+  "compatibilityDate": "2026-06-16",
+  "compatibilityFlags": [
+    "nodejs_compat"
+  ],
+  "protectedSecrets": [
+    "AMAZON_RVS_SECRET",
+    "SIGNING_PRIVATE_KEY"
+  ],
+  "separateSigningKey": true,
+  "editorBundleMatchedLocalSource": true,
+  "sourceSha256": {
+    "billing-server/worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
+    "billing-server/verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
+    "billing-server/wrangler.lat.json": "aabf792a856aabf6a5ae0617b5c22f5778fa8bfd1d2f04b6f976554cf88d327b"
+  },
+  "bundleSha256": "3ddc503e3897db675d2c75409ce6b26a5a824e07431e7240785291fb3503faef",
+  "realPurchaseTested": false,
+  "latTestExecuted": false
+}

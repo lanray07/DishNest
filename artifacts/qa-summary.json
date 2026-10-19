@@ -194,9 +194,9 @@
     }
   },
   "physical_fire_qa": "Partial smoke coverage only; full hardware matrix pending",
-  "billing_qa": "13 service tests pass; current isolated App Tester lifetime/restore and denial cases pass; subscription synthetic-expiry and LAT lifecycle remain pending. Default release purchases remain disabled.",
+  "billing_qa": "14 service tests pass; current isolated App Tester lifetime/restore and denial cases pass; subscription synthetic-expiry and LAT lifecycle remain pending. Default release purchases remain disabled.",
   "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
-  "store_submission": "not performed; conditional submission authorized only after all required readiness gates pass",
+  "store_submission": "Public release not performed; private LAT Test 1 submitted with publisher certification; actual LAT lifecycle QA pending",
   "website_deployment": "not performed; local checks only",
   "isolated_app_tester": {
     "current": true,
@@ -204,6 +204,13 @@
     "evidence": "artifacts/amazon-purchase-device.json",
     "remaining": "Subscription synthetic-expiry limitation, full lifecycle and LAT; all release approvals remain required",
     "current_evidence_blocker": null
+  },
+  "lat_candidate": {
+    "current": true,
+    "evidence": "artifacts/lat-candidate.json",
+    "blocker": null,
+    "actual_lat_purchase_pass_inferred": false,
+    "production_ready": false
   },
   "fire_native_qa": {
     "testedAt": "2026-10-19T08:40:55.859462+00:00",
@@ -908,11 +915,11 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-19T09:26:50.423162+00:00",
+    "generatedAt": "2026-10-19T10:03:25.464003+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
-    "publication": "Store submission conditionally authorized only after every readiness gate passes; app deployment not authorized; source commits and GitHub pushes authorized",
+    "publication": "Private LAT explicitly authorized and submitted; public store release remains conditional on every readiness gate; website deployment not authorized; source commits and GitHub pushes authorized",
     "checks": [
       {
         "check": "Android lint",
@@ -1019,8 +1026,8 @@
       {
         "check": "Amazon catalog and live verification",
         "status": "pending",
-        "evidence": "docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-purchase-device.json",
-        "remaining": "App Tester lifetime purchase/restore and isolated denial cases passed on Workers Free. Subscription checkout completed but synthetic near-response expiry blocks verification; subscription lifecycle, LAT, catalog status conflict and market/terms approval remain pending. Release purchases disabled."
+        "evidence": "docs/AMAZON_LAT.md; docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-lat-console.json",
+        "remaining": "Both IAPs are TEST Approved and private LAT Test 1 is submitted. The separate Free LAT verifier and signed candidate pass local contracts. Amazon processing and actual tester-device subscription/fulfilment lifecycle observations remain required."
       },
       {
         "check": "Physical Fire native components",
@@ -1104,7 +1111,7 @@
     "sourceSha256": {
       "worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
       "verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
-      "worker.test.mjs": "8fa61e2cc1395db9f351662d6ab344de9f3dd7176d9ced31eff7a6880ec3e572",
+      "worker.test.mjs": "e5e0610bf8577b55c6a87faf545ad83c9204bd7efae86216923636c54e0f9d58",
       "wrangler.json": "705d5d6056a6edb39260e6bfdbc15b4b25e5cb1c93779f9459b8cd21420c95fd",
       "package-lock.json": "d462b4111f706b9dc530e9b082ba9f3ebb311e1999df893f50bf34d32b66accc"
     },
@@ -1186,12 +1193,18 @@
         "endpoint": "https://dishnest-receipt-verifier.lanraybanks.workers.dev/v1/verify",
         "signed_inactive": true,
         "wrong_account_rejected": true
+      },
+      {
+        "profile": "lat",
+        "endpoint": "https://dishnest-receipt-verifier-lat.lanraybanks.workers.dev/v1/verify",
+        "signed_inactive": true,
+        "wrong_account_rejected": true
       }
     ],
     "amazon_real_purchase_tested": false,
     "private_key_written": false,
     "sourceSha256": {
-      "tools/verify_billing_contract.mjs": "6611e3433729ac31863c904f06b9eb3ebbec57f49bb0f9f7cfedc2a3a63c68d1",
+      "tools/verify_billing_contract.mjs": "66d3c386a487472577f311ece401688f76c28b849fb2520e8752ead4e0f830e6",
       "billing-server/worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
       "billing-server/verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
       "app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class": "8bdc0399158c6e4a4302b0b68d7e1562d4c1b6642582e2af90c2ba29911ce292"

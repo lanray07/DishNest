@@ -4,8 +4,8 @@
   "lifetime": {
     "sku": "dishnest.premium.lifetime",
     "url": "https://developer.amazon.com/apps-and-games/console/app/amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07/iap/entitlement/amzn1.dex.title.4484b9efb0be4e1c9386164d2c096143/detail",
-    "status": "Ready to Submit",
-    "submitted": false,
+    "status": "Approved - TEST only",
+    "submitted": true,
     "prices": {
       "US": {
         "currency": "USD",
@@ -52,13 +52,15 @@
         "description": "Salve mais de 25 receitas, importe receitas, reutilize modelos de cardápios, organize planos adicionais e combine planos em uma lista de compras. Compra única do Premium pela sua conta Amazon. Sem cobrança recorrente de assinatura.",
         "reload_verified": true
       }
-    }
+    },
+    "submission_scope": "LAT only",
+    "public_release_submitted": false
   },
   "subscription": {
     "sku": "dishnest.premium",
     "url": "https://developer.amazon.com/apps-and-games/console/app/amzn1.devportal.mobileapp.1bbe80d1ddbc41fc93ff86b564f17f07/iap/subscription/amzn1.dex.title.944fd196c5954e36a31595ec2bd9d62b/tier/amzn1.dex.subs.tier.c10408866e7e4241b531be7180785d12/detail",
-    "status": "Incomplete on catalog dashboard; detail page says Ready to Submit",
-    "submitted": false,
+    "status": "Approved - TEST only",
+    "submitted": true,
     "locales": {
       "en-US": {
         "title": "DishNest Premium",
@@ -196,9 +198,9 @@
         "visible_readback": "DishNest Premium\nReady to Submit\nSubmit IAP\nSubscription Details\nTitle\nSKU\nDescription & Images\nAdd description and icons that the customer will see\nSpanish\nPortuguese (Brazil)\nGerman\nItalian\nFrench\nEnglish (U.S.)\nEnglish (U.K.)\nUpdate localization\nDisplay Title\nEnglish (U.S.)\nDescription\nEnglish (U.S.)\nRemaining: 935\nIcon\nEnglish (U.S.)\n512 x 512px PNG (with transparency), 114 x 114px PNG (with transparency)\nDrop your file here\nDrop your file here\n$\nSubscription terms\nAdd SKU and select term for the subscription\nMonthly\nAnnually\nAdd New Term\nRemove term\nIncomplete\nSKU\nIs this a paid subscription?\nYesNo\nDo you offer a free trial for this subscription?\nYesNo\nDo you offer a promotional price for this subscription?\nYesNo\nEdit pricing\nSubscription price\nRegular price: Monthly\nYour base price\n1.99 $USD\namazon.ca\n2.81 $CAD\namazon.de\n1.77 €EUR\namazon.in\n189.01 ₹INR\namazon.co.jp\n314 ¥JPY\namazon.es\n1.77 €EUR\namazon.com.au\n2.85 $AUD\namazon.com\n1.99 $USD\namazon.com.mx\n36.71 $MXN\namazon.co.uk\n1.49 £GBP\namazon.it\n1.77 €EUR\namazon.com.br\n10.08 $BRL\namazon.fr\n1.77 €EUR\nView pricing for other marketplace"
       }
     },
-    "dashboard_status": "Incomplete",
-    "detail_status": "Ready to Submit",
-    "console_status_conflict_requires_review": true,
+    "dashboard_status": "TEST Approved",
+    "detail_status": "Historical pre-submission detail: Ready to Submit",
+    "console_status_conflict_requires_review": false,
     "english_brand_icon_upload_attempted": true,
     "english_brand_icon_persistence_verified": true,
     "dashboard_status_after_icon_attempt": "Incomplete",
@@ -214,9 +216,11 @@
       ],
       "checked_on": "2026-10-19"
     },
-    "status_rechecked_on": "2026-10-19"
+    "status_rechecked_on": "2026-10-19",
+    "submission_scope": "LAT only",
+    "public_release_submitted": false
   },
-  "submitted": false,
+  "submitted": true,
   "native_language_approved": false,
   "purchases_tested": false,
   "purchase_testing": {
@@ -226,5 +230,8 @@
     "subscription_verified_access": false,
     "production_or_lat": false,
     "evidence": "artifacts/amazon-purchase-device.json"
-  }
+  },
+  "catalog_status_conflict": "Resolved by accepted test-only submission; both items display TEST and Approved",
+  "submission_scope": "LAT only",
+  "public_release_submitted": false
 }
