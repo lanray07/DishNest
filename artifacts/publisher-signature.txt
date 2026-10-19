@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=O. Bankole
+Signer #1 certificate SHA-256 digest: c2c7dcb307420a1605c48a06a50d0893af1f606c2db45a95669735f2834e1012
+Signer #1 certificate SHA-1 digest: fcc34dbf9fb059aeb6e791cd71a0e32a692608a1
+Signer #1 certificate MD5 digest: 76f93106d530e2320a795d6e75bf1c23
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 0b904aa8d8d019c0d3ecc5dc6a01be84f642f3bb1d0d261c2eacc626988794f8
+Signer #1 public key SHA-1 digest: 9ee9cd5de7826f639a234f7ef94ca1f7ec3452e1
+Signer #1 public key MD5 digest: a502e0a2321dc30cc3b9026610aec255

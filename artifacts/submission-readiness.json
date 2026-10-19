@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T06:05:08.578331+00:00",
+  "generatedAt": "2026-10-19T06:21:28.835820+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -115,21 +115,21 @@
     },
     {
       "check": "Physical Fire native components",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
+      "remaining": ""
     },
     {
       "check": "Physical Fire instrumentation smoke",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
+      "remaining": ""
     },
     {
       "check": "Background Fire timer after process termination",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-background-alarm.json",
-      "remaining": "Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs"
+      "remaining": ""
     },
     {
       "check": "Physical device QA",
@@ -158,8 +158,8 @@
     {
       "check": "Publisher-signed release device test",
       "status": "pending",
-      "evidence": "artifacts/deliverables/manifest.json",
-      "remaining": "Release signing key and exact signed APK hardware smoke test"
+      "evidence": "artifacts/publisher-signing.json; artifacts/publisher-device-compatibility.json",
+      "remaining": "Permanent key created with explicit approval; signature/payload/alignment verified. Secure backup and exact signed APK hardware smoke remain pending; installed ordinary Fire app has a conflicting debug certificate and was preserved."
     },
     {
       "check": "Final store and website metadata",

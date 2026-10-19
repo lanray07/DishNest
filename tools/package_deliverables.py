@@ -2,6 +2,7 @@ from pathlib import Path
 import hashlib,json,shutil,zipfile,xml.etree.ElementTree as ET
 from build_evidence import verify as verify_build
 from website_evidence import verify as verify_website
+from publisher_evidence import verify as verify_publisher
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.mkdir(exist_ok=True)
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
 if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
@@ -17,18 +18,24 @@ manifest=[]
 for source,name in [(ROOT/'app/build/outputs/apk/debug/app-debug.apk','DishNest-0.1.0-debug.apk'),(ROOT/'app/build/outputs/apk/release/app-release-unsigned.apk','DishNest-0.1.0-release-unsigned.apk'),(ROOT/'app/build/outputs/apk/qa/app-qa.apk','DishNest-0.1.0-qa.apk')]:
     if source.exists():
         target=OUT/name;shutil.copy2(source,target);manifest.append({'file':name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':name.endswith(('-debug.apk','-qa.apk')),'production_ready':False})
+publisher=verify_publisher()
+if publisher:
+    target=OUT/'DishNest-0.1.0-release-publisher.apk'
+    shutil.copy2(ROOT/publisher['signedApk'],target)
+    manifest.append({'file':target.name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':True,'certificateSha256':publisher['certificateSha256'],'production_ready':False})
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
 def archive_source():
     evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','fire-background-alarm.json','fire-background-seed.txt','fire-background-verify.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
     evidence.update({'visual-localization.json','fire-blocked-notifications.json','fire-blocked-notifications-seed.txt','fire-blocked-notifications-verify.txt','fire-notification-appops-failure.txt','fire-notification-appops-diagnostic.json','fire-notification-helper-tests.json','fire-notification-helper-tests.txt'})
     source_zip=OUT/'DishNest-source.zip'
     evidence.add('billing-worker.json')
+    evidence.update({'publisher-signing.json','publisher-signature.txt','publisher-device-compatibility.json','private-storage-audit.json'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
             relative=file.relative_to(ROOT)
-            if any(part in {'.git','.gradle','.kotlin','.idea','build','__pycache__','.local-billing','draft-cache','node_modules','.wrangler'} for part in relative.parts):continue
+            if any(part in {'.git','.gradle','.kotlin','.idea','build','__pycache__','.local-billing','.local-signing','draft-cache','node_modules','.wrangler'} for part in relative.parts):continue
             if relative.name == '.dev.vars' or relative.name.startswith('.dev.vars.'):continue
             if relative.parts[:2]==('localisation','cache'):continue
             if relative.name in {'local.properties','.env'} or relative.name.startswith('.env.') and relative.name != '.env.example':continue
@@ -37,7 +44,7 @@ def archive_source():
             archive.write(file,relative.as_posix())
     with zipfile.ZipFile(source_zip) as archive:
         assert archive.testzip() is None
-        assert not any('.local-billing' in name or name.endswith('/signing.pem') for name in archive.namelist())
+        assert not any('.local-billing' in name or '.local-signing' in name or name.endswith('/signing.pem') for name in archive.namelist())
     return source_zip
 fire_path=ROOT/'artifacts/fire-device-qa.json'
 fire=json.loads(fire_path.read_text(encoding='utf-8-sig')) if fire_path.exists() else {}
@@ -62,7 +69,7 @@ if lint_file.exists():
     issues=ET.parse(lint_file).getroot().findall('issue')
     errors=[i for i in issues if i.attrib.get('severity') in ['Error','Fatal']]
     summary['android_lint']={'errors':len(errors),'error_categories':sorted({i.attrib.get('id') for i in errors}),'passed':not errors,'report':'app/build/reports/lint-results-debug.html'}
-for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-deployment','billing-live-contract','amazon-authentication-key','billing-configuration-guard']:
+for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-deployment','billing-live-contract','amazon-authentication-key','billing-configuration-guard','publisher-signing','publisher-device-compatibility']:
     report=ROOT/f'artifacts/{name}.json'
     if report.exists():summary[name]=json.loads(report.read_text(encoding='utf-8-sig'))
 blocked=summary.get('fire-blocked-notifications', {})

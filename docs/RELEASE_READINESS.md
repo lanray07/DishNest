@@ -17,6 +17,7 @@ The seven pending categories, their local work and the evidence needed to close 
 - Configured GitHub project/support/draft privacy URLs and synchronised the local website privacy disclosure with the repository policy. Browser evidence now binds all website inputs and both complete viewport runs.
 - Added a separate billing-disabled DishNest QA package so disposable test fixtures cannot reset the ordinary app.
 - Prepared optional environment-only publisher signing and build input/output provenance checks, with credentials and generated packages excluded from Git.
+- Created the explicitly approved permanent publisher key in an ACL-protected, Git-ignored directory. Signed the current verified release APK and validated certificate, unchanged payload and 16 KB ZIP alignment; portable backup and exact signed-release hardware QA remain pending. See `PUBLISHER_SIGNING.md`.
 - Added EXIF-aware, bounded photo decoding; explicit backup exclusions for legacy and modern Android; density-independent food images; an offline third-party notices viewer; resolved dependency inventory and a repeatable preflight.
 
 - Added shared Unicode quantity parsing for ingredients and pantry/shopping forms. Ambiguous grouped amounts and invalid fractions remain reviewable instead of changing quantities; common translated metric units consolidate correctly without converting cups or changing ingredient names.
@@ -30,9 +31,9 @@ The seven pending categories, their local work and the evidence needed to close 
 | Original translation errors | 0 remain | Same lint report; no suppression/baseline |
 | Current build provenance | PASS: current input/output hashes verified | `artifacts/build-provenance.json` |
 | Locale resource gate | PASS across 12 locales | `localisation/validation.json` |
-| Physical Fire smoke tests | Pending: device evidence does not match current APK/test APK | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
-| Fire background timer probe | Pending; inspect phase results | `artifacts/fire-background-alarm.json` |
-| Fire blocked-notification timer probe | Pending on the current APK; no hardware pass inferred | `artifacts/fire-blocked-notifications.json` |
+| Physical Fire smoke tests | 12 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
+| Fire background timer probe | PASS: saved kitchen records, handled timer and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
+| Fire blocked-notification timer probe | PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored | `artifacts/fire-blocked-notifications.json` |
 | Receipt service | 12 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
 | Workers Free verifier | Free plan verified; sandbox/production deployed with approval; signed inactive live-RVS responses accepted by Kotlin and wrong account rejected; real purchases not tested | `artifacts/billing-deployment.json`, `artifacts/billing-live-contract.json` |
 | Cross-runtime receipt contract | Actual Node signer and compiled Kotlin verifier pass; wrong-account response rejected | `artifacts/billing-contract.json` |
@@ -62,7 +63,7 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 | Localisation | 330 strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales; 96 localized tablet screenshot compositions and 12 promotional images with translated sample data and captions | Native-speaker review, remaining inline interpolations and domain/status errors, complete voice/category/unit work, translated website, final listing approval and hardware RTL checks; Amazon artwork slots cover fewer locales than descriptions; see marketing/amazon-artwork-uploads.json |
 | Licensing/privacy | Original notices bundled; all resolved POM licences inventoried; backup exclusions and billing disclosures | Publisher O. Bankole confirmed; legal/licence/privacy approval, production service-operation and retention details and final dependency review |
 | Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; 10 localized console descriptions, 7 artwork sets, support email and GitHub privacy/deletion links are configured without website deployment |
-| Release | Debug APK and unsigned release build; optional publisher environment signing, input/output hash verification and local validation tooling | Publisher signing material, exact signed-APK install/smoke test and actual store compatibility checks |
+| Release | Permanent publisher key created with approval; verified publisher-signed APK, input/output hashes and binary validation | Secure portable backup; exact signed-APK install/smoke and store compatibility. The ordinary Fire app has a conflicting debug certificate; its data was preserved. |
 | Metrics | Optional aggregate counters stored only on device; disabled by default | No analytics provider or complete Premium/trial conversion reporting |
 
 Some commercial feature scope remains unfinished; local receipt policy tests do not make the entire Premium product complete. Existing content remains readable/editable after entitlement expiry. JSON recovery does not discard a former Premium user's larger recipe book. A demo only bypasses Premium gates in billing-disabled development builds.
@@ -71,9 +72,9 @@ The translation provider throttled the initial draft generation. Requests were s
 
 ## External setup and hardware
 
-The latest read-only ADB inventory found 1 connected device(s). Historical device results do not match the current APK/test APK. Rerun the isolated smoke suite before using them as current evidence. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, a publisher-signed APK or Appstore purchases. Those remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
+The latest read-only ADB inventory found 1 connected device(s). The isolated QA APK passed 12 instrumentation tests on KFTRWI (Android 9, API 28). Coverage includes recipe CRUD/editor recreation, selected named-plan recreation, SQLite reopen/migration, native photo ZIP codecs, a cropped synthetic OCR fixture, Arabic/Hindi resources, localized pasted-recipe headings/Unicode step numbering, pantry entry with Arabic decimal digits and metric aliases, denied microphone fallback, opt-in pantry notifications and Arabic planner/native-dialog controls at QA font scale 1.5. See the separate background-alarm probe record for its exact result. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, a publisher-signed APK or Appstore purchases. Those remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
 
-An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.json`. The publisher has identified themself as O. Bankole. The real Amazon public key, approved UK/US prices, localized IAP drafts and separate protected Workers Free verifiers are now prepared. Required release inputs remain final catalog/market/terms validation, real purchase/lifecycle and quota-recovery QA, publisher signing configuration, representative hardware, native language approval and approved privacy/operator details. Private support/deletion assistance uses the publisher-provided support email. Project, support and draft privacy/deletion links use GitHub; no domain or GitHub Pages deployment was configured. The local sandbox keys are development-only. Do not copy them into production.
+An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.json`. The publisher has identified themself as O. Bankole. The real Amazon public key, approved UK/US prices, localized IAP drafts, protected publisher signing key and separate protected Workers Free verifiers are now prepared. Required release inputs remain final catalog/market/terms validation, real purchase/lifecycle and quota-recovery QA, signing-key recovery backup, exact signed-release hardware QA, native language approval and approved privacy/operator details. Private support/deletion assistance uses the publisher-provided support email. Project, support and draft privacy/deletion links use GitHub; no domain or GitHub Pages deployment was configured. Local development keys are not production keys.
 
 ## Checklist
 
@@ -87,7 +88,8 @@ An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.
 - [ ] Resolve the subscription catalog/detail status conflict and execute App Tester/LAT real purchase lifecycle cases.
 - [ ] Execute the hardware/accessibility/offline/permissions/timer/OCR matrix.
 - [ ] Approve licensing, privacy disclosures, production service-operation details, remaining marketplace prices/terms and final store/site metadata.
-- [ ] Sign and install the exact release APK, capture final hardware screenshots and record device smoke tests.
+- [x] Create the authorized permanent publisher key and verify the signed APK signature, unchanged payload and alignment.
+- [ ] Verify secure key recovery backup, install/test the exact release APK and approve final hardware screenshots.
 - [ ] Clear all required readiness gates before acting on the user's conditional permission to submit. App deployment beyond store submission is not authorized. Source commits and GitHub pushes are authorized.
 
 ## Primary references checked

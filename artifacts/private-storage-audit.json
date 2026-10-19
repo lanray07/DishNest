@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-19T06:21:15.7902090Z",
+  "location": "%LOCALAPPDATA%/DishNest/publisher-private",
+  "fileSystem": "NTFS",
+  "checkedEntries": 23,
+  "allAccessRestrictedToCurrentUserAndSystem": true,
+  "repositoryPrivateStagingRemoved": true,
+  "migratedFilesHashVerified": true,
+  "credentialsPrinted": false,
+  "priorProjectFileSystem": "exFAT",
+  "priorAclEnforcementSupported": false
+}

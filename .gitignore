@@ -11,6 +11,7 @@ local.properties
 *.log
 tools/__pycache__/
 .local-billing/
+.local-signing/
 *.pem
 !app/src/main/assets/AppstoreAuthenticationKey.pem
 *.p12
