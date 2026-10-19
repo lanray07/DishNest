@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T05:29:55.863452+00:00",
+  "generatedAt": "2026-10-19T05:33:06.134210+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -153,7 +153,7 @@
       "check": "Licensing/privacy approval",
       "status": "pending",
       "evidence": "THIRD_PARTY_NOTICES.md",
-      "remaining": "Publisher reviews all distribution obligations, support identity and privacy disclosures"
+      "remaining": "Publisher O. Bankole confirmed; approval of distribution obligations, production service-operation details and privacy disclosures remains pending"
     },
     {
       "check": "Publisher-signed release device test",

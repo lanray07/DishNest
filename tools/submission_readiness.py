@@ -59,7 +59,7 @@ notices=ROOT/'legal/third-party/manifest.json'
 check('Native notice source collection',notices.exists(),'legal/third-party/manifest.json','Collect pinned upstream licence files')
 inventory=read_json('docs/dependencies/runtime-inventory.json')
 check('Resolved dependency inventory',bool(inventory.get('components')) and all(c.get('licenses') for c in inventory['components']),'docs/dependencies/runtime-inventory.json','Generate from exact releaseRuntimeClasspath and resolve missing licence declarations')
-check('Licensing/privacy approval',False,'THIRD_PARTY_NOTICES.md','Publisher reviews all distribution obligations, support identity and privacy disclosures')
+check('Licensing/privacy approval',False,'THIRD_PARTY_NOTICES.md','Publisher O. Bankole confirmed; approval of distribution obligations, production service-operation details and privacy disclosures remains pending')
 check('Publisher-signed release device test',False,'artifacts/deliverables/manifest.json','Release signing key and exact signed APK hardware smoke test')
 check('Final store and website metadata',False,'marketing/amazon-console-draft.json','10 description locales and 7 artwork locales saved in the Amazon draft; native/legal approval, final store URL, approved hardware screenshots and publisher-signed app file pending')
 check('Remaining product scope',False,'docs/RELEASE_READINESS.md','Complete the explicitly listed outstanding app features and integration checks')

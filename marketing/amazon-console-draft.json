@@ -179,5 +179,11 @@
     "es-ES"
   ],
   "localized_tablet_screenshots_uploaded": 56,
-  "localized_promotional_images_uploaded": 7
+  "localized_promotional_images_uploaded": 7,
+  "publisher": {
+    "name": "O. Bankole",
+    "source": "Publisher supplied this name directly",
+    "legal_privacy_approval": false,
+    "developer_account_profile_changed": false
+  }
 }
