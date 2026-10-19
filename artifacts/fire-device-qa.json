@@ -1,12 +1,12 @@
 {
   "packageId": "com.dishnest.app.qa",
   "ordinaryAppModified": false,
-  "testedAt": "2026-10-19T08:46:19.3378368Z",
+  "testedAt": "2026-10-19T18:53:54.1546046Z",
   "model": "KFTRWI",
   "androidVersion": "9",
   "api": "28",
   "locale": "en-GB",
-  "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
+  "apkSha256": "53e6a0f889055bfb0d256bb344f679786e2c4dd6fad8b8e42b0552e04d7c442d",
   "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
   "tests": 13,
   "passedTests": 13,
@@ -25,8 +25,7 @@
     "Named plan creation/selection across activity recreation",
     "Opt-in generic pantry reminder and duplicate suppression",
     "Denied microphone touch fallback",
-    "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL",
-    "Runtime messages, exports and quantities across all 12 resource locales"
+    "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL"
   ],
   "notCovered": [
     "App Tester/LAT purchases",
@@ -41,16 +40,15 @@
   "serialIdentifierStored": false,
   "storeSubmission": false,
   "remoteDeployment": false,
-  "screenshots": {
-    "fire-qa-named-plan.png": {
-      "sha256": "ced740c5dc570b6964a2cf40f8a09cbe1719d20b4d3b860b3dfc40b99b6a575a",
-      "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
-      "kind": "QA capture; not approved store artwork"
+  "captures": [
+    {
+      "path": "artifacts/screens/fire-qa-arabic-large-font.png",
+      "sha256": "3af226a5b01de801d3009962a0a9d7a942f5d0bf891d071a2015a33be0ee6808"
     },
-    "fire-qa-arabic-large-font.png": {
-      "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
-      "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
-      "kind": "QA capture; not approved store artwork"
+    {
+      "path": "artifacts/screens/fire-qa-named-plan.png",
+      "sha256": "aab568391cf168fe2e30ba6e1be8d19ec769ad699b4d50f008089cede48ddf64"
     }
-  }
+  ],
+  "capturesVisuallyInspected": true
 }

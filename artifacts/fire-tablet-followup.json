@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-19T18:58:22.194733+00:00",
+  "freshLatStatus": "Test in-progress",
+  "freshLatInstalled": false,
+  "installedAmazonTrack": "Test 1",
+  "amazonApkSha256": "dc996b346b454c3b37f2c56a5b168421f21d38e8fd1875776558dcbcb8890bf4",
+  "testerSubscriptionsResetConfirmed": [
+    "Test 2",
+    "Test 1"
+  ],
+  "temporaryTestAppDataCleared": true,
+  "monthlyStillActiveAfterRestoreAndFreshTestAppData": true,
+  "annualPurchasePassed": false,
+  "lifetimePurchasePassed": false,
+  "naturalExpiryObserved": false,
+  "freshTest2InvitationNeeded": true,
+  "nativeTestsPassed": 6,
+  "uiTestsPassed": 13,
+  "backgroundTimerPassed": true,
+  "blockedNotificationTimerPassed": true,
+  "qaNotificationSettingRestored": true,
+  "originalApkRestored": true,
+  "originalPrivateFilesExact": true,
+  "postQaOrdinaryDataUnchanged": true,
+  "postQaNativeSqliteIntegrity": true,
+  "originalDisplaySettingRestored": true,
+  "originalAppLaunched": false,
+  "paidServicesEnabled": false,
+  "publicReleaseSubmitted": false,
+  "testerIdentifiersStored": false
+}

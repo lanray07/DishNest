@@ -24,7 +24,8 @@
     "publisherCertificationPending": false,
     "submitted": true,
     "publisherCertified": true,
-    "status": "Test submitted"
+    "status": "Test in-progress",
+    "available": true
   },
   "originalApkRestored": true,
   "originalPrivateFilesExact": true,
@@ -46,7 +47,8 @@
     "https://developer.amazon.com/docs/app-testing/appstore-devtest-iap-faq.html"
   ],
   "remaining": [
-    "Acquire the fresh Amazon build and run annual/lifetime and actual expiry checks",
+    "Acquire Test 2 using its fresh invitation and run annual/lifetime and actual expiry checks",
     "Complete other required public release gates"
-  ]
+  ],
+  "tabletRecheck": "artifacts/fire-tablet-followup.json"
 }

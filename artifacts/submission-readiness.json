@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T17:37:05.903321+00:00",
+  "generatedAt": "2026-10-19T18:57:59.545948+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -111,25 +111,25 @@
       "check": "Amazon catalog and live verification",
       "status": "pending",
       "evidence": "docs/AMAZON_LAT.md; docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-lat-console.json",
-      "remaining": "Both IAPs are TEST Approved and private LAT Test 1 is in progress. Amazon-delivered monthly purchase, verified Premium, restart/restore and autorenew-off access were observed on Fire; see artifacts/fire-amazon-lat-qa.json. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required."
+      "remaining": "Both IAPs are TEST Live and private LAT Tests 1 and 2 are in progress. The existing Fire acquisition route still delivers Test 1; fresh Test 2 invitation acquisition is pending. Amazon-delivered monthly purchase, verified Premium, restart/restore and autorenew-off access were observed on Fire; see artifacts/fire-amazon-lat-qa.json. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required."
     },
     {
       "check": "Physical Fire native components",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-native-qa.json; artifacts/fire-device-qa.json",
-      "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
+      "remaining": ""
     },
     {
       "check": "Physical Fire instrumentation smoke",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
+      "remaining": ""
     },
     {
       "check": "Background Fire timer after process termination",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-background-alarm.json",
-      "remaining": "Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs"
+      "remaining": ""
     },
     {
       "check": "Physical device QA",

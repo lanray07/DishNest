@@ -1,6 +1,6 @@
 # DishNest submission-readiness report
 
-Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 19 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No app/website deployment or store submission was performed.
+Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 19 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
 
@@ -34,10 +34,10 @@ The remaining release categories, their local work and the evidence needed to cl
 | Original translation errors | 0 remain | Same lint report; no suppression/baseline |
 | Current build provenance | PASS: current input/output hashes verified | `artifacts/build-provenance.json` |
 | Locale resource gate | PASS across 12 locales | `localisation/validation.json` |
-| Physical Fire smoke tests | Pending: device evidence does not match current APK/test APK | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
-| Physical Fire native checks | Pending on current APK | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
-| Fire background timer probe | Pending; inspect phase results | `artifacts/fire-background-alarm.json` |
-| Fire blocked-notification timer probe | Pending on the current APK; no hardware pass inferred | `artifacts/fire-blocked-notifications.json` |
+| Physical Fire smoke tests | 13 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
+| Physical Fire native checks | 6 passed on current APK; ordinary data hashes unchanged; UI not exercised | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
+| Fire background timer probe | PASS: saved kitchen records, handled timer and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
+| Fire blocked-notification timer probe | PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored | `artifacts/fire-blocked-notifications.json` |
 | Receipt service | 14 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
 | Workers Free verifier | Free plan verified; sandbox/production deployed with approval; signed inactive live-RVS responses accepted by Kotlin and wrong account rejected; real purchases not tested | `artifacts/billing-deployment.json`, `artifacts/billing-live-contract.json` |
 | Cross-runtime receipt contract | Actual Node signer and compiled Kotlin verifier pass; wrong-account response rejected | `artifacts/billing-contract.json` |
@@ -77,7 +77,7 @@ The translation provider throttled the initial draft generation. Requests were s
 
 ## External setup and hardware
 
-The latest read-only ADB inventory found 1 connected device(s). Historical device results do not match the current APK/test APK. Rerun the isolated smoke suite before using them as current evidence. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, the complete release/purchase matrix. A separate temporary session tested the actual Amazon-delivered APK and monthly purchases; see `artifacts/fire-amazon-lat-qa.json`. Broader scenarios remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
+The latest read-only ADB inventory found 1 connected device(s). The isolated QA APK passed 13 instrumentation tests on KFTRWI (Android 9, API 28). Coverage includes recipe CRUD/editor recreation, selected named-plan recreation, SQLite reopen/migration, native photo ZIP codecs, a cropped synthetic OCR fixture, Arabic/Hindi resources, localized pasted-recipe headings/Unicode step numbering, pantry entry with Arabic decimal digits and metric aliases, denied microphone fallback, opt-in pantry notifications and Arabic planner/native-dialog controls at QA font scale 1.5. See the separate background-alarm probe record for its exact result. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, the complete release/purchase matrix. A separate temporary session tested the actual Amazon-delivered APK and monthly purchases; see `artifacts/fire-amazon-lat-qa.json`. Broader scenarios remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
 
 An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.json`. The publisher has identified themself as O. Bankole. The real Amazon public key, approved UK/US prices, localized IAP drafts, protected publisher signing key and separate protected Workers Free verifiers are now prepared. Required release inputs remain final catalog/market/terms validation, real purchase/lifecycle and quota-recovery QA, signing-key recovery backup, exact signed-release hardware QA, native language approval and approved privacy/operator details. Private support/deletion assistance uses the publisher-provided support email. Project, support and draft privacy/deletion links use GitHub; no domain or GitHub Pages deployment was configured. Local development keys are not production keys.
 
@@ -92,7 +92,7 @@ An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.
 - [x] Save approved UK/US prices and seven localized IAP drafts, install the real Amazon public key, and deploy the explicitly approved Free-plan test/production verifiers.
 - [x] Resolve the catalog/detail status conflict, start private LAT, and observe actual monthly grant/restart/restore and autorenew-off behavior.
 - [ ] Complete the remaining actual LAT renewal/expiry/annual/lifetime/refund/fulfilment matrix.
-- [x] Submit the separately certified new-icon private Test 2 with accelerated subscriptions; Amazon processing remains pending. See `artifacts/amazon-fresh-lat-console.json`.
+- [x] Submit the separately certified new-icon private Test 2 with accelerated subscriptions; Test 2 is active; fresh-invitation acquisition and actual annual/lifetime/expiry checks remain pending. See `artifacts/amazon-fresh-lat-console.json`.
 - [ ] Execute the hardware/accessibility/offline/permissions/timer/OCR matrix.
 - [ ] Approve licensing, privacy disclosures, production service-operation details, remaining marketplace prices/terms and final store/site metadata.
 - [x] Create the authorized permanent publisher key and verify the signed APK signature, unchanged payload and alignment.

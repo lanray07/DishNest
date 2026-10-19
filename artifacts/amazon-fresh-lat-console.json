@@ -2,7 +2,7 @@
   "releaseName": "DishNest Premium annual and lifetime QA",
   "releaseId": "amzn1.devportal.apprelease.b78f2f368b6a4daa9aeccedf66b4e963",
   "track": "Test 2",
-  "status": "Test submitted",
+  "status": "Test in-progress",
   "appUploaded": true,
   "apkSha256": "fd049df4ba76e07cd04d015aa9f41e8ef0329c1e55fe990ee463c079a3ee835a",
   "drmApplied": true,
@@ -20,5 +20,6 @@
     "lifetime": "TEST Live"
   },
   "publicReleaseSubmitted": false,
-  "screenshot": "artifacts/screens/amazon-fresh-lat-submitted.png"
+  "screenshot": "artifacts/screens/amazon-fresh-lat-active.png",
+  "checkedAt": "2026-10-19T18:52:35.989914+00:00"
 }

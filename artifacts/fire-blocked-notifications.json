@@ -1,7 +1,7 @@
 {
-  "testedAt": "2026-10-19T08:56:56.3842444Z",
+  "testedAt": "2026-10-19T18:57:18.7958562Z",
   "packageId": "com.dishnest.app.qa",
-  "apkSha256": "75ab7c424cccab8c345ffe912aa775d3834973de4f50b1ac9b14c67ae985c6b7",
+  "apkSha256": "53e6a0f889055bfb0d256bb344f679786e2c4dd6fad8b8e42b0552e04d7c442d",
   "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
   "installedApksVerified": true,
   "controllerSha256": "836ae6cf91a2f3b35a0e03e02f6a64181bec7f6696b90d8e691330b573dc6dac",
