@@ -21,7 +21,6 @@ class DishNestApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        billing.start()
         metrics.opened()
         PantryReminders(this).reschedule()
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {

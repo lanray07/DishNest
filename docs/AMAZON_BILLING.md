@@ -2,6 +2,8 @@
 
 The default APK has purchases disabled. Approved UK/US prices and seven localized IAP descriptions have been saved in Amazon catalog drafts. With explicit publisher approval, separate sandbox and production receipt verifiers have been deployed to the existing Cloudflare Workers Free account. No app or website was deployed and no app or IAP was submitted.
 
+Current Fire App Tester results are in [AMAZON_PURCHASE_QA.md](AMAZON_PURCHASE_QA.md). A genuine sandbox lifetime receipt unlocked Premium; current restoration/restart and denial cases passed in an isolated debug package. Monthly/annual checkout completed, but sandbox renewal dates near response time prevent subscription approval. The verifier now evaluates expiry after the Amazon request, backed by 13 passing service tests. This does not complete production/LAT testing or enable purchases in the release APK.
+
 The publisher wants customer-paid Premium without ongoing paid processing/hosting. Separate Cloudflare Workers Free verifiers are deployed and tested with signed inactive live-RVS decisions and the compiled Kotlin verifier; see [free verifier setup and limits](AMAZON_FREE_VERIFIER.md). The Free plan and public endpoints are verified; representative production CPU/load and real purchase lifecycle QA remain pending. Do not activate paid infrastructure or treat local fixtures as live Amazon purchase evidence.
 
 ## Catalog contract

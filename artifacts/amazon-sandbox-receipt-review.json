@@ -1,0 +1,30 @@
+{
+  "environment": "sandbox",
+  "receiptIdentifiersStored": false,
+  "userIdentifiersStored": false,
+  "sourceSha256": {
+    "worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
+    "verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae"
+  },
+  "checks": [
+    {
+      "sku": "dishnest.premium.lifetime",
+      "active": true,
+      "claimTtlMs": 86400000,
+      "httpStatus": 200
+    },
+    {
+      "sku": "dishnest.premium",
+      "active": false,
+      "claimTtlMs": 3600000,
+      "httpStatus": 200
+    },
+    {
+      "sku": "dishnest.premium",
+      "active": false,
+      "claimTtlMs": 3600000,
+      "httpStatus": 200
+    }
+  ],
+  "subscriptionReadiness": "Pending: synthetic RVS renewal dates are near the response time; do not relax expiry or infer production lifecycle success"
+}

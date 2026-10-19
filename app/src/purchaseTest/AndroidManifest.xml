@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <application>
+        <activity android:name=".PurchaseStatusActivity" android:exported="true" />
+        <!-- This API-28 Fire lacks the DRM permission definition. Retain Amazon's
+             system-owned signature permission rather than exposing an unprotected receiver. -->
+        <receiver android:name="com.amazon.device.drm.ResponseReceiver"
+            android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY"
+            tools:replace="android:permission" />
+    </application>
+</manifest>

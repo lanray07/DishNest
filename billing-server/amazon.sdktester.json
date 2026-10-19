@@ -4,14 +4,16 @@
     "price": 1.99,
     "title": "TEST ONLY — DishNest Premium monthly",
     "description": "TEST ONLY: approved US list price used as an isolated App Tester fixture; no real purchase.",
-    "subscriptionParent": "dishnest.premium"
+    "subscriptionParent": "dishnest.premium",
+    "term": "Monthly"
   },
   "dishnest.premium.annual": {
     "itemType": "SUBSCRIPTION",
     "price": 12.99,
     "title": "TEST ONLY — DishNest Premium annual",
     "description": "TEST ONLY: approved US list price used as an isolated App Tester fixture; no real purchase.",
-    "subscriptionParent": "dishnest.premium"
+    "subscriptionParent": "dishnest.premium",
+    "term": "Annually"
   },
   "dishnest.premium.lifetime": {
     "itemType": "ENTITLED",

@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-	<testcase name="local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage" time="0.084046" classname="test" file="D:\App Projects\DishNest\billing-server\server.test.mjs"/>
-	<testcase name="LAT test receipts stay isolated from production grants" time="0.002845" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="active renewal and offline validity are bounded" time="0.002196" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="turning autorenew off preserves access until future cancel date" time="0.000623" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="expired, refunded and cancelled receipts revoke access" time="0.000540" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="Amazon grace period extends access only to the supplied deadline" time="0.000416" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="lifetime is reverified daily and is revocable" time="0.000513" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="unknown SKUs, consumables, wrong receipt and test purchases fail closed" time="0.000701" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="subscription parent SKU maps to allowed term SKU" time="0.000204" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="nonce, receipt and account are bound into an authentic signature" time="0.007214" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="outages never become a signed denial or a fabricated success" time="0.002405" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
-	<testcase name="Workers runtime: signed Amazon decisions, bounded inputs, outage and activation controls" time="1.857842" classname="test" file="D:\App Projects\DishNest\billing-server\worker.test.mjs"/>
-	<!-- tests 12 -->
+	<testcase name="local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage" time="0.149225" classname="test" file="D:\App Projects\DishNest\billing-server\server.test.mjs"/>
+	<testcase name="LAT test receipts stay isolated from production grants" time="0.002265" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="active renewal and offline validity are bounded" time="0.002714" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="turning autorenew off preserves access until future cancel date" time="0.000286" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="expired, refunded and cancelled receipts revoke access" time="0.000268" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="Amazon grace period extends access only to the supplied deadline" time="0.000553" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="lifetime is reverified daily and is revocable" time="0.000293" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="unknown SKUs, consumables, wrong receipt and test purchases fail closed" time="0.000373" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="subscription parent SKU maps to allowed term SKU" time="0.000172" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="nonce, receipt and account are bound into an authentic signature" time="0.005174" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="outages never become a signed denial or a fabricated success" time="0.001699" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="a subscription expiring during Amazon verification cannot produce a stale active claim" time="0.000809" classname="test" file="D:\App Projects\DishNest\billing-server\verification.test.mjs"/>
+	<testcase name="Workers runtime: signed Amazon decisions, bounded inputs, outage and activation controls" time="8.535019" classname="test" file="D:\App Projects\DishNest\billing-server\worker.test.mjs"/>
+	<!-- tests 13 -->
 	<!-- suites 0 -->
-	<!-- pass 12 -->
+	<!-- pass 13 -->
 	<!-- fail 0 -->
 	<!-- cancelled 0 -->
 	<!-- skipped 0 -->
 	<!-- todo 0 -->
-	<!-- duration_ms 2511.5635 -->
+	<!-- duration_ms 15628.1233 -->
 </testsuites>

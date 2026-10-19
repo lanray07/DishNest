@@ -84,7 +84,11 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
     fun start() {
         if (!configured || started) return
         started = true
+        testDiagnostic("startup", "BEGIN")
         runCatching {
+                // Licensing initializes the SDK's sandbox/production routing. It must
+                // precede PurchasingService initialization, as in Amazon's SDK sample.
+                verifyStore()
                 PurchasingService.registerListener(context.applicationContext, this)
                 PurchasingService.enablePendingPurchases()
                 refresh()
@@ -96,6 +100,7 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
                 }
             }
             .onFailure {
+                testDiagnostic("startup", it.javaClass.simpleName)
                 started = false
                 unavailable()
             }
@@ -342,6 +347,10 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
                     )
                         PurchasingService.notifyFulfillment(receipt.id, FulfillmentResult.FULFILLED)
                 }
+                result.exceptionOrNull()?.let { error ->
+                    testDiagnostic("verification-error", error.javaClass.simpleName)
+                    testDiagnostic("verification-stack", error.stackTrace.take(4).joinToString("|") { frame -> frame.className + "." + frame.methodName + ":" + frame.lineNumber })
+                }
                 restoreGuard.verification(receipt.id, result.isSuccess, session)
             }
             if (account == user) {
@@ -376,7 +385,9 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
                         .toByteArray(Charsets.UTF_8)
                 )
             }
-            check(connection.responseCode == 200)
+            val status = connection.responseCode
+            testDiagnostic("verifier-http", status.toString())
+            check(status == 200)
             val bytes =
                 connection.inputStream.use { input ->
                     val output = java.io.ByteArrayOutputStream()
@@ -455,7 +466,10 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
         runCatching {
                 licenseRequest =
                     LicensingService.verifyLicense(context.applicationContext) { response ->
+                        testDiagnostic("license", response.requestStatus.name + "/" + LicensingService.getAppstoreSDKMode())
                         scope.launch {
+                            // Also tolerate an SDK callback delivered before verifyLicense returns.
+                            yield()
                             if (response.requestId != licenseRequest) return@launch
                             licenseRequest = null
                             sdkReady =
@@ -471,18 +485,34 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
                         }
                     }
                 val request = licenseRequest
+                testDiagnostic("sdk-mode", LicensingService.getAppstoreSDKMode())
                 scope.launch {
                     delay(30_000)
                     if (licenseRequest == request) {
+                        testDiagnostic("license-timeout", "NO_CALLBACK")
                         licenseRequest = null
                         unavailable()
                     }
                 }
             }
             .onFailure {
+                testDiagnostic("license-start", it.javaClass.simpleName)
+                testDiagnostic("license-stack", it.stackTrace.take(6).joinToString("|") { frame -> frame.className + "." + frame.methodName + ":" + frame.lineNumber })
                 licenseRequest = null
                 unavailable()
             }
+    }
+
+    /** Sandbox diagnostics contain enums only, never accounts, receipts, URLs or exceptions. */
+    private fun testDiagnostic(event: String, status: String) {
+        if (BuildConfig.DEBUG && BuildConfig.BUILD_TYPE == "purchaseTest") {
+            android.util.Log.i("DishNestBillingTest", "$event:$status")
+            runCatching {
+                val file = java.io.File(context.filesDir, "billing-test-diagnostics.txt")
+                val lines = if (file.isFile) file.readLines().takeLast(31) else emptyList()
+                file.writeText((lines + "$event:$status").joinToString("\n"))
+            }
+        }
     }
 
     private fun requestUpdates(reset: Boolean) {

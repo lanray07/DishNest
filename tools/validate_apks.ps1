@@ -33,7 +33,7 @@ $releaseAlignmentExit = $LASTEXITCODE
 $metadata = & $aapt dump badging $releaseApk 2>&1
 $metadataExit = $LASTEXITCODE
 $releaseManifest = & $aapt dump xmltree $releaseApk AndroidManifest.xml 2>&1 | Out-String
-$qaFixtureAbsent = $LASTEXITCODE -eq 0 -and $releaseManifest -notmatch 'QaConfigurationActivity'
+$qaFixtureAbsent = $LASTEXITCODE -eq 0 -and $releaseManifest -notmatch 'QaConfigurationActivity|PurchaseStatusActivity'
 $metadata | Set-Content -LiteralPath (Join-Path $artifactDirectory 'apk-metadata.txt') -Encoding utf8
 $config = Join-Path $projectRoot 'app\build\generated\source\buildConfig\release\com\dishnest\app\BuildConfig.java'
 $qaConfig = Join-Path $projectRoot 'app\build\generated\source\buildConfig\qa\com\dishnest\app\BuildConfig.java'

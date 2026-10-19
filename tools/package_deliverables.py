@@ -3,6 +3,7 @@ import hashlib,json,shutil,zipfile,xml.etree.ElementTree as ET
 from build_evidence import verify as verify_build
 from website_evidence import verify as verify_website
 from publisher_evidence import verify as verify_publisher
+from purchase_evidence import verify as verify_purchase
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.mkdir(exist_ok=True)
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
 if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
@@ -23,6 +24,11 @@ if publisher:
     target=OUT/'DishNest-0.1.0-release-publisher.apk'
     shutil.copy2(ROOT/publisher['signedApk'],target)
     manifest.append({'file':target.name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':True,'certificateSha256':publisher['certificateSha256'],'production_ready':False})
+purchase=verify_purchase()
+if purchase:
+    target=OUT/'DishNest-0.1.0-purchase-test.apk'
+    shutil.copy2(ROOT/'app/build/outputs/apk/purchaseTest/app-purchaseTest.apk',target)
+    manifest.append({'file':target.name,'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'signed':True,'environment':'sandbox','kind':'isolated debug App Tester only','production_ready':False})
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
 def archive_source():
     evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','fire-background-alarm.json','fire-background-seed.txt','fire-background-verify.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
@@ -30,6 +36,7 @@ def archive_source():
     source_zip=OUT/'DishNest-source.zip'
     evidence.add('billing-worker.json')
     evidence.update({'publisher-signing.json','publisher-signature.txt','publisher-device-compatibility.json','private-storage-audit.json'})
+    evidence.update({'amazon-purchase-device.json','amazon-sandbox-receipt-review.json','purchase-test-restoration.json','purchase-test-configuration-guard.json','purchase-test-configuration-guard.log','purchase-test-controller-guard.json','purchase-test-build.log'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
@@ -57,6 +64,8 @@ if server_xml.findall('.//failure') or server_xml.findall('.//error'):raise Syst
 (ROOT/'artifacts/qa-summary.json').write_text(json.dumps({'jvm_suites':suites,'device_instrumentation':fire,'physical_fire_qa':'Partial smoke coverage only; full hardware matrix pending','billing_qa':f'Local SDK integration and signed-verification service prepared; {server_tests} server fixture/HTTP tests pass. App Tester/LAT not executed; default APK purchases disabled.','localisation_release_gate':'Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.','store_submission':'not performed; conditional submission authorized only after all required readiness gates pass','website_deployment':'not performed; local checks only'},indent=2),encoding='utf-8')
 summary_path=ROOT/'artifacts/qa-summary.json'
 summary=json.loads(summary_path.read_text(encoding='utf-8'))
+summary['billing_qa']=f'{server_tests} service tests pass; '+('current isolated App Tester lifetime/restore and denial cases pass; subscription synthetic-expiry and LAT lifecycle remain pending.' if purchase else 'current App Tester evidence pending.')+' Default release purchases remain disabled.'
+summary['isolated_app_tester']={'current':purchase is not None,'production_purchases_approved':False,'evidence':'artifacts/amazon-purchase-device.json','remaining':'Subscription synthetic-expiry limitation, full lifecycle and LAT; all release approvals remain required'}
 qa_source=ROOT/'app/build/outputs/apk/qa/app-qa.apk'
 test_source=ROOT/'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'
 summary['device_instrumentation_current']=all(path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest()==fire.get(key)

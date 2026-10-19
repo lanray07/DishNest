@@ -13,13 +13,19 @@ val billingEnabled = providers.gradleProperty("dishnest.billing.enabled").orNull
 val billingUrl = providers.gradleProperty("dishnest.billing.url").orNull.orEmpty()
 val billingKey = providers.gradleProperty("dishnest.billing.publicKey").orNull.orEmpty()
 val billingEnvironment = providers.gradleProperty("dishnest.billing.environment").orNull ?: "sandbox"
+// Purchase QA has a separate app/data sandbox; it can never target real-money billing.
+val purchaseTestEnabled = providers.gradleProperty("dishnest.billing.purchaseTest").orNull == "true"
+require(!purchaseTestEnabled || !billingEnabled) { "Purchase QA must not enable billing in ordinary debug/release builds" }
 require(billingEnvironment in setOf("sandbox", "lat", "production"))
-if (billingEnabled) {
+if (billingEnabled || purchaseTestEnabled) {
     val endpoint = URI(billingUrl)
     require(endpoint.scheme == "https" && !endpoint.host.isNullOrBlank() && endpoint.userInfo == null) { "Billing requires a valid HTTPS verifier URL" }
     KeyFactory.getInstance("EC").generatePublic(X509EncodedKeySpec(Base64.getDecoder().decode(billingKey)))
     val amazonKey = file("src/main/assets/AppstoreAuthenticationKey.pem")
     require(amazonKey.isFile && amazonKey.readText().contains("PUBLIC KEY")) { "Billing requires the app-specific AppstoreAuthenticationKey.pem downloaded from Amazon; it is distinct from the receipt-service key" }
+}
+if (purchaseTestEnabled) {
+    require(billingEnvironment == "sandbox" && billingUrl == "https://dishnest-receipt-verifier-sandbox.lanraybanks.workers.dev/v1/verify") { "Purchase QA requires the approved sandbox verifier; production/LAT are prohibited" }
 }
 fun quoted(value: String) = "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"") + "\""
 // Optional publisher signing: passwords stay in the process environment, never Gradle properties.
@@ -52,6 +58,7 @@ android {
     sourceSets.getByName("androidTest").java.srcDir("src/sharedTest/java")
     sourceSets.getByName("androidTest").assets.srcDir("schemas")
     sourceSets.getByName("debug").manifest.srcFile(if (billingEnabled) "src/billingDebug/AndroidManifest.xml" else "src/debug/AndroidManifest.xml")
+    sourceSets.maybeCreate("purchaseTest").manifest.srcFile("src/purchaseTest/AndroidManifest.xml")
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
     signingConfigs {
@@ -63,6 +70,14 @@ android {
         }
     }
     buildTypes {
+        create("purchaseTest") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".purchasetest"
+            matchingFallbacks += listOf("debug")
+            resValue("string", "app_name", "DishNest Purchase Test")
+            buildConfigField("boolean", "BILLING_ENABLED", purchaseTestEnabled.toString())
+            buildConfigField("String", "BILLING_ENVIRONMENT", quoted("sandbox"))
+        }
         create("qa") {
             initWith(getByName("debug"))
             applicationIdSuffix = ".qa"

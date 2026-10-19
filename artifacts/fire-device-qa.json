@@ -1,12 +1,12 @@
 {
   "packageId": "com.dishnest.app.qa",
   "ordinaryAppModified": false,
-  "testedAt": "2026-10-19T06:14:41.0561391Z",
+  "testedAt": "2026-10-19T07:00:08.5042157Z",
   "model": "KFTRWI",
   "androidVersion": "9",
   "api": "28",
   "locale": "en-GB",
-  "apkSha256": "a638db6eecd7709575b8767826eb521823b6e7edf8a312f7e9593c34a3f7c204",
+  "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
   "instrumentationApkSha256": "fb79a5d7d010a36c0f316fd70f355d4a397f99746922e8047a0ce7bdfc73698c",
   "tests": 12,
   "passedTests": 12,
@@ -43,12 +43,12 @@
   "screenshots": {
     "fire-qa-named-plan.png": {
       "sha256": "ced740c5dc570b6964a2cf40f8a09cbe1719d20b4d3b860b3dfc40b99b6a575a",
-      "apkSha256": "a638db6eecd7709575b8767826eb521823b6e7edf8a312f7e9593c34a3f7c204",
+      "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
       "kind": "QA capture; not approved store artwork"
     },
     "fire-qa-arabic-large-font.png": {
       "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
-      "apkSha256": "a638db6eecd7709575b8767826eb521823b6e7edf8a312f7e9593c34a3f7c204",
+      "apkSha256": "dd8bcfa64ed80918f5488e7d61c74dd27159f040b216f2d0024022f850484e04",
       "kind": "QA capture; not approved store artwork"
     }
   }

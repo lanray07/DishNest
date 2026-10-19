@@ -1,20 +1,21 @@
-✔ local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage (84.0456ms)
-✔ LAT test receipts stay isolated from production grants (2.8454ms)
-✔ active renewal and offline validity are bounded (2.1962ms)
-✔ turning autorenew off preserves access until future cancel date (0.6234ms)
-✔ expired, refunded and cancelled receipts revoke access (0.5397ms)
-✔ Amazon grace period extends access only to the supplied deadline (0.416ms)
-✔ lifetime is reverified daily and is revocable (0.5134ms)
-✔ unknown SKUs, consumables, wrong receipt and test purchases fail closed (0.7015ms)
-✔ subscription parent SKU maps to allowed term SKU (0.2044ms)
-✔ nonce, receipt and account are bound into an authentic signature (7.2143ms)
-✔ outages never become a signed denial or a fabricated success (2.4046ms)
-✔ Workers runtime: signed Amazon decisions, bounded inputs, outage and activation controls (1857.8416ms)
-ℹ tests 12
+✔ local HTTP contract returns a signed decision, rejects invalid input and fails closed during outage (82.0399ms)
+✔ LAT test receipts stay isolated from production grants (1.9773ms)
+✔ active renewal and offline validity are bounded (1.4737ms)
+✔ turning autorenew off preserves access until future cancel date (0.3383ms)
+✔ expired, refunded and cancelled receipts revoke access (0.4212ms)
+✔ Amazon grace period extends access only to the supplied deadline (0.3715ms)
+✔ lifetime is reverified daily and is revocable (0.3614ms)
+✔ unknown SKUs, consumables, wrong receipt and test purchases fail closed (0.5604ms)
+✔ subscription parent SKU maps to allowed term SKU (0.3117ms)
+✔ nonce, receipt and account are bound into an authentic signature (6.4329ms)
+✔ outages never become a signed denial or a fabricated success (1.2715ms)
+✔ a subscription expiring during Amazon verification cannot produce a stale active claim (1.2235ms)
+✔ Workers runtime: signed Amazon decisions, bounded inputs, outage and activation controls (1831.7755ms)
+ℹ tests 13
 ℹ suites 0
-ℹ pass 12
+ℹ pass 13
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 2511.5635
+ℹ duration_ms 2473.5655

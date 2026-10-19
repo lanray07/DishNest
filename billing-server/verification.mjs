@@ -43,15 +43,18 @@ export function validateRequest(body) {
   if (!/^[a-f0-9-]{36}$/.test(body.nonce)) throw new Error('Invalid nonce');
 }
 
-export async function verifyPurchase(body, { secret, environment, privateKey, fetchReceipt, now = Date.now() }) {
+export async function verifyPurchase(body, { secret, environment, privateKey, fetchReceipt, now, clock = Date.now }) {
   validateRequest(body);
   const receipt = await fetchReceipt(body.userId, body.receiptId, secret, environment);
+  // A subscription may expire while Amazon is answering. Validate and timestamp
+  // the decision after that request, so network latency cannot create a stale grant.
+  const verifiedAt = now ?? clock();
   const result = receipt === null
-    ? { sku: '', active: false, expiresAt: now + HOUR }
-    : entitlement(receipt, body.receiptId, now, environment);
+    ? { sku: '', active: false, expiresAt: verifiedAt + HOUR }
+    : entitlement(receipt, body.receiptId, verifiedAt, environment);
   const payload = Buffer.from(JSON.stringify({ version: 1, audience: 'com.dishnest.app', environment,
     userHash: hash(body.userId), receiptHash: hash(body.receiptId), nonce: body.nonce,
-    verifiedAt: now, ...result })).toString('base64');
+    verifiedAt, ...result })).toString('base64');
   const signature = sign('sha256', Buffer.from(payload, 'base64'), privateKey).toString('base64');
   return { payload, signature };
 }

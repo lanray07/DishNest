@@ -8,7 +8,7 @@
   "production_receipts_approved": false,
   "sourceSha256": {
     "worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
-    "verification.mjs": "631f2c43b6956510204e741bcd9c386f9a3bcc7743f0708e1bb4552915e98282"
+    "verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae"
   },
   "checks": [
     {
@@ -35,5 +35,11 @@
       "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaTD1UCCcRc72iTYjTOS6ucGM1BGo3v3no7WAaCIfutWfdHP0gG8nXDdfFRX7oOPAjukj2GCaljX/PFTmglNCpw==",
       "amazon_real_purchase_tested": false
     }
-  ]
+  ],
+  "versionIds": {
+    "sandbox": "237d5abb-fa39-4d84-861b-2dc2a16fe11e",
+    "production": "0c794f01-8074-4549-b20f-414db4ac2ddd"
+  },
+  "verificationTiming": "Expiry evaluated after the Amazon request completes; no deadline extension",
+  "real_purchase_evidence": "App Tester lifetime sandbox receipt only; production/LAT and subscription lifecycle pending"
 }

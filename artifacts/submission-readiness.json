@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T06:21:28.835820+00:00",
+  "generatedAt": "2026-10-19T07:05:44.161623+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -110,8 +110,8 @@
     {
       "check": "Amazon catalog and live verification",
       "status": "pending",
-      "evidence": "docs/AMAZON_BILLING.md; marketing/amazon-premium-console.json; artifacts/billing-deployment.json",
-      "remaining": "Approved prices and localized catalog drafts saved; real public authentication key installed and Free-plan verifier deployed with protected keys. App Tester/LAT real purchase, restoration and subscription lifecycle QA remain required; APK purchases disabled"
+      "evidence": "docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-purchase-device.json",
+      "remaining": "App Tester lifetime purchase/restore and isolated denial cases passed on Workers Free. Subscription checkout completed but synthetic near-response expiry blocks verification; subscription lifecycle, LAT, catalog status conflict and market/terms approval remain pending. Release purchases disabled."
     },
     {
       "check": "Physical Fire native components",

@@ -61,3 +61,18 @@ test('outages never become a signed denial or a fabricated success', async () =>
     {fetchReceipt:async()=>{throw new Error('offline');}}));
   assert.throws(()=>validateRequest({userId:'',receiptId:'r',nonce:'bad'}));
 });
+
+test('a subscription expiring during Amazon verification cannot produce a stale active claim', async () => {
+  const {privateKey,publicKey}=generateKeyPairSync('ec',{namedCurve:'prime256v1'});
+  let responded=false;
+  const signed=await verifyPurchase({userId:'account',receiptId:'receipt',nonce:'12345678-1234-1234-1234-123456789abc'}, {
+    privateKey,environment:'sandbox',secret:'test-only',
+    fetchReceipt:async()=>{responded=true;return receipt({renewalDate:now+100});},
+    clock:()=>{assert(responded);return now+200;},
+  });
+  assert(verify('sha256',Buffer.from(signed.payload,'base64'),publicKey,Buffer.from(signed.signature,'base64')));
+  const claim=JSON.parse(Buffer.from(signed.payload,'base64'));
+  assert.equal(claim.verifiedAt,now+200);
+  assert.equal(claim.active,false);
+  assert.equal(claim.expiresAt,now+200+HOUR);
+});

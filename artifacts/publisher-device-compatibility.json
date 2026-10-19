@@ -5,10 +5,12 @@
   "installedCertificateSha256": "244bac5b8be909f92d6254219f1cb4c0a9ddc79151f313f784e6e3712063de5e",
   "installedCertificateSubject": "C=US, O=Android, CN=Android Debug",
   "publisherCertificateSha256": "c2c7dcb307420a1605c48a06a50d0893af1f606c2db45a95669735f2834e1012",
-  "publisherApkSha256": "abcaeb3e88481f39f12e4f92e858cea80fc9972cfcf2895ea919c703af4f501b",
+  "publisherApkSha256": "b9281ead40b1e4eb1779de94025c3dd60d951e483e18bde65707d091d3e16033",
   "signaturesCompatible": false,
   "installAttempted": false,
   "ordinaryAppModified": false,
   "serialIdentifierStored": false,
-  "remaining": "Exact publisher-signed APK hardware test requires a clean compatible device or an approved data-preserving migration; no app data was cleared."
+  "remaining": "Exact publisher-signed APK hardware test requires a clean compatible device or an approved data-preserving migration; no app data was cleared.",
+  "ordinaryDataPreservationEvidence": "artifacts/purchase-test-restoration.json",
+  "recheckedAt": "2026-10-19T07:04:48.920919+00:00"
 }

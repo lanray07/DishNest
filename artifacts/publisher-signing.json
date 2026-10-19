@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T06:21:13.8896597Z",
+  "generatedAt": "2026-10-19T07:00:54.8235325Z",
   "publisher": "O. Bankole",
   "alias": "dishnest-release",
   "keyAlgorithm": "RSA",
@@ -9,9 +9,9 @@
   "certificateNotBefore": "2026-10-19T06:16:55.0000000Z",
   "certificateNotAfter": "2054-03-06T06:16:55.0000000Z",
   "unsignedApk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-  "unsignedSha256": "bac7a2c2ee76b9da7ace56b1bd73447aa40d2a23c81c06438198c7ac8e7acda8",
+  "unsignedSha256": "7337d0e202fec29c588899ca7f08951b11b354308c3cf0c5ae586396e3c8bfe3",
   "signedApk": "app/build/outputs/apk/release/app-release-publisher.apk",
-  "signedSha256": "abcaeb3e88481f39f12e4f92e858cea80fc9972cfcf2895ea919c703af4f501b",
+  "signedSha256": "b9281ead40b1e4eb1779de94025c3dd60d951e483e18bde65707d091d3e16033",
   "scriptSha256": "8aeed99fb045d337b2c1193fd51e5b0a184fb4dcd480e73dea85082b0e0acdb8",
   "signatureVerified": true,
   "certificateMatched": true,

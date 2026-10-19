@@ -200,10 +200,31 @@
     "detail_status": "Ready to Submit",
     "console_status_conflict_requires_review": true,
     "english_brand_icon_upload_attempted": true,
-    "english_brand_icon_persistence_verified": false,
-    "dashboard_status_after_icon_attempt": "Incomplete"
+    "english_brand_icon_persistence_verified": true,
+    "dashboard_status_after_icon_attempt": "Incomplete",
+    "english_us_icons": {
+      "reload_verified": true,
+      "large": [
+        512,
+        512
+      ],
+      "small": [
+        114,
+        114
+      ],
+      "checked_on": "2026-10-19"
+    },
+    "status_rechecked_on": "2026-10-19"
   },
   "submitted": false,
   "native_language_approved": false,
-  "purchases_tested": false
+  "purchases_tested": false,
+  "purchase_testing": {
+    "environment": "App Tester sandbox",
+    "lifetime_purchase_and_restore": true,
+    "subscription_sdk_checkout": true,
+    "subscription_verified_access": false,
+    "production_or_lat": false,
+    "evidence": "artifacts/amazon-purchase-device.json"
+  }
 }

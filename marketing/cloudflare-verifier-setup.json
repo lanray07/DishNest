@@ -14,5 +14,12 @@
   "private_screenshot_committed": false,
   "deployment_authorized": true,
   "live_negative_receipt_probes_passed": true,
-  "app_purchases_enabled": false
+  "app_purchases_enabled": false,
+  "plan_rechecked_on": "2026-10-19",
+  "current_plan_ui": {
+    "name": "Free",
+    "price": "$0",
+    "current_plan": true,
+    "paid_upgrade": false
+  }
 }

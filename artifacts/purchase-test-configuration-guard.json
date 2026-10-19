@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "case": "production-profile",
+      "expectedMessage": true,
+      "rejected": true
+    },
+    {
+      "case": "ordinary-billing",
+      "expectedMessage": true,
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "sourceSha256": "ac22cafb97223be30fb1bb79122dc60498f2d00257792dac95eee49f05612e98",
+  "productionEnabled": false
+}

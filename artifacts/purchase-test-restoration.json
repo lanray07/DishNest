@@ -1,0 +1,18 @@
+{
+  "restoredAt": "2026-10-19T06:58:58.903253+00:00",
+  "packageId": "com.dishnest.app.purchasetest",
+  "apkSha256": "6f37f6551294c322a14d91f369550feaddc6df54aeaf5eab82a68fda330815bb",
+  "controllerSha256": "7c172250c8b5afb4180ffb98a378e733566d146fbf63db719c2bbceb99f3f8f0",
+  "catalogRestored": true,
+  "sandboxPropertyRestored": true,
+  "testerUserRestored": true,
+  "testerSubscriptionSettingsRestored": true,
+  "temporaryAllowanceRemoved": true,
+  "overlayPermissionChanged": false,
+  "ordinaryDataHashesUnchanged": true,
+  "ordinaryAppModified": false,
+  "serialIdentifierStored": false,
+  "testReceiptIdentifiersStored": false,
+  "ordinaryDataRecheckedAfterFireQa": true,
+  "ordinaryDataRecheckedAt": "2026-10-19T07:04:48.198998+00:00"
+}
