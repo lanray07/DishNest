@@ -1,15 +1,15 @@
 {
   "packageId": "com.dishnest.app.qa",
   "ordinaryAppModified": false,
-  "testedAt": "2026-10-18T20:36:04.6436519Z",
+  "testedAt": "2026-10-19T05:26:41.9499439Z",
   "model": "KFTRWI",
   "androidVersion": "9",
   "api": "28",
   "locale": "en-GB",
-  "apkSha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b",
-  "instrumentationApkSha256": "ab048a6cfc0b4a969cecbcaeae3bb1ea3f75ad1a4a14edff078fb15b6d2777cf",
-  "tests": 11,
-  "passedTests": 11,
+  "apkSha256": "ed1af6c1128f7bc249f526d15d4096866a73880845d17149523f72e3ddea45d1",
+  "instrumentationApkSha256": "fb79a5d7d010a36c0f316fd70f355d4a397f99746922e8047a0ce7bdfc73698c",
+  "tests": 12,
+  "passedTests": 12,
   "failedTests": 0,
   "passed": true,
   "uiSmokePassed": true,
@@ -20,6 +20,7 @@
     "Bundled offline OCR synthetic printed fixture",
     "Arabic/Hindi resource formatting",
     "Localized pasted recipe headings with Unicode step numbering",
+    "Pantry UI saves Arabic decimal digits and localized metric units without changing item names",
     "Real SQLite v1-to-v2 migration",
     "Named plan creation/selection across activity recreation",
     "Opt-in generic pantry reminder and duplicate suppression",
@@ -42,13 +43,13 @@
   "screenshots": [
     {
       "file": "artifacts/screens/fire-qa-named-plan.png",
-      "sha256": "f723aac535e3aaae25cc136fa7dc7f734fe87f6d0d298bcc977b3082643b3efc",
-      "apkSha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b"
+      "sha256": "ced740c5dc570b6964a2cf40f8a09cbe1719d20b4d3b860b3dfc40b99b6a575a",
+      "apkSha256": "ed1af6c1128f7bc249f526d15d4096866a73880845d17149523f72e3ddea45d1"
     },
     {
       "file": "artifacts/screens/fire-qa-arabic-large-font.png",
       "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
-      "apkSha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b"
+      "apkSha256": "ed1af6c1128f7bc249f526d15d4096866a73880845d17149523f72e3ddea45d1"
     }
   ]
 }

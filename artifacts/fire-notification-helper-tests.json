@@ -1,0 +1,11 @@
+{
+  "tests": 4,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "inputs": {
+    "tools/fire_notification_setting.py": "1d7045b673860e649db32b2645816a1fa543a6dbef1a674208d1e477f7458fd7",
+    "tools/test_fire_notification_setting.py": "37a8d2072bc8577f67704fc1af28099f36f6eb7eabbe3bbeae0218accbd5321f"
+  },
+  "physical_device_test": false
+}

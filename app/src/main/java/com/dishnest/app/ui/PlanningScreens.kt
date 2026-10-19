@@ -774,7 +774,7 @@ fun ItemEditor(
         confirmButton = {
             TextButton(
                 onClick = {
-                    val quantity = q.replace(',', '.').toDoubleOrNull()
+                    val quantity = com.dishnest.app.domain.QuantityNumbers.decimal(q)
                     when {
                         name.isBlank() ->
                             error = uiResources.getString(com.dishnest.app.R.string.copy_68669895ac)

@@ -1,29 +1,29 @@
 [
   {
     "file": "DishNest-0.1.0-debug.apk",
-    "bytes": 56040595,
-    "sha256": "8f340ecc07bfda885bee736ba4717171579ec5a76d763bd5dad12d53050aa107",
+    "bytes": 55555460,
+    "sha256": "d25649372f93ab10f6d4b619c6e4b8a6be2987b0ea4d1890e0a212914baa6a4e",
     "signed": true,
     "production_ready": false
   },
   {
     "file": "DishNest-0.1.0-release-unsigned.apk",
     "bytes": 48588927,
-    "sha256": "55e806616908748a06fb13f6d5314c84f974edcecf6b32ee50bd2a1063509940",
+    "sha256": "e88f6e18673e8f95281bbf3d429109777108f1bd602521c20fbca726b920658a",
     "signed": false,
     "production_ready": false
   },
   {
     "file": "DishNest-0.1.0-qa.apk",
-    "bytes": 55201373,
-    "sha256": "0820effa4e51d9253ff4831f3b955bf267a0e742c426d11f25cd3c0fe12bb43b",
+    "bytes": 54799244,
+    "sha256": "ed1af6c1128f7bc249f526d15d4096866a73880845d17149523f72e3ddea45d1",
     "signed": true,
     "production_ready": false
   },
   {
     "file": "DishNest-source.zip",
-    "bytes": 81764005,
-    "sha256": "ec766d8b0439457d2bbf2a79b03a53cc1f41d2bd9442ce6982a26fa5bc060f8f",
+    "bytes": 81779582,
+    "sha256": "c3010fcdceef34b4c28a2607969d4886c2cdf2d17662311b438eeb571b44097a",
     "kind": "source archive with verification evidence",
     "production_ready": false
   }

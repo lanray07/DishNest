@@ -20,6 +20,7 @@ class FireBackgroundAlarmTest {
     @Test fun backgroundAlarmProbe(): Unit = runBlocking {
         check(BuildConfig.APPLICATION_ID == "com.dishnest.app.qa")
         val phase = InstrumentationRegistry.getArguments().getString("phase")
+        val notificationsBlocked = InstrumentationRegistry.getArguments().getString("notificationsBlocked") == "true"
         assumeTrue(phase == "seed" || phase == "verify")
         val app = InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as DishNestApp
         val dao = app.database.kitchen()
@@ -52,7 +53,13 @@ class FireBackgroundAlarmTest {
                 assertEquals(template, dao.templates().first().single { it.id == template.id })
                 assertTrue("Background receiver did not persist delivery", timer.notified)
                 val manager = app.getSystemService(NotificationManager::class.java)
-                assertTrue("Own timer notification missing", manager.activeNotifications.any { it.tag == "timer:${timer.id}" })
+                if (notificationsBlocked) {
+                    assertFalse("QA notifications were not actually blocked", manager.areNotificationsEnabled())
+                    assertFalse("Blocked timer posted a notification", manager.activeNotifications.any { it.tag == "timer:${timer.id}" })
+                    assertEquals(0L, timer.remaining())
+                } else {
+                    assertTrue("Own timer notification missing", manager.activeNotifications.any { it.tag == "timer:${timer.id}" })
+                }
             } finally {
                 store.cancel(timer.id)
                 app.database.withTransaction {

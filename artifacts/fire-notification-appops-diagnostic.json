@@ -1,0 +1,12 @@
+{
+  "reproduced": true,
+  "symptom": "POST_NOTIFICATION app-op ignore read back successfully, but NotificationManager.areNotificationsEnabled remained true on API 28",
+  "failedAssertion": "QA notifications were not actually blocked",
+  "originalAppOpRestored": "default",
+  "qaOnly": true,
+  "resolution": "Use the observed DishNest QA Show notifications settings switch and verify restoration; no app notification implementation change required",
+  "reference": "https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-9.0.0_r61/services/core/java/com/android/server/notification/NotificationManagerService.java#2187",
+  "deviceApi": 28,
+  "apkSha256": "3affe0dd001b9926f58646af1df6f0a640e5526fd8eb5ca05dec00ee1fcbae02",
+  "controllerIssueAlsoObserved": "Fire uiautomator can return a null root with exit code zero; retry read-only hierarchy collection without repeating a tap"
+}

@@ -49,7 +49,7 @@ $match = [Regex]::Match($output, 'OK \((\d+) tests?\)')
 $totalMatch = [Regex]::Match($output, 'INSTRUMENTATION_STATUS: numtests=(\d+)')
 $passedTests = [Regex]::Matches($output, '(?m)^INSTRUMENTATION_STATUS_CODE: 0\r?$').Count
 $failedTests = [Regex]::Matches($output, '(?m)^INSTRUMENTATION_STATUS_CODE: -[12]\r?$').Count
-$passed = $commandExit -eq 0 -and $passedTests -ge 11 -and $failedTests -eq 0 -and $match.Success -and [int]$match.Groups[1].Value -ge 11 -and $output -notmatch 'FAILURES!!!|INSTRUMENTATION_FAILED|Process crashed'
+$passed = $commandExit -eq 0 -and $passedTests -ge 12 -and $failedTests -eq 0 -and $match.Success -and [int]$match.Groups[1].Value -ge 12 -and $output -notmatch 'FAILURES!!!|INSTRUMENTATION_FAILED|Process crashed'
 $record = [ordered]@{
     packageId = 'com.dishnest.app.qa'; ordinaryAppModified = $false
     testedAt = [DateTime]::UtcNow.ToString('o')
@@ -60,7 +60,7 @@ $record = [ordered]@{
     passedTests = $passedTests; failedTests = $failedTests
     passed = $passed
     uiSmokePassed = $passed
-    coverage = @('Empty kitchen and real recipe create/edit/delete UI', 'SQLite close/reopen persistence', 'Native bitmap photo ZIP round-trip', 'Bundled offline OCR synthetic printed fixture', 'Arabic/Hindi resource formatting', 'Localized pasted recipe headings with Unicode step numbering', 'Real SQLite v1-to-v2 migration', 'Named plan creation/selection across activity recreation', 'Opt-in generic pantry reminder and duplicate suppression', 'Denied microphone touch fallback', 'Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL')
+    coverage = @('Empty kitchen and real recipe create/edit/delete UI', 'SQLite close/reopen persistence', 'Native bitmap photo ZIP round-trip', 'Bundled offline OCR synthetic printed fixture', 'Arabic/Hindi resource formatting', 'Localized pasted recipe headings with Unicode step numbering', 'Pantry UI saves Arabic decimal digits and localized metric units without changing item names', 'Real SQLite v1-to-v2 migration', 'Named plan creation/selection across activity recreation', 'Opt-in generic pantry reminder and duplicate suppression', 'Denied microphone touch fallback', 'Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL')
     notCovered = @('App Tester/LAT purchases', 'Granted microphone or spoken commands', 'TTS/audio focus', 'Doze/reboot; process-termination timer delivery is recorded separately', 'TalkBack and full system font matrix', 'Actual camera or real-photo OCR accuracy', 'Publisher-signed release')
     backgroundAlarmEvidence = 'artifacts/fire-background-alarm.json'
     serialIdentifierStored = $false

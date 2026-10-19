@@ -138,16 +138,18 @@ object Ingredients {
         )
 
     // Cups are deliberately not converted: a US cup and a metric cup are different.
-    fun name(raw: String) = raw.trim().lowercase().replace(Regex("\\s+"), " ")
+    fun name(raw: String) = raw.trim().lowercase(java.util.Locale.ROOT).replace(Regex("\\s+"), " ")
 
     fun unit(raw: String): String =
-        when (val u = raw.trim().lowercase()) {
+        when (val u = raw.trim().lowercase(java.util.Locale.ROOT)) {
+            "gramme", "grammes", "gramm", "grammi", "gramos", "grama", "gramas", "grammen", "gramy", "gramów", "غ", "غرام", "غرامات", "ग्राम" -> "g"
+            "kilogramme", "kilogrammes", "kilogramm", "chilogrammi", "kilogramos", "quilogramas", "kilogramy", "kilogramów", "كغ", "كيلوغرام", "किलोग्राम" -> "kg"
+            "millilitre", "milliliter", "millilitres", "milliliters", "millilitri", "mililitros", "mililitrów", "مل", "مليلتر", "मिलीलीटर" -> "ml"
+            "litri", "litros", "litrów", "لتر", "लीटर" -> "l"
             "grams",
             "gram" -> "g"
             "kilogram",
             "kilograms" -> "kg"
-            "millilitres",
-            "milliliters" -> "ml"
             "litres",
             "liters",
             "litre",
@@ -181,25 +183,17 @@ object Ingredients {
         val clean =
             line
                 .trim()
-                .replace(Regex("(\\d)([½¼¾])"), "$1 $2")
+                .replace(Regex("(\\p{Nd})([½¼¾])"), "$1 $2")
                 .replace("½", "1/2")
                 .replace("¼", "1/4")
                 .replace("¾", "3/4")
                 .removePrefix("•")
                 .trim()
-        // A comma followed by three digits is ambiguous without a source locale.
-        if (Regex("^\\d+,\\d{3}(?:\\s|$)").containsMatchIn(clean))
-            return Ingredient(clean, category = category(clean))
         val match =
-            Regex("^(\\d+(?:[.,]\\d+)?(?:\\s+\\d+/\\d+)?|\\d+/\\d+)\\s+(.*)$").find(clean)
+            Regex("^(\\p{Nd}+(?:[.,٫．，]\\p{Nd}+)?(?:[\\s\\u00a0\\u202f]+\\p{Nd}+/\\p{Nd}+)?|\\p{Nd}+/\\p{Nd}+)[\\s\\u00a0\\u202f]+(.*)$").find(clean)
                 ?: return Ingredient(clean, category = category(clean))
-        val q =
-            match.groupValues[1].split(' ').sumOf { part ->
-                if ('/' in part) {
-                    val f = part.split('/')
-                    (f[0].toDoubleOrNull() ?: 0.0) / (f[1].toDoubleOrNull() ?: 1.0)
-                } else part.replace(',', '.').toDoubleOrNull() ?: 0.0
-            }
+        val q = QuantityNumbers.ingredient(match.groupValues[1])
+            ?: return Ingredient(clean, category = category(clean))
         val rest = match.groupValues[2]
         val head = rest.substringBefore(' ')
         val u = unit(head)

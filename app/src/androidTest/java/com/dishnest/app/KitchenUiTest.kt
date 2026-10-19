@@ -43,6 +43,24 @@ class KitchenUiTest {
         }
     }
 
+    @Test fun pantrySavesArabicDigitsAndMetricUnitWithoutChangingTheItemName() {
+        fun text(id: Int) = rule.activity.getString(id)
+        rule.onNodeWithText(text(R.string.nav_pantry), useUnmergedTree = true).performClick()
+        rule.onAllNodesWithText(text(R.string.ui_add_item_d1a0b3)).onFirst().performClick()
+        rule.onNodeWithText(text(R.string.ui_item_name_70d5f4)).performTextInput("عدس B１２")
+        rule.onNodeWithText(text(R.string.ui_quantity_blank_if_unknown_1d8e1a)).performTextInput("٢٥٫٥")
+        rule.onNodeWithText(text(R.string.ui_unit_g_kg_ml_l_tsp_tbsp_6e0535)).performTextInput("غرام")
+        rule.onNodeWithText(text(R.string.ui_save_1509f5)).performClick()
+        rule.waitUntil(20000) { rule.onAllNodesWithText("عدس B１２").fetchSemanticsNodes().isNotEmpty() }
+        val app = rule.activity.application as DishNestApp
+        runBlocking {
+            val item = app.database.kitchen().pantry().first().single()
+            org.junit.Assert.assertEquals("عدس B１２", item.name)
+            org.junit.Assert.assertEquals(25.5, item.quantity!!, 0.0)
+            org.junit.Assert.assertEquals("g", item.unit)
+        }
+    }
+
     private fun captureOwnUi(name: String) {
         val bitmap = rule.onRoot().captureToImage().asAndroidBitmap()
         java.io.File(rule.activity.cacheDir, name).outputStream().use {

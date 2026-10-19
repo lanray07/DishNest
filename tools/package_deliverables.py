@@ -20,7 +20,7 @@ for source,name in [(ROOT/'app/build/outputs/apk/debug/app-debug.apk','DishNest-
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
 def archive_source():
     evidence={'build-provenance.json','signing-configuration-guard.json','signing-configuration-guard.log','fire-device-qa.json','device-instrumentation.txt','fire-background-alarm.json','fire-background-seed.txt','fire-background-verify.txt','qa-summary.json','submission-readiness.json','delivery-verification.log','billing-server-tests.xml','billing-server-tests.txt','billing-contract.json','billing-configuration-guard.json','billing-configuration-guard.log','device-evidence.json','device-inventory.txt','runtime-components.json','native-alignment.json','apk-validation.json','apk-signature.txt','apk-alignment.txt','apk-metadata.txt','asset-validation.json','website-verification.json'}
-    evidence.add('visual-localization.json')
+    evidence.update({'visual-localization.json','fire-blocked-notifications.json','fire-blocked-notifications-seed.txt','fire-blocked-notifications-verify.txt','fire-notification-appops-failure.txt','fire-notification-appops-diagnostic.json','fire-notification-helper-tests.json','fire-notification-helper-tests.txt'})
     source_zip=OUT/'DishNest-source.zip'
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
@@ -59,9 +59,11 @@ if lint_file.exists():
     issues=ET.parse(lint_file).getroot().findall('issue')
     errors=[i for i in issues if i.attrib.get('severity') in ['Error','Fatal']]
     summary['android_lint']={'errors':len(errors),'error_categories':sorted({i.attrib.get('id') for i in errors}),'passed':not errors,'report':'app/build/reports/lint-results-debug.html'}
-for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','submission-readiness','billing-contract','billing-configuration-guard']:
+for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-configuration-guard']:
     report=ROOT/f'artifacts/{name}.json'
-    if report.exists():summary[name]=json.loads(report.read_text(encoding='utf-8'))
+    if report.exists():summary[name]=json.loads(report.read_text(encoding='utf-8-sig'))
+blocked=summary.get('fire-blocked-notifications', {})
+summary['blocked_notifications_current']=summary['device_instrumentation_current'] and blocked.get('apkSha256')==fire.get('apkSha256') and blocked.get('instrumentationApkSha256')==fire.get('instrumentationApkSha256') and blocked.get('notificationSettingRestored') is True and blocked.get('notificationsBlocked') is True and blocked.get('passed') is True and blocked.get('controllerSha256')==hashlib.sha256((ROOT/'tools/run_fire_alarm_probe.ps1').read_bytes()).hexdigest() and blocked.get('notificationHelperSha256')==hashlib.sha256((ROOT/'tools/fire_notification_setting.py').read_bytes()).hexdigest()
 summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
 source_zip=archive_source()
 manifest.append({'file':source_zip.name,'bytes':source_zip.stat().st_size,'sha256':hashlib.sha256(source_zip.read_bytes()).hexdigest(),'kind':'source archive with verification evidence','production_ready':False})
