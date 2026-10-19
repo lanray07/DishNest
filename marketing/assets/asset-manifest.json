@@ -8,9 +8,16 @@
     "charcoal": "#29312D",
     "cream": "#F1E8D8"
   },
-  "icon": "Original plate, nest and leaf mark; editable SVG plus Android VectorDrawable",
+  "icon": "Premium emerald/teal, coral and champagne-gold nest-and-leaf artwork; imagegen-authored raster master with size exports and SVG compatibility wrappers. Original monochrome vector retained for themed icons and notifications.",
   "food_photo": "Original AI-generated image via built-in imagegen, 2026-10-18; illustrative demo recipe only",
   "navigation": "Material Symbols via androidx.compose.material:material-icons-extended, Apache 2.0",
   "ocr": "Tesseract4Android 4.9.0 and tessdata_fast English; see THIRD_PARTY_NOTICES.md",
-  "review": "Human visual and trademark review required before release"
+  "review": "Human visual and trademark review required before release",
+  "icon_generation": {
+    "tool": "built-in image_gen",
+    "date": "2026-10-19",
+    "source": "marketing/assets/icon-premium-source.png",
+    "prompt": "marketing/icon-premium-prompt.txt",
+    "sourceSha256": "e1b0524576fb033353e2725ccd22ea26ed2e0d015f7a8a40482cbed8ff3aa8ac"
+  }
 }

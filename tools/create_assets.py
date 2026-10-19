@@ -1,4 +1,4 @@
-"""Render original scalable DishNest brand assets; no third-party artwork."""
+"""Render DishNest brand assets and retain the authored premium icon exports."""
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 import json,math
@@ -8,6 +8,10 @@ SVG='''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108"><rect width
 # Rasterise the same mark at 4x resolution with antialiasing.
 import aggdraw
 def icon(size,mono=False,transparent=False):
+    premium = OUT/'icon-premium-source.png'
+    if premium.exists() and not mono and not transparent:
+        with Image.open(premium) as source:
+            return source.convert('RGBA').resize((size,size),Image.Resampling.LANCZOS)
     scale=4;side=size*scale;s=side/108
     image=Image.new('RGBA',(side,side),(0,0,0,0) if transparent else '#456b59');draw=ImageDraw.Draw(image)
     color='#ffffff' if mono else '#faf7f0'
@@ -28,3 +32,7 @@ for name,title,subtitle in [('onboarding-keep','Keep the good ones.','A home for
     (OUT/f'{name}.svg').write_text(svg,encoding='utf-8')
 manifest={'brand':'DishNest','palette':{'sage':'#456B59','ivory':'#FAF7F0','terracotta':'#C97859','accessible_terracotta':'#9E5034','charcoal':'#29312D','cream':'#F1E8D8'},'icon':'Original plate, nest and leaf mark; editable SVG plus Android VectorDrawable','food_photo':'Original AI-generated image via built-in imagegen, 2026-10-18; illustrative demo recipe only','navigation':'Material Symbols via androidx.compose.material:material-icons-extended, Apache 2.0','ocr':'Tesseract4Android 4.9.0 and tessdata_fast English; see THIRD_PARTY_NOTICES.md','review':'Human visual and trademark review required before release'}
 (OUT/'asset-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8');print('Created original icon layers, splash, onboarding, empty-state and promotional assets.')
+if (OUT/'icon-premium-source.png').is_file():
+    # Reapply canonical launcher/web/store exports after legacy monochrome assets.
+    import subprocess
+    subprocess.run(['node', str(ROOT/'tools/export_premium_icon.cjs')],check=True,cwd=ROOT)

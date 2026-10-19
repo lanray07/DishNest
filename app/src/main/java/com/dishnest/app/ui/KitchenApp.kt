@@ -14,6 +14,7 @@ import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -339,7 +340,7 @@ fun Brand() {
     ) {
         Surface(color = Sage, shape = RoundedCornerShape(12.dp), modifier = Modifier.size(40.dp)) {
             Image(
-                painterResource(R.drawable.ic_nest),
+                painterResource(R.drawable.ic_nest_color),
                 uiResources.getString(com.dishnest.app.R.string.copy_ff59fa9de2),
             )
         }
@@ -436,9 +437,9 @@ fun EmptyState(title: String, body: String, button: String = "", onClick: () -> 
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         Image(
-            painterResource(R.drawable.ic_nest),
+            painterResource(R.drawable.ic_nest_color),
             null,
-            Modifier.size(84.dp).background(Sage, RoundedCornerShape(24.dp)),
+            Modifier.size(84.dp).clip(RoundedCornerShape(24.dp)),
         )
         Text(title, style = MaterialTheme.typography.titleLarge)
         Text(body, color = Muted)

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T16:01:25.685125+00:00",
+  "generatedAt": "2026-10-19T16:09:49.120482+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -49,9 +49,9 @@
     },
     {
       "check": "Evidence matches current build",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/build-provenance.json",
-      "remaining": ""
+      "remaining": "Run full Gradle verification and record the input/output hashes"
     },
     {
       "check": "Locale resource coverage",
@@ -67,9 +67,9 @@
     },
     {
       "check": "Current desktop and phone website QA",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/website-verification.json",
-      "remaining": ""
+      "remaining": "Run browser verification on all current local pages at both viewport sizes"
     },
     {
       "check": "Native language and full UI approval",
@@ -91,9 +91,9 @@
     },
     {
       "check": "APK signature and binary alignment",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/apk-validation.json; artifacts/native-alignment.json",
-      "remaining": ""
+      "remaining": "Validate exact output binaries; release signing remains a separate publisher gate"
     },
     {
       "check": "Unconfigured billing build rejection",

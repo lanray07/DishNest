@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-10-19T16:09:46.786Z",
+  "generator": "built-in image_gen",
+  "prompt": "marketing/icon-premium-prompt.txt",
+  "palette": [
+    "emerald",
+    "teal",
+    "coral",
+    "champagne gold"
+  ],
+  "androidDebugBuildPassed": true,
+  "iconDimensionsVerified": true,
+  "svgRenderingVerified": true,
+  "adaptiveForegroundInsetDp": 12,
+  "monochromeNotificationAndThemedIconRetained": true,
+  "installedOnFire": false,
+  "storeUploaded": false,
+  "published": false,
+  "productionReady": false,
+  "remaining": [
+    "Rebuild and revalidate full release/LAT candidates and derived listing renders before store submission"
+  ],
+  "sha256": {
+    "marketing/assets/icon-premium-source.png": "e1b0524576fb033353e2725ccd22ea26ed2e0d015f7a8a40482cbed8ff3aa8ac",
+    "marketing/assets/icon-512.png": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529",
+    "marketing/assets/icon-114.png": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370",
+    "app/src/main/res/drawable-nodpi/ic_nest_color.png": "c76af931070d7aa27c1a95eef96ea768315cea34b8a5930e7d60245777f97277",
+    "app/src/main/res/drawable/ic_launcher_color.xml": "240cee97aac785fd4a2ef42f35ac9f52670fe24016123e96ae5acce9732bb1ed",
+    "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "6fc698bbd316ed68e3357623f942e02ee23cb44c2965f58c21e6143d7fdd0f22",
+    "website/assets/icon.svg": "3e859ffe5cb3431948bb486b0051629c50264bc486fbce9a9c9fa84f75124f5d"
+  }
+}
