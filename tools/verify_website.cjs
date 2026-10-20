@@ -51,7 +51,13 @@ fs.mkdirSync(evidenceDir, { recursive: true });
         if (['privacy', 'support'].includes(slug)) await page.screenshot({ path: path.join(evidenceDir, `${slug}-${device}.png`), fullPage: false });
         const renderedViewport = await page.evaluate(() => ({ width: innerWidth, height: innerHeight }));
         if (renderedViewport.width !== width || renderedViewport.height !== height) throw new Error(`Wrong viewport: ${file}/${device}`);
-        checkedPages.push({ file, title: await page.title(), http: changedResponse.status(), viewportWidth: renderedViewport.width, viewportHeight: renderedViewport.height, overflow: pageOverflow, contentVerified: true, brokenImages: images });
+        const navigation = await page.evaluate(() => ({
+          navigationVisible: document.querySelectorAll('nav a').length > 0 && [...document.querySelectorAll('nav a')].every(a => a.getBoundingClientRect().width > 0 && a.getBoundingClientRect().height > 0),
+          skipLinkPresent: !!document.querySelector('a[href="#main"]'),
+          landmarkPresent: !!document.querySelector('main#main')
+        }));
+        if (!navigation.navigationVisible || !navigation.skipLinkPresent || !navigation.landmarkPresent) throw new Error(`Navigation inaccessible: ${file}/${device}`);
+        checkedPages.push({ file, title: await page.title(), http: changedResponse.status(), viewportWidth: renderedViewport.width, viewportHeight: renderedViewport.height, overflow: pageOverflow, contentVerified: true, brokenImages: images, ...navigation });
       }
       const result = { device, identity, http: response.status(), overflow, brokenImages, pageErrors: errors, faqOpened: answerVisible > 0, checkedPages, browserPath: 'Playwright: Browser plugin not available', evidenceDir };
       results.push(result);

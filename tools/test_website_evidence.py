@@ -15,13 +15,24 @@ class WebsiteEvidenceTest(unittest.TestCase):
                 file.write_text('fixture', encoding='utf-8')
             result = {'identity': True, 'faqOpened': True, 'http': 200, 'overflow': False, 'brokenImages': [], 'pageErrors': [],
                       'checkedPages': [{'file': p, 'http': 200, 'overflow': False, 'contentVerified': True, 'brokenImages': []} for p in ['index.html', 'privacy.html']]}
-            report = {'passed': True, 'inputs': inputs(root), 'results': [dict(result, device=d) for d in ['desktop', 'phone']]}
+            results = []
+            for device, width, height in [('desktop', 1440, 1000), ('phone', 390, 844)]:
+                current = copy.deepcopy(result)
+                current['device'] = device
+                for page in current['checkedPages']:
+                    page.update(viewportWidth=width, viewportHeight=height, navigationVisible=True, skipLinkPresent=True, landmarkPresent=True)
+                results.append(current)
+            report = {'passed': True, 'inputs': inputs(root), 'results': results}
             self.assertTrue(verify(report, root))
-            for mutation in ['page', 'console', 'viewport', 'failed', 'missing_check']:
+            for mutation in ['page', 'console', 'viewport', 'wrong_dimensions', 'hidden_navigation', 'missing_skip', 'missing_landmark', 'failed', 'missing_check']:
                 changed = copy.deepcopy(report)
                 if mutation == 'page': changed['results'][0]['checkedPages'].pop()
                 if mutation == 'console': changed['results'][0]['pageErrors'].append('runtime error')
                 if mutation == 'viewport': changed['results'].pop()
+                if mutation == 'wrong_dimensions': changed['results'][1]['checkedPages'][0]['viewportWidth'] = 1440
+                if mutation == 'hidden_navigation': changed['results'][1]['checkedPages'][0]['navigationVisible'] = False
+                if mutation == 'missing_skip': del changed['results'][0]['checkedPages'][0]['skipLinkPresent']
+                if mutation == 'missing_landmark': changed['results'][0]['checkedPages'][0]['landmarkPresent'] = False
                 if mutation == 'failed': changed['passed'] = False
                 if mutation == 'missing_check': del changed['results'][0]['checkedPages'][0]['overflow']
                 self.assertFalse(verify(changed, root), mutation)

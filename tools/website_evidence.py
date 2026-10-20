@@ -33,6 +33,8 @@ def verify(report=None, root=ROOT):
                 return False
             if any((p.get('viewportWidth'), p.get('viewportHeight')) != expected_size for p in checked):
                 return False
+            if any(p.get('navigationVisible') is not True or p.get('skipLinkPresent') is not True or p.get('landmarkPresent') is not True for p in checked):
+                return False
         return True
     except (OSError, ValueError, KeyError, TypeError):
         return False

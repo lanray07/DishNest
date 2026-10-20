@@ -1,0 +1,24 @@
+{
+  "contactedAt": "2026-10-20",
+  "timezone": "Europe/London",
+  "destination": "Amazon Developer Support",
+  "category": "Testing Tool for App",
+  "topic": "Live App Testing - Live App Testing Issues",
+  "subject": "DishNest LAT monthly entitlement remains active after reset; annual/lifetime tests blocked",
+  "requestSubmitted": true,
+  "confirmedStatus": "In Process: pending Amazon action",
+  "scope": "Investigate/reset only the stale monthly LAT test subscription and advise clean accelerated expiry, annual and lifetime purchase testing; preserve real customer purchases and public catalog",
+  "evidence": [
+    "artifacts/amazon-test2-receipt-state.json",
+    "artifacts/screens/amazon-device-tester-reset.png",
+    "artifacts/screens/fire-test2-after-restart.png"
+  ],
+  "evidenceDelivery": "Existing public GitHub links in the case description; no attachments",
+  "caseUrlAndConfirmationStoredPrivately": true,
+  "privateTesterIdentifiersSent": false,
+  "credentialsOrRawReceiptsSent": false,
+  "paidPlanEnabled": false,
+  "appOrCustomerDataModified": false,
+  "publicReleaseSubmitted": false,
+  "resetCompleted": false
+}

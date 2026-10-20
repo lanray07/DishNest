@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T08:54:00.069208+00:00",
+  "generatedAt": "2026-10-20T09:08:40.733304+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -67,9 +67,9 @@
     },
     {
       "check": "Current desktop and phone website QA",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/website-verification.json",
-      "remaining": "Run browser verification on all current local pages at both viewport sizes"
+      "remaining": ""
     },
     {
       "check": "Native language and full UI approval",
@@ -110,8 +110,8 @@
     {
       "check": "Amazon catalog and live verification",
       "status": "pending",
-      "evidence": "docs/AMAZON_LAT.md; docs/AMAZON_PURCHASE_QA.md; marketing/amazon-premium-console.json; artifacts/amazon-lat-console.json",
-      "remaining": "Both IAPs are TEST Live and private LAT Tests 1 and 2 are in progress. The existing Fire acquisition route still delivers Test 1; fresh Test 2 invitation acquisition is pending. Amazon-delivered monthly purchase, verified Premium, restart/restore and autorenew-off access were observed on Fire; see artifacts/fire-amazon-lat-qa.json. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required."
+      "evidence": "docs/AMAZON_LAT.md; artifacts/fire-test2-qa.json; artifacts/amazon-support-request.json; marketing/amazon-premium-console.json",
+      "remaining": "Both IAPs are TEST Live and private LAT Tests 1 and 2 are in progress. The genuine Test 2 APK was acquired and verified on Fire. Reset, clean test data and restart still restore a monthly test receipt with future cancellation and absent renewal, blocking annual/lifetime checkout. Amazon support has been contacted for a test-only reset. Monthly grant/restart/restore and autorenew-off access passed in Test 1. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required; original app/data rollback passed."
     },
     {
       "check": "Physical Fire native components",

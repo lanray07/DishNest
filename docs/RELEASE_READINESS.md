@@ -45,7 +45,7 @@ The remaining release categories, their local work and the evidence needed to cl
 | Configuration guard | Enabled billing rejects missing HTTPS verifier configuration even with the real Amazon public key present | `artifacts/billing-configuration-guard.json` |
 | Resolved dependency inventory | 92 artifacts; 0 missing licence declarations | `docs/dependencies/runtime-inventory.json` |
 | Native binary and APK alignment/signature | See exact packaged APK evidence and checksums | `artifacts/native-alignment.json`, `artifacts/apk-validation.json`, delivery manifest |
-| Website | PENDING: browser evidence is missing, incomplete or does not match current website inputs | `artifacts/website-verification.json` |
+| Website | PASS: all 12 current pages at desktop 1440×1000 and phone 390×844; GitHub links, identity, content, FAQ, console, images and overflow checked | `artifacts/website-verification.json` |
 | Assets/listing dimensions | Local validation passes; all store outputs remain drafts | `artifacts/asset-validation.json` |
 
 The Android host suite covers ingredient/quantity logic, planner/backup/voice/timer policies, Room persistence, entitlement signatures and clock handling, photo orientation, tablet/phone UI flows, empty launch, recipe editing across activity recreation and Arabic navigation/RTL. The native bitmap tests verify decoding mechanics; they do not verify OCR recognition accuracy. See individual XML suites for the authoritative cases.

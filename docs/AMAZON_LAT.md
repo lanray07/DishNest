@@ -1,5 +1,9 @@
 # DishNest private LAT
 
+## Amazon support follow-up
+
+On 20 October, the publisher explicitly requested contact with Amazon support. A case was submitted under **Testing Tool for App / Live App Testing - Live App Testing Issues**, requesting investigation/reset of only the stale monthly LAT test subscription and guidance for clean accelerated expiry, annual and lifetime purchase checks. Amazon confirmed **In Process: pending Amazon action**. The case includes the app/track identifiers and the three existing public, sanitized GitHub evidence links, with no raw receipts, credentials or private tester identifiers. The case URL, exact sent text and confirmation screenshot remain in the protected local publisher folder. `artifacts/amazon-support-request.json` records the request without private case details. A submitted request is not a completed reset or a purchase-test pass. No app data, plan or public catalog was changed while contacting support.
+
 ## 20 October: genuine Test 2 acquisition and receipt-state diagnosis
 
 The publisher opened the Test 2 acquisition page on the connected Fire. Its ASIN is `B0HHDDWZX3`; the earlier Test 1 route is `B0HDL8J86H`. After another isolated recovery proof, the authorized temporary switch delivered a distinct, non-debuggable Amazon-signed Test 2 APK, SHA-256 `b73060da22a8c798e75b015593edcc83466f8f33d7430b14c4c89cdeb1be4458`. The installer, LAT verifier binding and Amazon certificate were verified, and the new colourful icon was observed in the actual release UI.
