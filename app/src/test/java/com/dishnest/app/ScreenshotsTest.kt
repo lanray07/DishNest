@@ -22,10 +22,17 @@ class ScreenshotsTest {
 
     @Before
     fun emptyKitchen() {
+        lateinit var reset: kotlinx.coroutines.Job
         rule.runOnUiThread {
-            androidx.lifecycle
+            reset = androidx.lifecycle
                 .ViewModelProvider(rule.activity)[KitchenViewModel::class.java]
                 .deleteAll()
+        }
+        // The initial empty UI can render before the asynchronous reset finishes.
+        // Do not race a demo load against a reset still clearing Room/DataStore.
+        rule.waitUntil(20000) {
+            org.robolectric.Shadows.shadowOf(android.os.Looper.getMainLooper()).idle()
+            reset.isCompleted
         }
         rule.waitUntil(20000) {
             rule
@@ -122,8 +129,11 @@ class ScreenshotsTest {
             rule.onAllNodesWithText("Explore a demo kitchen").fetchSemanticsNodes().isNotEmpty()
         }
         rule.onNodeWithText("Explore a demo kitchen").performClick()
+        val vm = androidx.lifecycle.ViewModelProvider(rule.activity)[KitchenViewModel::class.java]
         rule.waitUntil(20000) {
-            rule.onAllNodesWithText("Lemon & herb chicken").fetchSemanticsNodes().isNotEmpty()
+            // The phone hero shows today's planned meal, not always the first demo recipe.
+            rule.onAllNodesWithText("Explore a demo kitchen").fetchSemanticsNodes().isEmpty() &&
+                vm.state.value.demo && vm.state.value.recipes.size == 4
         }
         shot("$device-home")
         rule.onNodeWithText("Recipe book", useUnmergedTree = true).performClick()

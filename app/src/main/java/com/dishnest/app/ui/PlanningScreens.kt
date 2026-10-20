@@ -71,7 +71,7 @@ fun PlanScreen(
                     )
                 }
                 Text(
-                    "${start.format(DateTimeFormatter.ofPattern("d MMM", uiResources.configuration.locales[0]))} – ${start.plusDays(6).format(DateTimeFormatter.ofPattern("d MMM yyyy", uiResources.configuration.locales[0]))}",
+                    "${uiResources.calendarDate(start, "d MMM")} – ${uiResources.calendarDate(start.plusDays(6), "d MMM yyyy")}",
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.weight(1f),
                 )
@@ -149,7 +149,7 @@ fun PlanScreen(
                                 style = MaterialTheme.typography.labelSmall,
                             )
                             Text(
-                                "${date.dayOfMonth}",
+                                uiResources.number(date.dayOfMonth),
                                 style = MaterialTheme.typography.titleLarge,
                                 color = if (date == LocalDate.now()) Color.White else Ink,
                             )
@@ -235,7 +235,7 @@ fun PlanScreen(
         }
         FullDialog(
             onDismiss = { assign = null },
-            title = "${uiResources.mealSlot(slot)} · ${date.format(DateTimeFormatter.ofPattern("EEE d MMM", uiResources.configuration.locales[0]))}",
+            title = "${uiResources.mealSlot(slot)} · ${uiResources.calendarDate(date, "EEE d MMM")}",
         ) {
             Stepper(servings, { servings = it }, stringResource(R.string.ui_servings_32939b))
             s.recipes.forEach { r ->
@@ -407,6 +407,7 @@ fun ShoppingScreen(s: KitchenState, vm: KitchenViewModel) {
         val start = Planner.week(LocalDate.now())
         val format = DateTimeFormatter.ofLocalizedDate(java.time.format.FormatStyle.MEDIUM)
             .withLocale(LocalConfiguration.current.locales[0])
+            .withDecimalStyle(java.time.format.DecimalStyle.of(LocalConfiguration.current.locales[0]))
         Text("${start.format(format)} – ${start.plusDays(6).format(format)}")
         s.plans.forEach { plan ->
             val planLabel = if (plan.id == DEFAULT_PLAN_ID && plan.name == "My meal plan") stringResource(R.string.default_plan) else plan.name
@@ -784,7 +785,7 @@ fun ItemEditor(
                         pantry &&
                             date.isNotBlank() &&
                             runCatching { LocalDate.parse(date) }.isFailure ->
-                            error = "Enter a date as YYYY-MM-DD."
+                            error = uiResources.getString(R.string.error_invalid_date)
                         else -> onSave(name.trim(), quantity, Ingredients.unit(unit), date)
                     }
                 }

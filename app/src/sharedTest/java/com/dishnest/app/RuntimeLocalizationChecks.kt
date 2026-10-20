@@ -30,6 +30,15 @@ object RuntimeLocalizationChecks {
             assertEquals(resources.getString(R.string.category_produce), resources.shoppingCategory("Fruit & vegetables"))
             assertEquals(resources.getString(R.string.difficulty_easy), resources.difficulty("Easy"))
             assertEquals(resources.getString(R.string.amount_unspecified), resources.amount(null, "g"))
+            val locale = resources.configuration.locales[0]
+            val expectedNumber = java.text.NumberFormat.getIntegerInstance(locale).apply { isGroupingUsed = false }.format(1234)
+            assertEquals(tag, expectedNumber, resources.number(1234))
+            val numericDate = resources.calendarDate(java.time.LocalDate.of(2030, 12, 23), "d/M/yyyy")
+            if (tag == "ar") {
+                assertEquals("١٢٣٤", resources.number(1234))
+                assertEquals("٢٣/١٢/٢٠٣٠", numericDate)
+            }
+            assertTrue(tag, numericDate.isNotBlank())
             val recipe = Recipe(title = privateText, servings = 3, ingredients = listOf(Ingredient("lentils", 200.0, "g")),
                 steps = listOf("Keep my own words · اخلط"), notes = "My private note")
             val exported = recipeText(recipe, resources)

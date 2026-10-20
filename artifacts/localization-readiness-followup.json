@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-20T10:10:10.350206+00:00",
+  "originalApkUnchanged": true,
+  "originalPrivateFilesMatchProtectedArchive": true,
+  "persistentFilesVerified": 5,
+  "privateFileHashesStored": false,
+  "nativeTests": 6,
+  "uiTests": 13,
+  "uiPassed": true,
+  "normalTimerPassed": true,
+  "blockedNotificationTimerPassed": true,
+  "captures": [
+    {
+      "file": "artifacts/screens/fire-qa-arabic-large-font.png",
+      "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
+      "width": 1080,
+      "height": 1026
+    },
+    {
+      "file": "artifacts/screens/fire-qa-named-plan.png",
+      "sha256": "28c72da67fd412f0b6e48992e7ac711e45b7b1ee95c4d75948aa44b954215c9d",
+      "width": 1920,
+      "height": 1200
+    }
+  ],
+  "publicSubmission": false,
+  "paidServicesEnabled": false,
+  "ordinaryAppInstalledOrLaunched": false,
+  "displaySettingRestored": true
+}

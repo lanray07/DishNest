@@ -8,6 +8,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
+import com.dishnest.app.ui.number
 
 class ArabicFireUiTest {
     @get:Rule val rule = createAndroidComposeRule<QaConfigurationActivity>()
@@ -21,6 +22,9 @@ class ArabicFireUiTest {
         assertEquals("ar", context.resources.configuration.locales[0].language)
         assertEquals(1.5f, context.resources.configuration.fontScale, 0.001f)
         rule.onNodeWithText(context.getString(R.string.nav_plan), useUnmergedTree = true).performClick()
+        val firstDay = com.dishnest.app.domain.Planner.week(java.time.LocalDate.now()).dayOfMonth
+        rule.onNodeWithText(context.resources.number(firstDay)).assertIsDisplayed()
+        rule.onNodeWithText(firstDay.toString()).assertDoesNotExist()
         rule.onNodeWithText(context.getString(R.string.manage_plans)).performClick()
         rule.onNodeWithText(context.getString(R.string.new_plan_name)).performScrollTo().assertIsDisplayed()
         rule.onNodeWithText(context.getString(R.string.create_plan)).performScrollTo().assertIsDisplayed()

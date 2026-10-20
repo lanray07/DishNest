@@ -50,6 +50,11 @@ class KitchenUiTest {
         rule.onNodeWithText(text(R.string.ui_item_name_70d5f4)).performTextInput("عدس B１２")
         rule.onNodeWithText(text(R.string.ui_quantity_blank_if_unknown_1d8e1a)).performTextInput("٢٥٫٥")
         rule.onNodeWithText(text(R.string.ui_unit_g_kg_ml_l_tsp_tbsp_6e0535)).performTextInput("غرام")
+        rule.onNodeWithText(text(R.string.ui_check_date_yyyy_mm_dd_optional_ebbc43)).performTextInput("2030-13-01")
+        rule.onNodeWithText(text(R.string.ui_save_1509f5)).performClick()
+        rule.onNodeWithText(text(R.string.error_invalid_date)).assertIsDisplayed()
+        runBlocking { org.junit.Assert.assertTrue((rule.activity.application as DishNestApp).database.kitchen().pantry().first().isEmpty()) }
+        rule.onNodeWithText(text(R.string.ui_check_date_yyyy_mm_dd_optional_ebbc43)).performTextReplacement("2030-12-01")
         rule.onNodeWithText(text(R.string.ui_save_1509f5)).performClick()
         rule.waitUntil(20000) { rule.onAllNodesWithText("عدس B１２").fetchSemanticsNodes().isNotEmpty() }
         val app = rule.activity.application as DishNestApp
@@ -58,6 +63,7 @@ class KitchenUiTest {
             org.junit.Assert.assertEquals("عدس B１２", item.name)
             org.junit.Assert.assertEquals(25.5, item.quantity!!, 0.0)
             org.junit.Assert.assertEquals("g", item.unit)
+            org.junit.Assert.assertEquals("2030-12-01", item.expiry)
         }
     }
 

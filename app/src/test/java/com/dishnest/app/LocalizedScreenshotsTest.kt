@@ -41,7 +41,12 @@ class LocalizedScreenshotsTest {
         val copy = Gson().fromJson<Map<String, Visual>>(
             File("../marketing/visual-localization.json").readText(), type).getValue(locale).sample
         val vm = androidx.lifecycle.ViewModelProvider(rule.activity)[KitchenViewModel::class.java]
-        rule.runOnUiThread { vm.deleteAll() }
+        lateinit var reset: kotlinx.coroutines.Job
+        rule.runOnUiThread { reset = vm.deleteAll() }
+        rule.waitUntil(20000) {
+            org.robolectric.Shadows.shadowOf(android.os.Looper.getMainLooper()).idle()
+            reset.isCompleted
+        }
         rule.waitUntil(20000) { rule.onAllNodesWithText(text(R.string.ui_explore_a_demo_kitchen_6bdc4e)).fetchSemanticsNodes().isNotEmpty() }
         click(R.string.ui_explore_a_demo_kitchen_6bdc4e)
         rule.waitUntil(20000) {

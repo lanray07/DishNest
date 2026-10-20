@@ -20,5 +20,6 @@
   "paidPlanEnabled": false,
   "appOrCustomerDataModified": false,
   "publicReleaseSubmitted": false,
-  "resetCompleted": false
+  "resetCompleted": false,
+  "lastRecheckedOn": "2026-10-20"
 }

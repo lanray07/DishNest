@@ -1,15 +1,7 @@
 [
   {
-    "file": "app\\src\\main\\java\\com\\dishnest\\app\\data\\RecipeWebAccess.kt",
-    "text": "Location"
-  },
-  {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
-    "text": "${index+1}"
-  },
-  {
-    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
-    "text": "$value $label"
+    "text": "${uiResources.number(value)} $label"
   },
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\RecipeScreens.kt",
@@ -17,11 +9,7 @@
   },
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
-    "text": "${start.format(DateTimeFormatter.ofPattern("
-  },
-  {
-    "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
-    "text": "${date.dayOfMonth}"
+    "text": "${uiResources.calendarDate(start, "
   },
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",

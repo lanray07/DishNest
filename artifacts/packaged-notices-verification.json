@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "scope": "Original notice hashes, complete text/source inclusion and exact packaged asset bytes",
+  "originalNoticeCount": 10,
+  "originalNoticeFiles": [
+    "Tesseract4Android-4.9.0-LICENSE.txt",
+    "Tesseract-5.5.1-LICENSE.txt",
+    "Leptonica-1.85.0-LICENSE.txt",
+    "libpng-1.6.48-LICENSE.txt",
+    "libjpeg-9f-README.txt",
+    "Jsoup-1.18.3-LICENSE.txt",
+    "tessdata_fast-LICENSE.txt",
+    "Protocol-Buffers-BSD-3-Clause.txt",
+    "OkHttp-4.12.0-publicsuffix-NOTICE.txt",
+    "Mozilla-Public-License-2.0.txt"
+  ],
+  "apkSha256": {
+    "app/build/outputs/apk/debug/app-debug.apk": "85a72c6b0985c5cff9eaf672657534fec24d0e361bf6f01c05da2d43cc3c84bb",
+    "app/build/outputs/apk/qa/app-qa.apk": "178f8a2f9fb766483373c82a15cf3c20b91f6d3f910b12520c4f280a69b11d21",
+    "app/build/outputs/apk/release/app-release-unsigned.apk": "3c3fa3c511b7cfa77ed86dd9350372a1a8828e71850f76f2c67dc253c4a5fae5"
+  },
+  "noticeAssetSha256": "92dce8ea0fe0ca9158a170ae2142fd9b7bc416995fd95bfb8e2b70525f74bfd8",
+  "manifestSha256": "379dc11d84c3d9b73d55bcabaff078e1c4ea5b911be4b13c989074a404183ff1",
+  "resolvedDependencyCount": 92,
+  "resolvedDependencyHashesVerified": true,
+  "dependencyInventorySha256": "ccec6ce839084272ecf9a078aeccf7edc2c970d68b72a09d5fdcb21bf070016b",
+  "controllerSha256": "cdd9c9d9c1d90343a10e096f23b530f54f775963ae1e08f263cefa73389b9dbb",
+  "publisherLegalApproval": false,
+  "proprietaryAmazonTermsApproval": false,
+  "sourceOrAppDataModified": false
+}

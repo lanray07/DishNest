@@ -193,7 +193,6 @@ Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\qa\app-qa.
 53850203 classes6.dex (OK - compressed)
 11916132 AndroidManifest.xml (OK - compressed)
 11419829 classes2.dex (OK - compressed)
-53933931 classes4.dex (OK - compressed)
 54734388 res/drawable-nodpi-v4/ic_nest_color.png (OK)
 11355127 res/drawable/ic_launcher_color.xml (OK - compressed)
 11355364 res/drawable/notification_bg.xml (OK - compressed)
@@ -201,6 +200,7 @@ Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\qa\app-qa.
 11356000 res/drawable/notification_tile_bg.xml (OK - compressed)
 11356239 res/mipmap-anydpi-v26/ic_launcher.xml (OK - compressed)
 56135048 resources.arsc (OK)
+53933931 classes4.dex (OK - compressed)
 Verification succesful
 Debug APK:
 Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\debug\app-debug.apk (4)...
@@ -401,7 +401,6 @@ Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\debug\app-
 54603951 classes6.dex (OK - compressed)
 12061949 AndroidManifest.xml (OK - compressed)
 11565625 classes2.dex (OK - compressed)
-54687679 classes4.dex (OK - compressed)
 55490228 res/drawable-nodpi-v4/ic_nest_color.png (OK)
 11501786 res/drawable/ic_launcher_color.xml (OK - compressed)
 11502023 res/drawable/notification_bg.xml (OK - compressed)
@@ -409,16 +408,17 @@ Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\debug\app-
 11502659 res/drawable/notification_tile_bg.xml (OK - compressed)
 11502898 res/mipmap-anydpi-v26/ic_launcher.xml (OK - compressed)
 56890888 resources.arsc (OK)
+54687679 classes4.dex (OK - compressed)
 Verification succesful
 Release APK:
 Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\release\app-release-unsigned.apk (4)...
       87 META-INF/com/android/build/gradle/app-metadata.properties (OK - compressed)
      207 META-INF/version-control-info.textproto (OK - compressed)
      384 assets/dexopt/baseline.prof (OK)
-    8592 assets/dexopt/baseline.profm (OK)
-    9014 classes.dex (OK - compressed)
- 7390759 classes2.dex (OK - compressed)
-11006626 classes3.dex (OK - compressed)
+    9332 assets/dexopt/baseline.profm (OK)
+    9754 classes.dex (OK - compressed)
+ 7391499 classes2.dex (OK - compressed)
+11008007 classes3.dex (OK - compressed)
 12582912 lib/arm64-v8a/libandroidx.graphics.path.so (OK)
 12599296 lib/arm64-v8a/libdatastore_shared_counter.so (OK)
 12615680 lib/arm64-v8a/libjpeg.so (OK)
@@ -613,4 +613,3 @@ Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\release\ap
 48695848 res/zz.png (OK)
 48696776 resources.arsc (OK)
 Verification succesful
-

@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checked_on": "2026-10-19",
+  "checked_on": "2026-10-20",
   "signer": "Deployed Cloudflare Worker with live Amazon RVS",
   "verifier": "Compiled Kotlin EntitlementVerifier",
   "checks": [
@@ -26,7 +26,7 @@
   "amazon_real_purchase_tested": false,
   "private_key_written": false,
   "sourceSha256": {
-    "tools/verify_billing_contract.mjs": "66d3c386a487472577f311ece401688f76c28b849fb2520e8752ead4e0f830e6",
+    "tools/verify_billing_contract.mjs": "ab29dab2ff47a62d9265894e2527e6d1bb532dbc6cc7e3dd795b46d19ea80601",
     "billing-server/worker.mjs": "ca4ec7410a0cfdb4939ea270c11c4627e59c78ace4493972edf86097c86908be",
     "billing-server/verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
     "app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class": "8bdc0399158c6e4a4302b0b68d7e1562d4c1b6642582e2af90c2ba29911ce292"

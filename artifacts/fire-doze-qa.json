@@ -1,0 +1,31 @@
+{
+  "testedAt": "2026-10-20T09:22:53.705218+00:00",
+  "model": "KFTRWI",
+  "packageId": "com.dishnest.app.qa",
+  "apkSha256": "53e6a0f889055bfb0d256bb344f679786e2c4dd6fad8b8e42b0552e04d7c442d",
+  "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
+  "controllerSha256": "e2492c626a4af8344a25a42b61778ab0bc5be1ea1ad5655e1bc90f89bbd54c7d",
+  "installedApksVerified": true,
+  "qaExemptFromIdle": false,
+  "passed": true,
+  "ordinaryAppModified": false,
+  "privateIdentifiersStored": false,
+  "paidServicesEnabled": false,
+  "processAbsentAfterKill": true,
+  "idleStateAtStart": "IDLE",
+  "observationBoundSeconds": 720,
+  "timerHandledBeforeVerifierRestart": true,
+  "idleStateBeforeSnapshot": "IDLE",
+  "observationSeconds": 381.4,
+  "idleStateAfterSnapshot": "IDLE",
+  "forcedIdleRestored": true,
+  "kitchenAndNotificationVerificationPassed": true,
+  "ordinaryDataHashesUnchanged": true,
+  "notCovered": [
+    "Natural idle entry/long idle quotas",
+    "Exact notification latency",
+    "Reboot",
+    "Wall-clock changes",
+    "Other Fire models"
+  ]
+}

@@ -4,6 +4,7 @@ from datetime import datetime,timezone
 from pathlib import Path
 from build_evidence import verify as verify_build, digest
 from website_evidence import verify as verify_website
+from verify_packaged_notices import verify as verify_notices
 ROOT=Path(__file__).resolve().parents[1]
 checks=[]
 def check(name,passed,evidence,remaining=''):
@@ -68,7 +69,7 @@ alarm = read_json('artifacts/fire-background-alarm.json')
 check('Background Fire timer after process termination', fire_current and alarm.get('passed') is True and alarm.get('processAbsentAfterKill') is True and alarm.get('installedApksVerified') is True and alarm.get('controllerSha256') == digest(ROOT/'tools/run_fire_alarm_probe.ps1') and alarm.get('notificationHelperSha256') == digest(ROOT/'tools/fire_notification_setting.py') and alarm.get('kitchenPersistencePassed') is True and alarm.get('apkSha256') == fire.get('apkSha256') and alarm.get('instrumentationApkSha256') == fire.get('instrumentationApkSha256'), 'artifacts/fire-background-alarm.json', 'Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs')
 check('Physical device QA',False,'docs/DEVICE_QA.md','Fire/phone, TalkBack, doze/reboot, permissions, speech and actual OCR checks')
 notices=ROOT/'legal/third-party/manifest.json'
-check('Native notice source collection',notices.exists(),'legal/third-party/manifest.json','Collect pinned upstream licence files')
+check('Native notice source collection',verify_notices(read_json('artifacts/packaged-notices-verification.json')),'legal/third-party/manifest.json; artifacts/packaged-notices-verification.json','Verify original notice hashes, complete offline text, exact APK asset bytes and current dependency inventory; legal approval remains separate')
 inventory=read_json('docs/dependencies/runtime-inventory.json')
 check('Resolved dependency inventory',bool(inventory.get('components')) and all(c.get('licenses') for c in inventory['components']),'docs/dependencies/runtime-inventory.json','Generate from exact releaseRuntimeClasspath and resolve missing licence declarations')
 check('Licensing/privacy approval',False,'THIRD_PARTY_NOTICES.md','Publisher O. Bankole confirmed; approval of distribution obligations, production service-operation details and privacy disclosures remains pending')

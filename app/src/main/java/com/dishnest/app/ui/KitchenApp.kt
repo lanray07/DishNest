@@ -574,7 +574,7 @@ fun HomeScreen(
     ) {
         item {
             PageTitle(
-                today.format(DateTimeFormatter.ofPattern("EEEE, d MMMM", uiResources.configuration.locales[0])),
+                uiResources.calendarDate(today, "EEEE, d MMMM"),
                 uiResources.getString(com.dishnest.app.R.string.copy_8b566d5081),
                 stringResource(R.string.greeting),
                 action = {
@@ -631,21 +631,21 @@ fun HomeScreen(
         item {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Stat(
-                    "${s.recipes.size}",
+                    uiResources.number(s.recipes.size),
                     uiResources.getString(com.dishnest.app.R.string.copy_4304f7be23),
                     Icons.AutoMirrored.Outlined.MenuBook,
                     { onNavigate("recipes") },
                     Modifier.weight(1f),
                 )
                 Stat(
-                    "${s.meals.count {it.date>=Planner.week(today).toString() && it.date<=Planner.week(today).plusDays(6).toString()}}",
+                    uiResources.number(s.meals.count {it.date>=Planner.week(today).toString() && it.date<=Planner.week(today).plusDays(6).toString()}),
                     uiResources.getString(com.dishnest.app.R.string.copy_793b69cce2),
                     Icons.Outlined.CalendarMonth,
                     { onNavigate("plan") },
                     Modifier.weight(1f),
                 )
                 Stat(
-                    "${s.shopping.count {!it.checked}}",
+                    uiResources.number(s.shopping.count {!it.checked}),
                     uiResources.getString(com.dishnest.app.R.string.copy_9ee92f81e3),
                     Icons.Outlined.ShoppingBasket,
                     { onNavigate("shop") },

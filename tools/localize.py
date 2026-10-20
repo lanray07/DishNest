@@ -13,12 +13,17 @@ LOCALES = ['en-GB','en-US','es','fr','de','it','pt-BR','pt-PT','nl','pl','ar','h
 OUT = ROOT / 'localisation'
 OUT.mkdir(exist_ok=True)
 
+def literal_candidates(text):
+    # Match complete UI call names, not getHeaderField("Location"). Also inspect
+    # error assignments: these reach dialogs without a direct Text("...") call.
+    pattern = r'(?:\b(?:Text|Field|PageTitle|EmptyState|SectionTitle)\(\s*|\berror\s*=\s*)"((?:[^"\\]|\\.)*)"'
+    return [match.group(1) for match in re.finditer(pattern, text) if match.group(1)]
+
 def extract():
     strings = {n.attrib['name']: n.text or '' for n in ET.parse(ROOT/'app/src/main/res/values/strings.xml').getroot().findall('string') if n.attrib.get('translatable') != 'false'}
     hardcoded=[]
     for file in (ROOT/'app/src/main/java').rglob('*.kt'):
-        for match in re.finditer(r'(?:Text|Field|PageTitle|EmptyState|SectionTitle)\(\s*"((?:[^"\\]|\\.)*)"',file.read_text(encoding='utf-8-sig')):
-            value=match.group(1)
+        for value in literal_candidates(file.read_text(encoding='utf-8-sig')):
             hardcoded.append({'file':str(file.relative_to(ROOT)), 'text':value})
     (OUT/'catalog.json').write_text(json.dumps(strings,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT/'hardcoded-report.json').write_text(json.dumps(hardcoded,ensure_ascii=False,indent=2),encoding='utf-8')

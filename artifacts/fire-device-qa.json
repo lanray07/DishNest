@@ -1,13 +1,13 @@
 {
   "packageId": "com.dishnest.app.qa",
   "ordinaryAppModified": false,
-  "testedAt": "2026-10-19T18:53:54.1546046Z",
+  "testedAt": "2026-10-20T10:05:55.3915601Z",
   "model": "KFTRWI",
   "androidVersion": "9",
   "api": "28",
   "locale": "en-GB",
-  "apkSha256": "53e6a0f889055bfb0d256bb344f679786e2c4dd6fad8b8e42b0552e04d7c442d",
-  "instrumentationApkSha256": "2d249ec5f17a458cc2c6ea13e779ae763417cd932c489e3b09e8553f422d8276",
+  "apkSha256": "178f8a2f9fb766483373c82a15cf3c20b91f6d3f910b12520c4f280a69b11d21",
+  "instrumentationApkSha256": "e540714750faf81f219ad43c49490ddb82f50a8f1ef1d55ece21552e11b362ec",
   "tests": 13,
   "passedTests": 13,
   "failedTests": 0,
@@ -40,15 +40,22 @@
   "serialIdentifierStored": false,
   "storeSubmission": false,
   "remoteDeployment": false,
-  "captures": [
+  "installedApksVerified": true,
+  "ordinaryDataMatchesProtectedRecoveryArchive": true,
+  "ordinaryApkUnchanged": true,
+  "persistentFilesVerified": 5,
+  "physicalUiCaptures": [
     {
-      "path": "artifacts/screens/fire-qa-arabic-large-font.png",
-      "sha256": "3af226a5b01de801d3009962a0a9d7a942f5d0bf891d071a2015a33be0ee6808"
+      "file": "artifacts/screens/fire-qa-arabic-large-font.png",
+      "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
+      "width": 1080,
+      "height": 1026
     },
     {
-      "path": "artifacts/screens/fire-qa-named-plan.png",
-      "sha256": "aab568391cf168fe2e30ba6e1be8d19ec769ad699b4d50f008089cede48ddf64"
+      "file": "artifacts/screens/fire-qa-named-plan.png",
+      "sha256": "28c72da67fd412f0b6e48992e7ac711e45b7b1ee95c4d75948aa44b954215c9d",
+      "width": 1920,
+      "height": 1200
     }
-  ],
-  "capturesVisuallyInspected": true
+  ]
 }

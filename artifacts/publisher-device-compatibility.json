@@ -5,14 +5,14 @@
   "installedCertificateSha256": "244bac5b8be909f92d6254219f1cb4c0a9ddc79151f313f784e6e3712063de5e",
   "installedCertificateSubject": "C=US, O=Android, CN=Android Debug",
   "publisherCertificateSha256": "c2c7dcb307420a1605c48a06a50d0893af1f606c2db45a95669735f2834e1012",
-  "publisherApkSha256": "8d6bf63c4359bbf38a84a0b6ee1f27892e7ca0bf0ee7958af0f5d237f5d3a6ac",
+  "publisherApkSha256": "e079cdc2b676eb698659f27c76b292bb0ed1e015682be77349573ff2f4bb8770",
   "signaturesCompatible": false,
   "installAttempted": false,
   "ordinaryAppModified": false,
   "serialIdentifierStored": false,
   "remaining": "Exact publisher-signed APK hardware test requires a clean compatible device or an approved data-preserving migration; no app data was cleared.",
   "ordinaryDataPreservationEvidence": "artifacts/fire-native-qa.json",
-  "recheckedAt": "2026-10-19T08:42:38.609684+00:00",
+  "recheckedAt": "2026-10-20T10:10:10.350206+00:00",
   "temporaryAmazonQaEvidence": "artifacts/fire-amazon-lat-qa.json",
   "originalApkAndPrivateDataRestoredExact": true
 }

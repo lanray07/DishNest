@@ -1,5 +1,11 @@
 # DishNest private LAT
 
+## Current local candidate after numeric-UI fixes
+
+The 20 October continuation prepares a new publisher-signed local LAT APK with localized integer/date displays and pantry validation. Its SHA-256 is `bb6e77b3b4f70817e4abe1eddb69afca760b6bf70908eda70f7557608c0caff2`; signature, alignment, verifier pin/profile and unchanged normal build outputs pass. `artifacts/lat-candidate.json` correctly records **not uploaded, not submitted, not installed, not production-ready**. No replacement test or public submission was attempted while the Amazon support reset remains pending.
+
+The existing Amazon Test 2 still uses the earlier publisher-upload hash `fd049df4ba76e07cd04d015aa9f41e8ef0329c1e55fe990ee463c079a3ee835a`. Its upload/source/acquisition provenance is preserved separately in `artifacts/lat-test2-upload-provenance.json`, with the exact older publisher APK retained under ignored `build/lat-history`. Earlier monthly/LAT observations are historical evidence and are not purchase approval for the new local candidate. Current numeric-UI hardware tests use the separate billing-disabled QA package; all six native checks, 13 smoke tests and both normal/blocked-notification timer probes pass, with the original APK and five private files unchanged.
+
 ## Amazon support follow-up
 
 On 20 October, the publisher explicitly requested contact with Amazon support. A case was submitted under **Testing Tool for App / Live App Testing - Live App Testing Issues**, requesting investigation/reset of only the stale monthly LAT test subscription and guidance for clean accelerated expiry, annual and lifetime purchase checks. Amazon confirmed **In Process: pending Amazon action**. The case includes the app/track identifiers and the three existing public, sanitized GitHub evidence links, with no raw receipts, credentials or private tester identifiers. The case URL, exact sent text and confirmation screenshot remain in the protected local publisher folder. `artifacts/amazon-support-request.json` records the request without private case details. A submitted request is not a completed reset or a purchase-test pass. No app data, plan or public catalog was changed while contacting support.

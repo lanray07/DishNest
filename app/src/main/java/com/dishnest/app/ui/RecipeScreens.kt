@@ -177,7 +177,7 @@ fun RecipeDetail(
                             modifier = Modifier.size(32.dp),
                         ) {
                             Box(contentAlignment = Alignment.Center) {
-                                Text("${index+1}", color = Sage)
+                                Text(uiResources.number(index + 1), color = Sage)
                             }
                         }
                         Text(step, modifier = Modifier.weight(1f))
@@ -249,11 +249,12 @@ fun recipeText(r: Recipe, resources: android.content.res.Resources): String =
 
 @Composable
 fun Stepper(value: Int, onChange: (Int) -> Unit, label: String = "") {
+    val uiResources = LocalContext.current.resources
     Row(verticalAlignment = Alignment.CenterVertically) {
         IconButton(onClick = { onChange((value - 1).coerceAtLeast(1)) }, enabled = value > 1) {
             Icon(Icons.Outlined.Remove, stringResource(R.string.decrease_value, label))
         }
-        Text("$value $label", style = MaterialTheme.typography.labelLarge)
+        Text("${uiResources.number(value)} $label", style = MaterialTheme.typography.labelLarge)
         IconButton(onClick = { onChange((value + 1).coerceAtMost(100)) }, enabled = value < 100) {
             Icon(Icons.Outlined.Add, stringResource(R.string.increase_value, label))
         }

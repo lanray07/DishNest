@@ -25,6 +25,8 @@ The remaining release categories, their local work and the evidence needed to cl
 - Added shared Unicode quantity parsing for ingredients and pantry/shopping forms. Ambiguous grouped amounts and invalid fractions remain reviewable instead of changing quantities; common translated metric units consolidate correctly without converting cups or changing ingredient names.
 - Added 46 authored runtime messages and labels in every app locale. Stable domain failure codes now resolve to localized messages; unexpected provider exception text is not shown. Shopping categories, default difficulty labels, quantities and exported headings use the active resource locale while preserving user text and parseable export unit codes. Ingredient-quantity voice questions cover all supported language families; ambiguous ingredient matches no longer announce an arbitrary amount. Enabled purchase builds use actual purchase guidance instead of development-preview wording.
 
+- Localized integer totals, serving controls, step numbers, calendar days and date headings using the active resource locale. Pantry invalid-date validation uses the existing translated resource. Stored dates, quantities and user text are unchanged. Screenshot fixtures wait for reset completion while advancing Robolectric's paused main loop; the phone demo flow no longer assumes Monday's hero recipe every day.
+
 ## Executed verification
 
 | Check | Result | Evidence |
@@ -36,6 +38,8 @@ The remaining release categories, their local work and the evidence needed to cl
 | Locale resource gate | PASS across 12 locales | `localisation/validation.json` |
 | Physical Fire smoke tests | 13 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
 | Physical Fire native checks | 6 passed on current APK; ordinary data hashes unchanged; UI not exercised | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
+| Forced-doze timer | Passed on the retained pre-numeral-UI QA binary; unchanged timer/database components; not exact new-release or full hardware approval | `artifacts/fire-doze-qa.json`, `artifacts/fire-doze-source-binding.json` |
+| Offline notice integrity | 10 original notices and 92 dependency hashes verified; exact asset in debug/QA/release APKs; legal approval pending | `artifacts/packaged-notices-verification.json` |
 | Fire background timer probe | PASS: saved kitchen records, handled timer and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
 | Fire blocked-notification timer probe | PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored | `artifacts/fire-blocked-notifications.json` |
 | Receipt service | 14 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
@@ -73,7 +77,7 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 
 Some commercial feature scope remains unfinished; local receipt policy tests do not make the entire Premium product complete. Existing content remains readable/editable after entitlement expiry. JSON recovery does not discard a former Premium user's larger recipe book. A demo only bypasses Premium gates in billing-disabled development builds.
 
-The translation provider throttled the initial draft generation. Requests were stopped, and missing drafts were completed locally from authored tables. Native review remains pending. The heuristic extraction report flags 9 candidates (including dates, numbers, user content and an HTTP header); it is not a complete audit of every user-facing domain error or voice response. Resource coverage and publication approval are separate gates.
+The translation provider throttled the initial draft generation. Requests were stopped, and missing drafts were completed locally from authored tables. Native review remains pending. The heuristic extraction report flags 6 candidates (including formatted values and user content; HTTP header API names are excluded and error assignments are now scanned); it is not a complete audit of every user-facing domain error or voice response. Resource coverage and publication approval are separate gates.
 
 ## External setup and hardware
 

@@ -15,6 +15,14 @@ fun Resources.mealSlot(slot: String): String = when (slot) {
 
 fun Resources.duration(minutes: Int): String = getString(R.string.duration_minutes, minutes)
 fun Resources.servings(count: Int): String = getString(R.string.servings_value, count)
+fun Resources.number(value: Int): String = java.text.NumberFormat.getIntegerInstance(configuration.locales[0]).apply {
+    isGroupingUsed = false
+}.format(value)
+fun Resources.calendarDate(value: java.time.LocalDate, pattern: String): String {
+    val locale = configuration.locales[0]
+    return value.format(java.time.format.DateTimeFormatter.ofPattern(pattern, locale)
+        .withDecimalStyle(java.time.format.DecimalStyle.of(locale)))
+}
 
 // Stored canonical values and user-authored labels are never rewritten by a locale change.
 fun Resources.shoppingCategory(value: String): String = when (value) {

@@ -132,7 +132,7 @@ if(process.argv.includes('--live')) {
     if(checked.status!==0)throw new Error(checked.stderr||'Live Kotlin verification failed');
     results.push({profile:service.profile,endpoint:service.endpoint,signed_inactive:true,wrong_account_rejected:true});
   }
-  const liveReport={passed:true,checked_on:'2026-10-19',signer:'Deployed Cloudflare Worker with live Amazon RVS',
+  const liveReport={passed:true,checked_on:new Date().toISOString().slice(0,10),signer:'Deployed Cloudflare Worker with live Amazon RVS',
     verifier:'Compiled Kotlin EntitlementVerifier',checks:results,amazon_real_purchase_tested:false,private_key_written:false,
     sourceSha256:Object.fromEntries(['tools/verify_billing_contract.mjs','billing-server/worker.mjs','billing-server/verification.mjs',
       'app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class'].map(p=>[p,createHash('sha256').update(readFileSync(join(root,p))).digest('hex')]))};
