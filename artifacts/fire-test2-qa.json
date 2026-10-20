@@ -1,0 +1,43 @@
+{
+  "testedAt": "2026-10-20T08:53:10.100418+00:00",
+  "track": "Test 2",
+  "model": "KFTRWI",
+  "api": 28,
+  "versionCode": 2,
+  "deliveredApkSha256": "b73060da22a8c798e75b015593edcc83466f8f33d7430b14c4c89cdeb1be4458",
+  "installer": "com.amazon.venezia",
+  "amazonSignatureAndLatBindingVerified": true,
+  "premiumIconObserved": true,
+  "entitlementResetConfirmed": true,
+  "cleanDisposableAppStateTested": true,
+  "deviceRestartTested": true,
+  "monthlyStillActiveAfterRestart": true,
+  "annualPurchaseVerified": false,
+  "lifetimePurchaseVerified": false,
+  "subscriptionExpiryVerified": false,
+  "allRequiredChecksPassed": false,
+  "publicReleaseSubmitted": false,
+  "paidPlanEnabled": false,
+  "canonicalLatVerifierRestored": true,
+  "temporaryDiagnosticRemoved": true,
+  "originalAppRestored": {
+    "originalApkRestored": true,
+    "originalPrivateFilesExact": true,
+    "persistentFiles": 5,
+    "runtimePermissionsRestored": true,
+    "appopsRestored": true,
+    "originalAppLaunched": false,
+    "encryptedRecoveryRetained": true,
+    "permanentAmazonMigration": false
+  },
+  "postRestoreRecoveryCheck": {
+    "persistentFiles": 5,
+    "qaByteExactRestore": true,
+    "nativeSqliteIntegrity": true,
+    "ordinaryDataUnchanged": true
+  },
+  "originalDisplaySettingRestored": true,
+  "privateIdentifiersStored": false,
+  "receiptEvidence": "artifacts/amazon-test2-receipt-state.json",
+  "blocker": "Amazon RVS still returns a monthly test receipt with future cancellation and no renewal date; annual/lifetime offers remain disabled. The reset/history cause is unresolved."
+}

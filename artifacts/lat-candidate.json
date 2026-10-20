@@ -131,7 +131,10 @@
   "serviceDeployed": true,
   "productionReady": false,
   "remaining": [
-    "Amazon fresh LAT availability and actual purchase lifecycle checks"
+    "Actual Amazon LAT purchase lifecycle checks; Test 2 still restores the active monthly test receipt after reset and restart"
   ],
-  "uploadedReleaseId": "amzn1.devportal.apprelease.b78f2f368b6a4daa9aeccedf66b4e963"
+  "uploadedReleaseId": "amzn1.devportal.apprelease.b78f2f368b6a4daa9aeccedf66b4e963",
+  "amazonDeviceTested": true,
+  "deliveredApkSha256": "b73060da22a8c798e75b015593edcc83466f8f33d7430b14c4c89cdeb1be4458",
+  "actualPurchaseLifecyclePassed": false
 }

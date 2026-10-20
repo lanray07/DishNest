@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-20T08:44:03.222Z",
+  "profile": "lat",
+  "installedTrack": "Test 2",
+  "observations": [
+    {
+      "receiptPresent": true,
+      "product": "dishnest.premium.monthly",
+      "kind": "SUBSCRIPTION",
+      "cancellation": "future",
+      "renewal": "absent",
+      "grace": "absent",
+      "testTransaction": true,
+      "betaProduct": true
+    },
+    {
+      "receiptPresent": true,
+      "product": "dishnest.premium.monthly",
+      "kind": "SUBSCRIPTION",
+      "cancellation": "future",
+      "renewal": "absent",
+      "grace": "absent",
+      "testTransaction": true,
+      "betaProduct": true
+    }
+  ],
+  "privateIdentifiersStored": false,
+  "temporaryDiagnosticRemoved": true,
+  "publicReleaseSubmitted": false,
+  "canonicalSourceRestored": true,
+  "receiptDatesStored": false,
+  "interpretation": "RVS returns a monthly test subscription with future cancellation, absent renewal and absent grace. Canonical verifier preserves access for at most one hour per verification rather than inventing an accelerated expiry.",
+  "purchaseEligibilityProbe": {
+    "premiumActiveAfterTestReset": true,
+    "annualOfferEnabled": false
+  },
+  "providerResetVersusSdkHistoryStillUnderInvestigation": true,
+  "postRestartProbe": {
+    "checkedAt": "2026-10-20T08:53:10.100418+00:00",
+    "premiumActive": true,
+    "annualOfferEnabled": false,
+    "lifetimeOfferEnabled": false,
+    "screenshot": "artifacts/screens/fire-test2-after-restart.png"
+  }
+}

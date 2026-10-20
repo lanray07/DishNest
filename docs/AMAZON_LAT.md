@@ -1,4 +1,14 @@
-# DishNest private LAT — 19 October 2026
+# DishNest private LAT
+
+## 20 October: genuine Test 2 acquisition and receipt-state diagnosis
+
+The publisher opened the Test 2 acquisition page on the connected Fire. Its ASIN is `B0HHDDWZX3`; the earlier Test 1 route is `B0HDL8J86H`. After another isolated recovery proof, the authorized temporary switch delivered a distinct, non-debuggable Amazon-signed Test 2 APK, SHA-256 `b73060da22a8c798e75b015593edcc83466f8f33d7430b14c4c89cdeb1be4458`. The installer, LAT verifier binding and Amazon certificate were verified, and the new colourful icon was observed in the actual release UI.
+
+The publisher explicitly authorized enrolling the additional Amazon sign-in account and confirmed its right-to-share, adult status and LAT communications consent. The new **DishNest Device LAT** group is assigned only to Test 2; the existing **DishNest Premium LAT** group remains. No private tester addresses, account identifiers or invitation tokens are stored in Git. The sign-in hint differed from the original tester, but subsequent account UI was not conclusive enough to attribute the failure to an account mismatch.
+
+Both consented groups were included in Test 2 resets. A clean temporary app state still restored Premium and disabled annual/lifetime offers. The eligibility probe reproduced this twice in seconds. A narrowly scoped, temporary LAT-only diagnostic then observed Amazon RVS returning `dishnest.premium.monthly`, `SUBSCRIPTION`, future cancellation, absent renewal, absent grace, and both test/beta flags. It emitted only whitelisted public products and date-state enums, never identifiers, credentials, exact receipt dates or raw responses. A fixture verified that sanitization and unchanged signed verdict. The exact pre-diagnostic deployed source matched the canonical local modules, was preserved before editing, then restored and read back before deployment. Live diagnostics stopped; persistent logs, traces and issues remain disabled, with no paid features or bindings enabled.
+
+The future cancellation explains why the canonical verifier continues to grant access; it rechecks this no-renewal receipt within one hour and does not invent an accelerated monthly expiry. This is evidence of the returned receipt state, not proof that the provider reset or SDK cache is the underlying fault. A full device restart followed by a cold launch reproduced active Premium and disabled annual/lifetime offers. Annual/lifetime checkout and natural expiry remain unpassed. See `artifacts/amazon-test2-receipt-state.json` for sanitized observations and `artifacts/fire-test2-qa.json` for this session. The original APK and all five private files were restored exactly, permissions/app-operation modes and the prior display setting restored, and an independent byte-exact recovery plus native SQLite integrity check passed. The original app was left unlaunched. Temporary diagnostic code and UI dumps were removed; the recovery archive remains protected locally. Public submission remains conditional on all gates.
 
 ## Follow-up: refreshed artwork and clean purchase cycle
 

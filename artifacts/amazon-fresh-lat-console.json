@@ -21,5 +21,12 @@
   },
   "publicReleaseSubmitted": false,
   "screenshot": "artifacts/screens/amazon-fresh-lat-active.png",
-  "checkedAt": "2026-10-19T18:52:35.989914+00:00"
+  "checkedAt": "2026-10-19T18:52:35.989914+00:00",
+  "testerGroups": [
+    "DishNest Premium LAT",
+    "DishNest Device LAT"
+  ],
+  "testerCount": 2,
+  "groupsRecheckedAt": "2026-10-20T08:53:10.100418+00:00",
+  "resetConfirmationScreenshot": "artifacts/screens/amazon-device-tester-reset.png"
 }

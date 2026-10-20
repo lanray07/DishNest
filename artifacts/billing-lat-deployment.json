@@ -30,5 +30,16 @@
   },
   "bundleSha256": "3ddc503e3897db675d2c75409ce6b26a5a824e07431e7240785291fb3503faef",
   "realPurchaseTested": false,
-  "latTestExecuted": false
+  "latTestExecuted": false,
+  "diagnosticFollowup": {
+    "checkedAt": "2026-10-20T08:46:23.672184+00:00",
+    "temporarySanitizedDiagnosticUsed": true,
+    "canonicalSourceRestored": true,
+    "restoredVersion": "4cf3ab03",
+    "liveStreamStopped": true,
+    "logsRemainDisabled": true,
+    "tracesRemainDisabled": true,
+    "issuesRemainDisabled": true,
+    "paidFeaturesEnabled": false
+  }
 }

@@ -1,6 +1,6 @@
 # DishNest submission-readiness report
 
-Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence date: 19 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
+Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 20 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
 
@@ -92,7 +92,7 @@ An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.
 - [x] Save approved UK/US prices and seven localized IAP drafts, install the real Amazon public key, and deploy the explicitly approved Free-plan test/production verifiers.
 - [x] Resolve the catalog/detail status conflict, start private LAT, and observe actual monthly grant/restart/restore and autorenew-off behavior.
 - [ ] Complete the remaining actual LAT renewal/expiry/annual/lifetime/refund/fulfilment matrix.
-- [x] Submit the separately certified new-icon private Test 2 with accelerated subscriptions; Test 2 is active; fresh-invitation acquisition and actual annual/lifetime/expiry checks remain pending. See `artifacts/amazon-fresh-lat-console.json`.
+- [x] Submit the separately certified new-icon private Test 2 with accelerated subscriptions; Test 2 is active and its distinct Amazon APK was acquired and verified on the Fire. Reset, clean test data and restart still restore the old monthly receipt; actual annual/lifetime/expiry checks remain blocked. Exact original-app/data rollback and SQLite integrity passed. See `artifacts/fire-test2-qa.json`. See `artifacts/amazon-fresh-lat-console.json`.
 - [ ] Execute the hardware/accessibility/offline/permissions/timer/OCR matrix.
 - [ ] Approve licensing, privacy disclosures, production service-operation details, remaining marketplace prices/terms and final store/site metadata.
 - [x] Create the authorized permanent publisher key and verify the signed APK signature, unchanged payload and alignment.
