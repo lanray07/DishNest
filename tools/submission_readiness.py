@@ -8,6 +8,7 @@ from verify_packaged_notices import verify as verify_notices
 from fire_doze_evidence import verify as verify_doze
 from fire_offline_evidence import verify as verify_offline
 from fire_layout_evidence import verify as verify_layout
+from fire_document_evidence import verify as verify_documents
 ROOT=Path(__file__).resolve().parents[1]
 checks=[]
 def check(name,passed,evidence,remaining=''):
@@ -76,6 +77,7 @@ check('Background Fire timer after process termination', fire_current and alarm.
 check('Forced-idle Fire timer',verify_doze(read_json('artifacts/fire-doze-qa.json')),'artifacts/fire-doze-qa.json','Run the bounded forced-idle probe on the current QA app and runner; verify notification, kitchen persistence, idle restoration and unchanged ordinary data')
 check('Fire offline smoke and selected-plan process recovery',verify_offline(read_json('artifacts/fire-offline-qa.json')),'artifacts/fire-offline-qa.json','Run the exact installed QA smoke suite without connectivity, verify named-plan/persisted preferences across process restart and restore settings and ordinary data')
 check('Fire portrait/landscape with system large text',verify_layout(read_json('artifacts/fire-layout-qa.json')),'artifacts/fire-layout-qa.json','Run QA recipe, pantry and named-plan flows in portrait/landscape at real system font scale 2.0; restore settings and preserve ordinary data')
+check('Fire local document-provider backup flows',verify_documents(read_json('artifacts/fire-document-qa.json')),'artifacts/fire-document-qa.json','Exercise actual JSON/ZIP picker cancellation, export, nonempty-kitchen rejection and restore round trips on QA; preserve ordinary data and remove only test exports')
 check('Physical device QA',False,'docs/DEVICE_QA.md','Other hardware, TalkBack, natural idle/quotas/reboot/clock changes, permissions, speech and actual OCR checks')
 notices=ROOT/'legal/third-party/manifest.json'
 check('Native notice source collection',verify_notices(read_json('artifacts/packaged-notices-verification.json')),'legal/third-party/manifest.json; artifacts/packaged-notices-verification.json','Verify original notice hashes, complete offline text, exact APK asset bytes and current dependency inventory; legal approval remains separate')

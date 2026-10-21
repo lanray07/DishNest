@@ -1125,7 +1125,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-21T16:47:54.364555+00:00",
+    "generatedAt": "2026-10-21T17:16:09.381535+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -1273,6 +1273,12 @@
         "check": "Fire portrait/landscape with system large text",
         "status": "passed",
         "evidence": "artifacts/fire-layout-qa.json",
+        "remaining": ""
+      },
+      {
+        "check": "Fire local document-provider backup flows",
+        "status": "passed",
+        "evidence": "artifacts/fire-document-qa.json",
         "remaining": ""
       },
       {
@@ -1589,5 +1595,52 @@
       "Publisher-signed release"
     ]
   },
-  "fire_layout_qa_current": true
+  "fire_layout_qa_current": true,
+  "fire_document_qa": {
+    "testedAt": "2026-10-21T17:05:36.413716+00:00",
+    "packageId": "com.dishnest.app.qa",
+    "passed": true,
+    "controllerSha256": "c9b584e8022405a13bcd270a25e4b0e2ac1f9cf1c83591fdcc03335beeb06a04",
+    "helperSha256": "bb95ba7037db13f27afe1997d521df8abe6f665b3ab3973b9e63c35d7a10f528",
+    "ordinaryAppModified": false,
+    "paidServicesEnabled": false,
+    "privateIdentifiersStored": false,
+    "checks": {
+      "cancelJsonExport": true,
+      "cancelZipExport": true,
+      "cancelJsonImport": true,
+      "cancelZipImport": true,
+      "zipCrcAndPayloadMatchJson": true,
+      "exportsDoNotChangeKitchen": true,
+      "jsonExportHasRecipesMealsAndSelectedPlan": true,
+      "jsonNonemptyKitchenRejected": true,
+      "zipNonemptyKitchenRejected": true,
+      "jsonProviderRoundTrip": true,
+      "zipProviderRoundTrip": true
+    },
+    "model": "KFTRWI",
+    "apkSha256": "1023739b5c087bce595a46b0945c3dbf95e85fa7179abafcd24e9a33c33c80e0",
+    "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
+    "installedApksVerified": true,
+    "seedTraceSha256": "787d6099523ed30b57424b366a05281bd2e0f094a3e382ef253565a168831292",
+    "backupCoverage": {
+      "recipes": 4,
+      "meals": 5,
+      "plans": 2,
+      "bundledDemoPhotosOnly": true,
+      "timersAndPreferencesExcluded": true
+    },
+    "settingsRestored": true,
+    "ordinaryApkAndPersistentFilesUnchanged": true,
+    "testExportsRemoved": true,
+    "cleanupErrors": [],
+    "notCovered": [
+      "Provider write failure/unavailable storage",
+      "External cloud providers",
+      "Photo-inclusive real user attachments",
+      "Complete app-data migration",
+      "Publisher-signed release"
+    ]
+  },
+  "fire_document_qa_current": true
 }

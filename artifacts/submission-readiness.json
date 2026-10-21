@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T16:47:54.364555+00:00",
+  "generatedAt": "2026-10-21T17:16:09.381535+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -147,6 +147,12 @@
       "check": "Fire portrait/landscape with system large text",
       "status": "passed",
       "evidence": "artifacts/fire-layout-qa.json",
+      "remaining": ""
+    },
+    {
+      "check": "Fire local document-provider backup flows",
+      "status": "passed",
+      "evidence": "artifacts/fire-document-qa.json",
       "remaining": ""
     },
     {

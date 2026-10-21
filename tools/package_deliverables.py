@@ -7,6 +7,7 @@ from purchase_evidence import verify as verify_purchase
 from lat_evidence import verify as verify_lat
 from fire_offline_evidence import verify as verify_offline
 from fire_layout_evidence import verify as verify_layout
+from fire_document_evidence import verify as verify_documents
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.mkdir(exist_ok=True)
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
 if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
@@ -80,6 +81,7 @@ def archive_source():
                      'billing-recovery-fixtures.json','amazon-support-request.json'})
     evidence.update({'fire-offline-qa.json','fire-offline-suite.txt','fire-offline-selected-plan.txt'})
     evidence.update({'fire-layout-qa.json','fire-layout-portrait-large-text.txt','fire-layout-landscape-large-text.txt'})
+    evidence.update({'fire-document-qa.json','fire-document-seed.txt'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
@@ -151,6 +153,11 @@ layout_path=ROOT/'artifacts/fire-layout-qa.json'
 if layout_path.exists():
     summary['fire_layout_qa']=json.loads(layout_path.read_text(encoding='utf-8'))
     summary['fire_layout_qa_current']=verify_layout(summary['fire_layout_qa'])
+    summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
+document_path=ROOT/'artifacts/fire-document-qa.json'
+if document_path.exists():
+    summary['fire_document_qa']=json.loads(document_path.read_text(encoding='utf-8'))
+    summary['fire_document_qa_current']=verify_documents(summary['fire_document_qa'])
     summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
 source_zip=archive_source()
 manifest.append({'file':source_zip.name,'bytes':source_zip.stat().st_size,'sha256':hashlib.sha256(source_zip.read_bytes()).hexdigest(),'kind':'source archive with verification evidence','production_ready':False})
