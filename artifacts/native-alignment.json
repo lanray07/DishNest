@@ -1,6 +1,6 @@
 {
   "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-  "apk_sha256": "3c3fa3c511b7cfa77ed86dd9350372a1a8828e71850f76f2c67dc253c4a5fae5",
+  "apk_sha256": "11a2b478afdc42eb0a15c37e15fed7b955038836e17c0bcfe325f12cde745dd2",
   "libraries": [
     {
       "path": "lib/arm64-v8a/libandroidx.graphics.path.so",

@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-21T16:13:03.037753+00:00",
+  "ordinaryAppInstalledOrLaunched": false,
+  "paidServicesEnabled": false,
+  "publicSubmission": false,
+  "passed": true,
+  "displaySettingRestored": true,
+  "ordinaryPersistentFilesUnchanged": true,
+  "ordinaryApkUnchanged": true,
+  "persistentFilesVerified": 5,
+  "native": {
+    "report": "artifacts/fire-native-qa.json",
+    "sha256": "840ccfbba5e1e16a44b0fc93612a311a941ca8c10a38dcda02c3530350b27a66",
+    "passed": true
+  },
+  "smoke": {
+    "report": "artifacts/fire-device-qa.json",
+    "sha256": "de1d3a3456b38b89d9132fbf155eea541e4dee6627e34c538ce0e8dc5ca56ff8",
+    "passed": true
+  },
+  "normalTimer": {
+    "report": "artifacts/fire-background-alarm.json",
+    "sha256": "7498f83e5c50bc53c92297de735d224f1d6b9ded5caca8578a0b2986f921a271",
+    "passed": true
+  },
+  "blockedTimer": {
+    "report": "artifacts/fire-blocked-notifications.json",
+    "sha256": "2451f7a9511bae1db9015924d47c3cc242311eab8afd23e3561b5960737a5600",
+    "passed": true
+  },
+  "doze": {
+    "report": "artifacts/fire-doze-qa.json",
+    "sha256": "165bf8fd51fb718094efb9b04c43882fc58b21ccdb655cc827eeb773cb669f8b",
+    "passed": true
+  }
+}

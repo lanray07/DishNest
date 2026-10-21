@@ -381,4 +381,5 @@
     <string name="premium_available">Più spazio per il tuo ricettario. Scegli un’offerta; Amazon mostra il prezzo finale prima della conferma.</string>
     <string name="premium_features_heading">Funzionalità Premium</string>
     <string name="premium_purchase_terms">L’accesso a vita è un acquisto unico senza abbonamento. Gli abbonamenti mensili e annuali si rinnovano automaticamente salvo annullamento tramite Amazon. Ripristina gli acquisti con lo stesso account Amazon.</string>
+    <string name="recipe_copy_title">%1$s (copia)</string>
 </resources>

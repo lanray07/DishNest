@@ -374,5 +374,6 @@
   "unit_lb": "lb",
   "premium_available": "More room for your recipe book. Choose an offer below; Amazon shows the final price before you confirm.",
   "premium_features_heading": "Premium features",
-  "premium_purchase_terms": "Lifetime is one purchase with no subscription. Monthly and annual subscriptions renew automatically unless canceled through Amazon. Restore purchases using the same Amazon account."
+  "premium_purchase_terms": "Lifetime is one purchase with no subscription. Monthly and annual subscriptions renew automatically unless canceled through Amazon. Restore purchases using the same Amazon account.",
+  "recipe_copy_title": "%1$s (copy)"
 }

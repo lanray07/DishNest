@@ -380,4 +380,5 @@
     <string name="premium_available">Meer ruimte voor je receptenboek. Kies een aanbod; Amazon toont de definitieve prijs voordat je bevestigt.</string>
     <string name="premium_features_heading">Premium-functies</string>
     <string name="premium_purchase_terms">Levenslang is één aankoop zonder abonnement. Maand- en jaarabonnementen worden automatisch verlengd tenzij je ze via Amazon opzegt. Herstel aankopen met hetzelfde Amazon-account.</string>
+    <string name="recipe_copy_title">%1$s (kopie)</string>
 </resources>

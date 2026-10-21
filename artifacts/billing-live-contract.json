@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checked_on": "2026-10-20",
+  "checked_on": "2026-10-21",
   "signer": "Deployed Cloudflare Worker with live Amazon RVS",
   "verifier": "Compiled Kotlin EntitlementVerifier",
   "checks": [

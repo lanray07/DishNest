@@ -24,6 +24,14 @@ fun Resources.calendarDate(value: java.time.LocalDate, pattern: String): String 
         .withDecimalStyle(java.time.format.DecimalStyle.of(locale)))
 }
 
+/** Display canonical dates in the resource locale; retain unparseable legacy/user values. */
+fun Resources.storedDate(value: String): String {
+    val date = runCatching { java.time.LocalDate.parse(value) }.getOrNull() ?: return value
+    val locale = configuration.locales[0]
+    return date.format(java.time.format.DateTimeFormatter.ofLocalizedDate(java.time.format.FormatStyle.MEDIUM)
+        .withLocale(locale).withDecimalStyle(java.time.format.DecimalStyle.of(locale)))
+}
+
 // Stored canonical values and user-authored labels are never rewritten by a locale change.
 fun Resources.shoppingCategory(value: String): String = when (value) {
     "Meat & fish" -> getString(R.string.category_meat)

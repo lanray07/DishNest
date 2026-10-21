@@ -266,7 +266,7 @@ fun KitchenApp(vm: KitchenViewModel = viewModel()) {
                                     editor =
                                         selected.copy(
                                             id = newId(),
-                                            title = "${selected.title} (copy)",
+                                            title = uiResources.getString(R.string.recipe_copy_title, selected.title),
                                         )
                                 },
                                 onDelete = {

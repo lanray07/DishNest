@@ -381,4 +381,5 @@
     <string name="premium_available">More room for your recipe book. Choose an offer below; Amazon shows the final price before you confirm.</string>
     <string name="premium_features_heading">Premium features</string>
     <string name="premium_purchase_terms">Lifetime is one purchase with no subscription. Monthly and annual subscriptions renew automatically unless canceled through Amazon. Restore purchases using the same Amazon account.</string>
+    <string name="recipe_copy_title">%1$s (copy)</string>
 </resources>

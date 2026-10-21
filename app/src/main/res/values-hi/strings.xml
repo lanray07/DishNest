@@ -380,4 +380,5 @@
     <string name="premium_available">आपकी रेसिपी बुक के लिए और जगह। नीचे ऑफ़र चुनें; पुष्टि करने से पहले Amazon अंतिम कीमत दिखाएगा।</string>
     <string name="premium_features_heading">Premium सुविधाएँ</string>
     <string name="premium_purchase_terms">आजीवन एक्सेस एक बार की खरीद है, सदस्यता नहीं। मासिक और वार्षिक सदस्यताएँ Amazon के ज़रिए रद्द न करने पर अपने आप नवीनीकृत होती हैं। खरीदारी बहाल करने के लिए उसी Amazon खाते का उपयोग करें।</string>
+    <string name="recipe_copy_title">%1$s (प्रतिलिपि)</string>
 </resources>

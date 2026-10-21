@@ -224,7 +224,7 @@ fun PlanScreen(
                 if (first == meal.id) firstSwapId = null
                 else if (first == null) firstSwapId = meal.id
                 else { vm.swapMeals(first, meal.id); swapOpen = false; firstSwapId = null }
-            }, label = { Text("${meal.date} · ${uiResources.mealSlot(meal.slot)} · ${recipe?.title.orEmpty()} · ${uiResources.servings(meal.servings)}") })
+            }, label = { Text("${uiResources.storedDate(meal.date)} · ${uiResources.mealSlot(meal.slot)} · ${recipe?.title.orEmpty()} · ${uiResources.servings(meal.servings)}") })
         }
     }
     assign?.let { (date, slot) ->
@@ -640,7 +640,7 @@ fun PantryScreen(s: KitchenState, vm: KitchenViewModel, onRecipe: (Recipe) -> Un
                                 Text(uiResources.amount(p.quantity, p.unit), color = Muted)
                                 if (p.expiry.isNotBlank())
                                     Text(
-                                        uiResources.getString(if (p.expiry < today.toString()) R.string.past_date_value else R.string.check_date_value, p.expiry),
+                                        uiResources.getString(if (p.expiry < today.toString()) R.string.past_date_value else R.string.check_date_value, uiResources.storedDate(p.expiry)),
                                         color =
                                             if (p.expiry <= today.plusDays(3).toString()) Terra
                                             else Muted,

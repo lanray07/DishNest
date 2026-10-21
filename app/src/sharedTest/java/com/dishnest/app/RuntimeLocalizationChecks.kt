@@ -39,6 +39,20 @@ object RuntimeLocalizationChecks {
                 assertEquals("٢٣/١٢/٢٠٣٠", numericDate)
             }
             assertTrue(tag, numericDate.isNotBlank())
+            val duplicate = resources.getString(R.string.recipe_copy_title, privateText)
+            assertTrue(tag, duplicate.contains(privateText))
+            assertEquals(tag, 1, Regex(Regex.escape(privateText)).findAll(duplicate).count())
+            if (!tag.startsWith("en")) assertFalse(tag, duplicate.contains("(copy)"))
+            assertEquals(tag, "my date · تاريخ", resources.storedDate("my date · تاريخ"))
+            assertEquals(tag, "2030-13-01", resources.storedDate("2030-13-01"))
+            val displayDate = resources.storedDate("2030-12-23")
+            assertFalse(tag, displayDate == "2030-12-23")
+            if (tag == "ar") {
+                assertTrue(displayDate.contains("٢٣"))
+                assertTrue(displayDate.contains("٢٠٣٠"))
+                assertFalse(displayDate.contains("2030"))
+                assertEquals(privateText + " (نسخة)", duplicate)
+            }
             val recipe = Recipe(title = privateText, servings = 3, ingredients = listOf(Ingredient("lentils", 200.0, "g")),
                 steps = listOf("Keep my own words · اخلط"), notes = "My private note")
             val exported = recipeText(recipe, resources)

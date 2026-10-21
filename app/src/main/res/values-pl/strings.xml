@@ -382,4 +382,5 @@
     <string name="premium_available">Więcej miejsca na przepisy. Wybierz ofertę; Amazon pokaże ostateczną cenę przed potwierdzeniem.</string>
     <string name="premium_features_heading">Funkcje Premium</string>
     <string name="premium_purchase_terms">Dostęp dożywotni to jednorazowy zakup bez subskrypcji. Subskrypcje miesięczne i roczne odnawiają się automatycznie, chyba że anulujesz je przez Amazon. Przywracaj zakupy na tym samym koncie Amazon.</string>
+    <string name="recipe_copy_title">%1$s (kopia)</string>
 </resources>

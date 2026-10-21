@@ -1,6 +1,6 @@
 from pathlib import Path
 import hashlib,json,shutil,zipfile,xml.etree.ElementTree as ET
-from build_evidence import verify as verify_build
+from build_evidence import verify as verify_build, build_log_text
 from website_evidence import verify as verify_website
 from publisher_evidence import verify as verify_publisher
 from purchase_evidence import verify as verify_purchase
@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.m
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
 if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
 build_log=ROOT/'artifacts/delivery-verification.log'
-if not build_log.exists() or 'BUILD SUCCESSFUL' not in build_log.read_text(encoding='utf-8',errors='replace'):
+if not build_log.exists() or 'BUILD SUCCESSFUL' not in build_log_text(build_log.read_bytes()):
     raise SystemExit('Complete the current full Gradle verification before packaging.')
 lint=ET.parse(ROOT/'app/build/reports/lint-results-debug.xml').getroot()
 if any(n.attrib.get('severity') in {'Error','Fatal'} for n in lint.findall('issue')):raise SystemExit('Android lint errors remain.')
@@ -74,6 +74,8 @@ def archive_source():
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
     evidence.update({'fire-native-qa.json','fire-native-instrumentation.txt'})
     evidence.update({'billing-lifecycle-contract.json','billing-lat-worker.json','billing-lat-deployment.json','lat-candidate.json','amazon-lat-console.json'})
+    evidence.update({'fire-doze-qa.json','packaged-notices-verification.json','localization-date-copy-qa.json',
+                     'billing-recovery-fixtures.json','amazon-support-request.json'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
@@ -83,7 +85,7 @@ def archive_source():
             if relative.parts[:2]==('localisation','cache'):continue
             if relative.name in {'local.properties','.env'} or relative.name.startswith('.env.') and relative.name != '.env.example':continue
             if relative.suffix in {'.jks','.keystore','.pem','.p12','.pfx','.key','.pk8','.p8'} and relative.as_posix()!='app/src/main/assets/AppstoreAuthenticationKey.pem':continue
-            if relative.parts[0]=='artifacts' and relative.parts[1:2]!=('screens',) and not (len(relative.parts)==2 and relative.name in evidence):continue
+            if relative.parts[0]=='artifacts' and relative.parts[1:2] not in [('screens',),('runtime-localization',)] and not (len(relative.parts)==2 and relative.name in evidence):continue
             archive.write(file,relative.as_posix())
     with zipfile.ZipFile(source_zip) as archive:
         assert archive.testzip() is None

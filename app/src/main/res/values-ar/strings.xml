@@ -384,4 +384,5 @@
     <string name="premium_available">مساحة أكبر لكتاب وصفاتك. اختر عرضًا أدناه؛ تعرض Amazon السعر النهائي قبل التأكيد.</string>
     <string name="premium_features_heading">ميزات Premium</string>
     <string name="premium_purchase_terms">الوصول مدى الحياة عملية شراء واحدة بلا اشتراك. تتجدد الاشتراكات الشهرية والسنوية تلقائيًا ما لم تُلغَ عبر Amazon. استعد المشتريات باستخدام حساب Amazon نفسه.</string>
+    <string name="recipe_copy_title">%1$s (نسخة)</string>
 </resources>

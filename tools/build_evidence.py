@@ -9,6 +9,12 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'artifacts/build-provenance.json'
 START = ROOT / 'artifacts/build-start.json'
 
+
+def build_log_text(raw):
+    # Windows PowerShell redirects native output as UTF-16; PowerShell 7 uses UTF-8.
+    encoding = 'utf-16' if raw.startswith((b'\xff\xfe', b'\xfe\xff')) else 'utf-8-sig'
+    return raw.decode(encoding, errors='replace')
+
 def digest(path):
     hasher = hashlib.sha256()
     with path.open('rb') as source:
@@ -28,7 +34,7 @@ def current():
         raise ValueError('No host test reports found; complete the full host suite before recording evidence.')
     outputs += suites
     outputs += [ROOT / path for path in ('app/build/outputs/apk/debug/app-debug.apk', 'app/build/outputs/apk/release/app-release-unsigned.apk', 'app/build/outputs/apk/qa/app-qa.apk', 'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk')]
-    if not outputs[0].is_file() or 'BUILD SUCCESSFUL' not in outputs[0].read_text(encoding='utf-8', errors='replace'):
+    if not outputs[0].is_file() or 'BUILD SUCCESSFUL' not in build_log_text(outputs[0].read_bytes()):
         raise ValueError('Full Gradle verification must succeed before recording evidence.')
     if len(outputs) < 5 or any(not p.is_file() for p in outputs):
         raise ValueError('Missing test/lint/APK evidence; unsigned local verification outputs are required.')

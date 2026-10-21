@@ -2,6 +2,7 @@ package com.dishnest.app
 
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import com.dishnest.app.ui.storedDate
 import com.github.takahirom.roborazzi.captureRoboImage
 import java.io.File
 import org.junit.Before
@@ -111,9 +112,11 @@ class ScreenshotsTest {
         val first = before[0]; val second = before[1]
         val firstTitle = viewModel.state.value.recipes.single { it.id == first.recipeId }.title
         val secondTitle = viewModel.state.value.recipes.single { it.id == second.recipeId }.title
-        rule.onNode(hasText(first.date, substring = true) and hasText(firstTitle, substring = true)).performScrollTo().performClick()
-        rule.onNode(hasText(first.date, substring = true) and hasText(firstTitle, substring = true)).assertIsSelected()
-        rule.onNode(hasText(second.date, substring = true) and hasText(secondTitle, substring = true)).performScrollTo().performClick()
+        val firstDate = rule.activity.resources.storedDate(first.date)
+        val secondDate = rule.activity.resources.storedDate(second.date)
+        rule.onNode(hasText(firstDate, substring = true) and hasText(firstTitle, substring = true)).performScrollTo().performClick()
+        rule.onNode(hasText(firstDate, substring = true) and hasText(firstTitle, substring = true)).assertIsSelected()
+        rule.onNode(hasText(secondDate, substring = true) and hasText(secondTitle, substring = true)).performScrollTo().performClick()
         rule.onNodeWithText("Select two planned meals").assertDoesNotExist()
         rule.waitForIdle()
         rule.waitUntil(20000) {

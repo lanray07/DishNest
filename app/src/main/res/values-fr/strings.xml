@@ -381,4 +381,5 @@
     <string name="premium_available">Plus de place pour votre livre de recettes. Choisissez une offre ; Amazon affiche le prix final avant confirmation.</string>
     <string name="premium_features_heading">Fonctionnalités Premium</string>
     <string name="premium_purchase_terms">L’accès à vie est un achat unique sans abonnement. Les abonnements mensuels et annuels se renouvellent automatiquement sauf résiliation via Amazon. Restaurez vos achats avec le même compte Amazon.</string>
+    <string name="recipe_copy_title">%1$s (copie)</string>
 </resources>

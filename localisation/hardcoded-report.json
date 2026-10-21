@@ -13,7 +13,7 @@
   },
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
-    "text": "${meal.date} · ${uiResources.mealSlot(meal.slot)} · ${recipe?.title.orEmpty()} · ${uiResources.servings(meal.servings)}"
+    "text": "${uiResources.storedDate(meal.date)} · ${uiResources.mealSlot(meal.slot)} · ${recipe?.title.orEmpty()} · ${uiResources.servings(meal.servings)}"
   },
   {
     "file": "app\\src\\main\\java\\com\\dishnest\\app\\ui\\PlanningScreens.kt",
