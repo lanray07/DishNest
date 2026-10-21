@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T16:25:40.843007+00:00",
+  "generatedAt": "2026-10-21T16:47:54.364555+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -135,6 +135,18 @@
       "check": "Forced-idle Fire timer",
       "status": "passed",
       "evidence": "artifacts/fire-doze-qa.json",
+      "remaining": ""
+    },
+    {
+      "check": "Fire offline smoke and selected-plan process recovery",
+      "status": "passed",
+      "evidence": "artifacts/fire-offline-qa.json",
+      "remaining": ""
+    },
+    {
+      "check": "Fire portrait/landscape with system large text",
+      "status": "passed",
+      "evidence": "artifacts/fire-layout-qa.json",
       "remaining": ""
     },
     {

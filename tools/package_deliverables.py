@@ -5,6 +5,8 @@ from website_evidence import verify as verify_website
 from publisher_evidence import verify as verify_publisher
 from purchase_evidence import verify as verify_purchase
 from lat_evidence import verify as verify_lat
+from fire_offline_evidence import verify as verify_offline
+from fire_layout_evidence import verify as verify_layout
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.mkdir(exist_ok=True)
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
 if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
@@ -76,6 +78,8 @@ def archive_source():
     evidence.update({'billing-lifecycle-contract.json','billing-lat-worker.json','billing-lat-deployment.json','lat-candidate.json','amazon-lat-console.json'})
     evidence.update({'fire-doze-qa.json','packaged-notices-verification.json','localization-date-copy-qa.json',
                      'billing-recovery-fixtures.json','amazon-support-request.json'})
+    evidence.update({'fire-offline-qa.json','fire-offline-suite.txt','fire-offline-selected-plan.txt'})
+    evidence.update({'fire-layout-qa.json','fire-layout-portrait-large-text.txt','fire-layout-landscape-large-text.txt'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
@@ -138,6 +142,16 @@ for name in ['asset-validation','website-verification','native-alignment','devic
 blocked=summary.get('fire-blocked-notifications', {})
 summary['blocked_notifications_current']=summary['device_instrumentation_current'] and blocked.get('apkSha256')==fire.get('apkSha256') and blocked.get('instrumentationApkSha256')==fire.get('instrumentationApkSha256') and blocked.get('notificationSettingRestored') is True and blocked.get('notificationsBlocked') is True and blocked.get('passed') is True and blocked.get('controllerSha256')==hashlib.sha256((ROOT/'tools/run_fire_alarm_probe.ps1').read_bytes()).hexdigest() and blocked.get('notificationHelperSha256')==hashlib.sha256((ROOT/'tools/fire_notification_setting.py').read_bytes()).hexdigest()
 summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
+offline_path=ROOT/'artifacts/fire-offline-qa.json'
+if offline_path.exists():
+    summary['fire_offline_qa']=json.loads(offline_path.read_text(encoding='utf-8'))
+    summary['fire_offline_qa_current']=verify_offline(summary['fire_offline_qa'])
+    summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
+layout_path=ROOT/'artifacts/fire-layout-qa.json'
+if layout_path.exists():
+    summary['fire_layout_qa']=json.loads(layout_path.read_text(encoding='utf-8'))
+    summary['fire_layout_qa_current']=verify_layout(summary['fire_layout_qa'])
+    summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
 source_zip=archive_source()
 manifest.append({'file':source_zip.name,'bytes':source_zip.stat().st_size,'sha256':hashlib.sha256(source_zip.read_bytes()).hexdigest(),'kind':'source archive with verification evidence','production_ready':False})
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')

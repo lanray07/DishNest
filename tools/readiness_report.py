@@ -6,6 +6,8 @@ from build_evidence import digest, verify as verify_build
 from website_evidence import verify as verify_website
 from verify_packaged_notices import verify as verify_notices
 from fire_doze_evidence import verify as verify_doze
+from fire_offline_evidence import verify as verify_offline
+from fire_layout_evidence import verify as verify_layout
 ROOT=Path(__file__).resolve().parents[1]
 def data(path):return json.loads((ROOT/path).read_text(encoding='utf-8-sig'))
 suites=[ET.parse(p).getroot() for p in (ROOT/'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml')]
@@ -19,6 +21,10 @@ device=data('artifacts/device-evidence.json')
 blocked=data('artifacts/fire-blocked-notifications.json') if (ROOT/'artifacts/fire-blocked-notifications.json').exists() else {}
 doze=data('artifacts/fire-doze-qa.json') if (ROOT/'artifacts/fire-doze-qa.json').exists() else {}
 doze_current=verify_doze(doze)
+offline=data('artifacts/fire-offline-qa.json') if (ROOT/'artifacts/fire-offline-qa.json').exists() else {}
+offline_current=verify_offline(offline)
+layout=data('artifacts/fire-layout-qa.json') if (ROOT/'artifacts/fire-layout-qa.json').exists() else {}
+layout_current=verify_layout(layout)
 notices=data('artifacts/packaged-notices-verification.json') if (ROOT/'artifacts/packaged-notices-verification.json').exists() else {}
 alarm=data('artifacts/fire-background-alarm.json') if (ROOT/'artifacts/fire-background-alarm.json').exists() else {}
 fire=data('artifacts/fire-device-qa.json') if (ROOT/'artifacts/fire-device-qa.json').exists() else {}
@@ -88,6 +94,8 @@ The remaining release categories, their local work and the evidence needed to cl
 | Physical Fire smoke tests | {fire_result} | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
 | Physical Fire native checks | {str(native_fire.get('passedTests',0)) + ' passed on current APK; ordinary data hashes unchanged; UI not exercised' if native_current else 'Pending on current APK'} | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
 | Forced-doze timer | {'Passed on the exact current QA app and runner; timer handled before verifier restart while still IDLE; original data unchanged; broader device matrix pending' if doze_current else 'Pending: current exact-build forced-idle evidence unavailable'} | `artifacts/fire-doze-qa.json` |
+| Fire offline and process recovery | {'PASS: 15 smoke tests plus named-plan check without connectivity; saved kitchen/preferences unchanged after process restart; radio/display settings and ordinary data preserved' if offline_current else 'Pending on current binaries'} | `artifacts/fire-offline-qa.json` |
+| Fire system text scale and orientation | {'PASS: recipe, pantry and named-plan flows in portrait and landscape at system font scale 2.0; settings restored and ordinary data unchanged; TalkBack/full dialog matrix pending' if layout_current else 'Pending on current binaries'} | `artifacts/fire-layout-qa.json` |
 | Offline notice integrity | {'10 original notices and 92 dependency hashes verified; exact asset in debug/QA/release APKs; legal approval pending' if verify_notices(notices) else 'Pending on current APKs'} | `artifacts/packaged-notices-verification.json` |
 | Fire background timer probe | {'PASS: saved kitchen records, handled timer and own notification after QA process termination' if alarm.get('passed') and alarm_current else 'Pending; inspect phase results'} | `artifacts/fire-background-alarm.json` |
 | Fire blocked-notification timer probe | {'PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored' if blocked.get('passed') and blocked_current and blocked.get('notificationsBlocked') is True else 'Pending on the current APK; no hardware pass inferred'} | `artifacts/fire-blocked-notifications.json` |

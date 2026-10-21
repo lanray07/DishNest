@@ -41,6 +41,8 @@ The remaining release categories, their local work and the evidence needed to cl
 | Physical Fire smoke tests | 15 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
 | Physical Fire native checks | 6 passed on current APK; ordinary data hashes unchanged; UI not exercised | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
 | Forced-doze timer | Passed on the exact current QA app and runner; timer handled before verifier restart while still IDLE; original data unchanged; broader device matrix pending | `artifacts/fire-doze-qa.json` |
+| Fire offline and process recovery | PASS: 15 smoke tests plus named-plan check without connectivity; saved kitchen/preferences unchanged after process restart; radio/display settings and ordinary data preserved | `artifacts/fire-offline-qa.json` |
+| Fire system text scale and orientation | PASS: recipe, pantry and named-plan flows in portrait and landscape at system font scale 2.0; settings restored and ordinary data unchanged; TalkBack/full dialog matrix pending | `artifacts/fire-layout-qa.json` |
 | Offline notice integrity | 10 original notices and 92 dependency hashes verified; exact asset in debug/QA/release APKs; legal approval pending | `artifacts/packaged-notices-verification.json` |
 | Fire background timer probe | PASS: saved kitchen records, handled timer and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
 | Fire blocked-notification timer probe | PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored | `artifacts/fire-blocked-notifications.json` |

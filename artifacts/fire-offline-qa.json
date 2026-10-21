@@ -1,0 +1,46 @@
+{
+  "testedAt": "2026-10-21T16:41:28.964453+00:00",
+  "model": "KFTRWI",
+  "packageId": "com.dishnest.app.qa",
+  "controllerSha256": "bb95ba7037db13f27afe1997d521df8abe6f665b3ab3973b9e63c35d7a10f528",
+  "apkSha256": "1023739b5c087bce595a46b0945c3dbf95e85fa7179abafcd24e9a33c33c80e0",
+  "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
+  "installedApksVerified": true,
+  "passed": true,
+  "privateIdentifiersStored": false,
+  "paidServicesEnabled": false,
+  "ordinaryAppModified": false,
+  "phases": {
+    "suite": {
+      "passed": true,
+      "tests": 15,
+      "disconnectedBeforeAndAfter": true,
+      "trace": "artifacts/fire-offline-suite.txt",
+      "traceSha256": "16960ba0cbf4976db8620ba8a04f02228be4144558938f499f02fc6111216ba1"
+    },
+    "selected-plan": {
+      "passed": true,
+      "tests": 1,
+      "disconnectedBeforeAndAfter": true,
+      "trace": "artifacts/fire-offline-selected-plan.txt",
+      "traceSha256": "a75068f63ff7c3f99263e876ae70659c557f0e0e3e71281c40ee5f33ed091c89"
+    }
+  },
+  "processAbsentBeforeRelaunch": true,
+  "namedPlanSavedBeforeRelaunch": true,
+  "processPresentAfterOfflineRelaunch": true,
+  "savedKitchenAndPreferencesUnchangedAfterOfflineProcessRestart": true,
+  "offlineAfterProcessRestart": true,
+  "settingsRestored": true,
+  "ordinaryApkAndPersistentFilesUnchanged": true,
+  "ordinaryPersistentFileCount": 5,
+  "cleanupErrors": [],
+  "notCovered": [
+    "Full manual offline cooking/shopping flow",
+    "Document-provider UI",
+    "Live website import",
+    "Voice providers",
+    "Billing or Amazon LAT",
+    "Other devices"
+  ]
+}
