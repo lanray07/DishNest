@@ -5,6 +5,7 @@ from pathlib import Path
 from build_evidence import verify as verify_build, digest
 from website_evidence import verify as verify_website
 from verify_packaged_notices import verify as verify_notices
+from fire_doze_evidence import verify as verify_doze
 ROOT=Path(__file__).resolve().parents[1]
 checks=[]
 def check(name,passed,evidence,remaining=''):
@@ -40,7 +41,10 @@ server_passed=server_xml is not None and bool(server_xml.findall('.//testcase'))
 worker=read_json('artifacts/billing-worker.json')
 worker_sources=['worker.mjs','verification.mjs','worker.test.mjs','wrangler.json','package-lock.json']
 worker_current=worker.get('passed') is True and all((ROOT/'billing-server'/name).is_file() and worker.get('sourceSha256',{}).get(name)==digest(ROOT/'billing-server'/name) for name in worker_sources)
-check('Local receipt-service tests',server_passed and worker_current,'artifacts/billing-server-tests.xml; artifacts/billing-worker.json','Run npm ci in billing-server, then node --test --test-reporter=junit billing-server/*.test.mjs; Worker proof must match sources')
+recovery=read_json('artifacts/billing-recovery-fixtures.json')
+recovery_sources=['worker.mjs','verification.mjs','recovery.test.mjs','package-lock.json']
+recovery_current=recovery.get('passed') is True and recovery.get('fixtureOnly') is True and recovery.get('externalRequests') == 0 and all((ROOT/'billing-server'/name).is_file() and recovery.get('sourceSha256',{}).get(name)==digest(ROOT/'billing-server'/name) for name in recovery_sources)
+check('Local receipt-service tests',server_passed and worker_current and recovery_current,'artifacts/billing-server-tests.xml; artifacts/billing-worker.json; artifacts/billing-recovery-fixtures.json','Run npm ci in billing-server, then node --test --test-reporter=junit billing-server/*.test.mjs; Worker and recovery proof must match sources')
 live_contract=read_json('artifacts/billing-live-contract.json')
 live_paths=['tools/verify_billing_contract.mjs','billing-server/worker.mjs','billing-server/verification.mjs','app/build/tmp/kotlin-classes/debug/com/dishnest/app/platform/EntitlementVerifier.class']
 live_current=live_contract.get('passed') is True and all((ROOT/p).is_file() and live_contract.get('sourceSha256',{}).get(p)==digest(ROOT/p) for p in live_paths)
@@ -67,7 +71,8 @@ check('Physical Fire native components',native_fire_passed or (fire_current and 
 check('Physical Fire instrumentation smoke',fire.get('passed') is True and fire_current,'artifacts/fire-device-qa.json','Native tests passed; unlock the secure Fire display to rerun the UI smoke suite' if fire.get('uiBlocker') else 'Run the native/UI smoke suite on the selected device with the current isolated QA APK')
 alarm = read_json('artifacts/fire-background-alarm.json')
 check('Background Fire timer after process termination', fire_current and alarm.get('passed') is True and alarm.get('processAbsentAfterKill') is True and alarm.get('installedApksVerified') is True and alarm.get('controllerSha256') == digest(ROOT/'tools/run_fire_alarm_probe.ps1') and alarm.get('notificationHelperSha256') == digest(ROOT/'tools/fire_notification_setting.py') and alarm.get('kitchenPersistencePassed') is True and alarm.get('apkSha256') == fire.get('apkSha256') and alarm.get('instrumentationApkSha256') == fire.get('instrumentationApkSha256'), 'artifacts/fire-background-alarm.json', 'Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs')
-check('Physical device QA',False,'docs/DEVICE_QA.md','Fire/phone, TalkBack, doze/reboot, permissions, speech and actual OCR checks')
+check('Forced-idle Fire timer',verify_doze(read_json('artifacts/fire-doze-qa.json')),'artifacts/fire-doze-qa.json','Run the bounded forced-idle probe on the current QA app and runner; verify notification, kitchen persistence, idle restoration and unchanged ordinary data')
+check('Physical device QA',False,'docs/DEVICE_QA.md','Other hardware, TalkBack, natural idle/quotas/reboot/clock changes, permissions, speech and actual OCR checks')
 notices=ROOT/'legal/third-party/manifest.json'
 check('Native notice source collection',verify_notices(read_json('artifacts/packaged-notices-verification.json')),'legal/third-party/manifest.json; artifacts/packaged-notices-verification.json','Verify original notice hashes, complete offline text, exact APK asset bytes and current dependency inventory; legal approval remains separate')
 inventory=read_json('docs/dependencies/runtime-inventory.json')

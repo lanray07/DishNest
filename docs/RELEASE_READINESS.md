@@ -1,6 +1,6 @@
 # DishNest submission-readiness report
 
-Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 20 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
+Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 21 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
 
@@ -38,11 +38,11 @@ The remaining release categories, their local work and the evidence needed to cl
 | Locale resource gate | PASS across 12 locales | `localisation/validation.json` |
 | Physical Fire smoke tests | 13 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
 | Physical Fire native checks | 6 passed on current APK; ordinary data hashes unchanged; UI not exercised | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
-| Forced-doze timer | Passed on the retained pre-numeral-UI QA binary; unchanged timer/database components; not exact new-release or full hardware approval | `artifacts/fire-doze-qa.json`, `artifacts/fire-doze-source-binding.json` |
+| Forced-doze timer | Passed on the exact current QA app and runner; timer handled before verifier restart while still IDLE; original data unchanged; broader device matrix pending | `artifacts/fire-doze-qa.json` |
 | Offline notice integrity | 10 original notices and 92 dependency hashes verified; exact asset in debug/QA/release APKs; legal approval pending | `artifacts/packaged-notices-verification.json` |
 | Fire background timer probe | PASS: saved kitchen records, handled timer and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
 | Fire blocked-notification timer probe | PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored | `artifacts/fire-blocked-notifications.json` |
-| Receipt service | 14 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
+| Receipt service | 15 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
 | Workers Free verifier | Free plan verified; sandbox/production deployed with approval; signed inactive live-RVS responses accepted by Kotlin and wrong account rejected; real purchases not tested | `artifacts/billing-deployment.json`, `artifacts/billing-live-contract.json` |
 | Cross-runtime receipt contract | Actual Node signer and compiled Kotlin verifier pass; wrong-account response rejected | `artifacts/billing-contract.json` |
 | Isolated App Tester | Lifetime purchase, restore/restart and denial checks observed; subscription checkouts completed but expiry/lifecycle approval pending | `artifacts/amazon-purchase-device.json`, `artifacts/purchase-test-restoration.json` |

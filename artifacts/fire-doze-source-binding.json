@@ -35,5 +35,6 @@
   "testedApkRetained": "build/doze-tested/app-qa.apk",
   "testedInstrumentationApkRetained": "build/doze-tested/app-qa-androidTest.apk",
   "dozeReportSha256": "269cbc9163a9fae2b14f1d967b6a4ff39f5ef63f7ff8499971505ce524d2ba64",
-  "scope": "Forced-doze test on the pre-numeral-UI QA binary; exact timer/database/application source components match. This is not an exact new-release hardware approval."
+  "scope": "Forced-doze test on the pre-numeral-UI QA binary; exact timer/database/application source components match. This is not an exact new-release hardware approval.",
+  "dozeReportPath": "artifacts/fire-doze-qa-2026-10-20.json"
 }

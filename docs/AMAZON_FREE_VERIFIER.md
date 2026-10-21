@@ -45,3 +45,7 @@ The committed `wrangler.json` template leaves verification disabled, public work
 - [workers.dev production guidance](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/).
 - [Workers Node crypto support](https://developers.cloudflare.com/workers/runtime-apis/nodejs/crypto/) and [Miniflare runtime testing](https://github.com/cloudflare/workers-sdk/blob/main/packages/miniflare/README.md).
 - [Amazon server-side RVS and shared-secret requirement](https://developer.amazon.com/docs/in-app-purchasing/iap-rvs-for-android-apps.html).
+
+## Local overload recovery follow-up — 21 October 2026
+
+`billing-server/recovery.test.mjs` exercised the deployed-source isolate controller locally with an in-memory test key and a virtual clock: the 31st request is rejected without an RVS call, the limit recovers at exactly 60 seconds, a simulated upstream failure returns an unsigned generic 503 and the next request recovers, and the 2048-client map rejects overflow then reclaims expired buckets. All recovered decisions have valid account-bound signatures. `artifacts/billing-recovery-fixtures.json` records 2080 simulated RVS calls and source hashes. There were zero external requests, deployments or paid resources. These fixtures do not establish real account daily-quota exhaustion/recovery, deployed CPU budgets or device offline-entitlement recovery; those checks remain pending.

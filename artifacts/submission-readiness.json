@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T10:14:00.192732+00:00",
+  "generatedAt": "2026-10-21T13:47:57.606092+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -80,7 +80,7 @@
     {
       "check": "Local receipt-service tests",
       "status": "passed",
-      "evidence": "artifacts/billing-server-tests.xml; artifacts/billing-worker.json",
+      "evidence": "artifacts/billing-server-tests.xml; artifacts/billing-worker.json; artifacts/billing-recovery-fixtures.json",
       "remaining": ""
     },
     {
@@ -132,10 +132,16 @@
       "remaining": ""
     },
     {
+      "check": "Forced-idle Fire timer",
+      "status": "passed",
+      "evidence": "artifacts/fire-doze-qa.json",
+      "remaining": ""
+    },
+    {
       "check": "Physical device QA",
       "status": "pending",
       "evidence": "docs/DEVICE_QA.md",
-      "remaining": "Fire/phone, TalkBack, doze/reboot, permissions, speech and actual OCR checks"
+      "remaining": "Other hardware, TalkBack, natural idle/quotas/reboot/clock changes, permissions, speech and actual OCR checks"
     },
     {
       "check": "Native notice source collection",

@@ -14,6 +14,8 @@ This is the handoff for the remaining release categories in `artifacts/submissio
 
 ## Run order
 
+21 October follow-up: Amazon's case still shows pending Amazon action, with only the original request and no reply. The exact current QA build passed forced deep idle, including notification/persistence and unchanged ordinary data; natural idle, quotas, reboot and other hardware remain untested. Local verifier overload/recovery fixtures now pass without external requests or deployments; these do not approve real daily-quota or purchase lifecycle recovery. All seven broad release categories above remain pending.
+
 1. Finish chosen app changes and run the full host test/lint/build command recorded in `artifacts/delivery-verification.log`. Record fresh provenance using `tools/build_evidence.py`; source changes invalidate old binaries.
 2. Validate locale coverage, listing/assets, native alignment and APK metadata. Run Fire smoke, then the separate background kitchen/timer probe sequentially. Both probes use only the disposable `com.dishnest.app.qa` package; ordinary kitchen data is outside their fixtures.
 3. Record remaining hardware scenarios and actual native/publisher reviews. Configure billing/signing only with publisher-provided material, without storing secrets in Git or chat. Complete store forms from approved facts.
