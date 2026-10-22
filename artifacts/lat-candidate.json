@@ -126,12 +126,13 @@
   "zipAlignment16k": true,
   "normalBuildUnchanged": true,
   "deviceInstalled": false,
-  "uploaded": false,
-  "submitted": false,
+  "uploaded": true,
+  "submitted": true,
   "serviceDeployed": true,
   "productionReady": false,
   "remaining": [
     "Complete/submit the certified LAT draft with the current APK",
     "Amazon LAT availability and separate-device purchase lifecycle"
-  ]
+  ],
+  "uploadedReleaseId": "amzn1.devportal.apprelease.a62d1847a56d47db83a10a3772cb29a5"
 }

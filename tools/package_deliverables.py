@@ -82,6 +82,7 @@ def archive_source():
     evidence.update({'fire-offline-qa.json','fire-offline-suite.txt','fire-offline-selected-plan.txt'})
     evidence.update({'fire-layout-qa.json','fire-layout-portrait-large-text.txt','fire-layout-landscape-large-text.txt'})
     evidence.update({'fire-document-qa.json','fire-document-seed.txt'})
+    evidence.update({'amazon-support-guidance-review.json','amazon-support-guidance-tests.xml','amazon-clean-region-lat-console.json'})
     with zipfile.ZipFile(source_zip,'w',zipfile.ZIP_DEFLATED) as archive:
         for file in ROOT.rglob('*'):
             if not file.is_file():continue
@@ -138,7 +139,7 @@ if lint_file.exists():
     issues=ET.parse(lint_file).getroot().findall('issue')
     errors=[i for i in issues if i.attrib.get('severity') in ['Error','Fatal']]
     summary['android_lint']={'errors':len(errors),'error_categories':sorted({i.attrib.get('id') for i in errors}),'passed':not errors,'report':'app/build/reports/lint-results-debug.html'}
-for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-deployment','billing-live-contract','amazon-authentication-key','billing-configuration-guard','publisher-signing','publisher-device-compatibility']:
+for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-deployment','billing-live-contract','amazon-authentication-key','billing-configuration-guard','publisher-signing','publisher-device-compatibility','amazon-clean-region-lat-console','amazon-support-guidance-review','amazon-support-request']:
     report=ROOT/f'artifacts/{name}.json'
     if report.exists():summary[name]=json.loads(report.read_text(encoding='utf-8-sig'))
 blocked=summary.get('fire-blocked-notifications', {})

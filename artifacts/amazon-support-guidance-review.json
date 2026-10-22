@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-22T08:46:26.983372+00:00",
+  "scope": "Source review plus local receipt fixtures, not a new device purchase pass",
+  "fullHistoryRefreshAfterAccountConfirmation": true,
+  "paginationUsesResetFalseOnlyForLaterPages": true,
+  "knownReceiptsReverifiedWithRvs": true,
+  "test2BillingSourceMatchesCurrent": true,
+  "futureCancellationPreservesLatAccess": true,
+  "inactiveAtSuppliedCancellationBoundary": true,
+  "testReceiptsRejectedByProduction": true,
+  "localFixtureTests": 12,
+  "localFixtureFailures": 0,
+  "externalRequests": 0,
+  "testOnly": true,
+  "actualCleanCyclePassed": false,
+  "sourceSha256": {
+    "app/src/main/java/com/dishnest/app/platform/AmazonBilling.kt": "ce3553128d615820227f84a19c70d9e7e355b7697c7243a464e58d14891bb566",
+    "billing-server/verification.mjs": "5ac5a3048bc52f2a503b26fdf5f5ed0dc5c9e119d1efe083ce14600c7cf7afae",
+    "billing-server/verification.test.mjs": "ccae37b71798eda8cbd4bbd7c03aaf338c0d11660de86fdfa31a0b2206e45a07",
+    "artifacts/amazon-support-guidance-tests.xml": "4630749db9347957f9e4fa1457e16c1f7ac9704e042e065abcefdc63e469fe11"
+  },
+  "countryMatchConfirmedByPublisher": true,
+  "country": "United Kingdom",
+  "marketplace": "Amazon.co.uk",
+  "ordinaryAppModified": false,
+  "paidServicesEnabled": false,
+  "publicReleaseSubmitted": false
+}

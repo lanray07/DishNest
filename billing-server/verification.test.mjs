@@ -24,6 +24,24 @@ test('turning autorenew off preserves access until future cancel date', () => {
   const result = entitlement(receipt({ autoRenewing: false, renewalDate: null, cancelDate: now + HOUR / 2 }), 'receipt', now, 'production');
   assert.equal(result.active, true); assert.equal(result.expiresAt, now + HOUR / 2);
 });
+
+test('LAT accelerated receipts with absent renewal stay active until the supplied cancellation boundary', () => {
+  const cancelDate = now + 3 * HOUR;
+  for (const termSku of ['dishnest.premium.monthly', 'dishnest.premium.annual']) {
+    const accelerated = receipt({ productId: 'dishnest.premium', termSku, cancelDate,
+      renewalDate: null, gracePeriodEndDate: null, testTransaction: true, betaProduct: true });
+    const initial = entitlement(accelerated, 'receipt', now, 'lat');
+    assert.equal(initial.sku, termSku);
+    assert.equal(initial.active, true);
+    assert.equal(initial.expiresAt, now + HOUR); // Recheck, never invent a ten/thirty-minute expiry.
+    const lastMoment = entitlement(accelerated, 'receipt', cancelDate - 1, 'lat');
+    assert.equal(lastMoment.active, true);
+    assert.equal(lastMoment.expiresAt, cancelDate);
+    assert.equal(entitlement(accelerated, 'receipt', cancelDate, 'lat').active, false);
+    assert.equal(entitlement(accelerated, 'receipt', cancelDate + 1, 'lat').active, false);
+    assert.throws(() => entitlement(accelerated, 'receipt', now, 'production'));
+  }
+});
 test('expired, refunded and cancelled receipts revoke access', () => {
   for (const extra of [{cancelDate:now}, {cancelDate:now-1}, {renewalDate:now-1}])
     assert.equal(entitlement(receipt(extra), 'receipt', now, 'production').active, false);
