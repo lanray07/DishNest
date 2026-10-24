@@ -1125,7 +1125,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-22T08:53:13.368444+00:00",
+    "generatedAt": "2026-10-24T08:54:43.285152+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -1237,7 +1237,7 @@
         "check": "Amazon catalog and live verification",
         "status": "pending",
         "evidence": "docs/AMAZON_LAT.md; artifacts/fire-test2-qa.json; artifacts/amazon-support-request.json; marketing/amazon-premium-console.json",
-        "remaining": "Both IAPs are TEST Live and private LAT Tests 1 and 2 are in progress. The genuine Test 2 APK was acquired and verified on Fire. Reset, clean test data and restart still restore a monthly test receipt with future cancellation and absent renewal, blocking annual/lifetime checkout. Amazon support supplied clean-cycle guidance on 22 October. Full reset=true/RVS handling is already present; the publisher confirms UK/Amazon.co.uk and the current candidate was accepted as private Test 3 after publisher certification. Amazon publication/acquisition and actual clean-cycle testing are pending. Monthly grant/restart/restore and autorenew-off access passed in Test 1. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required; original app/data rollback passed."
+        "remaining": "Both IAPs are TEST Live and private LAT Tests 1 and 2 are in progress. The genuine Test 2 APK was acquired and verified on Fire. Reset, clean test data and restart still restore a monthly test receipt with future cancellation and absent renewal, blocking annual/lifetime checkout. Amazon support supplied clean-cycle guidance on 22 October. Full reset=true/RVS handling is already present; the publisher confirms UK/Amazon.co.uk and the current candidate was accepted as private Test 3 after publisher certification. Test 3 is now in-progress; the invitation resend and publisher receipt are confirmed, but the Fire requires Amazon browser sign-in for the invited tester before acquisition and actual clean-cycle testing. Monthly grant/restart/restore and autorenew-off access passed in Test 1. Full renewal/expiry/annual/lifetime/refund/fulfilment and quota-recovery checks remain required; original app/data rollback passed."
       },
       {
         "check": "Physical Fire native components",
@@ -1507,7 +1507,7 @@
     "releaseName": "DishNest clean-region annual and lifetime QA",
     "releaseId": "amzn1.devportal.apprelease.a62d1847a56d47db83a10a3772cb29a5",
     "channelId": "amzn1.channel.c46840d589f4493d8f8893970684bb80",
-    "status": "Test submitted",
+    "status": "Test in-progress",
     "copiedFrom": "Test 2",
     "apkUploaded": true,
     "apkSha256": "d246ebbd3c2fd458693086f7156aa3cf48f01884d4de3c1ae44e1066d9a92279",
@@ -1539,9 +1539,15 @@
     "privateReviewScreenshotStored": true,
     "track": "Test 3",
     "submittedAt": "2026-10-22T08:53:09.756008+00:00",
-    "publishedForAcquisition": false,
-    "acquisitionPendingAmazon": true,
-    "submissionScreenshot": "artifacts/screens/amazon-clean-region-lat-submitted.png"
+    "publishedForAcquisition": true,
+    "acquisitionPendingAmazon": false,
+    "submissionScreenshot": "artifacts/screens/amazon-clean-region-lat-submitted.png",
+    "availabilityCheckedAt": "2026-10-24T08:54:19.401248+00:00",
+    "availabilityScreenshot": "artifacts/screens/amazon-test3-in-progress.png",
+    "invitationResentConfirmed": true,
+    "invitationReceiptConfirmedByPublisher": true,
+    "deviceAcquisitionVerified": false,
+    "currentDeviceBlocker": "Amazon browser sign-in required for Test 3 tester account"
   },
   "amazon-support-guidance-review": {
     "checkedAt": "2026-10-22T08:46:26.983372+00:00",

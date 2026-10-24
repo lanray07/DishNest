@@ -1,5 +1,9 @@
 # DishNest private LAT
 
+## 24 October: Test 3 available; tester sign-in pending
+
+The console now confirms **Test 3 — Test in-progress**, with Manage testers enabled. Amazon previously confirmed the invitation resend, and the publisher confirms receipt. On the connected Fire, Silk currently requires Amazon sign-in; the saved browser account differs from the consented Device LAT tester account. The publisher must complete that sign-in and reopen the fresh invitation before genuine Test 3 acquisition can be verified. No Amazon APK has been installed for this cycle, and annual, lifetime and expiry checks remain unpassed. A fresh encrypted-backup recovery passed byte-exact restoration and native SQLite integrity; the original APK and all five persistent files remain unchanged, and the rollback plan is prepared. No paid settings, verifier deployment, public catalog or public submission changed. See `artifacts/amazon-clean-region-lat-console.json` and its current availability screenshot.
+
 ## 22 October: support guidance and clean-region follow-up
 
 Amazon has replied and the case is marked **Resolved**, with guidance rather than a confirmed direct reset. Support confirms that a future cancellation with absent renewal and test/beta flags represents active accelerated LAT access; this is not evidence that the verifier should revoke it. Monthly acceleration is ten minutes per period, annual thirty minutes, and Amazon documents cancellation after four renewals; a single period is not a complete subscription lifetime. Keep access bounded by the authentic supplied dates and reverify without inventing expiry.

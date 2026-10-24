@@ -20,6 +20,8 @@ The later local document-provider continuation passed 11 observed checks, coveri
 
 22 October update: Amazon has replied and closed the support case with clean-cycle guidance, not a confirmed reset. Current and historical Test 2 billing sources already request a full history refresh and use RVS. The publisher confirms a matching UK/Amazon.co.uk device tester; the new signed candidate has been uploaded and read back byte-for-byte in a fresh private draft with only the consented Device LAT group. The publisher certified and Amazon accepted private Test 3; acquisition is pending publication and actual purchases remain unpassed. Twelve policy fixtures pass, including the supplied LAT cancellation shape. Actual clean-cycle purchase/lifecycle checks remain pending. Earlier pending-Amazon status below is historical.
 
+24 October update: Test 3 is now **Test in-progress** and the publisher confirms the invitation arrived. Device acquisition is blocked by Amazon browser sign-in for the invited tester account. A fresh byte-exact backup restoration, native SQLite integrity check and rollback preparation pass without modifying the ordinary app or its five persistent files. No annual/lifetime/expiry pass or public submission is claimed.
+
 ## Run order
 
 21 October follow-up: Amazon's case still shows pending Amazon action, with only the original request and no reply. The exact current QA build passed forced deep idle, including notification/persistence and unchanged ordinary data; natural idle, quotas, reboot and other hardware remain untested. Local verifier overload/recovery fixtures now pass without external requests or deployments; these do not approve real daily-quota or purchase lifecycle recovery. All seven broad release categories above remain pending.

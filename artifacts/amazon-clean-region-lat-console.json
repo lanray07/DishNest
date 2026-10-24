@@ -3,7 +3,7 @@
   "releaseName": "DishNest clean-region annual and lifetime QA",
   "releaseId": "amzn1.devportal.apprelease.a62d1847a56d47db83a10a3772cb29a5",
   "channelId": "amzn1.channel.c46840d589f4493d8f8893970684bb80",
-  "status": "Test submitted",
+  "status": "Test in-progress",
   "copiedFrom": "Test 2",
   "apkUploaded": true,
   "apkSha256": "d246ebbd3c2fd458693086f7156aa3cf48f01884d4de3c1ae44e1066d9a92279",
@@ -35,7 +35,13 @@
   "privateReviewScreenshotStored": true,
   "track": "Test 3",
   "submittedAt": "2026-10-22T08:53:09.756008+00:00",
-  "publishedForAcquisition": false,
-  "acquisitionPendingAmazon": true,
-  "submissionScreenshot": "artifacts/screens/amazon-clean-region-lat-submitted.png"
+  "publishedForAcquisition": true,
+  "acquisitionPendingAmazon": false,
+  "submissionScreenshot": "artifacts/screens/amazon-clean-region-lat-submitted.png",
+  "availabilityCheckedAt": "2026-10-24T08:54:19.401248+00:00",
+  "availabilityScreenshot": "artifacts/screens/amazon-test3-in-progress.png",
+  "invitationResentConfirmed": true,
+  "invitationReceiptConfirmedByPublisher": true,
+  "deviceAcquisitionVerified": false,
+  "currentDeviceBlocker": "Amazon browser sign-in required for Test 3 tester account"
 }
