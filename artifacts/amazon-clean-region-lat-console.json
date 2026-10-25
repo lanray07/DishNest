@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-22T08:53:09.756008+00:00",
+  "checkedAt": "2026-10-25T09:30:57.224927+00:00",
   "releaseName": "DishNest clean-region annual and lifetime QA",
   "releaseId": "amzn1.devportal.apprelease.a62d1847a56d47db83a10a3772cb29a5",
   "channelId": "amzn1.channel.c46840d589f4493d8f8893970684bb80",
@@ -19,7 +19,7 @@
   "monthlyMinutes": 10,
   "annualMinutes": 30,
   "testerGroups": [
-    "DishNest Device LAT"
+    "DishNest Premium LAT"
   ],
   "testerIdentifiersStored": false,
   "countryMatchConfirmedByPublisher": true,
@@ -42,6 +42,29 @@
   "availabilityScreenshot": "artifacts/screens/amazon-test3-in-progress.png",
   "invitationResentConfirmed": true,
   "invitationReceiptConfirmedByPublisher": true,
-  "deviceAcquisitionVerified": false,
-  "currentDeviceBlocker": "Amazon browser sign-in required for Test 3 tester account"
+  "deviceAcquisitionVerified": true,
+  "currentDeviceBlocker": "Annual access remains active after more than 24 hours and completed full-history restore after process restart; lifetime stays disabled.",
+  "testerDeliveryCheckedAt": "2026-10-24T09:38:17.279412+00:00",
+  "originalTesterDeliveryStatus": "Invalid Email ID",
+  "existingConsentedTesterAssigned": true,
+  "correctedTesterDeliveryStatus": "Delivered",
+  "testerGroupAssignmentScreenshot": "artifacts/screens/amazon-test3-corrected-tester-group.png",
+  "nativePushInvitationObserved": true,
+  "correctedInvitationResendConfirmed": true,
+  "nativeTest3BadgeObserved": true,
+  "deviceInstalled": false,
+  "amazonDeliveredApkSha256": "4a4edd247266c2bd519054c3d0396e0116eb489e41128b73931eb1fd191cac7b",
+  "actualAnnualGrantPassed": true,
+  "actualAnnualRestartRestorePassed": true,
+  "actualAnnualZeroCostConfirmed": true,
+  "actualAnnualAutoRenewOffConfirmed": true,
+  "invalidTest3RecipientAssociationRemoved": true,
+  "temporaryDeviceInstallationVerified": true,
+  "originalAppRestored": true,
+  "originalPrivateFilesExact": true,
+  "expiryCheckedAt": "2026-10-25T09:28:25.598539+00:00",
+  "naturalExpiryPassed": false,
+  "lifetimePassed": false,
+  "acceleratedTimelinesRecheckedEnabled": true,
+  "supportCaseReopened": true
 }

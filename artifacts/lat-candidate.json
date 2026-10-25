@@ -131,8 +131,12 @@
   "serviceDeployed": true,
   "productionReady": false,
   "remaining": [
-    "Complete/submit the certified LAT draft with the current APK",
-    "Amazon LAT availability and separate-device purchase lifecycle"
+    "Observe natural accelerated annual expiry; Amazon support investigation pending",
+    "Complete actual lifetime grant, restart/restore and remaining lifecycle checks",
+    "Close all required public-release readiness gates"
   ],
-  "uploadedReleaseId": "amzn1.devportal.apprelease.a62d1847a56d47db83a10a3772cb29a5"
+  "uploadedReleaseId": "amzn1.devportal.apprelease.a62d1847a56d47db83a10a3772cb29a5",
+  "amazonDeliveredApkSha256": "4a4edd247266c2bd519054c3d0396e0116eb489e41128b73931eb1fd191cac7b",
+  "temporaryDeviceInstallationVerified": true,
+  "originalAppRestored": true
 }

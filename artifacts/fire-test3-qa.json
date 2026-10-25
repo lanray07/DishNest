@@ -1,0 +1,171 @@
+{
+  "checkedAt": "2026-10-25T09:30:57.224927+00:00",
+  "track": "Test 3",
+  "releaseName": "DishNest clean-region annual and lifetime QA",
+  "evidenceKind": "operator-observed native LAT; not fixtures",
+  "amazonDeliveredApkSha256": "4a4edd247266c2bd519054c3d0396e0116eb489e41128b73931eb1fd191cac7b",
+  "certificateSha256": "8e35b165d5a1dc14c10820cee25ed2c24e9c543ceb2f059b9f5bc93baa672297",
+  "installer": "com.amazon.venezia",
+  "debuggable": false,
+  "signatureVerified": true,
+  "latVerifierBindingVerified": true,
+  "publisherUploadSha256": "d246ebbd3c2fd458693086f7156aa3cf48f01884d4de3c1ae44e1066d9a92279",
+  "sourceControllerSha256": "d05a6ef0c24516084337225db8355970baad062dd634520f382724e5a6b42ec4",
+  "initialNoEntitlement": true,
+  "lifetimeFirst": true,
+  "cases": [
+    {
+      "case": "annual-native-purchase-and-verified-grant",
+      "passed": true,
+      "observedAt": "2026-10-24T09:12:57.510200+00:00",
+      "screenshot": "artifacts/screens/fire-test3-annual-active.png"
+    },
+    {
+      "case": "annual-after-process-restart",
+      "passed": true
+    },
+    {
+      "case": "annual-explicit-full-history-restore",
+      "passed": true,
+      "observedAt": "2026-10-24T09:13:41.155357+00:00",
+      "screenshot": "artifacts/screens/fire-test3-annual-restored.png"
+    },
+    {
+      "case": "annual-zero-cost-billing",
+      "passed": true,
+      "currency": "GBP",
+      "retailBilling": "0.00 annually",
+      "nominalCheckoutPrice": "9.99 annually"
+    },
+    {
+      "case": "annual-autorenew-off-confirmation",
+      "passed": true,
+      "observedAt": "2026-10-24T09:15:22.728823+00:00"
+    },
+    {
+      "case": "annual-access-after-cancel",
+      "passed": true,
+      "observedAt": "2026-10-24T09:17:02.117807+00:00",
+      "screenshot": "artifacts/screens/fire-test3-annual-after-cancel.png"
+    },
+    {
+      "case": "annual-premium-additional-plan",
+      "passed": true,
+      "screenshot": "artifacts/screens/fire-test3-annual-extra-plan.png"
+    },
+    {
+      "case": "annual-cached-access-after-offline-process-restart",
+      "passed": true,
+      "evidence": "Created a third synthetic meal plan with Wi-Fi off after force-stop/relaunch",
+      "screenshot": "artifacts/screens/fire-test3-annual-offline-plan.png"
+    },
+    {
+      "case": "annual-online-recovery-after-offline-restart",
+      "passed": true,
+      "screenshot": "artifacts/screens/fire-test3-annual-online-recovery.png"
+    }
+  ],
+  "acquisitionScreenshot": "artifacts/screens/fire-test3-acquisition-page.png",
+  "noEntitlementScreenshot": "artifacts/screens/fire-test3-no-entitlement.png",
+  "annualOrderCompletedAt": "2026-10-24T09:12:27.759416+00:00",
+  "expiryPassed": false,
+  "lifetimeGrantPassed": false,
+  "fulfillmentIndependentlyConfirmed": false,
+  "renewalIndependentlyConfirmed": false,
+  "originalRollbackPrepared": true,
+  "originalRestored": true,
+  "restorationPending": false,
+  "testDataSynthetic": true,
+  "testerIdentifiersStored": false,
+  "rawReceiptsStored": false,
+  "paidServicesEnabled": false,
+  "publicSubmitted": false,
+  "wifiRestored": true,
+  "interruptedOfflineAttemptExcluded": true,
+  "exclusiveDeviceControlConfirmed": true,
+  "otherDeviceAutomationPausedByPublisherRequest": true,
+  "expiryObservations": [
+    {
+      "observedAt": "2026-10-24T09:44:00+00:00",
+      "elapsedMinutes": 31.54,
+      "fullHistoryRestoreRequested": true,
+      "serverVerificationUi": "DishNest Premium is active.",
+      "expired": false
+    },
+    {
+      "observedAt": "2026-10-24T09:58:48+00:00",
+      "elapsedMinutes": 46.34,
+      "fullHistoryRestoreRequested": true,
+      "serverVerificationUi": "DishNest Premium is active.",
+      "expired": false
+    },
+    {
+      "observedAt": "2026-10-24T10:13:34+00:00",
+      "elapsedMinutes": 61.1,
+      "fullHistoryRestoreRequested": true,
+      "serverVerificationUi": "DishNest Premium is active.",
+      "expired": false
+    },
+    {
+      "observedAt": "2026-10-24T10:26:47.331718+00:00",
+      "elapsedMinutes": 74.33,
+      "fullHistoryRestoreRequested": true,
+      "serverVerificationUi": "DishNest Premium is active.",
+      "expired": false
+    },
+    {
+      "observedAt": "2026-10-25T09:28:25.598539+00:00",
+      "elapsedMinutes": 1455.96,
+      "fullHistoryRestoreRequested": true,
+      "processRestartBeforeRestore": true,
+      "serverVerificationUi": "DishNest Premium is active.",
+      "expired": false
+    }
+  ],
+  "day2StatusScreenshot": "artifacts/screens/fire-test3-annual-day2-active.png",
+  "restoration": {
+    "originalApkRestored": true,
+    "originalPrivateFilesExact": true,
+    "persistentFiles": 5,
+    "runtimePermissionsRestored": true,
+    "appopsRestored": true,
+    "originalAppLaunched": false,
+    "encryptedRecoveryRetained": true,
+    "permanentAmazonMigration": false
+  },
+  "recoveryProof": {
+    "encryptedBackupReadable": true,
+    "persistentFiles": 5,
+    "encryptedArchiveSha256": "22563acf4c67a289ebc151b268c00e21d0f298edd04b2d60d2922678431441fb",
+    "qaByteExactRestore": true,
+    "nativeSqliteIntegrity": true,
+    "ordinaryDataUnchanged": true,
+    "ordinaryAppModified": false,
+    "amazonApkInstalled": false,
+    "amazonRestoreProven": false,
+    "androidManagedStateRestored": false,
+    "privateRecoveryCopyRetainedInQaCache": true
+  },
+  "deviceSettingsRestored": true,
+  "sandboxPropertyAfterSession": "unset; sandbox debug routing not enabled",
+  "expiryBlockedBeyondAcceleratedCycle": true,
+  "lifetimeOfferEnabled": false,
+  "blocker": "Annual access remains active after more than 24 hours and completed full-history restore after process restart; lifetime stays disabled.",
+  "supportCaseReopened": true,
+  "supportCaseStatus": "In Process: pending Amazon action",
+  "acceleratedTimelinesRecheckedEnabled": true,
+  "acceleratedTimelinesScreenshot": "artifacts/screens/amazon-test3-acceleration-day2.png",
+  "independentTest3RvsDatesCaptured": false,
+  "screenshotSha256": {
+    "artifacts/screens/amazon-test3-acceleration-day2.png": "dad4770860320b8b2d11478b24b86de7e7405f712cbef51b5fabbea69d0282ac",
+    "artifacts/screens/fire-test3-acquisition-page.png": "7594f99e1f28e19c28f207d3306d0a75d380ae9deb66aa96e61d5bfcf769fd6e",
+    "artifacts/screens/fire-test3-annual-active.png": "6d3ab795c954b10c6816cb6fd2db1ffbe51f41ae328e616331cb71e0c3d07426",
+    "artifacts/screens/fire-test3-annual-after-cancel.png": "f0bbaf21ad8f68be09ec834716ed0aabeeb53452731f4972b881f546814e01c2",
+    "artifacts/screens/fire-test3-annual-day2-active.png": "97cfe05e6c1109cac08488ea938639d76d827e3ce70f855fcd88ca7858cfedae",
+    "artifacts/screens/fire-test3-annual-extra-plan.png": "3821846c07eb7b6e1b7f53f7eb44fd4203163a4adb466bd65c8712d339aff021",
+    "artifacts/screens/fire-test3-annual-offline-plan.png": "c3ef2393cd2d50f13551640247e3ab10bac79f219f42917b3b1cf3d954252a63",
+    "artifacts/screens/fire-test3-annual-online-recovery.png": "454db67906e8db23d6bf3be72fed9f6fa4deb957da1220d67c207523c54bbcfc",
+    "artifacts/screens/fire-test3-annual-restored.png": "d995c0236c99e15fa25c608a21125ad9ca81167a1dffb7c1638478a172cda579",
+    "artifacts/screens/fire-test3-no-entitlement.png": "d0554233a89e536fce9f7c3de687db376013a45f9350cd35daed3839d243507d"
+  }
+}

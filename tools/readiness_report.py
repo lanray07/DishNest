@@ -54,11 +54,17 @@ else:
 strings=sum(n.get('translatable')!='false' for n in ET.parse(ROOT/'app/src/main/res/values/strings.xml').getroot().findall('string'))
 server_xml=ET.parse(ROOT/'artifacts/billing-server-tests.xml').getroot()
 server_tests=len(server_xml.findall('.//testcase'))
+test3=data('artifacts/fire-test3-qa.json') if (ROOT/'artifacts/fire-test3-qa.json').exists() else {}
+test3_summary = ('Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. Annual access still grants after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.' if test3.get('originalRestored') is True else 'Test 3 current-session results are tracked separately in `artifacts/fire-test3-qa.json`; do not infer expiry, lifetime or original-data restoration from historical tests.')
 report=f'''# DishNest submission-readiness report
 
 Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: {datetime.now(timezone.utc).strftime('%d %B %Y')}. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
+
+## Latest Test 3 result
+
+{test3_summary}
 
 ## Completed local continuation
 

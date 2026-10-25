@@ -1,8 +1,12 @@
 # DishNest submission-readiness report
 
-Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 22 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
+Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 25 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
+
+## Latest Test 3 result
+
+Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. Annual access still grants after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.
 
 ## Completed local continuation
 
