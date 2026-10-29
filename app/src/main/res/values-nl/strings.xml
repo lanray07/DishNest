@@ -381,4 +381,7 @@
     <string name="premium_features_heading">Premium-functies</string>
     <string name="premium_purchase_terms">Levenslang is één aankoop zonder abonnement. Maand- en jaarabonnementen worden automatisch verlengd tenzij je ze via Amazon opzegt. Herstel aankopen met hetzelfde Amazon-account.</string>
     <string name="recipe_copy_title">%1$s (kopie)</string>
+    <string name="language_title">App-taal</string>
+    <string name="language_system">Apparaattaal gebruiken</string>
+    <string name="language_help">Kies een app-taal of volg de taal van je apparaat. De tekstgrootte volgt de apparaatinstellingen. Je opgeslagen recepten blijven ongewijzigd.</string>
 </resources>

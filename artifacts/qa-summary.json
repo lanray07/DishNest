@@ -1,132 +1,12 @@
 {
   "jvm_suites": [
     {
-      "name": "com.dishnest.app.ReadinessDataTest",
-      "tests": "8",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:27.699Z"
-    },
-    {
-      "name": "com.dishnest.app.RuntimeLocalizationTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:30.665Z"
-    },
-    {
-      "name": "com.dishnest.app.LocalizedRecipeImportTest",
-      "tests": "3",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:25:47.420Z"
-    },
-    {
-      "name": "com.dishnest.app.RecipeWebAccessTest",
-      "tests": "7",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:29.825Z"
-    },
-    {
-      "name": "com.dishnest.app.RecipeImagesTest",
+      "name": "com.dishnest.app.LocalMetricsTest",
       "tests": "4",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-21T15:27:29.304Z"
-    },
-    {
-      "name": "com.dishnest.app.RoomPersistenceTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:29.944Z"
-    },
-    {
-      "name": "com.dishnest.app.EntitlementsTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:25:15.793Z"
-    },
-    {
-      "name": "com.dishnest.app.EntitlementClockTest",
-      "tests": "3",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:25:15.772Z"
-    },
-    {
-      "name": "com.dishnest.app.QuantityNumbersTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:27.583Z"
-    },
-    {
-      "name": "com.dishnest.app.RestoreGuardTest",
-      "tests": "5",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:29.899Z"
-    },
-    {
-      "name": "com.dishnest.app.LocalizedScreenshotsTest",
-      "tests": "12",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:25:47.974Z"
-    },
-    {
-      "name": "com.dishnest.app.FeatureScopeTest",
-      "tests": "6",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:25:18.222Z"
-    },
-    {
-      "name": "com.dishnest.app.ScreenshotsTest",
-      "tests": "6",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:31.056Z"
-    },
-    {
-      "name": "com.dishnest.app.VoiceLocalesTest",
-      "tests": "3",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:40.670Z"
-    },
-    {
-      "name": "com.dishnest.app.DomainTest",
-      "tests": "21",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:25:15.043Z"
-    },
-    {
-      "name": "com.dishnest.app.VoiceFocusTest",
-      "tests": "2",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0",
-      "timestamp": "2026-10-21T15:27:40.343Z"
+      "timestamp": "2026-10-29T20:18:55.652Z"
     },
     {
       "name": "com.dishnest.app.RecipeQueryTest",
@@ -134,7 +14,159 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-21T15:27:29.808Z"
+      "timestamp": "2026-10-29T20:20:29.475Z"
+    },
+    {
+      "name": "com.dishnest.app.RuntimeLocalizationTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:48.133Z"
+    },
+    {
+      "name": "com.dishnest.app.ReadinessDataTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:04.176Z"
+    },
+    {
+      "name": "com.dishnest.app.LocalizedRecipeImportTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:19:08.368Z"
+    },
+    {
+      "name": "com.dishnest.app.RecipeWebAccessTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:31.174Z"
+    },
+    {
+      "name": "com.dishnest.app.RecipeImagesTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:17.801Z"
+    },
+    {
+      "name": "com.dishnest.app.AppLanguagesSystemTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:17:49.378Z"
+    },
+    {
+      "name": "com.dishnest.app.RoomPersistenceTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:35.219Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementsTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:18:19.563Z"
+    },
+    {
+      "name": "com.dishnest.app.EntitlementClockTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:18:18.146Z"
+    },
+    {
+      "name": "com.dishnest.app.QuantityNumbersTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:01.745Z"
+    },
+    {
+      "name": "com.dishnest.app.LanguagePickerUiTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:18:34.547Z"
+    },
+    {
+      "name": "com.dishnest.app.RestoreGuardTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:32.719Z"
+    },
+    {
+      "name": "com.dishnest.app.LocalizedScreenshotsTest",
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:19:10.849Z"
+    },
+    {
+      "name": "com.dishnest.app.AppLanguagesTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:18:04.612Z"
+    },
+    {
+      "name": "com.dishnest.app.FeatureScopeTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:18:22.258Z"
+    },
+    {
+      "name": "com.dishnest.app.ScreenshotsTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:20:59.755Z"
+    },
+    {
+      "name": "com.dishnest.app.VoiceLocalesTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:21:41.261Z"
+    },
+    {
+      "name": "com.dishnest.app.DomainTest",
+      "tests": "21",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:18:15.971Z"
+    },
+    {
+      "name": "com.dishnest.app.VoiceFocusTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-29T20:21:30.204Z"
     }
   ],
   "device_instrumentation": {
@@ -214,7 +246,7 @@
       "recipeSurvivesCloseAndReopen"
     ]
   },
-  "physical_fire_qa": "Partial smoke coverage only; full hardware matrix pending",
+  "physical_fire_qa": "Pending current APK rerun; retained device results are historical. Full hardware matrix also pending.",
   "billing_qa": "15 service tests pass; current App Tester evidence pending. Default release purchases remain disabled.",
   "localisation_release_gate": "Resource coverage complete across 12 locales; native review and remaining interpolation/voice/marketing work pending. See localisation/validation.json.",
   "store_submission": "Public release not performed; private LAT Test 1 submitted with publisher certification; actual LAT lifecycle QA pending",
@@ -227,9 +259,9 @@
     "current_evidence_blocker": "Retained purchase evidence is incomplete or does not match current sources/APKs; rerun required."
   },
   "lat_candidate": {
-    "current": true,
+    "current": false,
     "evidence": "artifacts/lat-candidate.json",
-    "blocker": null,
+    "blocker": "LAT candidate/profile evidence is stale; rebuild and verify before distribution.",
     "actual_lat_purchase_pass_inferred": false,
     "production_ready": false
   },
@@ -324,10 +356,10 @@
     "passedTests": 6,
     "ordinaryDataHashesUnchanged": true
   },
-  "fire_native_qa_current": true,
-  "device_instrumentation_current": true,
+  "fire_native_qa_current": false,
+  "device_instrumentation_current": false,
   "visual_localization": {
-    "passed": true,
+    "passed": false,
     "locales": [
       "en-GB",
       "en-US",
@@ -351,7 +383,14 @@
     "native_language_approved": false,
     "physical_device_verified": false,
     "release_approved": false,
-    "amazon_artwork_locales_verified": [
+    "validator_sha256": "d427a100507927306e0fb17721b87f0c3cfe457ad004910c5dd304a64e43201a",
+    "manifest_sha256": "311058c3820e6dbce4043c330231fcaa004c2106d18452722a4188ca0a3b6052",
+    "upload_history_sha256": "0cae56bc7e99f17b446de2a27b74491d7a9ad4db11ca2a0aa5464dbe950999e3",
+    "amazon_live_console_rechecked": false,
+    "amazon_verification_scope": "Historical saved upload receipts compared with current local artwork; no live console access",
+    "local_assets_passed": true,
+    "amazon_uploads_match_current_assets": false,
+    "amazon_artwork_locales_historical_receipts": [
       "de-DE",
       "en-GB",
       "en-US",
@@ -359,7 +398,49 @@
       "fr-FR",
       "it-IT",
       "pt-BR"
-    ]
+    ],
+    "amazon_artwork_locales_verified": [],
+    "amazon_artwork_updates_pending": {
+      "de-DE": [
+        "02",
+        "06",
+        "08"
+      ],
+      "en-GB": [
+        "02",
+        "06",
+        "08"
+      ],
+      "it-IT": [
+        "02",
+        "06",
+        "08"
+      ],
+      "pt-BR": [
+        "02",
+        "06",
+        "08"
+      ],
+      "en-US": [
+        "02",
+        "06",
+        "08"
+      ],
+      "fr-FR": [
+        "02",
+        "05",
+        "06",
+        "08"
+      ],
+      "es-ES": [
+        "02",
+        "03",
+        "05",
+        "06",
+        "07",
+        "08"
+      ]
+    }
   },
   "android_lint": {
     "errors": 0,
@@ -775,7 +856,7 @@
   },
   "native-alignment": {
     "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "apk_sha256": "11a2b478afdc42eb0a15c37e15fed7b955038836e17c0bcfe325f12cde745dd2",
+    "apk_sha256": "1bd3fa6cc0843d61a87f22b74e06117bbef870be3a116e4f6032c8a3c479f924",
     "libraries": [
       {
         "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
@@ -1125,7 +1206,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-25T09:31:23.884410+00:00",
+    "generatedAt": "2026-10-29T20:28:29.996826+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -1174,6 +1255,12 @@
         "remaining": ""
       },
       {
+        "check": "Local language picker and privacy controls",
+        "status": "passed",
+        "evidence": "artifacts/local-settings-qa.json",
+        "remaining": ""
+      },
+      {
         "check": "Evidence matches current build",
         "status": "passed",
         "evidence": "artifacts/build-provenance.json",
@@ -1201,7 +1288,7 @@
         "check": "Native language and full UI approval",
         "status": "pending",
         "evidence": "localisation/REVIEW.md",
-        "remaining": "Native review, remaining interpolations, voice and marketing copy"
+        "remaining": "Native review, remaining interpolations, voice/marketing copy and the seven missing priority locales listed in localisation/validation.json"
       },
       {
         "check": "Local receipt-service tests",
@@ -1241,45 +1328,45 @@
       },
       {
         "check": "Physical Fire native components",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-native-qa.json; artifacts/fire-device-qa.json",
-        "remaining": ""
+        "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
       },
       {
         "check": "Physical Fire instrumentation smoke",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-device-qa.json",
-        "remaining": ""
+        "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
       },
       {
         "check": "Background Fire timer after process termination",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-background-alarm.json",
-        "remaining": ""
+        "remaining": "Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs"
       },
       {
         "check": "Forced-idle Fire timer",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-doze-qa.json",
-        "remaining": ""
+        "remaining": "Run the bounded forced-idle probe on the current QA app and runner; verify notification, kitchen persistence, idle restoration and unchanged ordinary data"
       },
       {
         "check": "Fire offline smoke and selected-plan process recovery",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-offline-qa.json",
-        "remaining": ""
+        "remaining": "Run the exact installed QA smoke suite without connectivity, verify named-plan/persisted preferences across process restart and restore settings and ordinary data"
       },
       {
         "check": "Fire portrait/landscape with system large text",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-layout-qa.json",
-        "remaining": ""
+        "remaining": "Run QA recipe, pantry and named-plan flows in portrait/landscape at real system font scale 2.0; restore settings and preserve ordinary data"
       },
       {
         "check": "Fire local document-provider backup flows",
-        "status": "passed",
+        "status": "pending",
         "evidence": "artifacts/fire-document-qa.json",
-        "remaining": ""
+        "remaining": "Exercise actual JSON/ZIP picker cancellation, export, nonempty-kitchen rejection and restore round trips on QA; preserve ordinary data and remove only test exports"
       },
       {
         "check": "Physical device QA",
@@ -1315,7 +1402,7 @@
         "check": "Final store and website metadata",
         "status": "pending",
         "evidence": "marketing/amazon-console-draft.json",
-        "remaining": "10 description locales and 7 artwork locales saved in the Amazon draft; native/legal approval, final store URL, approved hardware screenshots and publisher-signed app file pending"
+        "remaining": "Historical description/artwork upload receipts are retained; refreshed local screenshot bytes need a separately authorized Amazon sync. Native/legal approval, final store URL, approved hardware screenshots and publisher-signed app upload remain pending"
       },
       {
         "check": "Remaining product scope",
@@ -1460,7 +1547,7 @@
     "published": false
   },
   "publisher-signing": {
-    "generatedAt": "2026-10-21T16:09:05.6809894Z",
+    "generatedAt": "2026-10-29T20:27:32.4372282Z",
     "publisher": "O. Bankole",
     "alias": "dishnest-release",
     "keyAlgorithm": "RSA",
@@ -1470,9 +1557,9 @@
     "certificateNotBefore": "2026-10-19T06:16:55.0000000Z",
     "certificateNotAfter": "2054-03-06T06:16:55.0000000Z",
     "unsignedApk": "app/build/outputs/apk/release/app-release-unsigned.apk",
-    "unsignedSha256": "11a2b478afdc42eb0a15c37e15fed7b955038836e17c0bcfe325f12cde745dd2",
+    "unsignedSha256": "1bd3fa6cc0843d61a87f22b74e06117bbef870be3a116e4f6032c8a3c479f924",
     "signedApk": "app/build/outputs/apk/release/app-release-publisher.apk",
-    "signedSha256": "e81afc7395252311ba28ab6645079d4e04cac558c1c7ba5efe2d786aba16ef6f",
+    "signedSha256": "597a0bef73454e8df2357a48647a531a9cf272549df7fe7b2124afab5c4606cc",
     "scriptSha256": "8aeed99fb045d337b2c1193fd51e5b0a184fb4dcd480e73dea85082b0e0acdb8",
     "signatureVerified": true,
     "certificateMatched": true,
@@ -1821,7 +1908,49 @@
       "artifacts/screens/fire-test3-no-entitlement.png": "d0554233a89e536fce9f7c3de687db376013a45f9350cd35daed3839d243507d"
     }
   },
-  "blocked_notifications_current": true,
+  "local-settings-qa": {
+    "passed": true,
+    "coverage": "Executed host Robolectric API 28/35 checks and real Compose controls; not physical-device QA",
+    "requiredCasesPassed": 10,
+    "cases": {
+      "AppLanguagesTest": [
+        "choicePersistsAcrossDelegateResetAndLocalizesColdBackgroundContext",
+        "everyChoiceHasPackagedLabelsAndUnknownTagsAreRejected"
+      ],
+      "AppLanguagesSystemTest": [
+        "android13UsesSystemSelectionAndPreservesItDuringMigration"
+      ],
+      "LocalMetricsTest": [
+        "concurrentWritersCannotLoseEventsAndCountersCannotWrap",
+        "onceOnlyEventsSurviveAnotherMetricsInstanceAndRetainExactDayMeaning",
+        "optOutCollectsNothingAndRepeatedConsentDoesNotEraseHistory",
+        "unknownEventsAndPrivateTextAreNeverStored"
+      ],
+      "LanguagePickerUiTest": [
+        "arabicPickerRendersLocalizedCopyAndCancellationDoesNotChangePreference",
+        "frenchPickerUsesRealRadioControlsAndUpdatesTheSystemPreference",
+        "kitchenDeletionDisablesUsageCountsAndUpdatesItsToggle"
+      ]
+    },
+    "testReportsSha256": {
+      "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.AppLanguagesTest.xml": "94482c835cf008856bd683c9a659c16a5f3cd0ecd2486ee15e5757a4a3351063",
+      "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.AppLanguagesSystemTest.xml": "69fa0259345c09c028b36f6c68cf5c790ef148561344ba146774cc423c3e842f",
+      "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.LocalMetricsTest.xml": "08f66d07dcf88b262ee04742ecbf03b4bb03baa983942d2b695a76bdfd18c9f7",
+      "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.LanguagePickerUiTest.xml": "e0e56c451a1fdae57d59703704bd9727bc1e6cd26196473b90e71f4828c15792"
+    },
+    "screenshotsSha256": {
+      "artifacts/screens/host-language-picker-fr.png": "f9fdccf25b9f5f9da5053b8c5650e7030de7b31573363ec071edcc500a353551",
+      "artifacts/screens/host-language-picker-ar.png": "9950d7795cbc2c886f9c238f0717d43b6505fbd66cd1b1414e9838902ee07e03"
+    },
+    "buildProvenanceSha256": "fb9fe6527f415064d35eadbca0f4ae8faeda1e00c380b4107b6c1d60e21532b3",
+    "controllerSha256": "7c508b3fc902e818670705bf0661d651a7099114e68e253427ca4184671035e2",
+    "physicalDeviceVerified": false,
+    "nativeLanguageApproved": false,
+    "productionPurchaseConversionTested": false,
+    "paidServicesEnabled": false,
+    "publicSubmissionPerformed": false
+  },
+  "blocked_notifications_current": false,
   "fire_offline_qa": {
     "testedAt": "2026-10-21T16:41:28.964453+00:00",
     "model": "KFTRWI",
@@ -1868,7 +1997,7 @@
       "Other devices"
     ]
   },
-  "fire_offline_qa_current": true,
+  "fire_offline_qa_current": false,
   "fire_layout_qa": {
     "testedAt": "2026-10-21T16:43:55.296059+00:00",
     "model": "KFTRWI",
@@ -1914,7 +2043,7 @@
       "Publisher-signed release"
     ]
   },
-  "fire_layout_qa_current": true,
+  "fire_layout_qa_current": false,
   "fire_document_qa": {
     "testedAt": "2026-10-21T17:05:36.413716+00:00",
     "packageId": "com.dishnest.app.qa",
@@ -1961,5 +2090,5 @@
       "Publisher-signed release"
     ]
   },
-  "fire_document_qa_current": true
+  "fire_document_qa_current": false
 }

@@ -382,4 +382,7 @@
     <string name="premium_features_heading">Fonctionnalités Premium</string>
     <string name="premium_purchase_terms">L’accès à vie est un achat unique sans abonnement. Les abonnements mensuels et annuels se renouvellent automatiquement sauf résiliation via Amazon. Restaurez vos achats avec le même compte Amazon.</string>
     <string name="recipe_copy_title">%1$s (copie)</string>
+    <string name="language_title">Langue de l’application</string>
+    <string name="language_system">Utiliser la langue de l’appareil</string>
+    <string name="language_help">Choisissez la langue de l’application ou celle de votre appareil. La taille du texte suit les réglages de l’appareil. Vos recettes enregistrées restent inchangées.</string>
 </resources>

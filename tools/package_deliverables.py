@@ -73,6 +73,7 @@ def archive_source():
     evidence.add('billing-worker.json')
     evidence.add('fire-amazon-lat-qa.json')
     evidence.add('fire-test3-qa.json')
+    evidence.add('local-settings-qa.json')
     evidence.update({'publisher-signing.json','publisher-signature.txt','publisher-device-compatibility.json','private-storage-audit.json'})
     evidence.update({'amazon-purchase-device.json','amazon-sandbox-receipt-review.json','purchase-test-restoration.json','purchase-test-configuration-guard.json','purchase-test-configuration-guard.log','purchase-test-controller-guard.json','purchase-test-build.log'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
@@ -140,7 +141,7 @@ if lint_file.exists():
     issues=ET.parse(lint_file).getroot().findall('issue')
     errors=[i for i in issues if i.attrib.get('severity') in ['Error','Fatal']]
     summary['android_lint']={'errors':len(errors),'error_categories':sorted({i.attrib.get('id') for i in errors}),'passed':not errors,'report':'app/build/reports/lint-results-debug.html'}
-for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-deployment','billing-live-contract','amazon-authentication-key','billing-configuration-guard','publisher-signing','publisher-device-compatibility','amazon-clean-region-lat-console','amazon-support-guidance-review','amazon-support-request','fire-test3-qa']:
+for name in ['asset-validation','website-verification','native-alignment','device-evidence','fire-device-qa','fire-blocked-notifications','submission-readiness','billing-contract','billing-worker','billing-deployment','billing-live-contract','amazon-authentication-key','billing-configuration-guard','publisher-signing','publisher-device-compatibility','amazon-clean-region-lat-console','amazon-support-guidance-review','amazon-support-request','fire-test3-qa','local-settings-qa']:
     report=ROOT/f'artifacts/{name}.json'
     if report.exists():summary[name]=json.loads(report.read_text(encoding='utf-8-sig'))
 blocked=summary.get('fire-blocked-notifications', {})

@@ -1,21 +1,40 @@
 package com.dishnest.app.platform
 
 import android.content.Context
+import android.content.SharedPreferences
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import java.time.LocalDate
+import java.time.Clock
 import java.time.temporal.ChronoUnit
 
 /** Opt-in, aggregate counters only. There is deliberately no network sink. */
-class LocalMetrics(context: Context) {
+class LocalMetrics(context: Context, private val clock: Clock = Clock.systemDefaultZone()) {
+    companion object { private val lock = Any() }
     private val preferences = context.getSharedPreferences("local_usage", Context.MODE_PRIVATE)
+    private fun readEnabled() = runCatching { preferences.getBoolean("enabled", false) }.getOrDefault(false)
+    private val enabledChanges = MutableStateFlow(readEnabled())
+    val enabledState = enabledChanges.asStateFlow()
+    // Keep a strong reference: SharedPreferences itself holds listeners weakly.
+    private val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+        if (key == null || key == "enabled") enabledChanges.value = readEnabled()
+    }
+    init {
+        preferences.registerOnSharedPreferenceChangeListener(listener)
+        enabledChanges.value = readEnabled()
+    }
+
     var enabled: Boolean
-        get() = preferences.getBoolean("enabled", false)
-        set(value) {
-            preferences
-                .edit()
-                .clear()
-                .putBoolean("enabled", value)
-                .putString("cohort", LocalDate.now().toString())
-                .apply()
+        get() = readEnabled()
+        set(value) = synchronized(lock) {
+            if (value && enabled) {
+                enabledChanges.value = true
+                return@synchronized
+            }
+            val edit = preferences.edit().clear().putBoolean("enabled", value)
+            if (value) edit.putString("cohort", LocalDate.now(clock).toString())
+            edit.apply()
+            enabledChanges.value = value
         }
 
     private val allowed =
@@ -32,22 +51,25 @@ class LocalMetrics(context: Context) {
             "trial_conversion",
         )
 
-    @Synchronized
-    fun record(event: String) {
-        if (!enabled || event !in allowed) return
-        if (event.startsWith("first_") && preferences.contains(event)) return
-        preferences.edit().putInt(event, preferences.getInt(event, 0) + 1).apply()
+    fun record(event: String) = synchronized(lock) {
+        if (!enabled || event !in allowed) return@synchronized
+        val once = event.startsWith("first_") || event.startsWith("retained_") || event == "premium_conversion"
+        if (once && preferences.contains(event)) return@synchronized
+        val count = runCatching { preferences.getInt(event, 0) }.getOrDefault(0).coerceAtLeast(0)
+        preferences.edit().putInt(event, if (count == Int.MAX_VALUE) count else count + 1).apply()
     }
 
-    fun opened() {
-        if (!enabled) return
-        val cohort =
-            runCatching { LocalDate.parse(preferences.getString("cohort", null)) }.getOrNull()
-                ?: return
-        val days = ChronoUnit.DAYS.between(cohort, LocalDate.now())
-        if (days == 7L && !preferences.contains("retained_day_7")) record("retained_day_7")
-        if (days == 30L && !preferences.contains("retained_day_30")) record("retained_day_30")
+    fun opened() = synchronized(lock) {
+        if (!enabled) return@synchronized
+        val cohort = runCatching { LocalDate.parse(preferences.getString("cohort", null)) }.getOrNull()
+            ?: return@synchronized
+        val days = ChronoUnit.DAYS.between(cohort, LocalDate.now(clock))
+        if (days == 7L) record("retained_day_7")
+        if (days == 30L) record("retained_day_30")
     }
 
-    fun clear() = preferences.edit().clear().apply()
+    fun clear() = synchronized(lock) {
+        preferences.edit().clear().apply()
+        enabledChanges.value = false
+    }
 }

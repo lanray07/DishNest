@@ -64,6 +64,7 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
     private var userRequest: RequestId? = null
     private var requestedSku: String? = null
     private var requestedUser: String? = null
+    private var conversionCandidate: Pair<String, String>? = null
     private var purchaseInFlight = false
     private var purchaseTimeout: Job? = null
     private val verifier =
@@ -238,8 +239,10 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
         purchaseInFlight = false
         state.value = state.value.copy(busy = false)
         when (response.requestStatus) {
-            PurchaseResponse.RequestStatus.SUCCESSFUL ->
+            PurchaseResponse.RequestStatus.SUCCESSFUL -> {
+                conversionCandidate = response.userData.userId to response.receipt.receiptId
                 receive(response.userData.userId, listOf(response.receipt))
+            }
             PurchaseResponse.RequestStatus.ALREADY_PURCHASED -> {
                 message(R.string.billing_already_owned)
                 restore()
@@ -345,7 +348,17 @@ class AmazonBilling(private val context: Context) : PurchasingListener {
                             receipt.cancelAt,
                         ) && accountConfirmed && state.value.premium
                     )
+                    {
+                        if (conversionCandidate == (user to receipt.id)) {
+                            // Only a successful purchase callback followed by signed access counts.
+                            // No account/receipt identifier is stored in usage metrics.
+                            if (BuildConfig.BILLING_ENVIRONMENT == "production") runCatching {
+                                (context.applicationContext as com.dishnest.app.DishNestApp).metrics.record("premium_conversion")
+                            }
+                            conversionCandidate = null
+                        }
                         PurchasingService.notifyFulfillment(receipt.id, FulfillmentResult.FULFILLED)
+                    }
                 }
                 result.exceptionOrNull()?.let { error ->
                     testDiagnostic("verification-error", error.javaClass.simpleName)

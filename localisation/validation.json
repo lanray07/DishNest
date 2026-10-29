@@ -1,4 +1,32 @@
 {
+  "required_initial_locales": [
+    "en-GB",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt-BR",
+    "nl",
+    "pl",
+    "ar",
+    "hi",
+    "ja",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "tr",
+    "id",
+    "sv"
+  ],
+  "unimplemented_priority_locales": [
+    "id",
+    "ja",
+    "ko",
+    "sv",
+    "tr",
+    "zh-Hans",
+    "zh-Hant"
+  ],
   "locales": [
     {
       "locale": "en-GB",

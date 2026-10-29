@@ -30,7 +30,8 @@ $debugAlignment = & $aligner -c -P 16 -v 4 $debugApk 2>&1
 $debugAlignmentExit = $LASTEXITCODE
 $releaseAlignment = & $aligner -c -P 16 -v 4 $releaseApk 2>&1
 $releaseAlignmentExit = $LASTEXITCODE
-@('QA APK:', $qaAlignment, 'Debug APK:', $debugAlignment, 'Release APK:', $releaseAlignment) | Out-String -Width 240 | Set-Content -LiteralPath (Join-Path $artifactDirectory 'apk-alignment.txt') -Encoding utf8
+$alignmentReport = @('QA APK:', $qaAlignment, 'Debug APK:', $debugAlignment, 'Release APK:', $releaseAlignment) | Out-String -Width 240
+$alignmentReport.TrimEnd() | Set-Content -LiteralPath (Join-Path $artifactDirectory 'apk-alignment.txt') -Encoding utf8
 $metadata = & $aapt dump badging $releaseApk 2>&1
 $metadataExit = $LASTEXITCODE
 $releaseManifest = & $aapt dump xmltree $releaseApk AndroidManifest.xml 2>&1 | Out-String

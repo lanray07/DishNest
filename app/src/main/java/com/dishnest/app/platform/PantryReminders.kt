@@ -53,14 +53,14 @@ class PantryReminders(private val context: Context) {
             synchronized(notificationLock) {
                 if (!enabled || preferences.getString("last-day", "") == today.toString()) return@synchronized false
                 val manager = context.getSystemService(NotificationManager::class.java)
-                manager.createNotificationChannel(NotificationChannel("pantry", context.getString(R.string.pantry_reminders), NotificationManager.IMPORTANCE_DEFAULT))
+                manager.createNotificationChannel(NotificationChannel("pantry", AppLanguages.localized(context).getString(R.string.pantry_reminders), NotificationManager.IMPORTANCE_DEFAULT))
                 if (manager.areNotificationsEnabled() && (Build.VERSION.SDK_INT < 33 ||
                         context.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED)) {
                     val open = PendingIntent.getActivity(context, 1, Intent(context, MainActivity::class.java),
                         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
                     manager.notify("pantry", 0, Notification.Builder(context, "pantry")
-                        .setSmallIcon(R.drawable.ic_nest).setContentTitle(context.getString(R.string.pantry_reminders))
-                        .setContentText(context.getString(R.string.pantry_reminder_message)).setVisibility(Notification.VISIBILITY_PRIVATE)
+                        .setSmallIcon(R.drawable.ic_nest).setContentTitle(AppLanguages.localized(context).getString(R.string.pantry_reminders))
+                        .setContentText(AppLanguages.localized(context).getString(R.string.pantry_reminder_message)).setVisibility(Notification.VISIBILITY_PRIVATE)
                         .setContentIntent(open).setAutoCancel(true).build())
                     preferences.edit { putString("last-day", today.toString()) }
                     true

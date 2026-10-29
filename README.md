@@ -71,6 +71,7 @@ node --test --test-reporter=junit billing-server/*.test.mjs > artifacts/billing-
 node tools/verify_billing_contract.mjs
 python tools/dependency_inventory.py --fetch-metadata
 python tools/build_evidence.py --record
+python tools/local_settings_evidence.py
 python tools/validate_native_alignment.py
 .\tools\validate_apks.ps1
 node tools/verify_website.cjs
@@ -99,3 +100,13 @@ Listing localization: the console has complete description drafts for en-US, en-
 To reproduce localized visual drafts, run `python tools/prepare_visual_copy.py`, the `LocalizedScreenshotsTest` host suite, then `python tools/prepare_visual_renderer.py`. Serve only `build/visual-localization` on loopback and use the visible Export PNG links in its browser UI. It shapes Arabic and Hindi text and exports exact store dimensions independently of viewport scaling. Run `python tools/verify_visual_localization.py` after recording the export manifest. Sample translations are test-only; no user recipes or databases are translated or uploaded. Host captures are not physical-device screenshots or release approval.
 
 The visual export manifest binds every PNG to its exact icon, renderer, captions and Compose capture. In the Amazon console, wait until image validation finishes and the saved thumbnail appears before editing another asset or changing locale. A completed file picker is not a completed upload. Reload and verify all eight screenshots, both icon sizes and the promotional image for each offered artwork locale before recording persisted upload evidence.
+
+### Local language and usage preferences
+
+Settings offers the existing 12 translated app languages or the device language. Android 13 and later use the system per-app language selection; older versions persist the choice locally. Recipes and canonical dates are not translated or rewritten. Receivers and success/error messages use the selected language too. Seven additional priority language bundles and native reviews remain pending.
+
+Usage counts stay off by default and have no network destination. Re-selecting enabled consent preserves the cohort/counters; opting out clears them. First-use, exact day-7/day-30 return and Premium conversion are once per consent period; engagement counts saturate at the integer limit. Premium conversion requires a successful purchase callback followed by verified access in the production profile; restore, sandbox and LAT do not count as a paid conversion. The trial event is reserved and not emitted because no trial is configured. No identifiers or recipe content are stored in usage counters. These local counts are not a revenue dashboard or a claim of tested production billing.
+
+Artwork verification reports `local_assets_passed` separately from `amazon_uploads_match_current_assets`. Refreshing local captures/exports does not rewrite historical upload receipts or imply an Amazon upload. The validator leaves its aggregate result false and exits nonzero while console assets differ; synchronize them only in a separately authorized Amazon session. Native-language, physical-device and release approvals remain false for host artwork.
+
+The host settings proof is reproducible with `python tools/local_settings_evidence.py` after the complete build/provenance command above. It requires all ten named language/privacy cases, fresh French/Arabic captures and exact current build hashes; `--verify` rejects stale evidence. Kitchen deletion immediately opts out of local counts, and the settings switch observes the canonical preference instead of retaining stale UI state. This does not replace Fire or production-purchase QA.

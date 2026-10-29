@@ -37,9 +37,16 @@
     {
         "group": "androidx.appcompat",
         "name": "appcompat-resources",
-        "version": "1.6.1",
-        "file": "appcompat-resources-1.6.1.aar",
-        "sha256": "db915dbf49357863de1669ff9fdd8e9008d65fe357af6cce9ae63043ad5f6617"
+        "version": "1.7.0",
+        "file": "appcompat-resources-1.7.0.aar",
+        "sha256": "55b6778602680f3c288ce350a2c2d3dd158d97dbffc63476275826655582c388"
+    },
+    {
+        "group": "androidx.appcompat",
+        "name": "appcompat",
+        "version": "1.7.0",
+        "file": "appcompat-1.7.0.aar",
+        "sha256": "67189713b30a3fab6971713cc5fab1cb7f022bcf648a257563715c91d719d584"
     },
     {
         "group": "androidx.arch.core",
@@ -231,11 +238,25 @@
         "sha256": "2c27de199535675005553066597a4b20fa1eea7c228ab4ef6b32b5fe39ca1f59"
     },
     {
+        "group": "androidx.cursoradapter",
+        "name": "cursoradapter",
+        "version": "1.0.0",
+        "file": "cursoradapter-1.0.0.aar",
+        "sha256": "a81c8fe78815fa47df5b749deb52727ad11f9397da58b16017f4eb2c11e28564"
+    },
+    {
         "group": "androidx.customview",
         "name": "customview-poolingcontainer",
         "version": "1.0.0",
         "file": "customview-poolingcontainer-1.0.0.aar",
         "sha256": "3584102fc49bf399c56e3b7be4bfe12000c46112320cd8cf85cc0a8f93f3e752"
+    },
+    {
+        "group": "androidx.customview",
+        "name": "customview",
+        "version": "1.0.0",
+        "file": "customview-1.0.0.aar",
+        "sha256": "20e5b8f6526a34595a604f56718da81167c0b40a7a94a57daa355663f2594df2"
     },
     {
         "group": "androidx.datastore",
@@ -287,6 +308,20 @@
         "sha256": "63686a612f39b8ca603bebe3376d55fb6c9ee28a4a5173efa49c89cbcca8a127"
     },
     {
+        "group": "androidx.drawerlayout",
+        "name": "drawerlayout",
+        "version": "1.0.0",
+        "file": "drawerlayout-1.0.0.aar",
+        "sha256": "9402442cdc5a43cf62fb14f8cf98c63342d4d9d9b805c8033c6cf7e802749ac1"
+    },
+    {
+        "group": "androidx.emoji2",
+        "name": "emoji2-views-helper",
+        "version": "1.4.0",
+        "file": "emoji2-views-helper-1.4.0.aar",
+        "sha256": "ed5d3ed772a5fbf0d570f7526f585cd61a180e60f9372584c328a68e2cff3375"
+    },
+    {
         "group": "androidx.emoji2",
         "name": "emoji2",
         "version": "1.4.0",
@@ -299,6 +334,13 @@
         "version": "1.3.7",
         "file": "exifinterface-1.3.7.aar",
         "sha256": "0e8f1832266c5b0667ad3d3b1098e624e49a09075493a014a7e88af01fd30ad3"
+    },
+    {
+        "group": "androidx.fragment",
+        "name": "fragment",
+        "version": "1.5.4",
+        "file": "fragment-1.5.4.aar",
+        "sha256": "bc3c2431dda42e94bb9511c587eae890d276e4aafe393a8da7b00169186dafde"
     },
     {
         "group": "androidx.graphics",
@@ -330,10 +372,24 @@
     },
     {
         "group": "androidx.lifecycle",
+        "name": "lifecycle-livedata-core-ktx",
+        "version": "2.9.0",
+        "file": "lifecycle-livedata-core-ktx-2.9.0.aar",
+        "sha256": "f265a665819e51322b3eea2a6ff2ab90186cadf1787a81dd8bef0ce93c4a600a"
+    },
+    {
+        "group": "androidx.lifecycle",
         "name": "lifecycle-livedata-core",
         "version": "2.9.0",
         "file": "lifecycle-livedata-core-2.9.0.aar",
         "sha256": "64f96b52c70895807f3020e2e8fa11f3ec2da9c157f62aae21a2c9d3b484a747"
+    },
+    {
+        "group": "androidx.lifecycle",
+        "name": "lifecycle-livedata",
+        "version": "2.9.0",
+        "file": "lifecycle-livedata-2.9.0.aar",
+        "sha256": "46382ddfba348db97846cfa81d67d72304dc156bb96224358b429fe748bc6ab4"
     },
     {
         "group": "androidx.lifecycle",
@@ -392,11 +448,32 @@
         "sha256": "db367838716e55866823c6deed62fcec23fce487bf2a8fa565a36f149ab3d1ef"
     },
     {
+        "group": "androidx.lifecycle",
+        "name": "lifecycle-viewmodel",
+        "version": "2.9.0",
+        "file": "lifecycle-viewmodel-2.9.0.aar",
+        "sha256": "cab404b05d5faed209104a2aef14c0cbb316ab9fabe4a8f037b043e5d2f43435"
+    },
+    {
+        "group": "androidx.loader",
+        "name": "loader",
+        "version": "1.0.0",
+        "file": "loader-1.0.0.aar",
+        "sha256": "11f735cb3b55c458d470bed9e25254375b518b4b1bad6926783a7026db0f5025"
+    },
+    {
         "group": "androidx.profileinstaller",
         "name": "profileinstaller",
         "version": "1.4.0",
         "file": "profileinstaller-1.4.0.aar",
         "sha256": "d502141fcce902430f62b674c32aecd0f75262e7ee2cd15c74adb617cd13130a"
+    },
+    {
+        "group": "androidx.resourceinspection",
+        "name": "resourceinspection-annotation",
+        "version": "1.0.1",
+        "file": "resourceinspection-annotation-1.0.1.jar",
+        "sha256": "8cff870ec6fb31db48a52f4a792335b4bf8de07e03bd37823181526433ccd5cb"
     },
     {
         "group": "androidx.room",
@@ -481,6 +558,13 @@
         "version": "1.1.1",
         "file": "versionedparcelable-1.1.1.aar",
         "sha256": "57e8d93260d18d5b9007c9eed3c64ad159de90c8609ebfc74a347cbd514535a4"
+    },
+    {
+        "group": "androidx.viewpager",
+        "name": "viewpager",
+        "version": "1.0.0",
+        "file": "viewpager-1.0.0.aar",
+        "sha256": "147af4e14a1984010d8f155e5e19d781f03c1d70dfed02a8e0d18428b8fc8682"
     },
     {
         "group": "com.amazon.device",

@@ -382,4 +382,7 @@
     <string name="premium_features_heading">Funcionalidades Premium</string>
     <string name="premium_purchase_terms">O acesso vitalício é uma compra única sem subscrição. As subscrições mensais e anuais renovam automaticamente, salvo cancelamento pela Amazon. Restaure compras com a mesma conta Amazon.</string>
     <string name="recipe_copy_title">%1$s (cópia)</string>
+    <string name="language_title">Idioma da aplicação</string>
+    <string name="language_system">Usar o idioma do dispositivo</string>
+    <string name="language_help">Escolha o idioma da aplicação ou siga o dispositivo. O tamanho do texto segue as definições do dispositivo. As suas receitas guardadas não são alteradas.</string>
 </resources>

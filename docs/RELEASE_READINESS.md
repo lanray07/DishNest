@@ -1,16 +1,22 @@
 # DishNest submission-readiness report
 
-Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 25 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
+Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 29 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
 
+## Local-only continuation
+
+Added a persistent in-app selector for the existing 12 resource locales, with device-language fallback, Android 13 system integration, pre-Android-13 preference persistence and localized background notifications/success messages. Opt-in local counters preserve unchanged consent, clear on opt-out, serialize writes, saturate at the integer limit and count production Premium conversion only after a successful purchase callback and verified access. Kitchen deletion opts out immediately and its switch observes canonical consent state. No analytics service, upload, paid dependency, device input or store change is required by these features. The new local APKs need fresh hardware validation; historical Fire and Test 3 evidence must not be treated as checks of this revision.
+
+Seven required priority languages are still absent: Japanese, Korean, Simplified Chinese, Traditional Chinese, Turkish, Indonesian and Swedish. Resource coverage of the existing 12 locales does not complete that requirement.
+
 ## Latest Test 3 result
 
-Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. Annual access still grants after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.
+Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.
 
 ## Completed local continuation
 
-- Filled the missing translation entries without suppressions or a lint baseline. All 12 requested locales now cover 377 translatable strings plus recipe-count plurals. Additional static titles, callbacks and accessibility labels were extracted. Brand names remain unchanged; private recipes were not translated.
+- Filled the missing translation entries without suppressions or a lint baseline. All 12 requested locales now cover 380 translatable strings plus recipe-count plurals. Additional static titles, callbacks and accessibility labels were extracted. Brand names remain unchanged; private recipes were not translated.
 - Implemented Amazon purchase initiation, product-price display, pending approval, restoration pagination, account confirmation, receipt persistence, signed server verification, expiry/cancellation handling, bounded offline caching and acknowledgement after verification. The default APK keeps purchases disabled. Approved UK/US prices and localized catalog drafts are now saved; lifetime is the first and primary offer.
 - Deployed explicitly approved sandbox and production receipt verifiers to the authenticated Workers Free account, with separate protected keys, no paid bindings and application logging disabled. Local workerd tests and live signed inactive RVS responses pass, including verification by compiled Kotlin and wrong-account rejection. Real purchase/lifecycle QA, load/quota recovery and release approvals remain pending; see `AMAZON_FREE_VERIFIER.md`.
 - Saved approved monthly/annual/lifetime UK and US prices in Amazon, with seven localized IAP descriptions. The lifetime-first UI uses Amazon-returned prices. Installed the real console-issued public authentication key; secrets remain outside Git and APKs.
@@ -37,26 +43,26 @@ Test 3: nine actual annual cases pass, including zero-cost purchase/grant, resto
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Android host tests | 96 tests; 0 failures/errors | `app/build/test-results/testDebugUnitTest/` |
-| Android lint | 0 errors; 47 warnings | `app/build/reports/lint-results-debug.html` |
+| Android host tests | 106 tests; 0 failures/errors | `app/build/test-results/testDebugUnitTest/` |
+| Android lint | 0 errors; 42 warnings | `app/build/reports/lint-results-debug.html` |
 | Original translation errors | 0 remain | Same lint report; no suppression/baseline |
 | Current build provenance | PASS: current input/output hashes verified | `artifacts/build-provenance.json` |
 | Locale resource gate | PASS across 12 locales | `localisation/validation.json` |
-| Physical Fire smoke tests | 15 tests passed on KFTRWI / API 28 | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
-| Physical Fire native checks | 6 passed on current APK; ordinary data hashes unchanged; UI not exercised | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
-| Forced-doze timer | Passed on the exact current QA app and runner; timer handled before verifier restart while still IDLE; original data unchanged; broader device matrix pending | `artifacts/fire-doze-qa.json` |
-| Fire offline and process recovery | PASS: 15 smoke tests plus named-plan check without connectivity; saved kitchen/preferences unchanged after process restart; radio/display settings and ordinary data preserved | `artifacts/fire-offline-qa.json` |
-| Fire system text scale and orientation | PASS: recipe, pantry and named-plan flows in portrait and landscape at system font scale 2.0; settings restored and ordinary data unchanged; TalkBack/full dialog matrix pending | `artifacts/fire-layout-qa.json` |
-| Fire document-provider backups | PASS: actual local picker JSON/ZIP cancellation, export, nonempty-kitchen rejection and complete backup-record round trips; ordinary data/settings preserved; provider failures/real attachments pending | `artifacts/fire-document-qa.json` |
+| Physical Fire smoke tests | Pending: device evidence does not match current APK/test APK | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
+| Physical Fire native checks | Pending on current APK | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
+| Forced-doze timer | Pending: current exact-build forced-idle evidence unavailable | `artifacts/fire-doze-qa.json` |
+| Fire offline and process recovery | Pending on current binaries | `artifacts/fire-offline-qa.json` |
+| Fire system text scale and orientation | Pending on current binaries | `artifacts/fire-layout-qa.json` |
+| Fire document-provider backups | Pending on current binaries | `artifacts/fire-document-qa.json` |
 | Offline notice integrity | 10 original notices and 92 dependency hashes verified; exact asset in debug/QA/release APKs; legal approval pending | `artifacts/packaged-notices-verification.json` |
-| Fire background timer probe | PASS: saved kitchen records, handled timer and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
-| Fire blocked-notification timer probe | PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored | `artifacts/fire-blocked-notifications.json` |
+| Fire background timer probe | Pending; inspect phase results | `artifacts/fire-background-alarm.json` |
+| Fire blocked-notification timer probe | Pending on the current APK; no hardware pass inferred | `artifacts/fire-blocked-notifications.json` |
 | Receipt service | 15 passing policy and local HTTP tests | `artifacts/billing-server-tests.xml` |
 | Workers Free verifier | Free plan verified; sandbox/production deployed with approval; signed inactive live-RVS responses accepted by Kotlin and wrong account rejected; real purchases not tested | `artifacts/billing-deployment.json`, `artifacts/billing-live-contract.json` |
 | Cross-runtime receipt contract | Actual Node signer and compiled Kotlin verifier pass; wrong-account response rejected | `artifacts/billing-contract.json` |
 | Isolated App Tester | Lifetime purchase, restore/restart and denial checks observed; subscription checkouts completed but expiry/lifecycle approval pending | `artifacts/amazon-purchase-device.json`, `artifacts/purchase-test-restoration.json` |
 | Configuration guard | Enabled billing rejects missing HTTPS verifier configuration even with the real Amazon public key present | `artifacts/billing-configuration-guard.json` |
-| Resolved dependency inventory | 92 artifacts; 0 missing licence declarations | `docs/dependencies/runtime-inventory.json` |
+| Resolved dependency inventory | 104 artifacts; 0 missing licence declarations | `docs/dependencies/runtime-inventory.json` |
 | Native binary and APK alignment/signature | See exact packaged APK evidence and checksums | `artifacts/native-alignment.json`, `artifacts/apk-validation.json`, delivery manifest |
 | Website | PASS: all 12 current pages at desktop 1440×1000 and phone 390×844; GitHub links, identity, content, FAQ, console, images and overflow checked | `artifacts/website-verification.json` |
 | Assets/listing dimensions | Local validation passes; all store outputs remain drafts | `artifacts/asset-validation.json` |
@@ -71,18 +77,18 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 
 | Area | Implemented | Remaining |
 | --- | --- | --- |
-| Foundation | Compose, Room, DataStore, Flow, adaptive navigation | Hardware performance, full process/rotation matrix, TalkBack and system font scaling |
+| Foundation | Compose, Room, DataStore, Flow, adaptive navigation | System dark theme, hardware performance, full process/rotation matrix, TalkBack and system font scaling |
 | Recipes | CRUD, favourites, collections, photos, notes, combined search/collection/favourite/time/cuisine/tag/difficulty filters, sorting and shared photo cleanup | Full hardware accessibility review and additional vocabulary |
 | Planner | Seven days/four slots, servings, tap assignment, previous-week copy, templates, direct two-meal swap, named selected plans and offline dinner suggestions | Optional drag interactions and broader planning QA |
 | Shopping/pantry | Compatible consolidation, serving scaling, pantry deduction, manual items, check dates, optional daily reminders, combined-plan shopping, localized numeric quantity entry and common metric aliases, and name-based suggestions | Expanded vocabulary/unit parsing and native review; remaining advanced Premium scope |
 | Cooking/voice/timers | Touch fallback, narration with audio-focus handling, push-to-talk, persisted inexact timers with stale-callback protection, exact commands in all target language families and localised numeric timer grammar (English number words also supported) | Broader natural-language/quantity grammar; actual speech providers, audio focus, natural idle/quotas, reboot, permissions and clock-change device QA |
 | Import/data | Reviewed text/JSON-LD with per-destination robots policy checks, local English OCR with crop preview, EXIF handling, transactional JSON and bounded photo-inclusive ZIP backups and local export, multilingual pasted-text section headings and Unicode numeric quantities | Live-site permission/robots interoperability validation and real-photo OCR accuracy; cloud provider remains optional/unconnected |
 | Billing | SDK integration, TEST Approved catalog, lifetime-first UI, Free-plan verifiers, real App Tester lifetime checks, and actual Amazon-delivered monthly LAT grant/restart/restore and autorenew-off observations | Full renewal/expiry/annual/lifetime/refund/fulfilment LAT matrix, final market/terms review, load/quota recovery and further commercial scope |
-| Localisation | 377 strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales; 96 localized tablet screenshot compositions and 12 promotional images with translated sample data and captions | Native-speaker review, remaining inline interpolations, expanded voice/unit vocabulary and runtime-copy review, translated website, final listing approval and hardware RTL checks; Amazon artwork slots cover fewer locales than descriptions; see marketing/amazon-artwork-uploads.json |
+| Localisation | 380 strings and plurals in 12 app locales; technical checks pass; 10 Amazon description locales; 96 localized tablet screenshot compositions and 12 promotional images with translated sample data and captions | Native-speaker review, remaining inline interpolations, expanded voice/unit vocabulary and runtime-copy review, translated website, final listing approval and hardware RTL checks; Amazon artwork slots cover fewer locales than descriptions; see marketing/amazon-artwork-uploads.json |
 | Licensing/privacy | Original notices bundled; all resolved POM licences inventoried; backup exclusions and billing disclosures | Publisher O. Bankole confirmed; legal/licence/privacy approval, production service-operation and retention details and final dependency review |
 | Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; 10 localized console descriptions, 7 artwork sets, support email and GitHub privacy/deletion links are configured without website deployment |
 | Release | Permanent publisher key created with approval; verified publisher-signed APK, input/output hashes and binary validation | Secure portable signing-key backup and broader release hardware matrix. Amazon-delivered version 2 launch/smoke/monthly purchases were exercised through an explicitly authorized temporary original-app backup/restore session; see `fire-amazon-lat-qa.json` for rollback completion. |
-| Metrics | Optional aggregate counters stored only on device; disabled by default | No analytics provider or complete Premium/trial conversion reporting |
+| Metrics | Opt-in device-only counters, idempotent consent, erased opt-out history, bounded serialized writes, retention events and verified production purchase conversion wiring | No revenue dashboard, trial implementation or remote analytics; actual production purchase validation remains pending. No analytics provider is required for local counts. |
 
 Some commercial feature scope remains unfinished; local receipt policy tests do not make the entire Premium product complete. Existing content remains readable/editable after entitlement expiry. JSON recovery does not discard a former Premium user's larger recipe book. A demo only bypasses Premium gates in billing-disabled development builds.
 
@@ -90,7 +96,7 @@ The translation provider throttled the initial draft generation. Requests were s
 
 ## External setup and hardware
 
-The latest read-only ADB inventory found 1 connected device(s). The isolated QA APK passed 15 instrumentation tests on KFTRWI (Android 9, API 28). Coverage includes recipe CRUD/editor recreation, selected named-plan recreation, SQLite reopen/migration, native photo ZIP codecs, a cropped synthetic OCR fixture, Arabic/Hindi resources, localized pasted-recipe headings/Unicode step numbering, pantry entry with Arabic decimal digits and metric aliases, denied microphone fallback, opt-in pantry notifications and Arabic planner/native-dialog controls at QA font scale 1.5, translated duplicate titles with original-recipe integrity, and localized meal-swap labels with canonical persisted dates. See the separate background-alarm probe record for its exact result. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, the complete release/purchase matrix. A separate temporary session tested the actual Amazon-delivered APK and monthly purchases; see `artifacts/fire-amazon-lat-qa.json`. Broader scenarios remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
+The latest read-only ADB inventory found 1 connected device(s). Historical device results do not match the current APK/test APK. Rerun the isolated smoke suite before using them as current evidence. This smoke pass does not cover real-photo OCR, granted microphone/Fire TTS, doze/reboot/time changes, TalkBack/full font matrix, the full permission/RTL matrix, the complete release/purchase matrix. A separate temporary session tested the actual Amazon-delivered APK and monthly purchases; see `artifacts/fire-amazon-lat-qa.json`. Broader scenarios remain pending. Follow `docs/DEVICE_QA.md` and `docs/AMAZON_BILLING.md` and attach observed evidence before marking those cases passed.
 
 An unsubmitted Amazon app draft now exists; see `marketing/amazon-console-draft.json`. The publisher has identified themself as O. Bankole. The real Amazon public key, approved UK/US prices, localized IAP drafts, protected publisher signing key and separate protected Workers Free verifiers are now prepared. Required release inputs remain final catalog/market/terms validation, real purchase/lifecycle and quota-recovery QA, signing-key recovery backup, exact signed-release hardware QA, native language approval and approved privacy/operator details. Private support/deletion assistance uses the publisher-provided support email. Project, support and draft privacy/deletion links use GitHub; no domain or GitHub Pages deployment was configured. Local development keys are not production keys.
 

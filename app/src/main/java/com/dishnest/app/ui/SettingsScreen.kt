@@ -24,10 +24,14 @@ import kotlinx.coroutines.withContext
 @Composable
 fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit) {
     var noticesOpen by remember { mutableStateOf(false) }
+    var languageOpen by remember { mutableStateOf(false) }
     val uiResources = androidx.compose.ui.platform.LocalContext.current.resources
 
+    if (languageOpen) {
+        LanguageDialog(onDismiss = { languageOpen = false })
+    }
     val billingState by vm.billing.status.collectAsStateWithLifecycle()
-    var usageEnabled by remember { mutableStateOf(vm.metrics.enabled) }
+    val usageEnabled by vm.metrics.enabledState.collectAsStateWithLifecycle()
     var delete by remember { mutableStateOf(false) }
     var importText by remember { mutableStateOf<String?>(null) }
     val context = LocalContext.current
@@ -215,7 +219,6 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
                     Switch(
                         usageEnabled,
                         {
-                            usageEnabled = it
                             vm.metrics.enabled = it
                         },
                     )
@@ -235,12 +238,11 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
                     stringResource(com.dishnest.app.R.string.ui_language_accessibility_24f044),
                     style = MaterialTheme.typography.titleLarge,
                 )
-                Text(
-                    stringResource(
-                        com.dishnest.app.R.string.ui_the_app_follows_your_device_s_la_2ed1cc
-                    ),
-                    color = Muted,
-                )
+                Text(stringResource(R.string.language_help), color = Muted)
+                OutlinedButton(onClick = { languageOpen = true }) {
+                    Text(com.dishnest.app.platform.AppLanguages.choices[com.dishnest.app.platform.AppLanguages.selected(context)]
+                        ?: stringResource(R.string.language_system))
+                }
             }
         }
         item {
@@ -326,6 +328,7 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
             confirmButton = {
                 TextButton(
                     onClick = {
+                        vm.metrics.enabled = false
                         vm.deleteAll()
                         delete = false
                     }

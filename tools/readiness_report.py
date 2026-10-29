@@ -55,12 +55,18 @@ strings=sum(n.get('translatable')!='false' for n in ET.parse(ROOT/'app/src/main/
 server_xml=ET.parse(ROOT/'artifacts/billing-server-tests.xml').getroot()
 server_tests=len(server_xml.findall('.//testcase'))
 test3=data('artifacts/fire-test3-qa.json') if (ROOT/'artifacts/fire-test3-qa.json').exists() else {}
-test3_summary = ('Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. Annual access still grants after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.' if test3.get('originalRestored') is True else 'Test 3 current-session results are tracked separately in `artifacts/fire-test3-qa.json`; do not infer expiry, lifetime or original-data restoration from historical tests.')
+test3_summary = ('Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.' if test3.get('originalRestored') is True else 'Test 3 current-session results are tracked separately in `artifacts/fire-test3-qa.json`; do not infer expiry, lifetime or original-data restoration from historical tests.')
 report=f'''# DishNest submission-readiness report
 
 Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: {datetime.now(timezone.utc).strftime('%d %B %Y')}. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
+
+## Local-only continuation
+
+Added a persistent in-app selector for the existing 12 resource locales, with device-language fallback, Android 13 system integration, pre-Android-13 preference persistence and localized background notifications/success messages. Opt-in local counters preserve unchanged consent, clear on opt-out, serialize writes, saturate at the integer limit and count production Premium conversion only after a successful purchase callback and verified access. Kitchen deletion opts out immediately and its switch observes canonical consent state. No analytics service, upload, paid dependency, device input or store change is required by these features. The new local APKs need fresh hardware validation; historical Fire and Test 3 evidence must not be treated as checks of this revision.
+
+Seven required priority languages are still absent: Japanese, Korean, Simplified Chinese, Traditional Chinese, Turkish, Indonesian and Swedish. Resource coverage of the existing 12 locales does not complete that requirement.
 
 ## Latest Test 3 result
 
@@ -129,7 +135,7 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 
 | Area | Implemented | Remaining |
 | --- | --- | --- |
-| Foundation | Compose, Room, DataStore, Flow, adaptive navigation | Hardware performance, full process/rotation matrix, TalkBack and system font scaling |
+| Foundation | Compose, Room, DataStore, Flow, adaptive navigation | System dark theme, hardware performance, full process/rotation matrix, TalkBack and system font scaling |
 | Recipes | CRUD, favourites, collections, photos, notes, combined search/collection/favourite/time/cuisine/tag/difficulty filters, sorting and shared photo cleanup | Full hardware accessibility review and additional vocabulary |
 | Planner | Seven days/four slots, servings, tap assignment, previous-week copy, templates, direct two-meal swap, named selected plans and offline dinner suggestions | Optional drag interactions and broader planning QA |
 | Shopping/pantry | Compatible consolidation, serving scaling, pantry deduction, manual items, check dates, optional daily reminders, combined-plan shopping, localized numeric quantity entry and common metric aliases, and name-based suggestions | Expanded vocabulary/unit parsing and native review; remaining advanced Premium scope |
@@ -140,7 +146,7 @@ Android lint warnings remain visible. Dependency-update warnings are not a compa
 | Licensing/privacy | Original notices bundled; all resolved POM licences inventoried; backup exclusions and billing disclosures | Publisher O. Bankole confirmed; legal/licence/privacy approval, production service-operation and retention details and final dependency review |
 | Marketing/site | Original artwork, host renders, inspected Fire QA captures, local static site and browser checks | Legal/market approval, translated pages, final store URL, approved hardware screenshots and final listing approval; 10 localized console descriptions, 7 artwork sets, support email and GitHub privacy/deletion links are configured without website deployment |
 | Release | Permanent publisher key created with approval; verified publisher-signed APK, input/output hashes and binary validation | Secure portable signing-key backup and broader release hardware matrix. Amazon-delivered version 2 launch/smoke/monthly purchases were exercised through an explicitly authorized temporary original-app backup/restore session; see `fire-amazon-lat-qa.json` for rollback completion. |
-| Metrics | Optional aggregate counters stored only on device; disabled by default | No analytics provider or complete Premium/trial conversion reporting |
+| Metrics | Opt-in device-only counters, idempotent consent, erased opt-out history, bounded serialized writes, retention events and verified production purchase conversion wiring | No revenue dashboard, trial implementation or remote analytics; actual production purchase validation remains pending. No analytics provider is required for local counts. |
 
 Some commercial feature scope remains unfinished; local receipt policy tests do not make the entire Premium product complete. Existing content remains readable/editable after entitlement expiry. JSON recovery does not discard a former Premium user's larger recipe book. A demo only bypasses Premium gates in billing-disabled development builds.
 

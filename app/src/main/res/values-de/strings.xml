@@ -381,4 +381,7 @@
     <string name="premium_features_heading">Premium-Funktionen</string>
     <string name="premium_purchase_terms">Lebenslang ist ein einmaliger Kauf ohne Abo. Monats- und Jahresabos verlängern sich automatisch, sofern sie nicht über Amazon gekündigt werden. Käufe mit demselben Amazon-Konto wiederherstellen.</string>
     <string name="recipe_copy_title">%1$s (Kopie)</string>
+    <string name="language_title">App-Sprache</string>
+    <string name="language_system">Gerätesprache verwenden</string>
+    <string name="language_help">Wähle eine App-Sprache oder folge der Gerätesprache. Die Textgröße richtet sich nach den Geräteeinstellungen. Deine gespeicherten Rezepte bleiben unverändert.</string>
 </resources>

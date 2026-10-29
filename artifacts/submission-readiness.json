@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T09:31:23.884410+00:00",
+  "generatedAt": "2026-10-29T20:28:29.996826+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -48,6 +48,12 @@
       "remaining": ""
     },
     {
+      "check": "Local language picker and privacy controls",
+      "status": "passed",
+      "evidence": "artifacts/local-settings-qa.json",
+      "remaining": ""
+    },
+    {
       "check": "Evidence matches current build",
       "status": "passed",
       "evidence": "artifacts/build-provenance.json",
@@ -75,7 +81,7 @@
       "check": "Native language and full UI approval",
       "status": "pending",
       "evidence": "localisation/REVIEW.md",
-      "remaining": "Native review, remaining interpolations, voice and marketing copy"
+      "remaining": "Native review, remaining interpolations, voice/marketing copy and the seven missing priority locales listed in localisation/validation.json"
     },
     {
       "check": "Local receipt-service tests",
@@ -115,45 +121,45 @@
     },
     {
       "check": "Physical Fire native components",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-native-qa.json; artifacts/fire-device-qa.json",
-      "remaining": ""
+      "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
     },
     {
       "check": "Physical Fire instrumentation smoke",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": ""
+      "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
     },
     {
       "check": "Background Fire timer after process termination",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-background-alarm.json",
-      "remaining": ""
+      "remaining": "Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs"
     },
     {
       "check": "Forced-idle Fire timer",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-doze-qa.json",
-      "remaining": ""
+      "remaining": "Run the bounded forced-idle probe on the current QA app and runner; verify notification, kitchen persistence, idle restoration and unchanged ordinary data"
     },
     {
       "check": "Fire offline smoke and selected-plan process recovery",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-offline-qa.json",
-      "remaining": ""
+      "remaining": "Run the exact installed QA smoke suite without connectivity, verify named-plan/persisted preferences across process restart and restore settings and ordinary data"
     },
     {
       "check": "Fire portrait/landscape with system large text",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-layout-qa.json",
-      "remaining": ""
+      "remaining": "Run QA recipe, pantry and named-plan flows in portrait/landscape at real system font scale 2.0; restore settings and preserve ordinary data"
     },
     {
       "check": "Fire local document-provider backup flows",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-document-qa.json",
-      "remaining": ""
+      "remaining": "Exercise actual JSON/ZIP picker cancellation, export, nonempty-kitchen rejection and restore round trips on QA; preserve ordinary data and remove only test exports"
     },
     {
       "check": "Physical device QA",
@@ -189,7 +195,7 @@
       "check": "Final store and website metadata",
       "status": "pending",
       "evidence": "marketing/amazon-console-draft.json",
-      "remaining": "10 description locales and 7 artwork locales saved in the Amazon draft; native/legal approval, final store URL, approved hardware screenshots and publisher-signed app file pending"
+      "remaining": "Historical description/artwork upload receipts are retained; refreshed local screenshot bytes need a separately authorized Amazon sync. Native/legal approval, final store URL, approved hardware screenshots and publisher-signed app upload remain pending"
     },
     {
       "check": "Remaining product scope",

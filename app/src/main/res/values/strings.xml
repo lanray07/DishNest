@@ -382,4 +382,7 @@
     <string name="premium_features_heading">Premium features</string>
     <string name="premium_purchase_terms">Lifetime is one purchase with no subscription. Monthly and annual subscriptions renew automatically unless canceled through Amazon. Restore purchases using the same Amazon account.</string>
     <string name="recipe_copy_title">%1$s (copy)</string>
+    <string name="language_title">App language</string>
+    <string name="language_system">Use device language</string>
+    <string name="language_help">Choose an app language or follow your device. Text size follows your device settings. Your saved recipes are unchanged.</string>
 </resources>

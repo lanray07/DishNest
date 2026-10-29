@@ -382,4 +382,7 @@
     <string name="premium_features_heading">Funciones Premium</string>
     <string name="premium_purchase_terms">De por vida es un pago único sin suscripción. Las suscripciones mensuales y anuales se renuevan automáticamente salvo cancelación en Amazon. Restaura las compras con la misma cuenta de Amazon.</string>
     <string name="recipe_copy_title">%1$s (copia)</string>
+    <string name="language_title">Idioma de la aplicación</string>
+    <string name="language_system">Usar el idioma del dispositivo</string>
+    <string name="language_help">Elige el idioma de la aplicación o el de tu dispositivo. El tamaño del texto sigue los ajustes del dispositivo. Tus recetas guardadas no cambian.</string>
 </resources>

@@ -52,7 +52,7 @@ class TimerReceiver : BroadcastReceiver() {
                     manager.createNotificationChannel(
                         NotificationChannel(
                             "cooking",
-                            context.getString(R.string.timer_channel),
+                            AppLanguages.localized(context).getString(R.string.timer_channel),
                             NotificationManager.IMPORTANCE_HIGH,
                         )
                     )
@@ -73,7 +73,7 @@ class TimerReceiver : BroadcastReceiver() {
                             Notification.Builder(context, "cooking")
                                 .setSmallIcon(R.drawable.ic_nest)
                                 .setContentTitle(t.label)
-                                .setContentText(context.getString(R.string.timer_ready))
+                                .setContentText(AppLanguages.localized(context).getString(R.string.timer_ready))
                                 .setContentIntent(open)
                                 .setAutoCancel(true)
                                 .setVisibility(Notification.VISIBILITY_PRIVATE)

@@ -31,13 +31,15 @@ for suffix, name in [('ReadinessDataTest', 'Restore, photo archive and planner d
     selected = [suite for suite in suites if suite.get('name', '').endswith(suffix)]
     passed = bool(selected) and all(int(s.get('tests', 0)) > 0 and int(s.get('failures', 0)) + int(s.get('errors', 0)) == 0 for s in selected)
     check(name, passed, f'app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.{suffix}.xml', 'Run the current complete host test suite')
+from local_settings_evidence import verify as verify_settings
+check('Local language picker and privacy controls',verify_settings(),'artifacts/local-settings-qa.json','Run the complete host suite, record build provenance and run tools/local_settings_evidence.py')
 locales=read_json('localisation/validation.json')
 check('Evidence matches current build',verify_build(),'artifacts/build-provenance.json','Run full Gradle verification and record the input/output hashes')
 check('Locale resource coverage',locales.get('resource_complete') is True,'localisation/validation.json','Missing resources, placeholders or plural categories')
 import_suites = [s for s in suites if s.get('name', '').endswith('RecipeWebAccessTest')]
 check('Recipe website policy tests',bool(import_suites) and all(int(s.get('tests',0)) >= 7 and int(s.get('skipped',0)) == 0 and int(s.get('failures',0)) + int(s.get('errors',0)) == 0 for s in import_suites),'app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.RecipeWebAccessTest.xml','Run the bounded import, robots policy and redirect fixture tests')
 check('Current desktop and phone website QA',verify_website(),'artifacts/website-verification.json','Run browser verification on all current local pages at both viewport sizes')
-check('Native language and full UI approval',locales.get('release_approved') is True,'localisation/REVIEW.md','Native review, remaining interpolations, voice and marketing copy')
+check('Native language and full UI approval',locales.get('release_approved') is True,'localisation/REVIEW.md','Native review, remaining interpolations, voice/marketing copy and the seven missing priority locales listed in localisation/validation.json')
 server=ROOT/'artifacts/billing-server-tests.xml'
 server_xml=ET.parse(server).getroot() if server.exists() else None
 server_passed=server_xml is not None and bool(server_xml.findall('.//testcase')) and not server_xml.findall('.//failure') and not server_xml.findall('.//error')
@@ -85,7 +87,7 @@ inventory=read_json('docs/dependencies/runtime-inventory.json')
 check('Resolved dependency inventory',bool(inventory.get('components')) and all(c.get('licenses') for c in inventory['components']),'docs/dependencies/runtime-inventory.json','Generate from exact releaseRuntimeClasspath and resolve missing licence declarations')
 check('Licensing/privacy approval',False,'THIRD_PARTY_NOTICES.md','Publisher O. Bankole confirmed; approval of distribution obligations, production service-operation details and privacy disclosures remains pending')
 check('Publisher-signed release device test',False,'artifacts/publisher-signing.json; artifacts/publisher-device-compatibility.json; artifacts/fire-amazon-lat-qa.json','Publisher signature/payload/alignment verified. The genuine Amazon-delivered version 2 passed targeted Fire smoke and monthly purchase checks, followed by exact original-app/data restoration. Secure portable signing-key recovery and broader release hardware coverage remain pending.')
-check('Final store and website metadata',False,'marketing/amazon-console-draft.json','10 description locales and 7 artwork locales saved in the Amazon draft; native/legal approval, final store URL, approved hardware screenshots and publisher-signed app file pending')
+check('Final store and website metadata',False,'marketing/amazon-console-draft.json','Historical description/artwork upload receipts are retained; refreshed local screenshot bytes need a separately authorized Amazon sync. Native/legal approval, final store URL, approved hardware screenshots and publisher-signed app upload remain pending')
 check('Remaining product scope',False,'docs/RELEASE_READINESS.md','Complete the explicitly listed outstanding app features and integration checks')
 result={'generatedAt':datetime.now(timezone.utc).isoformat(),'submission_ready':all(c['status']=='passed' for c in checks),
  'publishing_permitted':False,'git_push_permitted':True,'publication':'Private LAT explicitly authorized and submitted; public store release remains conditional on every readiness gate; website deployment not authorized; source commits and GitHub pushes authorized','checks':checks}

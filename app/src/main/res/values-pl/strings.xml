@@ -383,4 +383,7 @@
     <string name="premium_features_heading">Funkcje Premium</string>
     <string name="premium_purchase_terms">Dostęp dożywotni to jednorazowy zakup bez subskrypcji. Subskrypcje miesięczne i roczne odnawiają się automatycznie, chyba że anulujesz je przez Amazon. Przywracaj zakupy na tym samym koncie Amazon.</string>
     <string name="recipe_copy_title">%1$s (kopia)</string>
+    <string name="language_title">Język aplikacji</string>
+    <string name="language_system">Używaj języka urządzenia</string>
+    <string name="language_help">Wybierz język aplikacji lub język urządzenia. Rozmiar tekstu zależy od ustawień urządzenia. Zapisane przepisy pozostają bez zmian.</string>
 </resources>

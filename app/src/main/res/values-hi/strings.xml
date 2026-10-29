@@ -381,4 +381,7 @@
     <string name="premium_features_heading">Premium सुविधाएँ</string>
     <string name="premium_purchase_terms">आजीवन एक्सेस एक बार की खरीद है, सदस्यता नहीं। मासिक और वार्षिक सदस्यताएँ Amazon के ज़रिए रद्द न करने पर अपने आप नवीनीकृत होती हैं। खरीदारी बहाल करने के लिए उसी Amazon खाते का उपयोग करें।</string>
     <string name="recipe_copy_title">%1$s (प्रतिलिपि)</string>
+    <string name="language_title">ऐप की भाषा</string>
+    <string name="language_system">डिवाइस की भाषा इस्तेमाल करें</string>
+    <string name="language_help">ऐप की भाषा चुनें या डिवाइस की भाषा अपनाएँ। टेक्स्ट का आकार डिवाइस की सेटिंग के अनुसार रहेगा। आपकी सेव की गई रेसिपी नहीं बदलेंगी।</string>
 </resources>

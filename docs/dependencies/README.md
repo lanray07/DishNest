@@ -1,6 +1,6 @@
 # Resolved dependency inventory
 
-92 resolved release artifacts. Hashes identify the actual cached artifacts used by this build. Licence metadata is evidence, not a completed legal review. Native OCR notices and Amazon proprietary terms require separate review.
+104 resolved release artifacts. Hashes identify the actual cached artifacts used by this build. Licence metadata is evidence, not a completed legal review. Native OCR notices and Amazon proprietary terms require separate review.
 
 | Component | POM licence |
 | --- | --- |
@@ -9,7 +9,8 @@
 | androidx.activity:activity:1.10.1 | The Apache Software License, Version 2.0 |
 | androidx.annotation:annotation-experimental:1.4.1 | The Apache Software License, Version 2.0 |
 | androidx.annotation:annotation-jvm:1.9.1 | The Apache Software License, Version 2.0 |
-| androidx.appcompat:appcompat-resources:1.6.1 | The Apache Software License, Version 2.0 |
+| androidx.appcompat:appcompat-resources:1.7.0 | The Apache Software License, Version 2.0 |
+| androidx.appcompat:appcompat:1.7.0 | The Apache Software License, Version 2.0 |
 | androidx.arch.core:core-common:2.2.0 | The Apache Software License, Version 2.0 |
 | androidx.arch.core:core-runtime:2.2.0 | The Apache Software License, Version 2.0 |
 | androidx.autofill:autofill:1.0.0 | The Apache Software License, Version 2.0 |
@@ -37,7 +38,9 @@
 | androidx.core:core-viewtree:1.0.0 | The Apache Software License, Version 2.0 |
 | androidx.core:core:1.13.1 | The Apache Software License, Version 2.0 |
 | androidx.core:core:1.13.1 | The Apache Software License, Version 2.0 |
+| androidx.cursoradapter:cursoradapter:1.0.0 | The Apache Software License, Version 2.0 |
 | androidx.customview:customview-poolingcontainer:1.0.0 | The Apache Software License, Version 2.0 |
+| androidx.customview:customview:1.0.0 | The Apache Software License, Version 2.0 |
 | androidx.datastore:datastore-android:1.1.4 | The Apache Software License, Version 2.0 |
 | androidx.datastore:datastore-core-android:1.1.4 | The Apache Software License, Version 2.0 |
 | androidx.datastore:datastore-core-okio-jvm:1.1.4 | The Apache Software License, Version 2.0 |
@@ -45,13 +48,18 @@
 | androidx.datastore:datastore-preferences-core-jvm:1.1.4 | The Apache Software License, Version 2.0 |
 | androidx.datastore:datastore-preferences-external-protobuf:1.1.4 | BSD-3-Clause |
 | androidx.datastore:datastore-preferences-proto:1.1.4 | The Apache Software License, Version 2.0 |
+| androidx.drawerlayout:drawerlayout:1.0.0 | The Apache Software License, Version 2.0 |
+| androidx.emoji2:emoji2-views-helper:1.4.0 | The Apache Software License, Version 2.0 |
 | androidx.emoji2:emoji2:1.4.0 | The Apache Software License, Version 2.0 |
 | androidx.exifinterface:exifinterface:1.3.7 | The Apache Software License, Version 2.0 |
+| androidx.fragment:fragment:1.5.4 | The Apache Software License, Version 2.0 |
 | androidx.graphics:graphics-path:1.0.1 | The Apache Software License, Version 2.0 |
 | androidx.interpolator:interpolator:1.0.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-common-java8:2.9.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-common-jvm:2.9.0 | The Apache Software License, Version 2.0 |
+| androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-livedata-core:2.9.0 | The Apache Software License, Version 2.0 |
+| androidx.lifecycle:lifecycle-livedata:2.9.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-process:2.9.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-runtime-android:2.9.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-runtime-compose-android:2.9.0 | The Apache Software License, Version 2.0 |
@@ -60,7 +68,10 @@
 | androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.0 | The Apache Software License, Version 2.0 |
 | androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.0 | The Apache Software License, Version 2.0 |
+| androidx.lifecycle:lifecycle-viewmodel:2.9.0 | The Apache Software License, Version 2.0 |
+| androidx.loader:loader:1.0.0 | The Apache Software License, Version 2.0 |
 | androidx.profileinstaller:profileinstaller:1.4.0 | The Apache Software License, Version 2.0 |
+| androidx.resourceinspection:resourceinspection-annotation:1.0.1 | The Apache Software License, Version 2.0 |
 | androidx.room:room-common-jvm:2.7.1 | The Apache Software License, Version 2.0 |
 | androidx.room:room-ktx:2.7.1 | The Apache Software License, Version 2.0 |
 | androidx.room:room-runtime-android:2.7.1 | The Apache Software License, Version 2.0 |
@@ -73,6 +84,7 @@
 | androidx.vectordrawable:vectordrawable-animated:1.1.0 | The Apache Software License, Version 2.0 |
 | androidx.vectordrawable:vectordrawable:1.1.0 | The Apache Software License, Version 2.0 |
 | androidx.versionedparcelable:versionedparcelable:1.1.1 | The Apache Software License, Version 2.0 |
+| androidx.viewpager:viewpager:1.0.0 | The Apache Software License, Version 2.0 |
 | com.amazon.device:amazon-appstore-sdk:3.0.9 | Program Materials License |
 | com.google.accompanist:accompanist-drawablepainter:0.32.0 | The Apache Software License, Version 2.0 |
 | com.google.code.gson:gson:2.11.0 | Apache-2.0 |

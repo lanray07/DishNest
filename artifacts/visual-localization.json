@@ -1,5 +1,5 @@
 {
-  "passed": true,
+  "passed": false,
   "locales": [
     "en-GB",
     "en-US",
@@ -23,7 +23,14 @@
   "native_language_approved": false,
   "physical_device_verified": false,
   "release_approved": false,
-  "amazon_artwork_locales_verified": [
+  "validator_sha256": "d427a100507927306e0fb17721b87f0c3cfe457ad004910c5dd304a64e43201a",
+  "manifest_sha256": "311058c3820e6dbce4043c330231fcaa004c2106d18452722a4188ca0a3b6052",
+  "upload_history_sha256": "0cae56bc7e99f17b446de2a27b74491d7a9ad4db11ca2a0aa5464dbe950999e3",
+  "amazon_live_console_rechecked": false,
+  "amazon_verification_scope": "Historical saved upload receipts compared with current local artwork; no live console access",
+  "local_assets_passed": true,
+  "amazon_uploads_match_current_assets": false,
+  "amazon_artwork_locales_historical_receipts": [
     "de-DE",
     "en-GB",
     "en-US",
@@ -31,5 +38,47 @@
     "fr-FR",
     "it-IT",
     "pt-BR"
-  ]
+  ],
+  "amazon_artwork_locales_verified": [],
+  "amazon_artwork_updates_pending": {
+    "de-DE": [
+      "02",
+      "06",
+      "08"
+    ],
+    "en-GB": [
+      "02",
+      "06",
+      "08"
+    ],
+    "it-IT": [
+      "02",
+      "06",
+      "08"
+    ],
+    "pt-BR": [
+      "02",
+      "06",
+      "08"
+    ],
+    "en-US": [
+      "02",
+      "06",
+      "08"
+    ],
+    "fr-FR": [
+      "02",
+      "05",
+      "06",
+      "08"
+    ],
+    "es-ES": [
+      "02",
+      "03",
+      "05",
+      "06",
+      "07",
+      "08"
+    ]
+  }
 }

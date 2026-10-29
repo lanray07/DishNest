@@ -10,6 +10,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LOCALES = ['en-GB','en-US','es','fr','de','it','pt-BR','pt-PT','nl','pl','ar','hi']
+PRIORITY_LOCALES = ['en-GB','fr','es','de','it','pt-BR','nl','pl','ar','hi','ja','ko','zh-Hans','zh-Hant','tr','id','sv']
 OUT = ROOT / 'localisation'
 OUT.mkdir(exist_ok=True)
 
@@ -69,7 +70,7 @@ def validate(source,hardcoded):
         results.append({'locale':locale,'missing':missing,'invalid_placeholders':invalid,'plural_errors':plural_errors,'human_review':'pending','status':'partial' if missing or invalid or plural_errors else 'resource-complete'})
     plural_nodes=list(ET.parse(ROOT/'app/src/main/res/values/strings.xml').getroot().iter('plurals'))
     technical=all(r['status']=='resource-complete' for r in results)
-    report={'locales':results,'hardcoded_text_count':len(hardcoded),'plural_resources':len(plural_nodes),'plural_review':'recipe count localised; other inline counts need extraction','rtl':'manifest supportsRtl=true; device visual review pending','resource_complete':technical,'release_approved':False,'complete':False}
+    report={'required_initial_locales':PRIORITY_LOCALES,'unimplemented_priority_locales':sorted(set(PRIORITY_LOCALES)-set(LOCALES)),'locales':results,'hardcoded_text_count':len(hardcoded),'plural_resources':len(plural_nodes),'plural_review':'recipe count localised; other inline counts need extraction','rtl':'manifest supportsRtl=true; device visual review pending','resource_complete':technical,'release_approved':False,'complete':False}
     (OUT/'validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'resource_locales':len(results),'hardcoded_text_count':len(hardcoded),'resource_complete':technical,'release_approved':False}))
     return report

@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.room.withTransaction
 import com.dishnest.app.data.*
 import com.dishnest.app.domain.*
+import com.dishnest.app.platform.AppLanguages
 import com.dishnest.app.platform.TimerScheduler
 import com.dishnest.app.ui.kitchenFailure
 import java.time.LocalDate
@@ -30,6 +31,7 @@ data class KitchenState(
 
 class KitchenViewModel(application: Application) : AndroidViewModel(application) {
     private val app = application as DishNestApp
+    private val uiContext get() = AppLanguages.localized(app)
     private val db = app.database
     private val dao = db.kitchen()
     private val recipeWriter = RecipeWriter(db, com.dishnest.app.platform.RecipePhotos(app.filesDir))
@@ -69,7 +71,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
             runCatching { action() }
                 .onFailure {
                     if (it is kotlinx.coroutines.CancellationException) throw it
-                    message.value = app.resources.kitchenFailure(it, failureMessage)
+                    message.value = uiContext.resources.kitchenFailure(it, failureMessage)
                 }
         }
 
@@ -88,13 +90,13 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
         )
         recipeWriter.save(r, unlimited = canUsePremium())
         metrics.record("first_recipe_saved")
-        message.value = app.getString(R.string.recipe_saved)
+        message.value = uiContext.getString(R.string.recipe_saved)
         onSaved()
     }
 
     fun delete(r: Recipe) = run {
         recipeWriter.delete(r.id)
-        message.value = app.getString(R.string.recipe_deleted)
+        message.value = uiContext.getString(R.string.recipe_deleted)
     }
 
     fun favourite(r: Recipe) = run { recipeWriter.toggleFavourite(r.id) }
@@ -106,7 +108,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
 
     fun swapMeals(firstId: String, secondId: String) = run {
         mealWriter.swap(firstId, secondId)
-        message.value = app.getString(R.string.meals_swapped)
+        message.value = uiContext.getString(R.string.meals_swapped)
     }
 
     fun removeMeal(m: Meal) = run { dao.deleteMeal(m.id) }
@@ -134,7 +136,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
             }
         }
         metrics.record("first_meal_plan_created")
-        message.value = app.getString(R.string.dinners_planned)
+        message.value = uiContext.getString(R.string.dinners_planned)
     }
 
     fun copyPrevious(start: LocalDate) = run {
@@ -155,7 +157,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun saveTemplate(name: String, start: LocalDate) = run {
-        require(canUsePremium()) { app.getString(R.string.premium_required) }
+        require(canUsePremium()) { uiContext.getString(R.string.premium_required) }
         requireKitchen(name.isNotBlank() && name.length <= 200, KitchenProblem.PLAN_NAME)
         db.withTransaction {
             val planId = planStore.activeId()
@@ -166,11 +168,11 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
             requireKitchen(meals.isNotEmpty(), KitchenProblem.EMPTY_WEEK)
             dao.template(PlanTemplate(name = name, meals = meals))
         }
-        message.value = app.getString(R.string.template_saved)
+        message.value = uiContext.getString(R.string.template_saved)
     }
 
     fun applyTemplate(template: PlanTemplate, start: LocalDate) = run {
-        require(canUsePremium()) { app.getString(R.string.premium_required) }
+        require(canUsePremium()) { uiContext.getString(R.string.premium_required) }
         db.withTransaction {
             val saved = (dao.templates().first().find { it.id == template.id } ?: throw KitchenFailure(KitchenProblem.MISSING_RECORD))
             val oldStart = Planner.week(LocalDate.parse(saved.meals.minOf { it.date }))
@@ -202,7 +204,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
         db.withTransaction {
             val selected = selectedPlanIds ?: setOf(planStore.activeId())
             requireKitchen(selected.isNotEmpty() && selected.all { id -> planStore.ensureDefault().any { it.id == id } }, KitchenProblem.MISSING_RECORD)
-            require(selected.size == 1 || canUsePremium()) { app.getString(R.string.premium_required) }
+            require(selected.size == 1 || canUsePremium()) { uiContext.getString(R.string.premium_required) }
             val meals =
                 dao.meals().first().filter {
                     it.planId in selected && it.date >= start.toString() && it.date <= start.plusDays(6).toString()
@@ -213,7 +215,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
             items.forEach { dao.shopping(it) }
         }
         metrics.record("shopping_list_generated")
-        message.value = app.getString(R.string.shopping_updated)
+        message.value = uiContext.getString(R.string.shopping_updated)
     }
 
     fun shopping(item: ShoppingItem) = run {
@@ -233,7 +235,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     fun deletePantry(item: PantryItem) = run { dao.deletePantry(item.id) }
 
     fun timer(label: String, seconds: Long) = run {
-        timerStore.start(label.ifBlank { app.getString(R.string.timer_channel) }, seconds)
+        timerStore.start(label.ifBlank { uiContext.getString(R.string.timer_channel) }, seconds)
     }
 
     fun pause(t: KitchenTimer) = run { timerStore.toggle(t.id) }
@@ -242,7 +244,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
     fun loadDemo() = run {
         DemoKitchen(db).load()
         app.settings.edit { it[booleanPreferencesKey("demo")] = true }
-        message.value = app.getString(R.string.demo_loaded)
+        message.value = uiContext.getString(R.string.demo_loaded)
     }
 
     fun deleteAll() = run {
@@ -260,7 +262,7 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
         app.settings.edit { it.clear() }
         metrics.clear()
         com.dishnest.app.platform.PantryReminders(app).clear()
-        message.value = app.getString(R.string.kitchen_deleted)
+        message.value = uiContext.getString(R.string.kitchen_deleted)
     }
 
     suspend fun export(): String = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
@@ -277,13 +279,13 @@ class KitchenViewModel(application: Application) : AndroidViewModel(application)
 
     suspend fun restorePhotos(input: java.io.InputStream) = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
         PhotoBackups(com.dishnest.app.platform.RecipePhotos(app.filesDir)).restore(input, backups::restore)
-        message.value = app.getString(R.string.backup_imported)
+        message.value = uiContext.getString(R.string.backup_imported)
     }
 
     fun restore(raw: String) = run(R.string.error_invalid_backup) {
         kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
             backups.restore(BackupCodec.decode(raw))
         }
-        message.value = app.getString(R.string.backup_imported)
+        message.value = uiContext.getString(R.string.backup_imported)
     }
 }
