@@ -1,2 +1,2 @@
-﻿List of devices attached (serial identifiers omitted)
-device-1       device product:trona model:KFTRWI device:trona transport_id:9
+List of devices attached (serial identifiers omitted)
+device-1       device product:trona model:KFTRWI device:trona transport_id:1

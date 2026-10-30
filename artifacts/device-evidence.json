@@ -1,7 +1,7 @@
-﻿{
-    "collectedAt":  "2026-10-19T08:26:04.5296628Z",
-    "connectedDeviceCount":  1,
-    "deviceTests":  "Not executed by this read-only inventory script",
-    "physicalFireQa":  "Pending explicit hardware testing and evidence",
-    "published":  false
+{
+  "collectedAt": "2026-10-30T07:04:19.1495806Z",
+  "connectedDeviceCount": 1,
+  "deviceTests": "Not executed by this read-only inventory script",
+  "physicalFireQa": "Pending explicit hardware testing and evidence",
+  "published": false
 }

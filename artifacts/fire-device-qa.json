@@ -1,12 +1,12 @@
 {
   "packageId": "com.dishnest.app.qa",
   "ordinaryAppModified": false,
-  "testedAt": "2026-10-21T16:13:53.1007775Z",
+  "testedAt": "2026-10-30T06:48:37.9667004Z",
   "model": "KFTRWI",
   "androidVersion": "9",
   "api": "28",
   "locale": "en-GB",
-  "apkSha256": "1023739b5c087bce595a46b0945c3dbf95e85fa7179abafcd24e9a33c33c80e0",
+  "apkSha256": "0fc2fabef97e7edf2747b170dc7bf2bd93e286170312a2ce84c7038b3d2d9061",
   "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
   "tests": 15,
   "passedTests": 15,
@@ -25,9 +25,7 @@
     "Named plan creation/selection across activity recreation",
     "Opt-in generic pantry reminder and duplicate suppression",
     "Denied microphone touch fallback",
-    "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL",
-    "Arabic duplicate label and original recipe/notes/ingredients/method integrity after saving a new copy",
-    "Arabic meal-swap date labels with unchanged canonical date persistence"
+    "Production Arabic planner/native dialog controls under QA activity font scale 1.5 and RTL"
   ],
   "notCovered": [
     "App Tester/LAT purchases",
@@ -41,37 +39,5 @@
   "backgroundAlarmEvidence": "artifacts/fire-background-alarm.json",
   "serialIdentifierStored": false,
   "storeSubmission": false,
-  "remoteDeployment": false,
-  "captures": [
-    {
-      "file": "artifacts/screens/fire-qa-arabic-large-font.png",
-      "sha256": "65c58e0940e31c4bf749c813e3ab33212b38b0cc4ad19a798c393aed933d9e59",
-      "width": 1080,
-      "height": 1026
-    },
-    {
-      "file": "artifacts/screens/fire-qa-named-plan.png",
-      "sha256": "28c72da67fd412f0b6e48992e7ac711e45b7b1ee95c4d75948aa44b954215c9d",
-      "width": 1920,
-      "height": 1200
-    }
-  ],
-  "capturesVisuallyInspected": true,
-  "observedTestNames": [
-    "duplicateUsesArabicCopyLabelAndPreservesOriginalRecipe",
-    "swapDisplaysArabicDatesAndRetainsCanonicalStoredDates",
-    "arabicPlannerAndNativeDialogRemainReachableAtLargeFontScale",
-    "pantryReminderIsOptInGenericAndSuppressedAfterFirstDelivery",
-    "deniedMicrophoneReturnsTouchFallbackWithoutStartingRecognition",
-    "namedPlanSelectionSurvivesActivityRecreation",
-    "firstLaunchOffersAnEmptyPrivateKitchen",
-    "pantrySavesArabicDigitsAndMetricUnitWithoutChangingTheItemName",
-    "bundledOcrEngineRecognisesASyntheticPrintedFixtureOffline",
-    "realSqliteMigratesVersionOneWithoutDiscardingSavedData",
-    "actualResourcesFormatArabicAndHindiWithoutEnglishFallback",
-    "localizedPastedRecipesKeepTheirContentOnFire",
-    "photoArchiveUsesRealDeviceBitmapCodecs",
-    "allLocaleMessagesExportsAndQuantityFormatsOnFire",
-    "recipeSurvivesCloseAndReopen"
-  ]
+  "remoteDeployment": false
 }

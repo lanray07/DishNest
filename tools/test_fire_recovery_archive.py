@@ -52,5 +52,51 @@ class RecoveryArchiveTests(unittest.TestCase):
             self.read([('files/only', b'data', tarfile.REGTYPE)])
 
 
+class ProfileRecoveryTests(unittest.TestCase):
+    def runner(self, apk=None, current='0'):
+        calls = []
+        def run(*args):
+            calls.append(args)
+            if args == ('shell', 'am', 'get-current-user'):
+                return current.encode()
+            if args == ('shell', 'pm', 'list', 'users'):
+                return b'UserInfo{0:Owner:13}\nUserInfo{10:Other:8010}'
+            if args[:4] == ('shell', 'pm', 'list', 'packages'):
+                return b'package:com.dishnest.app\n' if args[5] == '10' and apk else b''
+            if args[:3] == ('shell', 'pm', 'path'):
+                return b'package:/data/app/known/base.apk'
+            if args == ('exec-out', 'cat', '/data/app/known/base.apk'):
+                return apk
+            if args[:4] == ('shell', 'cmd', 'package', 'install-existing'):
+                return b'Package com.dishnest.app installed for user: 0'
+            if args[0] == 'install':
+                return b'Success'
+            raise AssertionError('Unexpected device command')
+        return run, calls
+
+    def test_other_profile_exact_original_is_enabled_only_for_owner(self):
+        run, calls = self.runner(b'original')
+        recovery.restore_missing_install(run, Path('original.apk'), recovery.digest(b'original'))
+        self.assertIn(('shell', 'cmd', 'package', 'install-existing', '--user', '0', recovery.PACKAGE), calls)
+        self.assertFalse(any(c[0] in ('install', 'uninstall') for c in calls))
+
+    def test_other_profile_unknown_binary_fails_without_mutation(self):
+        run, calls = self.runner(b'different')
+        with self.assertRaises(ValueError):
+            recovery.restore_missing_install(run, Path('original.apk'), recovery.digest(b'original'))
+        self.assertFalse(any(c[0] == 'install' or 'install-existing' in c for c in calls))
+
+    def test_missing_global_package_installs_only_for_owner(self):
+        run, calls = self.runner()
+        recovery.restore_missing_install(run, Path('original.apk'), recovery.digest(b'original'))
+        self.assertIn(('install', '--user', '0', '--no-streaming', 'original.apk'), calls)
+
+    def test_other_active_profile_is_refused_before_inventory_or_mutation(self):
+        run, calls = self.runner(current='10')
+        with self.assertRaises(ValueError):
+            recovery.restore_missing_install(run, Path('original.apk'), recovery.digest(b'original'))
+        self.assertEqual([('shell', 'am', 'get-current-user')], calls)
+
+
 if __name__ == '__main__':
     unittest.main()

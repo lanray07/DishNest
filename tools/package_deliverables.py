@@ -74,6 +74,7 @@ def archive_source():
     evidence.add('fire-amazon-lat-qa.json')
     evidence.add('fire-test3-qa.json')
     evidence.add('local-settings-qa.json')
+    evidence.add('fire-readiness-20261030.json')
     evidence.update({'publisher-signing.json','publisher-signature.txt','publisher-device-compatibility.json','private-storage-audit.json'})
     evidence.update({'amazon-purchase-device.json','amazon-sandbox-receipt-review.json','purchase-test-restoration.json','purchase-test-configuration-guard.json','purchase-test-configuration-guard.log','purchase-test-controller-guard.json','purchase-test-build.log'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})

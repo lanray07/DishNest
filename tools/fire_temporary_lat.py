@@ -46,6 +46,34 @@ def archive_files(path):
     return files
 
 
+def installed_profile_users(run):
+    users = re.findall(r'UserInfo\{(\d+):', run('shell', 'pm', 'list', 'users').decode())
+    if '0' not in users:
+        raise ValueError('Owner profile missing from package inventory')
+    return [user for user in users if 'package:' + PACKAGE in
+            run('shell', 'pm', 'list', 'packages', '--user', user, PACKAGE).decode().splitlines()]
+
+
+def restore_missing_install(run, original, expected):
+    """Restore user 0 without replacing a binary or data belonging to another profile."""
+    if run('shell', 'am', 'get-current-user').decode().strip() != '0':
+        raise ValueError('Recovery archive is for the owner profile only')
+    found = False
+    for user in installed_profile_users(run):
+        path = run('shell', 'pm', 'path', '--user', user, PACKAGE).decode().strip()
+        if not path.startswith('package:') or '\n' in path:
+            raise ValueError('Unexpected other-profile package path')
+        if digest(run('exec-out', 'cat', path[8:])) != expected:
+            raise ValueError('Another profile has a different APK; refusing replacement')
+        found = True
+    if found:
+        result = run('shell', 'cmd', 'package', 'install-existing', '--user', '0', PACKAGE).decode()
+        if 'installed for user: 0' not in result:
+            raise ValueError('Owner-profile package restoration failed')
+    elif 'Success' not in run('install', '--user', '0', '--no-streaming', str(original)).decode():
+        raise ValueError('Original APK reinstall failed; protected recovery remains intact')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['prepare', 'record-lat', 'restore'])
@@ -74,6 +102,9 @@ def main():
         return checked(base + list(parts), data=data, timeout=180)
 
     def installed():
+        packages = run('shell', 'pm', 'list', 'packages', PACKAGE).decode().splitlines()
+        if 'package:' + PACKAGE not in packages:
+            return None
         output = run('shell', 'pm', 'path', PACKAGE).decode().strip()
         if not output:
             return None
@@ -101,6 +132,8 @@ def main():
     model = run('shell', 'getprop', 'ro.product.model').decode().strip()
     if not model.startswith('KF'):
         raise ValueError('Expected Fire tablet')
+    if run('shell', 'am', 'get-current-user').decode().strip() != '0':
+        raise ValueError('Recovery archive is for the owner profile only')
     current = installed()
     original = PRIVATE / 'original-debug.apk'
     expected = json.loads((ROOT / 'artifacts/publisher-device-compatibility.json').read_text())['installedApkSha256']
@@ -171,14 +204,14 @@ def main():
     if current is not None and digest(current) != expected:
         if not plan.get('latApkSha256') or digest(current) != plan['latApkSha256']:
             raise ValueError('Refusing to remove an unrecorded APK')
+        if any(user != '0' for user in installed_profile_users(run)):
+            raise ValueError('Other profile uses this package; refusing a global uninstall')
         result = run('uninstall', PACKAGE).decode()
         if 'Success' not in result:
             raise ValueError('Amazon test APK removal did not succeed')
         current = None
     if current is None:
-        result = run('install', '--no-streaming', str(original)).decode()
-        if 'Success' not in result:
-            raise ValueError('Original APK reinstall failed; protected recovery remains intact')
+        restore_missing_install(run, original, expected)
     elif (persistent() == files and permissions() == plan['runtimePermissions'] and
           appops() == plan['appops']):
         print(json.dumps(dict(originalAlreadyRestored=True, originalDataExact=True)))

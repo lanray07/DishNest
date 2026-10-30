@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T20:28:29.996826+00:00",
+  "generatedAt": "2026-10-30T07:15:40.148085+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -121,45 +121,45 @@
     },
     {
       "check": "Physical Fire native components",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-native-qa.json; artifacts/fire-device-qa.json",
-      "remaining": "Run native SQLite, image/archive, OCR fixture and resource tests on the current APK"
+      "remaining": ""
     },
     {
       "check": "Physical Fire instrumentation smoke",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-device-qa.json",
-      "remaining": "Run the native/UI smoke suite on the selected device with the current isolated QA APK"
+      "remaining": ""
     },
     {
       "check": "Background Fire timer after process termination",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-background-alarm.json",
-      "remaining": "Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs"
+      "remaining": ""
     },
     {
       "check": "Forced-idle Fire timer",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-doze-qa.json",
-      "remaining": "Run the bounded forced-idle probe on the current QA app and runner; verify notification, kitchen persistence, idle restoration and unchanged ordinary data"
+      "remaining": ""
     },
     {
       "check": "Fire offline smoke and selected-plan process recovery",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-offline-qa.json",
-      "remaining": "Run the exact installed QA smoke suite without connectivity, verify named-plan/persisted preferences across process restart and restore settings and ordinary data"
+      "remaining": ""
     },
     {
       "check": "Fire portrait/landscape with system large text",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-layout-qa.json",
-      "remaining": "Run QA recipe, pantry and named-plan flows in portrait/landscape at real system font scale 2.0; restore settings and preserve ordinary data"
+      "remaining": ""
     },
     {
       "check": "Fire local document-provider backup flows",
-      "status": "pending",
+      "status": "passed",
       "evidence": "artifacts/fire-document-qa.json",
-      "remaining": "Exercise actual JSON/ZIP picker cancellation, export, nonempty-kitchen rejection and restore round trips on QA; preserve ordinary data and remove only test exports"
+      "remaining": ""
     },
     {
       "check": "Physical device QA",

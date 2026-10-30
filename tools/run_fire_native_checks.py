@@ -72,7 +72,8 @@ def main():
         result = adb('shell', 'am', 'instrument', '-w', '-r', '-e', 'class',
                      'com.dishnest.app.NativeReadinessTest',
                      PACKAGE + '.test/androidx.test.runner.AndroidJUnitRunner', timeout=240).decode(errors='replace')
-        (ROOT / 'artifacts/fire-native-instrumentation.txt').write_text(result, encoding='utf-8')
+        (ROOT / 'artifacts/fire-native-instrumentation.txt').write_text(
+            result.replace('\r\r\n', '\n').replace('\r\n', '\n').rstrip() + '\n', encoding='utf-8')
         match = re.search(r'OK \((\d+) tests?\)', result)
         report['passedTests'] = len(re.findall(r'(?m)^INSTRUMENTATION_STATUS_CODE: 0\r?$', result))
         report['passed'] = bool(match and int(match[1]) >= 6 and report['passedTests'] >= 6

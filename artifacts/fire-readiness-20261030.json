@@ -1,0 +1,91 @@
+{
+  "completedAt": "2026-10-30T07:15:33.687984+00:00",
+  "coverage": "Targeted exact-build Fire QA and owner-profile recovery; not full release approval",
+  "allTargetedChecksPassed": true,
+  "evidence": {
+    "fire-native-qa": {
+      "path": "artifacts/fire-native-qa.json",
+      "sha256": "b7e1fdc85f36bf94955f9a5627bee0ff7821604c884bcb84428bf5b85eaa9248",
+      "passed": true
+    },
+    "fire-device-qa": {
+      "path": "artifacts/fire-device-qa.json",
+      "sha256": "a00bb7ad6421f377aefe43b95bc7489dd84d7f8fa3e80b01be337ad232dd6b74",
+      "passed": true
+    },
+    "fire-offline-qa": {
+      "path": "artifacts/fire-offline-qa.json",
+      "sha256": "eb5fa411e0c6067245bbdc49c60646333319c8aa896eb6a6a9966e5687d74643",
+      "passed": true
+    },
+    "fire-layout-qa": {
+      "path": "artifacts/fire-layout-qa.json",
+      "sha256": "c1ed3f303ed7549a28cfd392da935b924657ef1b5201f28d4f33cc2e6c97cfea",
+      "passed": true
+    },
+    "fire-document-qa": {
+      "path": "artifacts/fire-document-qa.json",
+      "sha256": "8c0d8ee29eb515a748600ab9df92bf37a1412d7ec8d1bc0046dce094ba86aaaf",
+      "passed": true
+    },
+    "fire-background-alarm": {
+      "path": "artifacts/fire-background-alarm.json",
+      "sha256": "6be4db898b9c6bef6a0c2256dee63440c1b0e8d28c6b1fa3a723f7d9520d7060",
+      "passed": true
+    },
+    "fire-blocked-notifications": {
+      "path": "artifacts/fire-blocked-notifications.json",
+      "sha256": "d5350eaa2b862ac3595269b59cf9cc88a120a97a489eef03244ba02b516ee84b",
+      "passed": true
+    },
+    "fire-doze-qa": {
+      "path": "artifacts/fire-doze-qa.json",
+      "sha256": "fdaca35a908feec3ca06f8adb43bf1a6730f01b8e5f592fe04a9a857a1fca01c",
+      "passed": true
+    }
+  },
+  "recovery": {
+    "originalApkRestored": true,
+    "originalPrivateFilesExact": true,
+    "persistentFiles": 5,
+    "runtimePermissionsRestored": true,
+    "appopsRestored": true,
+    "originalAppLaunched": false,
+    "encryptedRecoveryRetained": true
+  },
+  "encryptedBackupReadable": true,
+  "isolatedByteExactRestore": true,
+  "nativeSqliteIntegrity": true,
+  "ordinaryDataUnchangedDuringQa": true,
+  "keepAwakeRestoredToPreSessionValue": true,
+  "otherProfileBinaryMatchedOriginal": true,
+  "otherProfilesUninstalledOrReset": false,
+  "recoveryControllerTestsPassed": 8,
+  "recoveryControllerSha256": "fd03c1e97ebd8c3d7ad8ddb9fb72187a90d1b24df370667a3b7aa9de5c6a3005",
+  "recoveryTestsSha256": "048304e37cd7d7fdd87a710b3633c0749433c1a578852172219400bd4d42a0d1",
+  "amazonSupport": {
+    "case": "22703564641",
+    "checkedOn": "2026-10-30",
+    "status": "In Process: pending Amazon action",
+    "lastUpdatedOn": "2026-10-29",
+    "newReplyAfterPublisherResponse": false,
+    "newMessageOrAttachmentsSent": false
+  },
+  "latPurchasesRetested": false,
+  "latBlockers": [
+    "Amazon annual-expiry escalation remains pending",
+    "Another profile retains the original signing identity; no global uninstall or differently signed LAT install attempted"
+  ],
+  "remainingScope": [
+    "Annual expiry and lifetime LAT approval",
+    "Broader hardware and accessibility matrix",
+    "Physical language-picker/privacy controls",
+    "Seven missing priority languages and native language review",
+    "Publisher/privacy/licensing/signing recovery and final metadata approval"
+  ],
+  "paidServicesEnabled": false,
+  "deploymentPerformed": false,
+  "publicSubmissionPerformed": false,
+  "submissionReady": false,
+  "privateIdentifiersStored": false
+}

@@ -215,7 +215,7 @@ INSTRUMENTATION_STATUS: test=recipeSurvivesCloseAndReopen
 INSTRUMENTATION_STATUS_CODE: 0
 INSTRUMENTATION_RESULT: stream=
 
-Time: 29.296
+Time: 28.708
 
 OK (15 tests)
 

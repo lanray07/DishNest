@@ -1,10 +1,10 @@
 {
-  "testedAt": "2026-10-21T16:43:55.296059+00:00",
+  "testedAt": "2026-10-30T06:50:19.035117+00:00",
   "model": "KFTRWI",
   "packageId": "com.dishnest.app.qa",
   "controllerSha256": "c2ae855977add9c9065db99d88de3277067003de6883c1a5c883d7a1bbfd7614",
   "helperSha256": "bb95ba7037db13f27afe1997d521df8abe6f665b3ab3973b9e63c35d7a10f528",
-  "apkSha256": "1023739b5c087bce595a46b0945c3dbf95e85fa7179abafcd24e9a33c33c80e0",
+  "apkSha256": "0fc2fabef97e7edf2747b170dc7bf2bd93e286170312a2ce84c7038b3d2d9061",
   "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
   "installedApksVerified": true,
   "passed": true,
@@ -16,7 +16,7 @@
       "systemFontScale": 2.0,
       "settingsObservedBeforeAndAfter": true,
       "trace": "artifacts/fire-layout-portrait-large-text.txt",
-      "traceSha256": "a72643206182d98d692e4d83058a66b5a5bba6d80ea44b2e112d1a999562194f"
+      "traceSha256": "64a1cf7889f292bdbacff0b6735e10e9eee5cbabf1941302707fa4a48ed74d37"
     },
     "landscape-large-text": {
       "passed": true,
@@ -25,7 +25,7 @@
       "systemFontScale": 2.0,
       "settingsObservedBeforeAndAfter": true,
       "trace": "artifacts/fire-layout-landscape-large-text.txt",
-      "traceSha256": "8d60603df94089841b113480d2a539c3e7c2939ae58573fa7131422037b13c5c"
+      "traceSha256": "5c757a574f591d287c2e266197cd93a95a1f5f881c5d5edd2c96f638cd38d4b0"
     }
   },
   "privateIdentifiersStored": false,

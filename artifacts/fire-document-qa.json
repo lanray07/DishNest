@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-21T17:05:36.413716+00:00",
+  "testedAt": "2026-10-30T06:51:41.982387+00:00",
   "packageId": "com.dishnest.app.qa",
   "passed": true,
   "controllerSha256": "c9b584e8022405a13bcd270a25e4b0e2ac1f9cf1c83591fdcc03335beeb06a04",
@@ -21,10 +21,10 @@
     "zipProviderRoundTrip": true
   },
   "model": "KFTRWI",
-  "apkSha256": "1023739b5c087bce595a46b0945c3dbf95e85fa7179abafcd24e9a33c33c80e0",
+  "apkSha256": "0fc2fabef97e7edf2747b170dc7bf2bd93e286170312a2ce84c7038b3d2d9061",
   "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
   "installedApksVerified": true,
-  "seedTraceSha256": "787d6099523ed30b57424b366a05281bd2e0f094a3e382ef253565a168831292",
+  "seedTraceSha256": "a6a8bb13f9533a2ae1f152d24d3dd845aac8e2fa342d327138f63282632208de",
   "backupCoverage": {
     "recipes": 4,
     "meals": 5,
