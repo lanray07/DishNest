@@ -1,6 +1,6 @@
 import copy
 import unittest
-from verify_visual_localization import upload_changes
+from verify_visual_localization import upload_changes, console_proof_matches
 
 class UploadReceiptTest(unittest.TestCase):
     def fixture(self):
@@ -25,5 +25,33 @@ class UploadReceiptTest(unittest.TestCase):
         row, current, icons = self.fixture()
         row["saved_asset_sha256"][0]["sha256"] = "wrong"
         with self.assertRaises(AssertionError): upload_changes(row, current, icons)
+
+    def proof(self):
+        row, _, _ = self.fixture()
+        row['locale'] = 'fr-FR'
+        proof = dict(receiptSha256='receipt', manifestSha256='manifest', checkedAt='2026-10-30T10:00:00Z',
+                     screenshot={'sha256': 'screen'}, localFileMatchVerified=True,
+                     nativeLanguageApproved=False, appDataAccessed=False, paidServicesEnabled=False,
+                     publicSubmissionPerformed=False, deploymentPerformed=False,
+                     locales={'fr-FR': dict(persisted_after_reload=True, saved_files_match=True, problems=[],
+                         screenshots=row['screenshots'], screenshot_order=[f'{i:02}' for i in range(1, 9)],
+                         assets=row['saved_asset_sha256'])})
+        return proof, {'locales': [row]}
+
+    def test_reloaded_proof_binds_receipt_manifest_and_screenshot(self):
+        proof, uploads = self.proof()
+        self.assertTrue(console_proof_matches(proof, uploads, 'receipt', 'manifest', 'screen'))
+        for values in [('changed', 'manifest', 'screen'), ('receipt', 'changed', 'screen'),
+                       ('receipt', 'manifest', 'changed')]:
+            self.assertFalse(console_proof_matches(proof, uploads, *values))
+
+    def test_partial_or_reordered_browser_observations_are_rejected(self):
+        proof, uploads = self.proof()
+        for key, value in [('persisted_after_reload', False), ('screenshots', list(reversed(uploads['locales'][0]['screenshots']))),
+                           ('assets', []), ('problems', ['upload failed'])]:
+            changed = copy.deepcopy(proof)
+            changed['locales']['fr-FR'][key] = value
+            self.assertFalse(console_proof_matches(changed, uploads, 'receipt', 'manifest', 'screen'))
+        self.assertFalse(console_proof_matches({}, uploads, 'receipt', 'manifest', 'screen'))
 
 if __name__ == "__main__": unittest.main()

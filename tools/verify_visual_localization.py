@@ -20,6 +20,32 @@ def upload_changes(upload, current, icons):
     assert len(saved) == len(upload['saved_asset_sha256']) and saved == historical, 'Historical Amazon receipt bytes differ'
     return sorted(key for key in current if recorded[key] != current[key])
 
+
+def console_proof_matches(proof, uploads, receipt_sha, manifest_sha, screenshot_sha):
+    """A saved browser observation is evidence for its exact files, not a live query."""
+    try:
+        if (proof['receiptSha256'] != receipt_sha or proof['manifestSha256'] != manifest_sha or
+                proof['screenshot']['sha256'] != screenshot_sha or not proof.get('checkedAt') or
+                proof.get('localFileMatchVerified') is not True or
+                any(proof.get(k) is not False for k in ('nativeLanguageApproved', 'appDataAccessed',
+                    'paidServicesEnabled', 'publicSubmissionPerformed', 'deploymentPerformed'))):
+            return False
+        if set(proof['locales']) != {row['locale'] for row in uploads['locales']}:
+            return False
+        for row in uploads['locales']:
+            saved = proof['locales'][row['locale']]
+            if (saved['persisted_after_reload'] is not True or saved['saved_files_match'] is not True or
+                    saved['problems'] != [] or saved['screenshots'] != row['screenshots'] or
+                    saved['screenshot_order'] != [f'{i:02}' for i in range(1, 9)]):
+                return False
+            assets = {item['id']: item['sha256'] for item in saved['assets']}
+            if len(assets) != len(saved['assets']) or assets != {
+                    item['id']: item['sha256'] for item in row['saved_asset_sha256']}:
+                return False
+        return True
+    except (KeyError, TypeError, AttributeError):
+        return False
+
 def verify():
     copies = json.loads((ROOT/'marketing/visual-localization.json').read_text(encoding='utf-8'))
     manifest = json.loads((ROOT/'marketing/screenshots/localized/manifest.json').read_text(encoding='utf-8'))
@@ -71,6 +97,21 @@ def verify():
     result['upload_history_sha256'] = sha(ROOT/'marketing/amazon-artwork-uploads.json')
     result['amazon_live_console_rechecked'] = False
     result['amazon_verification_scope'] = 'Historical saved upload receipts compared with current local artwork; no live console access'
+    result['amazon_saved_console_proof_current'] = False
+    proof_name = uploads.get('console_proof')
+    if proof_name:
+        proof_path = (ROOT / proof_name).resolve()
+        assert proof_path.is_relative_to(ROOT.resolve()) and proof_path.is_file(), 'Console proof outside workspace or missing'
+        proof = json.loads(proof_path.read_text(encoding='utf-8'))
+        screenshot = (ROOT / proof['screenshot']['path']).resolve()
+        assert screenshot.is_relative_to(ROOT.resolve()) and screenshot.is_file(), 'Console screenshot outside workspace or missing'
+        assert console_proof_matches(proof, uploads, result['upload_history_sha256'],
+                                     result['manifest_sha256'], sha(screenshot)), 'Stale or incomplete saved browser proof'
+        result['amazon_saved_console_proof_current'] = True
+        result['amazon_saved_console_checked_at'] = proof['checkedAt']
+        result['amazon_saved_console_proof_sha256'] = sha(proof_path)
+        result['amazon_verification_scope'] = ('Reloaded browser readback and exact saved bytes recorded at ' +
+            proof['checkedAt'] + '; this validator makes no live network requests')
     result['local_assets_passed'] = True
     result['amazon_uploads_match_current_assets'] = not changed
     result['amazon_artwork_locales_historical_receipts'] = sorted(offered)

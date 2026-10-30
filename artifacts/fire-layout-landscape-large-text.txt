@@ -43,7 +43,7 @@ INSTRUMENTATION_STATUS: test=pantrySavesArabicDigitsAndMetricUnitWithoutChanging
 INSTRUMENTATION_STATUS_CODE: 0
 INSTRUMENTATION_RESULT: stream=
 
-Time: 23.277
+Time: 20.405
 
 OK (3 tests)
 

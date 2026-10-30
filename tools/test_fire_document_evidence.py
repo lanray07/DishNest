@@ -14,7 +14,8 @@ class DocumentEvidenceTest(unittest.TestCase):
     def test_reject_stale_incomplete_or_destructive_results(self):
         for key, value in {'apkSha256': '0' * 64, 'instrumentationApkSha256': '0' * 64,
                            'controllerSha256': '0' * 64, 'helperSha256': '0' * 64,
-                           'seedTraceSha256': '0' * 64, 'settingsRestored': False,
+                           'seedTraceSha256': '0' * 64, 'ocrHelperSha256': '0' * 64,
+                           'refusalFramesSha256': {}, 'settingsRestored': False,
                            'ordinaryApkAndPersistentFilesUnchanged': False, 'testExportsRemoved': False,
                            'paidServicesEnabled': True, 'cleanupErrors': ['failure'], 'checks': {}}.items():
             changed = copy.deepcopy(self.report)

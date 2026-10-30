@@ -1,9 +1,9 @@
 {
-  "testedAt": "2026-10-30T06:48:49.984245+00:00",
+  "testedAt": "2026-10-30T08:15:51.656234+00:00",
   "model": "KFTRWI",
   "packageId": "com.dishnest.app.qa",
   "controllerSha256": "bb95ba7037db13f27afe1997d521df8abe6f665b3ab3973b9e63c35d7a10f528",
-  "apkSha256": "0fc2fabef97e7edf2747b170dc7bf2bd93e286170312a2ce84c7038b3d2d9061",
+  "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62",
   "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
   "installedApksVerified": true,
   "passed": true,
@@ -16,14 +16,14 @@
       "tests": 15,
       "disconnectedBeforeAndAfter": true,
       "trace": "artifacts/fire-offline-suite.txt",
-      "traceSha256": "b345910cb6a4a650b1af592bf274dd2ad9b7a602906b1a97abb37ff8e4c795fb"
+      "traceSha256": "7299ad0729c2095414be040e71a9c8f42e026f2f4fa4177190e3525b4e5689f6"
     },
     "selected-plan": {
       "passed": true,
       "tests": 1,
       "disconnectedBeforeAndAfter": true,
       "trace": "artifacts/fire-offline-selected-plan.txt",
-      "traceSha256": "eba0fc67637bb6f38d9dd31a5f2458446fead08be85308a33995636f01068548"
+      "traceSha256": "86c07abbc85dbfcfd77588064751aea710a47994f19d7eb24bf212ca475478ee"
     }
   },
   "processAbsentBeforeRelaunch": true,

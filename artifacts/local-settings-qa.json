@@ -23,16 +23,16 @@
     ]
   },
   "testReportsSha256": {
-    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.AppLanguagesTest.xml": "94482c835cf008856bd683c9a659c16a5f3cd0ecd2486ee15e5757a4a3351063",
-    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.AppLanguagesSystemTest.xml": "69fa0259345c09c028b36f6c68cf5c790ef148561344ba146774cc423c3e842f",
-    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.LocalMetricsTest.xml": "08f66d07dcf88b262ee04742ecbf03b4bb03baa983942d2b695a76bdfd18c9f7",
-    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.LanguagePickerUiTest.xml": "e0e56c451a1fdae57d59703704bd9727bc1e6cd26196473b90e71f4828c15792"
+    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.AppLanguagesTest.xml": "20d37ce9f41ff9625975385db3d5f6130de6ec8885da4e1890e4d7b2cac2a1f9",
+    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.AppLanguagesSystemTest.xml": "0601e6e87554d79b0ca13678c6dedd60a9dc8b417ad74bafb23eeef8dbcc74ca",
+    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.LocalMetricsTest.xml": "cee4766ee2cda21a4193ea7be720b969c622d3b22b0ff26106e1928e5b1d0b57",
+    "app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.LanguagePickerUiTest.xml": "ee5584e2307a8f53d4ebef3f2d9aef115fb959f086d101833eef319e00865fe1"
   },
   "screenshotsSha256": {
     "artifacts/screens/host-language-picker-fr.png": "f9fdccf25b9f5f9da5053b8c5650e7030de7b31573363ec071edcc500a353551",
     "artifacts/screens/host-language-picker-ar.png": "9950d7795cbc2c886f9c238f0717d43b6505fbd66cd1b1414e9838902ee07e03"
   },
-  "buildProvenanceSha256": "fb9fe6527f415064d35eadbca0f4ae8faeda1e00c380b4107b6c1d60e21532b3",
+  "buildProvenanceSha256": "c34d618947c295ba106b2993c1d1b04f30ebcf40a37ae5e318cd18aa94a2e5f3",
   "controllerSha256": "7c508b3fc902e818670705bf0661d651a7099114e68e253427ca4184671035e2",
   "physicalDeviceVerified": false,
   "nativeLanguageApproved": false,

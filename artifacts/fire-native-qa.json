@@ -1,9 +1,9 @@
 {
-  "testedAt": "2026-10-30T07:03:25.212200+00:00",
+  "testedAt": "2026-10-30T08:08:27.161838+00:00",
   "model": "KFTRWI",
   "api": "28",
   "packageId": "com.dishnest.app.qa",
-  "apkSha256": "0fc2fabef97e7edf2747b170dc7bf2bd93e286170312a2ce84c7038b3d2d9061",
+  "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62",
   "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
   "controllerSha256": "2ae1e719a04093037f7fa9fbef19fac244a5d21d3bc1ef3cef69d548539a3296",
   "passed": true,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T07:15:40.148085+00:00",
+  "generatedAt": "2026-10-30T09:27:12.409616+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -51,6 +51,18 @@
       "check": "Local language picker and privacy controls",
       "status": "passed",
       "evidence": "artifacts/local-settings-qa.json",
+      "remaining": ""
+    },
+    {
+      "check": "Fire language picker and privacy controls",
+      "status": "passed",
+      "evidence": "artifacts/fire-settings-qa.json",
+      "remaining": ""
+    },
+    {
+      "check": "Saved localized Amazon artwork matches selected exports",
+      "status": "passed",
+      "evidence": "artifacts/visual-localization.json; artifacts/amazon-artwork-sync-20261030.json",
       "remaining": ""
     },
     {
@@ -144,6 +156,12 @@
       "remaining": ""
     },
     {
+      "check": "Fire background timer with notifications blocked",
+      "status": "passed",
+      "evidence": "artifacts/fire-blocked-notifications.json",
+      "remaining": ""
+    },
+    {
       "check": "Fire offline smoke and selected-plan process recovery",
       "status": "passed",
       "evidence": "artifacts/fire-offline-qa.json",
@@ -157,9 +175,9 @@
     },
     {
       "check": "Fire local document-provider backup flows",
-      "status": "passed",
+      "status": "pending",
       "evidence": "artifacts/fire-document-qa.json",
-      "remaining": ""
+      "remaining": "Exercise actual JSON/ZIP picker cancellation, export, nonempty-kitchen rejection and restore round trips on QA; preserve ordinary data and remove only test exports"
     },
     {
       "check": "Physical device QA",
@@ -195,7 +213,7 @@
       "check": "Final store and website metadata",
       "status": "pending",
       "evidence": "marketing/amazon-console-draft.json",
-      "remaining": "Historical description/artwork upload receipts are retained; refreshed local screenshot bytes need a separately authorized Amazon sync. Native/legal approval, final store URL, approved hardware screenshots and publisher-signed app upload remain pending"
+      "remaining": "Current artwork in all seven offered locales was reloaded and byte-matched to the local files; prior receipts remain versioned. Native/legal/commercial approval, final store URL, approved hardware screenshots and the final publisher-signed app upload remain pending"
     },
     {
       "check": "Remaining product scope",

@@ -8,6 +8,7 @@ from lat_evidence import verify as verify_lat
 from fire_offline_evidence import verify as verify_offline
 from fire_layout_evidence import verify as verify_layout
 from fire_document_evidence import verify as verify_documents
+from fire_settings_evidence import verify as verify_settings
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/deliverables';OUT.mkdir(exist_ok=True)
 if not verify_build():raise SystemExit('Current sources/output hashes do not match build evidence. Rebuild and run tools/build_evidence.py --record.')
 if not verify_website():raise SystemExit('Website evidence is stale or incomplete. Run tools/verify_website.cjs against the current local pages before packaging.')
@@ -75,6 +76,9 @@ def archive_source():
     evidence.add('fire-test3-qa.json')
     evidence.add('local-settings-qa.json')
     evidence.add('fire-readiness-20261030.json')
+    evidence.update({'amazon-artwork-sync-20261030.json', 'fire-settings-qa.json',
+                     'fire-accessibility-readiness-20261030.json'})
+    evidence.update({'usage-accessibility-qa.json', 'usage-accessibility-before.txt', 'usage-accessibility-after.txt'})
     evidence.update({'publisher-signing.json','publisher-signature.txt','publisher-device-compatibility.json','private-storage-audit.json'})
     evidence.update({'amazon-purchase-device.json','amazon-sandbox-receipt-review.json','purchase-test-restoration.json','purchase-test-configuration-guard.json','purchase-test-configuration-guard.log','purchase-test-controller-guard.json','purchase-test-build.log'})
     evidence.update({'billing-deployment.json','billing-live-contract.json','amazon-authentication-key.json','website-http-log.txt'})
@@ -162,6 +166,11 @@ document_path=ROOT/'artifacts/fire-document-qa.json'
 if document_path.exists():
     summary['fire_document_qa']=json.loads(document_path.read_text(encoding='utf-8'))
     summary['fire_document_qa_current']=verify_documents(summary['fire_document_qa'])
+    summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
+settings_path=ROOT/'artifacts/fire-settings-qa.json'
+if settings_path.exists():
+    summary['fire_settings_qa']=json.loads(settings_path.read_text(encoding='utf-8'))
+    summary['fire_settings_qa_current']=verify_settings(summary['fire_settings_qa'])
     summary_path.write_text(json.dumps(summary,indent=2),encoding='utf-8')
 source_zip=archive_source()
 manifest.append({'file':source_zip.name,'bytes':source_zip.stat().st_size,'sha256':hashlib.sha256(source_zip.read_bytes()).hexdigest(),'kind':'source archive with verification evidence','production_ready':False})

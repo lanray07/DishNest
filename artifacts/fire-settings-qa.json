@@ -1,0 +1,46 @@
+{
+  "testedAt": "2026-10-30T08:10:45.517857+00:00",
+  "model": "KFTRWI",
+  "packageId": "com.dishnest.app.qa",
+  "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62",
+  "controllerSha256": "156e18b66b3a905d15b7c17a07697ef616d5c17aee98c5eff4551abe1deac6bf",
+  "sourceHelperSha256": "bb95ba7037db13f27afe1997d521df8abe6f665b3ab3973b9e63c35d7a10f528",
+  "installedApkVerified": true,
+  "passed": true,
+  "checks": {
+    "frenchSelectionPersistsAcrossProcessRestart": true,
+    "localizedFrenchDialogCancelPreservesSelection": true,
+    "arabicSelectionPersistsAcrossProcessRestart": true,
+    "deviceLanguageFallbackPreservesKitchen": true,
+    "usageOptInPersistsAndSwitchReflectsIt": true,
+    "qaKitchenDeletionOptsOutAndUpdatesSwitch": true
+  },
+  "screenshotsSha256": {
+    "artifacts/screens/fire-language-picker-fr.png": "8a00efff6ac764dd5622566220ebcfd1a05edecd2dbd6bca81adb0125488b165",
+    "artifacts/screens/fire-language-picker-ar.png": "4ce3ffb3c146707c58b0c2d04e8c9c2657f832e14fb882144d8dcef8a2f775cf",
+    "artifacts/screens/fire-settings-usage-after-delete.png": "b3665ea85412a1565c19e2f061ca0299e1c267c56b71a4ca3dcaa1c8e2679cde"
+  },
+  "accessibleLabelLocales": [
+    "fr",
+    "ar",
+    "en-GB"
+  ],
+  "ordinaryAppModified": false,
+  "otherProfilesModified": false,
+  "paidServicesEnabled": false,
+  "privateIdentifiersStored": false,
+  "publicSubmissionPerformed": false,
+  "nativeLanguageApproved": false,
+  "qaLanguagePreferenceRestored": true,
+  "deviceSettingRestored": true,
+  "ordinaryApkAndPersistentFilesUnchanged": true,
+  "cleanupErrors": [],
+  "notCovered": [
+    "Other app locales",
+    "Android 13 locale settings on hardware",
+    "Native language review",
+    "TalkBack",
+    "Every keyboard/font configuration",
+    "Production purchase analytics"
+  ]
+}

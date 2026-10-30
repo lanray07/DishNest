@@ -4,14 +4,14 @@
     {
       "locale": "de-DE",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.bf8d76aff1cf43d497d50ec34da6cc3f",
-        "screenshot_amzn1.dex.asset.b5e758b72da64c6888e654fa13d8c29e",
-        "screenshot_amzn1.dex.asset.cfb088b1554044469fcefee9179cc236",
-        "screenshot_amzn1.dex.asset.ec6e3966a69544239d9d25e7b0407abb",
-        "screenshot_amzn1.dex.asset.4542dfe3a5274541874420bfa1afc512",
-        "screenshot_amzn1.dex.asset.4a0aba23a7444812befe3b094f98d7cc",
-        "screenshot_amzn1.dex.asset.30b07a932d2540e29eb251cfcd9ca551",
-        "screenshot_amzn1.dex.asset.545504ee9aff447eac0253f58e883267"
+        "screenshot_amzn1.dex.asset.8db3f321570f4306a9b3b411740519b7",
+        "screenshot_amzn1.dex.asset.40adb162988d45f49667bc4fdc0ee2be",
+        "screenshot_amzn1.dex.asset.35a2e1c816b54f7482cbd3679270f0c2",
+        "screenshot_amzn1.dex.asset.c88d19b9a4e041019b66ece4db6b5c54",
+        "screenshot_amzn1.dex.asset.fa19e46a5ee84956927dacb80bfa4701",
+        "screenshot_amzn1.dex.asset.d9512707e88842f2ab43632638a6b8f0",
+        "screenshot_amzn1.dex.asset.a13b948bee604265827fe144762adfa7",
+        "screenshot_amzn1.dex.asset.f137beb581c549cea67b5f40aa31ba15"
       ],
       "promo_sha256": "6837c87eaf332130d06276b7c3dd700dcb3f8104fcc3ed84aa331ac8c4af0669",
       "local_files_sha256": [
@@ -21,7 +21,7 @@
         },
         {
           "id": "02",
-          "sha256": "065e3bf4c505600c89ab8a2fc30eafbc52f9008aa4dab4cc4f98c05a3a74be8d"
+          "sha256": "63ef9b4399126f6e1daa165704b41a66f4449141975f820fea0ef7d66cc45fbd"
         },
         {
           "id": "03",
@@ -37,7 +37,7 @@
         },
         {
           "id": "06",
-          "sha256": "cf80f359a8dfdabed2bdc6649c83dc4dffed21cf284d5ad0b6aec4ea95c6c931"
+          "sha256": "fe73e41eaff48c6bc002ab713531b24f66b1c28f48338033a5079da85a944ce1"
         },
         {
           "id": "07",
@@ -45,7 +45,7 @@
         },
         {
           "id": "08",
-          "sha256": "42681eecf7ea2c5d8f93c996a1be2410a83d3b3b835b29f8e9bb6ea39ba0a355"
+          "sha256": "9a23bc998e84520d16e1f4a515abe6ed47786cc9fdccdd0a48ae6271e25bceeb"
         },
         {
           "id": "promo",
@@ -55,12 +55,20 @@
       "refreshedOn": "2026-10-19",
       "saved_asset_sha256": [
         {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
           "id": "01",
           "sha256": "07862c72887a0ee785962f35e6b05b3d01c60cdd9e66b783f321045bd633fbce"
         },
         {
           "id": "02",
-          "sha256": "065e3bf4c505600c89ab8a2fc30eafbc52f9008aa4dab4cc4f98c05a3a74be8d"
+          "sha256": "63ef9b4399126f6e1daa165704b41a66f4449141975f820fea0ef7d66cc45fbd"
         },
         {
           "id": "03",
@@ -76,7 +84,7 @@
         },
         {
           "id": "06",
-          "sha256": "cf80f359a8dfdabed2bdc6649c83dc4dffed21cf284d5ad0b6aec4ea95c6c931"
+          "sha256": "fe73e41eaff48c6bc002ab713531b24f66b1c28f48338033a5079da85a944ce1"
         },
         {
           "id": "07",
@@ -84,33 +92,26 @@
         },
         {
           "id": "08",
-          "sha256": "42681eecf7ea2c5d8f93c996a1be2410a83d3b3b835b29f8e9bb6ea39ba0a355"
-        },
-        {
-          "id": "tablet_large_icon",
-          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
-        },
-        {
-          "id": "tablet_small_icon",
-          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+          "sha256": "9a23bc998e84520d16e1f4a515abe6ed47786cc9fdccdd0a48ae6271e25bceeb"
         },
         {
           "id": "tablet_promotional_image",
           "sha256": "6837c87eaf332130d06276b7c3dd700dcb3f8104fcc3ed84aa331ac8c4af0669"
         }
-      ]
+      ],
+      "verifiedOn": "2026-10-30"
     },
     {
       "locale": "en-GB",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.f3a34c75b0584918897c405218b06e2a",
-        "screenshot_amzn1.dex.asset.fe919d4d6b584dd9acd62db4d35cefdf",
-        "screenshot_amzn1.dex.asset.c7831de9d77447408af76a8c8d2dab40",
-        "screenshot_amzn1.dex.asset.2c137f7cf3904bd8beedcbd178d0c849",
-        "screenshot_amzn1.dex.asset.a005dc6b59034270b451607bc17f98cc",
-        "screenshot_amzn1.dex.asset.8432c3f48568459aab563e3bc9678616",
-        "screenshot_amzn1.dex.asset.bc855cbe6e5e40ecb58a84dea697f850",
-        "screenshot_amzn1.dex.asset.d90b95977e1b4005ae67351297703f16"
+        "screenshot_amzn1.dex.asset.9be40f16643244ae84afa7594eb249b6",
+        "screenshot_amzn1.dex.asset.4cdaf9e6e7f24e63bff19eaf8cd6eac9",
+        "screenshot_amzn1.dex.asset.e988229280824e5dbf80fb518d47598d",
+        "screenshot_amzn1.dex.asset.bf7b95cd429b48a19d4602a7eec4727a",
+        "screenshot_amzn1.dex.asset.049e78c1fbbc448bb5103e3ccf8f0faf",
+        "screenshot_amzn1.dex.asset.7f502619365a4faa85bb5c2f2fd6261a",
+        "screenshot_amzn1.dex.asset.e409ec6261c949b4a11f511ebb47bdb5",
+        "screenshot_amzn1.dex.asset.0ca3be0ffa4a45df9abd75aaaeb9602c"
       ],
       "promo_sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae",
       "local_files_sha256": [
@@ -120,7 +121,7 @@
         },
         {
           "id": "02",
-          "sha256": "d988639c28ca47c1054ae0c6fb65526758955df41d991a3df8a81227fa1d5b43"
+          "sha256": "7e9ce88282acebb76bdf9c64f4d9bfd4c6c996492167161c7c7ddf3cc302d341"
         },
         {
           "id": "03",
@@ -136,7 +137,7 @@
         },
         {
           "id": "06",
-          "sha256": "72cda79d9f6798b5cee76a2fae5329756f95b56c919492a4377a4eb0461c52c5"
+          "sha256": "5793170516d0819017e55f595ea77b5fe5a1776b5a79573a010d0a7d216fe560"
         },
         {
           "id": "07",
@@ -144,7 +145,7 @@
         },
         {
           "id": "08",
-          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
+          "sha256": "65dc2ce2a1d278f9ee2e5e5630725c890c5f651946a9bbc59a161b1f3bb03c73"
         },
         {
           "id": "promo",
@@ -154,12 +155,20 @@
       "refreshedOn": "2026-10-19",
       "saved_asset_sha256": [
         {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
           "id": "01",
           "sha256": "4fafe8d10ffac8c797f2e10f6209b19b9894a50afe8cc0a7373fefafefd0767c"
         },
         {
           "id": "02",
-          "sha256": "d988639c28ca47c1054ae0c6fb65526758955df41d991a3df8a81227fa1d5b43"
+          "sha256": "7e9ce88282acebb76bdf9c64f4d9bfd4c6c996492167161c7c7ddf3cc302d341"
         },
         {
           "id": "03",
@@ -175,7 +184,7 @@
         },
         {
           "id": "06",
-          "sha256": "72cda79d9f6798b5cee76a2fae5329756f95b56c919492a4377a4eb0461c52c5"
+          "sha256": "5793170516d0819017e55f595ea77b5fe5a1776b5a79573a010d0a7d216fe560"
         },
         {
           "id": "07",
@@ -183,33 +192,26 @@
         },
         {
           "id": "08",
-          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
-        },
-        {
-          "id": "tablet_large_icon",
-          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
-        },
-        {
-          "id": "tablet_small_icon",
-          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+          "sha256": "65dc2ce2a1d278f9ee2e5e5630725c890c5f651946a9bbc59a161b1f3bb03c73"
         },
         {
           "id": "tablet_promotional_image",
           "sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae"
         }
-      ]
+      ],
+      "verifiedOn": "2026-10-30"
     },
     {
       "locale": "it-IT",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.ef510227a9a54da3b2e3da700e47ebfd",
-        "screenshot_amzn1.dex.asset.2d2b663c6e414c13b1e5a4068b3c3ede",
-        "screenshot_amzn1.dex.asset.248a0c41a6ad4164842eb2584b1db960",
-        "screenshot_amzn1.dex.asset.f6de17923be4490c82636cb00979d671",
-        "screenshot_amzn1.dex.asset.7543a6031b184bd59e8f49c18ce55db9",
-        "screenshot_amzn1.dex.asset.f553895e6fe945f196b417625935ce1c",
-        "screenshot_amzn1.dex.asset.6acdfcf2f3b54218a309d84547b2623e",
-        "screenshot_amzn1.dex.asset.38d0df7ee8d244ee9bdf56f062c95f23"
+        "screenshot_amzn1.dex.asset.ad0c1b49526b4cef8a59f8d5ecd8093b",
+        "screenshot_amzn1.dex.asset.3f24db9506974e77ae3393854592005c",
+        "screenshot_amzn1.dex.asset.a28d4a361c364d5698bccddb90baf24a",
+        "screenshot_amzn1.dex.asset.8c542f24d84a4c59aabd7e4510e8630a",
+        "screenshot_amzn1.dex.asset.5a01d998be674938a16fce7f746a638c",
+        "screenshot_amzn1.dex.asset.973e8986da06489f8f902ee305acfed8",
+        "screenshot_amzn1.dex.asset.8c8471796fda44aebe768e0443414b96",
+        "screenshot_amzn1.dex.asset.bb6c9019465e44aab5ed0dad7d7495c0"
       ],
       "promo_sha256": "4920b2035cec799d14085cf43ed5c28cf5f042ed40f280e8053ed5b12f657caf",
       "local_files_sha256": [
@@ -219,7 +221,7 @@
         },
         {
           "id": "02",
-          "sha256": "1c7ee9b22d3340d5bc721e7117f7774622e8f28911401f6faa8dec7efae678c0"
+          "sha256": "8bdb4f469d56c14fdac26f4286f969bd17e4edf4c81b4fff81f8fc49986fe5c5"
         },
         {
           "id": "03",
@@ -235,7 +237,7 @@
         },
         {
           "id": "06",
-          "sha256": "096d49b2d800961efeeb73a717fab92cfdddb49f8c8a235b4e5dc334df34b090"
+          "sha256": "ecfe8a1a55be0a610df06f6898be7716626ae4d3bc56a3b9b7787dbe94334dc0"
         },
         {
           "id": "07",
@@ -243,7 +245,7 @@
         },
         {
           "id": "08",
-          "sha256": "936c39f599161f5b21d192cd40685622ad47926ca2bd3d9aeb746d357dd0c7c9"
+          "sha256": "0481e5095033b2f2b8dca8c4b0fa4b8d5408e479753c9bb8f89010a18cc781a2"
         },
         {
           "id": "promo",
@@ -253,12 +255,20 @@
       "refreshedOn": "2026-10-19",
       "saved_asset_sha256": [
         {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
           "id": "01",
           "sha256": "5c9c134cea63d54b77a738f91e0a93a4511ebdd0142b247ee5b0eb1217bea213"
         },
         {
           "id": "02",
-          "sha256": "1c7ee9b22d3340d5bc721e7117f7774622e8f28911401f6faa8dec7efae678c0"
+          "sha256": "8bdb4f469d56c14fdac26f4286f969bd17e4edf4c81b4fff81f8fc49986fe5c5"
         },
         {
           "id": "03",
@@ -274,7 +284,7 @@
         },
         {
           "id": "06",
-          "sha256": "096d49b2d800961efeeb73a717fab92cfdddb49f8c8a235b4e5dc334df34b090"
+          "sha256": "ecfe8a1a55be0a610df06f6898be7716626ae4d3bc56a3b9b7787dbe94334dc0"
         },
         {
           "id": "07",
@@ -282,33 +292,26 @@
         },
         {
           "id": "08",
-          "sha256": "936c39f599161f5b21d192cd40685622ad47926ca2bd3d9aeb746d357dd0c7c9"
-        },
-        {
-          "id": "tablet_large_icon",
-          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
-        },
-        {
-          "id": "tablet_small_icon",
-          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+          "sha256": "0481e5095033b2f2b8dca8c4b0fa4b8d5408e479753c9bb8f89010a18cc781a2"
         },
         {
           "id": "tablet_promotional_image",
           "sha256": "4920b2035cec799d14085cf43ed5c28cf5f042ed40f280e8053ed5b12f657caf"
         }
-      ]
+      ],
+      "verifiedOn": "2026-10-30"
     },
     {
       "locale": "pt-BR",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.e113a53355224b019c5230fb0ab98d43",
-        "screenshot_amzn1.dex.asset.8205c492dd0040cab22e375a4afc9d4f",
-        "screenshot_amzn1.dex.asset.54c9dd32bc1d4469bb80abcbb2beb1f5",
-        "screenshot_amzn1.dex.asset.fe31a1b9befc42548c5395879b59e378",
-        "screenshot_amzn1.dex.asset.7dffe008538142048910bf154d3191a7",
-        "screenshot_amzn1.dex.asset.7932929d09234b3e981c0f71195e43ff",
-        "screenshot_amzn1.dex.asset.9e6a5e05c6c542f7b20d4d3fc72a5c50",
-        "screenshot_amzn1.dex.asset.d31586535e764812a861364e17b481b9"
+        "screenshot_amzn1.dex.asset.e6dc61271e4a4f5f9cfbf841a87b8368",
+        "screenshot_amzn1.dex.asset.49899b30fc7d499cae93230fec42f494",
+        "screenshot_amzn1.dex.asset.a291a64f590841ccb726b0839d691eca",
+        "screenshot_amzn1.dex.asset.e0afadbe8cf3459f8918c372c3f8ff62",
+        "screenshot_amzn1.dex.asset.4140ad67ee5746d48686afa7d5a7dabd",
+        "screenshot_amzn1.dex.asset.b5e5c4c07fd3485e9b667fcfe1630678",
+        "screenshot_amzn1.dex.asset.6a56e837c81a402081165d0b3fa597b3",
+        "screenshot_amzn1.dex.asset.230f33fb400548a1bae75d49d2c07549"
       ],
       "promo_sha256": "c615257bc3f2debf775838f84ca524d0c8cc2efab86a23345a9ca27a3eef450c",
       "local_files_sha256": [
@@ -318,7 +321,7 @@
         },
         {
           "id": "02",
-          "sha256": "c7df7ab339e2f1258ca5fa0926b674f3063b61e52bd429b781310651704cf829"
+          "sha256": "5d7486e03962670dae379a029512e0e39696b55376c5b4fe315a862936ab0076"
         },
         {
           "id": "03",
@@ -334,7 +337,7 @@
         },
         {
           "id": "06",
-          "sha256": "f282505e02648fe5244b0944faae5878f4897a2a91f43627a2cef5ebc2589d1d"
+          "sha256": "5c77d50530d339ca5c8f82b1cf127452736c5325352ef55fc0c140d065aee1f3"
         },
         {
           "id": "07",
@@ -342,7 +345,7 @@
         },
         {
           "id": "08",
-          "sha256": "54a78aa0821ee2cdb4e7362e8e7511621e816c577e81f8ce01319ab217800c6a"
+          "sha256": "4fe80f64b86109f8645592d549fc74c73c73b08b985d6edb4b58cc2531d5f70e"
         },
         {
           "id": "promo",
@@ -352,12 +355,20 @@
       "refreshedOn": "2026-10-19",
       "saved_asset_sha256": [
         {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
           "id": "01",
           "sha256": "3ecd65fcb50db5e572314336b14c54a249f3051949ccbf912ec7f2f82b4a565d"
         },
         {
           "id": "02",
-          "sha256": "c7df7ab339e2f1258ca5fa0926b674f3063b61e52bd429b781310651704cf829"
+          "sha256": "5d7486e03962670dae379a029512e0e39696b55376c5b4fe315a862936ab0076"
         },
         {
           "id": "03",
@@ -373,7 +384,7 @@
         },
         {
           "id": "06",
-          "sha256": "f282505e02648fe5244b0944faae5878f4897a2a91f43627a2cef5ebc2589d1d"
+          "sha256": "5c77d50530d339ca5c8f82b1cf127452736c5325352ef55fc0c140d065aee1f3"
         },
         {
           "id": "07",
@@ -381,33 +392,26 @@
         },
         {
           "id": "08",
-          "sha256": "54a78aa0821ee2cdb4e7362e8e7511621e816c577e81f8ce01319ab217800c6a"
-        },
-        {
-          "id": "tablet_large_icon",
-          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
-        },
-        {
-          "id": "tablet_small_icon",
-          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+          "sha256": "4fe80f64b86109f8645592d549fc74c73c73b08b985d6edb4b58cc2531d5f70e"
         },
         {
           "id": "tablet_promotional_image",
           "sha256": "c615257bc3f2debf775838f84ca524d0c8cc2efab86a23345a9ca27a3eef450c"
         }
-      ]
+      ],
+      "verifiedOn": "2026-10-30"
     },
     {
       "locale": "en-US",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.01f7984687ac4fc395b980cc985efe13",
-        "screenshot_amzn1.dex.asset.c43eef5d8c8b4413afb72e42321fd339",
-        "screenshot_amzn1.dex.asset.1d90d000b9684b26959eeafa2b94884b",
-        "screenshot_amzn1.dex.asset.7c3db8dd6ea340909e27070f876458de",
-        "screenshot_amzn1.dex.asset.508f5a39c9b94817a451a198af965c38",
-        "screenshot_amzn1.dex.asset.dca077c41db8416fb856e269c7569475",
-        "screenshot_amzn1.dex.asset.48f3a159b87046fd958d0577cf1c310c",
-        "screenshot_amzn1.dex.asset.9a880031c1b443719b66e663ff23fb6d"
+        "screenshot_amzn1.dex.asset.adc4bd54418d4037b969e4bf3debfdab",
+        "screenshot_amzn1.dex.asset.1cd28ae0e97049a6b1e8f8e3d76435c0",
+        "screenshot_amzn1.dex.asset.4f2bf1cf3b0e4cf48d6ff20253d488a4",
+        "screenshot_amzn1.dex.asset.1ddaf4c6a7be45319ee51b67418f059b",
+        "screenshot_amzn1.dex.asset.64981b54830f460286fe62105e9f4e7e",
+        "screenshot_amzn1.dex.asset.e4b6371e371b41f0b558f4ae603d63eb",
+        "screenshot_amzn1.dex.asset.489f71261f0640699916045701d47b31",
+        "screenshot_amzn1.dex.asset.0abcf5e5fc8e4bbdbe4c687e7a0488d1"
       ],
       "promo_sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae",
       "local_files_sha256": [
@@ -417,7 +421,7 @@
         },
         {
           "id": "02",
-          "sha256": "3e2abf640b663029ceee8444e45f23f1adc49895e9c3063158d52c60bc51ee2f"
+          "sha256": "33a346c2a8222f155f2fb5f1255d4b35ec3ce9fc029098ec093a8158d1fbd544"
         },
         {
           "id": "03",
@@ -433,7 +437,7 @@
         },
         {
           "id": "06",
-          "sha256": "e731a8a8ba259acfa673f887f33b1a44b8e7728df244fa20a983577e9805bf95"
+          "sha256": "43ca2ea491f83ed1a6c7a8cdb0733740645fcb093b6f62bf95acbc562908a6dc"
         },
         {
           "id": "07",
@@ -441,7 +445,7 @@
         },
         {
           "id": "08",
-          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
+          "sha256": "65dc2ce2a1d278f9ee2e5e5630725c890c5f651946a9bbc59a161b1f3bb03c73"
         },
         {
           "id": "promo",
@@ -451,12 +455,20 @@
       "refreshedOn": "2026-10-19",
       "saved_asset_sha256": [
         {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
           "id": "01",
           "sha256": "db254b943500344a1c997e2a496bc37081d82045c30d9bde3137821512215d54"
         },
         {
           "id": "02",
-          "sha256": "3e2abf640b663029ceee8444e45f23f1adc49895e9c3063158d52c60bc51ee2f"
+          "sha256": "33a346c2a8222f155f2fb5f1255d4b35ec3ce9fc029098ec093a8158d1fbd544"
         },
         {
           "id": "03",
@@ -472,7 +484,7 @@
         },
         {
           "id": "06",
-          "sha256": "e731a8a8ba259acfa673f887f33b1a44b8e7728df244fa20a983577e9805bf95"
+          "sha256": "43ca2ea491f83ed1a6c7a8cdb0733740645fcb093b6f62bf95acbc562908a6dc"
         },
         {
           "id": "07",
@@ -480,33 +492,26 @@
         },
         {
           "id": "08",
-          "sha256": "34a29636107eb2c5e6310bd6de9d293feff0b9a5e9228c699e5a2cefec5d688c"
-        },
-        {
-          "id": "tablet_large_icon",
-          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
-        },
-        {
-          "id": "tablet_small_icon",
-          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+          "sha256": "65dc2ce2a1d278f9ee2e5e5630725c890c5f651946a9bbc59a161b1f3bb03c73"
         },
         {
           "id": "tablet_promotional_image",
           "sha256": "617405d69ac6f2ff0ae07acd688cde3e55b7494b5cc1cc538d55382ae49df1ae"
         }
-      ]
+      ],
+      "verifiedOn": "2026-10-30"
     },
     {
       "locale": "fr-FR",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.3e70dd8af8d64acc89452848f4a138ec",
-        "screenshot_amzn1.dex.asset.2df46527f4b24c108002e57c01653ddb",
-        "screenshot_amzn1.dex.asset.d715e240afee46e988b2427e76c319fb",
-        "screenshot_amzn1.dex.asset.35baaa75e98c496d9079c92103e0447d",
-        "screenshot_amzn1.dex.asset.37d09f01279747da8c74e09b655c3a6a",
-        "screenshot_amzn1.dex.asset.d7e947e6911c403eb6d8cd5bc4b9bdc2",
-        "screenshot_amzn1.dex.asset.6b0b5bffdbe048bab8ebfaa409d933ae",
-        "screenshot_amzn1.dex.asset.51153c15fa544e6ca75f53f1c66a1741"
+        "screenshot_amzn1.dex.asset.74855a2d9bf84f348bf41b27907bc5b0",
+        "screenshot_amzn1.dex.asset.38608ad37ddd4bb881b8a383b4c7e1bb",
+        "screenshot_amzn1.dex.asset.ea41c89d9bec47ebb068ba94c4781ddc",
+        "screenshot_amzn1.dex.asset.f7ed44e31bc54577ad227dce8fb58437",
+        "screenshot_amzn1.dex.asset.2bec84063ea744519d3af0c6349494f2",
+        "screenshot_amzn1.dex.asset.9b3ffaa8eeef47508ab8d6d7fb832a9e",
+        "screenshot_amzn1.dex.asset.7a294492350645f49fa7e42a6024632a",
+        "screenshot_amzn1.dex.asset.a6ad863ed8b5464197e59d340ee75fb6"
       ],
       "promo_sha256": "e57cb0fd76c71db8034102328c7d58ee0a71b653fdaa76a22c2f70d496aa2a8e",
       "local_files_sha256": [
@@ -516,7 +521,7 @@
         },
         {
           "id": "02",
-          "sha256": "0d434c878868ba3ca3ea1c0b35b94840d554449552717bed7620083ef69fc115"
+          "sha256": "8b98f01d25a08191bafbceb5b0a278ce738039d2a5b50061203a8d66c1eec705"
         },
         {
           "id": "03",
@@ -528,11 +533,11 @@
         },
         {
           "id": "05",
-          "sha256": "fab0371f633877c9a9419de306255dc8ad966b9b3ea7c32a7e8ec83cfa7a7466"
+          "sha256": "b272b56fe433b1951f2f8cb9b2a097ef25ad2a4c57250ed735f6967797954813"
         },
         {
           "id": "06",
-          "sha256": "958802eb49cbf15bb7566b526272c56d31307e413f41c1c73f6482b6efb38795"
+          "sha256": "7c9f8f488ea169ffc9ce07137e6f0c747a25234b6fd85b8d81b0b918f73337fe"
         },
         {
           "id": "07",
@@ -540,7 +545,7 @@
         },
         {
           "id": "08",
-          "sha256": "e0bcd62ef0817a12888d43378e8470ab91bd9a33ad98953444d98c11ab2e2776"
+          "sha256": "22fef8b8efee278f9fff52abd4addf42b795163534b566b875bae7a5f081cf87"
         },
         {
           "id": "promo",
@@ -550,12 +555,20 @@
       "refreshedOn": "2026-10-19",
       "saved_asset_sha256": [
         {
+          "id": "tablet_large_icon",
+          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
+        },
+        {
+          "id": "tablet_small_icon",
+          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+        },
+        {
           "id": "01",
           "sha256": "1bec4c5b438e7d9aad0b44ecfcc002f502b7dbf53f093e4180975211f6d382be"
         },
         {
           "id": "02",
-          "sha256": "0d434c878868ba3ca3ea1c0b35b94840d554449552717bed7620083ef69fc115"
+          "sha256": "8b98f01d25a08191bafbceb5b0a278ce738039d2a5b50061203a8d66c1eec705"
         },
         {
           "id": "03",
@@ -567,11 +580,11 @@
         },
         {
           "id": "05",
-          "sha256": "fab0371f633877c9a9419de306255dc8ad966b9b3ea7c32a7e8ec83cfa7a7466"
+          "sha256": "b272b56fe433b1951f2f8cb9b2a097ef25ad2a4c57250ed735f6967797954813"
         },
         {
           "id": "06",
-          "sha256": "958802eb49cbf15bb7566b526272c56d31307e413f41c1c73f6482b6efb38795"
+          "sha256": "7c9f8f488ea169ffc9ce07137e6f0c747a25234b6fd85b8d81b0b918f73337fe"
         },
         {
           "id": "07",
@@ -579,33 +592,26 @@
         },
         {
           "id": "08",
-          "sha256": "e0bcd62ef0817a12888d43378e8470ab91bd9a33ad98953444d98c11ab2e2776"
-        },
-        {
-          "id": "tablet_large_icon",
-          "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
-        },
-        {
-          "id": "tablet_small_icon",
-          "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
+          "sha256": "22fef8b8efee278f9fff52abd4addf42b795163534b566b875bae7a5f081cf87"
         },
         {
           "id": "tablet_promotional_image",
           "sha256": "e57cb0fd76c71db8034102328c7d58ee0a71b653fdaa76a22c2f70d496aa2a8e"
         }
-      ]
+      ],
+      "verifiedOn": "2026-10-30"
     },
     {
       "locale": "es-ES",
       "screenshots": [
-        "screenshot_amzn1.dex.asset.7b7867fb20a3429f9ead10cd601b7f97",
-        "screenshot_amzn1.dex.asset.1ea5cf6d89dd41c3a95e041f68647991",
-        "screenshot_amzn1.dex.asset.f516206cfe964bf58d93410f80395cfb",
-        "screenshot_amzn1.dex.asset.5815750a46de4288b0a349b6dc118de7",
-        "screenshot_amzn1.dex.asset.c6f7eb5713d142b682897331f0b6d224",
-        "screenshot_amzn1.dex.asset.dc9e5f104baf42039c25c44a5d79a2df",
-        "screenshot_amzn1.dex.asset.e963df78f8f2491ca9560fdb6c1b9970",
-        "screenshot_amzn1.dex.asset.c0ae6fe675af4f67b803e809da9bda3a"
+        "screenshot_amzn1.dex.asset.16fc8a117e0340ea8441d10dbb7cc6ef",
+        "screenshot_amzn1.dex.asset.9c29e500ed1b403b8203fa3b5bc69945",
+        "screenshot_amzn1.dex.asset.6ceb37ed186f4b74b8c868e1cd7d40e7",
+        "screenshot_amzn1.dex.asset.89d37e80ee954fe2be302fb738fe807a",
+        "screenshot_amzn1.dex.asset.b6a42171832b4ea3b32bca57a5d1798e",
+        "screenshot_amzn1.dex.asset.cb77b9a806ca477ca1a72f87201ca1c3",
+        "screenshot_amzn1.dex.asset.df72a2ad434442ae986d14e76ed778f3",
+        "screenshot_amzn1.dex.asset.29f977b006cc4207a18c7ef6d4ea55b8"
       ],
       "promo_sha256": "86cadc661346352f5fb7785e61fd9a4f013621a8d1703af089ad7c9dd708f58d",
       "local_files_sha256": [
@@ -615,11 +621,11 @@
         },
         {
           "id": "02",
-          "sha256": "9576f2dbff4109a00876799bfba9594c9e4089d8c2b27bd36e33cf40eb7908ce"
+          "sha256": "48adb6ac23f5458e8004e89e762703f5ddf21e06a450cecbe851e3a6f9bcbb79"
         },
         {
           "id": "03",
-          "sha256": "7bcf47af6e109d8826c7c6329bc8ea4ac04f7d7fbe0ba9b0ffb72fef678eaa7c"
+          "sha256": "2da96e3f520d3f58ddab6f8d0426eb68b764f61c6aed6ee98b2e5e41fb228220"
         },
         {
           "id": "04",
@@ -627,19 +633,19 @@
         },
         {
           "id": "05",
-          "sha256": "1989691fc8a0e4c0693d3e67cee366e9249a0eac29ab4f3f716bb8c696726728"
+          "sha256": "05c252eb429142a3d19edd1727c7fe4829ed99bfe6d9df0fa966fb2a04f7b0de"
         },
         {
           "id": "06",
-          "sha256": "ac87a9026d24a487e97a775d11c8d4d485d399de1ed47b9091bdf950b7748f93"
+          "sha256": "e38c08c6e00271c2c7b14d2c16f8bdc0fd3d7c29d10ea9fcf20be25c798352f7"
         },
         {
           "id": "07",
-          "sha256": "ed6f79023bf1bb44678a76821db2d244c7eddb914dbc08f712a5eccb5a709e1b"
+          "sha256": "ca167c2836f13899424bcb292869c170517032886161907bf4c753aef75471b5"
         },
         {
           "id": "08",
-          "sha256": "9e66f31e3b618082b5d5494a07df14ce9f90c6e4d5a3a7ab4a49c824f509a246"
+          "sha256": "2680c786550daf77a9a84d5e3111e2dfcc48b4230f0cbfe270ef56335bf84035"
         },
         {
           "id": "promo",
@@ -649,38 +655,6 @@
       "refreshedOn": "2026-10-19",
       "saved_asset_sha256": [
         {
-          "id": "01",
-          "sha256": "01104709c87fc97e26c224180d12adde9dc5039fa8c8b6c7bd87ebbf1d414249"
-        },
-        {
-          "id": "02",
-          "sha256": "9576f2dbff4109a00876799bfba9594c9e4089d8c2b27bd36e33cf40eb7908ce"
-        },
-        {
-          "id": "03",
-          "sha256": "7bcf47af6e109d8826c7c6329bc8ea4ac04f7d7fbe0ba9b0ffb72fef678eaa7c"
-        },
-        {
-          "id": "04",
-          "sha256": "a45a2b26acb229a62ece3712c6194285ec703141d99223d58b5d911a506521c0"
-        },
-        {
-          "id": "05",
-          "sha256": "1989691fc8a0e4c0693d3e67cee366e9249a0eac29ab4f3f716bb8c696726728"
-        },
-        {
-          "id": "06",
-          "sha256": "ac87a9026d24a487e97a775d11c8d4d485d399de1ed47b9091bdf950b7748f93"
-        },
-        {
-          "id": "07",
-          "sha256": "ed6f79023bf1bb44678a76821db2d244c7eddb914dbc08f712a5eccb5a709e1b"
-        },
-        {
-          "id": "08",
-          "sha256": "9e66f31e3b618082b5d5494a07df14ce9f90c6e4d5a3a7ab4a49c824f509a246"
-        },
-        {
           "id": "tablet_large_icon",
           "sha256": "8dc0888514df038414054daca5f567854d6734797430b12d7fc34e0b3ae60529"
         },
@@ -689,10 +663,43 @@
           "sha256": "26884479a2d55089e5a32cc1234a32be8b7171526725b6f7101f06f6bf87e370"
         },
         {
+          "id": "01",
+          "sha256": "01104709c87fc97e26c224180d12adde9dc5039fa8c8b6c7bd87ebbf1d414249"
+        },
+        {
+          "id": "02",
+          "sha256": "48adb6ac23f5458e8004e89e762703f5ddf21e06a450cecbe851e3a6f9bcbb79"
+        },
+        {
+          "id": "03",
+          "sha256": "2da96e3f520d3f58ddab6f8d0426eb68b764f61c6aed6ee98b2e5e41fb228220"
+        },
+        {
+          "id": "04",
+          "sha256": "a45a2b26acb229a62ece3712c6194285ec703141d99223d58b5d911a506521c0"
+        },
+        {
+          "id": "05",
+          "sha256": "05c252eb429142a3d19edd1727c7fe4829ed99bfe6d9df0fa966fb2a04f7b0de"
+        },
+        {
+          "id": "06",
+          "sha256": "e38c08c6e00271c2c7b14d2c16f8bdc0fd3d7c29d10ea9fcf20be25c798352f7"
+        },
+        {
+          "id": "07",
+          "sha256": "ca167c2836f13899424bcb292869c170517032886161907bf4c753aef75471b5"
+        },
+        {
+          "id": "08",
+          "sha256": "2680c786550daf77a9a84d5e3111e2dfcc48b4230f0cbfe270ef56335bf84035"
+        },
+        {
           "id": "tablet_promotional_image",
           "sha256": "86cadc661346352f5fb7785e61fd9a4f013621a8d1703af089ad7c9dd708f58d"
         }
-      ]
+      ],
+      "verifiedOn": "2026-10-30"
     }
   ],
   "verification": [
@@ -715,25 +722,7 @@
       "problems": []
     },
     {
-      "locale": "es-ES",
-      "screenshots": 8,
-      "promo": true,
-      "persisted_after_reload": true,
-      "saved_files_match": true,
-      "screenshot_order": [
-        "01",
-        "02",
-        "03",
-        "04",
-        "05",
-        "06",
-        "07",
-        "08"
-      ],
-      "problems": []
-    },
-    {
-      "locale": "fr-FR",
+      "locale": "en-GB",
       "screenshots": 8,
       "promo": true,
       "persisted_after_reload": true,
@@ -805,7 +794,25 @@
       "problems": []
     },
     {
-      "locale": "en-GB",
+      "locale": "fr-FR",
+      "screenshots": 8,
+      "promo": true,
+      "persisted_after_reload": true,
+      "saved_files_match": true,
+      "screenshot_order": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "problems": []
+    },
+    {
+      "locale": "es-ES",
       "screenshots": 8,
       "promo": true,
       "persisted_after_reload": true,
@@ -830,5 +837,11 @@
     "pt-PT",
     "ar",
     "hi"
-  ]
+  ],
+  "updatedAt": "2026-10-30T07:34:54.494908+00:00",
+  "previous_receipt": {
+    "path": "marketing/history/amazon-artwork-uploads-before-20261030.json",
+    "sha256": "0cae56bc7e99f17b446de2a27b74491d7a9ad4db11ca2a0aa5464dbe950999e3"
+  },
+  "console_proof": "artifacts/amazon-artwork-sync-20261030.json"
 }

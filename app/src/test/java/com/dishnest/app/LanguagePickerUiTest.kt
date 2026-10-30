@@ -55,6 +55,8 @@ class LanguagePickerUiTest {
         }
         rule.onNode(hasScrollAction()).performScrollToNode(hasText(rule.activity.getString(R.string.ui_optional_usage_counts_ea8511)))
         rule.onNode(isToggleable()).assertIsOn()
+        rule.onNode(isToggleable()).assertContentDescriptionEquals(
+            rule.activity.getString(R.string.ui_keep_aggregate_usage_counts_on_t_a9093e))
         rule.onNode(hasScrollAction()).performScrollToNode(hasText(rule.activity.getString(R.string.ui_delete_all_kitchen_data_013193)))
         rule.onNodeWithText(rule.activity.getString(R.string.ui_delete_all_kitchen_data_013193)).performClick()
         rule.onNodeWithText(rule.activity.getString(R.string.ui_permanently_delete_9003e1)).performClick()

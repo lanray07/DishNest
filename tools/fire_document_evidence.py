@@ -1,5 +1,6 @@
 """Validate bounded document-provider observations without approving all backup scenarios."""
 from build_evidence import ROOT, digest
+from PIL import Image
 
 CHECKS = {'cancelJsonExport', 'cancelZipExport', 'cancelJsonImport', 'cancelZipImport',
           'zipCrcAndPayloadMatchJson', 'exportsDoNotChangeKitchen', 'jsonExportHasRecipesMealsAndSelectedPlan',
@@ -28,8 +29,20 @@ def verify(report):
             ('instrumentationApkSha256', 'app/build/outputs/apk/androidTest/qa/app-qa-androidTest.apk'),
             ('controllerSha256', 'tools/run_fire_document_checks.py'),
             ('helperSha256', 'tools/run_fire_offline_checks.py'),
-            ('seedTraceSha256', 'artifacts/fire-document-seed.txt'))):
+            ('seedTraceSha256', 'artifacts/fire-document-seed.txt'),
+            ('ocrHelperSha256', 'tools/ocr_local_image.ps1'))):
             return False
+        frames = report.get('refusalFramesSha256', {})
+        if set(frames) != {'artifacts/screens/fire-document-nonempty-json-refusal.png',
+                          'artifacts/screens/fire-document-nonempty-zip-refusal.png'}:
+            return False
+        for path, expected in frames.items():
+            if digest(ROOT/path) != expected:
+                return False
+            with Image.open(ROOT/path) as image:
+                if image.format != 'PNG' or min(image.size) < 600:
+                    return False
+                image.verify()
         trace = (ROOT / 'artifacts/fire-document-seed.txt').read_text(encoding='utf-8')
         return 'OK (1 test)' in trace and not any(v in trace for v in ('FAILURES!!!', 'INSTRUMENTATION_FAILED', 'Process crashed'))
     except (OSError, TypeError):

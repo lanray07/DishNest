@@ -9,6 +9,7 @@ from fire_doze_evidence import verify as verify_doze
 from fire_offline_evidence import verify as verify_offline
 from fire_layout_evidence import verify as verify_layout
 from fire_document_evidence import verify as verify_documents
+from fire_settings_evidence import verify as verify_fire_settings
 ROOT=Path(__file__).resolve().parents[1]
 def data(path):return json.loads((ROOT/path).read_text(encoding='utf-8-sig'))
 suites=[ET.parse(p).getroot() for p in (ROOT/'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml')]
@@ -28,6 +29,8 @@ layout=data('artifacts/fire-layout-qa.json') if (ROOT/'artifacts/fire-layout-qa.
 layout_current=verify_layout(layout)
 documents=data('artifacts/fire-document-qa.json') if (ROOT/'artifacts/fire-document-qa.json').exists() else {}
 documents_current=verify_documents(documents)
+fire_settings=data('artifacts/fire-settings-qa.json') if (ROOT/'artifacts/fire-settings-qa.json').exists() else {}
+fire_settings_current=verify_fire_settings(fire_settings)
 notices=data('artifacts/packaged-notices-verification.json') if (ROOT/'artifacts/packaged-notices-verification.json').exists() else {}
 alarm=data('artifacts/fire-background-alarm.json') if (ROOT/'artifacts/fire-background-alarm.json').exists() else {}
 fire=data('artifacts/fire-device-qa.json') if (ROOT/'artifacts/fire-device-qa.json').exists() else {}
@@ -64,7 +67,7 @@ The remaining release categories, their local work and the evidence needed to cl
 
 ## Local-only continuation
 
-Added a persistent in-app selector for the existing 12 resource locales, with device-language fallback, Android 13 system integration, pre-Android-13 preference persistence and localized background notifications/success messages. Opt-in local counters preserve unchanged consent, clear on opt-out, serialize writes, saturate at the integer limit and count production Premium conversion only after a successful purchase callback and verified access. Kitchen deletion opts out immediately and its switch observes canonical consent state. No analytics service, upload or paid dependency is required by these features. Current, narrowly scoped Fire results are listed below; historical Test 3 purchases do not test this revision. The new picker/privacy cases retain their separate host-only evidence and broader hardware approval remains pending.
+Added a persistent in-app selector for the existing 12 resource locales, with device-language fallback, Android 13 system integration, pre-Android-13 preference persistence and localized background notifications/success messages. Opt-in local counters preserve unchanged consent, clear on opt-out, serialize writes, saturate at the integer limit and count production Premium conversion only after a successful purchase callback and verified access. Kitchen deletion opts out immediately and its switch observes canonical consent state. The switch now exposes its translated accessible name; its red/green regression also checks the actual deletion flow. No analytics service or paid dependency is required. Current, narrowly scoped Fire results are listed below; historical Test 3 purchases do not test this revision. Broader hardware and native language approval remain pending.
 
 Seven required priority languages are still absent: Japanese, Korean, Simplified Chinese, Traditional Chinese, Turkish, Indonesian and Swedish. Resource coverage of the existing 12 locales does not complete that requirement.
 
@@ -108,6 +111,7 @@ Seven required priority languages are still absent: Japanese, Korean, Simplified
 | Locale resource gate | {'PASS' if locale.get('resource_complete') else 'FAIL'} across 12 locales | `localisation/validation.json` |
 | Physical Fire smoke tests | {fire_result} | `artifacts/fire-device-qa.json`, `artifacts/device-instrumentation.txt` |
 | Physical Fire native checks | {str(native_fire.get('passedTests',0)) + ' passed on current APK; ordinary data hashes unchanged; UI not exercised' if native_current else 'Pending on current APK'} | `artifacts/fire-native-qa.json`, `artifacts/fire-native-instrumentation.txt` |
+| Fire language picker and consent UI | {'PASS: French/Arabic process-restart persistence, unchanged QA kitchen, translated switch names in English/French/Arabic, device-language fallback and real QA deletion/opt-out; cleanup and ordinary data verified' if fire_settings_current else 'Pending on current APK; host evidence remains separate'} | `artifacts/fire-settings-qa.json` |
 | Forced-doze timer | {'Passed on the exact current QA app and runner; timer handled before verifier restart while still IDLE; original data unchanged; broader device matrix pending' if doze_current else 'Pending: current exact-build forced-idle evidence unavailable'} | `artifacts/fire-doze-qa.json` |
 | Fire offline and process recovery | {'PASS: 15 smoke tests plus named-plan check without connectivity; saved kitchen/preferences unchanged after process restart; radio/display settings and ordinary data preserved' if offline_current else 'Pending on current binaries'} | `artifacts/fire-offline-qa.json` |
 | Fire system text scale and orientation | {'PASS: recipe, pantry and named-plan flows in portrait and landscape at system font scale 2.0; settings restored and ordinary data unchanged; TalkBack/full dialog matrix pending' if layout_current else 'Pending on current binaries'} | `artifacts/fire-layout-qa.json` |

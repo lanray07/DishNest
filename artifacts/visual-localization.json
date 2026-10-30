@@ -1,5 +1,5 @@
 {
-  "passed": false,
+  "passed": true,
   "locales": [
     "en-GB",
     "en-US",
@@ -23,13 +23,16 @@
   "native_language_approved": false,
   "physical_device_verified": false,
   "release_approved": false,
-  "validator_sha256": "d427a100507927306e0fb17721b87f0c3cfe457ad004910c5dd304a64e43201a",
+  "validator_sha256": "99fae29f7ce71ca68560e239d7f5683cf66b3808fb330aa5def2cf12a723b6e9",
   "manifest_sha256": "311058c3820e6dbce4043c330231fcaa004c2106d18452722a4188ca0a3b6052",
-  "upload_history_sha256": "0cae56bc7e99f17b446de2a27b74491d7a9ad4db11ca2a0aa5464dbe950999e3",
+  "upload_history_sha256": "fcfbdc29cb08de57d8020d5c53f2e8317fd234031648ac60ff566a7c575625e3",
   "amazon_live_console_rechecked": false,
-  "amazon_verification_scope": "Historical saved upload receipts compared with current local artwork; no live console access",
+  "amazon_verification_scope": "Reloaded browser readback and exact saved bytes recorded at 2026-10-30T07:34:54.869609+00:00; this validator makes no live network requests",
+  "amazon_saved_console_proof_current": true,
+  "amazon_saved_console_checked_at": "2026-10-30T07:34:54.869609+00:00",
+  "amazon_saved_console_proof_sha256": "7ab98db3d1c5e685524d0c8986e157dc1dd0c58061f3b02c360d3fd06d2394d6",
   "local_assets_passed": true,
-  "amazon_uploads_match_current_assets": false,
+  "amazon_uploads_match_current_assets": true,
   "amazon_artwork_locales_historical_receipts": [
     "de-DE",
     "en-GB",
@@ -39,46 +42,14 @@
     "it-IT",
     "pt-BR"
   ],
-  "amazon_artwork_locales_verified": [],
-  "amazon_artwork_updates_pending": {
-    "de-DE": [
-      "02",
-      "06",
-      "08"
-    ],
-    "en-GB": [
-      "02",
-      "06",
-      "08"
-    ],
-    "it-IT": [
-      "02",
-      "06",
-      "08"
-    ],
-    "pt-BR": [
-      "02",
-      "06",
-      "08"
-    ],
-    "en-US": [
-      "02",
-      "06",
-      "08"
-    ],
-    "fr-FR": [
-      "02",
-      "05",
-      "06",
-      "08"
-    ],
-    "es-ES": [
-      "02",
-      "03",
-      "05",
-      "06",
-      "07",
-      "08"
-    ]
-  }
+  "amazon_artwork_locales_verified": [
+    "de-DE",
+    "en-GB",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "it-IT",
+    "pt-BR"
+  ],
+  "amazon_artwork_updates_pending": {}
 }

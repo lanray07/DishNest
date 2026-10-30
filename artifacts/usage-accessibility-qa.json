@@ -1,0 +1,22 @@
+{
+  "scope": "Host regression and observed native node naming; not full screen-reader certification",
+  "case": "LanguagePickerUiTest.kitchenDeletionDisablesUsageCountsAndUpdatesItsToggle",
+  "observedBefore": {
+    "platform": "Fire API 28",
+    "class": "android.view.View",
+    "checkable": true,
+    "contentDescription": "",
+    "NAF": true
+  },
+  "redExitCode": 1,
+  "greenExitCode": 0,
+  "appSourceSha256": "6389e40401bd59cce1158bd7327aa638f8ef8b595084969068afc99568b5c541",
+  "testSourceSha256": "49571c543e31d3880910b8feb3b0ba898d1a049c1fae094e8762a46fc622f0ed",
+  "logs": {
+    "usage-accessibility-before.txt": "80fdeb0b6a0b9ad9e7d6fedd1bb0d1c03a81232cfeefe646272d9dbdfba96665",
+    "usage-accessibility-after.txt": "dd375f1f144b2577152739d08eb86f53ce8b76c9bcf98e9fab3f2b2b920bae4a"
+  },
+  "fullTalkBackTested": false,
+  "productionPurchaseTested": false,
+  "publicSubmissionPerformed": false
+}

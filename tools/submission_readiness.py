@@ -9,6 +9,7 @@ from fire_doze_evidence import verify as verify_doze
 from fire_offline_evidence import verify as verify_offline
 from fire_layout_evidence import verify as verify_layout
 from fire_document_evidence import verify as verify_documents
+from fire_settings_evidence import verify as verify_fire_settings
 ROOT=Path(__file__).resolve().parents[1]
 checks=[]
 def check(name,passed,evidence,remaining=''):
@@ -33,6 +34,14 @@ for suffix, name in [('ReadinessDataTest', 'Restore, photo archive and planner d
     check(name, passed, f'app/build/test-results/testDebugUnitTest/TEST-com.dishnest.app.{suffix}.xml', 'Run the current complete host test suite')
 from local_settings_evidence import verify as verify_settings
 check('Local language picker and privacy controls',verify_settings(),'artifacts/local-settings-qa.json','Run the complete host suite, record build provenance and run tools/local_settings_evidence.py')
+check('Fire language picker and privacy controls',verify_fire_settings(read_json('artifacts/fire-settings-qa.json')),'artifacts/fire-settings-qa.json','Verify French/Arabic cold language persistence, translated accessible usage labels, device-language reset and real QA deletion/consent UI; preserve ordinary app data and restore settings')
+visual=read_json('artifacts/visual-localization.json')
+visual_current=all((ROOT/path).is_file() and visual.get(key)==digest(ROOT/path) for key,path in [
+    ('validator_sha256','tools/verify_visual_localization.py'),
+    ('manifest_sha256','marketing/screenshots/localized/manifest.json'),
+    ('upload_history_sha256','marketing/amazon-artwork-uploads.json'),
+    ('amazon_saved_console_proof_sha256','artifacts/amazon-artwork-sync-20261030.json')])
+check('Saved localized Amazon artwork matches selected exports',visual_current and visual.get('passed') is True and visual.get('amazon_saved_console_proof_current') is True and visual.get('amazon_uploads_match_current_assets') is True,'artifacts/visual-localization.json; artifacts/amazon-artwork-sync-20261030.json','Verify local assets, upload intended draft artwork and bind reloaded saved bytes/order to the exact manifest and screenshot proof; this does not approve final artwork')
 locales=read_json('localisation/validation.json')
 check('Evidence matches current build',verify_build(),'artifacts/build-provenance.json','Run full Gradle verification and record the input/output hashes')
 check('Locale resource coverage',locales.get('resource_complete') is True,'localisation/validation.json','Missing resources, placeholders or plural categories')
@@ -77,6 +86,13 @@ check('Physical Fire instrumentation smoke',fire.get('passed') is True and fire_
 alarm = read_json('artifacts/fire-background-alarm.json')
 check('Background Fire timer after process termination', fire_current and alarm.get('passed') is True and alarm.get('processAbsentAfterKill') is True and alarm.get('installedApksVerified') is True and alarm.get('controllerSha256') == digest(ROOT/'tools/run_fire_alarm_probe.ps1') and alarm.get('notificationHelperSha256') == digest(ROOT/'tools/fire_notification_setting.py') and alarm.get('kitchenPersistencePassed') is True and alarm.get('apkSha256') == fire.get('apkSha256') and alarm.get('instrumentationApkSha256') == fire.get('instrumentationApkSha256'), 'artifacts/fire-background-alarm.json', 'Run the two-process kitchen/timer probe on the exact installed QA app and runner APKs')
 check('Forced-idle Fire timer',verify_doze(read_json('artifacts/fire-doze-qa.json')),'artifacts/fire-doze-qa.json','Run the bounded forced-idle probe on the current QA app and runner; verify notification, kitchen persistence, idle restoration and unchanged ordinary data')
+blocked=read_json('artifacts/fire-blocked-notifications.json')
+blocked_current=(fire_current and blocked.get('passed') is True and blocked.get('installedApksVerified') is True and
+    blocked.get('apkSha256')==fire.get('apkSha256') and blocked.get('instrumentationApkSha256')==fire.get('instrumentationApkSha256') and
+    blocked.get('controllerSha256')==digest(ROOT/'tools/run_fire_alarm_probe.ps1') and
+    blocked.get('notificationHelperSha256')==digest(ROOT/'tools/fire_notification_setting.py') and
+    all(blocked.get(key) is True for key in ('notificationsBlocked','notificationSettingRestored','kitchenPersistencePassed','processAbsentAfterKill')))
+check('Fire background timer with notifications blocked',blocked_current,'artifacts/fire-blocked-notifications.json','Verify the actual QA notification switch, persisted handled timer and absent notification; restore the switch. A missing Settings hierarchy is not a pass')
 check('Fire offline smoke and selected-plan process recovery',verify_offline(read_json('artifacts/fire-offline-qa.json')),'artifacts/fire-offline-qa.json','Run the exact installed QA smoke suite without connectivity, verify named-plan/persisted preferences across process restart and restore settings and ordinary data')
 check('Fire portrait/landscape with system large text',verify_layout(read_json('artifacts/fire-layout-qa.json')),'artifacts/fire-layout-qa.json','Run QA recipe, pantry and named-plan flows in portrait/landscape at real system font scale 2.0; restore settings and preserve ordinary data')
 check('Fire local document-provider backup flows',verify_documents(read_json('artifacts/fire-document-qa.json')),'artifacts/fire-document-qa.json','Exercise actual JSON/ZIP picker cancellation, export, nonempty-kitchen rejection and restore round trips on QA; preserve ordinary data and remove only test exports')
@@ -87,7 +103,7 @@ inventory=read_json('docs/dependencies/runtime-inventory.json')
 check('Resolved dependency inventory',bool(inventory.get('components')) and all(c.get('licenses') for c in inventory['components']),'docs/dependencies/runtime-inventory.json','Generate from exact releaseRuntimeClasspath and resolve missing licence declarations')
 check('Licensing/privacy approval',False,'THIRD_PARTY_NOTICES.md','Publisher O. Bankole confirmed; approval of distribution obligations, production service-operation details and privacy disclosures remains pending')
 check('Publisher-signed release device test',False,'artifacts/publisher-signing.json; artifacts/publisher-device-compatibility.json; artifacts/fire-amazon-lat-qa.json','Publisher signature/payload/alignment verified. The genuine Amazon-delivered version 2 passed targeted Fire smoke and monthly purchase checks, followed by exact original-app/data restoration. Secure portable signing-key recovery and broader release hardware coverage remain pending.')
-check('Final store and website metadata',False,'marketing/amazon-console-draft.json','Historical description/artwork upload receipts are retained; refreshed local screenshot bytes need a separately authorized Amazon sync. Native/legal approval, final store URL, approved hardware screenshots and publisher-signed app upload remain pending')
+check('Final store and website metadata',False,'marketing/amazon-console-draft.json','Current artwork in all seven offered locales was reloaded and byte-matched to the local files; prior receipts remain versioned. Native/legal/commercial approval, final store URL, approved hardware screenshots and the final publisher-signed app upload remain pending')
 check('Remaining product scope',False,'docs/RELEASE_READINESS.md','Complete the explicitly listed outstanding app features and integration checks')
 result={'generatedAt':datetime.now(timezone.utc).isoformat(),'submission_ready':all(c['status']=='passed' for c in checks),
  'publishing_permitted':False,'git_push_permitted':True,'publication':'Private LAT explicitly authorized and submitted; public store release remains conditional on every readiness gate; website deployment not authorized; source commits and GitHub pushes authorized','checks':checks}

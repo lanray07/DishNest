@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.dishnest.app.*
@@ -205,15 +207,14 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
         }
         item {
             SoftCard {
+                val usageLabel = stringResource(R.string.ui_keep_aggregate_usage_counts_on_t_a9093e)
                 Text(
                     stringResource(com.dishnest.app.R.string.ui_optional_usage_counts_ea8511),
                     style = MaterialTheme.typography.titleLarge,
                 )
                 Row {
                     Text(
-                        stringResource(
-                            com.dishnest.app.R.string.ui_keep_aggregate_usage_counts_on_t_a9093e
-                        ),
+                        usageLabel,
                         Modifier.weight(1f),
                     )
                     Switch(
@@ -221,6 +222,7 @@ fun SettingsScreen(s: KitchenState, vm: KitchenViewModel, onPremium: () -> Unit)
                         {
                             vm.metrics.enabled = it
                         },
+                        modifier = Modifier.semantics { contentDescription = usageLabel },
                     )
                 }
                 Text(

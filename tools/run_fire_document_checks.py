@@ -18,17 +18,35 @@ from run_fire_offline_checks import ROOT, ADB, QA, digest, passed_trace
 PICKER = 'com.android.documentsui'
 
 
+class UiTransitionTimeout(ValueError):
+    """Expected window/control did not appear; ADB failures stay distinct."""
+
+
+def null_root_error(stdout, stderr):
+    return b'null root node returned by uitestautomationbridge' in (stdout + stderr).lower()
+
+
+REFUSAL = 'Import requires an empty kitchen. Export existing data before deleting it.'
+
+
+def refusal_visible(text):
+    normalize = lambda value: re.sub(r'[^a-z0-9]', '', value.casefold())
+    return normalize(REFUSAL) in normalize(text)
+
+
 def probe():
     devices = [x.split()[0] for x in subprocess.check_output([str(ADB), 'devices']).decode().splitlines()[1:]
                if x.endswith('\tdevice')]
     if len(devices) != 1:
         raise ValueError('Exactly one authorized Fire required')
 
-    def adb(*args, timeout=30):
+    def adb(*args, timeout=30, allow_null_root=False):
         try:
             result = subprocess.run([str(ADB), '-s', devices[0], *args], capture_output=True, timeout=timeout)
         except subprocess.TimeoutExpired:
             raise ValueError('ADB timeout; private details omitted') from None
+        if allow_null_root and null_root_error(result.stdout, result.stderr):
+            return None
         if result.returncode:
             raise ValueError('ADB operation failed; private details omitted')
         return result.stdout
@@ -47,12 +65,19 @@ def probe():
         try:
             # Fire sometimes refuses an idle snapshot during a provider/activity
             # transition. Retry the dump itself; never read a previous window.
+            adb('shell', 'input', 'keyevent', 'KEYCODE_WAKEUP')
             for _ in range(24):
                 # Wake an already unlocked display without dismissing keyguard.
                 # Each CLI automation connection can transiently return a null
                 # root on this Fire; a missing snapshot never counts as a pass.
-                adb('shell', 'input', 'keyevent', 'KEYCODE_WAKEUP')
-                adb('shell', 'uiautomator', 'dump', path)
+                dump = adb('shell', 'uiautomator', 'dump', path, allow_null_root=True)
+                if dump is None:
+                    record['nullRootRetries'] += 1
+                    lock = adb('shell', 'dumpsys', 'window', 'policy').decode()
+                    if any(x in lock for x in ('mIsShowing=true', 'isStatusBarKeyguard=true')):
+                        raise ValueError('Fire locked during UI QA; unlock required')
+                    time.sleep(0.5)
+                    continue
                 try:
                     return ET.fromstring(adb('exec-out', 'cat', path))
                 except ET.ParseError:
@@ -71,13 +96,18 @@ def probe():
             if value:
                 return value
             time.sleep(0.5)
-        raise ValueError(message)
+        raise UiTransitionTimeout(message)
 
     def nodes(predicate):
         return [n for n in tree().iter('node') if predicate(n)]
 
     def foreground(package):
-        return nodes(lambda n: n.get('package') == package)
+        # Activity transitions can keep the old automation root briefly even
+        # after the real window has changed. Use window-manager focus to wait;
+        # actionable controls still require a fresh matching-package hierarchy.
+        window = adb('shell', 'dumpsys', 'window', 'windows').decode(errors='replace')
+        focused = next((line for line in window.splitlines() if 'mCurrentFocus=' in line), '')
+        return package + '/' in focused
 
     def click_node(node):
         if node.get('package') not in (QA, PICKER) or node.get('enabled') != 'true':
@@ -95,16 +125,26 @@ def probe():
         click_node(matches[0])
 
     def scroll_to(text):
-        for _ in range(12):
+        for attempt in range(18):
             root = tree()
             found = [n for n in root.iter('node') if n.get('package') == QA and n.get('text') == text]
+            viewport = list(map(int, re.findall(r'\d+', root.find('node').get('bounds'))))
             if len(found) == 1:
-                return click_node(found[0])
+                target = list(map(int, re.findall(r'\d+', found[0].get('bounds', ''))))
+                # Compose exposes partly clipped lazy-column text in its tree.
+                # Scroll it clear of the navigation bar before tapping.
+                if len(target) == 4 and target[1] > viewport[1] + 20 and target[3] < viewport[3] - 20:
+                    return click_node(found[0])
             if not any(n.get('package') == QA for n in root.iter('node')):
                 raise ValueError('Refusing to scroll outside QA')
             b = list(map(int, re.findall(r'\d+', root.find('node').get('bounds'))))
             x = (b[0] + 3 * b[2]) // 4
-            adb('shell', 'input', 'swipe', str(x), str(b[3] * 4 // 5), str(x), str(b[3] // 3), '350')
+            # Searches may begin below an earlier control after a picker return.
+            # Search toward the top first, then traverse the entire column down.
+            start, end = b[3] // 3, b[3] * 4 // 5
+            if attempt >= 6 or (len(found) == 1 and target[3] >= viewport[3] - 20):
+                start, end = end, start
+            adb('shell', 'input', 'swipe', str(x), str(start), str(x), str(end), '350')
             time.sleep(0.5)
         raise ValueError('QA control not reachable: ' + text)
 
@@ -131,8 +171,15 @@ def probe():
         raise ValueError('No stable QA database snapshot')
 
     def picker_open(label):
-        scroll_to(label)
-        wait(lambda: foreground(PICKER), 'Document picker did not open')
+        for attempt in range(3):
+            if not foreground(QA):
+                raise ValueError('Refusing a picker action outside QA')
+            scroll_to(label)
+            try:
+                return wait(lambda: foreground(PICKER), 'Document picker did not open', seconds=8)
+            except UiTransitionTimeout:
+                if attempt == 2 or not foreground(QA):
+                    raise
 
     def downloads():
         roots = nodes(lambda n: n.get('package') == PICKER and n.get('content-desc') == 'Show roots')
@@ -151,7 +198,8 @@ def probe():
                   controllerSha256=digest(Path(__file__).read_bytes()),
                   helperSha256=digest((ROOT / 'tools/run_fire_offline_checks.py').read_bytes()),
                   ordinaryAppModified=False, paidServicesEnabled=False, privateIdentifiersStored=False,
-                  checks={})
+                  checks={}, nullRootRetries=0, refusalFramesSha256={},
+                  ocrHelperSha256=digest((ROOT/'tools/ocr_local_image.ps1').read_bytes()))
     output = ROOT / 'artifacts/fire-document-qa.json'
 
     def export(label, suffix):
@@ -161,17 +209,32 @@ def probe():
                                     and n.get('resource-id') == 'android:id/title'), 'Export filename field missing')
         if len(fields) != 1:
             raise ValueError('Ambiguous export filename field')
-        field = fields[0]
-        click_node(field)
-        adb('shell', 'input', 'keyevent', 'KEYCODE_MOVE_END')
-        adb('shell', 'input', 'keyevent', *(['KEYCODE_DEL'] * (len(field.get('text', '')) + 1)))
         name = 'dishnest-qa-' + token + '-' + str(len(created)) + suffix
         path = '/sdcard/Download/' + name
         # Only unique test-owned names can be created or later removed.
         created.append(path)
-        adb('shell', 'input', 'text', name)
-        wait(lambda: nodes(lambda n: n.get('package') == PICKER and n.get('class') == 'android.widget.EditText'
-                           and n.get('text') == name), 'Unique QA export filename not applied')
+        for attempt in range(3):
+            fields = nodes(lambda n: n.get('package') == PICKER and n.get('class') == 'android.widget.EditText'
+                           and n.get('resource-id') == 'android:id/title')
+            if len(fields) != 1:
+                raise ValueError('Export filename field became ambiguous')
+            click_node(fields[0])
+            # Do not infer successful editing from the focus flag. Allow
+            # keyboard relayout, then use fresh text and require exact readback.
+            time.sleep(0.5)
+            fields = nodes(lambda n: n.get('package') == PICKER and n.get('class') == 'android.widget.EditText'
+                           and n.get('resource-id') == 'android:id/title')
+            if len(fields) != 1:
+                raise ValueError('Export filename editor disappeared after keyboard relayout')
+            field = fields[0]
+            adb('shell', 'input', 'keyevent', 'KEYCODE_MOVE_END')
+            adb('shell', 'input', 'keyevent', *(['KEYCODE_DEL'] * (len(field.get('text', '')) + 1)))
+            adb('shell', 'input', 'text', name)
+            if nodes(lambda n: n.get('package') == PICKER and n.get('class') == 'android.widget.EditText'
+                     and n.get('text') == name):
+                break
+        else:
+            raise ValueError('Unique QA export filename not applied')
         click('SAVE', PICKER)
         wait(lambda: foreground(QA), 'QA did not resume after export')
 
@@ -193,10 +256,53 @@ def probe():
     def import_file(label, name, json_confirm=False):
         picker_open(label)
         downloads()
-        click(name, PICKER)
+        for attempt in range(3):
+            click(name, PICKER)
+            try:
+                wait(lambda: foreground(QA), 'QA did not resume after import selection', seconds=8)
+                break
+            except UiTransitionTimeout:
+                if attempt == 2 or not foreground(PICKER):
+                    raise
         if json_confirm:
-            wait(lambda: foreground(QA), 'QA did not resume after import selection')
             click('Validate and import')
+
+    def observe_refusal(kind):
+        # A new CLI hierarchy connection can miss a four-second snackbar. Capture
+        # the actual app pixels first; OCR only those local test-owned frames.
+        frames = []
+        for index in range(3):
+            end = time.monotonic() + 15
+            while True:
+                window = adb('shell', 'dumpsys', 'window', 'windows').decode(errors='replace')
+                focused = next((line for line in window.splitlines() if 'mCurrentFocus=' in line), '')
+                if QA + '/' in focused:
+                    break
+                if PICKER + '/' not in focused and 'mCurrentFocus=null' not in focused:
+                    raise ValueError('Refusing a screenshot outside the QA app/provider transition')
+                if time.monotonic() >= end:
+                    raise ValueError('QA did not resume for refusal capture')
+                time.sleep(0.1)
+            frame = ROOT/'build'/f'document-refusal-{token}-{kind}-{index}.png'
+            frame.write_bytes(adb('exec-out', 'screencap', '-p'))
+            frames.append(frame)
+            time.sleep(0.25)
+        env = {key: value for key, value in os.environ.items() if key.upper() != 'PSMODULEPATH'}
+        for frame in frames:
+            result = subprocess.run(['powershell.exe', '-NoProfile', '-File',
+                str(ROOT/'tools/ocr_local_image.ps1'), '-ImagePath', str(frame)],
+                capture_output=True, timeout=60, env=env)
+            if result.returncode:
+                raise ValueError('Local Windows image OCR failed; private output omitted')
+            observed = json.loads(result.stdout.decode('utf-8-sig'))
+            if observed.get('localOnly') is not True:
+                raise ValueError('Only local screenshot OCR is permitted')
+            if refusal_visible(observed.get('text', '')):
+                destination = ROOT/'artifacts/screens'/f'fire-document-nonempty-{kind}-refusal.png'
+                destination.write_bytes(frame.read_bytes())
+                record['refusalFramesSha256'][destination.relative_to(ROOT).as_posix()] = digest(destination.read_bytes())
+                return True
+        raise ValueError('Expected populated-kitchen refusal was not visible in local captured frames')
 
     def clear_qa():
         # The destructive controls are matched only in the QA package hierarchy.
@@ -268,11 +374,7 @@ def probe():
         for label, name, confirm, key in (('Import JSON backup', json_name, True, 'jsonNonemptyKitchenRejected'),
                                          ('Import backup with photos (ZIP)', zip_name, False, 'zipNonemptyKitchenRejected')):
             import_file(label, name, confirm)
-            # Observe the actual app's refusal message, not only a fixed delay.
-            wait(lambda: nodes(lambda n: n.get('package') == QA and n.get('text') ==
-                               'Import requires an empty kitchen. Export existing data before deleting it.'),
-                 'Expected nonempty-kitchen rejection message not observed')
-            record['checks'][key] = kitchen() == baseline
+            record['checks'][key] = observe_refusal('json' if confirm else 'zip') and kitchen() == baseline
         for label, name, confirm, key in (('Import JSON backup', json_name, True, 'jsonProviderRoundTrip'),
                                          ('Import backup with photos (ZIP)', zip_name, False, 'zipProviderRoundTrip')):
             clear_qa()

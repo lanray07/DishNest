@@ -1,10 +1,9 @@
-﻿QA APK:
+QA APK:
 Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\qa\app-qa.apk (4)...
       87 META-INF/com/android/build/gradle/app-metadata.properties (OK - compressed)
      179 classes.dex (OK - compressed)
 11043287 classes2.dex (OK - compressed)
 11092008 classes3.dex (OK - compressed)
-11134847 classes4.dex (OK - compressed)
 11594669 classes5.dex (OK - compressed)
 11640358 classes6.dex (OK - compressed)
 11724086 classes7.dex (OK - compressed)
@@ -513,6 +512,7 @@ Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\qa\app-qa.
 57097118 kotlin/reflect/reflect.kotlin_builtins (OK - compressed)
 57098430 okhttp3/internal/publicsuffix/NOTICE (OK - compressed)
 57098656 okhttp3/internal/publicsuffix/publicsuffixes.gz (OK)
+57140092 classes4.dex (OK - compressed)
 Verification succesful
 Debug APK:
 Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\debug\app-debug.apk (4)...
@@ -1039,10 +1039,10 @@ Verifying alignment of D:\App Projects\DishNest\app\build\outputs\apk\release\ap
       87 META-INF/com/android/build/gradle/app-metadata.properties (OK - compressed)
      207 META-INF/version-control-info.textproto (OK - compressed)
      384 assets/dexopt/baseline.prof (OK)
-   11396 assets/dexopt/baseline.profm (OK)
-   11964 classes.dex (OK - compressed)
- 7205706 classes2.dex (OK - compressed)
-10866515 classes3.dex (OK - compressed)
+   11404 assets/dexopt/baseline.profm (OK)
+   11972 classes.dex (OK - compressed)
+ 7205714 classes2.dex (OK - compressed)
+10866523 classes3.dex (OK - compressed)
 13041664 lib/arm64-v8a/libandroidx.graphics.path.so (OK)
 13058048 lib/arm64-v8a/libdatastore_shared_counter.so (OK)
 13074432 lib/arm64-v8a/libjpeg.so (OK)

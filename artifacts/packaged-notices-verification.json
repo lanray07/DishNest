@@ -15,9 +15,9 @@
     "Mozilla-Public-License-2.0.txt"
   ],
   "apkSha256": {
-    "app/build/outputs/apk/debug/app-debug.apk": "df5677594237fa63be5a850fae73490c3dafae6b67dfce3530689556cea0bb69",
-    "app/build/outputs/apk/qa/app-qa.apk": "0fc2fabef97e7edf2747b170dc7bf2bd93e286170312a2ce84c7038b3d2d9061",
-    "app/build/outputs/apk/release/app-release-unsigned.apk": "1bd3fa6cc0843d61a87f22b74e06117bbef870be3a116e4f6032c8a3c479f924"
+    "app/build/outputs/apk/debug/app-debug.apk": "15f047740cba818ea77c56f4fcf9948dc0ac564c5f507629d9d8f598148775a4",
+    "app/build/outputs/apk/qa/app-qa.apk": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62",
+    "app/build/outputs/apk/release/app-release-unsigned.apk": "60e41660f2c08d33fd19b4055ab5681cdac6c05d769b22407b7f712321bababf"
   },
   "noticeAssetSha256": "92dce8ea0fe0ca9158a170ae2142fd9b7bc416995fd95bfb8e2b70525f74bfd8",
   "manifestSha256": "379dc11d84c3d9b73d55bcabaff078e1c4ea5b911be4b13c989074a404183ff1",

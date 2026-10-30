@@ -1,0 +1,95 @@
+{
+  "completedAt": "2026-10-30T09:26:57.425029+00:00",
+  "scope": "Current accessibility build: targeted isolated QA checks, saved draft artwork sync and read-only Amazon support check; not release approval",
+  "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62",
+  "evidence": {
+    "fire-native-qa": {
+      "path": "artifacts/fire-native-qa.json",
+      "sha256": "80455b884304799a21a67363cbb2d11649288107a7af602a12853f426d7872fa",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-device-qa": {
+      "path": "artifacts/fire-device-qa.json",
+      "sha256": "4737e4b6d37f5ab5456845ec44c4233a489c05ea8c0bef8215a46719df90d521",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-settings-qa": {
+      "path": "artifacts/fire-settings-qa.json",
+      "sha256": "6f7a1c7b20eacd3e0b6f24eaf2ad61d77c78828784e92fb827d6fb50c733f247",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-offline-qa": {
+      "path": "artifacts/fire-offline-qa.json",
+      "sha256": "62b6dfb47af98756a0d296dc1d1f3f1358501f1aacf1cc0229375ac0242b100b",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-layout-qa": {
+      "path": "artifacts/fire-layout-qa.json",
+      "sha256": "393fc7109affe5613b8ad9b5d0f8e7d29567b309d9f004baa360b22552f617d0",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-document-qa": {
+      "path": "artifacts/fire-document-qa.json",
+      "sha256": "f3610623a376f9e15df41ae930e88699c3e732b09c4d2fc0f1156d906bf9be74",
+      "passed": false,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-background-alarm": {
+      "path": "artifacts/fire-background-alarm.json",
+      "sha256": "2e1b6f6f052d3a3d6df94e684244ea6d3be3c586d9c257384a3dd1af666d8088",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-blocked-notifications": {
+      "path": "artifacts/fire-blocked-notifications.json",
+      "sha256": "2a0ff70f1b0db6725a20eb15d6772fd75abd022a032bd5d40021b743ae6f97f2",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    },
+    "fire-doze-qa": {
+      "path": "artifacts/fire-doze-qa.json",
+      "sha256": "2515c43ae60bcb8f735a8c244b193e28a5e0f0dde881487f4035cf288bbfa7fb",
+      "passed": true,
+      "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62"
+    }
+  },
+  "allTargetedChecksPassed": false,
+  "accessibilityRegression": {
+    "path": "artifacts/usage-accessibility-qa.json",
+    "sha256": "f98827f9aace1ba01c09d43fb80ca3c5aa30d993e904d1c25ece630031159d95"
+  },
+  "artwork": {
+    "path": "artifacts/amazon-artwork-sync-20261030.json",
+    "sha256": "7ab98db3d1c5e685524d0c8986e157dc1dd0c58061f3b02c360d3fd06d2394d6"
+  },
+  "support": {
+    "checkedAt": "2026-10-30T08:54:01.521427+00:00",
+    "caseUrl": "https://developer.amazon.com/support/cases/22703564641",
+    "status": "In Process: pending Amazon action",
+    "lastUpdated": "2026-10-29",
+    "latestPublisherReply": "2026-10-29 19:43:35",
+    "latestAmazonReply": "2026-10-29 04:17:09",
+    "newAmazonReply": false,
+    "messageSent": false,
+    "logsUploaded": false
+  },
+  "ordinaryAppInstalledLaunchedOrRestored": false,
+  "ordinaryDataPreservedByObservedHashChecks": true,
+  "otherProfilesModified": false,
+  "protectedRecoveryRetained": true,
+  "freePlanOnly": true,
+  "paidServicesEnabled": false,
+  "deploymentPerformed": false,
+  "newLatPurchaseTestPerformed": false,
+  "publicSubmissionPerformed": false,
+  "submissionReady": false,
+  "broadCategoriesPending": 7,
+  "blockedNotificationBlocker": null,
+  "documentBlocker": "Final attempt passed three cancellation cases, then the ZIP import picker failed to open after three bounded, freshly observed attempts. Full current-build document round trips remain pending; cleanup and ordinary data checks passed.",
+  "historicalEarlierRun": "artifacts/fire-readiness-20261030.json at commit 8cf3727; it references the preceding APK and is not current evidence"
+}
