@@ -56,7 +56,7 @@
     "connectedFireCompatibleWithTest3": true,
     "deviceBlocker": "Test 3 and the original cannot coexist. A temporary switch was separately authorized, performed, and rolled back for the owner profile.",
     "freshLogCaptured": true,
-    "replyOrAttachmentSent": false,
+    "replyOrAttachmentSent": true,
     "capture": {
       "startedUtc": "2026-11-12T14:51:21.268735+00:00",
       "endedUtc": "2026-11-12T14:52:21.733182+00:00",
@@ -80,7 +80,7 @@
       "screenshot": "artifacts/screens/fire-test3-nov12-restore.png",
       "screenshotSha256": "832bd2a9dca80da6156ef6a1e96f1f32401556dd1af2b439f5c14bf8d9c15f61",
       "rawLogStoredOutsideRepo": true,
-      "privacyReviewComplete": false,
+      "privacyReviewComplete": true,
       "ownerApkAndFiveFilesRestoredExactly": true,
       "ownerPermissionsAndAppOpsRestored": true,
       "nativeSqliteRecoveryReverified": true,
@@ -88,7 +88,20 @@
       "secondProfileOriginalApkReenabled": true,
       "secondProfileDataRecoveryVerified": false,
       "publicSubmissionPerformed": false,
-      "paidServiceEnabled": false
+      "paidServiceEnabled": false,
+      "redactedCopySharedWithAmazon": true
+    },
+    "delivery": {
+      "postedOn": "2026-11-12",
+      "caseStatusAfterPosting": "In Process: pending Amazon action",
+      "attachment": "DishNest-Test3-logcat-2026-11-12-redacted.txt",
+      "attachmentSha256": "505b465b6c08a33cf8320e0f431147747dbfb402e80c6fa2ba924f9a677a0ae5",
+      "attachmentVerifiedInCase": true,
+      "logRowsRetained": 1984,
+      "rowsWithRedactions": 1615,
+      "iapEventsRetained": 42,
+      "purchaseUpdateSequencesSucceeded": 2,
+      "rawLogShared": false
     }
   }
 }

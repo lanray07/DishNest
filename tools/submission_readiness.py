@@ -71,7 +71,9 @@ check('APK signature and binary alignment',apk_current and native_current and ap
 check('Unconfigured billing build rejection',read_json('artifacts/billing-configuration-guard.json').get('passed') is True,'artifacts/billing-configuration-guard.json','Verify enabled billing rejects missing console authentication key')
 check('Incomplete publisher signing rejection',read_json('artifacts/signing-configuration-guard.json').get('passed') is True,'artifacts/signing-configuration-guard.json','Verify partial environment signing configuration is rejected')
 support=read_json('artifacts/amazon-support-request.json').get('latestFollowup', {})
-support_status=("A fresh Appstore-delivered Test 3 launch/restore log is captured privately; Premium remained active and lifetime checkout was disabled. Review and publisher authorization are pending before sharing. "
+support_status=("The redacted launch and restore log was posted to Amazon on 12 November. Engineering findings on the annual receipt are pending. "
+                if support.get('delivery', {}).get('attachmentVerifiedInCase') is True else
+                "A fresh Appstore-delivered Test 3 launch/restore log is captured privately; Premium remained active and lifetime checkout was disabled. Review and publisher authorization are pending before sharing. "
                 if support.get('freshLogCaptured') is True else
                 f"Amazon's {support['replyDate']} reply requests a short unfiltered launch/restore log on a compatible Test 3 Fire. "
                 if support.get('replyDate') and support.get('caseStatus') == 'In Process: pending Developer action' else '')

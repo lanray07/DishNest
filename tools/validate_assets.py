@@ -15,13 +15,14 @@ class Page(HTMLParser):
         if tag in ['a','link','img']:
             ref=a.get('src') if tag=='img' else a.get('href')
             if ref:self.refs.append(ref)
-for page in (ROOT/'website').glob('*.html'):
+pages = sorted((ROOT/'website').rglob('*.html'))
+for page in pages:
     parsed=Page();parsed.feed(page.read_text(encoding='utf-8-sig'));assert parsed.h1==1,f'{page.name}: expected one h1'
     for ref in parsed.refs:
         url=urlsplit(ref)
         if url.scheme or not url.path:continue
         if not (page.parent/unquote(url.path)).exists():errors.append(f'{page.name}: missing {ref}')
-checks.append('12 HTML pages: one h1 each; all internal file links resolve')
+checks.append(f'{len(pages)} HTML pages: one h1 each; all internal file links resolve')
 listing_files=sorted((ROOT/'marketing').glob('listing-*.json'))
 for file in listing_files:
     listing=json.loads(file.read_text(encoding='utf-8'))

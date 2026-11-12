@@ -9,18 +9,18 @@ class WebsiteEvidenceTest(unittest.TestCase):
     def test_complete_report_rejects_source_change_partial_pages_and_errors(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
-            for name in ['website/index.html', 'website/privacy.html', 'PRIVACY.txt', 'tools/build_website.py', 'tools/verify_website.cjs', 'tools/website_evidence.py']:
+            for name in ['website/index.html', 'website/privacy.html', 'website/fr/index.html', 'PRIVACY.txt', 'localisation/website-fr.json', 'tools/build_website.py', 'tools/verify_website.cjs', 'tools/website_evidence.py']:
                 file = root / name
                 file.parent.mkdir(parents=True, exist_ok=True)
                 file.write_text('fixture', encoding='utf-8')
-            result = {'identity': True, 'faqOpened': True, 'http': 200, 'overflow': False, 'brokenImages': [], 'pageErrors': [],
-                      'checkedPages': [{'file': p, 'http': 200, 'overflow': False, 'contentVerified': True, 'brokenImages': []} for p in ['index.html', 'privacy.html']]}
+            result = {'identity': True, 'faqOpened': True, 'frenchFaqOpened': True, 'http': 200, 'overflow': False, 'brokenImages': [], 'pageErrors': [],
+                      'checkedPages': [{'file': p, 'http': 200, 'overflow': False, 'contentVerified': True, 'brokenImages': []} for p in ['index.html', 'privacy.html', 'fr/index.html']]}
             results = []
             for device, width, height in [('desktop', 1440, 1000), ('phone', 390, 844)]:
                 current = copy.deepcopy(result)
                 current['device'] = device
                 for page in current['checkedPages']:
-                    page.update(viewportWidth=width, viewportHeight=height, navigationVisible=True, skipLinkPresent=True, landmarkPresent=True)
+                    page.update(viewportWidth=width, viewportHeight=height, navigationVisible=True, skipLinkPresent=True, landmarkPresent=True, languageVerified=True)
                 results.append(current)
             report = {'passed': True, 'inputs': inputs(root), 'results': results}
             self.assertTrue(verify(report, root))

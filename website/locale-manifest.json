@@ -1,11 +1,11 @@
 {
-  "published_locales": [
-    "en-GB"
+  "generated_locales": [
+    "en-GB",
+    "fr"
   ],
   "planned_locales": [
     "en-US",
     "es",
-    "fr",
     "de",
     "it",
     "pt-BR",
@@ -15,7 +15,7 @@
     "ar",
     "hi"
   ],
-  "translation_status": "pending; English only is accurate",
+  "translation_status": "French draft generated; native review pending.",
   "canonical_origin": null,
   "deployed": false
 }

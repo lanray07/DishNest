@@ -27,28 +27,48 @@ fs.mkdirSync(evidenceDir, { recursive: true });
       const brokenImages = await page.locator('img').evaluateAll(images => images.filter(i => !i.complete || !i.naturalWidth).map(i => i.src));
       await page.getByText('Can I access saved recipes offline?', { exact: true }).click();
       const answerVisible = await page.locator('details[open]').count();
+      await page.getByRole('link', { name: 'Français', exact: true }).click();
+      await page.waitForURL('**/fr/index.html');
+      await page.getByText('Puis-je consulter mes recettes hors connexion ?', { exact: true }).click();
+      const frenchFaqOpened = await page.locator('details[open]').count() === 1;
+      await page.getByRole('link', { name: 'English', exact: true }).click();
+      await page.waitForURL('**/index.html');
       const links = await page.locator('a[href]').evaluateAll(a => a.map(n => n.href));
       for (const url of [...new Set(links)].filter(url => url.startsWith('http://127.0.0.1:8765') && !url.includes('#'))) {
         if ((await page.request.get(url)).status() !== 200) throw new Error(`Broken page link: ${url}`);
       }
       await page.screenshot({ path: path.join(evidenceDir, `website-${device}.png`), fullPage: true });
       const checkedPages = [];
-      for (const file of fs.readdirSync(path.join(root, 'website')).filter(file => file.endsWith('.html'))) {
-        const slug = file.replace('.html', '');
-        const changedResponse = await page.goto(`http://127.0.0.1:8765/${slug}.html`, { waitUntil: 'networkidle' });
+      for (const entry of fs.readdirSync(path.join(root, 'website'), { recursive: true }).filter(file => file.endsWith('.html'))) {
+        const file = entry.split(path.sep).join('/');
+        const slug = path.basename(file, '.html');
+        const french = file.startsWith('fr/');
+        const locale = french ? 'fr' : 'en-GB';
+        const alternate = french ? 'en-GB' : 'fr';
+        const expectedAlternate = french ? `/${slug}.html` : `/fr/${slug}.html`;
+        const changedResponse = await page.goto(`http://127.0.0.1:8765/${file}`, { waitUntil: 'networkidle' });
         const text = await page.locator('main').innerText();
         const pageOverflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
         const images = await page.locator('img').evaluateAll(nodes => nodes.filter(i => !i.complete || !i.naturalWidth).map(i => i.src));
         const meaningful = text.trim().length > 80 && await page.locator('h1').count() === 1 && (await page.title()).includes('DishNest');
-        const expected = slug === 'privacy' ? text.includes('receipt identifiers') && text.includes('ZIP includes recipe photos with a 64 MB total limit') : slug === 'pricing' ? text.includes('purchases remain disabled') : true;
+        const expected = slug === 'privacy'
+          ? (french ? ['identifiants Amazon', '64 Mo', 'compteurs d’utilisation'] : ['receipt identifiers', '64 MB total limit', 'optional usage counts']).every(term => text.includes(term))
+          : slug === 'pricing' ? text.includes(french ? 'achats sont désactivés' : 'Purchases remain disabled') : true;
         if (['privacy', 'support'].includes(slug)) {
-          for (const [label, href] of [['GitHub support', 'https://github.com/lanray07/DishNest/issues'], ['Privacy information on GitHub', 'https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt']]) {
+          for (const [label, href] of [[french ? 'Assistance sur GitHub' : 'GitHub support', 'https://github.com/lanray07/DishNest/issues'], [french ? 'Confidentialité sur GitHub' : 'Privacy information on GitHub', 'https://github.com/lanray07/DishNest/blob/main/PRIVACY.txt']]) {
             if (await page.getByRole('link', {name: label, exact: true}).getAttribute('href') !== href) throw new Error(`Wrong GitHub link: ${slug}/${label}`);
           }
         }
         if (changedResponse.status() !== 200 || !meaningful || !expected || pageOverflow || images.length)
           throw new Error(`Changed page failed: ${slug}/${device}`);
-        if (['privacy', 'support'].includes(slug)) await page.screenshot({ path: path.join(evidenceDir, `${slug}-${device}.png`), fullPage: false });
+        const languageVerified = await page.evaluate(({ locale, alternate, expectedAlternate }) => {
+          const switchLink = document.querySelector(`nav a[hreflang="${alternate}"]`);
+          return document.documentElement.lang === locale && switchLink?.lang === alternate &&
+            new URL(switchLink.href).pathname === expectedAlternate;
+        }, { locale, alternate, expectedAlternate });
+        if (!languageVerified) throw new Error(`Language navigation failed: ${file}`);
+        if (french && slug === 'index' || ['privacy', 'support'].includes(slug))
+          await page.screenshot({ path: path.join(evidenceDir, `${french ? 'fr-' : ''}${slug}-${device}.png`), fullPage: false });
         const renderedViewport = await page.evaluate(() => ({ width: innerWidth, height: innerHeight }));
         if (renderedViewport.width !== width || renderedViewport.height !== height) throw new Error(`Wrong viewport: ${file}/${device}`);
         const navigation = await page.evaluate(() => ({
@@ -57,11 +77,11 @@ fs.mkdirSync(evidenceDir, { recursive: true });
           landmarkPresent: !!document.querySelector('main#main')
         }));
         if (!navigation.navigationVisible || !navigation.skipLinkPresent || !navigation.landmarkPresent) throw new Error(`Navigation inaccessible: ${file}/${device}`);
-        checkedPages.push({ file, title: await page.title(), http: changedResponse.status(), viewportWidth: renderedViewport.width, viewportHeight: renderedViewport.height, overflow: pageOverflow, contentVerified: true, brokenImages: images, ...navigation });
+        checkedPages.push({ file, title: await page.title(), http: changedResponse.status(), viewportWidth: renderedViewport.width, viewportHeight: renderedViewport.height, overflow: pageOverflow, contentVerified: true, brokenImages: images, languageVerified, ...navigation });
       }
-      const result = { device, identity, http: response.status(), overflow, brokenImages, pageErrors: errors, faqOpened: answerVisible > 0, checkedPages, browserPath: 'Playwright: Browser plugin not available', evidenceDir };
+      const result = { device, identity, http: response.status(), overflow, brokenImages, pageErrors: errors, faqOpened: answerVisible > 0, frenchFaqOpened, checkedPages, browserPath: 'Playwright Chromium', evidenceDir };
       results.push(result);
-      if (overflow || brokenImages.length || errors.length || !answerVisible) throw new Error(`Website verification failed: ${JSON.stringify(result)}`);
+      if (overflow || brokenImages.length || errors.length || !answerVisible || !frenchFaqOpened) throw new Error(`Website verification failed: ${device}`);
       await page.close();
     }
     if (JSON.stringify(inputs) !== JSON.stringify(snapshot())) throw new Error('Website inputs changed during verification');

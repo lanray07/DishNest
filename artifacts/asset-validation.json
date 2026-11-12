@@ -1,6 +1,6 @@
 {
   "checks": [
-    "12 HTML pages: one h1 each; all internal file links resolve",
+    "24 HTML pages: one h1 each; all internal file links resolve",
     "10 locale listings: title, UTF-8 description limits, feature bullets and matching text exports checked; native approval pending",
     "Required icon and promotional pixel dimensions valid",
     "16 screenshot drafts: dimensions and RGB output checked",
