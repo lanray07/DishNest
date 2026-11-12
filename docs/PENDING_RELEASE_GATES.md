@@ -1,6 +1,10 @@
 # Remaining release gates
 
+12 November: all 11 document-provider checks passed on the same isolated Fire QA APK and instrumentation runner. Both formats passed cancellation, populated-kitchen protection and empty-kitchen restore/re-export; the four recipes, five meals and two plans matched. The QA exports were removed, keep-awake was restored and the ordinary APK/private-file comparison passed. The runner retried 175 transient UI hierarchy failures, so this pass does not certify automation reliability, external providers, real user photos or complete app-data migration. See `artifacts/fire-document-qa.json`. This supersedes the October provider result; its historical report and images remain in commit `0bd933c`. The seven broader release categories remain pending.
+
 This is the handoff for the remaining release categories in `artifacts/submission-readiness.json`. A category stays pending until all of its required evidence exists. The user's conditional submission instruction does not waive these checks. The publisher authorized and approved deployment of the receipt verifier only on Workers Free; private LAT was subsequently explicitly authorized and submitted. Public app release remains conditional and website deployment is not authorized.
+
+12 November update: Amazon's 6 November reply asks for a short unfiltered Test 3 launch and purchase-restore log. It has not confirmed the annual receipt timeline. The publisher has only the current Fire, where the protected original is installed in two profiles under a different signature from Test 3. Both installations are retained. The [capture plan and unsent follow-up](AMAZON_LAT.md#test-3-support-capture) document the two ways to continue the investigation. No log or reply was sent.
 
 | Gate | Work possible in this checkout | Evidence or decision still required |
 | --- | --- | --- |

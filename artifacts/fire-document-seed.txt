@@ -15,7 +15,7 @@ INSTRUMENTATION_STATUS: test=namedPlanSelectionSurvivesActivityRecreation
 INSTRUMENTATION_STATUS_CODE: 0
 INSTRUMENTATION_RESULT: stream=
 
-Time: 8.958
+Time: 7.352
 
 OK (1 test)
 

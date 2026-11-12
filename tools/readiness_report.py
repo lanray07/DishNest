@@ -58,7 +58,12 @@ strings=sum(n.get('translatable')!='false' for n in ET.parse(ROOT/'app/src/main/
 server_xml=ET.parse(ROOT/'artifacts/billing-server-tests.xml').getroot()
 server_tests=len(server_xml.findall('.//testcase'))
 test3=data('artifacts/fire-test3-qa.json') if (ROOT/'artifacts/fire-test3-qa.json').exists() else {}
-test3_summary = ('Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.' if test3.get('originalRestored') is True else 'Test 3 current-session results are tracked separately in `artifacts/fire-test3-qa.json`; do not infer expiry, lifetime or original-data restoration from historical tests.')
+test3_summary = ('Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.' if test3.get('originalRestored') is True else 'Test 3 current-session results are tracked separately in `artifacts/fire-test3-qa.json`; do not infer expiry, lifetime or original-data restoration from historical tests.')
+support_followup=data('artifacts/amazon-support-request.json').get('latestFollowup', {})
+support_summary = (f"Amazon support: the {support_followup['replyDate']} reply requests a short full-device log covering Test 3 launch and purchase restore. "
+                   "The connected Fire has the differently signed original installed in two profiles. A separate compatible Fire is needed; no log has been sent. "
+                   "See `docs/AMAZON_LAT.md`."
+                   if support_followup.get('replyDate') and support_followup.get('caseStatus') == 'In Process: pending Developer action' else '')
 report=f'''# DishNest submission-readiness report
 
 Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: {datetime.now(timezone.utc).strftime('%d %B %Y')}. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
@@ -74,6 +79,8 @@ Seven required priority languages are still absent: Japanese, Korean, Simplified
 ## Latest Test 3 result
 
 {test3_summary}
+
+{support_summary}
 
 ## Completed local continuation
 

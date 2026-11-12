@@ -1,6 +1,6 @@
 # DishNest submission-readiness report
 
-Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 30 October 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
+Status: **DEVELOPMENT PREVIEW — NOT READY TO SUBMIT**. Evidence refreshed: 12 November 2026. **App deployment is not authorized. Store submission is conditionally authorized only after every required readiness gate passes; the current build must not be submitted.** Source commits and GitHub pushes are authorized. The approved receipt verifier alone was deployed on Workers Free. No public app release or website deployment was performed; private LAT testing was explicitly authorized.
 
 The remaining release categories, their local work and the evidence needed to close them are tracked in [PENDING_RELEASE_GATES.md](PENDING_RELEASE_GATES.md).
 
@@ -12,7 +12,9 @@ Seven required priority languages are still absent: Japanese, Korean, Simplified
 
 ## Latest Test 3 result
 
-Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Amazon support is pending action. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.
+Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.
+
+Amazon support: the 2026-11-06 reply requests a short full-device log covering Test 3 launch and purchase restore. The connected Fire has the differently signed original installed in two profiles. A separate compatible Fire is needed; no log has been sent. See `docs/AMAZON_LAT.md`.
 
 ## Completed local continuation
 
@@ -54,7 +56,7 @@ Test 3: nine actual annual cases pass, including zero-cost purchase/grant, resto
 | Forced-doze timer | Passed on the exact current QA app and runner; timer handled before verifier restart while still IDLE; original data unchanged; broader device matrix pending | `artifacts/fire-doze-qa.json` |
 | Fire offline and process recovery | PASS: 15 smoke tests plus named-plan check without connectivity; saved kitchen/preferences unchanged after process restart; radio/display settings and ordinary data preserved | `artifacts/fire-offline-qa.json` |
 | Fire system text scale and orientation | PASS: recipe, pantry and named-plan flows in portrait and landscape at system font scale 2.0; settings restored and ordinary data unchanged; TalkBack/full dialog matrix pending | `artifacts/fire-layout-qa.json` |
-| Fire document-provider backups | Pending on current binaries | `artifacts/fire-document-qa.json` |
+| Fire document-provider backups | PASS: actual local picker JSON/ZIP cancellation, export, nonempty-kitchen rejection and complete backup-record round trips; ordinary data/settings preserved; provider failures/real attachments pending | `artifacts/fire-document-qa.json` |
 | Offline notice integrity | 10 original notices and 92 dependency hashes verified; exact asset in debug/QA/release APKs; legal approval pending | `artifacts/packaged-notices-verification.json` |
 | Fire background timer probe | PASS: saved kitchen records, handled timer and own notification after QA process termination | `artifacts/fire-background-alarm.json` |
 | Fire blocked-notification timer probe | PASS: expired timer and kitchen state retained, no notification posted, QA notification setting restored | `artifacts/fire-blocked-notifications.json` |

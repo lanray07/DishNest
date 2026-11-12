@@ -1,7 +1,7 @@
 {
-  "testedAt": "2026-10-30T09:24:31.315821+00:00",
+  "testedAt": "2026-11-12T14:14:48.851929+00:00",
   "packageId": "com.dishnest.app.qa",
-  "passed": false,
+  "passed": true,
   "controllerSha256": "181b4cd2643367008c1cfa08d02ac69fe815625dafde0b486cd7b81698222485",
   "helperSha256": "bb95ba7037db13f27afe1997d521df8abe6f665b3ab3973b9e63c35d7a10f528",
   "ordinaryAppModified": false,
@@ -10,16 +10,34 @@
   "checks": {
     "cancelJsonExport": true,
     "cancelZipExport": true,
-    "cancelJsonImport": true
+    "cancelJsonImport": true,
+    "cancelZipImport": true,
+    "zipCrcAndPayloadMatchJson": true,
+    "exportsDoNotChangeKitchen": true,
+    "jsonExportHasRecipesMealsAndSelectedPlan": true,
+    "jsonNonemptyKitchenRejected": true,
+    "zipNonemptyKitchenRejected": true,
+    "jsonProviderRoundTrip": true,
+    "zipProviderRoundTrip": true
   },
-  "nullRootRetries": 2,
-  "refusalFramesSha256": {},
+  "nullRootRetries": 175,
+  "refusalFramesSha256": {
+    "artifacts/screens/fire-document-nonempty-json-refusal.png": "023e6a1ebded1515de48f40c1f2bd266adbecfbef5d35b7373f087af5f5a671f",
+    "artifacts/screens/fire-document-nonempty-zip-refusal.png": "251e63f3db71eca04f4561d2a13625908952122d32011683b897bac07469e193"
+  },
   "ocrHelperSha256": "111643dcbdeff434402466280f740dc8c7ffedac599d5d029f1de29efd4c4eb6",
   "model": "KFTRWI",
   "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62",
   "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
   "installedApksVerified": true,
-  "seedTraceSha256": "a0278dc947ff8c6fd56785237df6f34d809732ac65e286aded607288e3df0032",
+  "seedTraceSha256": "b9e00eacb7ab19b864dc780cf0dd3c3e29acea06f562327e8fd435023f4447a6",
+  "backupCoverage": {
+    "recipes": 4,
+    "meals": 5,
+    "plans": 2,
+    "bundledDemoPhotosOnly": true,
+    "timersAndPreferencesExcluded": true
+  },
   "settingsRestored": true,
   "ordinaryApkAndPersistentFilesUnchanged": true,
   "testExportsRemoved": true,

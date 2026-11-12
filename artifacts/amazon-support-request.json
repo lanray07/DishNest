@@ -46,5 +46,16 @@
   "caseReopened": true,
   "reopenedOn": "2026-10-25",
   "test3FollowupSubmitted": true,
-  "independentTest3RvsDatesCaptured": false
+  "independentTest3RvsDatesCaptured": false,
+  "latestFollowup": {
+    "checkedOn": "2026-11-12",
+    "replyDate": "2026-11-06",
+    "caseStatus": "In Process: pending Developer action",
+    "requestedEvidence": "Unfiltered device log covering Test 3 launch and full-history purchase restore, with date, time and time zone. Amazon permits redacting unrelated personal data.",
+    "receiptInvestigationPending": true,
+    "connectedFireCompatibleWithTest3": false,
+    "deviceBlocker": "The protected original APK is still installed in two profiles. Its signature differs from the Amazon-delivered Test 3 build.",
+    "freshLogCaptured": false,
+    "replyOrAttachmentSent": false
+  }
 }
