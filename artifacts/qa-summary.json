@@ -1109,7 +1109,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-11-12T14:28:41.259234+00:00",
+    "generatedAt": "2026-11-12T14:54:40.808094+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -1239,7 +1239,7 @@
         "check": "Amazon catalog and live verification",
         "status": "pending",
         "evidence": "docs/AMAZON_LAT.md; artifacts/fire-test3-qa.json; artifacts/amazon-support-request.json; marketing/amazon-premium-console.json",
-        "remaining": "Test 3 annual purchase, zero-cost billing, restart, full-history restore and offline recovery passed. Annual access was still active after more than 24 hours; natural expiry and lifetime purchase remain unverified. Amazon's 2026-11-06 reply requests a short unfiltered launch/restore log on a compatible Test 3 Fire. Complete real renewal/expiry/lifetime/refund/fulfilment and quota recovery before release."
+        "remaining": "Test 3 annual purchase, zero-cost billing, restart, full-history restore and offline recovery passed. Annual access was still active after more than 24 hours; natural expiry and lifetime purchase remain unverified. A fresh Appstore-delivered Test 3 launch/restore log is captured privately; Premium remained active and lifetime checkout was disabled. Review and publisher authorization are pending before sharing. Complete real renewal/expiry/lifetime/refund/fulfilment and quota recovery before release."
       },
       {
         "check": "Physical Fire native components",
@@ -1663,10 +1663,43 @@
       "caseStatus": "In Process: pending Developer action",
       "requestedEvidence": "Unfiltered device log covering Test 3 launch and full-history purchase restore, with date, time and time zone. Amazon permits redacting unrelated personal data.",
       "receiptInvestigationPending": true,
-      "connectedFireCompatibleWithTest3": false,
-      "deviceBlocker": "The protected original APK is still installed in two profiles. Its signature differs from the Amazon-delivered Test 3 build.",
-      "freshLogCaptured": false,
-      "replyOrAttachmentSent": false
+      "connectedFireCompatibleWithTest3": true,
+      "deviceBlocker": "Test 3 and the original cannot coexist. A temporary switch was separately authorized, performed, and rolled back for the owner profile.",
+      "freshLogCaptured": true,
+      "replyOrAttachmentSent": false,
+      "capture": {
+        "startedUtc": "2026-11-12T14:51:21.268735+00:00",
+        "endedUtc": "2026-11-12T14:52:21.733182+00:00",
+        "localTimezone": "Europe/London (GMT, UTC+00:00)",
+        "buffers": "all",
+        "filter": "*:V",
+        "historicPurchaseLogs": false,
+        "sharedWithAmazon": false,
+        "byteCount": 531461,
+        "includesDishNestAndAppstore": true,
+        "purchaseUpdateMentions": 4,
+        "source": "Amazon Appstore-delivered Test 3",
+        "apkSha256": "4a4edd247266c2bd519054c3d0396e0116eb489e41128b73931eb1fd191cac7b",
+        "certificateSha256": "8e35b165d5a1dc14c10820cee25ed2c24e9c543ceb2f059b9f5bc93baa672297",
+        "explicitRestorePerformed": true,
+        "premiumStillActiveAfterRestore": true,
+        "lifetimeOfferStillDisabled": true,
+        "naturalExpiryVerified": false,
+        "lifetimePurchaseVerified": false,
+        "newPurchaseMade": false,
+        "screenshot": "artifacts/screens/fire-test3-nov12-restore.png",
+        "screenshotSha256": "832bd2a9dca80da6156ef6a1e96f1f32401556dd1af2b439f5c14bf8d9c15f61",
+        "rawLogStoredOutsideRepo": true,
+        "privacyReviewComplete": false,
+        "ownerApkAndFiveFilesRestoredExactly": true,
+        "ownerPermissionsAndAppOpsRestored": true,
+        "nativeSqliteRecoveryReverified": true,
+        "secondProfileRemovalExplicitlyAuthorized": true,
+        "secondProfileOriginalApkReenabled": true,
+        "secondProfileDataRecoveryVerified": false,
+        "publicSubmissionPerformed": false,
+        "paidServiceEnabled": false
+      }
     }
   },
   "fire-test3-qa": {

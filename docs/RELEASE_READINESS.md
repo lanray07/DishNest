@@ -14,7 +14,7 @@ Seven required priority languages are still absent: Japanese, Korean, Simplified
 
 Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.
 
-Amazon support: the 2026-11-06 reply requests a short full-device log covering Test 3 launch and purchase restore. The connected Fire has the differently signed original installed in two profiles. A separate compatible Fire is needed; no log has been sent. See `docs/AMAZON_LAT.md`.
+Amazon support: the requested Test 3 launch/restore window was captured on the Fire on 12 November. Premium remained active after explicit restore and the lifetime offer was disabled. The owner app and all five files were restored exactly. The raw log remains private pending review and publisher authorization. See `docs/AMAZON_LAT.md`.
 
 ## Completed local continuation
 

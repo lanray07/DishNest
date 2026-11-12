@@ -6,6 +6,8 @@ This is the handoff for the remaining release categories in `artifacts/submissio
 
 12 November update: Amazon's 6 November reply asks for a short unfiltered Test 3 launch and purchase-restore log. It has not confirmed the annual receipt timeline. The publisher has only the current Fire, where the protected original is installed in two profiles under a different signature from Test 3. Both installations are retained. The [capture plan and unsent follow-up](AMAZON_LAT.md#test-3-support-capture) document the two ways to continue the investigation. No log or reply was sent.
 
+Later 12 November: the publisher explicitly authorized removal of the old app in both profiles for a temporary Test 3 session despite the second-profile data risk. The exact Amazon Appstore build passed launch and explicit restore, but Premium remained active and lifetime checkout was still disabled. The requested full-device log is captured privately; review and sharing authorization remain pending. The owner app and all five files were restored exactly; the second profile has the original app again without verified prior data recovery. No purchase, paid service or public submission occurred.
+
 | Gate | Work possible in this checkout | Evidence or decision still required |
 | --- | --- | --- |
 | Language and UI approval | Validate all 12 resource sets, render localized screens, support localized pasted-recipe headings, Unicode quantity entry and common metric aliases, preserve user text, test Unicode and RTL | Native review for every target locale, including separate Portuguese markets; review runtime messages, localized units/categories, ingredient-quantity questions, broader voice grammar and accessibility announcements. Technical coverage is not language approval. |

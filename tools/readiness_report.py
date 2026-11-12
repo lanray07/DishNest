@@ -60,9 +60,12 @@ server_tests=len(server_xml.findall('.//testcase'))
 test3=data('artifacts/fire-test3-qa.json') if (ROOT/'artifacts/fire-test3-qa.json').exists() else {}
 test3_summary = ('Test 3: nine actual annual cases pass, including zero-cost purchase/grant, restore and offline recovery. At the last device observation on 25 October, annual access still granted after more than 24 hours despite enabled accelerated timelines; natural expiry and lifetime remain blocked. Original APK and all five private files were restored exactly, permissions/appops and device settings restored, and fresh SQLite recovery integrity passed. See `artifacts/fire-test3-qa.json`.' if test3.get('originalRestored') is True else 'Test 3 current-session results are tracked separately in `artifacts/fire-test3-qa.json`; do not infer expiry, lifetime or original-data restoration from historical tests.')
 support_followup=data('artifacts/amazon-support-request.json').get('latestFollowup', {})
-support_summary = (f"Amazon support: the {support_followup['replyDate']} reply requests a short full-device log covering Test 3 launch and purchase restore. "
-                   "The connected Fire has the differently signed original installed in two profiles. A separate compatible Fire is needed; no log has been sent. "
-                   "See `docs/AMAZON_LAT.md`."
+support_summary = ("Amazon support: the requested Test 3 launch/restore window was captured on the Fire on 12 November. "
+                   "Premium remained active after explicit restore and the lifetime offer was disabled. The owner app and all five files were restored exactly. "
+                   "The raw log remains private pending review and publisher authorization. See `docs/AMAZON_LAT.md`."
+                   if support_followup.get('freshLogCaptured') is True else
+                   f"Amazon support: the {support_followup['replyDate']} reply requests a short full-device log covering Test 3 launch and purchase restore. "
+                   "The differently signed original and Test 3 cannot coexist. See `docs/AMAZON_LAT.md`."
                    if support_followup.get('replyDate') and support_followup.get('caseStatus') == 'In Process: pending Developer action' else '')
 report=f'''# DishNest submission-readiness report
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T14:28:41.259234+00:00",
+  "generatedAt": "2026-11-12T14:54:40.808094+00:00",
   "submission_ready": false,
   "publishing_permitted": false,
   "git_push_permitted": true,
@@ -129,7 +129,7 @@
       "check": "Amazon catalog and live verification",
       "status": "pending",
       "evidence": "docs/AMAZON_LAT.md; artifacts/fire-test3-qa.json; artifacts/amazon-support-request.json; marketing/amazon-premium-console.json",
-      "remaining": "Test 3 annual purchase, zero-cost billing, restart, full-history restore and offline recovery passed. Annual access was still active after more than 24 hours; natural expiry and lifetime purchase remain unverified. Amazon's 2026-11-06 reply requests a short unfiltered launch/restore log on a compatible Test 3 Fire. Complete real renewal/expiry/lifetime/refund/fulfilment and quota recovery before release."
+      "remaining": "Test 3 annual purchase, zero-cost billing, restart, full-history restore and offline recovery passed. Annual access was still active after more than 24 hours; natural expiry and lifetime purchase remain unverified. A fresh Appstore-delivered Test 3 launch/restore log is captured privately; Premium remained active and lifetime checkout was disabled. Review and publisher authorization are pending before sharing. Complete real renewal/expiry/lifetime/refund/fulfilment and quota recovery before release."
     },
     {
       "check": "Physical Fire native components",
