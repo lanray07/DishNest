@@ -1109,7 +1109,7 @@
     "notificationSettingAfter": true
   },
   "submission-readiness": {
-    "generatedAt": "2026-10-30T09:27:12.409616+00:00",
+    "generatedAt": "2026-11-12T14:28:41.259234+00:00",
     "submission_ready": false,
     "publishing_permitted": false,
     "git_push_permitted": true,
@@ -1238,8 +1238,8 @@
       {
         "check": "Amazon catalog and live verification",
         "status": "pending",
-        "evidence": "docs/AMAZON_LAT.md; artifacts/fire-test3-qa.json; artifacts/fire-test2-qa.json; artifacts/amazon-support-request.json; marketing/amazon-premium-console.json",
-        "remaining": "Both IAPs are TEST Live and private LAT Tests 1 and 2 are in progress. The genuine Test 2 APK was acquired and verified on Fire. Reset, clean test data and restart still restore a monthly test receipt with future cancellation and absent renewal, blocking annual/lifetime checkout. Amazon support supplied clean-cycle guidance on 22 October. Full reset=true/RVS handling is already present; the publisher confirms UK/Amazon.co.uk and the current candidate was accepted as private Test 3 after publisher certification. Test 3 is in-progress. The invalid recipient association was removed from Test 3; the existing consented Premium LAT tester received its invitation. The native TEST 3 acquisition and Amazon-delivered APK are verified. Actual annual purchase, zero-cost billing, restart/full-history restore, valid access after autorenew cancellation, extra-plan use and offline/online recovery pass. Annual access remains active after more than 24 hours and a completed full-history restore after process restart, despite accelerated timelines enabled. The support case was reopened on 25 October; natural expiry and lifetime remain blocked. Monthly grant/restart/restore and autorenew-off access passed in Test 1. Full renewal/expiry/lifetime/refund/fulfilment and quota-recovery checks remain required. The current Test 3 session ended with byte-exact original APK/private-file restoration, permissions/appops restored and fresh native SQLite recovery verification."
+        "evidence": "docs/AMAZON_LAT.md; artifacts/fire-test3-qa.json; artifacts/amazon-support-request.json; marketing/amazon-premium-console.json",
+        "remaining": "Test 3 annual purchase, zero-cost billing, restart, full-history restore and offline recovery passed. Annual access was still active after more than 24 hours; natural expiry and lifetime purchase remain unverified. Amazon's 2026-11-06 reply requests a short unfiltered launch/restore log on a compatible Test 3 Fire. Complete real renewal/expiry/lifetime/refund/fulfilment and quota recovery before release."
       },
       {
         "check": "Physical Fire native components",
@@ -1285,9 +1285,9 @@
       },
       {
         "check": "Fire local document-provider backup flows",
-        "status": "pending",
+        "status": "passed",
         "evidence": "artifacts/fire-document-qa.json",
-        "remaining": "Exercise actual JSON/ZIP picker cancellation, export, nonempty-kitchen rejection and restore round trips on QA; preserve ordinary data and remove only test exports"
+        "remaining": ""
       },
       {
         "check": "Physical device QA",
@@ -1656,7 +1656,18 @@
     "caseReopened": true,
     "reopenedOn": "2026-10-25",
     "test3FollowupSubmitted": true,
-    "independentTest3RvsDatesCaptured": false
+    "independentTest3RvsDatesCaptured": false,
+    "latestFollowup": {
+      "checkedOn": "2026-11-12",
+      "replyDate": "2026-11-06",
+      "caseStatus": "In Process: pending Developer action",
+      "requestedEvidence": "Unfiltered device log covering Test 3 launch and full-history purchase restore, with date, time and time zone. Amazon permits redacting unrelated personal data.",
+      "receiptInvestigationPending": true,
+      "connectedFireCompatibleWithTest3": false,
+      "deviceBlocker": "The protected original APK is still installed in two profiles. Its signature differs from the Amazon-delivered Test 3 build.",
+      "freshLogCaptured": false,
+      "replyOrAttachmentSent": false
+    }
   },
   "fire-test3-qa": {
     "checkedAt": "2026-10-25T09:30:57.224927+00:00",
@@ -1966,9 +1977,9 @@
   },
   "fire_layout_qa_current": true,
   "fire_document_qa": {
-    "testedAt": "2026-10-30T09:24:31.315821+00:00",
+    "testedAt": "2026-11-12T14:14:48.851929+00:00",
     "packageId": "com.dishnest.app.qa",
-    "passed": false,
+    "passed": true,
     "controllerSha256": "181b4cd2643367008c1cfa08d02ac69fe815625dafde0b486cd7b81698222485",
     "helperSha256": "bb95ba7037db13f27afe1997d521df8abe6f665b3ab3973b9e63c35d7a10f528",
     "ordinaryAppModified": false,
@@ -1977,16 +1988,34 @@
     "checks": {
       "cancelJsonExport": true,
       "cancelZipExport": true,
-      "cancelJsonImport": true
+      "cancelJsonImport": true,
+      "cancelZipImport": true,
+      "zipCrcAndPayloadMatchJson": true,
+      "exportsDoNotChangeKitchen": true,
+      "jsonExportHasRecipesMealsAndSelectedPlan": true,
+      "jsonNonemptyKitchenRejected": true,
+      "zipNonemptyKitchenRejected": true,
+      "jsonProviderRoundTrip": true,
+      "zipProviderRoundTrip": true
     },
-    "nullRootRetries": 2,
-    "refusalFramesSha256": {},
+    "nullRootRetries": 175,
+    "refusalFramesSha256": {
+      "artifacts/screens/fire-document-nonempty-json-refusal.png": "023e6a1ebded1515de48f40c1f2bd266adbecfbef5d35b7373f087af5f5a671f",
+      "artifacts/screens/fire-document-nonempty-zip-refusal.png": "251e63f3db71eca04f4561d2a13625908952122d32011683b897bac07469e193"
+    },
     "ocrHelperSha256": "111643dcbdeff434402466280f740dc8c7ffedac599d5d029f1de29efd4c4eb6",
     "model": "KFTRWI",
     "apkSha256": "481a9b8f9edcc690efc7a0d0ae8c78f99110ffb88e05b4ff5df72a3bc3475c62",
     "instrumentationApkSha256": "d5a7fcf75d339f43ebabbfb611838718e3e52efe966360192ecf9d3076d9910d",
     "installedApksVerified": true,
-    "seedTraceSha256": "a0278dc947ff8c6fd56785237df6f34d809732ac65e286aded607288e3df0032",
+    "seedTraceSha256": "b9e00eacb7ab19b864dc780cf0dd3c3e29acea06f562327e8fd435023f4447a6",
+    "backupCoverage": {
+      "recipes": 4,
+      "meals": 5,
+      "plans": 2,
+      "bundledDemoPhotosOnly": true,
+      "timersAndPreferencesExcluded": true
+    },
     "settingsRestored": true,
     "ordinaryApkAndPersistentFilesUnchanged": true,
     "testExportsRemoved": true,
@@ -1999,7 +2028,7 @@
       "Publisher-signed release"
     ]
   },
-  "fire_document_qa_current": false,
+  "fire_document_qa_current": true,
   "fire_settings_qa": {
     "testedAt": "2026-10-30T08:10:45.517857+00:00",
     "model": "KFTRWI",
